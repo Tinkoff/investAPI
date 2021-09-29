@@ -1,0 +1,3345 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.3">
+    
+    
+      
+        <title>Методы - TINKOFF INVEST API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#instrumentsservice" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="TINKOFF INVEST API" class="md-header__button md-logo" aria-label="TINKOFF INVEST API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TINKOFF INVEST API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Методы
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/TinkoffCreditSystems/invest-openapi/" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="TINKOFF INVEST API" class="md-nav__button md-logo" aria-label="TINKOFF INVEST API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    TINKOFF INVEST API
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/TinkoffCreditSystems/invest-openapi/" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Начало работы
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Введение
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Введение" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Введение
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../limits/" class="md-nav__link">
+        Лимитная политика
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../token/" class="md-nav__link">
+        Токен доступа
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algorithmic_trading/" class="md-nav__link">
+        Алгоритмический трейдинг
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tech_indicators/" class="md-nav__link">
+        Индикаторы технического анализа
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../markets/" class="md-nav__link">
+        Торговые площадки и режимы торгов
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_orders/" class="md-nav__link">
+        Работа с торговыми поручениями
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_marketdata/" class="md-nav__link">
+        Инструменты и котировки
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../accredited_investor/" class="md-nav__link">
+        Квалифицированный инвестор
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grpc/" class="md-nav__link">
+        Протокол взаимодействия
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        FAQ
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          FAQ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        Глоссарий
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_rules/" class="md-nav__link">
+        Условия использования
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_identification/" class="md-nav__link">
+        Идентификация торговых инструментов
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_sandbox/" class="md-nav__link">
+        Песочница
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_multiaccounts/" class="md-nav__link">
+        Мультисчета
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Сервис аккаунтов
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Сервис аккаунтов" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Сервис аккаунтов
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../head-users/" class="md-nav__link">
+        Описание
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../users/" class="md-nav__link">
+        Методы
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      <label class="md-nav__link" for="__nav_5">
+        Сервис инструментов
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Сервис инструментов" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Сервис инструментов
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../head-instruments/" class="md-nav__link">
+        Описание
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Методы
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Методы
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Методы сервиса
+  </a>
+  
+    <nav class="md-nav" aria-label="Методы сервиса">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tradingschedules" class="md-nav__link">
+    TradingSchedules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bondby" class="md-nav__link">
+    BondBy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bonds" class="md-nav__link">
+    Bonds
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#currencyby" class="md-nav__link">
+    CurrencyBy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#currencies" class="md-nav__link">
+    Currencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etfby" class="md-nav__link">
+    EtfBy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etfs" class="md-nav__link">
+    Etfs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#futureby" class="md-nav__link">
+    FutureBy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#futures" class="md-nav__link">
+    Futures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stockby" class="md-nav__link">
+    StockBy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stocks" class="md-nav__link">
+    Stocks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getaccruedinterests" class="md-nav__link">
+    GetAccruedInterests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getfuturesmargin" class="md-nav__link">
+    GetFuturesMargin
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Сообщения методов
+  </a>
+  
+    <nav class="md-nav" aria-label="Сообщения методов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tradingschedulesrequest" class="md-nav__link">
+    TradingSchedulesRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tradingschedulesresponse" class="md-nav__link">
+    TradingSchedulesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tradingschedule" class="md-nav__link">
+    TradingSchedule
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tradingday" class="md-nav__link">
+    TradingDay
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instrumentrequest" class="md-nav__link">
+    InstrumentRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instrumentsrequest" class="md-nav__link">
+    InstrumentsRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bondresponse" class="md-nav__link">
+    BondResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bondsresponse" class="md-nav__link">
+    BondsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#currencyresponse" class="md-nav__link">
+    CurrencyResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#currenciesresponse" class="md-nav__link">
+    CurrenciesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etfresponse" class="md-nav__link">
+    EtfResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etfsresponse" class="md-nav__link">
+    EtfsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#futureresponse" class="md-nav__link">
+    FutureResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#futuresresponse" class="md-nav__link">
+    FuturesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stockresponse" class="md-nav__link">
+    StockResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stocksresponse" class="md-nav__link">
+    StocksResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bond" class="md-nav__link">
+    Bond
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#currency" class="md-nav__link">
+    Currency
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etf" class="md-nav__link">
+    Etf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#future" class="md-nav__link">
+    Future
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stock" class="md-nav__link">
+    Stock
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getaccruedinterestsrequest" class="md-nav__link">
+    GetAccruedInterestsRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getaccruedinterestsresponse" class="md-nav__link">
+    GetAccruedInterestsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accruedinterest" class="md-nav__link">
+    AccruedInterest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getfuturesmarginrequest" class="md-nav__link">
+    GetFuturesMarginRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getfuturesmarginresponse" class="md-nav__link">
+    GetFuturesMarginResponse
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enums" class="md-nav__link">
+    Enums
+  </a>
+  
+    <nav class="md-nav" aria-label="Enums">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instrumentidtype" class="md-nav__link">
+    InstrumentIdType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instrumentstatus" class="md-nav__link">
+    InstrumentStatus
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Нестандартные типы данных
+  </a>
+  
+    <nav class="md-nav" aria-label="Нестандартные типы данных">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#moneyvalue" class="md-nav__link">
+    MoneyValue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quotation" class="md-nav__link">
+    Quotation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Сервис торговых поручений
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Сервис торговых поручений" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Сервис торговых поручений
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../head-orders/" class="md-nav__link">
+        Описание
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orders/" class="md-nav__link">
+        Методы
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Сервис операций
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Сервис операций" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Сервис операций
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../head-operations/" class="md-nav__link">
+        Описание
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/" class="md-nav__link">
+        Методы
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Сервис котировок
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Сервис котировок" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Сервис котировок
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../head-marketdata/" class="md-nav__link">
+        Описание
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marketdata/" class="md-nav__link">
+        Методы
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        Сервис стоп-заявок
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Сервис стоп-заявок" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Сервис стоп-заявок
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../head-stoporders/" class="md-nav__link">
+        Описание
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stoporders/" class="md-nav__link">
+        Методы
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Песочница
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Песочница" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Песочница
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../head-sandbox/" class="md-nav__link">
+        Описание
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sandbox.md" class="md-nav__link">
+        Методы
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_errors/" class="md-nav__link">
+        Коды ошибок
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Методы сервиса
+  </a>
+  
+    <nav class="md-nav" aria-label="Методы сервиса">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tradingschedules" class="md-nav__link">
+    TradingSchedules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bondby" class="md-nav__link">
+    BondBy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bonds" class="md-nav__link">
+    Bonds
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#currencyby" class="md-nav__link">
+    CurrencyBy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#currencies" class="md-nav__link">
+    Currencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etfby" class="md-nav__link">
+    EtfBy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etfs" class="md-nav__link">
+    Etfs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#futureby" class="md-nav__link">
+    FutureBy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#futures" class="md-nav__link">
+    Futures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stockby" class="md-nav__link">
+    StockBy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stocks" class="md-nav__link">
+    Stocks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getaccruedinterests" class="md-nav__link">
+    GetAccruedInterests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getfuturesmargin" class="md-nav__link">
+    GetFuturesMargin
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Сообщения методов
+  </a>
+  
+    <nav class="md-nav" aria-label="Сообщения методов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tradingschedulesrequest" class="md-nav__link">
+    TradingSchedulesRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tradingschedulesresponse" class="md-nav__link">
+    TradingSchedulesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tradingschedule" class="md-nav__link">
+    TradingSchedule
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tradingday" class="md-nav__link">
+    TradingDay
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instrumentrequest" class="md-nav__link">
+    InstrumentRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instrumentsrequest" class="md-nav__link">
+    InstrumentsRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bondresponse" class="md-nav__link">
+    BondResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bondsresponse" class="md-nav__link">
+    BondsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#currencyresponse" class="md-nav__link">
+    CurrencyResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#currenciesresponse" class="md-nav__link">
+    CurrenciesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etfresponse" class="md-nav__link">
+    EtfResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etfsresponse" class="md-nav__link">
+    EtfsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#futureresponse" class="md-nav__link">
+    FutureResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#futuresresponse" class="md-nav__link">
+    FuturesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stockresponse" class="md-nav__link">
+    StockResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stocksresponse" class="md-nav__link">
+    StocksResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bond" class="md-nav__link">
+    Bond
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#currency" class="md-nav__link">
+    Currency
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etf" class="md-nav__link">
+    Etf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#future" class="md-nav__link">
+    Future
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stock" class="md-nav__link">
+    Stock
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getaccruedinterestsrequest" class="md-nav__link">
+    GetAccruedInterestsRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getaccruedinterestsresponse" class="md-nav__link">
+    GetAccruedInterestsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accruedinterest" class="md-nav__link">
+    AccruedInterest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getfuturesmarginrequest" class="md-nav__link">
+    GetFuturesMarginRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getfuturesmarginresponse" class="md-nav__link">
+    GetFuturesMarginResponse
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enums" class="md-nav__link">
+    Enums
+  </a>
+  
+    <nav class="md-nav" aria-label="Enums">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instrumentidtype" class="md-nav__link">
+    InstrumentIdType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instrumentstatus" class="md-nav__link">
+    InstrumentStatus
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Нестандартные типы данных
+  </a>
+  
+    <nav class="md-nav" aria-label="Нестандартные типы данных">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#moneyvalue" class="md-nav__link">
+    MoneyValue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quotation" class="md-nav__link">
+    Quotation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/TinkoffCreditSystems/invest-openapi/edit/master/docs/instruments.md" title="Редактировать страницу" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <!-- range HasServices -->
+
+<h1 id="instrumentsservice">InstrumentsService</h1>
+<p>Сервис предназначен для получения:</br> <strong>1</strong>.  информации об инструментах;</br> <strong>2</strong>.
+расписания торговых сессий;</br> <strong>3</strong>. календаря выплат купонов по облигациям;</br> <strong>4</strong>.
+размера гарантийного обеспечения по фьючерсам;</br> <strong>5</strong>. дивидендов по ценной бумаге.</p>
+<h2 id="_1">Методы сервиса</h2>
+<h3 id="tradingschedules">TradingSchedules</h3>
+<p>Метод получения расписания торгов торговых площадок</p>
+<ul>
+<li>
+<p>Тело запроса - <a href="#tradingschedulesrequest">TradingSchedulesRequest</a></p>
+</li>
+<li>
+<p>Тело ответа - <a href="#tradingschedulesresponse">TradingSchedulesResponse</a></p>
+</li>
+</ul>
+<h3 id="bondby">BondBy</h3>
+<p>Метод получения списка облигаций</p>
+<ul>
+<li>
+<p>Тело запроса - <a href="#instrumentrequest">InstrumentRequest</a></p>
+</li>
+<li>
+<p>Тело ответа - <a href="#bondresponse">BondResponse</a></p>
+</li>
+</ul>
+<h3 id="bonds">Bonds</h3>
+<p>Метод получения облигации по её идентификатору</p>
+<ul>
+<li>
+<p>Тело запроса - <a href="#instrumentsrequest">InstrumentsRequest</a></p>
+</li>
+<li>
+<p>Тело ответа - <a href="#bondsresponse">BondsResponse</a></p>
+</li>
+</ul>
+<h3 id="currencyby">CurrencyBy</h3>
+<p>Метод получения списка валют</p>
+<ul>
+<li>
+<p>Тело запроса - <a href="#instrumentrequest">InstrumentRequest</a></p>
+</li>
+<li>
+<p>Тело ответа - <a href="#currencyresponse">CurrencyResponse</a></p>
+</li>
+</ul>
+<h3 id="currencies">Currencies</h3>
+<p>Метод получения валюты по её идентификатору</p>
+<ul>
+<li>
+<p>Тело запроса - <a href="#instrumentsrequest">InstrumentsRequest</a></p>
+</li>
+<li>
+<p>Тело ответа - <a href="#currenciesresponse">CurrenciesResponse</a></p>
+</li>
+</ul>
+<h3 id="etfby">EtfBy</h3>
+<p>Метод получения списка инвестиционных фондов</p>
+<ul>
+<li>
+<p>Тело запроса - <a href="#instrumentrequest">InstrumentRequest</a></p>
+</li>
+<li>
+<p>Тело ответа - <a href="#etfresponse">EtfResponse</a></p>
+</li>
+</ul>
+<h3 id="etfs">Etfs</h3>
+<p>Метод получения инвестиционного фонда по его идентификатору</p>
+<ul>
+<li>
+<p>Тело запроса - <a href="#instrumentsrequest">InstrumentsRequest</a></p>
+</li>
+<li>
+<p>Тело ответа - <a href="#etfsresponse">EtfsResponse</a></p>
+</li>
+</ul>
+<h3 id="futureby">FutureBy</h3>
+<p>Метод получения списка фьючерсов</p>
+<ul>
+<li>
+<p>Тело запроса - <a href="#instrumentrequest">InstrumentRequest</a></p>
+</li>
+<li>
+<p>Тело ответа - <a href="#futureresponse">FutureResponse</a></p>
+</li>
+</ul>
+<h3 id="futures">Futures</h3>
+<p>Метод получения фьючерса по его идентификатору</p>
+<ul>
+<li>
+<p>Тело запроса - <a href="#instrumentsrequest">InstrumentsRequest</a></p>
+</li>
+<li>
+<p>Тело ответа - <a href="#futuresresponse">FuturesResponse</a></p>
+</li>
+</ul>
+<h3 id="stockby">StockBy</h3>
+<p>Метод получения списка акций</p>
+<ul>
+<li>
+<p>Тело запроса - <a href="#instrumentrequest">InstrumentRequest</a></p>
+</li>
+<li>
+<p>Тело ответа - <a href="#stockresponse">StockResponse</a></p>
+</li>
+</ul>
+<h3 id="stocks">Stocks</h3>
+<p>Метод получения акции по её идентификатору</p>
+<ul>
+<li>
+<p>Тело запроса - <a href="#instrumentsrequest">InstrumentsRequest</a></p>
+</li>
+<li>
+<p>Тело ответа - <a href="#stocksresponse">StocksResponse</a></p>
+</li>
+</ul>
+<h3 id="getaccruedinterests">GetAccruedInterests</h3>
+<p>Метод получения календаря выплат купонов по облигациям</p>
+<ul>
+<li>
+<p>Тело запроса - <a href="#getaccruedinterestsrequest">GetAccruedInterestsRequest</a></p>
+</li>
+<li>
+<p>Тело ответа - <a href="#getaccruedinterestsresponse">GetAccruedInterestsResponse</a></p>
+</li>
+</ul>
+<h3 id="getfuturesmargin">GetFuturesMargin</h3>
+<p>Метод получения размера гарантийного обеспечения по фьючерсам</p>
+<ul>
+<li>
+<p>Тело запроса - <a href="#getfuturesmarginrequest">GetFuturesMarginRequest</a></p>
+</li>
+<li>
+<p>Тело ответа - <a href="#getfuturesmarginresponse">GetFuturesMarginResponse</a></p>
+</li>
+</ul>
+<!-- range .Methods -->
+<!-- range .Services -->
+
+<h2 id="_2">Сообщения методов</h2>
+<h3 id="tradingschedulesrequest">TradingSchedulesRequest</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exchange</td>
+<td><a href="#string">string</a></td>
+<td>Наименование биржи или расчетного календаря. </br>Если не передаётся, возвращается информация по всем доступным торговым площадкам</td>
+</tr>
+<tr>
+<td>from</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Начало периода по часовому поясу UTC</td>
+</tr>
+<tr>
+<td>to</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Окончание периода по часовому поясу UTC</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="tradingschedulesresponse">TradingSchedulesResponse</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exchanges</td>
+<td>Массив объектов <a href="#tradingschedule">TradingSchedule</a></td>
+<td>Список торговых площадок и режимов торгов</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="tradingschedule">TradingSchedule</h3>
+<p>Данные по торговой площадке</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exchange</td>
+<td><a href="#string">string</a></td>
+<td>Наименование торговой площадки</td>
+</tr>
+<tr>
+<td>days</td>
+<td>Массив объектов <a href="#tradingday">TradingDay</a></td>
+<td>Массив с торговыми и неторговыми днями</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="tradingday">TradingDay</h3>
+<p>Информация о времени торгов</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата</td>
+</tr>
+<tr>
+<td>is_trading_day</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак торгового дня на бирже</td>
+</tr>
+<tr>
+<td>start_time</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время начала торгов по часовому поясу UTC</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время окончания торгов по часовому поясу UTC</td>
+</tr>
+<tr>
+<td>market_order_start_time</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время начала подачи заявки по часовому поясу UTC</td>
+</tr>
+<tr>
+<td>market_order_end_time</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время окончания подачи заявки по часовому поясу UTC</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="instrumentrequest">InstrumentRequest</h3>
+<p>Запрос получения инструмента по идентификатору</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id_type</td>
+<td><a href="#instrumentidtype">InstrumentIdType</a></td>
+<td>Тип идентификатора инструмента. Возможные значения: figi, ticker, isin. Подробнее об идентификации инструментов: <a href="https://tinkoffcreditsystems.github.io/invest-openapi/faq_identification/">Идентификация инструментов</a></td>
+</tr>
+<tr>
+<td>class_code</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор class_code. Обязателен при id_type = ticker</td>
+</tr>
+<tr>
+<td>id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор запрашиваемого инструмента</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="instrumentsrequest">InstrumentsRequest</h3>
+<p>Запрос получения инструментов</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instrument_status</td>
+<td><a href="#instrumentstatus">InstrumentStatus</a></td>
+<td>Статус запрашиваемых инструментов. Возможные значения: <a href="#instrumentstatus">InstrumentStatus</a></td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="bondresponse">BondResponse</h3>
+<p>Информация об облигации</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instrument</td>
+<td><a href="#bond">Bond</a></td>
+<td>Информация об облигации</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="bondsresponse">BondsResponse</h3>
+<p>Список облигаций</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instruments</td>
+<td>Массив объектов <a href="#bond">Bond</a></td>
+<td>Массив облигаций</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="currencyresponse">CurrencyResponse</h3>
+<p>Данные по валюте</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instrument</td>
+<td><a href="#currency">Currency</a></td>
+<td>Информация о валюте</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="currenciesresponse">CurrenciesResponse</h3>
+<p>Данные по валютам</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instruments</td>
+<td>Массив объектов <a href="#currency">Currency</a></td>
+<td>Массив валют</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="etfresponse">EtfResponse</h3>
+<p>Данные по фонду</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instrument</td>
+<td><a href="#etf">Etf</a></td>
+<td>Информация о фонде</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="etfsresponse">EtfsResponse</h3>
+<p>Данные по фондам</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instruments</td>
+<td>Массив объектов <a href="#etf">Etf</a></td>
+<td>Массив фондов</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="futureresponse">FutureResponse</h3>
+<p>Данные по фьючерсу</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instrument</td>
+<td><a href="#future">Future</a></td>
+<td>Информация о фьючерсу</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="futuresresponse">FuturesResponse</h3>
+<p>Данные по фьючерсам</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instruments</td>
+<td>Массив объектов <a href="#future">Future</a></td>
+<td>Массив фьючерсов</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="stockresponse">StockResponse</h3>
+<p>Данные по акции</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instrument</td>
+<td><a href="#stock">Stock</a></td>
+<td>Информация об акции</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="stocksresponse">StocksResponse</h3>
+<p>Данные по акциям</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instruments</td>
+<td>Массив объектов <a href="#stock">Stock</a></td>
+<td>Массив акций</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="bond">Bond</h3>
+<p>Объект передачи информации об облигации.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>ticker</td>
+<td><a href="#string">string</a></td>
+<td>Тикер инструмента.</td>
+</tr>
+<tr>
+<td>class_code</td>
+<td><a href="#string">string</a></td>
+<td>Класс-код (секция торгов).</td>
+</tr>
+<tr>
+<td>isin</td>
+<td><a href="#string">string</a></td>
+<td>Isin-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>lot</td>
+<td><a href="#int32">int32</a></td>
+<td>Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру <em>lot</em>. Подробнее: <a href="/doctest/glossary#lot">лот</a></td>
+</tr>
+<tr>
+<td>currency</td>
+<td><a href="#string">string</a></td>
+<td>Валюта расчётов.</td>
+</tr>
+<tr>
+<td>klong</td>
+<td><a href="#double">double</a></td>
+<td>Коэффициент ставки риска длинной позиции по инструменту.</td>
+</tr>
+<tr>
+<td>kshort</td>
+<td><a href="#double">double</a></td>
+<td>Коэффициент ставки риска короткой позиции по инструменту.</td>
+</tr>
+<tr>
+<td>dlong</td>
+<td><a href="#double">double</a></td>
+<td>Ставка риска минимальной маржи в лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
+</tr>
+<tr>
+<td>dshort</td>
+<td><a href="#double">double</a></td>
+<td>Ставка риска минимальной маржи в шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
+</tr>
+<tr>
+<td>dlong_min</td>
+<td><a href="#double">double</a></td>
+<td>Ставка риска начальной маржи в лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
+</tr>
+<tr>
+<td>dshort_min</td>
+<td><a href="#double">double</a></td>
+<td>Ставка риска начальной маржи в шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
+</tr>
+<tr>
+<td>short_enabled_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности для операций в шорт.</td>
+</tr>
+<tr>
+<td>name</td>
+<td><a href="#string">string</a></td>
+<td>Название инструмента.</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td><a href="#string">string</a></td>
+<td>Торговая площадка.</td>
+</tr>
+<tr>
+<td>coupon_quantity_per_year</td>
+<td><a href="#int32">int32</a></td>
+<td>Количество выплат по купонам в год</td>
+</tr>
+<tr>
+<td>maturity_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата погашения облигации в часовом поясе UTC</td>
+</tr>
+<tr>
+<td>nominal</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Номинал облигации</td>
+</tr>
+<tr>
+<td>state_reg_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата выпуска облигации в часовом поясе UTC</td>
+</tr>
+<tr>
+<td>placement_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата размещения в часовом поясе UTC</td>
+</tr>
+<tr>
+<td>placement_price</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Цена размещения</td>
+</tr>
+<tr>
+<td>coupon_period_base</td>
+<td><a href="#string">string</a></td>
+<td>Периодичность выплаты купонов</td>
+</tr>
+<tr>
+<td>aci_value</td>
+<td><a href="#double">double</a></td>
+<td>Значение НКД (накопленного купонного дохода) на дату</td>
+</tr>
+<tr>
+<td>country_of_risk</td>
+<td><a href="#string">string</a></td>
+<td>Код страны эмитента</td>
+</tr>
+<tr>
+<td>country_of_risk_name</td>
+<td><a href="#string">string</a></td>
+<td>Наименование страны эмитента</td>
+</tr>
+<tr>
+<td>sector</td>
+<td><a href="#string">string</a></td>
+<td>Сектор экономики</td>
+</tr>
+<tr>
+<td>issue_kind</td>
+<td><a href="#string">string</a></td>
+<td>Форма выпуска. Возможные значения: </br><strong>documentary</strong> — документарная; </br><strong>non_documentary</strong> — бездокументарная.</td>
+</tr>
+<tr>
+<td>issue_size</td>
+<td><a href="#float">float</a></td>
+<td>Размер выпуска.</td>
+</tr>
+<tr>
+<td>issue_size_plan</td>
+<td><a href="#float">float</a></td>
+<td>Плановый размер выпуска.</td>
+</tr>
+<tr>
+<td>trading_status</td>
+<td><a href="#securitytradingstatus">SecurityTradingStatus</a></td>
+<td>Текущий режим торгов инструмента.</td>
+</tr>
+<tr>
+<td>otc_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак внебиржевой ценной бумаги.</td>
+</tr>
+<tr>
+<td>buy_available_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности для покупки.</td>
+</tr>
+<tr>
+<td>sell_available_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности для продажи.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="currency">Currency</h3>
+<p>Объект передачи информации о валюте.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>ticker</td>
+<td><a href="#string">string</a></td>
+<td>Тикер инструмента.</td>
+</tr>
+<tr>
+<td>class_code</td>
+<td><a href="#string">string</a></td>
+<td>Класс-код (секция торгов).</td>
+</tr>
+<tr>
+<td>isin</td>
+<td><a href="#string">string</a></td>
+<td>Isin-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>lot</td>
+<td><a href="#int32">int32</a></td>
+<td>Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру <em>lot</em>. Подробнее: <a href="/doctest/glossary#lot">лот</a></td>
+</tr>
+<tr>
+<td>currency</td>
+<td><a href="#string">string</a></td>
+<td>Валюта расчётов.</td>
+</tr>
+<tr>
+<td>klong</td>
+<td><a href="#double">double</a></td>
+<td>Коэффициент ставки риска длинной позиции по инструменту.</td>
+</tr>
+<tr>
+<td>kshort</td>
+<td><a href="#double">double</a></td>
+<td>Коэффициент ставки риска короткой позиции по инструменту.</td>
+</tr>
+<tr>
+<td>dlong</td>
+<td><a href="#double">double</a></td>
+<td>Ставка риска минимальной маржи в лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
+</tr>
+<tr>
+<td>dshort</td>
+<td><a href="#double">double</a></td>
+<td>Ставка риска минимальной маржи в шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
+</tr>
+<tr>
+<td>dlong_min</td>
+<td><a href="#double">double</a></td>
+<td>Ставка риска начальной маржи в лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
+</tr>
+<tr>
+<td>dshort_min</td>
+<td><a href="#double">double</a></td>
+<td>Ставка риска начальной маржи в шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
+</tr>
+<tr>
+<td>short_enabled_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности для операций в шорт.</td>
+</tr>
+<tr>
+<td>name</td>
+<td><a href="#string">string</a></td>
+<td>Название инструмента.</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td><a href="#string">string</a></td>
+<td>Торговая площадка.</td>
+</tr>
+<tr>
+<td>nominal</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Номинал.</td>
+</tr>
+<tr>
+<td>country_of_risk</td>
+<td><a href="#string">string</a></td>
+<td>Код страны эмитента.</td>
+</tr>
+<tr>
+<td>country_of_risk_name</td>
+<td><a href="#string">string</a></td>
+<td>Наименование страны эмитента.</td>
+</tr>
+<tr>
+<td>trading_status</td>
+<td><a href="#securitytradingstatus">SecurityTradingStatus</a></td>
+<td>Текущий режим торгов инструмента.</td>
+</tr>
+<tr>
+<td>otc_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак внебиржевой ценной бумаги.</td>
+</tr>
+<tr>
+<td>buy_available_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности для покупки.</td>
+</tr>
+<tr>
+<td>sell_available_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности для продажи.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="etf">Etf</h3>
+<p>Объект передачи информации об инвестиционном фонде.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>ticker</td>
+<td><a href="#string">string</a></td>
+<td>Тикер инструмента.</td>
+</tr>
+<tr>
+<td>class_code</td>
+<td><a href="#string">string</a></td>
+<td>Класс-код (секция торгов).</td>
+</tr>
+<tr>
+<td>isin</td>
+<td><a href="#string">string</a></td>
+<td>Isin-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>lot</td>
+<td><a href="#int32">int32</a></td>
+<td>Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру <em>lot</em>. Подробнее: <a href="/doctest/glossary#lot">лот</a></td>
+</tr>
+<tr>
+<td>currency</td>
+<td><a href="#string">string</a></td>
+<td>Валюта расчётов.</td>
+</tr>
+<tr>
+<td>klong</td>
+<td><a href="#double">double</a></td>
+<td>Коэффициент ставки риска длинной позиции по инструменту.</td>
+</tr>
+<tr>
+<td>kshort</td>
+<td><a href="#double">double</a></td>
+<td>Коэффициент ставки риска короткой позиции по инструменту.</td>
+</tr>
+<tr>
+<td>dlong</td>
+<td><a href="#double">double</a></td>
+<td>Ставка риска минимальной маржи в лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
+</tr>
+<tr>
+<td>dshort</td>
+<td><a href="#double">double</a></td>
+<td>Ставка риска минимальной маржи в шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
+</tr>
+<tr>
+<td>dlong_min</td>
+<td><a href="#double">double</a></td>
+<td>Ставка риска начальной маржи в лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
+</tr>
+<tr>
+<td>dshort_min</td>
+<td><a href="#double">double</a></td>
+<td>Ставка риска начальной маржи в шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
+</tr>
+<tr>
+<td>short_enabled_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности для операций в шорт.</td>
+</tr>
+<tr>
+<td>name</td>
+<td><a href="#string">string</a></td>
+<td>Название инструмента.</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td><a href="#string">string</a></td>
+<td>Торговая площадка.</td>
+</tr>
+<tr>
+<td>fixed_commission</td>
+<td><a href="#double">double</a></td>
+<td>Размер фиксированной комиссии фонда.</td>
+</tr>
+<tr>
+<td>focus_type</td>
+<td><a href="#string">string</a></td>
+<td>Возможные значения: </br><strong>equity</strong> — акции;</br><strong>fixed_income</strong> — облигации;</br><strong>mixed_allocation</strong> — смешанный;</br><strong>money_market</strong> — денежный рынок;</br><strong>real_estate</strong> — недвижимость;</br><strong>commodity</strong> — товары;</br><strong>specialty</strong> — специальный;</br><strong>private_equity</strong> — private equity;</br><strong>alternative_investment</strong> — альтернативные инвестиции.</td>
+</tr>
+<tr>
+<td>released_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата выпуска в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>num_shares</td>
+<td><a href="#double">double</a></td>
+<td>Количество акций фонда в обращении.</td>
+</tr>
+<tr>
+<td>country_of_risk</td>
+<td><a href="#string">string</a></td>
+<td>Код страны эмитента.</td>
+</tr>
+<tr>
+<td>country_of_risk_name</td>
+<td><a href="#string">string</a></td>
+<td>Наименование страны эмитента.</td>
+</tr>
+<tr>
+<td>sector</td>
+<td><a href="#string">string</a></td>
+<td>Сектор экономики.</td>
+</tr>
+<tr>
+<td>rebalancing_freq</td>
+<td><a href="#string">string</a></td>
+<td>Частота ребалансировки.</td>
+</tr>
+<tr>
+<td>trading_status</td>
+<td><a href="#securitytradingstatus">SecurityTradingStatus</a></td>
+<td>Текущий режим торгов инструмента.</td>
+</tr>
+<tr>
+<td>otc_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак внебиржевой ценной бумаги.</td>
+</tr>
+<tr>
+<td>buy_available_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности для покупки.</td>
+</tr>
+<tr>
+<td>sell_available_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности для продажи.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="future">Future</h3>
+<p>Объект передачи информации о фьючерсе.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>ticker</td>
+<td><a href="#string">string</a></td>
+<td>Тикер инструмента</td>
+</tr>
+<tr>
+<td>class_code</td>
+<td><a href="#string">string</a></td>
+<td>Класс-код (секция торгов).</td>
+</tr>
+<tr>
+<td>lot</td>
+<td><a href="#int32">int32</a></td>
+<td>Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру <em>lot</em>. Подробнее: <a href="/doctest/glossary#lot">лот</a></td>
+</tr>
+<tr>
+<td>currency</td>
+<td><a href="#string">string</a></td>
+<td>Валюта расчётов.</td>
+</tr>
+<tr>
+<td>klong</td>
+<td><a href="#double">double</a></td>
+<td>Коэффициент ставки риска длинной позиции по клиенту.</td>
+</tr>
+<tr>
+<td>kshort</td>
+<td><a href="#double">double</a></td>
+<td>Коэффициент ставки риска короткой позиции по клиенту.</td>
+</tr>
+<tr>
+<td>dlong</td>
+<td><a href="#double">double</a></td>
+<td>Ставка риска минимальной маржи в лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
+</tr>
+<tr>
+<td>dshort</td>
+<td><a href="#double">double</a></td>
+<td>Ставка риска минимальной маржи в шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
+</tr>
+<tr>
+<td>dlong_min</td>
+<td><a href="#double">double</a></td>
+<td>Ставка риска начальной маржи в лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
+</tr>
+<tr>
+<td>dshort_min</td>
+<td><a href="#double">double</a></td>
+<td>Ставка риска начальной маржи в шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
+</tr>
+<tr>
+<td>short_enabled_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности для операций шорт.</td>
+</tr>
+<tr>
+<td>name</td>
+<td><a href="#string">string</a></td>
+<td>Название инструмента.</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td><a href="#string">string</a></td>
+<td>Торговая площадка.</td>
+</tr>
+<tr>
+<td>settlement_currency</td>
+<td><a href="#string">string</a></td>
+<td>Валюта, в которой оценивается контракт.</td>
+</tr>
+<tr>
+<td>first_trade_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата начала обращения контракта в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>last_trade_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата в часовом поясе UTC, до которой возможно проведение операций с фьючерсом.</td>
+</tr>
+<tr>
+<td>futures_type</td>
+<td><a href="#string">string</a></td>
+<td>Тип фьючерса. Возможные значения: </br><strong>physical_delivery</strong> — физические поставки; </br><strong>cash_settlement</strong> — денежный эквивалент.</td>
+</tr>
+<tr>
+<td>asset_type</td>
+<td><a href="#string">string</a></td>
+<td>Тип актива. Возможные значения: </br><strong>commodity</strong> — товар; </br><strong>currency</strong> — валюта; </br><strong>security</strong> — ценная бумага; </br><strong>index</strong> — индекс.</td>
+</tr>
+<tr>
+<td>basic_asset</td>
+<td><a href="#string">string</a></td>
+<td>Основной актив.</td>
+</tr>
+<tr>
+<td>basic_asset_size</td>
+<td><a href="#double">double</a></td>
+<td>Размер основного актива.</td>
+</tr>
+<tr>
+<td>country_of_risk</td>
+<td><a href="#string">string</a></td>
+<td>Код страны эмитента.</td>
+</tr>
+<tr>
+<td>country_of_risk_name</td>
+<td><a href="#string">string</a></td>
+<td>Наименование страны эмитента.</td>
+</tr>
+<tr>
+<td>sector</td>
+<td><a href="#string">string</a></td>
+<td>Сектор экономики.</td>
+</tr>
+<tr>
+<td>expiration_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата истечения срока.</td>
+</tr>
+<tr>
+<td>trading_status</td>
+<td><a href="#securitytradingstatus">SecurityTradingStatus</a></td>
+<td>Текущий режим торгов инструмента.</td>
+</tr>
+<tr>
+<td>otc_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак внебиржевой ценной бумаги.</td>
+</tr>
+<tr>
+<td>buy_available_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности для покупки.</td>
+</tr>
+<tr>
+<td>sell_available_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности для продажи.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="stock">Stock</h3>
+<p>Объект передачи информации об акции.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>ticker</td>
+<td><a href="#string">string</a></td>
+<td>Тикер инструмента.</td>
+</tr>
+<tr>
+<td>class_code</td>
+<td><a href="#string">string</a></td>
+<td>Класс-код (секция торгов).</td>
+</tr>
+<tr>
+<td>isin</td>
+<td><a href="#string">string</a></td>
+<td>Isin-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>lot</td>
+<td><a href="#int32">int32</a></td>
+<td>Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру <em>lot</em>. Подробнее: <a href="/doctest/glossary#lot">лот</a></td>
+</tr>
+<tr>
+<td>currency</td>
+<td><a href="#string">string</a></td>
+<td>Валюта расчётов.</td>
+</tr>
+<tr>
+<td>klong</td>
+<td><a href="#double">double</a></td>
+<td>Коэффициент ставки риска длинной позиции по инструменту.</td>
+</tr>
+<tr>
+<td>kshort</td>
+<td><a href="#double">double</a></td>
+<td>Коэффициент ставки риска короткой позиции по инструменту.</td>
+</tr>
+<tr>
+<td>dlong</td>
+<td><a href="#double">double</a></td>
+<td>Ставка риска минимальной маржи в лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
+</tr>
+<tr>
+<td>dshort</td>
+<td><a href="#double">double</a></td>
+<td>Ставка риска минимальной маржи в шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
+</tr>
+<tr>
+<td>dlong_min</td>
+<td><a href="#double">double</a></td>
+<td>Ставка риска начальной маржи в лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
+</tr>
+<tr>
+<td>dshort_min</td>
+<td><a href="#double">double</a></td>
+<td>Ставка риска начальной маржи в шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
+</tr>
+<tr>
+<td>short_enabled_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности для операций в шорт.</td>
+</tr>
+<tr>
+<td>name</td>
+<td><a href="#string">string</a></td>
+<td>Название инструмента.</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td><a href="#string">string</a></td>
+<td>Торговая площадка.</td>
+</tr>
+<tr>
+<td>ipo_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата IPO акции в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>issue_size</td>
+<td><a href="#double">double</a></td>
+<td>Размер выпуска.</td>
+</tr>
+<tr>
+<td>country_of_risk</td>
+<td><a href="#string">string</a></td>
+<td>Код страны эмитента.</td>
+</tr>
+<tr>
+<td>country_of_risk_name</td>
+<td><a href="#string">string</a></td>
+<td>Наименование страны эмитента.</td>
+</tr>
+<tr>
+<td>sector</td>
+<td><a href="#string">string</a></td>
+<td>Сектор экономики.</td>
+</tr>
+<tr>
+<td>issue_size_plan</td>
+<td><a href="#float">float</a></td>
+<td>Плановый размер выпуска.</td>
+</tr>
+<tr>
+<td>nominal</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Номинал.</td>
+</tr>
+<tr>
+<td>trading_status</td>
+<td><a href="#securitytradingstatus">SecurityTradingStatus</a></td>
+<td>Текущий режим торгов инструмента.</td>
+</tr>
+<tr>
+<td>otc_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак внебиржевой ценной бумаги.</td>
+</tr>
+<tr>
+<td>buy_available_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности для покупки.</td>
+</tr>
+<tr>
+<td>sell_available_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности для продажи.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="getaccruedinterestsrequest">GetAccruedInterestsRequest</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента</td>
+</tr>
+<tr>
+<td>from</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Начало запрашиваемого периода в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>to</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Окончание запрашиваемого периода в часовом поясе UTC</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="getaccruedinterestsresponse">GetAccruedInterestsResponse</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>accrued_interests</td>
+<td>Массив объектов <a href="#accruedinterest">AccruedInterest</a></td>
+<td>Массив операций начисления купонов</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="accruedinterest">AccruedInterest</h3>
+<p>Операция начисления купонов</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата и время выплаты в часовом поясе UTC</td>
+</tr>
+<tr>
+<td>value</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Величина выплаты</td>
+</tr>
+<tr>
+<td>value_percent</td>
+<td><a href="#float">float</a></td>
+<td>Величина выплаты в процентах от номинала</td>
+</tr>
+<tr>
+<td>nominal</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Номинал облигации</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="getfuturesmarginrequest">GetFuturesMarginRequest</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="getfuturesmarginresponse">GetFuturesMarginResponse</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>initial_margin_on_buy</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Гарантийное обеспечение при покупке</td>
+</tr>
+<tr>
+<td>initial_margin_on_sell</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Гарантийное обеспечение при продаже</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+<!-- end messages -->
+
+<h2 id="enums">Enums</h2>
+<h3 id="instrumentidtype">InstrumentIdType</h3>
+<p>Тип идентификатора инструмента. Подробнее об идентификации инструментов: <a href="https://tinkoffcreditsystems.github.io/invest-openapi/faq_identification/">Идентификация инструментов</a></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INSTRUMENT_ID_UNSPECIFIED</td>
+<td>0</td>
+<td>Значение не определено.</td>
+</tr>
+<tr>
+<td>INSTRUMENT_ID_TYPE_FIGI</td>
+<td>1</td>
+<td>Figi.</td>
+</tr>
+<tr>
+<td>INSTRUMENT_ID_TYPE_TICKER</td>
+<td>2</td>
+<td>Ticker.</td>
+</tr>
+<tr>
+<td>INSTRUMENT_ID_TYPE_ISIN</td>
+<td>3</td>
+<td>Isin.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="instrumentstatus">InstrumentStatus</h3>
+<p>Статус запрашиваемых инструментов.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INSTRUMENT_STATUS_UNSPECIFIED</td>
+<td>0</td>
+<td>Значение не определено.</td>
+</tr>
+<tr>
+<td>INSTRUMENT_STATUS_BASE</td>
+<td>1</td>
+<td>Базовый список инструментов (по умолчанию).</td>
+</tr>
+<tr>
+<td>INSTRUMENT_STATUS_QUALIFIED</td>
+<td>2</td>
+<td>Список инструментов, доступный только квалифицированным инвесторам.</td>
+</tr>
+<tr>
+<td>INSTRUMENT_STATUS_ALL</td>
+<td>3</td>
+<td>Список всех инструментов.</td>
+</tr>
+</tbody>
+</table>
+<!-- range .Enums -->
+<!-- range HasServices -->
+<!-- range .Files -->
+
+<h2 id="_3">Нестандартные типы данных</h2>
+<h3 id="moneyvalue">MoneyValue</h3>
+<p>Денежная сумма в определенной валюте</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>currency</td>
+<td><a href="#string">string</a></td>
+<td>Строковый ISO-код валюты</td>
+</tr>
+<tr>
+<td>units</td>
+<td><a href="#int64">int64</a></td>
+<td>Целая часть суммы, может быть отрицательным числом</td>
+</tr>
+<tr>
+<td>nano</td>
+<td><a href="#int32">int32</a></td>
+<td>Дробная часть суммы, может быть отрицательным числом</td>
+</tr>
+</tbody>
+</table>
+<h3 id="quotation">Quotation</h3>
+<p>Котировка - денежная сумма без указания валюты</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>units</td>
+<td><a href="#int64">int64</a></td>
+<td>Целая часть суммы, может быть отрицательным числом</td>
+</tr>
+<tr>
+<td>nano</td>
+<td><a href="#int32">int32</a></td>
+<td>Дробная часть суммы, может быть отрицательным числом</td>
+</tr>
+</tbody>
+</table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../head-instruments/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Описание" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Описание
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../head-orders/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Описание" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Описание
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e # \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.29db7785.min.js"></script>
+      
+    
+  </body>
+</html>

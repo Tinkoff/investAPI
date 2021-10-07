@@ -13,7 +13,7 @@
 
 ##Метод выставления стоп-заявки 
 
-Для выставления стоп-заявки используется метод [PostStopOrder](/doctest/stoporders#poststoporder).
+Для выставления стоп-заявки используется метод [PostStopOrder](/investAPI/stoporders#poststoporder).
 
 Обратите внимание на параметр *expiration_type*, он отвечает за время жизни (экспирации) заявки. Например,
 значение GoodTillCancel говорит, что такая заявка будет активна до отмены, а GoodTillDate — что заявка
@@ -21,10 +21,10 @@
 
 ##Метод получения списка активных стоп-заявок
 
-Для получения полного списка стоп-заявок рекомендуется использовать метод [GetStopOrders](/doctest/stoporders#getstoporders).
+Для получения полного списка стоп-заявок рекомендуется использовать метод [GetStopOrders](/investAPI/stoporders#getstoporders).
 Обратите внимание, что метод вернёт в том числе стоп-заявки, которые были уже конвертированы в 
 реальные торговые поручения (параметр *activation_date_time*). 
 
 ##Метод отмены стоп-заявки
 
-Для отмены активной стоп-заявки используется метод [CancelStopOrder](/doctest/stoporders#cancelstoporder).
+Для отмены активной стоп-заявки используется метод [CancelStopOrder](/investAPI/stoporders#cancelstoporder).

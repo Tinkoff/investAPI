@@ -1,7 +1,7 @@
 #Начало работы
 
 ##Что такое TINKOFF INVEST API
-**TINKOFF INVEST API** — это [gRPC-интерфейс](/doctest/grpc) для взаимодействия с торговой платформой 
+**TINKOFF INVEST API** — это [gRPC-интерфейс](/investAPI/grpc) для взаимодействия с торговой платформой 
 [Тинькофф Инвестиции](https://www.tinkoff.ru/invest/).
 
 TINKOFF INVEST API позволяет вам:
@@ -16,7 +16,7 @@ unary-запросами;
 Для использования TINKOFF INVEST API требуется: 
 
 * быть клиентом [Тинькофф Инвестиций](https://www.tinkoff.ru/invest/);
-* получить [токен доступа](/doctest/token).
+* получить [токен доступа](/investAPI/token).
 
 ##SDK для разработки с использованием Public API
 Для упрощения разработки торгового робота разработан ряд официальных и неофициальных SDK на целом 

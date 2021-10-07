@@ -10,7 +10,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.3">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
     
     
       
@@ -291,6 +291,18 @@
     <li class="md-nav__item">
       <a href="../markets/" class="md-nav__link">
         Торговые площадки и режимы торгов
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../load_history/" class="md-nav__link">
+        Порядок работы с историческими данными
       </a>
     </li>
   
@@ -1361,60 +1373,60 @@
 <p>Bidirectional stream работы со сделками</p>
 <ul>
 <li>
-<p>Тело запроса - <a href="#ordersstreamrequest">OrdersStreamRequest</a></p>
+<p>Тело запроса — <a href="#ordersstreamrequest">OrdersStreamRequest</a></p>
 </li>
 <li>
-<p>Тело ответа - <a href="#ordersstreamresponse">OrdersStreamResponse</a></p>
+<p>Тело ответа — <a href="#ordersstreamresponse">OrdersStreamResponse</a></p>
 </li>
 </ul>
 <h3 id="postorder">PostOrder</h3>
 <p>Метод выставления заявки.</p>
 <ul>
 <li>
-<p>Тело запроса - <a href="#postorderrequest">PostOrderRequest</a></p>
+<p>Тело запроса — <a href="#postorderrequest">PostOrderRequest</a></p>
 </li>
 <li>
-<p>Тело ответа - <a href="#postorderresponse">PostOrderResponse</a></p>
+<p>Тело ответа — <a href="#postorderresponse">PostOrderResponse</a></p>
 </li>
 </ul>
 <h3 id="cancelorder">CancelOrder</h3>
 <p>Метод отмены биржевой заявки.</p>
 <ul>
 <li>
-<p>Тело запроса - <a href="#cancelorderrequest">CancelOrderRequest</a></p>
+<p>Тело запроса — <a href="#cancelorderrequest">CancelOrderRequest</a></p>
 </li>
 <li>
-<p>Тело ответа - <a href="#cancelorderresponse">CancelOrderResponse</a></p>
+<p>Тело ответа — <a href="#cancelorderresponse">CancelOrderResponse</a></p>
 </li>
 </ul>
 <h3 id="getorderstate">GetOrderState</h3>
 <p>Метод получения статуса торгового поручения.</p>
 <ul>
 <li>
-<p>Тело запроса - <a href="#getorderstaterequest">GetOrderStateRequest</a></p>
+<p>Тело запроса — <a href="#getorderstaterequest">GetOrderStateRequest</a></p>
 </li>
 <li>
-<p>Тело ответа - <a href="#orderstate">OrderState</a></p>
+<p>Тело ответа — <a href="#orderstate">OrderState</a></p>
 </li>
 </ul>
 <h3 id="getamountraw">GetAmountRaw</h3>
 <p>Метод расчёта полной стоимости заявки.</p>
 <ul>
 <li>
-<p>Тело запроса - <a href="#getamountrawrequest">GetAmountRawRequest</a></p>
+<p>Тело запроса — <a href="#getamountrawrequest">GetAmountRawRequest</a></p>
 </li>
 <li>
-<p>Тело ответа - <a href="#getamountrawresponse">GetAmountRawResponse</a></p>
+<p>Тело ответа — <a href="#getamountrawresponse">GetAmountRawResponse</a></p>
 </li>
 </ul>
 <h3 id="getorders">GetOrders</h3>
 <p>Метод получения списка активных заявок по счёту.</p>
 <ul>
 <li>
-<p>Тело запроса - <a href="#getordersrequest">GetOrdersRequest</a></p>
+<p>Тело запроса — <a href="#getordersrequest">GetOrdersRequest</a></p>
 </li>
 <li>
-<p>Тело ответа - <a href="#getordersresponse">GetOrdersResponse</a></p>
+<p>Тело ответа — <a href="#getordersresponse">GetOrdersResponse</a></p>
 </li>
 </ul>
 <!-- range .Methods -->
@@ -1506,7 +1518,7 @@
 </tr>
 <tr>
 <td>quantity</td>
-<td><a href="#float">float</a></td>
+<td><a href="#int32">int32</a></td>
 <td>Количество лотов.</td>
 </tr>
 <tr>
@@ -1560,28 +1572,28 @@
 </tr>
 <tr>
 <td>lots_requested</td>
-<td><a href="#float">float</a></td>
+<td><a href="#int32">int32</a></td>
 <td>Запрошено лотов.</td>
 </tr>
 <tr>
 <td>lots_executed</td>
-<td><a href="#float">float</a></td>
+<td><a href="#int32">int32</a></td>
 <td>Исполнено лотов.</td>
 </tr>
 <tr>
 <td>initial_order_price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Начальная цена заявки.</td>
+<td>Начальная цена заявки. Произведение количества запрошенных лотов на цену.</td>
 </tr>
 <tr>
 <td>executed_order_price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Исполненная цена заявки.</td>
+<td>Исполненная цена заявки. Произведение средней цены покупки на количество лотов.</td>
 </tr>
 <tr>
 <td>total_order_amount</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Итоговая стоимость заявки.</td>
+<td>Итоговая стоимость заявки, включающая все комиссии.</td>
 </tr>
 <tr>
 <td>initial_commission</td>
@@ -1591,7 +1603,12 @@
 <tr>
 <td>executed_commission</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Фактическая комиссия.</td>
+<td>Фактическая комиссия по итогам исполнения заявки.</td>
+</tr>
+<tr>
+<td>aci_value</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Значение НКД (накопленного купонного дохода) на дату. Подробнее: <a href="/doctest/head-orders#coupon">НКД при выставлении торговых поручений</a></td>
 </tr>
 <tr>
 <td>figi</td>
@@ -1616,7 +1633,7 @@
 <tr>
 <td>message</td>
 <td><a href="#string">string</a></td>
-<td>Дополнительные данные об исполнении заявки</td>
+<td>Дополнительные данные об исполнении заявки.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -1669,7 +1686,7 @@
 <tr>
 <td>time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата и время отмены заявки в часовом поясе UTC</td>
+<td>Дата и время отмены заявки в часовом поясе UTC.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -1779,6 +1796,11 @@
 <td>Размер сервисной комиссии.</td>
 </tr>
 <tr>
+<td>aci_value</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Значение НКД (накопленного купонного дохода) на дату. Подробнее: <a href="/doctest/head-orders#coupon">НКД при выставлении торговых поручений</a></td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -1868,17 +1890,17 @@
 <tr>
 <td>initial_order_price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Начальная цена заявки.</td>
+<td>Начальная цена заявки. Произведение количества запрошенных лотов на цену.</td>
 </tr>
 <tr>
 <td>executed_order_price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Исполненная цена заявки.</td>
+<td>Исполненная цена заявки. Произведение средней цены покупки на количество лотов.</td>
 </tr>
 <tr>
 <td>total_order_amount</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Итоговая стоимость заявки.</td>
+<td>Итоговая стоимость заявки, включающая все комиссии.</td>
 </tr>
 <tr>
 <td>average_position_price</td>
@@ -1888,12 +1910,12 @@
 <tr>
 <td>initial_commission</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Начальная комиссия.</td>
+<td>Начальная комиссия. Комиссия, рассчитанная на момент подачи заявки.</td>
 </tr>
 <tr>
 <td>executed_commission</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Фактическая комиссия.</td>
+<td>Фактическая комиссия по итогам исполнения заявки.</td>
 </tr>
 <tr>
 <td>figi</td>
@@ -1903,12 +1925,12 @@
 <tr>
 <td>direction</td>
 <td><a href="#orderdirection">OrderDirection</a></td>
-<td>Направление заяки.</td>
+<td>Направление заявки.</td>
 </tr>
 <tr>
 <td>initial_security_price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Начальная цена инструмента.</td>
+<td>Начальная цена инструмента. Цена инструмента на момент выставления заявки.</td>
 </tr>
 <tr>
 <td>stages</td>
@@ -1967,7 +1989,7 @@
 <tr>
 <td>quantity</td>
 <td><a href="#float">float</a></td>
-<td>Количество.</td>
+<td>Количество лотов.</td>
 </tr>
 <tr>
 <td>trade_id</td>
@@ -2060,7 +2082,7 @@
 <tr>
 <td>EXECUTION_REPORT_STATUS_FILL</td>
 <td>1</td>
-<td>Исполняется</td>
+<td>Исполнена</td>
 </tr>
 <tr>
 <td>EXECUTION_REPORT_STATUS_REJECTED</td>
@@ -2213,7 +2235,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e # \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.29db7785.min.js"></script>
+      <script src="../assets/javascripts/bundle.febc23d1.min.js"></script>
       
     
   </body>

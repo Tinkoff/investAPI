@@ -6,15 +6,15 @@
 количество счетов, которые существуют только в песочнице и не имеют отношения к реальным
 торгам на бирже. 
 
-* [OpenSandboxAccount](/doctest/sandbox#opensandboxaccount) — метод создания специального счёта песочницы;
-* [SandboxPayIn](/doctest/sandbox#sandboxpayin) — пополнение баланса счёта песочницы;
-* [CloseSandboxAccount](/doctest/sandbox#closesandboxaccount) — метод закрытия счёта в песочнице.
+* [OpenSandboxAccount](/investAPI/sandbox#opensandboxaccount) — метод создания специального счёта песочницы;
+* [SandboxPayIn](/investAPI/sandbox#sandboxpayin) — пополнение баланса счёта песочницы;
+* [CloseSandboxAccount](/investAPI/sandbox#closesandboxaccount) — метод закрытия счёта в песочнице.
 
 
 Обратите внимание, что пополнение счёта песочницы возможно только в рублях. Для
 выполнения операций с другой валютой расчётов, следует эту валюту сперва купить.
 
-Для получения списка своих счетов в песочнице используется метод [getAccount](/doctest/sandbox#getaccounts).
+Для получения списка своих счетов в песочнице используется метод [getAccount](/investAPI/sandbox#getaccounts).
 
 **Важно!** Все счета в песочнице являются виртуальными и могут быть удалены в любой
 момент времени. Если созданный ранее счёт не найден, создайте, пожалуйста, новый. 
@@ -23,9 +23,9 @@
 
 Методы получения операций и портфеля аналогичны таким же методам основных сервисов:
 
-* [getSandboxOperations](/doctest/sandbox#getsandboxoperations) — получение операций по счёту;
-* [getSandboxPortfolio](/doctest/sandbox#getsandboxportfolio) — получение портфолио по счёту;
-* [getSandboxPositions](/doctest/sandbox#getsandboxpositions) — получение списка позиций по счёту. 
+* [getSandboxOperations](/investAPI/sandbox#getsandboxoperations) — получение операций по счёту;
+* [getSandboxPortfolio](/investAPI/sandbox#getsandboxportfolio) — получение портфолио по счёту;
+* [getSandboxPositions](/investAPI/sandbox#getsandboxpositions) — получение списка позиций по счёту. 
 
 Обратите, что для методов песочницы не рассчитываются некоторые статистические параметры
 портфеля, такие как относительная и абсолютные доходности и т.п.
@@ -35,10 +35,10 @@
 Параметры методов выставления, отмены, получения статуса торгового поручения в 
 песочнице аналогичны методам основной работы с TINKOFF INVEST API. 
 
-* [postSandboxOrder](/doctest/sandbox#postsandboxorder) — выставление торгового поручения;
-* [getSandboxOrderState](/doctest/sandbox#getsandboxorderstate) — получение статуса торгового поручения;
-* [cancelSandboxOrder](/doctest/sandbox#cancelsandboxorder) — отмена выставленного торгового поручения;
-* [getSandboxOrders](/doctest/sandbox#getsandboxorders) — получение списка торговых поручений по счёту;
+* [postSandboxOrder](/investAPI/sandbox#postsandboxorder) — выставление торгового поручения;
+* [getSandboxOrderState](/investAPI/sandbox#getsandboxorderstate) — получение статуса торгового поручения;
+* [cancelSandboxOrder](/investAPI/sandbox#cancelsandboxorder) — отмена выставленного торгового поручения;
+* [getSandboxOrders](/investAPI/sandbox#getsandboxorders) — получение списка торговых поручений по счёту;
 
 <a name="orderexecute"></a>
 ###Алгоритм исполнения торговых поручений в песочнице

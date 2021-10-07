@@ -10,7 +10,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.3">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
     
     
       
@@ -291,6 +291,18 @@
     <li class="md-nav__item">
       <a href="../markets/" class="md-nav__link">
         Торговые площадки и режимы торгов
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../load_history/" class="md-nav__link">
+        Порядок работы с историческими данными
       </a>
     </li>
   
@@ -767,325 +779,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#marketdatastream" class="md-nav__link">
-    MarketDataStream
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Сообщения методов
-  </a>
-  
-    <nav class="md-nav" aria-label="Сообщения методов">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#marketdatarequest" class="md-nav__link">
-    MarketDataRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#marketdataresponse" class="md-nav__link">
-    MarketDataResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscribecandlesrequest" class="md-nav__link">
-    SubscribeCandlesRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#candleinstrument" class="md-nav__link">
-    CandleInstrument
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscribecandlesresponse" class="md-nav__link">
-    SubscribeCandlesResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#candlesubscription" class="md-nav__link">
-    CandleSubscription
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscribeorderbookrequest" class="md-nav__link">
-    SubscribeOrderBookRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#orderbookinstrument" class="md-nav__link">
-    OrderBookInstrument
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscribeorderbookresponse" class="md-nav__link">
-    SubscribeOrderBookResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#orderbooksubscription" class="md-nav__link">
-    OrderBookSubscription
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscribetradesrequest" class="md-nav__link">
-    SubscribeTradesRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tradeinstrument" class="md-nav__link">
-    TradeInstrument
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscribetradesresponse" class="md-nav__link">
-    SubscribeTradesResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tradesubscription" class="md-nav__link">
-    TradeSubscription
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscribeinforequest" class="md-nav__link">
-    SubscribeInfoRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#infoinstrument" class="md-nav__link">
-    InfoInstrument
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscribeinforesponse" class="md-nav__link">
-    SubscribeInfoResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#infosubscription" class="md-nav__link">
-    InfoSubscription
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#candle" class="md-nav__link">
-    Candle
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#orderbook" class="md-nav__link">
-    OrderBook
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#order" class="md-nav__link">
-    Order
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#trade" class="md-nav__link">
-    Trade
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tradingstatus" class="md-nav__link">
-    TradingStatus
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getcandlesrequest" class="md-nav__link">
-    GetCandlesRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getcandlesresponse" class="md-nav__link">
-    GetCandlesResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#historiccandle" class="md-nav__link">
-    HistoricCandle
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getlastpricesrequest" class="md-nav__link">
-    GetLastPricesRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getlastpricesresponse" class="md-nav__link">
-    GetLastPricesResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lastprice" class="md-nav__link">
-    LastPrice
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getorderbookrequest" class="md-nav__link">
-    GetOrderBookRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getorderbookresponse" class="md-nav__link">
-    GetOrderBookResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gettradingstatusrequest" class="md-nav__link">
-    GetTradingStatusRequest
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enums" class="md-nav__link">
-    Enums
-  </a>
-  
-    <nav class="md-nav" aria-label="Enums">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#subscriptionaction" class="md-nav__link">
-    SubscriptionAction
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscriptioninterval" class="md-nav__link">
-    SubscriptionInterval
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscriptionstatus" class="md-nav__link">
-    SubscriptionStatus
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tradedirection" class="md-nav__link">
-    TradeDirection
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#candleinterval" class="md-nav__link">
-    CandleInterval
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    Нестандартные типы данных
-  </a>
-  
-    <nav class="md-nav" aria-label="Нестандартные типы данных">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#moneyvalue" class="md-nav__link">
-    MoneyValue
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#quotation" class="md-nav__link">
-    Quotation
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1289,325 +982,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#marketdatastream" class="md-nav__link">
-    MarketDataStream
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Сообщения методов
-  </a>
-  
-    <nav class="md-nav" aria-label="Сообщения методов">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#marketdatarequest" class="md-nav__link">
-    MarketDataRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#marketdataresponse" class="md-nav__link">
-    MarketDataResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscribecandlesrequest" class="md-nav__link">
-    SubscribeCandlesRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#candleinstrument" class="md-nav__link">
-    CandleInstrument
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscribecandlesresponse" class="md-nav__link">
-    SubscribeCandlesResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#candlesubscription" class="md-nav__link">
-    CandleSubscription
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscribeorderbookrequest" class="md-nav__link">
-    SubscribeOrderBookRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#orderbookinstrument" class="md-nav__link">
-    OrderBookInstrument
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscribeorderbookresponse" class="md-nav__link">
-    SubscribeOrderBookResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#orderbooksubscription" class="md-nav__link">
-    OrderBookSubscription
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscribetradesrequest" class="md-nav__link">
-    SubscribeTradesRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tradeinstrument" class="md-nav__link">
-    TradeInstrument
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscribetradesresponse" class="md-nav__link">
-    SubscribeTradesResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tradesubscription" class="md-nav__link">
-    TradeSubscription
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscribeinforequest" class="md-nav__link">
-    SubscribeInfoRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#infoinstrument" class="md-nav__link">
-    InfoInstrument
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscribeinforesponse" class="md-nav__link">
-    SubscribeInfoResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#infosubscription" class="md-nav__link">
-    InfoSubscription
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#candle" class="md-nav__link">
-    Candle
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#orderbook" class="md-nav__link">
-    OrderBook
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#order" class="md-nav__link">
-    Order
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#trade" class="md-nav__link">
-    Trade
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tradingstatus" class="md-nav__link">
-    TradingStatus
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getcandlesrequest" class="md-nav__link">
-    GetCandlesRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getcandlesresponse" class="md-nav__link">
-    GetCandlesResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#historiccandle" class="md-nav__link">
-    HistoricCandle
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getlastpricesrequest" class="md-nav__link">
-    GetLastPricesRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getlastpricesresponse" class="md-nav__link">
-    GetLastPricesResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lastprice" class="md-nav__link">
-    LastPrice
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getorderbookrequest" class="md-nav__link">
-    GetOrderBookRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getorderbookresponse" class="md-nav__link">
-    GetOrderBookResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gettradingstatusrequest" class="md-nav__link">
-    GetTradingStatusRequest
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enums" class="md-nav__link">
-    Enums
-  </a>
-  
-    <nav class="md-nav" aria-label="Enums">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#subscriptionaction" class="md-nav__link">
-    SubscriptionAction
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscriptioninterval" class="md-nav__link">
-    SubscriptionInterval
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscriptionstatus" class="md-nav__link">
-    SubscriptionStatus
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tradedirection" class="md-nav__link">
-    TradeDirection
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#candleinterval" class="md-nav__link">
-    CandleInterval
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    Нестандартные типы данных
-  </a>
-  
-    <nav class="md-nav" aria-label="Нестандартные типы данных">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#moneyvalue" class="md-nav__link">
-    MoneyValue
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#quotation" class="md-nav__link">
-    Quotation
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1639,56 +1013,60 @@
 <p>Метод запроса исторических свечей по инструменту</p>
 <ul>
 <li>
-<p>Тело запроса - <a href="#getcandlesrequest">GetCandlesRequest</a></p>
+<p>Тело запроса — <a href="#getcandlesrequest">GetCandlesRequest</a></p>
 </li>
 <li>
-<p>Тело ответа - <a href="#getcandlesresponse">GetCandlesResponse</a></p>
+<p>Тело ответа — <a href="#getcandlesresponse">GetCandlesResponse</a></p>
 </li>
 </ul>
 <h3 id="getlastprices">GetLastPrices</h3>
 <p>Метод запроса последних цен по инструментам</p>
 <ul>
 <li>
-<p>Тело запроса - <a href="#getlastpricesrequest">GetLastPricesRequest</a></p>
+<p>Тело запроса — <a href="#getlastpricesrequest">GetLastPricesRequest</a></p>
 </li>
 <li>
-<p>Тело ответа - <a href="#getlastpricesresponse">GetLastPricesResponse</a></p>
+<p>Тело ответа — <a href="#getlastpricesresponse">GetLastPricesResponse</a></p>
 </li>
 </ul>
 <h3 id="getorderbook">GetOrderBook</h3>
 <p>Метод получения стакана по инструменту</p>
 <ul>
 <li>
-<p>Тело запроса - <a href="#getorderbookrequest">GetOrderBookRequest</a></p>
+<p>Тело запроса — <a href="#getorderbookrequest">GetOrderBookRequest</a></p>
 </li>
 <li>
-<p>Тело ответа - <a href="#getorderbookresponse">GetOrderBookResponse</a></p>
+<p>Тело ответа — <a href="#getorderbookresponse">GetOrderBookResponse</a></p>
 </li>
 </ul>
 <h3 id="gettradingstatus">GetTradingStatus</h3>
 <p>Метод запроса статуса торгов по инструментам</p>
 <ul>
 <li>
-<p>Тело запроса - <a href="#gettradingstatusrequest">GetTradingStatusRequest</a></p>
+<p>Тело запроса — <a href="#gettradingstatusrequest">GetTradingStatusRequest</a></p>
 </li>
 <li>
-<p>Тело ответа - <a href="#tradingstatus">TradingStatus</a></p>
+<p>Тело ответа — <a href="#tradingstatus">TradingStatus</a></p>
 </li>
 </ul>
+<!-- range .Methods -->
+
+<h1 id="marketdatastreamservice">MarketDataStreamService</h1>
+<h2 id="_2">Методы сервиса</h2>
 <h3 id="marketdatastream">MarketDataStream</h3>
 <p>Двусторонний стрим предоставления биржевой информации</p>
 <ul>
 <li>
-<p>Тело запроса - <a href="#marketdatarequest">MarketDataRequest</a></p>
+<p>Тело запроса — <a href="#marketdatarequest">MarketDataRequest</a></p>
 </li>
 <li>
-<p>Тело ответа - <a href="#marketdataresponse">MarketDataResponse</a></p>
+<p>Тело ответа — <a href="#marketdataresponse">MarketDataResponse</a></p>
 </li>
 </ul>
 <!-- range .Methods -->
 <!-- range .Services -->
 
-<h2 id="_2">Сообщения методов</h2>
+<h2 id="_3">Сообщения методов</h2>
 <h3 id="marketdatarequest">MarketDataRequest</h3>
 <p>Запрос подписки или отписки на определённые биржевые данные</p>
 <table>
@@ -1861,7 +1239,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса</td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="https://oridisboss.github.io/doctest/grpc#tracking">tracking_id</a></td>
 </tr>
 <tr>
 <td>candles_subscriptions</td>
@@ -1983,7 +1361,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса</td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="https://oridisboss.github.io/doctest/grpc#tracking">tracking_id</a></td>
 </tr>
 <tr>
 <td>order_book_subscriptions</td>
@@ -2100,7 +1478,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса</td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="https://oridisboss.github.io/doctest/grpc#tracking">tracking_id</a></td>
 </tr>
 <tr>
 <td>trade_subscriptions</td>
@@ -2212,7 +1590,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса</td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="https://oridisboss.github.io/doctest/grpc#tracking">tracking_id</a></td>
 </tr>
 <tr>
 <td>info_subscriptions</td>
@@ -2281,27 +1659,27 @@
 <tr>
 <td>open</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена открытия</td>
+<td>Цена открытия за 1 лот</td>
 </tr>
 <tr>
 <td>high</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Максимальная цена</td>
+<td>Максимальная цена за 1 лот</td>
 </tr>
 <tr>
 <td>low</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Минимальная цена</td>
+<td>Минимальная цена за 1 лот</td>
 </tr>
 <tr>
 <td>close</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена закрытия</td>
+<td>Цена закрытия за 1 лот</td>
 </tr>
 <tr>
 <td>value</td>
 <td><a href="#int64">int64</a></td>
-<td>Объём сделок</td>
+<td>Объём сделок в лотах</td>
 </tr>
 <tr>
 <td>time</td>
@@ -2340,7 +1718,7 @@
 <tr>
 <td>is_consistent</td>
 <td><a href="#bool">bool</a></td>
-<td>Флаг консистентности стакана</td>
+<td>Флаг консистентности стакана. <strong>false</strong> значит не все заявки попали в стакан по причинам сетевых задержек или нарушения порядка доставки.</td>
 </tr>
 <tr>
 <td>bids</td>
@@ -2374,12 +1752,12 @@
 <tr>
 <td>price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена</td>
+<td>Цена за 1 лот</td>
 </tr>
 <tr>
 <td>quantity</td>
 <td><a href="#int64">int64</a></td>
-<td>Количество</td>
+<td>Количество в лотах</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2413,7 +1791,7 @@
 <tr>
 <td>price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена</td>
+<td>Цена за 1 лот</td>
 </tr>
 <tr>
 <td>quantity</td>
@@ -2423,7 +1801,7 @@
 <tr>
 <td>timestamp</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Время сделки в часовом поясе UTC</td>
+<td>Время сделки в часовом поясе UTC по времени биржи</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2452,7 +1830,7 @@
 <tr>
 <td>trading_status</td>
 <td><a href="#securitytradingstatus">SecurityTradingStatus</a></td>
-<td>Статус</td>
+<td>Статус торговли инструментом</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2539,37 +1917,37 @@
 <tr>
 <td>open</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена открытия</td>
+<td>Цена открытия за 1 лот</td>
 </tr>
 <tr>
 <td>high</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Максимальная цена</td>
+<td>Максимальная цена за 1 лот</td>
 </tr>
 <tr>
 <td>low</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Минимальная цена</td>
+<td>Минимальная цена за 1 лот</td>
 </tr>
 <tr>
 <td>close</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена закрытия</td>
+<td>Цена закрытия за 1 лот</td>
 </tr>
 <tr>
 <td>volume</td>
 <td><a href="#int64">int64</a></td>
-<td>Объём торгов</td>
+<td>Объём торгов в лотах</td>
 </tr>
 <tr>
 <td>time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Время свечи в формате UTC</td>
+<td>Время свечи в часовом поясе UTC</td>
 </tr>
 <tr>
 <td>is_complete</td>
 <td><a href="#bool">bool</a></td>
-<td>Признак завершённости свечи</td>
+<td>Признак завершённости свечи. <strong>false</strong> значит, свеча за текущие интервал ещё сформирована не полностью</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2593,7 +1971,7 @@
 <tr>
 <td>figi</td>
 <td>Массив объектов <a href="#string">string</a></td>
-<td>Массив идентификаторов (Figi) инструментов</td>
+<td>Массив figi-идентификаторов инструментов</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2646,12 +2024,12 @@
 <tr>
 <td>price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Последняя цена</td>
+<td>Последняя цена за 1 лот</td>
 </tr>
 <tr>
 <td>time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Время получения последней цены</td>
+<td>Время получения последней цены в часовом поясе UTC по времени биржи</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2838,22 +2216,22 @@
 <tr>
 <td>SUBSCRIPTION_STATUS_SUBSCRIPTION_STATUS_IS_INVALID</td>
 <td>3</td>
-<td>Некорректный статус подписки</td>
+<td>Некорректный статус подписки, список возможных значений: <a href="/doctest/marketdata#subscriptionaction">SubscriptionAction</a></td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_STATUS_DEPTH_IS_INVALID</td>
 <td>4</td>
-<td>Некорректная глубина стакана</td>
+<td>Некорректная глубина стакана, требуется указать целое число от 1 до 50</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID</td>
 <td>5</td>
-<td>Некорректный интервал свечей</td>
+<td>Некорректный интервал свечей, список возможных значений: <a href="/doctest/marketdata#subscriptioninterval">SubscriptionInterval</a></td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED</td>
 <td>6</td>
-<td>Превышен лимит подписок в рамках стрима</td>
+<td>Превышен лимит подписок в рамках стрима, подробнее: <a href="/doctest/limits/">Лимитная политика</a></td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_STATUS_INTERNAL_ERROR</td>
@@ -2935,7 +2313,7 @@
 <!-- range HasServices -->
 <!-- range .Files -->
 
-<h2 id="_3">Нестандартные типы данных</h2>
+<h2 id="_4">Нестандартные типы данных</h2>
 <h3 id="moneyvalue">MoneyValue</h3>
 <p>Денежная сумма в определенной валюте</p>
 <table>
@@ -3060,7 +2438,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e # \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.29db7785.min.js"></script>
+      <script src="../assets/javascripts/bundle.febc23d1.min.js"></script>
       
     
   </body>

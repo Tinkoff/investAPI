@@ -32,7 +32,7 @@ isValidPrice(10.16, 0.1) // false
 
 ##Валюты в TINKOFF INVEST API
 
-Получить список доступных валют можно при помощи метода [getInstruments/currencies](/doctest/instruments#currencies).
+Получить список доступных валют можно при помощи метода [getInstruments/currencies](/investAPI/instruments#currencies).
 
 Обратите внимание, что лотность валют ограничена лотностью, которая предоставляет биржа. Например, операции
 с Евро и Долларами возможны только на количества кратные 1000.

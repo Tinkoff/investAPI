@@ -1001,8 +1001,8 @@
 <p><strong>Обратите внимание, что в некоторых случаях может возникнуть ситуация, когда limitDown &gt; limitUp. Это 
 нормально, т.к. limitUp ограничивает на покупку, а limitDown - на продажу, потому ситуация 
 limitDown &gt; limitUp не является аномальной.</strong></p>
-<p>Выставить лимитное торговое поручение (заявку) можно при помощи unary-метода <a href="/doctest/orders#postorder">postOrder</a>
-или при использовании bidirectional-stream <a href="/doctest/orders#ordersstream">OrdersStream</a>.</p>
+<p>Выставить лимитное торговое поручение (заявку) можно при помощи unary-метода <a href="/investAPI/orders#postorder">postOrder</a>
+или при использовании bidirectional-stream <a href="/investAPI/orders#ordersstream">OrdersStream</a>.</p>
 <h3 id="_4">Рыночное торговое поручение</h3>
 <p>Это заявка на покупку или продажу активов по той цене, что есть на бирже в данный момент. У нее есть важная 
 особенность.
@@ -1012,9 +1012,9 @@ limitDown &gt; limitUp не является аномальной.</strong></p>
 В этом случае брокер купит имеющееся количество лотов по текущей цене, а оставшуюся часть заявки будет 
 покупать по следующей по списку цене. Если на бирже низкая ликвидность — например, торги рано утром или до 
 открытия американской биржи, — то оставшаяся часть заявки может быть исполнена по невыгодной для вас цене. 
-Проверить текущую ликвидность можно в <a href="/doctest/marketdata#getorderbook">биржевом стакане</a>.</p>
-<p>Выставить рыночное торговое поручение (заявку) можно при помощи метода unary-метода <a href="/doctest/orders#postorder">postOrder</a>
-или при использовании bidirectional-stream <a href="/doctest/orders#ordersstream">OrdersStream</a></p>
+Проверить текущую ликвидность можно в <a href="/investAPI/marketdata#getorderbook">биржевом стакане</a>.</p>
+<p>Выставить рыночное торговое поручение (заявку) можно при помощи метода unary-метода <a href="/investAPI/orders#postorder">postOrder</a>
+или при использовании bidirectional-stream <a href="/investAPI/orders#ordersstream">OrdersStream</a></p>
 <h2 id="-">Особенности исполнения заявок на Санкт-Петербургской бирже</h2>
 <p>Все операции с иностранными ценными бумагами в <a href="https://www.tinkoff.ru/invest/">Тинькофф Инвестициях</a> 
 производятся на Санкт-Петербургской бирже, которая имеет ряд особенностей исполнения заявок.</p>
@@ -1035,13 +1035,13 @@ limitDown &gt; limitUp не является аномальной.</strong></p>
 <li><strong>Счёт доступен пользователю для совершения операции</strong>. </li>
 <li><strong>У пользователя достаточно активов для совершения операции или пользователю доступно необходимое количество 
 активов для совершения <a href="https://help.tinkoff.ru/margin-trade/">маржинальной сделки</a></strong>. Для получения текущего 
-состояния портфеля пользователя можно использовать метод <a href="/doctest/operations#getpositions">getPositions</a>. 
-Для получения маржинальных показателей счёта — метод <a href="/doctest/users#getmarginattributes">getMarginAttributes</a>.</li>
+состояния портфеля пользователя можно использовать метод <a href="/investAPI/operations#getpositions">getPositions</a>. 
+Для получения маржинальных показателей счёта — метод <a href="/investAPI/users#getmarginattributes">getMarginAttributes</a>.</li>
 <li><strong>Инструмент доступен для торгов</strong>. Большая часть инструментов доступна для торговли в течении всего времени
-работы торговой площадки (для получения расписания торгов используйте метод <a href="/doctest/instruments#tradingschedules">getTradingSchedules</a>).
+работы торговой площадки (для получения расписания торгов используйте метод <a href="/investAPI/instruments#tradingschedules">getTradingSchedules</a>).
 Однако, возможны случаи перерывов и остановок торгов по той или иной бумаге. Для получения актуального статуса
-торговле по инструменту можно использовать методы <a href="/doctest/head-instruments">сервиса инструментов</a> или 
-<a href="/doctest/head-marketdata#stream">стрим информации по инструменту</a>.</li>
+торговле по инструменту можно использовать методы <a href="/investAPI/head-instruments">сервиса инструментов</a> или 
+<a href="/investAPI/head-marketdata#stream">стрим информации по инструменту</a>.</li>
 </ol>
                 
               

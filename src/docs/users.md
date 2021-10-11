@@ -29,6 +29,14 @@
 
 - Тело ответа — [GetMarginAttributesResponse](#getmarginattributesresponse)
 
+
+### GetUserTariff
+Запрос тарифа пользователя
+
+- Тело запроса — [GetUserTariffRequest](#getusertariffrequest)
+
+- Тело ответа — [GetUserTariffResponse](#getusertariffresponse)
+
  <!-- range .Methods -->
  <!-- range .Services -->
 
@@ -92,6 +100,48 @@
 | minimal_margin |  [MoneyValue](#moneyvalue) | Минимальная маржа — это минимальное обеспечение для поддержания позиции, которую вы уже открыли. Подробнее: [начальная и минимальная маржа](https://help.tinkoff.ru/margin-trade/short/initial-and-maintenance-margin/). |
 | funds_sufficiency_level |  [string](#string) | Уровень достаточности средств. Соотношение стоимости ликвидного портфеля к начальной марже. |
 | amount_of_missing_funds |  [MoneyValue](#moneyvalue) | Объем недостающих средств. Разница между стартовой маржой и ликвидной стоимости портфеля. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+### GetUserTariffRequest
+
+
+ <!-- end HasFields -->
+
+
+### GetUserTariffResponse
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| unary_limits | Массив объектов [UnaryLimit](#unarylimit) | Массив лимитов пользователя по unary-запросам |
+| stream_limits | Массив объектов [StreamLimit](#streamlimit) | Массив лимитов пользователей для stream-соединений |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+### UnaryLimit
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| limit_per_minute |  [int32](#int32) | Количество unary-запросов в минуту |
+| methods | Массив объектов [string](#string) | Названия методов |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+### StreamLimit
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| limit |  [int32](#int32) | Максимальное количество stream-соединений |
+| streams | Массив объектов [string](#string) | Названия stream-методов |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->

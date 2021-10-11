@@ -7,10 +7,8 @@
 
 
 
-# OrdersService
-Сервис предназначен для работы с торговыми поручениями:</br> **1**.
-выставление;</br> **2**. отмена;</br> **3**. получение статуса;</br> **4**.
-расчёт полной стоимости;</br> **5**. получение списка заявок.
+# OrdersStreamService
+
 
 ##Методы сервиса
 
@@ -21,6 +19,16 @@ Bidirectional stream работы со сделками
 - Тело запроса — [OrdersStreamRequest](#ordersstreamrequest)
 
 - Тело ответа — [OrdersStreamResponse](#ordersstreamresponse)
+
+ <!-- range .Methods -->
+
+
+# OrdersService
+Сервис предназначен для работы с торговыми поручениями:</br> **1**.
+выставление;</br> **2**. отмена;</br> **3**. получение статуса;</br> **4**.
+расчёт полной стоимости;</br> **5**. получение списка заявок.
+
+##Методы сервиса
 
 
 ### PostOrder
@@ -45,14 +53,6 @@ Bidirectional stream работы со сделками
 - Тело запроса — [GetOrderStateRequest](#getorderstaterequest)
 
 - Тело ответа — [OrderState](#orderstate)
-
-
-### GetAmountRaw
-Метод расчёта полной стоимости заявки.
-
-- Тело запроса — [GetAmountRawRequest](#getamountrawrequest)
-
-- Тело ответа — [GetAmountRawResponse](#getamountrawresponse)
 
 
 ### GetOrders
@@ -102,11 +102,12 @@ Bidirectional stream работы со сделками
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Figi-идентификатор инструмента. |
-| quantity |  [int32](#int32) | Количество лотов. |
+| quantity |  [int64](#int64) | Количество лотов. |
 | price |  [MoneyValue](#moneyvalue) | Цена лота. |
 | direction |  [OrderDirection](#orderdirection) | Направление операции. |
 | accountId |  [string](#string) | Номер счёта. |
 | order_type |  [OrderType](#ordertype) | Тип заявки. |
+| orderId |  [string](#string) | Идентификатор запроса выставления поручения для целей идемпотентности |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -119,14 +120,14 @@ Bidirectional stream работы со сделками
 | ----- | ---- | ----------- |
 | order_id |  [string](#string) | Идентификатор заявки. |
 | execution_report_status |  [OrderExecutionReportStatus](#orderexecutionreportstatus) | Текущий статус заявки. |
-| lots_requested |  [int32](#int32) | Запрошено лотов. |
-| lots_executed |  [int32](#int32) | Исполнено лотов. |
+| lots_requested |  [int64](#int64) | Запрошено лотов. |
+| lots_executed |  [int64](#int64) | Исполнено лотов. |
 | initial_order_price |  [MoneyValue](#moneyvalue) | Начальная цена заявки. Произведение количества запрошенных лотов на цену. |
 | executed_order_price |  [MoneyValue](#moneyvalue) | Исполненная цена заявки. Произведение средней цены покупки на количество лотов. |
 | total_order_amount |  [MoneyValue](#moneyvalue) | Итоговая стоимость заявки, включающая все комиссии. |
 | initial_commission |  [MoneyValue](#moneyvalue) | Начальная комиссия. Комиссия рассчитанная при выставлении заявки. |
 | executed_commission |  [MoneyValue](#moneyvalue) | Фактическая комиссия по итогам исполнения заявки. |
-| aci_value |  [MoneyValue](#moneyvalue) | Значение НКД (накопленного купонного дохода) на дату. Подробнее: [НКД при выставлении торговых поручений](/doctest/head-orders#coupon) |
+| aci_value |  [MoneyValue](#moneyvalue) | Значение НКД (накопленного купонного дохода) на дату. Подробнее: [НКД при выставлении торговых поручений](/investAPI/head-orders#coupon) |
 | figi |  [string](#string) | Figi-идентификатор инструмента. |
 | direction |  [OrderDirection](#orderdirection) | Направление сделки. |
 | initial_security_price |  [MoneyValue](#moneyvalue) | Начальная цена инструмента заявки. |
@@ -171,35 +172,6 @@ Bidirectional stream работы со сделками
  <!-- end HasFields -->
 
 
-### GetAmountRawRequest
-
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| figi |  [string](#string) | Figi-идентификатор инструмента. |
-| quantity |  [float](#float) | Количество лотов. |
-| price |  [MoneyValue](#moneyvalue) | Цена лота. |
-| direction |  [OrderDirection](#orderdirection) | Направление операции. |
-| account_id |  [string](#string) | Номер счёта. |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
-### GetAmountRawResponse
-
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| commission |  [MoneyValue](#moneyvalue) | Общий размер комиссии. |
-| raw_amount |  [MoneyValue](#moneyvalue) | Стоимость заявки. |
-| service_commission |  [MoneyValue](#moneyvalue) | Размер сервисной комиссии. |
-| aci_value |  [MoneyValue](#moneyvalue) | Значение НКД (накопленного купонного дохода) на дату. Подробнее: [НКД при выставлении торговых поручений](/doctest/head-orders#coupon) |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
 ### GetOrdersRequest
 
 
@@ -230,8 +202,8 @@ Bidirectional stream работы со сделками
 | ----- | ---- | ----------- |
 | order_id |  [string](#string) | Идентификатор заявки. |
 | execution_report_status |  [OrderExecutionReportStatus](#orderexecutionreportstatus) | Текущий статус заявки. |
-| lots_requested |  [float](#float) | Запрошено лотов. |
-| lots_executed |  [float](#float) | Исполнено лотов. |
+| lots_requested |  [int64](#int64) | Запрошено лотов. |
+| lots_executed |  [int64](#int64) | Исполнено лотов. |
 | initial_order_price |  [MoneyValue](#moneyvalue) | Начальная цена заявки. Произведение количества запрошенных лотов на цену. |
 | executed_order_price |  [MoneyValue](#moneyvalue) | Исполненная цена заявки. Произведение средней цены покупки на количество лотов. |
 | total_order_amount |  [MoneyValue](#moneyvalue) | Итоговая стоимость заявки, включающая все комиссии. |
@@ -244,7 +216,6 @@ Bidirectional stream работы со сделками
 | stages | Массив объектов [OrderStage](#orderstage) | Стадии выполнения заявки. |
 | service_commission |  [MoneyValue](#moneyvalue) | Сервисная комиссия. |
 | currency |  [string](#string) | Валюта заявки. |
-| commission_currency |  [string](#string) | Валюта комиссии. |
 | order_type |  [OrderType](#ordertype) | Тип заявки. |
 | order_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время выставления заявки в часовом поясе UTC. |
  <!-- end Fields -->
@@ -258,7 +229,7 @@ Bidirectional stream работы со сделками
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | price |  [MoneyValue](#moneyvalue) | Цена. |
-| quantity |  [float](#float) | Количество лотов. |
+| quantity |  [int64](#int64) | Количество лотов. |
 | trade_id |  [string](#string) | Идентификатор торговой операции. |
  <!-- end Fields -->
  <!-- end HasFields -->

@@ -60,8 +60,8 @@
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | account_id |  [string](#string) | Идентификатор счёта клиента |
-| start_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало периода (по UTC) |
-| end_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание периода (по UTC) |
+| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало периода (по UTC) |
+| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание периода (по UTC) |
 | state |  [OperationState](#operationstate) | Статус запрашиваемых операций |
 | figi |  [string](#string) | Figi-идентификатор инструмента для фильтрации |
 | limit |  [int32](#int32) | Количество запрашиваемых операций (по умолчанию 100) |
@@ -92,16 +92,15 @@
 | id |  [string](#string) | Идентификатор операции |
 | parent_operation_id |  [string](#string) | Идентификатор родительской операции |
 | currency |  [string](#string) | Валюта операции |
-| payment |  [float](#float) | Сумма операции |
-| price |  [float](#float) | Цена операции |
+| payment |  [MoneyValue](#moneyvalue) | Сумма операции |
+| price |  [MoneyValue](#moneyvalue) | Цена операции |
 | state |  [OperationState](#operationstate) | Статус операции |
-| quantity |  [int32](#int32) | Количество лотов инструмента |
-| quantity_executed |  [int32](#int32) | Исполнено лотов |
+| quantity |  [int64](#int64) | Количество лотов инструмента |
+| quantity_executed |  [int64](#int64) | Исполнено лотов |
 | figi |  [string](#string) | Figi-идентификатор инструмента, связанного с операцией |
 | instrument_type |  [string](#string) | Тип инструмента. Возможные значения: </br>**bond** — облигация; </br>**stock** — акция; </br>**currency** — валюта; </br>**etf** — фонд; </br>**futures** — фьючерс. |
-| is_margin_call |  [bool](#bool) | Флаг маржинальной торговли |
 | date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время операции в формате часовом поясе UTC |
-| operation_type |  [OperationType](#operationtype) | Тип операции |
+| type |  [string](#string) | Тип операции |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -194,7 +193,7 @@
 | ticker |  [string](#string) | Тикер |
 | figi |  [string](#string) | Figi-идентификатор инструмента |
 | instrument_type |  [string](#string) | Тип инструмента. Возможные значения: </br>**bond** — облигация; </br>**stock** — акция; </br>**currency** — валюта; </br>**etf** — фонд; </br>**futures** — фьючерс. |
-| quantity |  [float](#float) | Количество лотов |
+| quantity |  [int64](#int64) | Количество лотов |
 | currency |  [string](#string) | Валюта расчётов по инструменту |
 | price |  [MoneyValue](#moneyvalue) | Текущая цена инструмента |
 | avg_cost_price |  [MoneyValue](#moneyvalue) | Средняя цена покупки позиции с учетом накопленного купонного дохода |
@@ -219,8 +218,8 @@
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Figi-идентификатор бумаги |
-| blocked |  [float](#float) | Заблокировано |
-| balance |  [float](#float) | Текущий баланс |
+| blocked |  [int64](#int64) | Заблокировано |
+| balance |  [int64](#int64) | Текущий баланс |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->
@@ -236,20 +235,6 @@
 | OPERATION_STATE_UNSPECIFIED | 0 | Статус операции не определён |
 | OPERATION_STATE_EXECUTED | 1 | Исполнена |
 | OPERATION_STATE_CANCELED | 2 | Отменена |
-
-
-
-
-### OperationType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| OPERATION_TYPE_UNSPECIFIED | 0 | Тип операции не определён |
-| OPERATION_TYPE_BUY | 1 | Покупка |
-| OPERATION_TYPE_SELL | 2 | Продажа |
-| OPERATION_TYPE_PAY_IN | 3 | Операция пополнения счёта |
-| OPERATION_TYPE_PAY_OUT | 4 | Операция вывода средств |
 
 
  <!-- range .Enums -->

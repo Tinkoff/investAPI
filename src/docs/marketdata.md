@@ -42,7 +42,7 @@
 
 - Тело запроса — [GetTradingStatusRequest](#gettradingstatusrequest)
 
-- Тело ответа — [TradingStatus](#tradingstatus)
+- Тело ответа — [GetTradingStatusResponse](#gettradingstatusresponse)
 
  <!-- range .Methods -->
 
@@ -129,7 +129,7 @@ subscribeCandles | Изменения статуса подписки на св�
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](https://oridisboss.github.io/doctest/grpc#tracking) |
+| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](https://oridisboss.github.io/investAPI/grpc#tracking) |
 | candles_subscriptions | Массив объектов [CandleSubscription](#candlesubscription) | Массив статусов подписки на свечи |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -178,7 +178,7 @@ subscribeOrderbook | Изменение статуса подписки на с�
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](https://oridisboss.github.io/doctest/grpc#tracking) |
+| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](https://oridisboss.github.io/investAPI/grpc#tracking) |
 | order_book_subscriptions | Массив объектов [OrderBookSubscription](#orderbooksubscription) | Массив статусов подписки на стаканы |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -226,7 +226,7 @@ subscribeTrades | Изменение статуса подписки на пот
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](https://oridisboss.github.io/doctest/grpc#tracking) |
+| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](https://oridisboss.github.io/investAPI/grpc#tracking) |
 | trade_subscriptions | Массив объектов [TradeSubscription](#tradesubscription) | Массив статусов подписки на поток сделок |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -273,7 +273,7 @@ subscribeInfo | Изменение статуса подписки на торг
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](https://oridisboss.github.io/doctest/grpc#tracking) |
+| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](https://oridisboss.github.io/investAPI/grpc#tracking) |
 | info_subscriptions | Массив объектов [InfoSubscription](#infosubscription) | Массив статусов подписки на торговый статус |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -475,6 +475,18 @@ subscribeInfo | Изменение статуса подписки на торг
 | figi |  [string](#string) | Идентификатор инструмента |
  <!-- end Fields -->
  <!-- end HasFields -->
+
+
+### GetTradingStatusResponse
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| figi |  [string](#string) | Figi-идентификатор инструмента |
+| trading_status |  [SecurityTradingStatus](#securitytradingstatus) | Статус торговли инструментом |
+ <!-- end Fields -->
+ <!-- end HasFields -->
  <!-- end messages -->
 
 ## Enums
@@ -512,10 +524,10 @@ subscribeInfo | Изменение статуса подписки на торг
 | SUBSCRIPTION_STATUS_UNSPECIFIED | 0 | Статус подписки не определён |
 | SUBSCRIPTION_STATUS_SUCCESS | 1 | Успешно |
 | SUBSCRIPTION_STATUS_INSTRUMENT_NOT_FOUND | 2 | Инструмент не найден |
-| SUBSCRIPTION_STATUS_SUBSCRIPTION_STATUS_IS_INVALID | 3 | Некорректный статус подписки, список возможных значений: [SubscriptionAction](/doctest/marketdata#subscriptionaction) |
+| SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID | 3 | Некорректный статус подписки, список возможных значений: [SubscriptionAction](/investAPI/marketdata#subscriptionaction) |
 | SUBSCRIPTION_STATUS_DEPTH_IS_INVALID | 4 | Некорректная глубина стакана, требуется указать целое число от 1 до 50 |
-| SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID | 5 | Некорректный интервал свечей, список возможных значений: [SubscriptionInterval](/doctest/marketdata#subscriptioninterval) |
-| SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED | 6 | Превышен лимит подписок в рамках стрима, подробнее: [Лимитная политика](/doctest/limits/) |
+| SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID | 5 | Некорректный интервал свечей, список возможных значений: [SubscriptionInterval](/investAPI/marketdata#subscriptioninterval) |
+| SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED | 6 | Превышен лимит подписок в рамках стрима, подробнее: [Лимитная политика](/investAPI/limits/) |
 | SUBSCRIPTION_STATUS_INTERNAL_ERROR | 7 | Внутренняя ошибка сервиса |
 
 

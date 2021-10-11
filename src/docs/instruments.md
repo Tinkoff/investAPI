@@ -321,7 +321,7 @@
 | ticker |  [string](#string) | Тикер инструмента. |
 | class_code |  [string](#string) | Класс-код (секция торгов). |
 | isin |  [string](#string) | Isin-идентификатор инструмента. |
-| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](/doctest/glossary#lot) |
+| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](/investAPI/glossary#lot) |
 | currency |  [string](#string) | Валюта расчётов. |
 | klong |  [double](#double) | Коэффициент ставки риска длинной позиции по инструменту. |
 | kshort |  [double](#double) | Коэффициент ставки риска короткой позиции по инструменту. |
@@ -338,7 +338,6 @@
 | state_reg_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата выпуска облигации в часовом поясе UTC |
 | placement_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата размещения в часовом поясе UTC |
 | placement_price |  [MoneyValue](#moneyvalue) | Цена размещения |
-| coupon_period_base |  [string](#string) | Периодичность выплаты купонов |
 | aci_value |  [MoneyValue](#moneyvalue) | Значение НКД (накопленного купонного дохода) на дату |
 | country_of_risk |  [string](#string) | Код страны эмитента |
 | country_of_risk_name |  [string](#string) | Наименование страны эмитента |
@@ -364,7 +363,7 @@
 | ticker |  [string](#string) | Тикер инструмента. |
 | class_code |  [string](#string) | Класс-код (секция торгов). |
 | isin |  [string](#string) | Isin-идентификатор инструмента. |
-| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](/doctest/glossary#lot) |
+| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](/investAPI/glossary#lot) |
 | currency |  [string](#string) | Валюта расчётов. |
 | klong |  [double](#double) | Коэффициент ставки риска длинной позиции по инструменту. |
 | kshort |  [double](#double) | Коэффициент ставки риска короткой позиции по инструменту. |
@@ -397,7 +396,7 @@
 | ticker |  [string](#string) | Тикер инструмента. |
 | class_code |  [string](#string) | Класс-код (секция торгов). |
 | isin |  [string](#string) | Isin-идентификатор инструмента. |
-| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](/doctest/glossary#lot) |
+| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](/investAPI/glossary#lot) |
 | currency |  [string](#string) | Валюта расчётов. |
 | klong |  [double](#double) | Коэффициент ставки риска длинной позиции по инструменту. |
 | kshort |  [double](#double) | Коэффициент ставки риска короткой позиции по инструменту. |
@@ -433,7 +432,7 @@
 | figi |  [string](#string) | Figi-идентификатор инструмента. |
 | ticker |  [string](#string) | Тикер инструмента |
 | class_code |  [string](#string) | Класс-код (секция торгов). |
-| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](/doctest/glossary#lot) |
+| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](/investAPI/glossary#lot) |
 | currency |  [string](#string) | Валюта расчётов. |
 | klong |  [double](#double) | Коэффициент ставки риска длинной позиции по клиенту. |
 | kshort |  [double](#double) | Коэффициент ставки риска короткой позиции по клиенту. |
@@ -472,7 +471,7 @@
 | ticker |  [string](#string) | Тикер инструмента. |
 | class_code |  [string](#string) | Класс-код (секция торгов). |
 | isin |  [string](#string) | Isin-идентификатор инструмента. |
-| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](/doctest/glossary#lot) |
+| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](/investAPI/glossary#lot) |
 | currency |  [string](#string) | Валюта расчётов. |
 | klong |  [double](#double) | Коэффициент ставки риска длинной позиции по инструменту. |
 | kshort |  [double](#double) | Коэффициент ставки риска короткой позиции по инструменту. |
@@ -570,7 +569,6 @@
 | INSTRUMENT_ID_UNSPECIFIED | 0 | Значение не определено. |
 | INSTRUMENT_ID_TYPE_FIGI | 1 | Figi. |
 | INSTRUMENT_ID_TYPE_TICKER | 2 | Ticker. |
-| INSTRUMENT_ID_TYPE_ISIN | 3 | Isin. |
 
 
 
@@ -582,8 +580,7 @@
 | ---- | ------ | ----------- |
 | INSTRUMENT_STATUS_UNSPECIFIED | 0 | Значение не определено. |
 | INSTRUMENT_STATUS_BASE | 1 | Базовый список инструментов (по умолчанию). |
-| INSTRUMENT_STATUS_QUALIFIED | 2 | Список инструментов, доступный только квалифицированным инвесторам. |
-| INSTRUMENT_STATUS_ALL | 3 | Список всех инструментов. |
+| INSTRUMENT_STATUS_ALL | 2 | Список всех инструментов. |
 
 
  <!-- range .Enums -->

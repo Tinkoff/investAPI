@@ -51,7 +51,7 @@
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Figi-идентификатор инструмента |
-| quantity |  [float](#float) | Количество лотов |
+| quantity |  [int64](#int64) | Количество лотов |
 | price |  [MoneyValue](#moneyvalue) | Цена лота |
 | stop_price |  [MoneyValue](#moneyvalue) | Стоп-цена заявки |
 | direction |  [StopOrderDirection](#stoporderdirection) | Направление операции |
@@ -126,7 +126,7 @@
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | stop_order_id |  [string](#string) | Идентификатор-идентификатор стоп-заявки |
-| lots_requested |  [float](#float) | Запрошено лотов |
+| lots_requested |  [int64](#int64) | Запрошено лотов |
 | figi |  [string](#string) | Figi-идентификатор инструмента |
 | direction |  [StopOrderDirection](#stoporderdirection) | Направление операции |
 | currency |  [string](#string) | Валюта стоп-заявки |

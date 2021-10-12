@@ -549,6 +549,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#getusertariff" class="md-nav__link">
+    GetUserTariff
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -593,6 +600,34 @@
           <li class="md-nav__item">
   <a href="#getmarginattributesresponse" class="md-nav__link">
     GetMarginAttributesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getusertariffrequest" class="md-nav__link">
+    GetUserTariffRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getusertariffresponse" class="md-nav__link">
+    GetUserTariffResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unarylimit" class="md-nav__link">
+    UnaryLimit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streamlimit" class="md-nav__link">
+    StreamLimit
   </a>
   
 </li>
@@ -981,7 +1016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sandbox.md" class="md-nav__link">
+      <a href="../sandbox/" class="md-nav__link">
         Методы
       </a>
     </li>
@@ -1056,6 +1091,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#getusertariff" class="md-nav__link">
+    GetUserTariff
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1100,6 +1142,34 @@
           <li class="md-nav__item">
   <a href="#getmarginattributesresponse" class="md-nav__link">
     GetMarginAttributesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getusertariffrequest" class="md-nav__link">
+    GetUserTariffRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getusertariffresponse" class="md-nav__link">
+    GetUserTariffResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unarylimit" class="md-nav__link">
+    UnaryLimit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streamlimit" class="md-nav__link">
+    StreamLimit
   </a>
   
 </li>
@@ -1204,6 +1274,16 @@
 </li>
 <li>
 <p>Тело ответа — <a href="#getmarginattributesresponse">GetMarginAttributesResponse</a></p>
+</li>
+</ul>
+<h3 id="getusertariff">GetUserTariff</h3>
+<p>Запрос тарифа пользователя</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#getusertariffrequest">GetUserTariffRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#getusertariffresponse">GetUserTariffResponse</a></p>
 </li>
 </ul>
 <!-- range .Methods -->
@@ -1354,6 +1434,96 @@
 <td>amount_of_missing_funds</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
 <td>Объем недостающих средств. Разница между стартовой маржой и ликвидной стоимости портфеля.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="getusertariffrequest">GetUserTariffRequest</h3>
+<!-- end HasFields -->
+
+<h3 id="getusertariffresponse">GetUserTariffResponse</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>unary_limits</td>
+<td>Массив объектов <a href="#unarylimit">UnaryLimit</a></td>
+<td>Массив лимитов пользователя по unary-запросам</td>
+</tr>
+<tr>
+<td>stream_limits</td>
+<td>Массив объектов <a href="#streamlimit">StreamLimit</a></td>
+<td>Массив лимитов пользователей для stream-соединений</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="unarylimit">UnaryLimit</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>limit_per_minute</td>
+<td><a href="#int32">int32</a></td>
+<td>Количество unary-запросов в минуту</td>
+</tr>
+<tr>
+<td>methods</td>
+<td>Массив объектов <a href="#string">string</a></td>
+<td>Названия методов</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="streamlimit">StreamLimit</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>limit</td>
+<td><a href="#int32">int32</a></td>
+<td>Максимальное количество stream-соединений</td>
+</tr>
+<tr>
+<td>streams</td>
+<td>Массив объектов <a href="#string">string</a></td>
+<td>Названия stream-методов</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>

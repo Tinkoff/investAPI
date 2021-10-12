@@ -835,13 +835,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#operationtype" class="md-nav__link">
-    OperationType
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1037,7 +1030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sandbox.md" class="md-nav__link">
+      <a href="../sandbox/" class="md-nav__link">
         Методы
       </a>
     </li>
@@ -1236,13 +1229,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#operationtype" class="md-nav__link">
-    OperationType
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1359,12 +1345,12 @@
 <td>Идентификатор счёта клиента</td>
 </tr>
 <tr>
-<td>start_date</td>
+<td>from</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
 <td>Начало периода (по UTC)</td>
 </tr>
 <tr>
-<td>end_date</td>
+<td>to</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
 <td>Окончание периода (по UTC)</td>
 </tr>
@@ -1459,12 +1445,12 @@
 </tr>
 <tr>
 <td>payment</td>
-<td><a href="#float">float</a></td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
 <td>Сумма операции</td>
 </tr>
 <tr>
 <td>price</td>
-<td><a href="#float">float</a></td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
 <td>Цена операции</td>
 </tr>
 <tr>
@@ -1474,12 +1460,12 @@
 </tr>
 <tr>
 <td>quantity</td>
-<td><a href="#int32">int32</a></td>
+<td><a href="#int64">int64</a></td>
 <td>Количество лотов инструмента</td>
 </tr>
 <tr>
 <td>quantity_executed</td>
-<td><a href="#int32">int32</a></td>
+<td><a href="#int64">int64</a></td>
 <td>Исполнено лотов</td>
 </tr>
 <tr>
@@ -1493,18 +1479,13 @@
 <td>Тип инструмента. Возможные значения: </br><strong>bond</strong> — облигация; </br><strong>stock</strong> — акция; </br><strong>currency</strong> — валюта; </br><strong>etf</strong> — фонд; </br><strong>futures</strong> — фьючерс.</td>
 </tr>
 <tr>
-<td>is_margin_call</td>
-<td><a href="#bool">bool</a></td>
-<td>Флаг маржинальной торговли</td>
-</tr>
-<tr>
 <td>date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
 <td>Дата и время операции в формате часовом поясе UTC</td>
 </tr>
 <tr>
-<td>operation_type</td>
-<td><a href="#operationtype">OperationType</a></td>
+<td>type</td>
+<td><a href="#string">string</a></td>
 <td>Тип операции</td>
 </tr>
 <tr>
@@ -1752,7 +1733,7 @@
 </tr>
 <tr>
 <td>quantity</td>
-<td><a href="#float">float</a></td>
+<td><a href="#int64">int64</a></td>
 <td>Количество лотов</td>
 </tr>
 <tr>
@@ -1846,12 +1827,12 @@
 </tr>
 <tr>
 <td>blocked</td>
-<td><a href="#float">float</a></td>
+<td><a href="#int64">int64</a></td>
 <td>Заблокировано</td>
 </tr>
 <tr>
 <td>balance</td>
-<td><a href="#float">float</a></td>
+<td><a href="#int64">int64</a></td>
 <td>Текущий баланс</td>
 </tr>
 <tr>
@@ -1890,43 +1871,6 @@
 <td>OPERATION_STATE_CANCELED</td>
 <td>2</td>
 <td>Отменена</td>
-</tr>
-</tbody>
-</table>
-<h3 id="operationtype">OperationType</h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Number</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>OPERATION_TYPE_UNSPECIFIED</td>
-<td>0</td>
-<td>Тип операции не определён</td>
-</tr>
-<tr>
-<td>OPERATION_TYPE_BUY</td>
-<td>1</td>
-<td>Покупка</td>
-</tr>
-<tr>
-<td>OPERATION_TYPE_SELL</td>
-<td>2</td>
-<td>Продажа</td>
-</tr>
-<tr>
-<td>OPERATION_TYPE_PAY_IN</td>
-<td>3</td>
-<td>Операция пополнения счёта</td>
-</tr>
-<tr>
-<td>OPERATION_TYPE_PAY_OUT</td>
-<td>4</td>
-<td>Операция вывода средств</td>
 </tr>
 </tbody>
 </table>

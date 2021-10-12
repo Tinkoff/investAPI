@@ -893,7 +893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sandbox.md" class="md-nav__link">
+      <a href="../sandbox/" class="md-nav__link">
         Методы
       </a>
     </li>
@@ -1046,7 +1046,7 @@
 <p>Тело запроса — <a href="#gettradingstatusrequest">GetTradingStatusRequest</a></p>
 </li>
 <li>
-<p>Тело ответа — <a href="#tradingstatus">TradingStatus</a></p>
+<p>Тело ответа — <a href="#gettradingstatusresponse">GetTradingStatusResponse</a></p>
 </li>
 </ul>
 <!-- range .Methods -->
@@ -1239,7 +1239,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса, подробнее: <a href="https://oridisboss.github.io/doctest/grpc#tracking">tracking_id</a></td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="https://oridisboss.github.io/investAPI/grpc#tracking">tracking_id</a></td>
 </tr>
 <tr>
 <td>candles_subscriptions</td>
@@ -1361,7 +1361,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса, подробнее: <a href="https://oridisboss.github.io/doctest/grpc#tracking">tracking_id</a></td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="https://oridisboss.github.io/investAPI/grpc#tracking">tracking_id</a></td>
 </tr>
 <tr>
 <td>order_book_subscriptions</td>
@@ -1478,7 +1478,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса, подробнее: <a href="https://oridisboss.github.io/doctest/grpc#tracking">tracking_id</a></td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="https://oridisboss.github.io/investAPI/grpc#tracking">tracking_id</a></td>
 </tr>
 <tr>
 <td>trade_subscriptions</td>
@@ -1590,7 +1590,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса, подробнее: <a href="https://oridisboss.github.io/doctest/grpc#tracking">tracking_id</a></td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="https://oridisboss.github.io/investAPI/grpc#tracking">tracking_id</a></td>
 </tr>
 <tr>
 <td>info_subscriptions</td>
@@ -2131,6 +2131,35 @@
 </tbody>
 </table>
 <!-- end HasFields -->
+
+<h3 id="gettradingstatusresponse">GetTradingStatusResponse</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента</td>
+</tr>
+<tr>
+<td>trading_status</td>
+<td><a href="#securitytradingstatus">SecurityTradingStatus</a></td>
+<td>Статус торговли инструментом</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
 <!-- end messages -->
 
 <h2 id="enums">Enums</h2>
@@ -2214,9 +2243,9 @@
 <td>Инструмент не найден</td>
 </tr>
 <tr>
-<td>SUBSCRIPTION_STATUS_SUBSCRIPTION_STATUS_IS_INVALID</td>
+<td>SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID</td>
 <td>3</td>
-<td>Некорректный статус подписки, список возможных значений: <a href="/doctest/marketdata#subscriptionaction">SubscriptionAction</a></td>
+<td>Некорректный статус подписки, список возможных значений: <a href="/investAPI/marketdata#subscriptionaction">SubscriptionAction</a></td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_STATUS_DEPTH_IS_INVALID</td>
@@ -2226,12 +2255,12 @@
 <tr>
 <td>SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID</td>
 <td>5</td>
-<td>Некорректный интервал свечей, список возможных значений: <a href="/doctest/marketdata#subscriptioninterval">SubscriptionInterval</a></td>
+<td>Некорректный интервал свечей, список возможных значений: <a href="/investAPI/marketdata#subscriptioninterval">SubscriptionInterval</a></td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED</td>
 <td>6</td>
-<td>Превышен лимит подписок в рамках стрима, подробнее: <a href="/doctest/limits/">Лимитная политика</a></td>
+<td>Превышен лимит подписок в рамках стрима, подробнее: <a href="/investAPI/limits/">Лимитная политика</a></td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_STATUS_INTERNAL_ERROR</td>

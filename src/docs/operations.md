@@ -62,10 +62,8 @@
 | account_id |  [string](#string) | Идентификатор счёта клиента |
 | from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало периода (по UTC) |
 | to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание периода (по UTC) |
-| state |  [OperationState](#operationstate) | Статус запрашиваемых операций |
+| state |  [string](#string) | Статус запрашиваемых операций |
 | figi |  [string](#string) | Figi-идентификатор инструмента для фильтрации |
-| limit |  [int32](#int32) | Количество запрашиваемых операций (по умолчанию 100) |
-| marker |  [int32](#int32) | Положение курсора (по умолчанию 0) |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -76,8 +74,6 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| total |  [int32](#int32) | Общее количество операций по счёту |
-| marker |  [int32](#int32) | Текущее положение курсора |
 | operations | Массив объектов [Operation](#operation) | Массив операций |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -94,9 +90,9 @@
 | currency |  [string](#string) | Валюта операции |
 | payment |  [MoneyValue](#moneyvalue) | Сумма операции |
 | price |  [MoneyValue](#moneyvalue) | Цена операции |
-| state |  [OperationState](#operationstate) | Статус операции |
+| state |  [string](#string) | Статус операции |
 | quantity |  [int64](#int64) | Количество лотов инструмента |
-| quantity_executed |  [int64](#int64) | Исполнено лотов |
+| quantity_rest |  [int64](#int64) | Неисполненный остаток по сделке |
 | figi |  [string](#string) | Figi-идентификатор инструмента, связанного с операцией |
 | instrument_type |  [string](#string) | Тип инструмента. Возможные значения: </br>**bond** — облигация; </br>**stock** — акция; </br>**currency** — валюта; </br>**etf** — фонд; </br>**futures** — фьючерс. |
 | date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время операции в формате часовом поясе UTC |
@@ -240,6 +236,22 @@
  <!-- range .Enums -->
  <!-- range HasServices -->
  <!-- range .Files -->
+
+### SecurityTradingStatus
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SECURITY_TRADING_STATUS_UNSPECIFIED | 0 | Торговый статус не определён |
+| SECURITY_TRADING_STATUS_NOT_AVAILABLE_FOR_TRADING | 1 | Недоступен для торгов |
+| SECURITY_TRADING_STATUS_OPENING_PERIOD | 2 | Период открытия торгов |
+| SECURITY_TRADING_STATUS_CLOSING_PERIOD | 3 | Период закрытия торгов |
+| SECURITY_TRADING_STATUS_BREAK_IN_TRADING | 4 | Перерыв в торговле |
+| SECURITY_TRADING_STATUS_NORMAL_TRADING | 5 | Нормальная торговля |
+| SECURITY_TRADING_STATUS_CLOSING_AUCTION | 6 | Аукцион закрытия |
+| SECURITY_TRADING_STATUS_DARK_POOL_AUCTION | 7 | Аукцион крупных пакетов |
+| SECURITY_TRADING_STATUS_DISCRETE_AUCTION | 8 | Дискретный аукцион |
+| SECURITY_TRADING_STATUS_OPENING_AUCTION_PERIOD | 9 | Аукцион открытия |
+| SECURITY_TRADING_STATUS_TRADING_AT_CLOSING_AUCTION_PRICE | 10 | Период торгов по цене аукциона закрытия |
 
 ## Нестандартные типы данных
 

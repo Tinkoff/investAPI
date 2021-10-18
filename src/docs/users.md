@@ -98,7 +98,7 @@
 | liquid_portfolio |  [MoneyValue](#moneyvalue) | Ликвидная стоимость портфеля. Подробнее: [что такое ликвидный портфель?](https://help.tinkoff.ru/margin-trade/short/liquid-portfolio/). |
 | starting_margin |  [MoneyValue](#moneyvalue) | Начальная маржа — начальное обеспечение для совершения новой сделки. Подробнее: [начальная и минимальная маржа](https://help.tinkoff.ru/margin-trade/short/initial-and-maintenance-margin/). |
 | minimal_margin |  [MoneyValue](#moneyvalue) | Минимальная маржа — это минимальное обеспечение для поддержания позиции, которую вы уже открыли. Подробнее: [начальная и минимальная маржа](https://help.tinkoff.ru/margin-trade/short/initial-and-maintenance-margin/). |
-| funds_sufficiency_level |  [string](#string) | Уровень достаточности средств. Соотношение стоимости ликвидного портфеля к начальной марже. |
+| funds_sufficiency_level |  [Quotation](#quotation) | Уровень достаточности средств. Соотношение стоимости ликвидного портфеля к начальной марже. |
 | amount_of_missing_funds |  [MoneyValue](#moneyvalue) | Объем недостающих средств. Разница между стартовой маржой и ликвидной стоимости портфеля. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -176,6 +176,22 @@
  <!-- range .Enums -->
  <!-- range HasServices -->
  <!-- range .Files -->
+
+### SecurityTradingStatus
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SECURITY_TRADING_STATUS_UNSPECIFIED | 0 | Торговый статус не определён |
+| SECURITY_TRADING_STATUS_NOT_AVAILABLE_FOR_TRADING | 1 | Недоступен для торгов |
+| SECURITY_TRADING_STATUS_OPENING_PERIOD | 2 | Период открытия торгов |
+| SECURITY_TRADING_STATUS_CLOSING_PERIOD | 3 | Период закрытия торгов |
+| SECURITY_TRADING_STATUS_BREAK_IN_TRADING | 4 | Перерыв в торговле |
+| SECURITY_TRADING_STATUS_NORMAL_TRADING | 5 | Нормальная торговля |
+| SECURITY_TRADING_STATUS_CLOSING_AUCTION | 6 | Аукцион закрытия |
+| SECURITY_TRADING_STATUS_DARK_POOL_AUCTION | 7 | Аукцион крупных пакетов |
+| SECURITY_TRADING_STATUS_DISCRETE_AUCTION | 8 | Дискретный аукцион |
+| SECURITY_TRADING_STATUS_OPENING_AUCTION_PERIOD | 9 | Аукцион открытия |
+| SECURITY_TRADING_STATUS_TRADING_AT_CLOSING_AUCTION_PRICE | 10 | Период торгов по цене аукциона закрытия |
 
 ## Нестандартные типы данных
 

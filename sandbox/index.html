@@ -2646,23 +2646,13 @@
 </tr>
 <tr>
 <td>state</td>
-<td><a href="#operationstate">OperationState</a></td>
+<td><a href="#string">string</a></td>
 <td>Статус запрашиваемых операций</td>
 </tr>
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
 <td>Figi-идентификатор инструмента для фильтрации</td>
-</tr>
-<tr>
-<td>limit</td>
-<td><a href="#int32">int32</a></td>
-<td>Количество запрашиваемых операций (по умолчанию 100)</td>
-</tr>
-<tr>
-<td>marker</td>
-<td><a href="#int32">int32</a></td>
-<td>Положение курсора (по умолчанию 0)</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2683,16 +2673,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>total</td>
-<td><a href="#int32">int32</a></td>
-<td>Общее количество операций по счёту</td>
-</tr>
-<tr>
-<td>marker</td>
-<td><a href="#int32">int32</a></td>
-<td>Текущее положение курсора</td>
-</tr>
 <tr>
 <td>operations</td>
 <td>Массив объектов <a href="#operation">Operation</a></td>
@@ -2745,7 +2725,7 @@
 </tr>
 <tr>
 <td>state</td>
-<td><a href="#operationstate">OperationState</a></td>
+<td><a href="#string">string</a></td>
 <td>Статус операции</td>
 </tr>
 <tr>
@@ -2754,9 +2734,9 @@
 <td>Количество лотов инструмента</td>
 </tr>
 <tr>
-<td>quantity_executed</td>
+<td>quantity_rest</td>
 <td><a href="#int64">int64</a></td>
-<td>Исполнено лотов</td>
+<td>Неисполненный остаток по сделке</td>
 </tr>
 <tr>
 <td>figi</td>
@@ -4026,7 +4006,7 @@
 </tr>
 <tr>
 <td>funds_sufficiency_level</td>
-<td><a href="#string">string</a></td>
+<td><a href="#quotation">Quotation</a></td>
 <td>Уровень достаточности средств. Соотношение стоимости ликвидного портфеля к начальной марже.</td>
 </tr>
 <tr>

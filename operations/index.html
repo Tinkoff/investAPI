@@ -835,6 +835,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#securitytradingstatus" class="md-nav__link">
+    SecurityTradingStatus
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1229,6 +1236,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#securitytradingstatus" class="md-nav__link">
+    SecurityTradingStatus
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1356,23 +1370,13 @@
 </tr>
 <tr>
 <td>state</td>
-<td><a href="#operationstate">OperationState</a></td>
+<td><a href="#string">string</a></td>
 <td>Статус запрашиваемых операций</td>
 </tr>
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
 <td>Figi-идентификатор инструмента для фильтрации</td>
-</tr>
-<tr>
-<td>limit</td>
-<td><a href="#int32">int32</a></td>
-<td>Количество запрашиваемых операций (по умолчанию 100)</td>
-</tr>
-<tr>
-<td>marker</td>
-<td><a href="#int32">int32</a></td>
-<td>Положение курсора (по умолчанию 0)</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -1393,16 +1397,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>total</td>
-<td><a href="#int32">int32</a></td>
-<td>Общее количество операций по счёту</td>
-</tr>
-<tr>
-<td>marker</td>
-<td><a href="#int32">int32</a></td>
-<td>Текущее положение курсора</td>
-</tr>
 <tr>
 <td>operations</td>
 <td>Массив объектов <a href="#operation">Operation</a></td>
@@ -1455,7 +1449,7 @@
 </tr>
 <tr>
 <td>state</td>
-<td><a href="#operationstate">OperationState</a></td>
+<td><a href="#string">string</a></td>
 <td>Статус операции</td>
 </tr>
 <tr>
@@ -1464,9 +1458,9 @@
 <td>Количество лотов инструмента</td>
 </tr>
 <tr>
-<td>quantity_executed</td>
+<td>quantity_rest</td>
 <td><a href="#int64">int64</a></td>
-<td>Исполнено лотов</td>
+<td>Неисполненный остаток по сделке</td>
 </tr>
 <tr>
 <td>figi</td>
@@ -1878,6 +1872,73 @@
 <!-- range HasServices -->
 <!-- range .Files -->
 
+<h3 id="securitytradingstatus">SecurityTradingStatus</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SECURITY_TRADING_STATUS_UNSPECIFIED</td>
+<td>0</td>
+<td>Торговый статус не определён</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_NOT_AVAILABLE_FOR_TRADING</td>
+<td>1</td>
+<td>Недоступен для торгов</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_OPENING_PERIOD</td>
+<td>2</td>
+<td>Период открытия торгов</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_CLOSING_PERIOD</td>
+<td>3</td>
+<td>Период закрытия торгов</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_BREAK_IN_TRADING</td>
+<td>4</td>
+<td>Перерыв в торговле</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_NORMAL_TRADING</td>
+<td>5</td>
+<td>Нормальная торговля</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_CLOSING_AUCTION</td>
+<td>6</td>
+<td>Аукцион закрытия</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_DARK_POOL_AUCTION</td>
+<td>7</td>
+<td>Аукцион крупных пакетов</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_DISCRETE_AUCTION</td>
+<td>8</td>
+<td>Дискретный аукцион</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_OPENING_AUCTION_PERIOD</td>
+<td>9</td>
+<td>Аукцион открытия</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_TRADING_AT_CLOSING_AUCTION_PRICE</td>
+<td>10</td>
+<td>Период торгов по цене аукциона закрытия</td>
+</tr>
+</tbody>
+</table>
 <h2 id="_3">Нестандартные типы данных</h2>
 <h3 id="moneyvalue">MoneyValue</h3>
 <p>Денежная сумма в определенной валюте</p>

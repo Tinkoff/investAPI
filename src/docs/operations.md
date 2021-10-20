@@ -62,7 +62,7 @@
 | account_id |  [string](#string) | Идентификатор счёта клиента |
 | from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало периода (по UTC) |
 | to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание периода (по UTC) |
-| state |  [string](#string) | Статус запрашиваемых операций |
+| state |  [OperationState](#operationstate) | Статус запрашиваемых операций |
 | figi |  [string](#string) | Figi-идентификатор инструмента для фильтрации |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -90,7 +90,7 @@
 | currency |  [string](#string) | Валюта операции |
 | payment |  [MoneyValue](#moneyvalue) | Сумма операции |
 | price |  [MoneyValue](#moneyvalue) | Цена операции |
-| state |  [string](#string) | Статус операции |
+| state |  [OperationState](#operationstate) | Статус операции |
 | quantity |  [int64](#int64) | Количество лотов инструмента |
 | quantity_rest |  [int64](#int64) | Неисполненный остаток по сделке |
 | figi |  [string](#string) | Figi-идентификатор инструмента, связанного с операцией |

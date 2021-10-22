@@ -680,6 +680,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#getinstrumentby" class="md-nav__link">
+    GetInstrumentBy
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -875,6 +882,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#instrumentresponse" class="md-nav__link">
+    InstrumentResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instrument" class="md-nav__link">
+    Instrument
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -898,6 +919,13 @@
           <li class="md-nav__item">
   <a href="#instrumentstatus" class="md-nav__link">
     InstrumentStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sharetype" class="md-nav__link">
+    ShareType
   </a>
   
 </li>
@@ -1364,6 +1392,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#getinstrumentby" class="md-nav__link">
+    GetInstrumentBy
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1559,6 +1594,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#instrumentresponse" class="md-nav__link">
+    InstrumentResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instrument" class="md-nav__link">
+    Instrument
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1582,6 +1631,13 @@
           <li class="md-nav__item">
   <a href="#instrumentstatus" class="md-nav__link">
     InstrumentStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sharetype" class="md-nav__link">
+    ShareType
   </a>
   
 </li>
@@ -1777,6 +1833,16 @@
 </li>
 <li>
 <p>Тело ответа — <a href="#getfuturesmarginresponse">GetFuturesMarginResponse</a></p>
+</li>
+</ul>
+<h3 id="getinstrumentby">GetInstrumentBy</h3>
+<p>Метод получения основной информации об инструменте</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#instrumentrequest">InstrumentRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#instrumentresponse">InstrumentResponse</a></p>
 </li>
 </ul>
 <!-- range .Methods -->
@@ -2403,6 +2469,21 @@
 <td>Признак доступности для продажи.</td>
 </tr>
 <tr>
+<td>floating_coupon_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак облигации с плавающим купоном.</td>
+</tr>
+<tr>
+<td>perpetual_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак бессрочной облигации.</td>
+</tr>
+<tr>
+<td>amortization_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак облигации с амортизацией долга.</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -3003,6 +3084,16 @@
 <td>Признак доступности для продажи.</td>
 </tr>
 <tr>
+<td>div_yield_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак наличия дивидендной доходности.</td>
+</tr>
+<tr>
+<td>share_type</td>
+<td><a href="#sharetype">ShareType</a></td>
+<td></td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -3161,6 +3252,161 @@
 </tbody>
 </table>
 <!-- end HasFields -->
+
+<h3 id="instrumentresponse">InstrumentResponse</h3>
+<p>Данные по инструменту</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instrument</td>
+<td><a href="#instrument">Instrument</a></td>
+<td>Основная информация об инструменте.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="instrument">Instrument</h3>
+<p>Объект передачи основной информации об инструменте.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>ticker</td>
+<td><a href="#string">string</a></td>
+<td>Тикер инструмента.</td>
+</tr>
+<tr>
+<td>class_code</td>
+<td><a href="#string">string</a></td>
+<td>Класс-код инструмента.</td>
+</tr>
+<tr>
+<td>isin</td>
+<td><a href="#string">string</a></td>
+<td>Isin-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>lot</td>
+<td><a href="#int32">int32</a></td>
+<td>Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру <em>lot</em>. Подробнее: <a href="/investAPI/glossary#lot">лот</a></td>
+</tr>
+<tr>
+<td>currency</td>
+<td><a href="#string">string</a></td>
+<td>Валюта расчётов.</td>
+</tr>
+<tr>
+<td>klong</td>
+<td><a href="#double">double</a></td>
+<td>Коэффициент ставки риска длинной позиции по инструменту.</td>
+</tr>
+<tr>
+<td>kshort</td>
+<td><a href="#double">double</a></td>
+<td>Коэффициент ставки риска короткой позиции по инструменту.</td>
+</tr>
+<tr>
+<td>dlong</td>
+<td><a href="#double">double</a></td>
+<td>Ставка риска минимальной маржи в лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
+</tr>
+<tr>
+<td>dshort</td>
+<td><a href="#double">double</a></td>
+<td>Ставка риска минимальной маржи в шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
+</tr>
+<tr>
+<td>dlong_min</td>
+<td><a href="#double">double</a></td>
+<td>Ставка риска начальной маржи в лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
+</tr>
+<tr>
+<td>dshort_min</td>
+<td><a href="#double">double</a></td>
+<td>Ставка риска начальной маржи в шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
+</tr>
+<tr>
+<td>short_enabled_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности для операций в шорт.</td>
+</tr>
+<tr>
+<td>name</td>
+<td><a href="#string">string</a></td>
+<td>Название инструмента.</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td><a href="#string">string</a></td>
+<td>Торговая площадка.</td>
+</tr>
+<tr>
+<td>country_of_risk</td>
+<td><a href="#string">string</a></td>
+<td>Код страны эмитента.</td>
+</tr>
+<tr>
+<td>country_of_risk_name</td>
+<td><a href="#string">string</a></td>
+<td>Наименование страны эмитента.</td>
+</tr>
+<tr>
+<td>instrument_type</td>
+<td><a href="#string">string</a></td>
+<td>Тип инструмента.</td>
+</tr>
+<tr>
+<td>trading_status</td>
+<td><a href="#securitytradingstatus">SecurityTradingStatus</a></td>
+<td>Текущий режим торгов инструмента.</td>
+</tr>
+<tr>
+<td>otc_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак внебиржевой ценной бумаги.</td>
+</tr>
+<tr>
+<td>buy_available_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности для покупки.</td>
+</tr>
+<tr>
+<td>sell_available_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности для продажи.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
 <!-- end messages -->
 
 <h2 id="enums">Enums</h2>
@@ -3217,6 +3463,63 @@
 <td>INSTRUMENT_STATUS_ALL</td>
 <td>2</td>
 <td>Список всех инструментов.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sharetype">ShareType</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SHARE_TYPE_UNSPECIFIED</td>
+<td>0</td>
+<td>Значение не определено.</td>
+</tr>
+<tr>
+<td>SHARE_TYPE_COMMON</td>
+<td>1</td>
+<td>none</td>
+</tr>
+<tr>
+<td>SHARE_TYPE_PREFERRED</td>
+<td>2</td>
+<td>none</td>
+</tr>
+<tr>
+<td>SHARE_TYPE_ADR</td>
+<td>3</td>
+<td>none</td>
+</tr>
+<tr>
+<td>SHARE_TYPE_GDR</td>
+<td>4</td>
+<td>none</td>
+</tr>
+<tr>
+<td>SHARE_TYPE_MLP</td>
+<td>5</td>
+<td>none</td>
+</tr>
+<tr>
+<td>SHARE_TYPE_NY_REG_SHRS</td>
+<td>6</td>
+<td>none</td>
+</tr>
+<tr>
+<td>SHARE_TYPE_CLOSED_END_FUND</td>
+<td>7</td>
+<td>none</td>
+</tr>
+<tr>
+<td>SHARE_TYPE_REIT</td>
+<td>8</td>
+<td>none</td>
 </tr>
 </tbody>
 </table>

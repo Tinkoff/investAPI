@@ -118,6 +118,14 @@
 
 - Тело ответа — [GetFuturesMarginResponse](#getfuturesmarginresponse)
 
+
+### GetInstrumentBy
+Метод получения основной информации об инструменте
+
+- Тело запроса — [InstrumentRequest](#instrumentrequest)
+
+- Тело ответа — [InstrumentResponse](#instrumentresponse)
+
  <!-- range .Methods -->
  <!-- range .Services -->
 
@@ -349,6 +357,9 @@
 | otc_flag |  [bool](#bool) | Признак внебиржевой ценной бумаги. |
 | buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
+| floating_coupon_flag |  [bool](#bool) | Признак облигации с плавающим купоном. |
+| perpetual_flag |  [bool](#bool) | Признак бессрочной облигации. |
+| amortization_flag |  [bool](#bool) | Признак облигации с амортизацией долга. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -493,6 +504,8 @@
 | otc_flag |  [bool](#bool) | Признак внебиржевой ценной бумаги. |
 | buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
+| div_yield_flag |  [bool](#bool) | Признак наличия дивидендной доходности. |
+| share_type |  [ShareType](#sharetype) |  |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -556,6 +569,49 @@
 | initial_margin_on_sell |  [MoneyValue](#moneyvalue) | Гарантийное обеспечение при продаже |
  <!-- end Fields -->
  <!-- end HasFields -->
+
+
+### InstrumentResponse
+Данные по инструменту
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instrument |  [Instrument](#instrument) | Основная информация об инструменте. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+### Instrument
+Объект передачи основной информации об инструменте.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| figi |  [string](#string) | Figi-идентификатор инструмента. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код инструмента. |
+| isin |  [string](#string) | Isin-идентификатор инструмента. |
+| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](/investAPI/glossary#lot) |
+| currency |  [string](#string) | Валюта расчётов. |
+| klong |  [double](#double) | Коэффициент ставки риска длинной позиции по инструменту. |
+| kshort |  [double](#double) | Коэффициент ставки риска короткой позиции по инструменту. |
+| dlong |  [double](#double) | Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
+| dshort |  [double](#double) | Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
+| dlong_min |  [double](#double) | Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
+| dshort_min |  [double](#double) | Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
+| short_enabled_flag |  [bool](#bool) | Признак доступности для операций в шорт. |
+| name |  [string](#string) | Название инструмента. |
+| exchange |  [string](#string) | Торговая площадка. |
+| country_of_risk |  [string](#string) | Код страны эмитента. |
+| country_of_risk_name |  [string](#string) | Наименование страны эмитента. |
+| instrument_type |  [string](#string) | Тип инструмента. |
+| trading_status |  [SecurityTradingStatus](#securitytradingstatus) | Текущий режим торгов инструмента. |
+| otc_flag |  [bool](#bool) | Признак внебиржевой ценной бумаги. |
+| buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
+| sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
  <!-- end messages -->
 
 ## Enums
@@ -581,6 +637,24 @@
 | INSTRUMENT_STATUS_UNSPECIFIED | 0 | Значение не определено. |
 | INSTRUMENT_STATUS_BASE | 1 | Базовый список инструментов (по умолчанию). |
 | INSTRUMENT_STATUS_ALL | 2 | Список всех инструментов. |
+
+
+
+
+### ShareType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SHARE_TYPE_UNSPECIFIED | 0 | Значение не определено. |
+| SHARE_TYPE_COMMON | 1 | none |
+| SHARE_TYPE_PREFERRED | 2 | none |
+| SHARE_TYPE_ADR | 3 | none |
+| SHARE_TYPE_GDR | 4 | none |
+| SHARE_TYPE_MLP | 5 | none |
+| SHARE_TYPE_NY_REG_SHRS | 6 | none |
+| SHARE_TYPE_CLOSED_END_FUND | 7 | none |
+| SHARE_TYPE_REIT | 8 | none |
 
 
  <!-- range .Enums -->

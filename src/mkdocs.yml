@@ -28,6 +28,8 @@ nav:
   - "Идентификация торговых инструментов": faq_identification.md
   - Песочница: faq_sandbox.md
   - Мультисчета: faq_multiaccounts.md
+  - "Правила обработки корпоративных действий": faq_corp_action.md
+  - "Нестандартные типы данных": faq_custom_types.md
 - Сервис аккаунтов:
   - Описание: head-users.md
   - Методы: users.md

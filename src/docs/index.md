@@ -21,7 +21,7 @@ unary-запросами;
 ##Protobuf-файлы сервиса
 
 Скачать полный список прото-контрактов сериса можно скачать по ссылке: 
-[TINKOFF INVEST API](/investAPI/contracts/protos.zip)
+[TINKOFF INVEST API](https://github.com/TinkoffCreditSystems/investAPI/tree/main/src/docs/contracts)
 
 <!--##SDK для разработки с использованием Public API
 Для упрощения разработки торгового робота разработан ряд официальных и неофициальных SDK на целом 

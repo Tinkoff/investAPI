@@ -118,16 +118,12 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| total_amount_bonds |  [MoneyValue](#moneyvalue) | Текущая стоимость всех облигаций в рублях |
-| total_amount_currencies |  [MoneyValue](#moneyvalue) | Текущая стоимость всех валютных позиций в рублях |
-| total_amount_etf |  [MoneyValue](#moneyvalue) | Текущая стоимость всех ETF в рублях |
-| total_amount_stocks |  [MoneyValue](#moneyvalue) | Текущая стоимость всех акций в рублях |
-| total_amount_portfolio |  [MoneyValue](#moneyvalue) | Текущая стоимость портфеля в рублях |
-| portfolio_yield |  [MoneyValue](#moneyvalue) | Абсолютная доходность портфеля за все время с учетом валютной переоценки |
-| portfolio_yield_relative |  [float](#float) | Относительная доходность портфеля на все время с учетом валютной переоценки |
-| portfolio_daily_yield |  [MoneyValue](#moneyvalue) | Абсолютная дневная доходность портфеля с учетом валютной переоценки |
-| portfolio_daily_yield_relative |  [float](#float) | Относительная дневная доходность портфеля с учетом валютной переоценки |
-| items | Массив объектов [PortfolioItem](#portfolioitem) | Список позиций портфеля |
+| total_amount_stocks |  [MoneyValue](#moneyvalue) | Общая стоимость акций в портфеле в рублях |
+| total_amount_bonds |  [MoneyValue](#moneyvalue) | Общая стоимость облигаций в портфеле в рублях |
+| total_amount_etf |  [MoneyValue](#moneyvalue) | Общая стоимость фондов в портфеле в рублях |
+| total_amount_currencies |  [MoneyValue](#moneyvalue) | Общая стоимость валют в портфеле в рублях |
+| expected_yield |  [float](#float) | Текущая доходность портфеля |
+| positions | Массив объектов [PortfolioPosition](#portfolioposition) | Список позиций портфеля |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -180,29 +176,19 @@
  <!-- end HasFields -->
 
 
-### PortfolioItem
+### PortfolioPosition
 
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| ticker |  [string](#string) | Тикер |
-| figi |  [string](#string) | Figi-идентификатор инструмента |
-| instrument_type |  [string](#string) | Тип инструмента. Возможные значения: </br>**bond** — облигация; </br>**stock** — акция; </br>**currency** — валюта; </br>**etf** — фонд; </br>**futures** — фьючерс. |
-| quantity |  [int64](#int64) | Количество лотов |
-| currency |  [string](#string) | Валюта расчётов по инструменту |
-| price |  [MoneyValue](#moneyvalue) | Текущая цена инструмента |
-| avg_cost_price |  [MoneyValue](#moneyvalue) | Средняя цена покупки позиции с учетом накопленного купонного дохода |
-| avg_cost_price_no_acc |  [MoneyValue](#moneyvalue) | Средняя цена покупки позиции без учета накопленного купонного дохода |
-| current_amount |  [MoneyValue](#moneyvalue) | Текущая стоимость позиции |
-| accruedint |  [MoneyValue](#moneyvalue) | Накопленный купонный доход |
-| yield |  [MoneyValue](#moneyvalue) | Абсолютная доходность за все время с учетом валютной переоценки |
-| yield_relative |  [float](#float) | Относительная доходность на все время с учетом валютной переоценки |
-| daily_yield |  [MoneyValue](#moneyvalue) | Абсолютная дневная доходность с учетом валютной переоценки |
-| daily_yield_relative |  [float](#float) | Относительная дневная доходность с учетом валютной переоценки |
-| coupons_acquired_amt |  [MoneyValue](#moneyvalue) | Сумма операций по выплате купонов |
-| coupons_acquired_qty |  [int32](#int32) | Количество операций по выплате купонов |
-| current_var_margin |  [float](#float) | Вариационная маржа (параметр возвращается только для фьючерсов) |
+| figi |  [string](#string) | Figi-идентификатора инструмента |
+| instrument_type |  [string](#string) | Тип инструмента |
+| quantity |  [int64](#int64) | Количество лотов в портфеле |
+| average_position_price |  [MoneyValue](#moneyvalue) | Средняя цена лота в позиции |
+| average_position_price_no_nkd |  [MoneyValue](#moneyvalue) | Средняя цена лота в позиции без учёта НКД |
+| expected_yield |  [float](#float) | Текущая рассчитанная доходность |
+| current_nkd |  [MoneyValue](#moneyvalue) | Текущий НКД |
  <!-- end Fields -->
  <!-- end HasFields -->
 

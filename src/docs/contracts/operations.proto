@@ -9,7 +9,7 @@ option java_multiple_files = true;
 import "google/protobuf/timestamp.proto";
 import "common.proto";
 
-service OperationsService { /*Сервис предназначен для получения:</br> **1**.  списка операций по счёту;</br> **2**.
+service OperationsService {/*Сервис предназначен для получения:</br> **1**.  списка операций по счёту;</br> **2**.
                               портфеля по счёту;</br> **3**. позиций ценных бумаг на счёте;</br> **4**.
                               доступного остатка для вывода средств.*/
   //Метод получения списка операций по счёту
@@ -57,17 +57,12 @@ message PortfolioRequest {
 }
 
 message PortfolioResponse {
-  MoneyValue total_amount_bonds = 1; //Текущая стоимость всех облигаций в рублях
-  MoneyValue total_amount_currencies = 2; //Текущая стоимость всех валютных позиций в рублях
-  MoneyValue total_amount_etf = 3; //Текущая стоимость всех ETF в рублях
-  MoneyValue total_amount_stocks = 4; //Текущая стоимость всех акций в рублях
-  reserved 5; //MoneyValue total_amount_futures = 5; //(предупреждение)Cadb пока не возвращает Текущая стоимость всех фьючерсов в рублях
-  MoneyValue total_amount_portfolio = 6; //Текущая стоимость портфеля в рублях
-  MoneyValue portfolio_yield = 7; //Абсолютная доходность портфеля за все время с учетом валютной переоценки
-  float portfolio_yield_relative = 8; //Относительная доходность портфеля на все время с учетом валютной переоценки
-  MoneyValue portfolio_daily_yield = 9; //Абсолютная дневная доходность портфеля с учетом валютной переоценки
-  float portfolio_daily_yield_relative = 10; //Относительная дневная доходность портфеля с учетом валютной переоценки
-  repeated PortfolioItem items = 11; //Список позиций портфеля
+  MoneyValue total_amount_stocks = 1; //Общая стоимость акций в портфеле в рублях
+  MoneyValue total_amount_bonds = 2; //Общая стоимость облигаций в портфеле в рублях
+  MoneyValue total_amount_etf = 3; //Общая стоимость фондов в портфеле в рублях
+  MoneyValue total_amount_currencies = 4; //Общая стоимость валют в портфеле в рублях
+  float expected_yield = 5; //Текущая доходность портфеля
+  repeated PortfolioPosition positions = 6; //Список позиций портфеля
 }
 
 message PositionsRequest {
@@ -78,7 +73,7 @@ message PositionsResponse {
   repeated MoneyValue money = 1;  //Массив валютных позиций портфеля
   repeated MoneyValue blocked = 2;  //Массив заблокированных валютных позиций портфеля
   repeated PositionsSecurities securities = 3;  //Список ценно-бумажных позиций портфеля
-  bool limits_loading_in_progress  = 4;  //Признак идущей в данный момент выгрузки лимитов
+  bool limits_loading_in_progress = 4;  //Признак идущей в данный момент выгрузки лимитов
 }
 
 message WithdrawLimitsRequest {
@@ -90,24 +85,14 @@ message WithdrawLimitsResponse {
   repeated MoneyValue blocked = 2;  //Массив заблокированных валютных позиций портфеля
 }
 
-message PortfolioItem {
-  string ticker = 1; //Тикер
-  string figi = 2; //Figi-идентификатор инструмента
-  string instrument_type = 3; //Тип инструмента. Возможные значения: </br>**bond** — облигация; </br>**stock** — акция; </br>**currency** — валюта; </br>**etf** — фонд; </br>**futures** — фьючерс.
-  int64 quantity = 4; //Количество лотов
-  string currency = 5; //Валюта расчётов по инструменту
-  MoneyValue price = 6; //Текущая цена инструмента
-  MoneyValue avg_cost_price = 7; //Средняя цена покупки позиции с учетом накопленного купонного дохода
-  MoneyValue avg_cost_price_no_acc = 8; //Средняя цена покупки позиции без учета накопленного купонного дохода
-  MoneyValue current_amount = 9; //Текущая стоимость позиции
-  MoneyValue accruedint = 10;//Накопленный купонный доход
-  MoneyValue yield = 11; //Абсолютная доходность за все время с учетом валютной переоценки
-  float yield_relative = 12; //Относительная доходность на все время с учетом валютной переоценки
-  MoneyValue daily_yield = 13; //Абсолютная дневная доходность с учетом валютной переоценки
-  float daily_yield_relative = 14; //Относительная дневная доходность с учетом валютной переоценки
-  MoneyValue coupons_acquired_amt = 15; //Сумма операций по выплате купонов
-  int32 coupons_acquired_qty = 16; //Количество операций по выплате купонов
-  float current_var_margin = 17;  //Вариационная маржа (параметр возвращается только для фьючерсов)
+message PortfolioPosition {
+  string figi = 1; //Figi-идентификатора инструмента
+  string instrument_type = 2; //Тип инструмента
+  int64 quantity = 3; //Количество лотов в портфеле
+  MoneyValue average_position_price = 4; //Средняя цена лота в позиции
+  MoneyValue average_position_price_no_nkd = 5; //Средняя цена лота в позиции без учёта НКД
+  float expected_yield = 6; //Текущая рассчитанная доходность
+  MoneyValue current_nkd = 7; // Текущий НКД
 }
 
 message PositionsSecurities {

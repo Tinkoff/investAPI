@@ -13,12 +13,12 @@
 ##Методы сервиса
 
 
-### OrdersStream
+### TradesStream
 Bidirectional stream работы со сделками
 
-- Тело запроса — [OrdersStreamRequest](#ordersstreamrequest)
+- Тело запроса — [TradesStreamRequest](#tradesstreamrequest)
 
-- Тело ответа — [OrdersStreamResponse](#ordersstreamresponse)
+- Тело ответа — [TradesStreamResponse](#tradesstreamresponse)
 
  <!-- range .Methods -->
 
@@ -69,28 +69,36 @@ Bidirectional stream работы со сделками
 
 
 
-### OrdersStreamRequest
+### TradesStreamRequest
+
+
+ <!-- end HasFields -->
+
+
+### TradesStreamResponse
 
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| order_execute |  [PostOrderRequest](#postorderrequest) | Объект выставления заявки. |
-| order_cancel |  [CancelOrderRequest](#cancelorderrequest) | Объект отмены заявки. |
-| order_state |  [GetOrderStateRequest](#getorderstaterequest) | Объект получения статуса заявки. |
+| order_id |  [string](#string) | Идентификатор торгового поручения |
+| created_at |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время создания сообщения |
+| direction |  [OrderDirection](#orderdirection) | Направление сделки (возможные значения) |
+| figi |  [string](#string) | Figi-идентификатор инструмента |
+| trades | Массив объектов [OrderTrade](#ordertrade) | Массив сделок |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
-### OrdersStreamResponse
+### OrderTrade
 
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| order_execute |  [PostOrderResponse](#postorderresponse) | Объект ответа выставления заявки. |
-| order_cancel |  [CancelOrderResponse](#cancelorderresponse) | Объект ответа отмены заявки. |
-| order_state |  [OrderState](#orderstate) | Объект ответа получения статуса заявки. |
+| date_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время совершения сделки по времени биржи |
+| price |  [MoneyValue](#moneyvalue) | Цена, по которой совершена сделка |
+| quantity |  [int64](#int64) | Количество лотов в сделке |
  <!-- end Fields -->
  <!-- end HasFields -->
 

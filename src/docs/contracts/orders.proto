@@ -11,10 +11,10 @@ import "google/protobuf/timestamp.proto";
 
 service OrdersStreamService {
   //Bidirectional stream работы со сделками
-  rpc OrdersStream(stream OrdersStreamRequest) returns (stream OrdersStreamResponse);
+  rpc TradesStream(TradesStreamRequest) returns (stream TradesStreamResponse);
 }
 
-service OrdersService { /* Сервис предназначен для работы с торговыми поручениями:</br> **1**.
+service OrdersService {/* Сервис предназначен для работы с торговыми поручениями:</br> **1**.
                         выставление;</br> **2**. отмена;</br> **3**. получение статуса;</br> **4**.
                         расчёт полной стоимости;</br> **5**. получение списка заявок.*/
   //Метод выставления заявки.
@@ -30,20 +30,22 @@ service OrdersService { /* Сервис предназначен для рабо
   rpc GetOrders(GetOrdersRequest) returns (GetOrdersResponse);
 }
 
-message OrdersStreamRequest {
-  oneof payload {//Тело запроса.
-    PostOrderRequest order_execute = 1; //Объект выставления заявки.
-    CancelOrderRequest order_cancel = 2; //Объект отмены заявки.
-    GetOrderStateRequest order_state = 3; //Объект получения статуса заявки.
-  }
+message TradesStreamRequest {
+
 }
 
-message OrdersStreamResponse {
-  oneof payload {//Тело ответа.
-    PostOrderResponse order_execute = 1; //Объект ответа выставления заявки.
-    CancelOrderResponse order_cancel = 2; //Объект ответа отмены заявки.
-    OrderState order_state = 3; //Объект ответа получения статуса заявки.
-  }
+message TradesStreamResponse {
+  string order_id = 1; //Идентификатор торгового поручения
+  google.protobuf.Timestamp created_at = 2; //Дата и время создания сообщения
+  OrderDirection direction = 3; //Направление сделки (возможные значения)
+  string figi = 4; //Figi-идентификатор инструмента
+  repeated OrderTrade trades = 5; //Массив сделок
+}
+
+message OrderTrade {
+  google.protobuf.Timestamp date_time = 1;  //Дата и время совершения сделки по времени биржи
+  MoneyValue price = 2;  //Цена, по которой совершена сделка
+  int64 quantity = 3;  //Количество лотов в сделке
 }
 
 message PostOrderRequest {

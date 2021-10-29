@@ -1150,8 +1150,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#portfolioitem" class="md-nav__link">
-    PortfolioItem
+  <a href="#portfolioposition" class="md-nav__link">
+    PortfolioPosition
   </a>
   
 </li>
@@ -1210,8 +1210,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ordersstream" class="md-nav__link">
-    OrdersStream
+  <a href="#tradesstream" class="md-nav__link">
+    TradesStream
   </a>
   
 </li>
@@ -1284,15 +1284,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ordersstreamrequest" class="md-nav__link">
-    OrdersStreamRequest
+  <a href="#tradesstreamrequest" class="md-nav__link">
+    TradesStreamRequest
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ordersstreamresponse" class="md-nav__link">
-    OrdersStreamResponse
+  <a href="#tradesstreamresponse" class="md-nav__link">
+    TradesStreamResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordertrade" class="md-nav__link">
+    OrderTrade
   </a>
   
 </li>
@@ -1912,8 +1919,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#portfolioitem" class="md-nav__link">
-    PortfolioItem
+  <a href="#portfolioposition" class="md-nav__link">
+    PortfolioPosition
   </a>
   
 </li>
@@ -1972,8 +1979,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ordersstream" class="md-nav__link">
-    OrdersStream
+  <a href="#tradesstream" class="md-nav__link">
+    TradesStream
   </a>
   
 </li>
@@ -2046,15 +2053,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ordersstreamrequest" class="md-nav__link">
-    OrdersStreamRequest
+  <a href="#tradesstreamrequest" class="md-nav__link">
+    TradesStreamRequest
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ordersstreamresponse" class="md-nav__link">
-    OrdersStreamResponse
+  <a href="#tradesstreamresponse" class="md-nav__link">
+    TradesStreamResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordertrade" class="md-nav__link">
+    OrderTrade
   </a>
   
 </li>
@@ -2826,53 +2840,33 @@
 </thead>
 <tbody>
 <tr>
-<td>total_amount_bonds</td>
+<td>total_amount_stocks</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Текущая стоимость всех облигаций в рублях</td>
+<td>Общая стоимость акций в портфеле в рублях</td>
 </tr>
 <tr>
-<td>total_amount_currencies</td>
+<td>total_amount_bonds</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Текущая стоимость всех валютных позиций в рублях</td>
+<td>Общая стоимость облигаций в портфеле в рублях</td>
 </tr>
 <tr>
 <td>total_amount_etf</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Текущая стоимость всех ETF в рублях</td>
+<td>Общая стоимость фондов в портфеле в рублях</td>
 </tr>
 <tr>
-<td>total_amount_stocks</td>
+<td>total_amount_currencies</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Текущая стоимость всех акций в рублях</td>
+<td>Общая стоимость валют в портфеле в рублях</td>
 </tr>
 <tr>
-<td>total_amount_portfolio</td>
-<td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Текущая стоимость портфеля в рублях</td>
-</tr>
-<tr>
-<td>portfolio_yield</td>
-<td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Абсолютная доходность портфеля за все время с учетом валютной переоценки</td>
-</tr>
-<tr>
-<td>portfolio_yield_relative</td>
+<td>expected_yield</td>
 <td><a href="#float">float</a></td>
-<td>Относительная доходность портфеля на все время с учетом валютной переоценки</td>
+<td>Текущая доходность портфеля</td>
 </tr>
 <tr>
-<td>portfolio_daily_yield</td>
-<td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Абсолютная дневная доходность портфеля с учетом валютной переоценки</td>
-</tr>
-<tr>
-<td>portfolio_daily_yield_relative</td>
-<td><a href="#float">float</a></td>
-<td>Относительная дневная доходность портфеля с учетом валютной переоценки</td>
-</tr>
-<tr>
-<td>items</td>
-<td>Массив объектов <a href="#portfolioitem">PortfolioItem</a></td>
+<td>positions</td>
+<td>Массив объектов <a href="#portfolioposition">PortfolioPosition</a></td>
 <td>Список позиций портфеля</td>
 </tr>
 <tr>
@@ -3000,7 +2994,7 @@
 </table>
 <!-- end HasFields -->
 
-<h4 id="portfolioitem">PortfolioItem</h4>
+<h4 id="portfolioposition">PortfolioPosition</h4>
 <table>
 <thead>
 <tr>
@@ -3011,89 +3005,39 @@
 </thead>
 <tbody>
 <tr>
-<td>ticker</td>
-<td><a href="#string">string</a></td>
-<td>Тикер</td>
-</tr>
-<tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента</td>
+<td>Figi-идентификатора инструмента</td>
 </tr>
 <tr>
 <td>instrument_type</td>
 <td><a href="#string">string</a></td>
-<td>Тип инструмента. Возможные значения: </br><strong>bond</strong> — облигация; </br><strong>stock</strong> — акция; </br><strong>currency</strong> — валюта; </br><strong>etf</strong> — фонд; </br><strong>futures</strong> — фьючерс.</td>
+<td>Тип инструмента</td>
 </tr>
 <tr>
 <td>quantity</td>
 <td><a href="#int64">int64</a></td>
-<td>Количество лотов</td>
+<td>Количество лотов в портфеле</td>
 </tr>
 <tr>
-<td>currency</td>
-<td><a href="#string">string</a></td>
-<td>Валюта расчётов по инструменту</td>
-</tr>
-<tr>
-<td>price</td>
+<td>average_position_price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Текущая цена инструмента</td>
+<td>Средняя цена лота в позиции</td>
 </tr>
 <tr>
-<td>avg_cost_price</td>
+<td>average_position_price_no_nkd</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Средняя цена покупки позиции с учетом накопленного купонного дохода</td>
+<td>Средняя цена лота в позиции без учёта НКД</td>
 </tr>
 <tr>
-<td>avg_cost_price_no_acc</td>
-<td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Средняя цена покупки позиции без учета накопленного купонного дохода</td>
-</tr>
-<tr>
-<td>current_amount</td>
-<td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Текущая стоимость позиции</td>
-</tr>
-<tr>
-<td>accruedint</td>
-<td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Накопленный купонный доход</td>
-</tr>
-<tr>
-<td>yield</td>
-<td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Абсолютная доходность за все время с учетом валютной переоценки</td>
-</tr>
-<tr>
-<td>yield_relative</td>
+<td>expected_yield</td>
 <td><a href="#float">float</a></td>
-<td>Относительная доходность на все время с учетом валютной переоценки</td>
+<td>Текущая рассчитанная доходность</td>
 </tr>
 <tr>
-<td>daily_yield</td>
+<td>current_nkd</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Абсолютная дневная доходность с учетом валютной переоценки</td>
-</tr>
-<tr>
-<td>daily_yield_relative</td>
-<td><a href="#float">float</a></td>
-<td>Относительная дневная доходность с учетом валютной переоценки</td>
-</tr>
-<tr>
-<td>coupons_acquired_amt</td>
-<td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Сумма операций по выплате купонов</td>
-</tr>
-<tr>
-<td>coupons_acquired_qty</td>
-<td><a href="#int32">int32</a></td>
-<td>Количество операций по выплате купонов</td>
-</tr>
-<tr>
-<td>current_var_margin</td>
-<td><a href="#float">float</a></td>
-<td>Вариационная маржа (параметр возвращается только для фьючерсов)</td>
+<td>Текущий НКД</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3181,14 +3125,14 @@
 
 <h2 id="ordersstreamservice">OrdersStreamService</h2>
 <h3 id="_5">Методы сервиса</h3>
-<h4 id="ordersstream">OrdersStream</h4>
+<h4 id="tradesstream">TradesStream</h4>
 <p>Bidirectional stream работы со сделками</p>
 <ul>
 <li>
-<p>Тело запроса — <a href="#ordersstreamrequest">OrdersStreamRequest</a></p>
+<p>Тело запроса — <a href="#tradesstreamrequest">TradesStreamRequest</a></p>
 </li>
 <li>
-<p>Тело ответа — <a href="#ordersstreamresponse">OrdersStreamResponse</a></p>
+<p>Тело ответа — <a href="#tradesstreamresponse">TradesStreamResponse</a></p>
 </li>
 </ul>
 <!-- range .Methods -->
@@ -3242,7 +3186,10 @@
 <!-- range .Services -->
 
 <h3 id="_7">Сообщения методов</h3>
-<h4 id="ordersstreamrequest">OrdersStreamRequest</h4>
+<h4 id="tradesstreamrequest">TradesStreamRequest</h4>
+<!-- end HasFields -->
+
+<h4 id="tradesstreamresponse">TradesStreamResponse</h4>
 <table>
 <thead>
 <tr>
@@ -3253,19 +3200,29 @@
 </thead>
 <tbody>
 <tr>
-<td>order_execute</td>
-<td><a href="#postorderrequest">PostOrderRequest</a></td>
-<td>Объект выставления заявки.</td>
+<td>order_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор торгового поручения</td>
 </tr>
 <tr>
-<td>order_cancel</td>
-<td><a href="#cancelorderrequest">CancelOrderRequest</a></td>
-<td>Объект отмены заявки.</td>
+<td>created_at</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата и время создания сообщения</td>
 </tr>
 <tr>
-<td>order_state</td>
-<td><a href="#getorderstaterequest">GetOrderStateRequest</a></td>
-<td>Объект получения статуса заявки.</td>
+<td>direction</td>
+<td><a href="#orderdirection">OrderDirection</a></td>
+<td>Направление сделки (возможные значения)</td>
+</tr>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента</td>
+</tr>
+<tr>
+<td>trades</td>
+<td>Массив объектов <a href="#ordertrade">OrderTrade</a></td>
+<td>Массив сделок</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3276,7 +3233,7 @@
 </table>
 <!-- end HasFields -->
 
-<h4 id="ordersstreamresponse">OrdersStreamResponse</h4>
+<h4 id="ordertrade">OrderTrade</h4>
 <table>
 <thead>
 <tr>
@@ -3287,19 +3244,19 @@
 </thead>
 <tbody>
 <tr>
-<td>order_execute</td>
-<td><a href="#postorderresponse">PostOrderResponse</a></td>
-<td>Объект ответа выставления заявки.</td>
+<td>date_time</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата и время совершения сделки по времени биржи</td>
 </tr>
 <tr>
-<td>order_cancel</td>
-<td><a href="#cancelorderresponse">CancelOrderResponse</a></td>
-<td>Объект ответа отмены заявки.</td>
+<td>price</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Цена, по которой совершена сделка</td>
 </tr>
 <tr>
-<td>order_state</td>
-<td><a href="#orderstate">OrderState</a></td>
-<td>Объект ответа получения статуса заявки.</td>
+<td>quantity</td>
+<td><a href="#int64">int64</a></td>
+<td>Количество лотов в сделке</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>

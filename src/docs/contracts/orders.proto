@@ -44,7 +44,7 @@ message TradesStreamResponse {
 
 message OrderTrade {
   google.protobuf.Timestamp date_time = 1;  //Дата и время совершения сделки по времени биржи
-  MoneyValue price = 2;  //Цена, по которой совершена сделка
+  Quotation price = 2;  //Цена, по которой совершена сделка
   int64 quantity = 3;  //Количество лотов в сделке
 }
 
@@ -53,9 +53,9 @@ message PostOrderRequest {
   int64 quantity = 2; //Количество лотов.
   MoneyValue price = 3; //Цена лота.
   OrderDirection direction = 4; //Направление операции.
-  string accountId = 5; //Номер счёта.
+  string account_id = 5; //Номер счёта.
   OrderType order_type = 6; //Тип заявки.
-  string orderId = 7; //Идентификатор запроса выставления поручения для целей идемпотентности
+  string order_id = 7; //Идентификатор запроса выставления поручения для целей идемпотентности
 }
 
 message PostOrderResponse {

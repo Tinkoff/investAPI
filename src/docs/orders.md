@@ -97,7 +97,7 @@ Bidirectional stream работы со сделками
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | date_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время совершения сделки по времени биржи |
-| price |  [MoneyValue](#moneyvalue) | Цена, по которой совершена сделка |
+| price |  [Quotation](#quotation) | Цена, по которой совершена сделка |
 | quantity |  [int64](#int64) | Количество лотов в сделке |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -113,9 +113,9 @@ Bidirectional stream работы со сделками
 | quantity |  [int64](#int64) | Количество лотов. |
 | price |  [MoneyValue](#moneyvalue) | Цена лота. |
 | direction |  [OrderDirection](#orderdirection) | Направление операции. |
-| accountId |  [string](#string) | Номер счёта. |
+| account_id |  [string](#string) | Номер счёта. |
 | order_type |  [OrderType](#ordertype) | Тип заявки. |
-| orderId |  [string](#string) | Идентификатор запроса выставления поручения для целей идемпотентности |
+| order_id |  [string](#string) | Идентификатор запроса выставления поручения для целей идемпотентности |
  <!-- end Fields -->
  <!-- end HasFields -->
 

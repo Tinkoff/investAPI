@@ -486,7 +486,7 @@ Bidirectional stream работы со сделками
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | date_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время совершения сделки по времени биржи |
-| price |  [MoneyValue](#moneyvalue) | Цена, по которой совершена сделка |
+| price |  [Quotation](#quotation) | Цена, по которой совершена сделка |
 | quantity |  [int64](#int64) | Количество лотов в сделке |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -502,9 +502,9 @@ Bidirectional stream работы со сделками
 | quantity |  [int64](#int64) | Количество лотов. |
 | price |  [MoneyValue](#moneyvalue) | Цена лота. |
 | direction |  [OrderDirection](#orderdirection) | Направление операции. |
-| accountId |  [string](#string) | Номер счёта. |
+| account_id |  [string](#string) | Номер счёта. |
 | order_type |  [OrderType](#ordertype) | Тип заявки. |
-| orderId |  [string](#string) | Идентификатор запроса выставления поручения для целей идемпотентности |
+| order_id |  [string](#string) | Идентификатор запроса выставления поручения для целей идемпотентности |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -714,6 +714,14 @@ Bidirectional stream работы со сделками
 
 - Тело ответа — [GetUserTariffResponse](#getusertariffresponse)
 
+
+#### GetInfo
+Метод получения информации о пользователе
+
+- Тело запроса — [GetInfoRequest](#getinforequest)
+
+- Тело ответа — [GetInfoResponse](#getinforesponse)
+
  <!-- range .Methods -->
  <!-- range .Services -->
 
@@ -733,7 +741,6 @@ Bidirectional stream работы со сделками
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| tracking_id |  [string](#string) | Уникальный идентификатор запроса. |
 | accounts | Массив объектов [Account](#account) | Массив счетов клиента. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -819,6 +826,25 @@ Bidirectional stream работы со сделками
 | ----- | ---- | ----------- |
 | limit |  [int32](#int32) | Максимальное количество stream-соединений |
 | streams | Массив объектов [string](#string) | Названия stream-методов |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetInfoRequest
+
+
+ <!-- end HasFields -->
+
+
+#### GetInfoResponse
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| prem_status |  [bool](#bool) | Признак премиум клиента. |
+| qual_status |  [bool](#bool) | Признак квалифицированного инвестора. |
+| qualified_for_work_with | Массив объектов [string](#string) | Набор требующих тестирования инструментов и возможностей, с которыми может работать пользователь. |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->

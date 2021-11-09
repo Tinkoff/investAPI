@@ -37,6 +37,14 @@
 
 - Тело ответа — [GetUserTariffResponse](#getusertariffresponse)
 
+
+### GetInfo
+Метод получения информации о пользователе
+
+- Тело запроса — [GetInfoRequest](#getinforequest)
+
+- Тело ответа — [GetInfoResponse](#getinforesponse)
+
  <!-- range .Methods -->
  <!-- range .Services -->
 
@@ -56,7 +64,6 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| tracking_id |  [string](#string) | Уникальный идентификатор запроса. |
 | accounts | Массив объектов [Account](#account) | Массив счетов клиента. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -142,6 +149,25 @@
 | ----- | ---- | ----------- |
 | limit |  [int32](#int32) | Максимальное количество stream-соединений |
 | streams | Массив объектов [string](#string) | Названия stream-методов |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+### GetInfoRequest
+
+
+ <!-- end HasFields -->
+
+
+### GetInfoResponse
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| prem_status |  [bool](#bool) | Признак премиум клиента. |
+| qual_status |  [bool](#bool) | Признак квалифицированного инвестора. |
+| qualified_for_work_with | Массив объектов [string](#string) | Набор требующих тестирования инструментов и возможностей, с которыми может работать пользователь. |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->

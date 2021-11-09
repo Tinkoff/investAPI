@@ -434,7 +434,7 @@ subscribeInfo | Изменение статуса подписки на торг
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Идентификатор инструмента |
-| price |  [MoneyValue](#moneyvalue) | Последняя цена за 1 лот |
+| price |  [Quotation](#quotation) | Последняя цена за 1 лот |
 | time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время получения последней цены в часовом поясе UTC по времени биржи |
  <!-- end Fields -->
  <!-- end HasFields -->

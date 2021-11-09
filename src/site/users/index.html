@@ -580,6 +580,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#getinfo" class="md-nav__link">
+    GetInfo
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -652,6 +659,20 @@
           <li class="md-nav__item">
   <a href="#streamlimit" class="md-nav__link">
     StreamLimit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinforequest" class="md-nav__link">
+    GetInfoRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinforesponse" class="md-nav__link">
+    GetInfoResponse
   </a>
   
 </li>
@@ -1129,6 +1150,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#getinfo" class="md-nav__link">
+    GetInfo
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1201,6 +1229,20 @@
           <li class="md-nav__item">
   <a href="#streamlimit" class="md-nav__link">
     StreamLimit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinforequest" class="md-nav__link">
+    GetInfoRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinforesponse" class="md-nav__link">
+    GetInfoResponse
   </a>
   
 </li>
@@ -1324,6 +1366,16 @@
 <p>Тело ответа — <a href="#getusertariffresponse">GetUserTariffResponse</a></p>
 </li>
 </ul>
+<h3 id="getinfo">GetInfo</h3>
+<p>Метод получения информации о пользователе</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#getinforequest">GetInfoRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#getinforesponse">GetInfoResponse</a></p>
+</li>
+</ul>
 <!-- range .Methods -->
 <!-- range .Services -->
 
@@ -1343,11 +1395,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>tracking_id</td>
-<td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса.</td>
-</tr>
 <tr>
 <td>accounts</td>
 <td>Массив объектов <a href="#account">Account</a></td>
@@ -1562,6 +1609,43 @@
 <td>streams</td>
 <td>Массив объектов <a href="#string">string</a></td>
 <td>Названия stream-методов</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h3 id="getinforequest">GetInfoRequest</h3>
+<!-- end HasFields -->
+
+<h3 id="getinforesponse">GetInfoResponse</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>prem_status</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак премиум клиента.</td>
+</tr>
+<tr>
+<td>qual_status</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак квалифицированного инвестора.</td>
+</tr>
+<tr>
+<td>qualified_for_work_with</td>
+<td>Массив объектов <a href="#string">string</a></td>
+<td>Набор требующих тестирования инструментов и возможностей, с которыми может работать пользователь.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>

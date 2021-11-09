@@ -986,7 +986,7 @@ bidirectional-stream <a href="/investAPI/head-marketdata/">сервиса кот
 работы можно ознакомиться в <a href="https://grpc.io/docs/what-is-grpc/core-concepts/">документации протокола</a>.</p>
 <p><a name="tracking"></a></p>
 <h2 id="tracking-id">tracking-id запросов</h2>
-<p>Во все ответы unary-методов TINKOFF INVEST API добавляется tracking-id запроса в заголовок <strong>X-B3-TraceId</strong>. 
+<p>Во все ответы unary-методов TINKOFF INVEST API добавляется заголовок <strong>x-tracking-id</strong>. 
 Это уникальный uuid-идентификатор запроса, который необходим технической поддержке для разбора различных 
 инцидентов. При обращении в службу технической поддержки обязательно указывайте <strong>tracking-id</strong> запроса, 
 это ускорит решение вашего вопроса. </p>

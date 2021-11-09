@@ -233,7 +233,7 @@ message GetLastPricesResponse {
 
 message LastPrice {
   string figi = 1; //Идентификатор инструмента
-  MoneyValue price = 2; //Последняя цена за 1 лот
+  Quotation price = 2; //Последняя цена за 1 лот
   google.protobuf.Timestamp time = 3; //Время получения последней цены в часовом поясе UTC по времени биржи
 }
 

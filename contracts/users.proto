@@ -16,6 +16,8 @@ service UsersService { /*Сервис предназначен для получ
   rpc GetMarginAttributes (GetMarginAttributesRequest) returns (GetMarginAttributesResponse); //Расчёт маржинальных показателей по счёту
 
   rpc GetUserTariff (GetUserTariffRequest) returns (GetUserTariffResponse); //Запрос тарифа пользователя
+
+  rpc GetInfo (GetInfoRequest) returns (GetInfoResponse); //Метод получения информации о пользователе
 }
 
 // Запрос получения счетов не имеет входных параметров
@@ -23,12 +25,8 @@ message GetAccountsRequest {}
 
 // Ответ на запрос получения счетов.
 message GetAccountsResponse {
-
-  // Уникальный идентификатор запроса.
-  string tracking_id = 1;
-
   // Массив счетов клиента.
-  repeated Account accounts = 2;
+  repeated Account accounts = 1;
 }
 
 // Счёт клиента.
@@ -111,4 +109,13 @@ message UnaryLimit {
 message StreamLimit {
   int32 limit = 1; //Максимальное количество stream-соединений
   repeated string streams = 2; //Названия stream-методов
+}
+
+message GetInfoRequest {
+}
+
+message GetInfoResponse {
+  bool prem_status = 1; //Признак премиум клиента.
+  bool qual_status = 2; //Признак квалифицированного инвестора.
+  repeated string qualified_for_work_with = 3; //Набор требующих тестирования инструментов и возможностей, с которыми может работать пользователь.
 }

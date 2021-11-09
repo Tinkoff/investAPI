@@ -1448,6 +1448,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#getinfo" class="md-nav__link">
+    GetInfo
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1520,6 +1527,20 @@
           <li class="md-nav__item">
   <a href="#streamlimit" class="md-nav__link">
     StreamLimit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinforequest" class="md-nav__link">
+    GetInfoRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinforesponse" class="md-nav__link">
+    GetInfoResponse
   </a>
   
 </li>
@@ -2217,6 +2238,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#getinfo" class="md-nav__link">
+    GetInfo
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2289,6 +2317,20 @@
           <li class="md-nav__item">
   <a href="#streamlimit" class="md-nav__link">
     StreamLimit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinforequest" class="md-nav__link">
+    GetInfoRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinforesponse" class="md-nav__link">
+    GetInfoResponse
   </a>
   
 </li>
@@ -3250,7 +3292,7 @@
 </tr>
 <tr>
 <td>price</td>
-<td><a href="#moneyvalue">MoneyValue</a></td>
+<td><a href="#quotation">Quotation</a></td>
 <td>Цена, по которой совершена сделка</td>
 </tr>
 <tr>
@@ -3298,7 +3340,7 @@
 <td>Направление операции.</td>
 </tr>
 <tr>
-<td>accountId</td>
+<td>account_id</td>
 <td><a href="#string">string</a></td>
 <td>Номер счёта.</td>
 </tr>
@@ -3308,7 +3350,7 @@
 <td>Тип заявки.</td>
 </tr>
 <tr>
-<td>orderId</td>
+<td>order_id</td>
 <td><a href="#string">string</a></td>
 <td>Идентификатор запроса выставления поручения для целей идемпотентности</td>
 </tr>
@@ -3846,6 +3888,16 @@
 <p>Тело ответа — <a href="#getusertariffresponse">GetUserTariffResponse</a></p>
 </li>
 </ul>
+<h4 id="getinfo">GetInfo</h4>
+<p>Метод получения информации о пользователе</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#getinforequest">GetInfoRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#getinforesponse">GetInfoResponse</a></p>
+</li>
+</ul>
 <!-- range .Methods -->
 <!-- range .Services -->
 
@@ -3865,11 +3917,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>tracking_id</td>
-<td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса.</td>
-</tr>
 <tr>
 <td>accounts</td>
 <td>Массив объектов <a href="#account">Account</a></td>
@@ -4084,6 +4131,43 @@
 <td>streams</td>
 <td>Массив объектов <a href="#string">string</a></td>
 <td>Названия stream-методов</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getinforequest">GetInfoRequest</h4>
+<!-- end HasFields -->
+
+<h4 id="getinforesponse">GetInfoResponse</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>prem_status</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак премиум клиента.</td>
+</tr>
+<tr>
+<td>qual_status</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак квалифицированного инвестора.</td>
+</tr>
+<tr>
+<td>qualified_for_work_with</td>
+<td>Массив объектов <a href="#string">string</a></td>
+<td>Набор требующих тестирования инструментов и возможностей, с которыми может работать пользователь.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>

@@ -391,6 +391,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#appname" class="md-nav__link">
+    Appname запросов
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tinkoff-invest-api_1" class="md-nav__link">
     Рекомендации по тестированию методов TINKOFF INVEST API
   </a>
@@ -951,6 +958,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#appname" class="md-nav__link">
+    Appname запросов
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tinkoff-invest-api_1" class="md-nav__link">
     Рекомендации по тестированию методов TINKOFF INVEST API
   </a>
@@ -992,6 +1006,10 @@ bidirectional-stream <a href="/investAPI/head-marketdata/">сервиса кот
 это ускорит решение вашего вопроса. </p>
 <p><em>Для сообщений управления статусом подписки в рамках stream-соединений </em><em>tracking-id</em><em> передаётся явно в
 виде выходного параметра.</em></p>
+<h2 id="appname">Appname запросов</h2>
+<p>TINKOFF INVEST API позволяет в запросах добавлять служебный заголовок <strong>x-app-name</strong>, который 
+нужен для сбора статистики по используемым инструментам. Если вы разработчик SDK, рекомендуется
+использовать app-name формата <em>&lt;Ник в GitHub&gt;.&lt;Название репозитория&gt;</em>. Например, <strong>user.tinkoffSDK</strong>.</p>
 <h2 id="tinkoff-invest-api_1">Рекомендации по тестированию методов TINKOFF INVEST API</h2>
 <p>Для тестирования работы TINKOFF INVEST API можно использовать любой доступный grpc-клиент. 
 Команда разработки рекомендует воспользоваться BloomRPC. Скачать данный клиент можно по ссылке: 

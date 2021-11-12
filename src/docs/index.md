@@ -20,7 +20,7 @@ unary-запросами;
 
 ##Protobuf-файлы сервиса
 
-Скачать полный список прото-контрактов сериса можно по ссылке: 
+Скачать полный список прото-контрактов сервиса можно по ссылке: 
 [TINKOFF INVEST API](https://github.com/TinkoffCreditSystems/investAPI/tree/main/src/docs/contracts)
 
 <!--##SDK для разработки с использованием Public API

@@ -247,6 +247,8 @@ message GetOrderBookResponse {
   int32 depth = 2; //Глубина стакана
   repeated Order bids = 3; //Множество пар значений на покупку
   repeated Order asks = 4; //Множество пар значений на продажу
+  Quotation last_price = 5; //Цена последней сделки
+  Quotation close_price = 6; //Цена закрытия
 }
 
 message GetTradingStatusRequest {

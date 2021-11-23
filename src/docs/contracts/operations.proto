@@ -61,8 +61,9 @@ message PortfolioResponse {
   MoneyValue total_amount_bonds = 2; //Общая стоимость облигаций в портфеле в рублях
   MoneyValue total_amount_etf = 3; //Общая стоимость фондов в портфеле в рублях
   MoneyValue total_amount_currencies = 4; //Общая стоимость валют в портфеле в рублях
-  float expected_yield = 5; //Текущая доходность портфеля
-  repeated PortfolioPosition positions = 6; //Список позиций портфеля
+  MoneyValue total_amount_futures = 5; //Общая стоимость валют в портфеле в рублях
+  float expected_yield = 6; //Текущая доходность портфеля
+  repeated PortfolioPosition positions = 7; //Список позиций портфеля
 }
 
 message PositionsRequest {
@@ -88,11 +89,12 @@ message WithdrawLimitsResponse {
 message PortfolioPosition {
   string figi = 1; //Figi-идентификатора инструмента
   string instrument_type = 2; //Тип инструмента
-  int64 quantity = 3; //Количество лотов в портфеле
+  float quantity = 3; //Количество лотов в портфеле
   MoneyValue average_position_price = 4; //Средняя цена лота в позиции
   MoneyValue average_position_price_no_nkd = 5; //Средняя цена лота в позиции без учёта НКД
   float expected_yield = 6; //Текущая рассчитанная доходность
   MoneyValue current_nkd = 7; // Текущий НКД
+  Quotation average_position_price_pt = 8; //Средняя цена лота в позиции в пунктах (для фьючерсов)
 }
 
 message PositionsSecurities {

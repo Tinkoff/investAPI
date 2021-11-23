@@ -462,6 +462,8 @@ subscribeInfo | Изменение статуса подписки на торг
 | depth |  [int32](#int32) | Глубина стакана |
 | bids | Массив объектов [Order](#order) | Множество пар значений на покупку |
 | asks | Массив объектов [Order](#order) | Множество пар значений на продажу |
+| last_price |  [Quotation](#quotation) | Цена последней сделки |
+| close_price |  [Quotation](#quotation) | Цена закрытия |
  <!-- end Fields -->
  <!-- end HasFields -->
 

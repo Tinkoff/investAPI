@@ -502,7 +502,7 @@ Bidirectional stream работы со сделками
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Figi-идентификатор инструмента. |
 | quantity |  [int64](#int64) | Количество лотов. |
-| price |  [MoneyValue](#moneyvalue) | Цена лота. |
+| price |  [Quotation](#quotation) | Цена лота. |
 | direction |  [OrderDirection](#orderdirection) | Направление операции. |
 | account_id |  [string](#string) | Номер счёта. |
 | order_type |  [OrderType](#ordertype) | Тип заявки. |
@@ -532,6 +532,7 @@ Bidirectional stream работы со сделками
 | initial_security_price |  [MoneyValue](#moneyvalue) | Начальная цена инструмента заявки. |
 | order_type |  [OrderType](#ordertype) | Тип заявки. |
 | message |  [string](#string) | Дополнительные данные об исполнении заявки. |
+| initial_order_price_pt |  [Quotation](#quotation) | Начальная цена заявки в пунктах (для фьючерсов). |
  <!-- end Fields -->
  <!-- end HasFields -->
 

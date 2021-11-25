@@ -23,8 +23,8 @@ service InstrumentsService { /*Сервис предназначен для по
   rpc EtfBy (InstrumentRequest) returns (EtfResponse); //Метод получения списка инвестиционных фондов
   rpc Etfs (InstrumentsRequest) returns (EtfsResponse); //Метод получения инвестиционного фонда по его идентификатору
 
-  rpc FutureBy (InstrumentRequest) returns (FutureResponse); //Метод получения списка фьючерсов
-  rpc Futures (InstrumentsRequest) returns (FuturesResponse); //Метод получения фьючерса по его идентификатору
+  rpc FutureBy (InstrumentRequest) returns (FutureResponse); //Метод получения фьючерса по его идентификатору
+  rpc Futures (InstrumentsRequest) returns (FuturesResponse); //Метод получения списка фьючерсов
 
   rpc StockBy (InstrumentRequest) returns (StockResponse); //Метод получения списка акций
   rpc Stocks (InstrumentsRequest) returns (StocksResponse); //Метод получения акции по её идентификатору

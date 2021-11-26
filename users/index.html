@@ -525,8 +525,6 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           Методы
@@ -542,8 +540,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -552,6 +548,14 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#usersservice" class="md-nav__link">
+    UsersService
+  </a>
+  
+    <nav class="md-nav" aria-label="UsersService">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     Методы сервиса
   </a>
@@ -591,8 +595,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     Сообщения методов
   </a>
@@ -681,8 +685,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#enums" class="md-nav__link">
     Enums
   </a>
@@ -715,8 +719,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     Нестандартные типы данных
   </a>
@@ -735,6 +739,11 @@
   <a href="#quotation" class="md-nav__link">
     Quotation
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1112,8 +1121,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1122,6 +1129,14 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#usersservice" class="md-nav__link">
+    UsersService
+  </a>
+  
+    <nav class="md-nav" aria-label="UsersService">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     Методы сервиса
   </a>
@@ -1161,8 +1176,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     Сообщения методов
   </a>
@@ -1251,8 +1266,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#enums" class="md-nav__link">
     Enums
   </a>
@@ -1285,8 +1300,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     Нестандартные типы данных
   </a>
@@ -1312,6 +1327,11 @@
     </nav>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
     </ul>
   
@@ -1330,13 +1350,15 @@
                   </a>
                 
                 
+                  <h1>Методы</h1>
+                
                 <!-- range HasServices -->
 
-<h1 id="usersservice">UsersService</h1>
+<h2 id="usersservice">UsersService</h2>
 <p>Сервис предназначен для получения: </br> <strong>1</strong>.
 списка счетов пользователя; </br> <strong>2</strong>. маржинальных показателе по счёту.</p>
-<h2 id="_1">Методы сервиса</h2>
-<h3 id="getaccounts">GetAccounts</h3>
+<h3 id="_1">Методы сервиса</h3>
+<h4 id="getaccounts">GetAccounts</h4>
 <p>Метод получения счетов пользователя</p>
 <ul>
 <li>
@@ -1346,7 +1368,7 @@
 <p>Тело ответа — <a href="#getaccountsresponse">GetAccountsResponse</a></p>
 </li>
 </ul>
-<h3 id="getmarginattributes">GetMarginAttributes</h3>
+<h4 id="getmarginattributes">GetMarginAttributes</h4>
 <p>Расчёт маржинальных показателей по счёту</p>
 <ul>
 <li>
@@ -1356,7 +1378,7 @@
 <p>Тело ответа — <a href="#getmarginattributesresponse">GetMarginAttributesResponse</a></p>
 </li>
 </ul>
-<h3 id="getusertariff">GetUserTariff</h3>
+<h4 id="getusertariff">GetUserTariff</h4>
 <p>Запрос тарифа пользователя</p>
 <ul>
 <li>
@@ -1366,7 +1388,7 @@
 <p>Тело ответа — <a href="#getusertariffresponse">GetUserTariffResponse</a></p>
 </li>
 </ul>
-<h3 id="getinfo">GetInfo</h3>
+<h4 id="getinfo">GetInfo</h4>
 <p>Метод получения информации о пользователе</p>
 <ul>
 <li>
@@ -1379,12 +1401,12 @@
 <!-- range .Methods -->
 <!-- range .Services -->
 
-<h2 id="_2">Сообщения методов</h2>
-<h3 id="getaccountsrequest">GetAccountsRequest</h3>
+<h3 id="_2">Сообщения методов</h3>
+<h4 id="getaccountsrequest">GetAccountsRequest</h4>
 <p>Запрос получения счетов не имеет входных параметров</p>
 <!-- end HasFields -->
 
-<h3 id="getaccountsresponse">GetAccountsResponse</h3>
+<h4 id="getaccountsresponse">GetAccountsResponse</h4>
 <p>Ответ на запрос получения счетов.</p>
 <table>
 <thead>
@@ -1409,7 +1431,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="account">Account</h3>
+<h4 id="account">Account</h4>
 <p>Счёт клиента.</p>
 <table>
 <thead>
@@ -1459,7 +1481,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="getmarginattributesrequest">GetMarginAttributesRequest</h3>
+<h4 id="getmarginattributesrequest">GetMarginAttributesRequest</h4>
 <p>Запрос маржинальных показателей по счёту</p>
 <table>
 <thead>
@@ -1484,7 +1506,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="getmarginattributesresponse">GetMarginAttributesResponse</h3>
+<h4 id="getmarginattributesresponse">GetMarginAttributesResponse</h4>
 <p>Маржинальные показатели по счёту.</p>
 <table>
 <thead>
@@ -1529,10 +1551,10 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="getusertariffrequest">GetUserTariffRequest</h3>
+<h4 id="getusertariffrequest">GetUserTariffRequest</h4>
 <!-- end HasFields -->
 
-<h3 id="getusertariffresponse">GetUserTariffResponse</h3>
+<h4 id="getusertariffresponse">GetUserTariffResponse</h4>
 <table>
 <thead>
 <tr>
@@ -1561,7 +1583,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="unarylimit">UnaryLimit</h3>
+<h4 id="unarylimit">UnaryLimit</h4>
 <table>
 <thead>
 <tr>
@@ -1590,7 +1612,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="streamlimit">StreamLimit</h3>
+<h4 id="streamlimit">StreamLimit</h4>
 <table>
 <thead>
 <tr>
@@ -1619,10 +1641,10 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="getinforequest">GetInfoRequest</h3>
+<h4 id="getinforequest">GetInfoRequest</h4>
 <!-- end HasFields -->
 
-<h3 id="getinforesponse">GetInfoResponse</h3>
+<h4 id="getinforesponse">GetInfoResponse</h4>
 <table>
 <thead>
 <tr>
@@ -1657,8 +1679,8 @@
 <!-- end HasFields -->
 <!-- end messages -->
 
-<h2 id="enums">Enums</h2>
-<h3 id="accounttype">AccountType</h3>
+<h3 id="enums">Enums</h3>
+<h4 id="accounttype">AccountType</h4>
 <p>Тип счёта.</p>
 <table>
 <thead>
@@ -1691,7 +1713,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="accountstatus">AccountStatus</h3>
+<h4 id="accountstatus">AccountStatus</h4>
 <p>Статус счёта.</p>
 <table>
 <thead>
@@ -1728,7 +1750,7 @@
 <!-- range HasServices -->
 <!-- range .Files -->
 
-<h3 id="securitytradingstatus">SecurityTradingStatus</h3>
+<h4 id="securitytradingstatus">SecurityTradingStatus</h4>
 <table>
 <thead>
 <tr>
@@ -1795,8 +1817,8 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_3">Нестандартные типы данных</h2>
-<h3 id="moneyvalue">MoneyValue</h3>
+<h3 id="_3">Нестандартные типы данных</h3>
+<h4 id="moneyvalue">MoneyValue</h4>
 <p>Денежная сумма в определенной валюте</p>
 <table>
 <thead>
@@ -1824,7 +1846,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="quotation">Quotation</h3>
+<h4 id="quotation">Quotation</h4>
 <p>Котировка - денежная сумма без указания валюты</p>
 <table>
 <thead>

@@ -795,8 +795,6 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           Методы
@@ -812,8 +810,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -822,6 +818,14 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#stopordersservice" class="md-nav__link">
+    StopOrdersService
+  </a>
+  
+    <nav class="md-nav" aria-label="StopOrdersService">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     Методы сервиса
   </a>
@@ -854,8 +858,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     Сообщения методов
   </a>
@@ -916,8 +920,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#enums" class="md-nav__link">
     Enums
   </a>
@@ -957,8 +961,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     Нестандартные типы данных
   </a>
@@ -977,6 +981,11 @@
   <a href="#quotation" class="md-nav__link">
     Quotation
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1084,8 +1093,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1094,6 +1101,14 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#stopordersservice" class="md-nav__link">
+    StopOrdersService
+  </a>
+  
+    <nav class="md-nav" aria-label="StopOrdersService">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     Методы сервиса
   </a>
@@ -1126,8 +1141,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     Сообщения методов
   </a>
@@ -1188,8 +1203,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#enums" class="md-nav__link">
     Enums
   </a>
@@ -1229,8 +1244,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     Нестандартные типы данных
   </a>
@@ -1256,6 +1271,11 @@
     </nav>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
     </ul>
   
@@ -1274,13 +1294,15 @@
                   </a>
                 
                 
+                  <h1>Методы</h1>
+                
                 <!-- range HasServices -->
 
-<h1 id="stopordersservice">StopOrdersService</h1>
+<h2 id="stopordersservice">StopOrdersService</h2>
 <p>Сервис предназначен для работы со стоп-заявками:</br> <strong>1</strong>.
 выставление;</br> <strong>2</strong>. отмена;</br> <strong>3</strong>. получение списка стоп-заявок.</p>
-<h2 id="_1">Методы сервиса</h2>
-<h3 id="poststoporder">PostStopOrder</h3>
+<h3 id="_1">Методы сервиса</h3>
+<h4 id="poststoporder">PostStopOrder</h4>
 <p>Метод выставления стоп-заявки</p>
 <ul>
 <li>
@@ -1290,7 +1312,7 @@
 <p>Тело ответа — <a href="#poststoporderresponse">PostStopOrderResponse</a></p>
 </li>
 </ul>
-<h3 id="getstoporders">GetStopOrders</h3>
+<h4 id="getstoporders">GetStopOrders</h4>
 <p>Метод получения списка активных стоп заявок по счёту</p>
 <ul>
 <li>
@@ -1300,7 +1322,7 @@
 <p>Тело ответа — <a href="#getstopordersresponse">GetStopOrdersResponse</a></p>
 </li>
 </ul>
-<h3 id="cancelstoporder">CancelStopOrder</h3>
+<h4 id="cancelstoporder">CancelStopOrder</h4>
 <p>Метод отмены стоп-заявки</p>
 <ul>
 <li>
@@ -1313,8 +1335,8 @@
 <!-- range .Methods -->
 <!-- range .Services -->
 
-<h2 id="_2">Сообщения методов</h2>
-<h3 id="poststoporderrequest">PostStopOrderRequest</h3>
+<h3 id="_2">Сообщения методов</h3>
+<h4 id="poststoporderrequest">PostStopOrderRequest</h4>
 <table>
 <thead>
 <tr>
@@ -1378,7 +1400,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="poststoporderresponse">PostStopOrderResponse</h3>
+<h4 id="poststoporderresponse">PostStopOrderResponse</h4>
 <table>
 <thead>
 <tr>
@@ -1402,7 +1424,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="getstopordersrequest">GetStopOrdersRequest</h3>
+<h4 id="getstopordersrequest">GetStopOrdersRequest</h4>
 <table>
 <thead>
 <tr>
@@ -1426,7 +1448,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="getstopordersresponse">GetStopOrdersResponse</h3>
+<h4 id="getstopordersresponse">GetStopOrdersResponse</h4>
 <table>
 <thead>
 <tr>
@@ -1450,7 +1472,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="cancelstoporderrequest">CancelStopOrderRequest</h3>
+<h4 id="cancelstoporderrequest">CancelStopOrderRequest</h4>
 <table>
 <thead>
 <tr>
@@ -1479,7 +1501,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="cancelstoporderresponse">CancelStopOrderResponse</h3>
+<h4 id="cancelstoporderresponse">CancelStopOrderResponse</h4>
 <table>
 <thead>
 <tr>
@@ -1503,7 +1525,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="stoporder">StopOrder</h3>
+<h4 id="stoporder">StopOrder</h4>
 <table>
 <thead>
 <tr>
@@ -1568,8 +1590,8 @@
 <!-- end HasFields -->
 <!-- end messages -->
 
-<h2 id="enums">Enums</h2>
-<h3 id="stoporderdirection">StopOrderDirection</h3>
+<h3 id="enums">Enums</h3>
+<h4 id="stoporderdirection">StopOrderDirection</h4>
 <p>Направление операции</p>
 <table>
 <thead>
@@ -1597,7 +1619,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="stoporderexpirationtype">StopOrderExpirationType</h3>
+<h4 id="stoporderexpirationtype">StopOrderExpirationType</h4>
 <table>
 <thead>
 <tr>
@@ -1624,7 +1646,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="stopordertype">StopOrderType</h3>
+<h4 id="stopordertype">StopOrderType</h4>
 <table>
 <thead>
 <tr>
@@ -1660,7 +1682,7 @@
 <!-- range HasServices -->
 <!-- range .Files -->
 
-<h3 id="securitytradingstatus">SecurityTradingStatus</h3>
+<h4 id="securitytradingstatus">SecurityTradingStatus</h4>
 <table>
 <thead>
 <tr>
@@ -1727,8 +1749,8 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_3">Нестандартные типы данных</h2>
-<h3 id="moneyvalue">MoneyValue</h3>
+<h3 id="_3">Нестандартные типы данных</h3>
+<h4 id="moneyvalue">MoneyValue</h4>
 <p>Денежная сумма в определенной валюте</p>
 <table>
 <thead>
@@ -1756,7 +1778,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="quotation">Quotation</h3>
+<h4 id="quotation">Quotation</h4>
 <p>Котировка - денежная сумма без указания валюты</p>
 <table>
 <thead>

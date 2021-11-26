@@ -2,9 +2,12 @@ syntax = "proto3";
 
 package tinkoff.public.invest.api.contract.v1;
 
-option go_package = "TinkoffCreditSystems/investAPI";
+option go_package = "Tinkoff/investAPI";
 option java_package = "ru.tinkoff.piapi.contract.v1";
 option java_multiple_files = true;
+option csharp_namespace = "Tinkoff.InvestAPI.V1";
+option objc_class_prefix = "TIAPI";
+option php_namespace = "Tinkoff\\Invest\\V1";
 
 import "google/protobuf/timestamp.proto";
 import "common.proto";
@@ -167,6 +170,7 @@ message OrderBook {
   bool is_consistent = 3; //Флаг консистентности стакана. **false** значит не все заявки попали в стакан по причинам сетевых задержек или нарушения порядка доставки.
   repeated Order bids = 4; //Массив предложений
   repeated Order asks = 5; //Массив спроса
+  google.protobuf.Timestamp time = 6; //Время стакана в часовом поясе UTC
 }
 
 message Order {

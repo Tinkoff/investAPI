@@ -579,8 +579,6 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           Методы
@@ -596,8 +594,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -606,6 +602,14 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#instrumentsservice" class="md-nav__link">
+    InstrumentsService
+  </a>
+  
+    <nav class="md-nav" aria-label="InstrumentsService">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     Методы сервиса
   </a>
@@ -715,8 +719,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     Сообщения методов
   </a>
@@ -924,8 +928,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#enums" class="md-nav__link">
     Enums
   </a>
@@ -965,8 +969,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     Нестандартные типы данных
   </a>
@@ -985,6 +989,11 @@
   <a href="#quotation" class="md-nav__link">
     Quotation
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1308,8 +1317,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1318,6 +1325,14 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#instrumentsservice" class="md-nav__link">
+    InstrumentsService
+  </a>
+  
+    <nav class="md-nav" aria-label="InstrumentsService">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     Методы сервиса
   </a>
@@ -1427,8 +1442,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     Сообщения методов
   </a>
@@ -1636,8 +1651,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#enums" class="md-nav__link">
     Enums
   </a>
@@ -1677,8 +1692,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     Нестандартные типы данных
   </a>
@@ -1704,6 +1719,11 @@
     </nav>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
     </ul>
   
@@ -1722,14 +1742,16 @@
                   </a>
                 
                 
+                  <h1>Методы</h1>
+                
                 <!-- range HasServices -->
 
-<h1 id="instrumentsservice">InstrumentsService</h1>
+<h2 id="instrumentsservice">InstrumentsService</h2>
 <p>Сервис предназначен для получения:</br> <strong>1</strong>.  информации об инструментах;</br> <strong>2</strong>.
 расписания торговых сессий;</br> <strong>3</strong>. календаря выплат купонов по облигациям;</br> <strong>4</strong>.
 размера гарантийного обеспечения по фьючерсам;</br> <strong>5</strong>. дивидендов по ценной бумаге.</p>
-<h2 id="_1">Методы сервиса</h2>
-<h3 id="tradingschedules">TradingSchedules</h3>
+<h3 id="_1">Методы сервиса</h3>
+<h4 id="tradingschedules">TradingSchedules</h4>
 <p>Метод получения расписания торгов торговых площадок</p>
 <ul>
 <li>
@@ -1739,7 +1761,7 @@
 <p>Тело ответа — <a href="#tradingschedulesresponse">TradingSchedulesResponse</a></p>
 </li>
 </ul>
-<h3 id="bondby">BondBy</h3>
+<h4 id="bondby">BondBy</h4>
 <p>Метод получения списка облигаций</p>
 <ul>
 <li>
@@ -1749,7 +1771,7 @@
 <p>Тело ответа — <a href="#bondresponse">BondResponse</a></p>
 </li>
 </ul>
-<h3 id="bonds">Bonds</h3>
+<h4 id="bonds">Bonds</h4>
 <p>Метод получения облигации по её идентификатору</p>
 <ul>
 <li>
@@ -1759,7 +1781,7 @@
 <p>Тело ответа — <a href="#bondsresponse">BondsResponse</a></p>
 </li>
 </ul>
-<h3 id="currencyby">CurrencyBy</h3>
+<h4 id="currencyby">CurrencyBy</h4>
 <p>Метод получения списка валют</p>
 <ul>
 <li>
@@ -1769,7 +1791,7 @@
 <p>Тело ответа — <a href="#currencyresponse">CurrencyResponse</a></p>
 </li>
 </ul>
-<h3 id="currencies">Currencies</h3>
+<h4 id="currencies">Currencies</h4>
 <p>Метод получения валюты по её идентификатору</p>
 <ul>
 <li>
@@ -1779,7 +1801,7 @@
 <p>Тело ответа — <a href="#currenciesresponse">CurrenciesResponse</a></p>
 </li>
 </ul>
-<h3 id="etfby">EtfBy</h3>
+<h4 id="etfby">EtfBy</h4>
 <p>Метод получения списка инвестиционных фондов</p>
 <ul>
 <li>
@@ -1789,7 +1811,7 @@
 <p>Тело ответа — <a href="#etfresponse">EtfResponse</a></p>
 </li>
 </ul>
-<h3 id="etfs">Etfs</h3>
+<h4 id="etfs">Etfs</h4>
 <p>Метод получения инвестиционного фонда по его идентификатору</p>
 <ul>
 <li>
@@ -1799,7 +1821,7 @@
 <p>Тело ответа — <a href="#etfsresponse">EtfsResponse</a></p>
 </li>
 </ul>
-<h3 id="futureby">FutureBy</h3>
+<h4 id="futureby">FutureBy</h4>
 <p>Метод получения фьючерса по его идентификатору</p>
 <ul>
 <li>
@@ -1809,7 +1831,7 @@
 <p>Тело ответа — <a href="#futureresponse">FutureResponse</a></p>
 </li>
 </ul>
-<h3 id="futures">Futures</h3>
+<h4 id="futures">Futures</h4>
 <p>Метод получения списка фьючерсов</p>
 <ul>
 <li>
@@ -1819,7 +1841,7 @@
 <p>Тело ответа — <a href="#futuresresponse">FuturesResponse</a></p>
 </li>
 </ul>
-<h3 id="stockby">StockBy</h3>
+<h4 id="stockby">StockBy</h4>
 <p>Метод получения списка акций</p>
 <ul>
 <li>
@@ -1829,7 +1851,7 @@
 <p>Тело ответа — <a href="#stockresponse">StockResponse</a></p>
 </li>
 </ul>
-<h3 id="stocks">Stocks</h3>
+<h4 id="stocks">Stocks</h4>
 <p>Метод получения акции по её идентификатору</p>
 <ul>
 <li>
@@ -1839,7 +1861,7 @@
 <p>Тело ответа — <a href="#stocksresponse">StocksResponse</a></p>
 </li>
 </ul>
-<h3 id="getaccruedinterests">GetAccruedInterests</h3>
+<h4 id="getaccruedinterests">GetAccruedInterests</h4>
 <p>Метод получения календаря выплат купонов по облигациям</p>
 <ul>
 <li>
@@ -1849,7 +1871,7 @@
 <p>Тело ответа — <a href="#getaccruedinterestsresponse">GetAccruedInterestsResponse</a></p>
 </li>
 </ul>
-<h3 id="getfuturesmargin">GetFuturesMargin</h3>
+<h4 id="getfuturesmargin">GetFuturesMargin</h4>
 <p>Метод получения размера гарантийного обеспечения по фьючерсам</p>
 <ul>
 <li>
@@ -1859,7 +1881,7 @@
 <p>Тело ответа — <a href="#getfuturesmarginresponse">GetFuturesMarginResponse</a></p>
 </li>
 </ul>
-<h3 id="getinstrumentby">GetInstrumentBy</h3>
+<h4 id="getinstrumentby">GetInstrumentBy</h4>
 <p>Метод получения основной информации об инструменте</p>
 <ul>
 <li>
@@ -1872,8 +1894,8 @@
 <!-- range .Methods -->
 <!-- range .Services -->
 
-<h2 id="_2">Сообщения методов</h2>
-<h3 id="tradingschedulesrequest">TradingSchedulesRequest</h3>
+<h3 id="_2">Сообщения методов</h3>
+<h4 id="tradingschedulesrequest">TradingSchedulesRequest</h4>
 <table>
 <thead>
 <tr>
@@ -1907,7 +1929,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="tradingschedulesresponse">TradingSchedulesResponse</h3>
+<h4 id="tradingschedulesresponse">TradingSchedulesResponse</h4>
 <table>
 <thead>
 <tr>
@@ -1931,7 +1953,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="tradingschedule">TradingSchedule</h3>
+<h4 id="tradingschedule">TradingSchedule</h4>
 <p>Данные по торговой площадке</p>
 <table>
 <thead>
@@ -1961,7 +1983,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="tradingday">TradingDay</h3>
+<h4 id="tradingday">TradingDay</h4>
 <p>Информация о времени торгов</p>
 <table>
 <thead>
@@ -2011,7 +2033,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="instrumentrequest">InstrumentRequest</h3>
+<h4 id="instrumentrequest">InstrumentRequest</h4>
 <p>Запрос получения инструмента по идентификатору</p>
 <table>
 <thead>
@@ -2046,7 +2068,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="instrumentsrequest">InstrumentsRequest</h3>
+<h4 id="instrumentsrequest">InstrumentsRequest</h4>
 <p>Запрос получения инструментов</p>
 <table>
 <thead>
@@ -2071,7 +2093,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="bondresponse">BondResponse</h3>
+<h4 id="bondresponse">BondResponse</h4>
 <p>Информация об облигации</p>
 <table>
 <thead>
@@ -2096,7 +2118,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="bondsresponse">BondsResponse</h3>
+<h4 id="bondsresponse">BondsResponse</h4>
 <p>Список облигаций</p>
 <table>
 <thead>
@@ -2121,7 +2143,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="currencyresponse">CurrencyResponse</h3>
+<h4 id="currencyresponse">CurrencyResponse</h4>
 <p>Данные по валюте</p>
 <table>
 <thead>
@@ -2146,7 +2168,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="currenciesresponse">CurrenciesResponse</h3>
+<h4 id="currenciesresponse">CurrenciesResponse</h4>
 <p>Данные по валютам</p>
 <table>
 <thead>
@@ -2171,7 +2193,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="etfresponse">EtfResponse</h3>
+<h4 id="etfresponse">EtfResponse</h4>
 <p>Данные по фонду</p>
 <table>
 <thead>
@@ -2196,7 +2218,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="etfsresponse">EtfsResponse</h3>
+<h4 id="etfsresponse">EtfsResponse</h4>
 <p>Данные по фондам</p>
 <table>
 <thead>
@@ -2221,7 +2243,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="futureresponse">FutureResponse</h3>
+<h4 id="futureresponse">FutureResponse</h4>
 <p>Данные по фьючерсу</p>
 <table>
 <thead>
@@ -2246,7 +2268,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="futuresresponse">FuturesResponse</h3>
+<h4 id="futuresresponse">FuturesResponse</h4>
 <p>Данные по фьючерсам</p>
 <table>
 <thead>
@@ -2271,7 +2293,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="stockresponse">StockResponse</h3>
+<h4 id="stockresponse">StockResponse</h4>
 <p>Данные по акции</p>
 <table>
 <thead>
@@ -2296,7 +2318,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="stocksresponse">StocksResponse</h3>
+<h4 id="stocksresponse">StocksResponse</h4>
 <p>Данные по акциям</p>
 <table>
 <thead>
@@ -2321,7 +2343,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="bond">Bond</h3>
+<h4 id="bond">Bond</h4>
 <p>Объект передачи информации об облигации.</p>
 <table>
 <thead>
@@ -2516,7 +2538,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="currency">Currency</h3>
+<h4 id="currency">Currency</h4>
 <p>Объект передачи информации о валюте.</p>
 <table>
 <thead>
@@ -2651,7 +2673,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="etf">Etf</h3>
+<h4 id="etf">Etf</h4>
 <p>Объект передачи информации об инвестиционном фонде.</p>
 <table>
 <thead>
@@ -2806,7 +2828,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="future">Future</h3>
+<h4 id="future">Future</h4>
 <p>Объект передачи информации о фьючерсе.</p>
 <table>
 <thead>
@@ -2966,7 +2988,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="stock">Stock</h3>
+<h4 id="stock">Stock</h4>
 <p>Объект передачи информации об акции.</p>
 <table>
 <thead>
@@ -3126,7 +3148,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="getaccruedinterestsrequest">GetAccruedInterestsRequest</h3>
+<h4 id="getaccruedinterestsrequest">GetAccruedInterestsRequest</h4>
 <table>
 <thead>
 <tr>
@@ -3160,7 +3182,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="getaccruedinterestsresponse">GetAccruedInterestsResponse</h3>
+<h4 id="getaccruedinterestsresponse">GetAccruedInterestsResponse</h4>
 <table>
 <thead>
 <tr>
@@ -3184,7 +3206,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="accruedinterest">AccruedInterest</h3>
+<h4 id="accruedinterest">AccruedInterest</h4>
 <p>Операция начисления купонов</p>
 <table>
 <thead>
@@ -3224,7 +3246,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="getfuturesmarginrequest">GetFuturesMarginRequest</h3>
+<h4 id="getfuturesmarginrequest">GetFuturesMarginRequest</h4>
 <table>
 <thead>
 <tr>
@@ -3248,7 +3270,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="getfuturesmarginresponse">GetFuturesMarginResponse</h3>
+<h4 id="getfuturesmarginresponse">GetFuturesMarginResponse</h4>
 <table>
 <thead>
 <tr>
@@ -3277,7 +3299,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="instrumentresponse">InstrumentResponse</h3>
+<h4 id="instrumentresponse">InstrumentResponse</h4>
 <p>Данные по инструменту</p>
 <table>
 <thead>
@@ -3302,7 +3324,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="instrument">Instrument</h3>
+<h4 id="instrument">Instrument</h4>
 <p>Объект передачи основной информации об инструменте.</p>
 <table>
 <thead>
@@ -3433,8 +3455,8 @@
 <!-- end HasFields -->
 <!-- end messages -->
 
-<h2 id="enums">Enums</h2>
-<h3 id="instrumentidtype">InstrumentIdType</h3>
+<h3 id="enums">Enums</h3>
+<h4 id="instrumentidtype">InstrumentIdType</h4>
 <p>Тип идентификатора инструмента. Подробнее об идентификации инструментов: <a href="https://tinkoffcreditsystems.github.io/invest-openapi/faq_identification/">Идентификация инструментов</a></p>
 <table>
 <thead>
@@ -3462,7 +3484,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="instrumentstatus">InstrumentStatus</h3>
+<h4 id="instrumentstatus">InstrumentStatus</h4>
 <p>Статус запрашиваемых инструментов.</p>
 <table>
 <thead>
@@ -3490,7 +3512,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="sharetype">ShareType</h3>
+<h4 id="sharetype">ShareType</h4>
 <table>
 <thead>
 <tr>
@@ -3551,7 +3573,7 @@
 <!-- range HasServices -->
 <!-- range .Files -->
 
-<h3 id="securitytradingstatus">SecurityTradingStatus</h3>
+<h4 id="securitytradingstatus">SecurityTradingStatus</h4>
 <table>
 <thead>
 <tr>
@@ -3618,8 +3640,8 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_3">Нестандартные типы данных</h2>
-<h3 id="moneyvalue">MoneyValue</h3>
+<h3 id="_3">Нестандартные типы данных</h3>
+<h4 id="moneyvalue">MoneyValue</h4>
 <p>Денежная сумма в определенной валюте</p>
 <table>
 <thead>
@@ -3647,7 +3669,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="quotation">Quotation</h3>
+<h4 id="quotation">Quotation</h4>
 <p>Котировка - денежная сумма без указания валюты</p>
 <table>
 <thead>

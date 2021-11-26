@@ -7,13 +7,13 @@
 
 
 
-# MarketDataService
+## MarketDataService
 Сервис получения биржевой информации:</br> **1**. свечи;</br> **2**. стаканы;</br> **3**. торговые статусы;</br> **4**. лента сделок.
 
-##Методы сервиса
+###Методы сервиса
 
 
-### GetCandles
+#### GetCandles
 Метод запроса исторических свечей по инструменту
 
 - Тело запроса — [GetCandlesRequest](#getcandlesrequest)
@@ -21,7 +21,7 @@
 - Тело ответа — [GetCandlesResponse](#getcandlesresponse)
 
 
-### GetLastPrices
+#### GetLastPrices
 Метод запроса последних цен по инструментам
 
 - Тело запроса — [GetLastPricesRequest](#getlastpricesrequest)
@@ -29,7 +29,7 @@
 - Тело ответа — [GetLastPricesResponse](#getlastpricesresponse)
 
 
-### GetOrderBook
+#### GetOrderBook
 Метод получения стакана по инструменту
 
 - Тело запроса — [GetOrderBookRequest](#getorderbookrequest)
@@ -37,7 +37,7 @@
 - Тело ответа — [GetOrderBookResponse](#getorderbookresponse)
 
 
-### GetTradingStatus
+#### GetTradingStatus
 Метод запроса статуса торгов по инструментам
 
 - Тело запроса — [GetTradingStatusRequest](#gettradingstatusrequest)
@@ -47,13 +47,13 @@
  <!-- range .Methods -->
 
 
-# MarketDataStreamService
+## MarketDataStreamService
 
 
-##Методы сервиса
+###Методы сервиса
 
 
-### MarketDataStream
+#### MarketDataStream
 Двусторонний стрим предоставления биржевой информации
 
 - Тело запроса — [MarketDataRequest](#marketdatarequest)
@@ -63,11 +63,11 @@
  <!-- range .Methods -->
  <!-- range .Services -->
 
-##Сообщения методов
+###Сообщения методов
 
 
 
-### MarketDataRequest
+#### MarketDataRequest
 Запрос подписки или отписки на определённые биржевые данные
 
 
@@ -81,7 +81,7 @@
  <!-- end HasFields -->
 
 
-### MarketDataResponse
+#### MarketDataResponse
 Пакет биржевой информации по подписке
 
 
@@ -99,7 +99,7 @@
  <!-- end HasFields -->
 
 
-### SubscribeCandlesRequest
+#### SubscribeCandlesRequest
 subscribeCandles | Изменения статуса подписки на свечи
 
 
@@ -111,7 +111,7 @@ subscribeCandles | Изменения статуса подписки на св�
  <!-- end HasFields -->
 
 
-### CandleInstrument
+#### CandleInstrument
 
 
 
@@ -123,7 +123,7 @@ subscribeCandles | Изменения статуса подписки на св�
  <!-- end HasFields -->
 
 
-### SubscribeCandlesResponse
+#### SubscribeCandlesResponse
 
 
 
@@ -135,7 +135,7 @@ subscribeCandles | Изменения статуса подписки на св�
  <!-- end HasFields -->
 
 
-### CandleSubscription
+#### CandleSubscription
 
 
 
@@ -148,7 +148,7 @@ subscribeCandles | Изменения статуса подписки на св�
  <!-- end HasFields -->
 
 
-### SubscribeOrderBookRequest
+#### SubscribeOrderBookRequest
 subscribeOrderbook | Изменение статуса подписки на стаканы
 
 
@@ -160,7 +160,7 @@ subscribeOrderbook | Изменение статуса подписки на с�
  <!-- end HasFields -->
 
 
-### OrderBookInstrument
+#### OrderBookInstrument
 
 
 
@@ -172,7 +172,7 @@ subscribeOrderbook | Изменение статуса подписки на с�
  <!-- end HasFields -->
 
 
-### SubscribeOrderBookResponse
+#### SubscribeOrderBookResponse
 
 
 
@@ -184,7 +184,7 @@ subscribeOrderbook | Изменение статуса подписки на с�
  <!-- end HasFields -->
 
 
-### OrderBookSubscription
+#### OrderBookSubscription
 
 
 
@@ -197,7 +197,7 @@ subscribeOrderbook | Изменение статуса подписки на с�
  <!-- end HasFields -->
 
 
-### SubscribeTradesRequest
+#### SubscribeTradesRequest
 subscribeTrades | Изменение статуса подписки на поток обезличенных сделок
 
 
@@ -209,7 +209,7 @@ subscribeTrades | Изменение статуса подписки на пот
  <!-- end HasFields -->
 
 
-### TradeInstrument
+#### TradeInstrument
 
 
 
@@ -220,7 +220,7 @@ subscribeTrades | Изменение статуса подписки на пот
  <!-- end HasFields -->
 
 
-### SubscribeTradesResponse
+#### SubscribeTradesResponse
 
 
 
@@ -232,7 +232,7 @@ subscribeTrades | Изменение статуса подписки на пот
  <!-- end HasFields -->
 
 
-### TradeSubscription
+#### TradeSubscription
 
 
 
@@ -244,7 +244,7 @@ subscribeTrades | Изменение статуса подписки на пот
  <!-- end HasFields -->
 
 
-### SubscribeInfoRequest
+#### SubscribeInfoRequest
 subscribeInfo | Изменение статуса подписки на торговый статус инструмента
 
 
@@ -256,7 +256,7 @@ subscribeInfo | Изменение статуса подписки на торг
  <!-- end HasFields -->
 
 
-### InfoInstrument
+#### InfoInstrument
 
 
 
@@ -267,7 +267,7 @@ subscribeInfo | Изменение статуса подписки на торг
  <!-- end HasFields -->
 
 
-### SubscribeInfoResponse
+#### SubscribeInfoResponse
 
 
 
@@ -279,7 +279,7 @@ subscribeInfo | Изменение статуса подписки на торг
  <!-- end HasFields -->
 
 
-### InfoSubscription
+#### InfoSubscription
 
 
 
@@ -291,7 +291,7 @@ subscribeInfo | Изменение статуса подписки на торг
  <!-- end HasFields -->
 
 
-### Candle
+#### Candle
 Выходные параметры. Пакет Candles
 
 
@@ -309,7 +309,7 @@ subscribeInfo | Изменение статуса подписки на торг
  <!-- end HasFields -->
 
 
-### OrderBook
+#### OrderBook
 
 
 
@@ -320,11 +320,12 @@ subscribeInfo | Изменение статуса подписки на торг
 | is_consistent |  [bool](#bool) | Флаг консистентности стакана. **false** значит не все заявки попали в стакан по причинам сетевых задержек или нарушения порядка доставки. |
 | bids | Массив объектов [Order](#order) | Массив предложений |
 | asks | Массив объектов [Order](#order) | Массив спроса |
+| time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время стакана в часовом поясе UTC |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
-### Order
+#### Order
 
 
 
@@ -336,7 +337,7 @@ subscribeInfo | Изменение статуса подписки на торг
  <!-- end HasFields -->
 
 
-### Trade
+#### Trade
 
 
 
@@ -351,7 +352,7 @@ subscribeInfo | Изменение статуса подписки на торг
  <!-- end HasFields -->
 
 
-### TradingStatus
+#### TradingStatus
 
 
 
@@ -363,7 +364,7 @@ subscribeInfo | Изменение статуса подписки на торг
  <!-- end HasFields -->
 
 
-### GetCandlesRequest
+#### GetCandlesRequest
 
 
 
@@ -377,7 +378,7 @@ subscribeInfo | Изменение статуса подписки на торг
  <!-- end HasFields -->
 
 
-### GetCandlesResponse
+#### GetCandlesResponse
 
 
 
@@ -388,7 +389,7 @@ subscribeInfo | Изменение статуса подписки на торг
  <!-- end HasFields -->
 
 
-### HistoricCandle
+#### HistoricCandle
 
 
 
@@ -405,7 +406,7 @@ subscribeInfo | Изменение статуса подписки на торг
  <!-- end HasFields -->
 
 
-### GetLastPricesRequest
+#### GetLastPricesRequest
 
 
 
@@ -416,7 +417,7 @@ subscribeInfo | Изменение статуса подписки на торг
  <!-- end HasFields -->
 
 
-### GetLastPricesResponse
+#### GetLastPricesResponse
 
 
 
@@ -427,7 +428,7 @@ subscribeInfo | Изменение статуса подписки на торг
  <!-- end HasFields -->
 
 
-### LastPrice
+#### LastPrice
 
 
 
@@ -440,7 +441,7 @@ subscribeInfo | Изменение статуса подписки на торг
  <!-- end HasFields -->
 
 
-### GetOrderBookRequest
+#### GetOrderBookRequest
 
 
 
@@ -452,7 +453,7 @@ subscribeInfo | Изменение статуса подписки на торг
  <!-- end HasFields -->
 
 
-### GetOrderBookResponse
+#### GetOrderBookResponse
 
 
 
@@ -468,7 +469,7 @@ subscribeInfo | Изменение статуса подписки на торг
  <!-- end HasFields -->
 
 
-### GetTradingStatusRequest
+#### GetTradingStatusRequest
 
 
 
@@ -479,7 +480,7 @@ subscribeInfo | Изменение статуса подписки на торг
  <!-- end HasFields -->
 
 
-### GetTradingStatusResponse
+#### GetTradingStatusResponse
 
 
 
@@ -491,10 +492,10 @@ subscribeInfo | Изменение статуса подписки на торг
  <!-- end HasFields -->
  <!-- end messages -->
 
-## Enums
+### Enums
 
 
-### SubscriptionAction
+#### SubscriptionAction
 
 
 | Name | Number | Description |
@@ -506,7 +507,7 @@ subscribeInfo | Изменение статуса подписки на торг
 
 
 
-### SubscriptionInterval
+#### SubscriptionInterval
 
 
 | Name | Number | Description |
@@ -518,7 +519,7 @@ subscribeInfo | Изменение статуса подписки на торг
 
 
 
-### SubscriptionStatus
+#### SubscriptionStatus
 
 
 | Name | Number | Description |
@@ -535,7 +536,7 @@ subscribeInfo | Изменение статуса подписки на торг
 
 
 
-### TradeDirection
+#### TradeDirection
 
 
 | Name | Number | Description |
@@ -547,7 +548,7 @@ subscribeInfo | Изменение статуса подписки на торг
 
 
 
-### CandleInterval
+#### CandleInterval
 
 
 | Name | Number | Description |
@@ -564,7 +565,7 @@ subscribeInfo | Изменение статуса подписки на торг
  <!-- range HasServices -->
  <!-- range .Files -->
 
-### SecurityTradingStatus
+#### SecurityTradingStatus
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
@@ -580,9 +581,9 @@ subscribeInfo | Изменение статуса подписки на торг
 | SECURITY_TRADING_STATUS_OPENING_AUCTION_PERIOD | 9 | Аукцион открытия |
 | SECURITY_TRADING_STATUS_TRADING_AT_CLOSING_AUCTION_PRICE | 10 | Период торгов по цене аукциона закрытия |
 
-## Нестандартные типы данных
+### Нестандартные типы данных
 
-### MoneyValue
+#### MoneyValue
 Денежная сумма в определенной валюте
 
 | Field | Type | Description |
@@ -592,7 +593,7 @@ subscribeInfo | Изменение статуса подписки на торг
 | nano |  [int32](#int32) | Дробная часть суммы, может быть отрицательным числом |
 
 
-### Quotation
+#### Quotation
 Котировка - денежная сумма без указания валюты
 
 | Field | Type | Description |

@@ -7,14 +7,14 @@
 
 
 
-# UsersService
+## UsersService
 Сервис предназначен для получения: </br> **1**.
 списка счетов пользователя; </br> **2**. маржинальных показателе по счёту.
 
-##Методы сервиса
+###Методы сервиса
 
 
-### GetAccounts
+#### GetAccounts
 Метод получения счетов пользователя
 
 - Тело запроса — [GetAccountsRequest](#getaccountsrequest)
@@ -22,7 +22,7 @@
 - Тело ответа — [GetAccountsResponse](#getaccountsresponse)
 
 
-### GetMarginAttributes
+#### GetMarginAttributes
 Расчёт маржинальных показателей по счёту
 
 - Тело запроса — [GetMarginAttributesRequest](#getmarginattributesrequest)
@@ -30,7 +30,7 @@
 - Тело ответа — [GetMarginAttributesResponse](#getmarginattributesresponse)
 
 
-### GetUserTariff
+#### GetUserTariff
 Запрос тарифа пользователя
 
 - Тело запроса — [GetUserTariffRequest](#getusertariffrequest)
@@ -38,7 +38,7 @@
 - Тело ответа — [GetUserTariffResponse](#getusertariffresponse)
 
 
-### GetInfo
+#### GetInfo
 Метод получения информации о пользователе
 
 - Тело запроса — [GetInfoRequest](#getinforequest)
@@ -48,17 +48,17 @@
  <!-- range .Methods -->
  <!-- range .Services -->
 
-##Сообщения методов
+###Сообщения методов
 
 
 
-### GetAccountsRequest
+#### GetAccountsRequest
 Запрос получения счетов не имеет входных параметров
 
  <!-- end HasFields -->
 
 
-### GetAccountsResponse
+#### GetAccountsResponse
 Ответ на запрос получения счетов.
 
 
@@ -69,7 +69,7 @@
  <!-- end HasFields -->
 
 
-### Account
+#### Account
 Счёт клиента.
 
 
@@ -85,7 +85,7 @@
  <!-- end HasFields -->
 
 
-### GetMarginAttributesRequest
+#### GetMarginAttributesRequest
 Запрос маржинальных показателей по счёту
 
 
@@ -96,7 +96,7 @@
  <!-- end HasFields -->
 
 
-### GetMarginAttributesResponse
+#### GetMarginAttributesResponse
 Маржинальные показатели по счёту.
 
 
@@ -111,13 +111,13 @@
  <!-- end HasFields -->
 
 
-### GetUserTariffRequest
+#### GetUserTariffRequest
 
 
  <!-- end HasFields -->
 
 
-### GetUserTariffResponse
+#### GetUserTariffResponse
 
 
 
@@ -129,7 +129,7 @@
  <!-- end HasFields -->
 
 
-### UnaryLimit
+#### UnaryLimit
 
 
 
@@ -141,7 +141,7 @@
  <!-- end HasFields -->
 
 
-### StreamLimit
+#### StreamLimit
 
 
 
@@ -153,13 +153,13 @@
  <!-- end HasFields -->
 
 
-### GetInfoRequest
+#### GetInfoRequest
 
 
  <!-- end HasFields -->
 
 
-### GetInfoResponse
+#### GetInfoResponse
 
 
 
@@ -172,10 +172,10 @@
  <!-- end HasFields -->
  <!-- end messages -->
 
-## Enums
+### Enums
 
 
-### AccountType
+#### AccountType
 Тип счёта.
 
 | Name | Number | Description |
@@ -188,7 +188,7 @@
 
 
 
-### AccountStatus
+#### AccountStatus
 Статус счёта.
 
 | Name | Number | Description |
@@ -203,7 +203,7 @@
  <!-- range HasServices -->
  <!-- range .Files -->
 
-### SecurityTradingStatus
+#### SecurityTradingStatus
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
@@ -219,9 +219,9 @@
 | SECURITY_TRADING_STATUS_OPENING_AUCTION_PERIOD | 9 | Аукцион открытия |
 | SECURITY_TRADING_STATUS_TRADING_AT_CLOSING_AUCTION_PRICE | 10 | Период торгов по цене аукциона закрытия |
 
-## Нестандартные типы данных
+### Нестандартные типы данных
 
-### MoneyValue
+#### MoneyValue
 Денежная сумма в определенной валюте
 
 | Field | Type | Description |
@@ -231,7 +231,7 @@
 | nano |  [int32](#int32) | Дробная часть суммы, может быть отрицательным числом |
 
 
-### Quotation
+#### Quotation
 Котировка - денежная сумма без указания валюты
 
 | Field | Type | Description |

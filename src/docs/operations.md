@@ -7,15 +7,15 @@
 
 
 
-# OperationsService
+## OperationsService
 Сервис предназначен для получения:</br> **1**.  списка операций по счёту;</br> **2**.
 портфеля по счёту;</br> **3**. позиций ценных бумаг на счёте;</br> **4**.
 доступного остатка для вывода средств.
 
-##Методы сервиса
+###Методы сервиса
 
 
-### GetOperations
+#### GetOperations
 Метод получения списка операций по счёту
 
 - Тело запроса — [OperationsRequest](#operationsrequest)
@@ -23,7 +23,7 @@
 - Тело ответа — [OperationsResponse](#operationsresponse)
 
 
-### GetPortfolio
+#### GetPortfolio
 Метод получения портфеля по счёту
 
 - Тело запроса — [PortfolioRequest](#portfoliorequest)
@@ -31,7 +31,7 @@
 - Тело ответа — [PortfolioResponse](#portfolioresponse)
 
 
-### GetPositions
+#### GetPositions
 Метод получения списка позиций по счёту
 
 - Тело запроса — [PositionsRequest](#positionsrequest)
@@ -39,7 +39,7 @@
 - Тело ответа — [PositionsResponse](#positionsresponse)
 
 
-### GetWithdrawLimits
+#### GetWithdrawLimits
 Метод получения доступного остатка для вывода средств
 
 - Тело запроса — [WithdrawLimitsRequest](#withdrawlimitsrequest)
@@ -49,11 +49,11 @@
  <!-- range .Methods -->
  <!-- range .Services -->
 
-##Сообщения методов
+###Сообщения методов
 
 
 
-### OperationsRequest
+#### OperationsRequest
 
 
 
@@ -68,7 +68,7 @@
  <!-- end HasFields -->
 
 
-### OperationsResponse
+#### OperationsResponse
 
 
 
@@ -79,7 +79,7 @@
  <!-- end HasFields -->
 
 
-### Operation
+#### Operation
 Данные по операции
 
 
@@ -101,7 +101,7 @@
  <!-- end HasFields -->
 
 
-### PortfolioRequest
+#### PortfolioRequest
 
 
 
@@ -112,7 +112,7 @@
  <!-- end HasFields -->
 
 
-### PortfolioResponse
+#### PortfolioResponse
 
 
 
@@ -129,7 +129,7 @@
  <!-- end HasFields -->
 
 
-### PositionsRequest
+#### PositionsRequest
 
 
 
@@ -140,7 +140,7 @@
  <!-- end HasFields -->
 
 
-### PositionsResponse
+#### PositionsResponse
 
 
 
@@ -154,7 +154,7 @@
  <!-- end HasFields -->
 
 
-### WithdrawLimitsRequest
+#### WithdrawLimitsRequest
 
 
 
@@ -165,7 +165,7 @@
  <!-- end HasFields -->
 
 
-### WithdrawLimitsResponse
+#### WithdrawLimitsResponse
 
 
 
@@ -177,7 +177,7 @@
  <!-- end HasFields -->
 
 
-### PortfolioPosition
+#### PortfolioPosition
 
 
 
@@ -195,7 +195,7 @@
  <!-- end HasFields -->
 
 
-### PositionsSecurities
+#### PositionsSecurities
 
 
 
@@ -208,10 +208,10 @@
  <!-- end HasFields -->
  <!-- end messages -->
 
-## Enums
+### Enums
 
 
-### OperationState
+#### OperationState
 Статус запрашиваемых операций
 
 | Name | Number | Description |
@@ -225,7 +225,7 @@
  <!-- range HasServices -->
  <!-- range .Files -->
 
-### SecurityTradingStatus
+#### SecurityTradingStatus
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
@@ -241,9 +241,9 @@
 | SECURITY_TRADING_STATUS_OPENING_AUCTION_PERIOD | 9 | Аукцион открытия |
 | SECURITY_TRADING_STATUS_TRADING_AT_CLOSING_AUCTION_PRICE | 10 | Период торгов по цене аукциона закрытия |
 
-## Нестандартные типы данных
+### Нестандартные типы данных
 
-### MoneyValue
+#### MoneyValue
 Денежная сумма в определенной валюте
 
 | Field | Type | Description |
@@ -253,7 +253,7 @@
 | nano |  [int32](#int32) | Дробная часть суммы, может быть отрицательным числом |
 
 
-### Quotation
+#### Quotation
 Котировка - денежная сумма без указания валюты
 
 | Field | Type | Description |

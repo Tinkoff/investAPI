@@ -7,15 +7,15 @@
 
 
 
-# InstrumentsService
+## InstrumentsService
 Сервис предназначен для получения:</br> **1**.  информации об инструментах;</br> **2**.
 расписания торговых сессий;</br> **3**. календаря выплат купонов по облигациям;</br> **4**.
 размера гарантийного обеспечения по фьючерсам;</br> **5**. дивидендов по ценной бумаге.
 
-##Методы сервиса
+###Методы сервиса
 
 
-### TradingSchedules
+#### TradingSchedules
 Метод получения расписания торгов торговых площадок
 
 - Тело запроса — [TradingSchedulesRequest](#tradingschedulesrequest)
@@ -23,7 +23,7 @@
 - Тело ответа — [TradingSchedulesResponse](#tradingschedulesresponse)
 
 
-### BondBy
+#### BondBy
 Метод получения списка облигаций
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
@@ -31,7 +31,7 @@
 - Тело ответа — [BondResponse](#bondresponse)
 
 
-### Bonds
+#### Bonds
 Метод получения облигации по её идентификатору
 
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
@@ -39,7 +39,7 @@
 - Тело ответа — [BondsResponse](#bondsresponse)
 
 
-### CurrencyBy
+#### CurrencyBy
 Метод получения списка валют
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
@@ -47,7 +47,7 @@
 - Тело ответа — [CurrencyResponse](#currencyresponse)
 
 
-### Currencies
+#### Currencies
 Метод получения валюты по её идентификатору
 
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
@@ -55,7 +55,7 @@
 - Тело ответа — [CurrenciesResponse](#currenciesresponse)
 
 
-### EtfBy
+#### EtfBy
 Метод получения списка инвестиционных фондов
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
@@ -63,7 +63,7 @@
 - Тело ответа — [EtfResponse](#etfresponse)
 
 
-### Etfs
+#### Etfs
 Метод получения инвестиционного фонда по его идентификатору
 
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
@@ -71,7 +71,7 @@
 - Тело ответа — [EtfsResponse](#etfsresponse)
 
 
-### FutureBy
+#### FutureBy
 Метод получения фьючерса по его идентификатору
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
@@ -79,7 +79,7 @@
 - Тело ответа — [FutureResponse](#futureresponse)
 
 
-### Futures
+#### Futures
 Метод получения списка фьючерсов
 
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
@@ -87,7 +87,7 @@
 - Тело ответа — [FuturesResponse](#futuresresponse)
 
 
-### StockBy
+#### StockBy
 Метод получения списка акций
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
@@ -95,7 +95,7 @@
 - Тело ответа — [StockResponse](#stockresponse)
 
 
-### Stocks
+#### Stocks
 Метод получения акции по её идентификатору
 
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
@@ -103,7 +103,7 @@
 - Тело ответа — [StocksResponse](#stocksresponse)
 
 
-### GetAccruedInterests
+#### GetAccruedInterests
 Метод получения календаря выплат купонов по облигациям
 
 - Тело запроса — [GetAccruedInterestsRequest](#getaccruedinterestsrequest)
@@ -111,7 +111,7 @@
 - Тело ответа — [GetAccruedInterestsResponse](#getaccruedinterestsresponse)
 
 
-### GetFuturesMargin
+#### GetFuturesMargin
 Метод получения размера гарантийного обеспечения по фьючерсам
 
 - Тело запроса — [GetFuturesMarginRequest](#getfuturesmarginrequest)
@@ -119,7 +119,7 @@
 - Тело ответа — [GetFuturesMarginResponse](#getfuturesmarginresponse)
 
 
-### GetInstrumentBy
+#### GetInstrumentBy
 Метод получения основной информации об инструменте
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
@@ -129,11 +129,11 @@
  <!-- range .Methods -->
  <!-- range .Services -->
 
-##Сообщения методов
+###Сообщения методов
 
 
 
-### TradingSchedulesRequest
+#### TradingSchedulesRequest
 
 
 
@@ -146,7 +146,7 @@
  <!-- end HasFields -->
 
 
-### TradingSchedulesResponse
+#### TradingSchedulesResponse
 
 
 
@@ -157,7 +157,7 @@
  <!-- end HasFields -->
 
 
-### TradingSchedule
+#### TradingSchedule
 Данные по торговой площадке
 
 
@@ -169,7 +169,7 @@
  <!-- end HasFields -->
 
 
-### TradingDay
+#### TradingDay
 Информация о времени торгов
 
 
@@ -185,7 +185,7 @@
  <!-- end HasFields -->
 
 
-### InstrumentRequest
+#### InstrumentRequest
 Запрос получения инструмента по идентификатору
 
 
@@ -198,7 +198,7 @@
  <!-- end HasFields -->
 
 
-### InstrumentsRequest
+#### InstrumentsRequest
 Запрос получения инструментов
 
 
@@ -209,7 +209,7 @@
  <!-- end HasFields -->
 
 
-### BondResponse
+#### BondResponse
 Информация об облигации
 
 
@@ -220,7 +220,7 @@
  <!-- end HasFields -->
 
 
-### BondsResponse
+#### BondsResponse
 Список облигаций
 
 
@@ -231,7 +231,7 @@
  <!-- end HasFields -->
 
 
-### CurrencyResponse
+#### CurrencyResponse
 Данные по валюте
 
 
@@ -242,7 +242,7 @@
  <!-- end HasFields -->
 
 
-### CurrenciesResponse
+#### CurrenciesResponse
 Данные по валютам
 
 
@@ -253,7 +253,7 @@
  <!-- end HasFields -->
 
 
-### EtfResponse
+#### EtfResponse
 Данные по фонду
 
 
@@ -264,7 +264,7 @@
  <!-- end HasFields -->
 
 
-### EtfsResponse
+#### EtfsResponse
 Данные по фондам
 
 
@@ -275,7 +275,7 @@
  <!-- end HasFields -->
 
 
-### FutureResponse
+#### FutureResponse
 Данные по фьючерсу
 
 
@@ -286,7 +286,7 @@
  <!-- end HasFields -->
 
 
-### FuturesResponse
+#### FuturesResponse
 Данные по фьючерсам
 
 
@@ -297,7 +297,7 @@
  <!-- end HasFields -->
 
 
-### StockResponse
+#### StockResponse
 Данные по акции
 
 
@@ -308,7 +308,7 @@
  <!-- end HasFields -->
 
 
-### StocksResponse
+#### StocksResponse
 Данные по акциям
 
 
@@ -319,7 +319,7 @@
  <!-- end HasFields -->
 
 
-### Bond
+#### Bond
 Объект передачи информации об облигации.
 
 
@@ -364,7 +364,7 @@
  <!-- end HasFields -->
 
 
-### Currency
+#### Currency
 Объект передачи информации о валюте.
 
 
@@ -397,7 +397,7 @@
  <!-- end HasFields -->
 
 
-### Etf
+#### Etf
 Объект передачи информации об инвестиционном фонде.
 
 
@@ -434,7 +434,7 @@
  <!-- end HasFields -->
 
 
-### Future
+#### Future
 Объект передачи информации о фьючерсе.
 
 
@@ -472,7 +472,7 @@
  <!-- end HasFields -->
 
 
-### Stock
+#### Stock
 Объект передачи информации об акции.
 
 
@@ -510,7 +510,7 @@
  <!-- end HasFields -->
 
 
-### GetAccruedInterestsRequest
+#### GetAccruedInterestsRequest
 
 
 
@@ -523,7 +523,7 @@
  <!-- end HasFields -->
 
 
-### GetAccruedInterestsResponse
+#### GetAccruedInterestsResponse
 
 
 
@@ -534,7 +534,7 @@
  <!-- end HasFields -->
 
 
-### AccruedInterest
+#### AccruedInterest
 Операция начисления купонов
 
 
@@ -548,7 +548,7 @@
  <!-- end HasFields -->
 
 
-### GetFuturesMarginRequest
+#### GetFuturesMarginRequest
 
 
 
@@ -559,7 +559,7 @@
  <!-- end HasFields -->
 
 
-### GetFuturesMarginResponse
+#### GetFuturesMarginResponse
 
 
 
@@ -571,7 +571,7 @@
  <!-- end HasFields -->
 
 
-### InstrumentResponse
+#### InstrumentResponse
 Данные по инструменту
 
 
@@ -582,7 +582,7 @@
  <!-- end HasFields -->
 
 
-### Instrument
+#### Instrument
 Объект передачи основной информации об инструменте.
 
 
@@ -614,10 +614,10 @@
  <!-- end HasFields -->
  <!-- end messages -->
 
-## Enums
+### Enums
 
 
-### InstrumentIdType
+#### InstrumentIdType
 Тип идентификатора инструмента. Подробнее об идентификации инструментов: [Идентификация инструментов](https://tinkoffcreditsystems.github.io/invest-openapi/faq_identification/)
 
 | Name | Number | Description |
@@ -629,7 +629,7 @@
 
 
 
-### InstrumentStatus
+#### InstrumentStatus
 Статус запрашиваемых инструментов.
 
 | Name | Number | Description |
@@ -641,7 +641,7 @@
 
 
 
-### ShareType
+#### ShareType
 
 
 | Name | Number | Description |
@@ -661,7 +661,7 @@
  <!-- range HasServices -->
  <!-- range .Files -->
 
-### SecurityTradingStatus
+#### SecurityTradingStatus
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
@@ -677,9 +677,9 @@
 | SECURITY_TRADING_STATUS_OPENING_AUCTION_PERIOD | 9 | Аукцион открытия |
 | SECURITY_TRADING_STATUS_TRADING_AT_CLOSING_AUCTION_PRICE | 10 | Период торгов по цене аукциона закрытия |
 
-## Нестандартные типы данных
+### Нестандартные типы данных
 
-### MoneyValue
+#### MoneyValue
 Денежная сумма в определенной валюте
 
 | Field | Type | Description |
@@ -689,7 +689,7 @@
 | nano |  [int32](#int32) | Дробная часть суммы, может быть отрицательным числом |
 
 
-### Quotation
+#### Quotation
 Котировка - денежная сумма без указания валюты
 
 | Field | Type | Description |

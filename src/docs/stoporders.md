@@ -7,14 +7,14 @@
 
 
 
-# StopOrdersService
+## StopOrdersService
 Сервис предназначен для работы со стоп-заявками:</br> **1**.
 выставление;</br> **2**. отмена;</br> **3**. получение списка стоп-заявок.
 
-##Методы сервиса
+###Методы сервиса
 
 
-### PostStopOrder
+#### PostStopOrder
 Метод выставления стоп-заявки
 
 - Тело запроса — [PostStopOrderRequest](#poststoporderrequest)
@@ -22,7 +22,7 @@
 - Тело ответа — [PostStopOrderResponse](#poststoporderresponse)
 
 
-### GetStopOrders
+#### GetStopOrders
 Метод получения списка активных стоп заявок по счёту
 
 - Тело запроса — [GetStopOrdersRequest](#getstopordersrequest)
@@ -30,7 +30,7 @@
 - Тело ответа — [GetStopOrdersResponse](#getstopordersresponse)
 
 
-### CancelStopOrder
+#### CancelStopOrder
 Метод отмены стоп-заявки
 
 - Тело запроса — [CancelStopOrderRequest](#cancelstoporderrequest)
@@ -40,11 +40,11 @@
  <!-- range .Methods -->
  <!-- range .Services -->
 
-##Сообщения методов
+###Сообщения методов
 
 
 
-### PostStopOrderRequest
+#### PostStopOrderRequest
 
 
 
@@ -63,7 +63,7 @@
  <!-- end HasFields -->
 
 
-### PostStopOrderResponse
+#### PostStopOrderResponse
 
 
 
@@ -74,7 +74,7 @@
  <!-- end HasFields -->
 
 
-### GetStopOrdersRequest
+#### GetStopOrdersRequest
 
 
 
@@ -85,7 +85,7 @@
  <!-- end HasFields -->
 
 
-### GetStopOrdersResponse
+#### GetStopOrdersResponse
 
 
 
@@ -96,7 +96,7 @@
  <!-- end HasFields -->
 
 
-### CancelStopOrderRequest
+#### CancelStopOrderRequest
 
 
 
@@ -108,7 +108,7 @@
  <!-- end HasFields -->
 
 
-### CancelStopOrderResponse
+#### CancelStopOrderResponse
 
 
 
@@ -119,7 +119,7 @@
  <!-- end HasFields -->
 
 
-### StopOrder
+#### StopOrder
 
 
 
@@ -138,10 +138,10 @@
  <!-- end HasFields -->
  <!-- end messages -->
 
-## Enums
+### Enums
 
 
-### StopOrderDirection
+#### StopOrderDirection
 Направление операции
 
 | Name | Number | Description |
@@ -153,7 +153,7 @@
 
 
 
-### StopOrderExpirationType
+#### StopOrderExpirationType
 
 
 | Name | Number | Description |
@@ -165,7 +165,7 @@
 
 
 
-### StopOrderType
+#### StopOrderType
 
 
 | Name | Number | Description |
@@ -180,7 +180,7 @@
  <!-- range HasServices -->
  <!-- range .Files -->
 
-### SecurityTradingStatus
+#### SecurityTradingStatus
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
@@ -196,9 +196,9 @@
 | SECURITY_TRADING_STATUS_OPENING_AUCTION_PERIOD | 9 | Аукцион открытия |
 | SECURITY_TRADING_STATUS_TRADING_AT_CLOSING_AUCTION_PRICE | 10 | Период торгов по цене аукциона закрытия |
 
-## Нестандартные типы данных
+### Нестандартные типы данных
 
-### MoneyValue
+#### MoneyValue
 Денежная сумма в определенной валюте
 
 | Field | Type | Description |
@@ -208,7 +208,7 @@
 | nano |  [int32](#int32) | Дробная часть суммы, может быть отрицательным числом |
 
 
-### Quotation
+#### Quotation
 Котировка - денежная сумма без указания валюты
 
 | Field | Type | Description |

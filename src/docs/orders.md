@@ -7,13 +7,13 @@
 
 
 
-# OrdersStreamService
+## OrdersStreamService
 
 
-##Методы сервиса
+###Методы сервиса
 
 
-### TradesStream
+#### TradesStream
 Bidirectional stream работы со сделками
 
 - Тело запроса — [TradesStreamRequest](#tradesstreamrequest)
@@ -23,15 +23,15 @@ Bidirectional stream работы со сделками
  <!-- range .Methods -->
 
 
-# OrdersService
+## OrdersService
 Сервис предназначен для работы с торговыми поручениями:</br> **1**.
 выставление;</br> **2**. отмена;</br> **3**. получение статуса;</br> **4**.
 расчёт полной стоимости;</br> **5**. получение списка заявок.
 
-##Методы сервиса
+###Методы сервиса
 
 
-### PostOrder
+#### PostOrder
 Метод выставления заявки.
 
 - Тело запроса — [PostOrderRequest](#postorderrequest)
@@ -39,7 +39,7 @@ Bidirectional stream работы со сделками
 - Тело ответа — [PostOrderResponse](#postorderresponse)
 
 
-### CancelOrder
+#### CancelOrder
 Метод отмены биржевой заявки.
 
 - Тело запроса — [CancelOrderRequest](#cancelorderrequest)
@@ -47,7 +47,7 @@ Bidirectional stream работы со сделками
 - Тело ответа — [CancelOrderResponse](#cancelorderresponse)
 
 
-### GetOrderState
+#### GetOrderState
 Метод получения статуса торгового поручения.
 
 - Тело запроса — [GetOrderStateRequest](#getorderstaterequest)
@@ -55,7 +55,7 @@ Bidirectional stream работы со сделками
 - Тело ответа — [OrderState](#orderstate)
 
 
-### GetOrders
+#### GetOrders
 Метод получения списка активных заявок по счёту.
 
 - Тело запроса — [GetOrdersRequest](#getordersrequest)
@@ -65,17 +65,17 @@ Bidirectional stream работы со сделками
  <!-- range .Methods -->
  <!-- range .Services -->
 
-##Сообщения методов
+###Сообщения методов
 
 
 
-### TradesStreamRequest
+#### TradesStreamRequest
 
 
  <!-- end HasFields -->
 
 
-### TradesStreamResponse
+#### TradesStreamResponse
 
 
 
@@ -90,7 +90,7 @@ Bidirectional stream работы со сделками
  <!-- end HasFields -->
 
 
-### OrderTrade
+#### OrderTrade
 
 
 
@@ -103,7 +103,7 @@ Bidirectional stream работы со сделками
  <!-- end HasFields -->
 
 
-### PostOrderRequest
+#### PostOrderRequest
 
 
 
@@ -120,7 +120,7 @@ Bidirectional stream работы со сделками
  <!-- end HasFields -->
 
 
-### PostOrderResponse
+#### PostOrderResponse
 
 
 
@@ -146,7 +146,7 @@ Bidirectional stream работы со сделками
  <!-- end HasFields -->
 
 
-### CancelOrderRequest
+#### CancelOrderRequest
 
 
 
@@ -158,7 +158,7 @@ Bidirectional stream работы со сделками
  <!-- end HasFields -->
 
 
-### CancelOrderResponse
+#### CancelOrderResponse
 
 
 
@@ -169,7 +169,7 @@ Bidirectional stream работы со сделками
  <!-- end HasFields -->
 
 
-### GetOrderStateRequest
+#### GetOrderStateRequest
 
 
 
@@ -181,7 +181,7 @@ Bidirectional stream работы со сделками
  <!-- end HasFields -->
 
 
-### GetOrdersRequest
+#### GetOrdersRequest
 
 
 
@@ -192,7 +192,7 @@ Bidirectional stream работы со сделками
  <!-- end HasFields -->
 
 
-### GetOrdersResponse
+#### GetOrdersResponse
 
 
 
@@ -203,7 +203,7 @@ Bidirectional stream работы со сделками
  <!-- end HasFields -->
 
 
-### OrderState
+#### OrderState
 
 
 
@@ -231,7 +231,7 @@ Bidirectional stream работы со сделками
  <!-- end HasFields -->
 
 
-### OrderStage
+#### OrderStage
 
 
 
@@ -244,10 +244,10 @@ Bidirectional stream работы со сделками
  <!-- end HasFields -->
  <!-- end messages -->
 
-## Enums
+### Enums
 
 
-### OrderDirection
+#### OrderDirection
 Направление операции
 
 | Name | Number | Description |
@@ -259,7 +259,7 @@ Bidirectional stream работы со сделками
 
 
 
-### OrderType
+#### OrderType
 Тип заявки
 
 | Name | Number | Description |
@@ -271,7 +271,7 @@ Bidirectional stream работы со сделками
 
 
 
-### OrderExecutionReportStatus
+#### OrderExecutionReportStatus
 Текущий статус заявки (поручения)
 
 | Name | Number | Description |
@@ -288,7 +288,7 @@ Bidirectional stream работы со сделками
  <!-- range HasServices -->
  <!-- range .Files -->
 
-### SecurityTradingStatus
+#### SecurityTradingStatus
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
@@ -304,9 +304,9 @@ Bidirectional stream работы со сделками
 | SECURITY_TRADING_STATUS_OPENING_AUCTION_PERIOD | 9 | Аукцион открытия |
 | SECURITY_TRADING_STATUS_TRADING_AT_CLOSING_AUCTION_PRICE | 10 | Период торгов по цене аукциона закрытия |
 
-## Нестандартные типы данных
+### Нестандартные типы данных
 
-### MoneyValue
+#### MoneyValue
 Денежная сумма в определенной валюте
 
 | Field | Type | Description |
@@ -316,7 +316,7 @@ Bidirectional stream работы со сделками
 | nano |  [int32](#int32) | Дробная часть суммы, может быть отрицательным числом |
 
 
-### Quotation
+#### Quotation
 Котировка - денежная сумма без указания валюты
 
 | Field | Type | Description |

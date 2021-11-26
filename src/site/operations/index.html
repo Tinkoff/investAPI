@@ -687,8 +687,6 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           Методы
@@ -704,8 +702,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -714,6 +710,14 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#operationsservice" class="md-nav__link">
+    OperationsService
+  </a>
+  
+    <nav class="md-nav" aria-label="OperationsService">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     Методы сервиса
   </a>
@@ -753,8 +757,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     Сообщения методов
   </a>
@@ -843,8 +847,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#enums" class="md-nav__link">
     Enums
   </a>
@@ -870,8 +874,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     Нестандартные типы данных
   </a>
@@ -890,6 +894,11 @@
   <a href="#quotation" class="md-nav__link">
     Quotation
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1105,8 +1114,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1115,6 +1122,14 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#operationsservice" class="md-nav__link">
+    OperationsService
+  </a>
+  
+    <nav class="md-nav" aria-label="OperationsService">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     Методы сервиса
   </a>
@@ -1154,8 +1169,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     Сообщения методов
   </a>
@@ -1244,8 +1259,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#enums" class="md-nav__link">
     Enums
   </a>
@@ -1271,8 +1286,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     Нестандартные типы данных
   </a>
@@ -1298,6 +1313,11 @@
     </nav>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
     </ul>
   
@@ -1316,14 +1336,16 @@
                   </a>
                 
                 
+                  <h1>Методы</h1>
+                
                 <!-- range HasServices -->
 
-<h1 id="operationsservice">OperationsService</h1>
+<h2 id="operationsservice">OperationsService</h2>
 <p>Сервис предназначен для получения:</br> <strong>1</strong>.  списка операций по счёту;</br> <strong>2</strong>.
 портфеля по счёту;</br> <strong>3</strong>. позиций ценных бумаг на счёте;</br> <strong>4</strong>.
 доступного остатка для вывода средств.</p>
-<h2 id="_1">Методы сервиса</h2>
-<h3 id="getoperations">GetOperations</h3>
+<h3 id="_1">Методы сервиса</h3>
+<h4 id="getoperations">GetOperations</h4>
 <p>Метод получения списка операций по счёту</p>
 <ul>
 <li>
@@ -1333,7 +1355,7 @@
 <p>Тело ответа — <a href="#operationsresponse">OperationsResponse</a></p>
 </li>
 </ul>
-<h3 id="getportfolio">GetPortfolio</h3>
+<h4 id="getportfolio">GetPortfolio</h4>
 <p>Метод получения портфеля по счёту</p>
 <ul>
 <li>
@@ -1343,7 +1365,7 @@
 <p>Тело ответа — <a href="#portfolioresponse">PortfolioResponse</a></p>
 </li>
 </ul>
-<h3 id="getpositions">GetPositions</h3>
+<h4 id="getpositions">GetPositions</h4>
 <p>Метод получения списка позиций по счёту</p>
 <ul>
 <li>
@@ -1353,7 +1375,7 @@
 <p>Тело ответа — <a href="#positionsresponse">PositionsResponse</a></p>
 </li>
 </ul>
-<h3 id="getwithdrawlimits">GetWithdrawLimits</h3>
+<h4 id="getwithdrawlimits">GetWithdrawLimits</h4>
 <p>Метод получения доступного остатка для вывода средств</p>
 <ul>
 <li>
@@ -1366,8 +1388,8 @@
 <!-- range .Methods -->
 <!-- range .Services -->
 
-<h2 id="_2">Сообщения методов</h2>
-<h3 id="operationsrequest">OperationsRequest</h3>
+<h3 id="_2">Сообщения методов</h3>
+<h4 id="operationsrequest">OperationsRequest</h4>
 <table>
 <thead>
 <tr>
@@ -1411,7 +1433,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="operationsresponse">OperationsResponse</h3>
+<h4 id="operationsresponse">OperationsResponse</h4>
 <table>
 <thead>
 <tr>
@@ -1435,7 +1457,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="operation">Operation</h3>
+<h4 id="operation">Operation</h4>
 <p>Данные по операции</p>
 <table>
 <thead>
@@ -1515,7 +1537,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="portfoliorequest">PortfolioRequest</h3>
+<h4 id="portfoliorequest">PortfolioRequest</h4>
 <table>
 <thead>
 <tr>
@@ -1539,7 +1561,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="portfolioresponse">PortfolioResponse</h3>
+<h4 id="portfolioresponse">PortfolioResponse</h4>
 <table>
 <thead>
 <tr>
@@ -1593,7 +1615,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="positionsrequest">PositionsRequest</h3>
+<h4 id="positionsrequest">PositionsRequest</h4>
 <table>
 <thead>
 <tr>
@@ -1617,7 +1639,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="positionsresponse">PositionsResponse</h3>
+<h4 id="positionsresponse">PositionsResponse</h4>
 <table>
 <thead>
 <tr>
@@ -1656,7 +1678,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="withdrawlimitsrequest">WithdrawLimitsRequest</h3>
+<h4 id="withdrawlimitsrequest">WithdrawLimitsRequest</h4>
 <table>
 <thead>
 <tr>
@@ -1680,7 +1702,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="withdrawlimitsresponse">WithdrawLimitsResponse</h3>
+<h4 id="withdrawlimitsresponse">WithdrawLimitsResponse</h4>
 <table>
 <thead>
 <tr>
@@ -1709,7 +1731,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="portfolioposition">PortfolioPosition</h3>
+<h4 id="portfolioposition">PortfolioPosition</h4>
 <table>
 <thead>
 <tr>
@@ -1768,7 +1790,7 @@
 </table>
 <!-- end HasFields -->
 
-<h3 id="positionssecurities">PositionsSecurities</h3>
+<h4 id="positionssecurities">PositionsSecurities</h4>
 <table>
 <thead>
 <tr>
@@ -1803,8 +1825,8 @@
 <!-- end HasFields -->
 <!-- end messages -->
 
-<h2 id="enums">Enums</h2>
-<h3 id="operationstate">OperationState</h3>
+<h3 id="enums">Enums</h3>
+<h4 id="operationstate">OperationState</h4>
 <p>Статус запрашиваемых операций</p>
 <table>
 <thead>
@@ -1836,7 +1858,7 @@
 <!-- range HasServices -->
 <!-- range .Files -->
 
-<h3 id="securitytradingstatus">SecurityTradingStatus</h3>
+<h4 id="securitytradingstatus">SecurityTradingStatus</h4>
 <table>
 <thead>
 <tr>
@@ -1903,8 +1925,8 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_3">Нестандартные типы данных</h2>
-<h3 id="moneyvalue">MoneyValue</h3>
+<h3 id="_3">Нестандартные типы данных</h3>
+<h4 id="moneyvalue">MoneyValue</h4>
 <p>Денежная сумма в определенной валюте</p>
 <table>
 <thead>
@@ -1932,7 +1954,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="quotation">Quotation</h3>
+<h4 id="quotation">Quotation</h4>
 <p>Котировка - денежная сумма без указания валюты</p>
 <table>
 <thead>

@@ -52,8 +52,8 @@
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Figi-идентификатор инструмента |
 | quantity |  [int64](#int64) | Количество лотов |
-| price |  [MoneyValue](#moneyvalue) | Цена лота |
-| stop_price |  [MoneyValue](#moneyvalue) | Стоп-цена заявки |
+| price |  [Quotation](#quotation) | Цена лота |
+| stop_price |  [Quotation](#quotation) | Стоп-цена заявки |
 | direction |  [StopOrderDirection](#stoporderdirection) | Направление операции |
 | account_id |  [string](#string) | Номер счёта |
 | expiration_type |  [StopOrderExpirationType](#stoporderexpirationtype) | Тип экспирации заявки |

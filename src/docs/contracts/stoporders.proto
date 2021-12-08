@@ -22,8 +22,8 @@ service StopOrdersService { /* Сервис предназначен для ра
 message PostStopOrderRequest {
   string figi = 1; //Figi-идентификатор инструмента
   int64 quantity = 2; //Количество лотов
-  MoneyValue price = 3; //Цена лота
-  MoneyValue stop_price = 4; //Стоп-цена заявки
+  Quotation price = 3; //Цена лота
+  Quotation stop_price = 4; //Стоп-цена заявки
   StopOrderDirection direction = 5; //Направление операции
   string account_id = 6; //Номер счёта
   StopOrderExpirationType expiration_type = 7; //Тип экспирации заявки

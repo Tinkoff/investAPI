@@ -506,7 +506,7 @@ Bidirectional stream работы со сделками
 | direction |  [OrderDirection](#orderdirection) | Направление операции. |
 | account_id |  [string](#string) | Номер счёта. |
 | order_type |  [OrderType](#ordertype) | Тип заявки. |
-| order_id |  [string](#string) | Идентификатор запроса выставления поручения для целей идемпотентности |
+| order_id |  [string](#string) | Идентификатор запроса выставления поручения для целей идемпотентности. Максимальная длина 36 символов. |
  <!-- end Fields -->
  <!-- end HasFields -->
 

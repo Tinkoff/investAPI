@@ -24,7 +24,7 @@
 
 
 #### BondBy
-Метод получения списка облигаций
+Метод получения списка облигаций.
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
 
@@ -32,7 +32,7 @@
 
 
 #### Bonds
-Метод получения облигации по её идентификатору
+Метод получения облигации по её идентификатору.
 
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
 
@@ -125,6 +125,14 @@
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
 
 - Тело ответа — [InstrumentResponse](#instrumentresponse)
+
+
+#### GetDividends
+Метод для получения событий выплаты дивидендов по инструменту.
+
+- Тело запроса — [GetDividendsRequest](#getdividendsrequest)
+
+- Тело ответа — [GetDividendsResponse](#getdividendsresponse)
 
  <!-- range .Methods -->
  <!-- range .Services -->
@@ -518,7 +526,7 @@
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Figi-идентификатор инструмента |
 | from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода в часовом поясе UTC. |
-| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода в часовом поясе UTC |
+| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода в часовом поясе UTC. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -610,6 +618,50 @@
 | otc_flag |  [bool](#bool) | Признак внебиржевой ценной бумаги. |
 | buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetDividendsRequest
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| figi |  [string](#string) | Figi-идентификатор инструмента |
+| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода в часовом поясе UTC. |
+| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода в часовом поясе UTC. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetDividendsResponse
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| dividends | Массив объектов [Dividend](#dividend) |  |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### Dividend
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| dividend_net |  [MoneyValue](#moneyvalue) | Величина дивиденда на 1 ценную бумагу (включая валюту). |
+| payment_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата фактических выплат. |
+| declared_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата объявления дивидендов |
+| last_buy_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Последний день (включительно) покупки для получения выплаты |
+| dividend_type |  [string](#string) | Тип выплаты. Возможные значения: Regular Cash – регулярные выплаты, Cancelled – выплата отменена, Daily Accrual – ежедневное начисление, Return of Capital – возврат капитала, прочие типы выплат |
+| record_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата фиксации реестра |
+| regularity |  [string](#string) | Регулярность выплаты. Возможные значения: Annual – ежегодная, Semi-Anl – каждые полгода, прочие типы выплат |
+| close_price |  [MoneyValue](#moneyvalue) | Цена закрытия инструмента на момент ex_dividend_date |
+| yield_value |  [Quotation](#quotation) | Величина доходности |
+| created_at |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время создания записи |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->

@@ -715,6 +715,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#getdividends" class="md-nav__link">
+    GetDividends
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -920,6 +927,27 @@
           <li class="md-nav__item">
   <a href="#instrument" class="md-nav__link">
     Instrument
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdividendsrequest" class="md-nav__link">
+    GetDividendsRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdividendsresponse" class="md-nav__link">
+    GetDividendsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dividend" class="md-nav__link">
+    Dividend
   </a>
   
 </li>
@@ -1438,6 +1466,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#getdividends" class="md-nav__link">
+    GetDividends
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1647,6 +1682,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#getdividendsrequest" class="md-nav__link">
+    GetDividendsRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdividendsresponse" class="md-nav__link">
+    GetDividendsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dividend" class="md-nav__link">
+    Dividend
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1762,7 +1818,7 @@
 </li>
 </ul>
 <h4 id="bondby">BondBy</h4>
-<p>Метод получения списка облигаций</p>
+<p>Метод получения списка облигаций.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#instrumentrequest">InstrumentRequest</a></p>
@@ -1772,7 +1828,7 @@
 </li>
 </ul>
 <h4 id="bonds">Bonds</h4>
-<p>Метод получения облигации по её идентификатору</p>
+<p>Метод получения облигации по её идентификатору.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#instrumentsrequest">InstrumentsRequest</a></p>
@@ -1889,6 +1945,16 @@
 </li>
 <li>
 <p>Тело ответа — <a href="#instrumentresponse">InstrumentResponse</a></p>
+</li>
+</ul>
+<h4 id="getdividends">GetDividends</h4>
+<p>Метод для получения событий выплаты дивидендов по инструменту.</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#getdividendsrequest">GetDividendsRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#getdividendsresponse">GetDividendsResponse</a></p>
 </li>
 </ul>
 <!-- range .Methods -->
@@ -3171,7 +3237,7 @@
 <tr>
 <td>to</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Окончание запрашиваемого периода в часовом поясе UTC</td>
+<td>Окончание запрашиваемого периода в часовом поясе UTC.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3444,6 +3510,133 @@
 <td>sell_available_flag</td>
 <td><a href="#bool">bool</a></td>
 <td>Признак доступности для продажи.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getdividendsrequest">GetDividendsRequest</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента</td>
+</tr>
+<tr>
+<td>from</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Начало запрашиваемого периода в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>to</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Окончание запрашиваемого периода в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getdividendsresponse">GetDividendsResponse</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dividends</td>
+<td>Массив объектов <a href="#dividend">Dividend</a></td>
+<td></td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="dividend">Dividend</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dividend_net</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Величина дивиденда на 1 ценную бумагу (включая валюту).</td>
+</tr>
+<tr>
+<td>payment_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата фактических выплат.</td>
+</tr>
+<tr>
+<td>declared_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата объявления дивидендов</td>
+</tr>
+<tr>
+<td>last_buy_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Последний день (включительно) покупки для получения выплаты</td>
+</tr>
+<tr>
+<td>dividend_type</td>
+<td><a href="#string">string</a></td>
+<td>Тип выплаты. Возможные значения: Regular Cash – регулярные выплаты, Cancelled – выплата отменена, Daily Accrual – ежедневное начисление, Return of Capital – возврат капитала, прочие типы выплат</td>
+</tr>
+<tr>
+<td>record_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата фиксации реестра</td>
+</tr>
+<tr>
+<td>regularity</td>
+<td><a href="#string">string</a></td>
+<td>Регулярность выплаты. Возможные значения: Annual – ежегодная, Semi-Anl – каждые полгода, прочие типы выплат</td>
+</tr>
+<tr>
+<td>close_price</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Цена закрытия инструмента на момент ex_dividend_date</td>
+</tr>
+<tr>
+<td>yield_value</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Величина доходности</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата и время создания записи</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>

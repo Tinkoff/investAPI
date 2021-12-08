@@ -58,7 +58,7 @@ message PostOrderRequest {
   OrderDirection direction = 4; //Направление операции.
   string account_id = 5; //Номер счёта.
   OrderType order_type = 6; //Тип заявки.
-  string order_id = 7; //Идентификатор запроса выставления поручения для целей идемпотентности
+  string order_id = 7; //Идентификатор запроса выставления поручения для целей идемпотентности. Максимальная длина 36 символов.
 }
 
 message PostOrderResponse {

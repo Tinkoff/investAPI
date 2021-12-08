@@ -17,8 +17,8 @@ service InstrumentsService { /*Сервис предназначен для по
                               размера гарантийного обеспечения по фьючерсам;</br> **5**. дивидендов по ценной бумаге.*/
   rpc TradingSchedules (TradingSchedulesRequest) returns (TradingSchedulesResponse); // Метод получения расписания торгов торговых площадок
 
-  rpc BondBy (InstrumentRequest) returns (BondResponse); //Метод получения списка облигаций
-  rpc Bonds (InstrumentsRequest) returns (BondsResponse); //Метод получения облигации по её идентификатору
+  rpc BondBy (InstrumentRequest) returns (BondResponse); //Метод получения списка облигаций.
+  rpc Bonds (InstrumentsRequest) returns (BondsResponse); //Метод получения облигации по её идентификатору.
 
   rpc CurrencyBy (InstrumentRequest) returns (CurrencyResponse); //Метод получения списка валют
   rpc Currencies (InstrumentsRequest) returns (CurrenciesResponse); //Метод получения валюты по её идентификатору
@@ -36,6 +36,8 @@ service InstrumentsService { /*Сервис предназначен для по
   rpc GetFuturesMargin (GetFuturesMarginRequest) returns (GetFuturesMarginResponse); //Метод получения размера гарантийного обеспечения по фьючерсам
 
   rpc GetInstrumentBy (InstrumentRequest) returns (InstrumentResponse); //Метод получения основной информации об инструменте
+
+  rpc GetDividends (GetDividendsRequest) returns (GetDividendsResponse); //Метод для получения событий выплаты дивидендов по инструменту.
 }
 
 message TradingSchedulesRequest {
@@ -293,7 +295,7 @@ message Stock { //Объект передачи информации об акц
 message GetAccruedInterestsRequest {
   string figi = 1; //Figi-идентификатор инструмента
   google.protobuf.Timestamp from = 2; //Начало запрашиваемого периода в часовом поясе UTC.
-  google.protobuf.Timestamp to = 3; //Окончание запрашиваемого периода в часовом поясе UTC
+  google.protobuf.Timestamp to = 3; //Окончание запрашиваемого периода в часовом поясе UTC.
 }
 
 message GetAccruedInterestsResponse {
@@ -358,6 +360,29 @@ message Instrument { //Объект передачи основной инфор
   bool otc_flag = 20; //Признак внебиржевой ценной бумаги.
   bool buy_available_flag = 21; //Признак доступности для покупки.
   bool sell_available_flag = 22; //Признак доступности для продажи.
+}
+
+message GetDividendsRequest {
+  string figi = 1; //Figi-идентификатор инструмента
+  google.protobuf.Timestamp from = 2; //Начало запрашиваемого периода в часовом поясе UTC.
+  google.protobuf.Timestamp to = 3; //Окончание запрашиваемого периода в часовом поясе UTC.
+}
+
+message GetDividendsResponse {
+  repeated Dividend dividends = 1;
+}
+
+message Dividend {
+  MoneyValue dividend_net = 1; //Величина дивиденда на 1 ценную бумагу (включая валюту).
+  google.protobuf.Timestamp payment_date = 2; //Дата фактических выплат.
+  google.protobuf.Timestamp declared_date = 3; //Дата объявления дивидендов
+  google.protobuf.Timestamp last_buy_date = 4; //Последний день (включительно) покупки для получения выплаты
+  string dividend_type = 5; //Тип выплаты. Возможные значения: Regular Cash – регулярные выплаты, Cancelled – выплата отменена, Daily Accrual – ежедневное начисление, Return of Capital – возврат капитала, прочие типы выплат
+  google.protobuf.Timestamp record_date = 6;	//Дата фиксации реестра
+  string regularity = 7; //Регулярность выплаты. Возможные значения: Annual – ежегодная, Semi-Anl – каждые полгода, прочие типы выплат
+  MoneyValue close_price = 8; //Цена закрытия инструмента на момент ex_dividend_date
+  Quotation yield_value = 9; //Величина доходности
+  google.protobuf.Timestamp created_at = 10; //Дата и время создания записи
 }
 
 enum ShareType {

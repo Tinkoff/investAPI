@@ -50,7 +50,7 @@ message Operation {//Данные по операции
   int64 quantity = 7; //Количество лотов инструмента
   int64 quantity_rest = 8; //Неисполненный остаток по сделке
   string figi = 9; //Figi-идентификатор инструмента, связанного с операцией
-  string instrument_type = 10;  //Тип инструмента. Возможные значения: </br>**bond** — облигация; </br>**stock** — акция; </br>**currency** — валюта; </br>**etf** — фонд; </br>**futures** — фьючерс.
+  string instrument_type = 10;  //Тип инструмента. Возможные значения: </br>**bond** — облигация; </br>**share** — акция; </br>**currency** — валюта; </br>**etf** — фонд; </br>**futures** — фьючерс.
   google.protobuf.Timestamp date = 11; //Дата и время операции в формате часовом поясе UTC
   string type = 12; //Тип операции
 }
@@ -60,7 +60,7 @@ message PortfolioRequest {
 }
 
 message PortfolioResponse {
-  MoneyValue total_amount_stocks = 1; //Общая стоимость акций в портфеле в рублях
+  MoneyValue total_amount_shares = 1; //Общая стоимость акций в портфеле в рублях
   MoneyValue total_amount_bonds = 2; //Общая стоимость облигаций в портфеле в рублях
   MoneyValue total_amount_etf = 3; //Общая стоимость фондов в портфеле в рублях
   MoneyValue total_amount_currencies = 4; //Общая стоимость валют в портфеле в рублях

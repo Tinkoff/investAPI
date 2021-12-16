@@ -16,6 +16,7 @@
 30014|INVALID_ARGUMENT|the maximum request period for the given candle interval has been exceeded|Превышен максимальный период запроса для данного интервала свечи. </br>Укажите корректный интервал.|
 30015|INVALID_ARGUMENT|missing parameter: 'quantity'|Входной параметр *quantity* является обязательным. </br> Укажите корректный параметр *quantity*.|
 30017|INVALID_ARGUMENT|missing parameter: 'price'|Входной параметр *price* является обязательным. </br> Укажите корректный параметр *price*.|
+30018|INVALID_ARGUMENT|price is invalid|Входной параметр *price* имеет некорректное значение.</br>Укажите корректный параметр *price*.|
 30019|INVALID_ARGUMENT|missing parameter: 'direction'|Входной параметр *direction* является обязательным. </br> Укажите корректный параметр *direction*.|
 30021|INVALID_ARGUMENT|missing parameter: 'account_id'|Входной параметр *account_id* является обязательным. </br> Укажите корректный параметр *account_id*.|
 30025|INVALID_ARGUMENT|missing parameter: 'order_type'|Входной параметр *order_type* является обязательным. </br> Укажите корректный параметр *order_type*.|
@@ -39,7 +40,8 @@
 30053|INVALID_ARGUMENT|post stop_order error: %s|Ошибка метода выставления стоп-заявки. </br>Подробнее в тексте ошибки.|
 30054|INVALID_ARGUMENT|instrument type is not a share or etf|Тип инструмента не инвестиционный фонд или акция|
 30055|INVALID_ARGUMENT|order_id cannot be longer than 36 characters|order_id не может быть длиннее 36 символов|
-30056|INVALID_ARGUMENT|stop order settlement currency is not supported|Валюта выставления стоп-заявки не поддерживается |
+30056|INVALID_ARGUMENT|stop order settlement currency is not supported|Валюта выставления стоп-заявки не поддерживается|
+30057|INVALID_ARGUMENT|the order is a duplicate, but the order report was not found|Заявка является дублем, но отчет по заявке не найден|
 40002|PERMISSION_DENIED|insufficient privileges|Недостаточно прав для совершения операции. </br>Токен доступа имеет уровень прав read-only.</br>Подробнее: [Виды токенов](/investAPI/index#_2)|
 50001|NOT_FOUND|exchange not found|Биржа не найдена по переданному *exchange_id*.</br>Укажите корректный *exchange_id*.|
 50002|NOT_FOUND|instrument not found|Инструмент не найден.</br>Укажите корректный идентификатор инструмента.|

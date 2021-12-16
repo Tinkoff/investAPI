@@ -8,15 +8,18 @@
 
 
 ## InstrumentsService
-Сервис предназначен для получения:</br> **1**.  информации об инструментах;</br> **2**.
-расписания торговых сессий;</br> **3**. календаря выплат купонов по облигациям;</br> **4**.
-размера гарантийного обеспечения по фьючерсам;</br> **5**. дивидендов по ценной бумаге.
+Сервис предназначен для получения:</br>
+*1**. информации об инструментах;</br>
+*2**. расписания торговых сессий;</br>
+*3**. календаря выплат купонов по облигациям;</br>
+*4**. размера гарантийного обеспечения по фьючерсам;</br>
+*5**. дивидендов по ценной бумаге.
 
 ###Методы сервиса
 
 
 #### TradingSchedules
-Метод получения расписания торгов торговых площадок
+Метод получения расписания торгов торговых площадок.
 
 - Тело запроса — [TradingSchedulesRequest](#tradingschedulesrequest)
 
@@ -40,7 +43,7 @@
 
 
 #### CurrencyBy
-Метод получения списка валют
+Метод получения списка валют.
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
 
@@ -48,7 +51,7 @@
 
 
 #### Currencies
-Метод получения валюты по её идентификатору
+Метод получения валюты по её идентификатору.
 
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
 
@@ -56,7 +59,7 @@
 
 
 #### EtfBy
-Метод получения списка инвестиционных фондов
+Метод получения списка инвестиционных фондов.
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
 
@@ -64,7 +67,7 @@
 
 
 #### Etfs
-Метод получения инвестиционного фонда по его идентификатору
+Метод получения инвестиционного фонда по его идентификатору.
 
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
 
@@ -72,7 +75,7 @@
 
 
 #### FutureBy
-Метод получения фьючерса по его идентификатору
+Метод получения фьючерса по его идентификатору.
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
 
@@ -80,31 +83,31 @@
 
 
 #### Futures
-Метод получения списка фьючерсов
+Метод получения списка фьючерсов.
 
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
 
 - Тело ответа — [FuturesResponse](#futuresresponse)
 
 
-#### StockBy
-Метод получения списка акций
+#### ShareBy
+Метод получения списка акций.
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
 
-- Тело ответа — [StockResponse](#stockresponse)
+- Тело ответа — [ShareResponse](#shareresponse)
 
 
-#### Stocks
-Метод получения акции по её идентификатору
+#### Shares
+Метод получения акции по её идентификатору.
 
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
 
-- Тело ответа — [StocksResponse](#stocksresponse)
+- Тело ответа — [SharesResponse](#sharesresponse)
 
 
 #### GetAccruedInterests
-Метод получения календаря выплат купонов по облигациям
+Метод получения календаря выплат купонов по облигациям.
 
 - Тело запроса — [GetAccruedInterestsRequest](#getaccruedinterestsrequest)
 
@@ -112,7 +115,7 @@
 
 
 #### GetFuturesMargin
-Метод получения размера гарантийного обеспечения по фьючерсам
+Метод получения размера гарантийного обеспечения по фьючерсам.
 
 - Тело запроса — [GetFuturesMarginRequest](#getfuturesmarginrequest)
 
@@ -120,7 +123,7 @@
 
 
 #### GetInstrumentBy
-Метод получения основной информации об инструменте
+Метод получения основной информации об инструменте.
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
 
@@ -147,9 +150,9 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| exchange |  [string](#string) | Наименование биржи или расчетного календаря. </br>Если не передаётся, возвращается информация по всем доступным торговым площадкам |
-| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало периода по часовому поясу UTC |
-| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание периода по часовому поясу UTC |
+| exchange |  [string](#string) | Наименование биржи или расчетного календаря. </br>Если не передаётся, возвращается информация по всем доступным торговым площадкам. |
+| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало периода по часовому поясу UTC. |
+| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание периода по часовому поясу UTC. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -160,54 +163,54 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| exchanges | Массив объектов [TradingSchedule](#tradingschedule) | Список торговых площадок и режимов торгов |
+| exchanges | Массив объектов [TradingSchedule](#tradingschedule) | Список торговых площадок и режимов торгов. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
 #### TradingSchedule
-Данные по торговой площадке
+Данные по торговой площадке.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| exchange |  [string](#string) | Наименование торговой площадки |
-| days | Массив объектов [TradingDay](#tradingday) | Массив с торговыми и неторговыми днями |
+| exchange |  [string](#string) | Наименование торговой площадки. |
+| days | Массив объектов [TradingDay](#tradingday) | Массив с торговыми и неторговыми днями. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
 #### TradingDay
-Информация о времени торгов
+Информация о времени торгов.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата |
-| is_trading_day |  [bool](#bool) | Признак торгового дня на бирже |
-| start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала торгов по часовому поясу UTC |
-| end_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания торгов по часовому поясу UTC |
-| market_order_start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала подачи заявки по часовому поясу UTC |
-| market_order_end_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания подачи заявки по часовому поясу UTC |
+| date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата. |
+| is_trading_day |  [bool](#bool) | Признак торгового дня на бирже. |
+| start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала торгов по часовому поясу UTC. |
+| end_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания торгов по часовому поясу UTC. |
+| market_order_start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала подачи заявки по часовому поясу UTC. |
+| market_order_end_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания подачи заявки по часовому поясу UTC. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
 #### InstrumentRequest
-Запрос получения инструмента по идентификатору
+Запрос получения инструмента по идентификатору.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | id_type |  [InstrumentIdType](#instrumentidtype) | Тип идентификатора инструмента. Возможные значения: figi, ticker, isin. Подробнее об идентификации инструментов: [Идентификация инструментов](https://tinkoffcreditsystems.github.io/invest-openapi/faq_identification/) |
-| class_code |  [string](#string) | Идентификатор class_code. Обязателен при id_type = ticker |
-| id |  [string](#string) | Идентификатор запрашиваемого инструмента |
+| class_code |  [string](#string) | Идентификатор class_code. Обязателен при id_type = ticker. |
+| id |  [string](#string) | Идентификатор запрашиваемого инструмента. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
 #### InstrumentsRequest
-Запрос получения инструментов
+Запрос получения инструментов.
 
 
 | Field | Type | Description |
@@ -218,111 +221,111 @@
 
 
 #### BondResponse
-Информация об облигации
+Информация об облигации.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| instrument |  [Bond](#bond) | Информация об облигации |
+| instrument |  [Bond](#bond) | Информация об облигации. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
 #### BondsResponse
-Список облигаций
+Список облигаций.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| instruments | Массив объектов [Bond](#bond) | Массив облигаций |
+| instruments | Массив объектов [Bond](#bond) | Массив облигаций. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
 #### CurrencyResponse
-Данные по валюте
+Данные по валюте.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| instrument |  [Currency](#currency) | Информация о валюте |
+| instrument |  [Currency](#currency) | Информация о валюте. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
 #### CurrenciesResponse
-Данные по валютам
+Данные по валютам.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| instruments | Массив объектов [Currency](#currency) | Массив валют |
+| instruments | Массив объектов [Currency](#currency) | Массив валют. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
 #### EtfResponse
-Данные по фонду
+Данные по фонду.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| instrument |  [Etf](#etf) | Информация о фонде |
+| instrument |  [Etf](#etf) | Информация о фонде. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
 #### EtfsResponse
-Данные по фондам
+Данные по фондам.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| instruments | Массив объектов [Etf](#etf) | Массив фондов |
+| instruments | Массив объектов [Etf](#etf) | Массив фондов. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
 #### FutureResponse
-Данные по фьючерсу
+Данные по фьючерсу.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| instrument |  [Future](#future) | Информация о фьючерсу |
+| instrument |  [Future](#future) | Информация о фьючерсу. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
 #### FuturesResponse
-Данные по фьючерсам
+Данные по фьючерсам.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| instruments | Массив объектов [Future](#future) | Массив фьючерсов |
+| instruments | Массив объектов [Future](#future) | Массив фьючерсов. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
-#### StockResponse
-Данные по акции
+#### ShareResponse
+Данные по акции.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| instrument |  [Stock](#stock) | Информация об акции |
+| instrument |  [Share](#share) | Информация об акции. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
-#### StocksResponse
-Данные по акциям
+#### SharesResponse
+Данные по акциям.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| instruments | Массив объектов [Stock](#stock) | Массив акций |
+| instruments | Массив объектов [Share](#share) | Массив акций. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -348,16 +351,16 @@
 | short_enabled_flag |  [bool](#bool) | Признак доступности для операций в шорт. |
 | name |  [string](#string) | Название инструмента. |
 | exchange |  [string](#string) | Торговая площадка. |
-| coupon_quantity_per_year |  [int32](#int32) | Количество выплат по купонам в год |
-| maturity_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата погашения облигации в часовом поясе UTC |
-| nominal |  [MoneyValue](#moneyvalue) | Номинал облигации |
-| state_reg_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата выпуска облигации в часовом поясе UTC |
-| placement_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата размещения в часовом поясе UTC |
-| placement_price |  [MoneyValue](#moneyvalue) | Цена размещения |
-| aci_value |  [MoneyValue](#moneyvalue) | Значение НКД (накопленного купонного дохода) на дату |
-| country_of_risk |  [string](#string) | Код страны эмитента |
-| country_of_risk_name |  [string](#string) | Наименование страны эмитента |
-| sector |  [string](#string) | Сектор экономики |
+| coupon_quantity_per_year |  [int32](#int32) | Количество выплат по купонам в год. |
+| maturity_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата погашения облигации в часовом поясе UTC. |
+| nominal |  [MoneyValue](#moneyvalue) | Номинал облигации. |
+| state_reg_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата выпуска облигации в часовом поясе UTC. |
+| placement_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата размещения в часовом поясе UTC. |
+| placement_price |  [MoneyValue](#moneyvalue) | Цена размещения. |
+| aci_value |  [MoneyValue](#moneyvalue) | Значение НКД (накопленного купонного дохода) на дату. |
+| country_of_risk |  [string](#string) | Код страны эмитента. |
+| country_of_risk_name |  [string](#string) | Наименование страны эмитента. |
+| sector |  [string](#string) | Сектор экономики. |
 | issue_kind |  [string](#string) | Форма выпуска. Возможные значения: </br>**documentary** — документарная; </br>**non_documentary** — бездокументарная. |
 | issue_size |  [int64](#int64) | Размер выпуска. |
 | issue_size_plan |  [int64](#int64) | Плановый размер выпуска. |
@@ -368,6 +371,8 @@
 | floating_coupon_flag |  [bool](#bool) | Признак облигации с плавающим купоном. |
 | perpetual_flag |  [bool](#bool) | Признак бессрочной облигации. |
 | amortization_flag |  [bool](#bool) | Признак облигации с амортизацией долга. |
+| min_price_increment |  [float](#float) | Шаг цены. |
+| api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -401,6 +406,8 @@
 | buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
 | iso_currency_name |  [string](#string) | Строковый ISO-код валюты. |
+| min_price_increment |  [float](#float) | Шаг цены. |
+| api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -438,6 +445,8 @@
 | otc_flag |  [bool](#bool) | Признак внебиржевой ценной бумаги. |
 | buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
+| min_price_increment |  [float](#float) | Шаг цены. |
+| api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -449,7 +458,7 @@
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Figi-идентификатор инструмента. |
-| ticker |  [string](#string) | Тикер инструмента |
+| ticker |  [string](#string) | Тикер инструмента. |
 | class_code |  [string](#string) | Класс-код (секция торгов). |
 | lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](/investAPI/glossary#lot) |
 | currency |  [string](#string) | Валюта расчётов. |
@@ -476,11 +485,13 @@
 | otc_flag |  [bool](#bool) | Признак внебиржевой ценной бумаги. |
 | buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
+| min_price_increment |  [float](#float) | Шаг цены. |
+| api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
-#### Stock
+#### Share
 Объект передачи информации об акции.
 
 
@@ -514,6 +525,8 @@
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
 | div_yield_flag |  [bool](#bool) | Признак наличия дивидендной доходности. |
 | share_type |  [ShareType](#sharetype) |  |
+| min_price_increment |  [float](#float) | Шаг цены. |
+| api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -524,7 +537,7 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| figi |  [string](#string) | Figi-идентификатор инструмента |
+| figi |  [string](#string) | Figi-идентификатор инструмента. |
 | from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода в часовом поясе UTC. |
 | to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода в часовом поясе UTC. |
  <!-- end Fields -->
@@ -537,21 +550,21 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| accrued_interests | Массив объектов [AccruedInterest](#accruedinterest) | Массив операций начисления купонов |
+| accrued_interests | Массив объектов [AccruedInterest](#accruedinterest) | Массив операций начисления купонов. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
 #### AccruedInterest
-Операция начисления купонов
+Операция начисления купонов.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время выплаты в часовом поясе UTC |
-| value |  [Quotation](#quotation) | Величина выплаты |
-| value_percent |  [float](#float) | Величина выплаты в процентах от номинала |
-| nominal |  [Quotation](#quotation) | Номинал облигации |
+| date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время выплаты в часовом поясе UTC. |
+| value |  [Quotation](#quotation) | Величина выплаты. |
+| value_percent |  [float](#float) | Величина выплаты в процентах от номинала. |
+| nominal |  [Quotation](#quotation) | Номинал облигации. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -562,7 +575,7 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| figi |  [string](#string) | Идентификатор инструмента |
+| figi |  [string](#string) | Идентификатор инструмента. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -573,14 +586,14 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| initial_margin_on_buy |  [MoneyValue](#moneyvalue) | Гарантийное обеспечение при покупке |
-| initial_margin_on_sell |  [MoneyValue](#moneyvalue) | Гарантийное обеспечение при продаже |
+| initial_margin_on_buy |  [MoneyValue](#moneyvalue) | Гарантийное обеспечение при покупке. |
+| initial_margin_on_sell |  [MoneyValue](#moneyvalue) | Гарантийное обеспечение при продаже. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
 #### InstrumentResponse
-Данные по инструменту
+Данные по инструменту.
 
 
 | Field | Type | Description |
@@ -618,6 +631,8 @@
 | otc_flag |  [bool](#bool) | Признак внебиржевой ценной бумаги. |
 | buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
+| min_price_increment |  [float](#float) | Шаг цены. |
+| api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -628,7 +643,7 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| figi |  [string](#string) | Figi-идентификатор инструмента |
+| figi |  [string](#string) | Figi-идентификатор инструмента. |
 | from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода в часовом поясе UTC. |
 | to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода в часовом поясе UTC. |
  <!-- end Fields -->
@@ -654,14 +669,14 @@
 | ----- | ---- | ----------- |
 | dividend_net |  [MoneyValue](#moneyvalue) | Величина дивиденда на 1 ценную бумагу (включая валюту). |
 | payment_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата фактических выплат. |
-| declared_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата объявления дивидендов |
-| last_buy_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Последний день (включительно) покупки для получения выплаты |
-| dividend_type |  [string](#string) | Тип выплаты. Возможные значения: Regular Cash – регулярные выплаты, Cancelled – выплата отменена, Daily Accrual – ежедневное начисление, Return of Capital – возврат капитала, прочие типы выплат |
+| declared_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата объявления дивидендов. |
+| last_buy_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Последний день (включительно) покупки для получения выплаты. |
+| dividend_type |  [string](#string) | Тип выплаты. Возможные значения: Regular Cash – регулярные выплаты, Cancelled – выплата отменена, Daily Accrual – ежедневное начисление, Return of Capital – возврат капитала, прочие типы выплат. |
 | record_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата фиксации реестра |
-| regularity |  [string](#string) | Регулярность выплаты. Возможные значения: Annual – ежегодная, Semi-Anl – каждые полгода, прочие типы выплат |
-| close_price |  [MoneyValue](#moneyvalue) | Цена закрытия инструмента на момент ex_dividend_date |
-| yield_value |  [Quotation](#quotation) | Величина доходности |
-| created_at |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время создания записи |
+| regularity |  [string](#string) | Регулярность выплаты. Возможные значения: Annual – ежегодная, Semi-Anl – каждые полгода, прочие типы выплат. |
+| close_price |  [MoneyValue](#moneyvalue) | Цена закрытия инструмента на момент ex_dividend_date. |
+| yield_value |  [Quotation](#quotation) | Величина доходности. |
+| created_at |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время создания записи. |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->

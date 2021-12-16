@@ -94,7 +94,7 @@
 | quantity |  [int64](#int64) | Количество лотов инструмента |
 | quantity_rest |  [int64](#int64) | Неисполненный остаток по сделке |
 | figi |  [string](#string) | Figi-идентификатор инструмента, связанного с операцией |
-| instrument_type |  [string](#string) | Тип инструмента. Возможные значения: </br>**bond** — облигация; </br>**stock** — акция; </br>**currency** — валюта; </br>**etf** — фонд; </br>**futures** — фьючерс. |
+| instrument_type |  [string](#string) | Тип инструмента. Возможные значения: </br>**bond** — облигация; </br>**share** — акция; </br>**currency** — валюта; </br>**etf** — фонд; </br>**futures** — фьючерс. |
 | date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время операции в формате часовом поясе UTC |
 | type |  [string](#string) | Тип операции |
  <!-- end Fields -->
@@ -118,7 +118,7 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| total_amount_stocks |  [MoneyValue](#moneyvalue) | Общая стоимость акций в портфеле в рублях |
+| total_amount_shares |  [MoneyValue](#moneyvalue) | Общая стоимость акций в портфеле в рублях |
 | total_amount_bonds |  [MoneyValue](#moneyvalue) | Общая стоимость облигаций в портфеле в рублях |
 | total_amount_etf |  [MoneyValue](#moneyvalue) | Общая стоимость фондов в портфеле в рублях |
 | total_amount_currencies |  [MoneyValue](#moneyvalue) | Общая стоимость валют в портфеле в рублях |

@@ -1774,7 +1774,7 @@
 <p>Сервис получения биржевой информации:</br> <strong>1</strong>. свечи;</br> <strong>2</strong>. стаканы;</br> <strong>3</strong>. торговые статусы;</br> <strong>4</strong>. лента сделок.</p>
 <h3 id="_1">Методы сервиса</h3>
 <h4 id="getcandles">GetCandles</h4>
-<p>Метод запроса исторических свечей по инструменту</p>
+<p>Метод запроса исторических свечей по инструменту.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getcandlesrequest">GetCandlesRequest</a></p>
@@ -1784,7 +1784,7 @@
 </li>
 </ul>
 <h4 id="getlastprices">GetLastPrices</h4>
-<p>Метод запроса последних цен по инструментам</p>
+<p>Метод запроса последних цен по инструментам.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getlastpricesrequest">GetLastPricesRequest</a></p>
@@ -1794,7 +1794,7 @@
 </li>
 </ul>
 <h4 id="getorderbook">GetOrderBook</h4>
-<p>Метод получения стакана по инструменту</p>
+<p>Метод получения стакана по инструменту.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getorderbookrequest">GetOrderBookRequest</a></p>
@@ -1804,7 +1804,7 @@
 </li>
 </ul>
 <h4 id="gettradingstatus">GetTradingStatus</h4>
-<p>Метод запроса статуса торгов по инструментам</p>
+<p>Метод запроса статуса торгов по инструментам.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#gettradingstatusrequest">GetTradingStatusRequest</a></p>
@@ -1818,7 +1818,7 @@
 <h2 id="marketdatastreamservice">MarketDataStreamService</h2>
 <h3 id="_2">Методы сервиса</h3>
 <h4 id="marketdatastream">MarketDataStream</h4>
-<p>Двусторонний стрим предоставления биржевой информации</p>
+<p>Двусторонний стрим предоставления биржевой информации.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#marketdatarequest">MarketDataRequest</a></p>
@@ -1832,7 +1832,7 @@
 
 <h3 id="_3">Сообщения методов</h3>
 <h4 id="marketdatarequest">MarketDataRequest</h4>
-<p>Запрос подписки или отписки на определённые биржевые данные</p>
+<p>Запрос подписки или отписки на определённые биржевые данные.</p>
 <table>
 <thead>
 <tr>
@@ -1845,22 +1845,22 @@
 <tr>
 <td>subscribe_candles_request</td>
 <td><a href="#subscribecandlesrequest">SubscribeCandlesRequest</a></td>
-<td>Запрос подписки на свечи</td>
+<td>Запрос подписки на свечи.</td>
 </tr>
 <tr>
 <td>subscribe_order_book_request</td>
 <td><a href="#subscribeorderbookrequest">SubscribeOrderBookRequest</a></td>
-<td>Запрос подписки на стаканы</td>
+<td>Запрос подписки на стаканы.</td>
 </tr>
 <tr>
 <td>subscribe_trades_request</td>
 <td><a href="#subscribetradesrequest">SubscribeTradesRequest</a></td>
-<td>Запрос подписки на ленту обезличенных сделок</td>
+<td>Запрос подписки на ленту обезличенных сделок.</td>
 </tr>
 <tr>
 <td>subscribe_info_request</td>
 <td><a href="#subscribeinforequest">SubscribeInfoRequest</a></td>
-<td>Запрос подписки на торговые статусы инструментов</td>
+<td>Запрос подписки на торговые статусы инструментов.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -1872,7 +1872,7 @@
 <!-- end HasFields -->
 
 <h4 id="marketdataresponse">MarketDataResponse</h4>
-<p>Пакет биржевой информации по подписке</p>
+<p>Пакет биржевой информации по подписке.</p>
 <table>
 <thead>
 <tr>
@@ -1885,42 +1885,42 @@
 <tr>
 <td>subscribe_candles_response</td>
 <td><a href="#subscribecandlesresponse">SubscribeCandlesResponse</a></td>
-<td>Результат подписки на свечи</td>
+<td>Результат подписки на свечи.</td>
 </tr>
 <tr>
 <td>subscribe_order_book_response</td>
 <td><a href="#subscribeorderbookresponse">SubscribeOrderBookResponse</a></td>
-<td>Результат подписки на стаканы</td>
+<td>Результат подписки на стаканы.</td>
 </tr>
 <tr>
 <td>subscribe_trades_response</td>
 <td><a href="#subscribetradesresponse">SubscribeTradesResponse</a></td>
-<td>Результат подписки на поток обезличенных сделок</td>
+<td>Результат подписки на поток обезличенных сделок.</td>
 </tr>
 <tr>
 <td>subscribe_info_response</td>
 <td><a href="#subscribeinforesponse">SubscribeInfoResponse</a></td>
-<td>Результат подписки на торговые статусы инструментов</td>
+<td>Результат подписки на торговые статусы инструментов.</td>
 </tr>
 <tr>
 <td>candle</td>
 <td><a href="#candle">Candle</a></td>
-<td>Свеча</td>
+<td>Свеча.</td>
 </tr>
 <tr>
 <td>trade</td>
 <td><a href="#trade">Trade</a></td>
-<td>Сделки</td>
+<td>Сделки.</td>
 </tr>
 <tr>
 <td>orderbook</td>
 <td><a href="#orderbook">OrderBook</a></td>
-<td>Стакан</td>
+<td>Стакан.</td>
 </tr>
 <tr>
 <td>trading_status</td>
 <td><a href="#tradingstatus">TradingStatus</a></td>
-<td>Торговый статус</td>
+<td>Торговый статус.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -1932,7 +1932,7 @@
 <!-- end HasFields -->
 
 <h4 id="subscribecandlesrequest">SubscribeCandlesRequest</h4>
-<p>subscribeCandles | Изменения статуса подписки на свечи</p>
+<p>subscribeCandles | Изменения статуса подписки на свечи.</p>
 <table>
 <thead>
 <tr>
@@ -1945,12 +1945,12 @@
 <tr>
 <td>subscription_action</td>
 <td><a href="#subscriptionaction">SubscriptionAction</a></td>
-<td>Изменение статуса подписки</td>
+<td>Изменение статуса подписки.</td>
 </tr>
 <tr>
 <td>instruments</td>
 <td>Массив объектов <a href="#candleinstrument">CandleInstrument</a></td>
-<td>Массив инструментов для подписки на свечи</td>
+<td>Массив инструментов для подписки на свечи.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -1974,12 +1974,12 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента</td>
+<td>Figi-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>interval</td>
 <td><a href="#subscriptioninterval">SubscriptionInterval</a></td>
-<td>Интервал свечей</td>
+<td>Интервал свечей.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2008,7 +2008,7 @@
 <tr>
 <td>candles_subscriptions</td>
 <td>Массив объектов <a href="#candlesubscription">CandleSubscription</a></td>
-<td>Массив статусов подписки на свечи</td>
+<td>Массив статусов подписки на свечи.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2032,17 +2032,17 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента</td>
+<td>Figi-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>interval</td>
 <td><a href="#subscriptioninterval">SubscriptionInterval</a></td>
-<td>Интервал свечей</td>
+<td>Интервал свечей.</td>
 </tr>
 <tr>
 <td>subscription_status</td>
 <td><a href="#subscriptionstatus">SubscriptionStatus</a></td>
-<td>Статус подписки</td>
+<td>Статус подписки.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2054,7 +2054,7 @@
 <!-- end HasFields -->
 
 <h4 id="subscribeorderbookrequest">SubscribeOrderBookRequest</h4>
-<p>subscribeOrderbook | Изменение статуса подписки на стаканы</p>
+<p>subscribeOrderbook | Изменение статуса подписки на стаканы.</p>
 <table>
 <thead>
 <tr>
@@ -2067,12 +2067,12 @@
 <tr>
 <td>subscription_action</td>
 <td><a href="#subscriptionaction">SubscriptionAction</a></td>
-<td>Изменение статуса подписки</td>
+<td>Изменение статуса подписки.</td>
 </tr>
 <tr>
 <td>instruments</td>
 <td>Массив объектов <a href="#orderbookinstrument">OrderBookInstrument</a></td>
-<td>Массив инструментов для подписки на стаканы</td>
+<td>Массив инструментов для подписки на стаканы.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2096,12 +2096,12 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента</td>
+<td>Figi-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>depth</td>
 <td><a href="#int32">int32</a></td>
-<td>Глубина стакана</td>
+<td>Глубина стакана.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2130,7 +2130,7 @@
 <tr>
 <td>order_book_subscriptions</td>
 <td>Массив объектов <a href="#orderbooksubscription">OrderBookSubscription</a></td>
-<td>Массив статусов подписки на стаканы</td>
+<td>Массив статусов подписки на стаканы.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2154,17 +2154,17 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента</td>
+<td>Figi-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>depth</td>
 <td><a href="#int32">int32</a></td>
-<td>Глубина стакана</td>
+<td>Глубина стакана.</td>
 </tr>
 <tr>
 <td>subscription_status</td>
 <td><a href="#subscriptionstatus">SubscriptionStatus</a></td>
-<td>Статус подписки</td>
+<td>Статус подписки.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2176,7 +2176,7 @@
 <!-- end HasFields -->
 
 <h4 id="subscribetradesrequest">SubscribeTradesRequest</h4>
-<p>subscribeTrades | Изменение статуса подписки на поток обезличенных сделок</p>
+<p>subscribeTrades | Изменение статуса подписки на поток обезличенных сделок.</p>
 <table>
 <thead>
 <tr>
@@ -2189,12 +2189,12 @@
 <tr>
 <td>subscription_action</td>
 <td><a href="#subscriptionaction">SubscriptionAction</a></td>
-<td>Изменение статуса подписки</td>
+<td>Изменение статуса подписки.</td>
 </tr>
 <tr>
 <td>instruments</td>
 <td>Массив объектов <a href="#tradeinstrument">TradeInstrument</a></td>
-<td>Массив инструментов для подписки на поток обезличенных сделок</td>
+<td>Массив инструментов для подписки на поток обезличенных сделок.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2218,7 +2218,7 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента</td>
+<td>Figi-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2247,7 +2247,7 @@
 <tr>
 <td>trade_subscriptions</td>
 <td>Массив объектов <a href="#tradesubscription">TradeSubscription</a></td>
-<td>Массив статусов подписки на поток сделок</td>
+<td>Массив статусов подписки на поток сделок.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2271,12 +2271,12 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента</td>
+<td>Figi-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>subscription_status</td>
 <td><a href="#subscriptionstatus">SubscriptionStatus</a></td>
-<td>Статус подписки</td>
+<td>Статус подписки.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2288,7 +2288,7 @@
 <!-- end HasFields -->
 
 <h4 id="subscribeinforequest">SubscribeInfoRequest</h4>
-<p>subscribeInfo | Изменение статуса подписки на торговый статус инструмента</p>
+<p>subscribeInfo | Изменение статуса подписки на торговый статус инструмента.</p>
 <table>
 <thead>
 <tr>
@@ -2301,12 +2301,12 @@
 <tr>
 <td>subscription_action</td>
 <td><a href="#subscriptionaction">SubscriptionAction</a></td>
-<td>Изменение статуса подписки</td>
+<td>Изменение статуса подписки.</td>
 </tr>
 <tr>
 <td>instruments</td>
 <td>Массив объектов <a href="#infoinstrument">InfoInstrument</a></td>
-<td>Массив инструментов для подписки на торговый статус</td>
+<td>Массив инструментов для подписки на торговый статус.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2330,7 +2330,7 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента</td>
+<td>Figi-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2359,7 +2359,7 @@
 <tr>
 <td>info_subscriptions</td>
 <td>Массив объектов <a href="#infosubscription">InfoSubscription</a></td>
-<td>Массив статусов подписки на торговый статус</td>
+<td>Массив статусов подписки на торговый статус.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2383,12 +2383,12 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента</td>
+<td>Figi-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>subscription_status</td>
 <td><a href="#subscriptionstatus">SubscriptionStatus</a></td>
-<td>Статус подписки</td>
+<td>Статус подписки.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2400,7 +2400,7 @@
 <!-- end HasFields -->
 
 <h4 id="candle">Candle</h4>
-<p>Выходные параметры. Пакет Candles</p>
+<p>Выходные параметры. Пакет Candles.</p>
 <table>
 <thead>
 <tr>
@@ -2413,42 +2413,42 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента</td>
+<td>Figi-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>interval</td>
 <td><a href="#subscriptioninterval">SubscriptionInterval</a></td>
-<td>Интервал свечи</td>
+<td>Интервал свечи.</td>
 </tr>
 <tr>
 <td>open</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена открытия за 1 лот</td>
+<td>Цена открытия за 1 лот.</td>
 </tr>
 <tr>
 <td>high</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Максимальная цена за 1 лот</td>
+<td>Максимальная цена за 1 лот.</td>
 </tr>
 <tr>
 <td>low</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Минимальная цена за 1 лот</td>
+<td>Минимальная цена за 1 лот.</td>
 </tr>
 <tr>
 <td>close</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена закрытия за 1 лот</td>
+<td>Цена закрытия за 1 лот.</td>
 </tr>
 <tr>
 <td>value</td>
 <td><a href="#int64">int64</a></td>
-<td>Объём сделок в лотах</td>
+<td>Объём сделок в лотах.</td>
 </tr>
 <tr>
 <td>time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Время свечи в часовом поясе UTC</td>
+<td>Время свечи в часовом поясе UTC.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2472,12 +2472,12 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента</td>
+<td>Figi-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>depth</td>
 <td><a href="#int32">int32</a></td>
-<td>Глубина стакана</td>
+<td>Глубина стакана.</td>
 </tr>
 <tr>
 <td>is_consistent</td>
@@ -2487,17 +2487,17 @@
 <tr>
 <td>bids</td>
 <td>Массив объектов <a href="#order">Order</a></td>
-<td>Массив предложений</td>
+<td>Массив предложений.</td>
 </tr>
 <tr>
 <td>asks</td>
 <td>Массив объектов <a href="#order">Order</a></td>
-<td>Массив спроса</td>
+<td>Массив спроса.</td>
 </tr>
 <tr>
 <td>time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Время стакана в часовом поясе UTC</td>
+<td>Время стакана в часовом поясе UTC.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2521,12 +2521,12 @@
 <tr>
 <td>price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена за 1 лот</td>
+<td>Цена за 1 лот.</td>
 </tr>
 <tr>
 <td>quantity</td>
 <td><a href="#int64">int64</a></td>
-<td>Количество в лотах</td>
+<td>Количество в лотах.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2550,27 +2550,27 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента</td>
+<td>Figi-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>direction</td>
 <td><a href="#tradedirection">TradeDirection</a></td>
-<td>Направление сделки</td>
+<td>Направление сделки.</td>
 </tr>
 <tr>
 <td>price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена за 1 лот</td>
+<td>Цена за 1 лот.</td>
 </tr>
 <tr>
 <td>quantity</td>
 <td><a href="#int64">int64</a></td>
-<td>Количество лотов</td>
+<td>Количество лотов.</td>
 </tr>
 <tr>
 <td>timestamp</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Время сделки в часовом поясе UTC по времени биржи</td>
+<td>Время сделки в часовом поясе UTC по времени биржи.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2594,12 +2594,12 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента</td>
+<td>Figi-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>trading_status</td>
 <td><a href="#securitytradingstatus">SecurityTradingStatus</a></td>
-<td>Статус торговли инструментом</td>
+<td>Статус торговли инструментом.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2628,17 +2628,17 @@
 <tr>
 <td>from</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Начало запрашиваемого периода в часовом поясе UTC</td>
+<td>Начало запрашиваемого периода в часовом поясе UTC.</td>
 </tr>
 <tr>
 <td>to</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Окончание запрашиваемого периода в часовом поясе UTC</td>
+<td>Окончание запрашиваемого периода в часовом поясе UTC.</td>
 </tr>
 <tr>
 <td>interval</td>
 <td><a href="#candleinterval">CandleInterval</a></td>
-<td>Интервал запрошенных свечей</td>
+<td>Интервал запрошенных свечей.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2662,7 +2662,7 @@
 <tr>
 <td>candles</td>
 <td>Массив объектов <a href="#historiccandle">HistoricCandle</a></td>
-<td>Массив свечей</td>
+<td>Массив свечей.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2686,37 +2686,37 @@
 <tr>
 <td>open</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена открытия за 1 лот</td>
+<td>Цена открытия за 1 лот.</td>
 </tr>
 <tr>
 <td>high</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Максимальная цена за 1 лот</td>
+<td>Максимальная цена за 1 лот.</td>
 </tr>
 <tr>
 <td>low</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Минимальная цена за 1 лот</td>
+<td>Минимальная цена за 1 лот.</td>
 </tr>
 <tr>
 <td>close</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена закрытия за 1 лот</td>
+<td>Цена закрытия за 1 лот.</td>
 </tr>
 <tr>
 <td>volume</td>
 <td><a href="#int64">int64</a></td>
-<td>Объём торгов в лотах</td>
+<td>Объём торгов в лотах.</td>
 </tr>
 <tr>
 <td>time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Время свечи в часовом поясе UTC</td>
+<td>Время свечи в часовом поясе UTC.</td>
 </tr>
 <tr>
 <td>is_complete</td>
 <td><a href="#bool">bool</a></td>
-<td>Признак завершённости свечи. <strong>false</strong> значит, свеча за текущие интервал ещё сформирована не полностью</td>
+<td>Признак завершённости свечи. <strong>false</strong> значит, свеча за текущие интервал ещё сформирована не полностью.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2740,7 +2740,7 @@
 <tr>
 <td>figi</td>
 <td>Массив объектов <a href="#string">string</a></td>
-<td>Массив figi-идентификаторов инструментов</td>
+<td>Массив figi-идентификаторов инструментов.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2764,7 +2764,7 @@
 <tr>
 <td>last_prices</td>
 <td>Массив объектов <a href="#lastprice">LastPrice</a></td>
-<td>Массив последних цен</td>
+<td>Массив последних цен.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2788,17 +2788,17 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор инструмента</td>
+<td>Идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Последняя цена за 1 лот</td>
+<td>Последняя цена за 1 лот.</td>
 </tr>
 <tr>
 <td>time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Время получения последней цены в часовом поясе UTC по времени биржи</td>
+<td>Время получения последней цены в часовом поясе UTC по времени биржи.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2822,12 +2822,12 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента</td>
+<td>Figi-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>depth</td>
 <td><a href="#int32">int32</a></td>
-<td>Глубина стакана</td>
+<td>Глубина стакана.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2851,32 +2851,32 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента</td>
+<td>Figi-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>depth</td>
 <td><a href="#int32">int32</a></td>
-<td>Глубина стакана</td>
+<td>Глубина стакана.</td>
 </tr>
 <tr>
 <td>bids</td>
 <td>Массив объектов <a href="#order">Order</a></td>
-<td>Множество пар значений на покупку</td>
+<td>Множество пар значений на покупку.</td>
 </tr>
 <tr>
 <td>asks</td>
 <td>Массив объектов <a href="#order">Order</a></td>
-<td>Множество пар значений на продажу</td>
+<td>Множество пар значений на продажу.</td>
 </tr>
 <tr>
 <td>last_price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена последней сделки</td>
+<td>Цена последней сделки.</td>
 </tr>
 <tr>
 <td>close_price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена закрытия</td>
+<td>Цена закрытия.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2900,7 +2900,7 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор инструмента</td>
+<td>Идентификатор инструмента.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2924,12 +2924,12 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента</td>
+<td>Figi-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>trading_status</td>
 <td><a href="#securitytradingstatus">SecurityTradingStatus</a></td>
-<td>Статус торговли инструментом</td>
+<td>Статус торговли инструментом.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2955,17 +2955,17 @@
 <tr>
 <td>SUBSCRIPTION_ACTION_UNSPECIFIED</td>
 <td>0</td>
-<td>Статус подписки не определён</td>
+<td>Статус подписки не определён.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_ACTION_SUBSCRIBE</td>
 <td>1</td>
-<td>Подписаться</td>
+<td>Подписаться.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_ACTION_UNSUBSCRIBE</td>
 <td>2</td>
-<td>Отписаться</td>
+<td>Отписаться.</td>
 </tr>
 </tbody>
 </table>
@@ -2982,17 +2982,17 @@
 <tr>
 <td>SUBSCRIPTION_INTERVAL_UNSPECIFIED</td>
 <td>0</td>
-<td>Интервал свечи не определён</td>
+<td>Интервал свечи не определён.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_INTERVAL_ONE_MINUTE</td>
 <td>1</td>
-<td>Минутные свечи</td>
+<td>Минутные свечи.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_INTERVAL_FIVE_MINUTES</td>
 <td>2</td>
-<td>Пятиминутные свечи</td>
+<td>Пятиминутные свечи.</td>
 </tr>
 </tbody>
 </table>
@@ -3009,17 +3009,17 @@
 <tr>
 <td>SUBSCRIPTION_STATUS_UNSPECIFIED</td>
 <td>0</td>
-<td>Статус подписки не определён</td>
+<td>Статус подписки не определён.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_STATUS_SUCCESS</td>
 <td>1</td>
-<td>Успешно</td>
+<td>Успешно.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_STATUS_INSTRUMENT_NOT_FOUND</td>
 <td>2</td>
-<td>Инструмент не найден</td>
+<td>Инструмент не найден.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID</td>
@@ -3029,7 +3029,7 @@
 <tr>
 <td>SUBSCRIPTION_STATUS_DEPTH_IS_INVALID</td>
 <td>4</td>
-<td>Некорректная глубина стакана, требуется указать целое число от 1 до 50</td>
+<td>Некорректная глубина стакана, требуется указать целое число от 1 до 50.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID</td>
@@ -3044,7 +3044,7 @@
 <tr>
 <td>SUBSCRIPTION_STATUS_INTERNAL_ERROR</td>
 <td>7</td>
-<td>Внутренняя ошибка сервиса</td>
+<td>Внутренняя ошибка сервиса.</td>
 </tr>
 </tbody>
 </table>
@@ -3061,17 +3061,17 @@
 <tr>
 <td>TRADE_DIRECTION_UNSPECIFIED</td>
 <td>0</td>
-<td>Направление сделки не определено</td>
+<td>Направление сделки не определено.</td>
 </tr>
 <tr>
 <td>TRADE_DIRECTION_BUY</td>
 <td>1</td>
-<td>Покупка</td>
+<td>Покупка.</td>
 </tr>
 <tr>
 <td>TRADE_DIRECTION_SELL</td>
 <td>2</td>
-<td>Продажа</td>
+<td>Продажа.</td>
 </tr>
 </tbody>
 </table>
@@ -3088,32 +3088,32 @@
 <tr>
 <td>CANDLE_INTERVAL_UNSPECIFIED</td>
 <td>0</td>
-<td>Интервал не определён</td>
+<td>Интервал не определён.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_1_MIN</td>
 <td>1</td>
-<td>1 минута</td>
+<td>1 минута.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_5_MIN</td>
 <td>2</td>
-<td>5 минут</td>
+<td>5 минут.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_15_MIN</td>
 <td>3</td>
-<td>15 минут</td>
+<td>15 минут.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_HOUR</td>
 <td>4</td>
-<td>1 час</td>
+<td>1 час.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_DAY</td>
 <td>5</td>
-<td>1 день</td>
+<td>1 день.</td>
 </tr>
 </tbody>
 </table>

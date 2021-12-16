@@ -681,15 +681,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#stockby" class="md-nav__link">
-    StockBy
+  <a href="#shareby" class="md-nav__link">
+    ShareBy
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#stocks" class="md-nav__link">
-    Stocks
+  <a href="#shares" class="md-nav__link">
+    Shares
   </a>
   
 </li>
@@ -834,15 +834,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#stockresponse" class="md-nav__link">
-    StockResponse
+  <a href="#shareresponse" class="md-nav__link">
+    ShareResponse
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#stocksresponse" class="md-nav__link">
-    StocksResponse
+  <a href="#sharesresponse" class="md-nav__link">
+    SharesResponse
   </a>
   
 </li>
@@ -876,8 +876,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#stock" class="md-nav__link">
-    Stock
+  <a href="#share" class="md-nav__link">
+    Share
   </a>
   
 </li>
@@ -1432,15 +1432,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#stockby" class="md-nav__link">
-    StockBy
+  <a href="#shareby" class="md-nav__link">
+    ShareBy
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#stocks" class="md-nav__link">
-    Stocks
+  <a href="#shares" class="md-nav__link">
+    Shares
   </a>
   
 </li>
@@ -1585,15 +1585,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#stockresponse" class="md-nav__link">
-    StockResponse
+  <a href="#shareresponse" class="md-nav__link">
+    ShareResponse
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#stocksresponse" class="md-nav__link">
-    StocksResponse
+  <a href="#sharesresponse" class="md-nav__link">
+    SharesResponse
   </a>
   
 </li>
@@ -1627,8 +1627,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#stock" class="md-nav__link">
-    Stock
+  <a href="#share" class="md-nav__link">
+    Share
   </a>
   
 </li>
@@ -1803,12 +1803,15 @@
                 <!-- range HasServices -->
 
 <h2 id="instrumentsservice">InstrumentsService</h2>
-<p>Сервис предназначен для получения:</br> <strong>1</strong>.  информации об инструментах;</br> <strong>2</strong>.
-расписания торговых сессий;</br> <strong>3</strong>. календаря выплат купонов по облигациям;</br> <strong>4</strong>.
-размера гарантийного обеспечения по фьючерсам;</br> <strong>5</strong>. дивидендов по ценной бумаге.</p>
+<p>Сервис предназначен для получения:</br>
+<em>1</em><em>. информации об инструментах;</br>
+</em>2<strong>. расписания торговых сессий;</br>
+*3</strong>. календаря выплат купонов по облигациям;</br>
+<em>4</em><em>. размера гарантийного обеспечения по фьючерсам;</br>
+</em>5**. дивидендов по ценной бумаге.</p>
 <h3 id="_1">Методы сервиса</h3>
 <h4 id="tradingschedules">TradingSchedules</h4>
-<p>Метод получения расписания торгов торговых площадок</p>
+<p>Метод получения расписания торгов торговых площадок.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#tradingschedulesrequest">TradingSchedulesRequest</a></p>
@@ -1838,7 +1841,7 @@
 </li>
 </ul>
 <h4 id="currencyby">CurrencyBy</h4>
-<p>Метод получения списка валют</p>
+<p>Метод получения списка валют.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#instrumentrequest">InstrumentRequest</a></p>
@@ -1848,7 +1851,7 @@
 </li>
 </ul>
 <h4 id="currencies">Currencies</h4>
-<p>Метод получения валюты по её идентификатору</p>
+<p>Метод получения валюты по её идентификатору.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#instrumentsrequest">InstrumentsRequest</a></p>
@@ -1858,7 +1861,7 @@
 </li>
 </ul>
 <h4 id="etfby">EtfBy</h4>
-<p>Метод получения списка инвестиционных фондов</p>
+<p>Метод получения списка инвестиционных фондов.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#instrumentrequest">InstrumentRequest</a></p>
@@ -1868,7 +1871,7 @@
 </li>
 </ul>
 <h4 id="etfs">Etfs</h4>
-<p>Метод получения инвестиционного фонда по его идентификатору</p>
+<p>Метод получения инвестиционного фонда по его идентификатору.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#instrumentsrequest">InstrumentsRequest</a></p>
@@ -1878,7 +1881,7 @@
 </li>
 </ul>
 <h4 id="futureby">FutureBy</h4>
-<p>Метод получения фьючерса по его идентификатору</p>
+<p>Метод получения фьючерса по его идентификатору.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#instrumentrequest">InstrumentRequest</a></p>
@@ -1888,7 +1891,7 @@
 </li>
 </ul>
 <h4 id="futures">Futures</h4>
-<p>Метод получения списка фьючерсов</p>
+<p>Метод получения списка фьючерсов.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#instrumentsrequest">InstrumentsRequest</a></p>
@@ -1897,28 +1900,28 @@
 <p>Тело ответа — <a href="#futuresresponse">FuturesResponse</a></p>
 </li>
 </ul>
-<h4 id="stockby">StockBy</h4>
-<p>Метод получения списка акций</p>
+<h4 id="shareby">ShareBy</h4>
+<p>Метод получения списка акций.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#instrumentrequest">InstrumentRequest</a></p>
 </li>
 <li>
-<p>Тело ответа — <a href="#stockresponse">StockResponse</a></p>
+<p>Тело ответа — <a href="#shareresponse">ShareResponse</a></p>
 </li>
 </ul>
-<h4 id="stocks">Stocks</h4>
-<p>Метод получения акции по её идентификатору</p>
+<h4 id="shares">Shares</h4>
+<p>Метод получения акции по её идентификатору.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#instrumentsrequest">InstrumentsRequest</a></p>
 </li>
 <li>
-<p>Тело ответа — <a href="#stocksresponse">StocksResponse</a></p>
+<p>Тело ответа — <a href="#sharesresponse">SharesResponse</a></p>
 </li>
 </ul>
 <h4 id="getaccruedinterests">GetAccruedInterests</h4>
-<p>Метод получения календаря выплат купонов по облигациям</p>
+<p>Метод получения календаря выплат купонов по облигациям.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getaccruedinterestsrequest">GetAccruedInterestsRequest</a></p>
@@ -1928,7 +1931,7 @@
 </li>
 </ul>
 <h4 id="getfuturesmargin">GetFuturesMargin</h4>
-<p>Метод получения размера гарантийного обеспечения по фьючерсам</p>
+<p>Метод получения размера гарантийного обеспечения по фьючерсам.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getfuturesmarginrequest">GetFuturesMarginRequest</a></p>
@@ -1938,7 +1941,7 @@
 </li>
 </ul>
 <h4 id="getinstrumentby">GetInstrumentBy</h4>
-<p>Метод получения основной информации об инструменте</p>
+<p>Метод получения основной информации об инструменте.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#instrumentrequest">InstrumentRequest</a></p>
@@ -1974,17 +1977,17 @@
 <tr>
 <td>exchange</td>
 <td><a href="#string">string</a></td>
-<td>Наименование биржи или расчетного календаря. </br>Если не передаётся, возвращается информация по всем доступным торговым площадкам</td>
+<td>Наименование биржи или расчетного календаря. </br>Если не передаётся, возвращается информация по всем доступным торговым площадкам.</td>
 </tr>
 <tr>
 <td>from</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Начало периода по часовому поясу UTC</td>
+<td>Начало периода по часовому поясу UTC.</td>
 </tr>
 <tr>
 <td>to</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Окончание периода по часовому поясу UTC</td>
+<td>Окончание периода по часовому поясу UTC.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2008,7 +2011,7 @@
 <tr>
 <td>exchanges</td>
 <td>Массив объектов <a href="#tradingschedule">TradingSchedule</a></td>
-<td>Список торговых площадок и режимов торгов</td>
+<td>Список торговых площадок и режимов торгов.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2020,7 +2023,7 @@
 <!-- end HasFields -->
 
 <h4 id="tradingschedule">TradingSchedule</h4>
-<p>Данные по торговой площадке</p>
+<p>Данные по торговой площадке.</p>
 <table>
 <thead>
 <tr>
@@ -2033,12 +2036,12 @@
 <tr>
 <td>exchange</td>
 <td><a href="#string">string</a></td>
-<td>Наименование торговой площадки</td>
+<td>Наименование торговой площадки.</td>
 </tr>
 <tr>
 <td>days</td>
 <td>Массив объектов <a href="#tradingday">TradingDay</a></td>
-<td>Массив с торговыми и неторговыми днями</td>
+<td>Массив с торговыми и неторговыми днями.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2050,7 +2053,7 @@
 <!-- end HasFields -->
 
 <h4 id="tradingday">TradingDay</h4>
-<p>Информация о времени торгов</p>
+<p>Информация о времени торгов.</p>
 <table>
 <thead>
 <tr>
@@ -2063,32 +2066,32 @@
 <tr>
 <td>date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата</td>
+<td>Дата.</td>
 </tr>
 <tr>
 <td>is_trading_day</td>
 <td><a href="#bool">bool</a></td>
-<td>Признак торгового дня на бирже</td>
+<td>Признак торгового дня на бирже.</td>
 </tr>
 <tr>
 <td>start_time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Время начала торгов по часовому поясу UTC</td>
+<td>Время начала торгов по часовому поясу UTC.</td>
 </tr>
 <tr>
 <td>end_time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Время окончания торгов по часовому поясу UTC</td>
+<td>Время окончания торгов по часовому поясу UTC.</td>
 </tr>
 <tr>
 <td>market_order_start_time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Время начала подачи заявки по часовому поясу UTC</td>
+<td>Время начала подачи заявки по часовому поясу UTC.</td>
 </tr>
 <tr>
 <td>market_order_end_time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Время окончания подачи заявки по часовому поясу UTC</td>
+<td>Время окончания подачи заявки по часовому поясу UTC.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2100,7 +2103,7 @@
 <!-- end HasFields -->
 
 <h4 id="instrumentrequest">InstrumentRequest</h4>
-<p>Запрос получения инструмента по идентификатору</p>
+<p>Запрос получения инструмента по идентификатору.</p>
 <table>
 <thead>
 <tr>
@@ -2118,12 +2121,12 @@
 <tr>
 <td>class_code</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор class_code. Обязателен при id_type = ticker</td>
+<td>Идентификатор class_code. Обязателен при id_type = ticker.</td>
 </tr>
 <tr>
 <td>id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор запрашиваемого инструмента</td>
+<td>Идентификатор запрашиваемого инструмента.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2135,7 +2138,7 @@
 <!-- end HasFields -->
 
 <h4 id="instrumentsrequest">InstrumentsRequest</h4>
-<p>Запрос получения инструментов</p>
+<p>Запрос получения инструментов.</p>
 <table>
 <thead>
 <tr>
@@ -2160,7 +2163,7 @@
 <!-- end HasFields -->
 
 <h4 id="bondresponse">BondResponse</h4>
-<p>Информация об облигации</p>
+<p>Информация об облигации.</p>
 <table>
 <thead>
 <tr>
@@ -2173,7 +2176,7 @@
 <tr>
 <td>instrument</td>
 <td><a href="#bond">Bond</a></td>
-<td>Информация об облигации</td>
+<td>Информация об облигации.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2185,7 +2188,7 @@
 <!-- end HasFields -->
 
 <h4 id="bondsresponse">BondsResponse</h4>
-<p>Список облигаций</p>
+<p>Список облигаций.</p>
 <table>
 <thead>
 <tr>
@@ -2198,7 +2201,7 @@
 <tr>
 <td>instruments</td>
 <td>Массив объектов <a href="#bond">Bond</a></td>
-<td>Массив облигаций</td>
+<td>Массив облигаций.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2210,7 +2213,7 @@
 <!-- end HasFields -->
 
 <h4 id="currencyresponse">CurrencyResponse</h4>
-<p>Данные по валюте</p>
+<p>Данные по валюте.</p>
 <table>
 <thead>
 <tr>
@@ -2223,7 +2226,7 @@
 <tr>
 <td>instrument</td>
 <td><a href="#currency">Currency</a></td>
-<td>Информация о валюте</td>
+<td>Информация о валюте.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2235,7 +2238,7 @@
 <!-- end HasFields -->
 
 <h4 id="currenciesresponse">CurrenciesResponse</h4>
-<p>Данные по валютам</p>
+<p>Данные по валютам.</p>
 <table>
 <thead>
 <tr>
@@ -2248,7 +2251,7 @@
 <tr>
 <td>instruments</td>
 <td>Массив объектов <a href="#currency">Currency</a></td>
-<td>Массив валют</td>
+<td>Массив валют.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2260,7 +2263,7 @@
 <!-- end HasFields -->
 
 <h4 id="etfresponse">EtfResponse</h4>
-<p>Данные по фонду</p>
+<p>Данные по фонду.</p>
 <table>
 <thead>
 <tr>
@@ -2273,7 +2276,7 @@
 <tr>
 <td>instrument</td>
 <td><a href="#etf">Etf</a></td>
-<td>Информация о фонде</td>
+<td>Информация о фонде.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2285,7 +2288,7 @@
 <!-- end HasFields -->
 
 <h4 id="etfsresponse">EtfsResponse</h4>
-<p>Данные по фондам</p>
+<p>Данные по фондам.</p>
 <table>
 <thead>
 <tr>
@@ -2298,7 +2301,7 @@
 <tr>
 <td>instruments</td>
 <td>Массив объектов <a href="#etf">Etf</a></td>
-<td>Массив фондов</td>
+<td>Массив фондов.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2310,7 +2313,7 @@
 <!-- end HasFields -->
 
 <h4 id="futureresponse">FutureResponse</h4>
-<p>Данные по фьючерсу</p>
+<p>Данные по фьючерсу.</p>
 <table>
 <thead>
 <tr>
@@ -2323,7 +2326,7 @@
 <tr>
 <td>instrument</td>
 <td><a href="#future">Future</a></td>
-<td>Информация о фьючерсу</td>
+<td>Информация о фьючерсу.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2335,7 +2338,7 @@
 <!-- end HasFields -->
 
 <h4 id="futuresresponse">FuturesResponse</h4>
-<p>Данные по фьючерсам</p>
+<p>Данные по фьючерсам.</p>
 <table>
 <thead>
 <tr>
@@ -2348,7 +2351,7 @@
 <tr>
 <td>instruments</td>
 <td>Массив объектов <a href="#future">Future</a></td>
-<td>Массив фьючерсов</td>
+<td>Массив фьючерсов.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2359,8 +2362,8 @@
 </table>
 <!-- end HasFields -->
 
-<h4 id="stockresponse">StockResponse</h4>
-<p>Данные по акции</p>
+<h4 id="shareresponse">ShareResponse</h4>
+<p>Данные по акции.</p>
 <table>
 <thead>
 <tr>
@@ -2372,8 +2375,8 @@
 <tbody>
 <tr>
 <td>instrument</td>
-<td><a href="#stock">Stock</a></td>
-<td>Информация об акции</td>
+<td><a href="#share">Share</a></td>
+<td>Информация об акции.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2384,8 +2387,8 @@
 </table>
 <!-- end HasFields -->
 
-<h4 id="stocksresponse">StocksResponse</h4>
-<p>Данные по акциям</p>
+<h4 id="sharesresponse">SharesResponse</h4>
+<p>Данные по акциям.</p>
 <table>
 <thead>
 <tr>
@@ -2397,8 +2400,8 @@
 <tbody>
 <tr>
 <td>instruments</td>
-<td>Массив объектов <a href="#stock">Stock</a></td>
-<td>Массив акций</td>
+<td>Массив объектов <a href="#share">Share</a></td>
+<td>Массив акций.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2498,52 +2501,52 @@
 <tr>
 <td>coupon_quantity_per_year</td>
 <td><a href="#int32">int32</a></td>
-<td>Количество выплат по купонам в год</td>
+<td>Количество выплат по купонам в год.</td>
 </tr>
 <tr>
 <td>maturity_date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата погашения облигации в часовом поясе UTC</td>
+<td>Дата погашения облигации в часовом поясе UTC.</td>
 </tr>
 <tr>
 <td>nominal</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Номинал облигации</td>
+<td>Номинал облигации.</td>
 </tr>
 <tr>
 <td>state_reg_date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата выпуска облигации в часовом поясе UTC</td>
+<td>Дата выпуска облигации в часовом поясе UTC.</td>
 </tr>
 <tr>
 <td>placement_date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата размещения в часовом поясе UTC</td>
+<td>Дата размещения в часовом поясе UTC.</td>
 </tr>
 <tr>
 <td>placement_price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Цена размещения</td>
+<td>Цена размещения.</td>
 </tr>
 <tr>
 <td>aci_value</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Значение НКД (накопленного купонного дохода) на дату</td>
+<td>Значение НКД (накопленного купонного дохода) на дату.</td>
 </tr>
 <tr>
 <td>country_of_risk</td>
 <td><a href="#string">string</a></td>
-<td>Код страны эмитента</td>
+<td>Код страны эмитента.</td>
 </tr>
 <tr>
 <td>country_of_risk_name</td>
 <td><a href="#string">string</a></td>
-<td>Наименование страны эмитента</td>
+<td>Наименование страны эмитента.</td>
 </tr>
 <tr>
 <td>sector</td>
 <td><a href="#string">string</a></td>
-<td>Сектор экономики</td>
+<td>Сектор экономики.</td>
 </tr>
 <tr>
 <td>issue_kind</td>
@@ -2594,6 +2597,16 @@
 <td>amortization_flag</td>
 <td><a href="#bool">bool</a></td>
 <td>Признак облигации с амортизацией долга.</td>
+</tr>
+<tr>
+<td>min_price_increment</td>
+<td><a href="#float">float</a></td>
+<td>Шаг цены.</td>
+</tr>
+<tr>
+<td>api_trade_available_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности торгов через API.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2729,6 +2742,16 @@
 <td>iso_currency_name</td>
 <td><a href="#string">string</a></td>
 <td>Строковый ISO-код валюты.</td>
+</tr>
+<tr>
+<td>min_price_increment</td>
+<td><a href="#float">float</a></td>
+<td>Шаг цены.</td>
+</tr>
+<tr>
+<td>api_trade_available_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности торгов через API.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2886,6 +2909,16 @@
 <td>Признак доступности для продажи.</td>
 </tr>
 <tr>
+<td>min_price_increment</td>
+<td><a href="#float">float</a></td>
+<td>Шаг цены.</td>
+</tr>
+<tr>
+<td>api_trade_available_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности торгов через API.</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -2913,7 +2946,7 @@
 <tr>
 <td>ticker</td>
 <td><a href="#string">string</a></td>
-<td>Тикер инструмента</td>
+<td>Тикер инструмента.</td>
 </tr>
 <tr>
 <td>class_code</td>
@@ -3046,6 +3079,16 @@
 <td>Признак доступности для продажи.</td>
 </tr>
 <tr>
+<td>min_price_increment</td>
+<td><a href="#float">float</a></td>
+<td>Шаг цены.</td>
+</tr>
+<tr>
+<td>api_trade_available_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности торгов через API.</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -3054,7 +3097,7 @@
 </table>
 <!-- end HasFields -->
 
-<h4 id="stock">Stock</h4>
+<h4 id="share">Share</h4>
 <p>Объект передачи информации об акции.</p>
 <table>
 <thead>
@@ -3206,6 +3249,16 @@
 <td></td>
 </tr>
 <tr>
+<td>min_price_increment</td>
+<td><a href="#float">float</a></td>
+<td>Шаг цены.</td>
+</tr>
+<tr>
+<td>api_trade_available_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности торгов через API.</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -3227,7 +3280,7 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента</td>
+<td>Figi-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>from</td>
@@ -3261,7 +3314,7 @@
 <tr>
 <td>accrued_interests</td>
 <td>Массив объектов <a href="#accruedinterest">AccruedInterest</a></td>
-<td>Массив операций начисления купонов</td>
+<td>Массив операций начисления купонов.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3273,7 +3326,7 @@
 <!-- end HasFields -->
 
 <h4 id="accruedinterest">AccruedInterest</h4>
-<p>Операция начисления купонов</p>
+<p>Операция начисления купонов.</p>
 <table>
 <thead>
 <tr>
@@ -3286,22 +3339,22 @@
 <tr>
 <td>date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата и время выплаты в часовом поясе UTC</td>
+<td>Дата и время выплаты в часовом поясе UTC.</td>
 </tr>
 <tr>
 <td>value</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Величина выплаты</td>
+<td>Величина выплаты.</td>
 </tr>
 <tr>
 <td>value_percent</td>
 <td><a href="#float">float</a></td>
-<td>Величина выплаты в процентах от номинала</td>
+<td>Величина выплаты в процентах от номинала.</td>
 </tr>
 <tr>
 <td>nominal</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Номинал облигации</td>
+<td>Номинал облигации.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3325,7 +3378,7 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор инструмента</td>
+<td>Идентификатор инструмента.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3349,12 +3402,12 @@
 <tr>
 <td>initial_margin_on_buy</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Гарантийное обеспечение при покупке</td>
+<td>Гарантийное обеспечение при покупке.</td>
 </tr>
 <tr>
 <td>initial_margin_on_sell</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Гарантийное обеспечение при продаже</td>
+<td>Гарантийное обеспечение при продаже.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3366,7 +3419,7 @@
 <!-- end HasFields -->
 
 <h4 id="instrumentresponse">InstrumentResponse</h4>
-<p>Данные по инструменту</p>
+<p>Данные по инструменту.</p>
 <table>
 <thead>
 <tr>
@@ -3512,6 +3565,16 @@
 <td>Признак доступности для продажи.</td>
 </tr>
 <tr>
+<td>min_price_increment</td>
+<td><a href="#float">float</a></td>
+<td>Шаг цены.</td>
+</tr>
+<tr>
+<td>api_trade_available_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности торгов через API.</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -3533,7 +3596,7 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента</td>
+<td>Figi-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>from</td>
@@ -3601,17 +3664,17 @@
 <tr>
 <td>declared_date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата объявления дивидендов</td>
+<td>Дата объявления дивидендов.</td>
 </tr>
 <tr>
 <td>last_buy_date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Последний день (включительно) покупки для получения выплаты</td>
+<td>Последний день (включительно) покупки для получения выплаты.</td>
 </tr>
 <tr>
 <td>dividend_type</td>
 <td><a href="#string">string</a></td>
-<td>Тип выплаты. Возможные значения: Regular Cash – регулярные выплаты, Cancelled – выплата отменена, Daily Accrual – ежедневное начисление, Return of Capital – возврат капитала, прочие типы выплат</td>
+<td>Тип выплаты. Возможные значения: Regular Cash – регулярные выплаты, Cancelled – выплата отменена, Daily Accrual – ежедневное начисление, Return of Capital – возврат капитала, прочие типы выплат.</td>
 </tr>
 <tr>
 <td>record_date</td>
@@ -3621,22 +3684,22 @@
 <tr>
 <td>regularity</td>
 <td><a href="#string">string</a></td>
-<td>Регулярность выплаты. Возможные значения: Annual – ежегодная, Semi-Anl – каждые полгода, прочие типы выплат</td>
+<td>Регулярность выплаты. Возможные значения: Annual – ежегодная, Semi-Anl – каждые полгода, прочие типы выплат.</td>
 </tr>
 <tr>
 <td>close_price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Цена закрытия инструмента на момент ex_dividend_date</td>
+<td>Цена закрытия инструмента на момент ex_dividend_date.</td>
 </tr>
 <tr>
 <td>yield_value</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Величина доходности</td>
+<td>Величина доходности.</td>
 </tr>
 <tr>
 <td>created_at</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата и время создания записи</td>
+<td>Дата и время создания записи.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>

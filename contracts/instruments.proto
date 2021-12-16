@@ -12,13 +12,11 @@ option php_namespace = "Tinkoff\\Invest\\V1";
 import "google/protobuf/timestamp.proto";
 import "common.proto";
 
-/*Сервис предназначен для получения:</br>
-**1**. информации об инструментах;</br>
-**2**. расписания торговых сессий;</br>
-**3**. календаря выплат купонов по облигациям;</br>
-**4**. размера гарантийного обеспечения по фьючерсам;</br>
-**5**. дивидендов по ценной бумаге.*/
-service InstrumentsService {
+
+service InstrumentsService {/*Сервис предназначен для получения:</br>**1**. информации об инструментах;</br>**2**.
+                            расписания торговых сессий;</br>**3**. календаря выплат купонов по облигациям;</br>**4**.
+                            размера гарантийного обеспечения по фьючерсам;</br>**5**. дивидендов по ценной бумаге.*/
+
   rpc TradingSchedules (TradingSchedulesRequest) returns (TradingSchedulesResponse); // Метод получения расписания торгов торговых площадок.
 
   rpc BondBy (InstrumentRequest) returns (BondResponse); //Метод получения списка облигаций.

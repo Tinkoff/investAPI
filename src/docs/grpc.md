@@ -11,6 +11,17 @@ bidirectional-stream [сервиса котировок](/investAPI/head-marketd
 виды биржевой информации (стаканы, свечи, поток обезличенных сделок и т.д.). Подробнее о данном режиме 
 работы можно ознакомиться в [документации протокола](https://grpc.io/docs/what-is-grpc/core-concepts/).
 
+##Авторизация в TINKOFF INVEST API
+
+Для успешной работы с TINKOFF INVEST API требуется передавать токен доступа в metadata
+каждого запроса.
+
+Формат заголовка: 
+`Authorization: Bearer [токен доступ]`
+
+Например:
+`Authorization: Bearer t.QtEo8ahkNFX4RTpbqp0u4z4GDZq27HzUp6AotJASBx7_DVqmqZMHfM2Cy7JmUjS80boI9eVg`
+
 <a name="tracking"></a>
 ##tracking-id запросов
 

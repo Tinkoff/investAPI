@@ -384,6 +384,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#tinkoff-invest-api_1" class="md-nav__link">
+    Авторизация в TINKOFF INVEST API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tracking-id" class="md-nav__link">
     tracking-id запросов
   </a>
@@ -398,7 +405,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tinkoff-invest-api_1" class="md-nav__link">
+  <a href="#tinkoff-invest-api_2" class="md-nav__link">
     Рекомендации по тестированию методов TINKOFF INVEST API
   </a>
   
@@ -951,6 +958,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#tinkoff-invest-api_1" class="md-nav__link">
+    Авторизация в TINKOFF INVEST API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tracking-id" class="md-nav__link">
     tracking-id запросов
   </a>
@@ -965,7 +979,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tinkoff-invest-api_1" class="md-nav__link">
+  <a href="#tinkoff-invest-api_2" class="md-nav__link">
     Рекомендации по тестированию методов TINKOFF INVEST API
   </a>
   
@@ -998,6 +1012,13 @@ bidirectional-stream <a href="/investAPI/head-marketdata/">сервиса кот
 в одном и том же соединении принимает сообщения об изменении статуса подписки и предоставляет различные 
 виды биржевой информации (стаканы, свечи, поток обезличенных сделок и т.д.). Подробнее о данном режиме 
 работы можно ознакомиться в <a href="https://grpc.io/docs/what-is-grpc/core-concepts/">документации протокола</a>.</p>
+<h2 id="tinkoff-invest-api_1">Авторизация в TINKOFF INVEST API</h2>
+<p>Для успешной работы с TINKOFF INVEST API требуется передавать токен доступа в metadata
+каждого запроса.</p>
+<p>Формат заголовка: 
+<code>Authorization: Bearer [токен доступ]</code></p>
+<p>Например:
+<code>Authorization: Bearer t.QtEo8ahkNFX4RTpbqp0u4z4GDZq27HzUp6AotJASBx7_DVqmqZMHfM2Cy7JmUjS80boI9eVg</code></p>
 <p><a name="tracking"></a></p>
 <h2 id="tracking-id">tracking-id запросов</h2>
 <p>Во все ответы unary-методов TINKOFF INVEST API добавляется заголовок <strong>x-tracking-id</strong>. 
@@ -1010,7 +1031,7 @@ bidirectional-stream <a href="/investAPI/head-marketdata/">сервиса кот
 <p>TINKOFF INVEST API позволяет в запросах добавлять служебный заголовок <strong>x-app-name</strong>, который 
 нужен для сбора статистики по используемым инструментам. Если вы разработчик SDK, рекомендуется
 использовать app-name формата <em>&lt;Ник в GitHub&gt;.&lt;Название репозитория&gt;</em>. Например, <strong>user.tinkoffSDK</strong>.</p>
-<h2 id="tinkoff-invest-api_1">Рекомендации по тестированию методов TINKOFF INVEST API</h2>
+<h2 id="tinkoff-invest-api_2">Рекомендации по тестированию методов TINKOFF INVEST API</h2>
 <p>Для тестирования работы TINKOFF INVEST API можно использовать любой доступный grpc-клиент. 
 Команда разработки рекомендует воспользоваться BloomRPC. Скачать данный клиент можно по ссылке: 
 <a href="https://github.com/uw-labs/bloomrpc/releases">bloomrpc releases</a>.</p>

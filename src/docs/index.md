@@ -18,6 +18,8 @@ unary-запросами;
 * быть клиентом [Тинькофф Инвестиций](https://www.tinkoff.ru/invest/);
 * получить [токен доступа](/investAPI/token).
 
+[Подробнее о протоколе взаимодействия](/investAPI/grpc/)
+
 ##Адреса сервиса TINKOFF INVEST API
 Все вызовы сервиса выполняются по адресу **invest-public-api.tinkoff.ru:443** 
 

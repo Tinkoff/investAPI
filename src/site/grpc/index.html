@@ -419,6 +419,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#bloomrpc" class="md-nav__link">
+    BloomRPC
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1006,6 +1013,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#bloomrpc" class="md-nav__link">
+    BloomRPC
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1082,24 +1096,34 @@ bidirectional-stream <a href="/investAPI/head-marketdata/">сервиса кот
 </ol>
 <p>Kreya позволяет увидеть служебные заголовки ответа сервера:
 <img alt="Интерфейс Kreya" src="/investAPI/img/Kreya-6.png" title="Интерфейс Kreya" />
-* <strong>x-ratelimit-limit</strong> — показывает настройки текущего лимита пользователя по данному методу.
-* <strong>x-ratelimit-remaining</strong> — количество оставшихся запросов данного типа в минуту.
-* <strong>x-ratelimit-reset</strong> — время в секундах до обнуления счётчика запросов. </p>
-<p>Команда разработки рекомендует воспользоваться BloomRPC. Скачать данный клиент можно по ссылке: 
-<a href="https://github.com/uw-labs/bloomrpc/releases">bloomrpc releases</a>.</p>
+* <strong>x-ratelimit-limit</strong> — показывает настройки текущего лимита пользователя по данному методу.</p>
+<ul>
+<li>
+<p><strong>x-ratelimit-remaining</strong> — количество оставшихся запросов данного типа в минуту.</p>
+</li>
+<li>
+<p><strong>x-ratelimit-reset</strong> — время в секундах до обнуления счётчика запросов. </p>
+</li>
+</ul>
+<h3 id="bloomrpc">BloomRPC</h3>
+<p>Скачать данный клиент можно по ссылке: <a href="https://github.com/uw-labs/bloomrpc/releases">bloomrpc releases</a>.</p>
 <p>Интерфейс утилиты достаточно прост, для старта работы требуется указать домен сервиса и импортировать
 все proto-файлы. </p>
 <ol>
-<li>В поле, обозначенное цифрой 1, введите домен сервиса TINKOFF INVEST API.
-<img alt="Интерфейс BloomRPC" src="/investAPI/img/bloom_1.png" title="Интерфейс BloomRPC" /></li>
-<li>Нажмите кнопку <em>Import protos</em> (цифра 2) и выберете все proto-файлы сервиса.
-<img alt="Интерфейс BloomRPC" src="/investAPI/img/bloom_2.png" title="Интерфейс BloomRPC" /></li>
-<li>В поле metadata добавьте заголовок с вашим токеном доступа.</li>
-<li>Слева в меню вы увидите полный набор доступных методов, в том числе стрим-соединения.</li>
-<li>Для выполнения запроса следует выбрать необходимый метод, указать входные параметры и
-нажать зелёную кнопку со значком play.
-<img alt="Интерфейс BloomRPC" src="/investAPI/img/bloom_3.png" title="Интерфейс BloomRPC" /></li>
+<li>Импортируйте скаченные poroto-контракты сервиса.
+<img alt="Интерфейс BloomRPC" src="/investAPI/img/Bloom-1.png" title="Интерфейс BloomRPC" /></li>
+<li>Укажите адрес сервера invest-public-api.tinkoff.ru:443 и заполните поле metadata значением (подставьте своё значение <a href="/investAPI/token/">токена доступа</a>).</li>
 </ol>
+<p><code>{
+   "Authorization": "Bearer t.QtEo8ahkNFX4RTpbqp0u4z4GDZq27HzUp6AotJASBx7_DVqmqZMHfM2Cy7JmUjS80boI9eVg"
+}</code>
+<img alt="Интерфейс BloomRPC" src="/investAPI/img/Bloom-2.png" title="Интерфейс BloomRPC" />
+3. При выполнении запросов следует обязательно указывать тип TLS-подключения:
+<img alt="Интерфейс BloomRPC" src="/investAPI/img/Bloom-3.png" title="Интерфейс BloomRPC" />
+4. Теперь вы можете выполнять запросы к сервису.
+<img alt="Интерфейс BloomRPC" src="/investAPI/img/Bloom-4.png" title="Интерфейс BloomRPC" /></p>
+<p>BloomRPC не позволяет увидеть заголовки ответа сервера, поэтому команда TINKOFF INVEST API 
+рекомендует использовать Kreya.</p>
                 
               
               

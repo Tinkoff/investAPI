@@ -352,7 +352,6 @@
 | instrument_type |  [string](#string) | Тип инструмента |
 | quantity |  [float](#float) | Количество лотов в портфеле |
 | average_position_price |  [MoneyValue](#moneyvalue) | Средняя цена лота в позиции |
-| average_position_price_no_nkd |  [MoneyValue](#moneyvalue) | Средняя цена лота в позиции без учёта НКД |
 | expected_yield |  [float](#float) | Текущая рассчитанная доходность |
 | current_nkd |  [MoneyValue](#moneyvalue) | Текущий НКД |
 | average_position_price_pt |  [Quotation](#quotation) | Средняя цена лота в позиции в пунктах (для фьючерсов) |

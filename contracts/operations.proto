@@ -94,10 +94,9 @@ message PortfolioPosition {
   string instrument_type = 2; //Тип инструмента
   float quantity = 3; //Количество лотов в портфеле
   MoneyValue average_position_price = 4; //Средняя цена лота в позиции
-  MoneyValue average_position_price_no_nkd = 5; //Средняя цена лота в позиции без учёта НКД
-  float expected_yield = 6; //Текущая рассчитанная доходность
-  MoneyValue current_nkd = 7; // Текущий НКД
-  Quotation average_position_price_pt = 8; //Средняя цена лота в позиции в пунктах (для фьючерсов)
+  float expected_yield = 5; //Текущая рассчитанная доходность
+  MoneyValue current_nkd = 6; // Текущий НКД
+  Quotation average_position_price_pt = 7; //Средняя цена лота в позиции в пунктах (для фьючерсов)
 }
 
 message PositionsSecurities {

@@ -409,6 +409,19 @@
     Рекомендации по тестированию методов TINKOFF INVEST API
   </a>
   
+    <nav class="md-nav" aria-label="Рекомендации по тестированию методов TINKOFF INVEST API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kreya" class="md-nav__link">
+    Kreya
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -983,6 +996,19 @@
     Рекомендации по тестированию методов TINKOFF INVEST API
   </a>
   
+    <nav class="md-nav" aria-label="Рекомендации по тестированию методов TINKOFF INVEST API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kreya" class="md-nav__link">
+    Kreya
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1032,8 +1058,34 @@ bidirectional-stream <a href="/investAPI/head-marketdata/">сервиса кот
 нужен для сбора статистики по используемым инструментам. Если вы разработчик SDK, рекомендуется
 использовать app-name формата <em>&lt;Ник в GitHub&gt;.&lt;Название репозитория&gt;</em>. Например, <strong>user.tinkoffSDK</strong>.</p>
 <h2 id="tinkoff-invest-api_2">Рекомендации по тестированию методов TINKOFF INVEST API</h2>
-<p>Для тестирования работы TINKOFF INVEST API можно использовать любой доступный grpc-клиент. 
-Команда разработки рекомендует воспользоваться BloomRPC. Скачать данный клиент можно по ссылке: 
+<p>Для тестирования работы TINKOFF INVEST API можно использовать любой доступный grpc-клиент.
+Ниже приведены краткие инструкции по настройке двух наиболее популярных из них. </p>
+<h3 id="kreya">Kreya</h3>
+<p>Данный бесплатный gRPC-клиент предоставляет довольно широкий набор функциональности и возможностей.
+Скачать его можно с официального сайта <a href="https://kreya.app/">kreya.app</a>.</p>
+<ol>
+<li>После установки и запуска приложения перейдите в меню Project — Importers.
+<img alt="Интерфейс Kreya" src="/investAPI/img/Kreya-1.png" title="Интерфейс Kreya" /></li>
+<li>Нажмите <em>New importer</em>. Укажите название источника данных и его тип (<em>gRPC proto files</em>).
+<img alt="Интерфейс Kreya" src="/investAPI/img/Kreya-2.png" title="Интерфейс Kreya" /></li>
+<li>Нажмите <em>Add proto directory</em> и укажите папку со скаченными proto-контрактами сервиса TINKOFF INVEST API.
+Скачать актуальную версию контрактов можно по ссылке: <a href="https://github.com/TinkoffCreditSystems/investAPI/tree/main/src/docs/contracts">TINKOFF INVEST API</a>.
+<img alt="Интерфейс Kreya" src="/investAPI/img/Kreya-3.png" title="Интерфейс Kreya" /></li>
+<li>Сохраните изменения и нажмите <em>Back</em>.</li>
+<li>В левом окне нажмите на появившуюся папку <em>Tinkoff</em>. Укажите Endpoint сервиса: https://invest-public-api.tinkoff.ru:443.
+Остальные настройки укажите в соответствии со скриншотом. Обратите внимание на блок <em>Metadata</em>, 
+в нём требуется указать заголовок Authorization, в значении которого передаётся строка <strong>"Bearer &lt;токен доступа&gt;"</strong>.
+Подробнее о том, как получить токен можно узнать по ссылке: <a href="/investAPI/token/">Токен доступа</a>
+<img alt="Интерфейс Kreya" src="/investAPI/img/Kreya-4.png" title="Интерфейс Kreya" /></li>
+<li>Теперь вы можете выполнять запросы к сервису.
+<img alt="Интерфейс Kreya" src="/investAPI/img/Kreya-5.png" title="Интерфейс Kreya" /></li>
+</ol>
+<p>Kreya позволяет увидеть служебные заголовки ответа сервера:
+<img alt="Интерфейс Kreya" src="/investAPI/img/Kreya-6.png" title="Интерфейс Kreya" />
+* <strong>x-ratelimit-limit</strong> — показывает настройки текущего лимита пользователя по данному методу.
+* <strong>x-ratelimit-remaining</strong> — количество оставшихся запросов данного типа в минуту.
+* <strong>x-ratelimit-reset</strong> — время в секундах до обнуления счётчика запросов. </p>
+<p>Команда разработки рекомендует воспользоваться BloomRPC. Скачать данный клиент можно по ссылке: 
 <a href="https://github.com/uw-labs/bloomrpc/releases">bloomrpc releases</a>.</p>
 <p>Интерфейс утилиты достаточно прост, для старта работы требуется указать домен сервиса и импортировать
 все proto-файлы. </p>

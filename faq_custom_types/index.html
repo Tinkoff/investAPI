@@ -502,12 +502,64 @@
     MoneyValue
   </a>
   
+    <nav class="md-nav" aria-label="MoneyValue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#java" class="md-nav__link">
+    Пример конвертации на Java
+  </a>
+  
+    <nav class="md-nav" aria-label="Пример конвертации на Java">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Примеры конвертированных значений
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#quotation" class="md-nav__link">
     Quotation
   </a>
+  
+    <nav class="md-nav" aria-label="Quotation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#java_1" class="md-nav__link">
+    Пример конвертации на Java
+  </a>
+  
+    <nav class="md-nav" aria-label="Пример конвертации на Java">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Примеры конвертированных значений
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -948,12 +1000,64 @@
     MoneyValue
   </a>
   
+    <nav class="md-nav" aria-label="MoneyValue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#java" class="md-nav__link">
+    Пример конвертации на Java
+  </a>
+  
+    <nav class="md-nav" aria-label="Пример конвертации на Java">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Примеры конвертированных значений
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#quotation" class="md-nav__link">
     Quotation
   </a>
+  
+    <nav class="md-nav" aria-label="Quotation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#java_1" class="md-nav__link">
+    Пример конвертации на Java
+  </a>
+  
+    <nav class="md-nav" aria-label="Пример конвертации на Java">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Примеры конвертированных значений
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -976,8 +1080,8 @@
                 
                 <h1 id="tinkoff-invest-api">Нестандартные типы данных TINKOFF INVEST API</h1>
 <h2 id="moneyvalue">MoneyValue</h2>
-<p>Данный тип данных используется для параметров, имеющих денежный эквивалент. Например, цены на ценные бумаги
-Тип состоит из трёх параметров: </p>
+<p>Данный тип данных используется для параметров, имеющих денежный эквивалент. Например, цены на ценные бумаги.</p>
+<p>Тип состоит из трёх параметров: </p>
 <ul>
 <li>currency — строковый <a href="https://ru.wikipedia.org/wiki/ISO_4217">ISO-код валюты</a>. Например, RUB или USD.</li>
 <li>units — целая часть суммы. </li>
@@ -985,12 +1089,82 @@
 </ul>
 <p>Для корректной работы с данным типом данных требуется его конвертация в стандартные типы языка программирования,
 который используется для написания торгового робота. </p>
+<h3 id="java">Пример конвертации на Java</h3>
+<pre><code>{
+//MoneyValue - конвертация из BigDecimal в MoneyValue и обратно
+    BigDecimal value = new BigDecimal("123.456");
+    String currency = "RUB";
+    MoneyValue moneyValue = MoneyValue.newBuilder() 
+        .setCurrency(currency)
+        .setUnits(value != null ? value.longValue() : 0)
+        .setNano(value != null ? value.remainder(BigDecimal.ONE).multiply(BigDecimal.valueOf(1_000_000_000)).intValue() : 0)
+        .build();
+    BigDecimal bigDecimal = moneyValue.getUnits() == 0 &amp;&amp; moneyValue.getNano() == 0 ? BigDecimal.ZERO : BigDecimal.valueOf(moneyValue.getUnits()).add(BigDecimal.valueOf(moneyValue.getNano(), 9));
+}
+</code></pre>
+<h4 id="_1">Примеры конвертированных значений</h4>
+<table>
+<thead>
+<tr>
+<th align="left">Сумма в валюте</th>
+<th align="left">Сумма в MoneyValue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">114,25 рублей</td>
+<td align="left"><code>{</code></br><code>"currency": "RUB",</code></br><code>"units": "114",</code></br><code>"nano": 250000000</code></br><code>}</code></td>
+</tr>
+<tr>
+<td align="left">-200,20 долларов</td>
+<td align="left"><code>{</code></br><code>"currency": "USD",</code></br><code>"units": "-200",</code></br><code>"nano": -200000000</code></br><code>}</code></td>
+</tr>
+<tr>
+<td align="left">-0.01 юаней</td>
+<td align="left"><code>{</code></br><code>"currency": "CNY",</code></br><code>"units": "-0",</code></br><code>"nano": -10000000</code></br><code>}</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="quotation">Quotation</h2>
 <p>Данный тип данных аналогичен MoneyValue с той лишь разницей, что в нём не содержится информации о валюте.</p>
 <ul>
 <li>units — целая часть суммы.</li>
 <li>nano — дробная часть суммы. </li>
 </ul>
+<h3 id="java_1">Пример конвертации на Java</h3>
+<pre><code>{
+//Пример конвертации из BigDecimal в Quotation и обратно
+    BigDecimal value = new BigDecimal("123.456");
+    Quotation quotation = Quotation.newBuilder()
+        .setUnits(value != null ? value.longValue() : 0)
+        .setNano(value != null ? value.remainder(BigDecimal.ONE).multiply(BigDecimal.valueOf(1_000_000_000)).intValue() : 0)
+        .build();
+    BigDecimal bigDecimal = quotation.getUnits() == 0 &amp;&amp; quotation.getNano() == 0 ? BigDecimal.ZERO : BigDecimal.valueOf(quotation.getUnits()).add(BigDecimal.valueOf(quotation.getNano(), 9));
+}
+</code></pre>
+<h4 id="_2">Примеры конвертированных значений</h4>
+<table>
+<thead>
+<tr>
+<th align="left">Сумма в валюте</th>
+<th align="left">Сумма в MoneyValue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">114,25</td>
+<td align="left"><code>{</code></br><code>"units": "114",</code></br><code>"nano": 250000000</code></br><code>}</code></td>
+</tr>
+<tr>
+<td align="left">-200,20</td>
+<td align="left"><code>{</code></br><code>"units": "-200",</code></br><code>"nano": -200000000</code></br><code>}</code></td>
+</tr>
+<tr>
+<td align="left">-0.01</td>
+<td align="left"><code>{</code></br><code>"units": "-0",</code></br><code>"nano": -10000000</code></br><code>}</code></td>
+</tr>
+</tbody>
+</table>
                 
               
               

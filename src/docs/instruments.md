@@ -24,7 +24,7 @@
 
 
 #### BondBy
-Метод получения списка облигаций.
+Метод получения облигации по её идентификатору.
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
 
@@ -32,7 +32,7 @@
 
 
 #### Bonds
-Метод получения облигации по её идентификатору.
+Метод получения списка облигаций.
 
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
 
@@ -40,7 +40,7 @@
 
 
 #### CurrencyBy
-Метод получения списка валют.
+Метод получения валюты по её идентификатору.
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
 
@@ -48,7 +48,7 @@
 
 
 #### Currencies
-Метод получения валюты по её идентификатору.
+Метод получения списка валют.
 
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
 
@@ -56,7 +56,7 @@
 
 
 #### EtfBy
-Метод получения списка инвестиционных фондов.
+Метод получения инвестиционного фонда по его идентификатору.
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
 
@@ -64,7 +64,7 @@
 
 
 #### Etfs
-Метод получения инвестиционного фонда по его идентификатору.
+Метод получения списка инвестиционных фондов.
 
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
 
@@ -88,7 +88,7 @@
 
 
 #### ShareBy
-Метод получения списка акций.
+Метод получения акции по её идентификатору.
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
 
@@ -96,7 +96,7 @@
 
 
 #### Shares
-Метод получения акции по её идентификатору.
+Метод получения списка акций.
 
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
 
@@ -199,7 +199,7 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| id_type |  [InstrumentIdType](#instrumentidtype) | Тип идентификатора инструмента. Возможные значения: figi, ticker, isin. Подробнее об идентификации инструментов: [Идентификация инструментов](https://tinkoffcreditsystems.github.io/invest-openapi/faq_identification/) |
+| id_type |  [InstrumentIdType](#instrumentidtype) | Тип идентификатора инструмента. Возможные значения: figi, ticker, isin. Подробнее об идентификации инструментов: [Идентификация инструментов](/investAPI/faq_identification/) |
 | class_code |  [string](#string) | Идентификатор class_code. Обязателен при id_type = ticker. |
 | id |  [string](#string) | Идентификатор запрашиваемого инструмента. |
  <!-- end Fields -->
@@ -682,7 +682,7 @@
 
 
 #### InstrumentIdType
-Тип идентификатора инструмента. Подробнее об идентификации инструментов: [Идентификация инструментов](https://tinkoffcreditsystems.github.io/invest-openapi/faq_identification/)
+Тип идентификатора инструмента. Подробнее об идентификации инструментов: [Идентификация инструментов](/investAPI/faq_identification/)
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |

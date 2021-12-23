@@ -19,20 +19,20 @@ service InstrumentsService {/*Сервис предназначен для по�
 
   rpc TradingSchedules (TradingSchedulesRequest) returns (TradingSchedulesResponse); // Метод получения расписания торгов торговых площадок.
 
-  rpc BondBy (InstrumentRequest) returns (BondResponse); //Метод получения списка облигаций.
-  rpc Bonds (InstrumentsRequest) returns (BondsResponse); //Метод получения облигации по её идентификатору.
+  rpc BondBy (InstrumentRequest) returns (BondResponse); //Метод получения облигации по её идентификатору.
+  rpc Bonds (InstrumentsRequest) returns (BondsResponse); //Метод получения списка облигаций.
 
-  rpc CurrencyBy (InstrumentRequest) returns (CurrencyResponse); //Метод получения списка валют.
-  rpc Currencies (InstrumentsRequest) returns (CurrenciesResponse); //Метод получения валюты по её идентификатору.
+  rpc CurrencyBy (InstrumentRequest) returns (CurrencyResponse); //Метод получения валюты по её идентификатору.
+  rpc Currencies (InstrumentsRequest) returns (CurrenciesResponse); //Метод получения списка валют.
 
-  rpc EtfBy (InstrumentRequest) returns (EtfResponse); //Метод получения списка инвестиционных фондов.
-  rpc Etfs (InstrumentsRequest) returns (EtfsResponse); //Метод получения инвестиционного фонда по его идентификатору.
+  rpc EtfBy (InstrumentRequest) returns (EtfResponse); //Метод получения инвестиционного фонда по его идентификатору.
+  rpc Etfs (InstrumentsRequest) returns (EtfsResponse); //Метод получения списка инвестиционных фондов.
 
   rpc FutureBy (InstrumentRequest) returns (FutureResponse); //Метод получения фьючерса по его идентификатору.
   rpc Futures (InstrumentsRequest) returns (FuturesResponse); //Метод получения списка фьючерсов.
 
-  rpc ShareBy (InstrumentRequest) returns (ShareResponse); //Метод получения списка акций.
-  rpc Shares (InstrumentsRequest) returns (SharesResponse); //Метод получения акции по её идентификатору.
+  rpc ShareBy (InstrumentRequest) returns (ShareResponse); //Метод получения акции по её идентификатору.
+  rpc Shares (InstrumentsRequest) returns (SharesResponse); //Метод получения списка акций.
 
   rpc GetAccruedInterests (GetAccruedInterestsRequest) returns (GetAccruedInterestsResponse); //Метод получения календаря выплат купонов по облигациям.
   rpc GetFuturesMargin (GetFuturesMarginRequest) returns (GetFuturesMarginResponse); //Метод получения размера гарантийного обеспечения по фьючерсам.
@@ -70,7 +70,7 @@ message TradingDay {
 
 //Запрос получения инструмента по идентификатору.
 message InstrumentRequest {
-  InstrumentIdType id_type = 1; // Тип идентификатора инструмента. Возможные значения: figi, ticker, isin. Подробнее об идентификации инструментов: [Идентификация инструментов](https://tinkoffcreditsystems.github.io/invest-openapi/faq_identification/)
+  InstrumentIdType id_type = 1; // Тип идентификатора инструмента. Возможные значения: figi, ticker, isin. Подробнее об идентификации инструментов: [Идентификация инструментов](/investAPI/faq_identification/)
   string class_code = 2; // Идентификатор class_code. Обязателен при id_type = ticker.
   string id = 3; // Идентификатор запрашиваемого инструмента.
 }
@@ -348,7 +348,7 @@ message GetFuturesMarginResponse {
   MoneyValue initial_margin_on_sell = 2; // Гарантийное обеспечение при продаже.
 }
 
-//Тип идентификатора инструмента. Подробнее об идентификации инструментов: [Идентификация инструментов](https://tinkoffcreditsystems.github.io/invest-openapi/faq_identification/)
+//Тип идентификатора инструмента. Подробнее об идентификации инструментов: [Идентификация инструментов](/investAPI/faq_identification/)
 enum InstrumentIdType {
   INSTRUMENT_ID_UNSPECIFIED = 0; //Значение не определено.
   INSTRUMENT_ID_TYPE_FIGI = 1; //Figi.

@@ -994,6 +994,10 @@
 </tr>
 </tbody>
 </table>
+<p><strong>Важно</strong>. В рамках одного stream-соединения <a href="/investAPI/head-marketdata/">сервиса котировок</a> существует 
+ограничение в <strong>300</strong> одновременных подписок на свечи, стаканы и ленту обезличенных сделок. Лимит считается
+суммарно по всем трём типам данных. Лимитов на количество подписок в рамках одного стрима на торговые
+статусы инструментов (подписка Info) <strong>нет</strong>. </p>
 <p>Изменения лимитного грейда пользователя происходит раз в сутки после окончания торгов. Для изменения
 грейда берётся статистика заявок, выполненных пользователем за последние 30 дней от текущей даты. 
 Т.е. чем больше пользователь выставляет торговых поручений при сохранении высокого уровня исполнения, 
@@ -1002,50 +1006,50 @@
 <thead>
 <tr>
 <th align="left">Количество исполненных поручений / </br> процент исполнения</th>
-<th align="left">&gt;50%</th>
-<th align="left">&gt;10%</th>
-<th align="left">&gt;2%</th>
-<th align="left">&lt;2%</th>
+<th align="left">больше 50%</th>
+<th align="left">больше 10%</th>
+<th align="left">больше 2%</th>
+<th align="left">меньше 2%</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">&lt;10</td>
+<td align="left">меньше <strong>10</strong></td>
 <td align="left">1</td>
 <td align="left">1</td>
 <td align="left">1</td>
 <td align="left">1</td>
 </tr>
 <tr>
-<td align="left">&lt;200</td>
+<td align="left">меньше <strong>200</strong></td>
 <td align="left">2</td>
 <td align="left">2</td>
 <td align="left">2</td>
 <td align="left">1</td>
 </tr>
 <tr>
-<td align="left">&lt;1000</td>
+<td align="left">меньше <strong>1 000</strong></td>
 <td align="left">4</td>
 <td align="left">3</td>
 <td align="left">2</td>
 <td align="left">1</td>
 </tr>
 <tr>
-<td align="left">&lt;5000</td>
+<td align="left">меньше <strong>5 000</strong></td>
 <td align="left">5</td>
 <td align="left">4</td>
 <td align="left">3</td>
 <td align="left">1</td>
 </tr>
 <tr>
-<td align="left">&lt;10000</td>
+<td align="left">меньше <strong>10 000</strong></td>
 <td align="left">5</td>
 <td align="left">5</td>
 <td align="left">4</td>
 <td align="left">2</td>
 </tr>
 <tr>
-<td align="left">&gt;10000</td>
+<td align="left">больше <strong>10 000</strong></td>
 <td align="left">5</td>
 <td align="left">5</td>
 <td align="left">4</td>

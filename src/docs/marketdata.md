@@ -129,7 +129,7 @@ subscribeCandles | Изменения статуса подписки на св�
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](https://oridisboss.github.io/investAPI/grpc#tracking) |
+| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](/investAPI/grpc#tracking-id) |
 | candles_subscriptions | Массив объектов [CandleSubscription](#candlesubscription) | Массив статусов подписки на свечи. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -178,7 +178,7 @@ subscribeOrderbook | Изменение статуса подписки на с�
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](https://oridisboss.github.io/investAPI/grpc#tracking) |
+| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](/investAPI/grpc#tracking-id) |
 | order_book_subscriptions | Массив объектов [OrderBookSubscription](#orderbooksubscription) | Массив статусов подписки на стаканы. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -226,7 +226,7 @@ subscribeTrades | Изменение статуса подписки на пот
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](https://oridisboss.github.io/investAPI/grpc#tracking) |
+| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](/investAPI/grpc#tracking-id) |
 | trade_subscriptions | Массив объектов [TradeSubscription](#tradesubscription) | Массив статусов подписки на поток сделок. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -273,7 +273,7 @@ subscribeInfo | Изменение статуса подписки на торг
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](https://oridisboss.github.io/investAPI/grpc#tracking) |
+| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](/investAPI/grpc#tracking-id) |
 | info_subscriptions | Массив объектов [InfoSubscription](#infosubscription) | Массив статусов подписки на торговый статус. |
  <!-- end Fields -->
  <!-- end HasFields -->

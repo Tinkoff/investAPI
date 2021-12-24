@@ -521,7 +521,7 @@
 | buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
 | div_yield_flag |  [bool](#bool) | Признак наличия дивидендной доходности. |
-| share_type |  [ShareType](#sharetype) |  |
+| share_type |  [ShareType](#sharetype) | Тип акции. Возможные значения: [ShareType](/investAPI/instruments#sharetype) |
 | min_price_increment |  [float](#float) | Шаг цены. |
 | api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
  <!-- end Fields -->
@@ -711,14 +711,14 @@
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | SHARE_TYPE_UNSPECIFIED | 0 | Значение не определено. |
-| SHARE_TYPE_COMMON | 1 | none |
-| SHARE_TYPE_PREFERRED | 2 | none |
-| SHARE_TYPE_ADR | 3 | none |
-| SHARE_TYPE_GDR | 4 | none |
-| SHARE_TYPE_MLP | 5 | none |
-| SHARE_TYPE_NY_REG_SHRS | 6 | none |
-| SHARE_TYPE_CLOSED_END_FUND | 7 | none |
-| SHARE_TYPE_REIT | 8 | none |
+| SHARE_TYPE_COMMON | 1 | Обыкновенная |
+| SHARE_TYPE_PREFERRED | 2 | Привилегированная |
+| SHARE_TYPE_ADR | 3 | Американские депозитарные расписки |
+| SHARE_TYPE_GDR | 4 | Глобальные депозитарные расписки |
+| SHARE_TYPE_MLP | 5 | Товарищество с ограниченной ответственностью |
+| SHARE_TYPE_NY_REG_SHRS | 6 | Акции из реестра Нью-Йорка |
+| SHARE_TYPE_CLOSED_END_FUND | 7 | Закрытый инвестиционный фонд |
+| SHARE_TYPE_REIT | 8 | Траст недвижимости |
 
 
  <!-- range .Enums -->

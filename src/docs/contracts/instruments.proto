@@ -316,7 +316,7 @@ message Share {
   bool buy_available_flag = 27; //Признак доступности для покупки.
   bool sell_available_flag = 28; //Признак доступности для продажи.
   bool div_yield_flag = 29; //Признак наличия дивидендной доходности.
-  ShareType share_type = 30;
+  ShareType share_type = 30; //Тип акции. Возможные значения: [ShareType](/investAPI/instruments#sharetype)
   float min_price_increment = 31; //Шаг цены.
   bool api_trade_available_flag = 32; //Признак доступности торгов через API.
 }
@@ -423,12 +423,12 @@ message Dividend {
 
 enum ShareType {
   SHARE_TYPE_UNSPECIFIED = 0; //Значение не определено.
-  SHARE_TYPE_COMMON = 1;
-  SHARE_TYPE_PREFERRED = 2;
-  SHARE_TYPE_ADR = 3;
-  SHARE_TYPE_GDR = 4;
-  SHARE_TYPE_MLP = 5;
-  SHARE_TYPE_NY_REG_SHRS = 6;
-  SHARE_TYPE_CLOSED_END_FUND = 7;
-  SHARE_TYPE_REIT = 8;
+  SHARE_TYPE_COMMON = 1; //Обыкновенная
+  SHARE_TYPE_PREFERRED = 2; //Привилегированная
+  SHARE_TYPE_ADR = 3; //Американские депозитарные расписки
+  SHARE_TYPE_GDR = 4; //Глобальные депозитарные расписки
+  SHARE_TYPE_MLP = 5; //Товарищество с ограниченной ответственностью
+  SHARE_TYPE_NY_REG_SHRS = 6; //Акции из реестра Нью-Йорка
+  SHARE_TYPE_CLOSED_END_FUND = 7; //Закрытый инвестиционный фонд
+  SHARE_TYPE_REIT = 8; //Траст недвижимости
 }

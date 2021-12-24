@@ -71,7 +71,7 @@ message CandleInstrument {
 }
 
 message SubscribeCandlesResponse {
-  string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](https://oridisboss.github.io/investAPI/grpc#tracking)
+  string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](/investAPI/grpc#tracking-id)
   repeated CandleSubscription candles_subscriptions = 2; //Массив статусов подписки на свечи.
 }
 
@@ -104,7 +104,7 @@ message OrderBookInstrument {
 }
 
 message SubscribeOrderBookResponse {
-  string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](https://oridisboss.github.io/investAPI/grpc#tracking)
+  string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](/investAPI/grpc#tracking-id)
   repeated OrderBookSubscription order_book_subscriptions = 2; //Массив статусов подписки на стаканы.
 }
 
@@ -125,7 +125,7 @@ message TradeInstrument {
 }
 
 message SubscribeTradesResponse {
-  string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](https://oridisboss.github.io/investAPI/grpc#tracking)
+  string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](/investAPI/grpc#tracking-id)
   repeated TradeSubscription trade_subscriptions = 2; //Массив статусов подписки на поток сделок.
 }
 
@@ -145,7 +145,7 @@ message InfoInstrument {
 }
 
 message SubscribeInfoResponse {
-  string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](https://oridisboss.github.io/investAPI/grpc#tracking)
+  string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](/investAPI/grpc#tracking-id)
   repeated InfoSubscription info_subscriptions = 2; //Массив статусов подписки на торговый статус.
 }
 

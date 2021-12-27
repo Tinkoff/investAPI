@@ -54,7 +54,7 @@ TINKOFF INVEST API позволяет в запросах добавлять с�
 2. Нажмите *New importer*. Укажите название источника данных и его тип (*gRPC proto files*).
 ![Интерфейс Kreya](/investAPI/img/Kreya-2.png "Интерфейс Kreya")
 3. Нажмите *Add proto directory* и укажите папку со скаченными proto-контрактами сервиса TINKOFF INVEST API.
-Скачать актуальную версию контрактов можно по ссылке: [TINKOFF INVEST API](https://github.com/TinkoffCreditSystems/investAPI/tree/main/src/docs/contracts).
+Скачать актуальную версию контрактов можно по ссылке: [TINKOFF INVEST API](https://github.com/Tinkoff/investAPI/tree/main/src/docs/contracts).
 ![Интерфейс Kreya](/investAPI/img/Kreya-3.png "Интерфейс Kreya")
 4. Сохраните изменения и нажмите *Back*.
 5. В левом окне нажмите на появившуюся папку *Tinkoff*. Укажите Endpoint сервиса: https://invest-public-api.tinkoff.ru:443.

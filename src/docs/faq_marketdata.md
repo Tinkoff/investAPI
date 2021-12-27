@@ -28,7 +28,7 @@ isValidPrice(10.16, 0.1) // false
 ##Торговля бумагами Тинькофф через TINKOFF INVEST API
 
 Из-за огромного количества скальперских сделок мы закрыли торговлю БПИФ от УК "Тинькофф Капитал" в TINKOFF INVEST API. 
-Список бумаг смотрите [здесь](https://tinkoffcreditsystems.github.io/invest-openapi/).
+Список бумаг смотрите [здесь](https://tinkoff.github.io/invest-openapi/).
 
 ##Валюты в TINKOFF INVEST API
 

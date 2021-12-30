@@ -1,0 +1,112 @@
+syntax = "proto3";
+
+package tinkoff.public.invest.api.contract.v1;
+
+option go_package = "Tinkoff/investAPI";
+option java_package = "ru.tinkoff.piapi.contract.v1";
+option java_multiple_files = true;
+option csharp_namespace = "Tinkoff.InvestAPI.V1";
+option objc_class_prefix = "TIAPI";
+option php_namespace = "Tinkoff\\Invest\\V1";
+
+import "google/protobuf/timestamp.proto";
+import "common.proto";
+
+service OperationsService {/*Сервис предназначен для получения:</br> **1**.  списка операций по счёту;</br> **2**.
+                              портфеля по счёту;</br> **3**. позиций ценных бумаг на счёте;</br> **4**.
+                              доступного остатка для вывода средств.*/
+  //Метод получения списка операций по счёту
+  rpc GetOperations(OperationsRequest) returns (OperationsResponse);
+
+  //Метод получения портфеля по счёту
+  rpc GetPortfolio(PortfolioRequest) returns (PortfolioResponse);
+
+  //Метод получения списка позиций по счёту
+  rpc GetPositions(PositionsRequest) returns (PositionsResponse);
+
+  //Метод получения доступного остатка для вывода средств
+  rpc GetWithdrawLimits(WithdrawLimitsRequest) returns (WithdrawLimitsResponse);
+}
+
+message OperationsRequest {
+  string account_id = 1; //Идентификатор счёта клиента
+  google.protobuf.Timestamp from = 2; //Начало периода (по UTC)
+  google.protobuf.Timestamp to = 3; //Окончание периода (по UTC)
+  OperationState state = 4; //Статус запрашиваемых операций
+  string figi = 5; //Figi-идентификатор инструмента для фильтрации
+}
+
+message OperationsResponse {
+  repeated Operation operations = 1; //Массив операций
+}
+
+message Operation {//Данные по операции
+  string id = 1; //Идентификатор операции
+  string parent_operation_id = 2; //Идентификатор родительской операции
+  string currency = 3; //Валюта операции
+  MoneyValue payment = 4; //Сумма операции
+  MoneyValue price = 5; //Цена операции
+  OperationState state = 6; //Статус операции
+  int64 quantity = 7; //Количество лотов инструмента
+  int64 quantity_rest = 8; //Неисполненный остаток по сделке
+  string figi = 9; //Figi-идентификатор инструмента, связанного с операцией
+  string instrument_type = 10;  //Тип инструмента. Возможные значения: </br>**bond** — облигация; </br>**share** — акция; </br>**currency** — валюта; </br>**etf** — фонд; </br>**futures** — фьючерс.
+  google.protobuf.Timestamp date = 11; //Дата и время операции в формате часовом поясе UTC
+  string type = 12; //Тип операции
+}
+
+message PortfolioRequest {
+  string account_id = 1; //Идентификатор счёта пользователя
+}
+
+message PortfolioResponse {
+  MoneyValue total_amount_shares = 1; //Общая стоимость акций в портфеле в рублях
+  MoneyValue total_amount_bonds = 2; //Общая стоимость облигаций в портфеле в рублях
+  MoneyValue total_amount_etf = 3; //Общая стоимость фондов в портфеле в рублях
+  MoneyValue total_amount_currencies = 4; //Общая стоимость валют в портфеле в рублях
+  MoneyValue total_amount_futures = 5; //Общая стоимость валют в портфеле в рублях
+  float expected_yield = 6; //Текущая доходность портфеля
+  repeated PortfolioPosition positions = 7; //Список позиций портфеля
+}
+
+message PositionsRequest {
+  string account_id = 1; //Идентификатор счёта пользователя
+}
+
+message PositionsResponse {
+  repeated MoneyValue money = 1;  //Массив валютных позиций портфеля
+  repeated MoneyValue blocked = 2;  //Массив заблокированных валютных позиций портфеля
+  repeated PositionsSecurities securities = 3;  //Список ценно-бумажных позиций портфеля
+  bool limits_loading_in_progress = 4;  //Признак идущей в данный момент выгрузки лимитов
+}
+
+message WithdrawLimitsRequest {
+  string account_id = 1; //Идентификатор счёта пользователя
+}
+
+message WithdrawLimitsResponse {
+  repeated MoneyValue money = 1;  //Массив валютных позиций портфеля
+  repeated MoneyValue blocked = 2;  //Массив заблокированных валютных позиций портфеля
+}
+
+message PortfolioPosition {
+  string figi = 1; //Figi-идентификатора инструмента
+  string instrument_type = 2; //Тип инструмента
+  float quantity = 3; //Количество лотов в портфеле
+  MoneyValue average_position_price = 4; //Средняя цена лота в позиции
+  float expected_yield = 5; //Текущая рассчитанная доходность
+  MoneyValue current_nkd = 6; // Текущий НКД
+  Quotation average_position_price_pt = 7; //Средняя цена лота в позиции в пунктах (для фьючерсов)
+}
+
+message PositionsSecurities {
+  string figi = 1; //Figi-идентификатор бумаги
+  int64 blocked = 2; //Заблокировано
+  int64 balance = 3;  //Текущий баланс
+}
+
+enum OperationState {//Статус запрашиваемых операций
+  OPERATION_STATE_UNSPECIFIED = 0; //Статус операции не определён
+  OPERATION_STATE_EXECUTED = 1; //Исполнена
+  OPERATION_STATE_CANCELED = 2; //Отменена
+}

@@ -7,7 +7,7 @@ info:
   version: '1.0'
 externalDocs:
   description: Документация Tinkoff Invest API
-  url: https://tinkoffcreditsystems.github.io/investAPI/
+  url: https://tinkoff.github.io/investAPI/
 servers:
 - url: https://invest-public-api.tinkoff.ru/rest/
   description: "Работа с биржей"
@@ -2892,7 +2892,7 @@ components:
       - INSTRUMENT_ID_TYPE_FIGI
       - INSTRUMENT_ID_TYPE_TICKER
       title: 'Тип идентификатора инструмента. Подробнее об идентификации инструментов:
-        [Идентификация инструментов](https://tinkoffcreditsystems.github.io/invest-openapi/faq_identification/)'
+        [Идентификация инструментов](https://tinkoff.github.io/invest-openapi/faq_identification/)'
       type: string
     v1InstrumentRequest:
       description: Запрос получения инструмента по идентификатору.

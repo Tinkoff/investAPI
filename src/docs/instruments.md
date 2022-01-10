@@ -104,7 +104,7 @@
 
 
 #### GetAccruedInterests
-Метод получения календаря выплат купонов по облигациям.
+Метод получения накопленного купонного дохода по облигации.
 
 - Тело запроса — [GetAccruedInterestsRequest](#getaccruedinterestsrequest)
 

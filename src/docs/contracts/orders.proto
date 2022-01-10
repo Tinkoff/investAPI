@@ -1,0 +1,153 @@
+syntax = "proto3";
+
+package tinkoff.public.invest.api.contract.v1;
+
+option go_package = "Tinkoff/investAPI";
+option java_package = "ru.tinkoff.piapi.contract.v1";
+option java_multiple_files = true;
+option csharp_namespace = "Tinkoff.InvestAPI.V1";
+option objc_class_prefix = "TIAPI";
+option php_namespace = "Tinkoff\\Invest\\V1";
+
+import "common.proto";
+import "google/protobuf/timestamp.proto";
+
+service OrdersStreamService {
+  //Bidirectional stream работы со сделками
+  rpc TradesStream(TradesStreamRequest) returns (stream TradesStreamResponse);
+}
+
+service OrdersService {/* Сервис предназначен для работы с торговыми поручениями:</br> **1**.
+                        выставление;</br> **2**. отмена;</br> **3**. получение статуса;</br> **4**.
+                        расчёт полной стоимости;</br> **5**. получение списка заявок.*/
+  //Метод выставления заявки.
+  rpc PostOrder(PostOrderRequest) returns (PostOrderResponse);
+
+  //Метод отмены биржевой заявки.
+  rpc CancelOrder(CancelOrderRequest) returns (CancelOrderResponse);
+
+  //Метод получения статуса торгового поручения.
+  rpc GetOrderState(GetOrderStateRequest) returns (OrderState);
+
+  //Метод получения списка активных заявок по счёту.
+  rpc GetOrders(GetOrdersRequest) returns (GetOrdersResponse);
+}
+
+message TradesStreamRequest {
+
+}
+
+message TradesStreamResponse {
+  string order_id = 1; //Идентификатор торгового поручения
+  google.protobuf.Timestamp created_at = 2; //Дата и время создания сообщения
+  OrderDirection direction = 3; //Направление сделки (возможные значения)
+  string figi = 4; //Figi-идентификатор инструмента
+  repeated OrderTrade trades = 5; //Массив сделок
+}
+
+message OrderTrade {
+  google.protobuf.Timestamp date_time = 1;  //Дата и время совершения сделки по времени биржи
+  Quotation price = 2;  //Цена, по которой совершена сделка
+  int64 quantity = 3;  //Количество лотов в сделке
+}
+
+message PostOrderRequest {
+  string figi = 1; //Figi-идентификатор инструмента.
+  int64 quantity = 2; //Количество лотов.
+  Quotation price = 3; //Цена лота.
+  OrderDirection direction = 4; //Направление операции.
+  string account_id = 5; //Номер счёта.
+  OrderType order_type = 6; //Тип заявки.
+  string order_id = 7; //Идентификатор запроса выставления поручения для целей идемпотентности. Максимальная длина 36 символов.
+}
+
+message PostOrderResponse {
+  string order_id = 1; //Идентификатор заявки.
+  OrderExecutionReportStatus execution_report_status = 2; //Текущий статус заявки.
+  int64 lots_requested = 3; //Запрошено лотов.
+  int64 lots_executed = 4; //Исполнено лотов.
+
+  MoneyValue initial_order_price = 5; //Начальная цена заявки. Произведение количества запрошенных лотов на цену.
+  MoneyValue executed_order_price = 6; //Исполненная цена заявки. Произведение средней цены покупки на количество лотов.
+  MoneyValue total_order_amount = 7; //Итоговая стоимость заявки, включающая все комиссии.
+  MoneyValue initial_commission = 8; //Начальная комиссия. Комиссия рассчитанная при выставлении заявки.
+  MoneyValue executed_commission = 9; //Фактическая комиссия по итогам исполнения заявки.
+  MoneyValue aci_value = 10; //Значение НКД (накопленного купонного дохода) на дату. Подробнее: [НКД при выставлении торговых поручений](/investAPI/head-orders#coupon)
+
+  string figi = 11; // Figi-идентификатор инструмента.
+  OrderDirection direction = 12; //Направление сделки.
+  MoneyValue initial_security_price = 13;  //Начальная цена инструмента заявки.
+  OrderType order_type = 14; //Тип заявки.
+  string message = 15; //Дополнительные данные об исполнении заявки.
+  Quotation initial_order_price_pt = 16; //Начальная цена заявки в пунктах (для фьючерсов).
+}
+
+message CancelOrderRequest {
+  string account_id = 1; //Номер счёта.
+  string order_id = 2; //Идентификатор заявки.
+}
+
+message CancelOrderResponse {
+  google.protobuf.Timestamp time = 1; //Дата и время отмены заявки в часовом поясе UTC.
+}
+
+message GetOrderStateRequest {
+  string account_id = 1; //Номер счёта.
+  string order_id = 2; //Идентификатор заявки.
+}
+
+message GetOrdersRequest {
+  string account_id = 1; //Номер счёта.
+}
+
+message GetOrdersResponse {
+  repeated OrderState orders = 1; //Массив активных заявок.
+}
+
+message OrderState {
+  string order_id = 1; //Идентификатор заявки.
+  OrderExecutionReportStatus execution_report_status = 2; //Текущий статус заявки.
+  int64 lots_requested = 3; //Запрошено лотов.
+  int64 lots_executed = 4; //Исполнено лотов.
+  MoneyValue initial_order_price = 5; //Начальная цена заявки. Произведение количества запрошенных лотов на цену.
+  MoneyValue executed_order_price = 6; //Исполненная цена заявки. Произведение средней цены покупки на количество лотов.
+  MoneyValue total_order_amount = 7; //Итоговая стоимость заявки, включающая все комиссии.
+  MoneyValue average_position_price = 8; //Средняя цена позиции по сделке.
+  MoneyValue initial_commission = 9; //Начальная комиссия. Комиссия, рассчитанная на момент подачи заявки.
+  MoneyValue executed_commission = 10; //Фактическая комиссия по итогам исполнения заявки.
+  string figi = 11; //Figi-идентификатор инструмента.
+  OrderDirection direction = 12; //Направление заявки.
+  MoneyValue initial_security_price = 13; //Начальная цена инструмента. Цена инструмента на момент выставления заявки.
+  repeated OrderStage stages = 14; //Стадии выполнения заявки.
+  MoneyValue service_commission = 15; //Сервисная комиссия.
+  string currency = 16; //Валюта заявки.
+  OrderType order_type = 17; //Тип заявки.
+  google.protobuf.Timestamp order_date = 18; //Дата и время выставления заявки в часовом поясе UTC.
+}
+
+message OrderStage {
+  MoneyValue price = 1; //Цена.
+  int64 quantity = 2; //Количество лотов.
+  string trade_id = 3; //Идентификатор торговой операции.
+}
+
+enum OrderDirection {//Направление операции
+  ORDER_DIRECTION_UNSPECIFIED = 0; //Значение не указано
+  ORDER_DIRECTION_BUY = 1; //Покупка
+  ORDER_DIRECTION_SELL = 2; //Продажа
+}
+
+enum OrderType {//Тип заявки
+  ORDER_TYPE_UNSPECIFIED = 0; //Значение не указано
+  ORDER_TYPE_LIMIT = 1; //Лимитная
+  ORDER_TYPE_MARKET = 2; //Рыночная
+}
+
+enum OrderExecutionReportStatus {//Текущий статус заявки (поручения)
+  EXECUTION_REPORT_STATUS_UNSPECIFIED = 0;
+  EXECUTION_REPORT_STATUS_FILL = 1; //Исполнена
+  EXECUTION_REPORT_STATUS_REJECTED = 2; //Отклонена
+  EXECUTION_REPORT_STATUS_CANCELLED = 3; //Отменена пользователем
+  EXECUTION_REPORT_STATUS_NEW = 4; //Новая
+  EXECUTION_REPORT_STATUS_PARTIALLYFILL = 5; //Частично исполнена
+}

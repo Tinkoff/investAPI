@@ -33,7 +33,9 @@ isValidPrice(10.16, 0.1) // false
 > **price** / 100 * **nominal**
 
 Где 
+
 * **price** — текущая котировка ценной бумаги;
+
 * **nominal** — номинал облигации.
 
 ###Перевод цены фьючерса в валюту
@@ -42,8 +44,11 @@ isValidPrice(10.16, 0.1) // false
 > **price** / **min_price_increment** * **min_price_increment_amount**
 
 Где 
+
 * **price** — текущая котировка ценной бумаги;
+
 * **min_price_increment** — шаг цены;
+
 * **min_price_increment_amount** — стоимость шага цены.
 
 ##Внебиржевые инструменты в TINKOFF INVEST API

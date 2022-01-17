@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package tinkoff.public.invest.api.contract.v1;
 
-option go_package = "Tinkoff/investAPI";
+option go_package = "investapi";
 option java_package = "ru.tinkoff.piapi.contract.v1";
 option java_multiple_files = true;
 option csharp_namespace = "Tinkoff.InvestAPI.V1";
@@ -14,11 +14,18 @@ import "common.proto";
 
 service StopOrdersService { /* Сервис предназначен для работы со стоп-заявками:</br> **1**.
                                выставление;</br> **2**. отмена;</br> **3**. получение списка стоп-заявок.*/
-  rpc PostStopOrder(PostStopOrderRequest) returns (PostStopOrderResponse); //Метод выставления стоп-заявки
-  rpc GetStopOrders(GetStopOrdersRequest) returns (GetStopOrdersResponse); //Метод получения списка активных стоп заявок по счёту
-  rpc CancelStopOrder(CancelStopOrderRequest) returns (CancelStopOrderResponse); //	Метод отмены стоп-заявки
+
+  //Метод выставления стоп-заявки.
+  rpc PostStopOrder(PostStopOrderRequest) returns (PostStopOrderResponse);
+
+  //Метод получения списка активных стоп заявок по счёту.
+  rpc GetStopOrders(GetStopOrdersRequest) returns (GetStopOrdersResponse);
+
+  //Метод отмены стоп-заявки.
+  rpc CancelStopOrder(CancelStopOrderRequest) returns (CancelStopOrderResponse);
 }
 
+//Запрос выставления стоп-заявки
 message PostStopOrderRequest {
   string figi = 1; //Figi-идентификатор инструмента
   int64 quantity = 2; //Количество лотов
@@ -31,27 +38,33 @@ message PostStopOrderRequest {
   google.protobuf.Timestamp expire_date = 9; //Дата и время окончания действия стоп-заявки в часовом поясе UTC. **Для ExpirationType = GoodTillDate заполнение обязательно**.
 }
 
+//Результат выставления стоп-заявки.
 message PostStopOrderResponse {
   string stop_order_id = 1; //Уникальный идентификатор стоп-заявки.
 }
 
+//Запрос получения списка активных стоп-заявок.
 message GetStopOrdersRequest {
   string account_id = 1; //Идентификатор счёта клиента
 }
 
+//Список активных стоп-заявок.
 message GetStopOrdersResponse {
   repeated StopOrder stop_orders = 1; //Массив стоп-заявок по счёту
 }
 
+//Запрос отмены выставленной стоп-заявки.
 message CancelStopOrderRequest {
   string account_id = 1; //Идентификатор счёта клиента
   string stop_order_id = 2; //Уникальный идентификатор стоп-заявки.
 }
 
+//Результат отмены выставленной стоп-заявки.
 message CancelStopOrderResponse {
   google.protobuf.Timestamp time = 1; //Время отмены заявки в часовом поясе UTC
 }
 
+//Информация о стоп-заявке.
 message StopOrder {
   string stop_order_id = 1; //Идентификатор-идентификатор стоп-заявки
   int64 lots_requested = 2;  //Запрошено лотов
@@ -64,18 +77,21 @@ message StopOrder {
   google.protobuf.Timestamp expiration_time = 9; //Дата и время снятия заявки в часовом поясе UTC
 }
 
-enum StopOrderDirection {//Направление операции
+//Направление сделки стоп-заявки.
+enum StopOrderDirection {
   STOP_ORDER_DIRECTION_UNSPECIFIED = 0; //Значение не указано
   STOP_ORDER_DIRECTION_BUY = 1; //Покупка
   STOP_ORDER_DIRECTION_SELL = 2; //Продажа
 }
 
+//Тип экспирации стоп-заявке.
 enum StopOrderExpirationType {
   STOP_ORDER_EXPIRATION_TYPE_UNSPECIFIED = 0; //Значение не указано.
   STOP_ORDER_EXPIRATION_TYPE_GOOD_TILL_CANCEL = 1; //Действительно до отмены.
   STOP_ORDER_EXPIRATION_TYPE_GOOD_TILL_DATE = 2; //Действительно до даты снятия.
 }
 
+//Тип стоп-заявки.
 enum StopOrderType {
   STOP_ORDER_TYPE_UNSPECIFIED = 0; //Значение не указано
   STOP_ORDER_TYPE_TAKE_PROFIT = 1; //Take-profit заявка

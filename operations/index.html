@@ -864,6 +864,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#operationtype" class="md-nav__link">
+    OperationType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#securitytradingstatus" class="md-nav__link">
     SecurityTradingStatus
   </a>
@@ -1276,6 +1283,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#operationtype" class="md-nav__link">
+    OperationType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#securitytradingstatus" class="md-nav__link">
     SecurityTradingStatus
   </a>
@@ -1346,7 +1360,7 @@
 доступного остатка для вывода средств.</p>
 <h3 id="_1">Методы сервиса</h3>
 <h4 id="getoperations">GetOperations</h4>
-<p>Метод получения списка операций по счёту</p>
+<p>Метод получения списка операций по счёту.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#operationsrequest">OperationsRequest</a></p>
@@ -1356,7 +1370,7 @@
 </li>
 </ul>
 <h4 id="getportfolio">GetPortfolio</h4>
-<p>Метод получения портфеля по счёту</p>
+<p>Метод получения портфеля по счёту.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#portfoliorequest">PortfolioRequest</a></p>
@@ -1366,7 +1380,7 @@
 </li>
 </ul>
 <h4 id="getpositions">GetPositions</h4>
-<p>Метод получения списка позиций по счёту</p>
+<p>Метод получения списка позиций по счёту.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#positionsrequest">PositionsRequest</a></p>
@@ -1376,7 +1390,7 @@
 </li>
 </ul>
 <h4 id="getwithdrawlimits">GetWithdrawLimits</h4>
-<p>Метод получения доступного остатка для вывода средств</p>
+<p>Метод получения доступного остатка для вывода средств.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#withdrawlimitsrequest">WithdrawLimitsRequest</a></p>
@@ -1390,6 +1404,7 @@
 
 <h3 id="_2">Сообщения методов</h3>
 <h4 id="operationsrequest">OperationsRequest</h4>
+<p>Запрос получения списка операций по счёту.</p>
 <table>
 <thead>
 <tr>
@@ -1434,6 +1449,7 @@
 <!-- end HasFields -->
 
 <h4 id="operationsresponse">OperationsResponse</h4>
+<p>Список операций.</p>
 <table>
 <thead>
 <tr>
@@ -1458,7 +1474,7 @@
 <!-- end HasFields -->
 
 <h4 id="operation">Operation</h4>
-<p>Данные по операции</p>
+<p>Данные по операции.</p>
 <table>
 <thead>
 <tr>
@@ -1526,6 +1542,11 @@
 <tr>
 <td>type</td>
 <td><a href="#string">string</a></td>
+<td>Текстовое описание типа операции</td>
+</tr>
+<tr>
+<td>operation_type</td>
+<td><a href="#operationtype">OperationType</a></td>
 <td>Тип операции</td>
 </tr>
 <tr>
@@ -1538,6 +1559,7 @@
 <!-- end HasFields -->
 
 <h4 id="portfoliorequest">PortfolioRequest</h4>
+<p>Запрос получения текущего портфеля по счёту.</p>
 <table>
 <thead>
 <tr>
@@ -1562,6 +1584,7 @@
 <!-- end HasFields -->
 
 <h4 id="portfolioresponse">PortfolioResponse</h4>
+<p>Текущий портфель по счёту.</p>
 <table>
 <thead>
 <tr>
@@ -1616,6 +1639,7 @@
 <!-- end HasFields -->
 
 <h4 id="positionsrequest">PositionsRequest</h4>
+<p>Запрос позиций портфеля по счёту.</p>
 <table>
 <thead>
 <tr>
@@ -1640,6 +1664,7 @@
 <!-- end HasFields -->
 
 <h4 id="positionsresponse">PositionsResponse</h4>
+<p>Список позиций по счёту.</p>
 <table>
 <thead>
 <tr>
@@ -1679,6 +1704,7 @@
 <!-- end HasFields -->
 
 <h4 id="withdrawlimitsrequest">WithdrawLimitsRequest</h4>
+<p>Запрос доступного для вывода остатка.</p>
 <table>
 <thead>
 <tr>
@@ -1703,6 +1729,7 @@
 <!-- end HasFields -->
 
 <h4 id="withdrawlimitsresponse">WithdrawLimitsResponse</h4>
+<p>Доступный для вывода остаток.</p>
 <table>
 <thead>
 <tr>
@@ -1732,6 +1759,7 @@
 <!-- end HasFields -->
 
 <h4 id="portfolioposition">PortfolioPosition</h4>
+<p>Позиции портфеля.</p>
 <table>
 <thead>
 <tr>
@@ -1786,6 +1814,7 @@
 <!-- end HasFields -->
 
 <h4 id="positionssecurities">PositionsSecurities</h4>
+<p>Баланс позиции ценной бумаги.</p>
 <table>
 <thead>
 <tr>
@@ -1846,6 +1875,239 @@
 <td>OPERATION_STATE_CANCELED</td>
 <td>2</td>
 <td>Отменена</td>
+</tr>
+</tbody>
+</table>
+<h4 id="operationtype">OperationType</h4>
+<p>Тип операции</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OPERATION_TYPE_UNSPECIFIED</td>
+<td>0</td>
+<td>Тип операции не определён</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_INPUT</td>
+<td>1</td>
+<td>Завод денежных средств</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BOND_TAX</td>
+<td>2</td>
+<td>Удержание налога по купонам</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_OUTPUT_SECURITIES</td>
+<td>3</td>
+<td>Вывод ЦБ</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_OVERNIGHT</td>
+<td>4</td>
+<td>Доход по сделке РЕПО овернайт</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX</td>
+<td>5</td>
+<td>Удержание налога</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BOND_REPAYMENT_FULL</td>
+<td>6</td>
+<td>Полное погашение облигаций</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_SELL_CARD</td>
+<td>7</td>
+<td>Продажа ЦБ с карты</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_DIVIDEND_TAX</td>
+<td>8</td>
+<td>Удержание налога по дивидендам</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_OUTPUT</td>
+<td>9</td>
+<td>Вывод денежных средств</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BOND_REPAYMENT</td>
+<td>10</td>
+<td>Частичное погашение облигаций</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_CORRECTION</td>
+<td>11</td>
+<td>Корректировка налога</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_SERVICE_FEE</td>
+<td>12</td>
+<td>Удержание комиссии за обслуживание брокерского счёта</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BENEFIT_TAX</td>
+<td>13</td>
+<td>Удержание налога за материальную выгоду</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_MARGIN_FEE</td>
+<td>14</td>
+<td>Удержание комиссии за непокрытую позицию</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BUY</td>
+<td>15</td>
+<td>Покупка ЦБ</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BUY_CARD</td>
+<td>16</td>
+<td>Покупка ЦБ с карты</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_INPUT_SECURITIES</td>
+<td>17</td>
+<td>Завод ЦБ</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_SELL_MARJIN</td>
+<td>18</td>
+<td>Продажа в результате Margin-call</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BROKER_FEE</td>
+<td>19</td>
+<td>Удержание комиссии за операцию</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BUY_MARGIN</td>
+<td>20</td>
+<td>Покупка в результате Margin-call</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_DIVIDEND</td>
+<td>21</td>
+<td>Выплата дивидендов</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_SELL</td>
+<td>22</td>
+<td>Продажа ЦБ</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_COUPON</td>
+<td>23</td>
+<td>Выплата купонов</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_SUCCESS_FEE</td>
+<td>24</td>
+<td>Удержание комиссии SuccessFee</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_DIVIDEND_TRANSFER</td>
+<td>25</td>
+<td>Передача дивидендного дохода</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_ACCRUING_VARMARJIN</td>
+<td>26</td>
+<td>Зачисление вариационной маржи</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_WRITING_OFF_VARMARJIN</td>
+<td>27</td>
+<td>Списание вариационной маржи</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_DELIVERY_BUY</td>
+<td>28</td>
+<td>Покупка в рамках экспирации фьючерсного контракта</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_DELIVERY_SELL</td>
+<td>29</td>
+<td>Продажа в рамках экспирации фьючерсного контракта</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TRACK_MFEE</td>
+<td>30</td>
+<td>Комиссия за управление по счёту автоследования</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TRACK_PFEE</td>
+<td>31</td>
+<td>Комиссия за результат по счёту автоследования</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_PROGRESSIVE</td>
+<td>32</td>
+<td>Удержание налога по ставке 15%</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BOND_TAX_PROGRESSIVE</td>
+<td>33</td>
+<td>Удержание налога по купонам по ставке 15%</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_DIVIDEND_TAX_PROGRESSIVE</td>
+<td>34</td>
+<td>Удержание налога по дивидендам по ставке 15%</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BENEFIT_TAX_PROGRESSIVE</td>
+<td>35</td>
+<td>Удержание налога за материальную выгоду по ставке 15%</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_CORRECTION_PROGRESSIVE</td>
+<td>36</td>
+<td>Корректировка налога по ставке 15%</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_REPO_PROGRESSIVE</td>
+<td>37</td>
+<td>Удержание налога за возмещение по сделкам РЕПО по ставке 15%</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_REPO</td>
+<td>38</td>
+<td>Удержание налога за возмещение по сделкам РЕПО</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_REPO_HOLD</td>
+<td>39</td>
+<td>Удержание налога по сделкам РЕПО</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_REPO_REFUND</td>
+<td>40</td>
+<td>Возврат налога по сделкам РЕПО</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_REPO_HOLD_PROGRESSIVE</td>
+<td>41</td>
+<td>Удержание налога по сделкам РЕПО по ставке 15%</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_REPO_REFUND_PROGRESSIVE</td>
+<td>42</td>
+<td>Возврат налога по сделкам РЕПО по ставке 15%</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_DIV_EXT</td>
+<td>43</td>
+<td>Выплата дивидендов на карту</td>
 </tr>
 </tbody>
 </table>

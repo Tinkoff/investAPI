@@ -1818,7 +1818,7 @@
 <h2 id="marketdatastreamservice">MarketDataStreamService</h2>
 <h3 id="_2">Методы сервиса</h3>
 <h4 id="marketdatastream">MarketDataStream</h4>
-<p>Двусторонний стрим предоставления биржевой информации.</p>
+<p>Bi-directional стрим предоставления биржевой информации.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#marketdatarequest">MarketDataRequest</a></p>
@@ -1962,6 +1962,7 @@
 <!-- end HasFields -->
 
 <h4 id="candleinstrument">CandleInstrument</h4>
+<p>Запрос изменения статус подписки на свечи.</p>
 <table>
 <thead>
 <tr>
@@ -1991,6 +1992,7 @@
 <!-- end HasFields -->
 
 <h4 id="subscribecandlesresponse">SubscribeCandlesResponse</h4>
+<p>Результат изменения статус подписки на свечи.</p>
 <table>
 <thead>
 <tr>
@@ -2020,6 +2022,7 @@
 <!-- end HasFields -->
 
 <h4 id="candlesubscription">CandleSubscription</h4>
+<p>Статус подписки на свечи.</p>
 <table>
 <thead>
 <tr>
@@ -2054,7 +2057,7 @@
 <!-- end HasFields -->
 
 <h4 id="subscribeorderbookrequest">SubscribeOrderBookRequest</h4>
-<p>subscribeOrderbook | Изменение статуса подписки на стаканы.</p>
+<p>Запрос на изменение статуса подписки на стаканы.</p>
 <table>
 <thead>
 <tr>
@@ -2084,6 +2087,7 @@
 <!-- end HasFields -->
 
 <h4 id="orderbookinstrument">OrderBookInstrument</h4>
+<p>Запрос подписки на стаканы.</p>
 <table>
 <thead>
 <tr>
@@ -2113,6 +2117,7 @@
 <!-- end HasFields -->
 
 <h4 id="subscribeorderbookresponse">SubscribeOrderBookResponse</h4>
+<p>Результат изменения статуса подписки на стаканы.</p>
 <table>
 <thead>
 <tr>
@@ -2142,6 +2147,7 @@
 <!-- end HasFields -->
 
 <h4 id="orderbooksubscription">OrderBookSubscription</h4>
+<p>Статус подписки.</p>
 <table>
 <thead>
 <tr>
@@ -2176,7 +2182,7 @@
 <!-- end HasFields -->
 
 <h4 id="subscribetradesrequest">SubscribeTradesRequest</h4>
-<p>subscribeTrades | Изменение статуса подписки на поток обезличенных сделок.</p>
+<p>Изменение статуса подписки на поток обезличенных сделок.</p>
 <table>
 <thead>
 <tr>
@@ -2206,6 +2212,7 @@
 <!-- end HasFields -->
 
 <h4 id="tradeinstrument">TradeInstrument</h4>
+<p>Запрос подписки на поток обезличенных сделок.</p>
 <table>
 <thead>
 <tr>
@@ -2230,6 +2237,7 @@
 <!-- end HasFields -->
 
 <h4 id="subscribetradesresponse">SubscribeTradesResponse</h4>
+<p>Результат изменения статуса подписки на поток обезличенных сделок.</p>
 <table>
 <thead>
 <tr>
@@ -2259,6 +2267,7 @@
 <!-- end HasFields -->
 
 <h4 id="tradesubscription">TradeSubscription</h4>
+<p>Статус подписки.</p>
 <table>
 <thead>
 <tr>
@@ -2288,7 +2297,7 @@
 <!-- end HasFields -->
 
 <h4 id="subscribeinforequest">SubscribeInfoRequest</h4>
-<p>subscribeInfo | Изменение статуса подписки на торговый статус инструмента.</p>
+<p>Изменение статуса подписки на торговый статус инструмента.</p>
 <table>
 <thead>
 <tr>
@@ -2318,6 +2327,7 @@
 <!-- end HasFields -->
 
 <h4 id="infoinstrument">InfoInstrument</h4>
+<p>Запрос подписки на торговый статус.</p>
 <table>
 <thead>
 <tr>
@@ -2342,6 +2352,7 @@
 <!-- end HasFields -->
 
 <h4 id="subscribeinforesponse">SubscribeInfoResponse</h4>
+<p>Результат изменения статуса подписки на торговый статус.</p>
 <table>
 <thead>
 <tr>
@@ -2371,6 +2382,7 @@
 <!-- end HasFields -->
 
 <h4 id="infosubscription">InfoSubscription</h4>
+<p>Статус подписки.</p>
 <table>
 <thead>
 <tr>
@@ -2400,7 +2412,7 @@
 <!-- end HasFields -->
 
 <h4 id="candle">Candle</h4>
-<p>Выходные параметры. Пакет Candles.</p>
+<p>Пакет свечей в рамках стрима.</p>
 <table>
 <thead>
 <tr>
@@ -2460,6 +2472,7 @@
 <!-- end HasFields -->
 
 <h4 id="orderbook">OrderBook</h4>
+<p>Пакет стаканов в рамках стрима.</p>
 <table>
 <thead>
 <tr>
@@ -2509,6 +2522,7 @@
 <!-- end HasFields -->
 
 <h4 id="order">Order</h4>
+<p>Массив предложений/спроса.</p>
 <table>
 <thead>
 <tr>
@@ -2538,6 +2552,7 @@
 <!-- end HasFields -->
 
 <h4 id="trade">Trade</h4>
+<p>Информация о сделке.</p>
 <table>
 <thead>
 <tr>
@@ -2582,6 +2597,7 @@
 <!-- end HasFields -->
 
 <h4 id="tradingstatus">TradingStatus</h4>
+<p>Пакет изменения торгового статуса.</p>
 <table>
 <thead>
 <tr>
@@ -2611,6 +2627,7 @@
 <!-- end HasFields -->
 
 <h4 id="getcandlesrequest">GetCandlesRequest</h4>
+<p>Запрос исторических свечей.</p>
 <table>
 <thead>
 <tr>
@@ -2650,6 +2667,7 @@
 <!-- end HasFields -->
 
 <h4 id="getcandlesresponse">GetCandlesResponse</h4>
+<p>Список свечей.</p>
 <table>
 <thead>
 <tr>
@@ -2674,6 +2692,7 @@
 <!-- end HasFields -->
 
 <h4 id="historiccandle">HistoricCandle</h4>
+<p>Информация о свече.</p>
 <table>
 <thead>
 <tr>
@@ -2728,6 +2747,7 @@
 <!-- end HasFields -->
 
 <h4 id="getlastpricesrequest">GetLastPricesRequest</h4>
+<p>Запрос получения последних цен.</p>
 <table>
 <thead>
 <tr>
@@ -2752,6 +2772,7 @@
 <!-- end HasFields -->
 
 <h4 id="getlastpricesresponse">GetLastPricesResponse</h4>
+<p>Список последних цен.</p>
 <table>
 <thead>
 <tr>
@@ -2776,6 +2797,7 @@
 <!-- end HasFields -->
 
 <h4 id="lastprice">LastPrice</h4>
+<p>Информация о цене.</p>
 <table>
 <thead>
 <tr>
@@ -2810,6 +2832,7 @@
 <!-- end HasFields -->
 
 <h4 id="getorderbookrequest">GetOrderBookRequest</h4>
+<p>Запрос стакана.</p>
 <table>
 <thead>
 <tr>
@@ -2839,6 +2862,7 @@
 <!-- end HasFields -->
 
 <h4 id="getorderbookresponse">GetOrderBookResponse</h4>
+<p>Информация о стакане.</p>
 <table>
 <thead>
 <tr>
@@ -2888,6 +2912,7 @@
 <!-- end HasFields -->
 
 <h4 id="gettradingstatusrequest">GetTradingStatusRequest</h4>
+<p>Запрос получения торгового статуса.</p>
 <table>
 <thead>
 <tr>
@@ -2912,6 +2937,7 @@
 <!-- end HasFields -->
 
 <h4 id="gettradingstatusresponse">GetTradingStatusResponse</h4>
+<p>Информация о торговом статусе.</p>
 <table>
 <thead>
 <tr>
@@ -2943,6 +2969,7 @@
 
 <h3 id="enums">Enums</h3>
 <h4 id="subscriptionaction">SubscriptionAction</h4>
+<p>Тип операции со списком подписок.</p>
 <table>
 <thead>
 <tr>
@@ -2970,6 +2997,7 @@
 </tbody>
 </table>
 <h4 id="subscriptioninterval">SubscriptionInterval</h4>
+<p>Интервал свечи.</p>
 <table>
 <thead>
 <tr>
@@ -2997,6 +3025,7 @@
 </tbody>
 </table>
 <h4 id="subscriptionstatus">SubscriptionStatus</h4>
+<p>Результат подписки.</p>
 <table>
 <thead>
 <tr>
@@ -3029,7 +3058,7 @@
 <tr>
 <td>SUBSCRIPTION_STATUS_DEPTH_IS_INVALID</td>
 <td>4</td>
-<td>Некорректная глубина стакана, требуется указать целое число от 1 до 50.</td>
+<td>Некорректная глубина стакана, доступные значения: 10, 20, 30, 40, 50.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID</td>
@@ -3049,6 +3078,7 @@
 </tbody>
 </table>
 <h4 id="tradedirection">TradeDirection</h4>
+<p>Направление сделки.</p>
 <table>
 <thead>
 <tr>
@@ -3076,6 +3106,7 @@
 </tbody>
 </table>
 <h4 id="candleinterval">CandleInterval</h4>
+<p>Интервал свечей.</p>
 <table>
 <thead>
 <tr>

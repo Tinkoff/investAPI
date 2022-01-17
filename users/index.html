@@ -1359,7 +1359,7 @@
 списка счетов пользователя; </br> <strong>2</strong>. маржинальных показателе по счёту.</p>
 <h3 id="_1">Методы сервиса</h3>
 <h4 id="getaccounts">GetAccounts</h4>
-<p>Метод получения счетов пользователя</p>
+<p>Метод получения счетов пользователя.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getaccountsrequest">GetAccountsRequest</a></p>
@@ -1369,7 +1369,7 @@
 </li>
 </ul>
 <h4 id="getmarginattributes">GetMarginAttributes</h4>
-<p>Расчёт маржинальных показателей по счёту</p>
+<p>Расчёт маржинальных показателей по счёту.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getmarginattributesrequest">GetMarginAttributesRequest</a></p>
@@ -1379,7 +1379,7 @@
 </li>
 </ul>
 <h4 id="getusertariff">GetUserTariff</h4>
-<p>Запрос тарифа пользователя</p>
+<p>Запрос тарифа пользователя.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getusertariffrequest">GetUserTariffRequest</a></p>
@@ -1389,7 +1389,7 @@
 </li>
 </ul>
 <h4 id="getinfo">GetInfo</h4>
-<p>Метод получения информации о пользователе</p>
+<p>Метод получения информации о пользователе.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getinforequest">GetInfoRequest</a></p>
@@ -1403,11 +1403,11 @@
 
 <h3 id="_2">Сообщения методов</h3>
 <h4 id="getaccountsrequest">GetAccountsRequest</h4>
-<p>Запрос получения счетов не имеет входных параметров</p>
+<p>Запрос получения счетов пользователя.</p>
 <!-- end HasFields -->
 
 <h4 id="getaccountsresponse">GetAccountsResponse</h4>
-<p>Ответ на запрос получения счетов.</p>
+<p>Список счетов пользователя.</p>
 <table>
 <thead>
 <tr>
@@ -1432,7 +1432,7 @@
 <!-- end HasFields -->
 
 <h4 id="account">Account</h4>
-<p>Счёт клиента.</p>
+<p>Информация о счёте.</p>
 <table>
 <thead>
 <tr>
@@ -1552,9 +1552,11 @@
 <!-- end HasFields -->
 
 <h4 id="getusertariffrequest">GetUserTariffRequest</h4>
+<p>Запрос текущих лимитов пользователя.</p>
 <!-- end HasFields -->
 
 <h4 id="getusertariffresponse">GetUserTariffResponse</h4>
+<p>Текущие лимиты пользователя.</p>
 <table>
 <thead>
 <tr>
@@ -1584,6 +1586,7 @@
 <!-- end HasFields -->
 
 <h4 id="unarylimit">UnaryLimit</h4>
+<p>Лимит unary-методов.</p>
 <table>
 <thead>
 <tr>
@@ -1613,6 +1616,7 @@
 <!-- end HasFields -->
 
 <h4 id="streamlimit">StreamLimit</h4>
+<p>Лимит stream-соединений.</p>
 <table>
 <thead>
 <tr>
@@ -1642,9 +1646,11 @@
 <!-- end HasFields -->
 
 <h4 id="getinforequest">GetInfoRequest</h4>
+<p>Запрос информации о пользователе.</p>
 <!-- end HasFields -->
 
 <h4 id="getinforesponse">GetInfoResponse</h4>
+<p>Информация о пользователе.</p>
 <table>
 <thead>
 <tr>

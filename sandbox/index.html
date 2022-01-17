@@ -1183,6 +1183,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#operationtype" class="md-nav__link">
+    OperationType
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1973,6 +1980,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#operationtype" class="md-nav__link">
+    OperationType
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2419,10 +2433,10 @@
                   <h1>Методы</h1>
                 
                 <h2 id="sandboxservice">SandboxService</h2>
-<p>Сервис для работы с песочницей Public API</p>
+<p>Сервис для работы с песочницей TINKOFF INVEST API</p>
 <h3 id="_1">Методы сервиса</h3>
 <h4 id="opensandboxaccount">OpenSandboxAccount</h4>
-<p>Метод регистрации счёта в песочнице</p>
+<p>Метод регистрации счёта в песочнице.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#opensandboxaccountrequest">OpenSandboxAccountRequest</a></p>
@@ -2432,7 +2446,7 @@
 </li>
 </ul>
 <h4 id="getsandboxaccounts">GetSandboxAccounts</h4>
-<p>Метод получения счетов в песочнице</p>
+<p>Метод получения счетов в песочнице.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getaccountsrequest">GetAccountsRequest</a></p>
@@ -2442,7 +2456,7 @@
 </li>
 </ul>
 <h4 id="closesandboxaccount">CloseSandboxAccount</h4>
-<p>Метод закрытия счёта в песочнице</p>
+<p>Метод закрытия счёта в песочнице.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#closesandboxaccountrequest">CloseSandboxAccountRequest</a></p>
@@ -2452,7 +2466,7 @@
 </li>
 </ul>
 <h4 id="postsandboxorder">PostSandboxOrder</h4>
-<p>Метод выставления торгового поручения в песочнице</p>
+<p>Метод выставления торгового поручения в песочнице.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#postorderrequest">PostOrderRequest</a></p>
@@ -2462,7 +2476,7 @@
 </li>
 </ul>
 <h4 id="getsandboxorders">GetSandboxOrders</h4>
-<p>Метод получения списка активных заявок по счёту в песочнице</p>
+<p>Метод получения списка активных заявок по счёту в песочнице.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getordersrequest">GetOrdersRequest</a></p>
@@ -2472,7 +2486,7 @@
 </li>
 </ul>
 <h4 id="cancelsandboxorder">CancelSandboxOrder</h4>
-<p>Метод отмены торгового поручения в песочнице</p>
+<p>Метод отмены торгового поручения в песочнице.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#cancelorderrequest">CancelOrderRequest</a></p>
@@ -2482,7 +2496,7 @@
 </li>
 </ul>
 <h4 id="getsandboxorderstate">GetSandboxOrderState</h4>
-<p>Метод получения статуса заявки в песочнице</p>
+<p>Метод получения статуса заявки в песочнице.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getorderstaterequest">GetOrderStateRequest</a></p>
@@ -2492,7 +2506,7 @@
 </li>
 </ul>
 <h4 id="getsandboxpositions">GetSandboxPositions</h4>
-<p>Метод получения позиций по виртуальному счёту песочницы</p>
+<p>Метод получения позиций по виртуальному счёту песочницы.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#positionsrequest">PositionsRequest</a></p>
@@ -2502,7 +2516,7 @@
 </li>
 </ul>
 <h4 id="getsandboxoperations">GetSandboxOperations</h4>
-<p>Метод получения операций в песочнице по номеру счёта</p>
+<p>Метод получения операций в песочнице по номеру счёта.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#operationsrequest">OperationsRequest</a></p>
@@ -2512,7 +2526,7 @@
 </li>
 </ul>
 <h4 id="getsandboxportfolio">GetSandboxPortfolio</h4>
-<p>Метод получения портфолио в песочнице</p>
+<p>Метод получения портфолио в песочнице.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#portfoliorequest">PortfolioRequest</a></p>
@@ -2522,7 +2536,7 @@
 </li>
 </ul>
 <h4 id="sandboxpayin">SandboxPayIn</h4>
-<p>Метод пополнения счёта в песочнице</p>
+<p>Метод пополнения счёта в песочнице.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#sandboxpayinrequest">SandboxPayInRequest</a></p>
@@ -2536,10 +2550,12 @@
 
 <h3 id="_2">Сообщения методов</h3>
 <h4 id="opensandboxaccountrequest">OpenSandboxAccountRequest</h4>
+<p>Запрос открытия счёта в песочнице.</p>
 <p>пустой запрос</p>
 <!-- end HasFields -->
 
 <h4 id="opensandboxaccountresponse">OpenSandboxAccountResponse</h4>
+<p>Номер открытого счёта в песочнице.</p>
 <table>
 <thead>
 <tr>
@@ -2564,6 +2580,7 @@
 <!-- end HasFields -->
 
 <h4 id="closesandboxaccountrequest">CloseSandboxAccountRequest</h4>
+<p>Запрос закрытия счёта в песочнице.</p>
 <table>
 <thead>
 <tr>
@@ -2588,10 +2605,12 @@
 <!-- end HasFields -->
 
 <h4 id="closesandboxaccountresponse">CloseSandboxAccountResponse</h4>
+<p>Результат закрытия счёта в песочнице.</p>
 <p>пустой ответ</p>
 <!-- end HasFields -->
 
 <h4 id="sandboxpayinrequest">SandboxPayInRequest</h4>
+<p>Запрос пополнения счёта в песочнице.</p>
 <table>
 <thead>
 <tr>
@@ -2621,6 +2640,7 @@
 <!-- end HasFields -->
 
 <h4 id="sandboxpayinresponse">SandboxPayInResponse</h4>
+<p>Результат пополнения счёта, текущий баланс.</p>
 <table>
 <thead>
 <tr>
@@ -2656,7 +2676,7 @@
 доступного остатка для вывода средств.</p>
 <h3 id="_3">Методы сервиса</h3>
 <h4 id="getoperations">GetOperations</h4>
-<p>Метод получения списка операций по счёту</p>
+<p>Метод получения списка операций по счёту.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#operationsrequest">OperationsRequest</a></p>
@@ -2666,7 +2686,7 @@
 </li>
 </ul>
 <h4 id="getportfolio">GetPortfolio</h4>
-<p>Метод получения портфеля по счёту</p>
+<p>Метод получения портфеля по счёту.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#portfoliorequest">PortfolioRequest</a></p>
@@ -2676,7 +2696,7 @@
 </li>
 </ul>
 <h4 id="getpositions">GetPositions</h4>
-<p>Метод получения списка позиций по счёту</p>
+<p>Метод получения списка позиций по счёту.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#positionsrequest">PositionsRequest</a></p>
@@ -2686,7 +2706,7 @@
 </li>
 </ul>
 <h4 id="getwithdrawlimits">GetWithdrawLimits</h4>
-<p>Метод получения доступного остатка для вывода средств</p>
+<p>Метод получения доступного остатка для вывода средств.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#withdrawlimitsrequest">WithdrawLimitsRequest</a></p>
@@ -2700,6 +2720,7 @@
 
 <h3 id="_4">Сообщения методов</h3>
 <h4 id="operationsrequest">OperationsRequest</h4>
+<p>Запрос получения списка операций по счёту.</p>
 <table>
 <thead>
 <tr>
@@ -2744,6 +2765,7 @@
 <!-- end HasFields -->
 
 <h4 id="operationsresponse">OperationsResponse</h4>
+<p>Список операций.</p>
 <table>
 <thead>
 <tr>
@@ -2768,7 +2790,7 @@
 <!-- end HasFields -->
 
 <h4 id="operation">Operation</h4>
-<p>Данные по операции</p>
+<p>Данные по операции.</p>
 <table>
 <thead>
 <tr>
@@ -2836,6 +2858,11 @@
 <tr>
 <td>type</td>
 <td><a href="#string">string</a></td>
+<td>Текстовое описание типа операции</td>
+</tr>
+<tr>
+<td>operation_type</td>
+<td><a href="#operationtype">OperationType</a></td>
 <td>Тип операции</td>
 </tr>
 <tr>
@@ -2848,6 +2875,7 @@
 <!-- end HasFields -->
 
 <h4 id="portfoliorequest">PortfolioRequest</h4>
+<p>Запрос получения текущего портфеля по счёту.</p>
 <table>
 <thead>
 <tr>
@@ -2872,6 +2900,7 @@
 <!-- end HasFields -->
 
 <h4 id="portfolioresponse">PortfolioResponse</h4>
+<p>Текущий портфель по счёту.</p>
 <table>
 <thead>
 <tr>
@@ -2926,6 +2955,7 @@
 <!-- end HasFields -->
 
 <h4 id="positionsrequest">PositionsRequest</h4>
+<p>Запрос позиций портфеля по счёту.</p>
 <table>
 <thead>
 <tr>
@@ -2950,6 +2980,7 @@
 <!-- end HasFields -->
 
 <h4 id="positionsresponse">PositionsResponse</h4>
+<p>Список позиций по счёту.</p>
 <table>
 <thead>
 <tr>
@@ -2989,6 +3020,7 @@
 <!-- end HasFields -->
 
 <h4 id="withdrawlimitsrequest">WithdrawLimitsRequest</h4>
+<p>Запрос доступного для вывода остатка.</p>
 <table>
 <thead>
 <tr>
@@ -3013,6 +3045,7 @@
 <!-- end HasFields -->
 
 <h4 id="withdrawlimitsresponse">WithdrawLimitsResponse</h4>
+<p>Доступный для вывода остаток.</p>
 <table>
 <thead>
 <tr>
@@ -3042,6 +3075,7 @@
 <!-- end HasFields -->
 
 <h4 id="portfolioposition">PortfolioPosition</h4>
+<p>Позиции портфеля.</p>
 <table>
 <thead>
 <tr>
@@ -3096,6 +3130,7 @@
 <!-- end HasFields -->
 
 <h4 id="positionssecurities">PositionsSecurities</h4>
+<p>Баланс позиции ценной бумаги.</p>
 <table>
 <thead>
 <tr>
@@ -3165,6 +3200,245 @@
 </tr>
 </tbody>
 </table>
+<h4 id="operationtype">OperationType</h4>
+<p>Тип операции</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OPERATION_TYPE_UNSPECIFIED</td>
+<td>0</td>
+<td>Тип операции не определён</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_INPUT</td>
+<td>1</td>
+<td>Завод денежных средств</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BOND_TAX</td>
+<td>2</td>
+<td>Удержание налога по купонам</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_OUTPUT_SECURITIES</td>
+<td>3</td>
+<td>Вывод ЦБ</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_OVERNIGHT</td>
+<td>4</td>
+<td>Доход по сделке РЕПО овернайт</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX</td>
+<td>5</td>
+<td>Удержание налога</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BOND_REPAYMENT_FULL</td>
+<td>6</td>
+<td>Полное погашение облигаций</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_SELL_CARD</td>
+<td>7</td>
+<td>Продажа ЦБ с карты</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_DIVIDEND_TAX</td>
+<td>8</td>
+<td>Удержание налога по дивидендам</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_OUTPUT</td>
+<td>9</td>
+<td>Вывод денежных средств</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BOND_REPAYMENT</td>
+<td>10</td>
+<td>Частичное погашение облигаций</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_CORRECTION</td>
+<td>11</td>
+<td>Корректировка налога</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_SERVICE_FEE</td>
+<td>12</td>
+<td>Удержание комиссии за обслуживание брокерского счёта</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BENEFIT_TAX</td>
+<td>13</td>
+<td>Удержание налога за материальную выгоду</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_MARGIN_FEE</td>
+<td>14</td>
+<td>Удержание комиссии за непокрытую позицию</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BUY</td>
+<td>15</td>
+<td>Покупка ЦБ</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BUY_CARD</td>
+<td>16</td>
+<td>Покупка ЦБ с карты</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_INPUT_SECURITIES</td>
+<td>17</td>
+<td>Завод ЦБ</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_SELL_MARJIN</td>
+<td>18</td>
+<td>Продажа в результате Margin-call</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BROKER_FEE</td>
+<td>19</td>
+<td>Удержание комиссии за операцию</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BUY_MARGIN</td>
+<td>20</td>
+<td>Покупка в результате Margin-call</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_DIVIDEND</td>
+<td>21</td>
+<td>Выплата дивидендов</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_SELL</td>
+<td>22</td>
+<td>Продажа ЦБ</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_COUPON</td>
+<td>23</td>
+<td>Выплата купонов</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_SUCCESS_FEE</td>
+<td>24</td>
+<td>Удержание комиссии SuccessFee</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_DIVIDEND_TRANSFER</td>
+<td>25</td>
+<td>Передача дивидендного дохода</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_ACCRUING_VARMARJIN</td>
+<td>26</td>
+<td>Зачисление вариационной маржи</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_WRITING_OFF_VARMARJIN</td>
+<td>27</td>
+<td>Списание вариационной маржи</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_DELIVERY_BUY</td>
+<td>28</td>
+<td>Покупка в рамках экспирации фьючерсного контракта</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_DELIVERY_SELL</td>
+<td>29</td>
+<td>Продажа в рамках экспирации фьючерсного контракта</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TRACK_MFEE</td>
+<td>30</td>
+<td>Комиссия за управление по счёту автоследования</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TRACK_PFEE</td>
+<td>31</td>
+<td>Комиссия за результат по счёту автоследования</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_PROGRESSIVE</td>
+<td>32</td>
+<td>Удержание налога по ставке 15%</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BOND_TAX_PROGRESSIVE</td>
+<td>33</td>
+<td>Удержание налога по купонам по ставке 15%</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_DIVIDEND_TAX_PROGRESSIVE</td>
+<td>34</td>
+<td>Удержание налога по дивидендам по ставке 15%</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BENEFIT_TAX_PROGRESSIVE</td>
+<td>35</td>
+<td>Удержание налога за материальную выгоду по ставке 15%</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_CORRECTION_PROGRESSIVE</td>
+<td>36</td>
+<td>Корректировка налога по ставке 15%</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_REPO_PROGRESSIVE</td>
+<td>37</td>
+<td>Удержание налога за возмещение по сделкам РЕПО по ставке 15%</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_REPO</td>
+<td>38</td>
+<td>Удержание налога за возмещение по сделкам РЕПО</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_REPO_HOLD</td>
+<td>39</td>
+<td>Удержание налога по сделкам РЕПО</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_REPO_REFUND</td>
+<td>40</td>
+<td>Возврат налога по сделкам РЕПО</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_REPO_HOLD_PROGRESSIVE</td>
+<td>41</td>
+<td>Удержание налога по сделкам РЕПО по ставке 15%</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_REPO_REFUND_PROGRESSIVE</td>
+<td>42</td>
+<td>Возврат налога по сделкам РЕПО по ставке 15%</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_DIV_EXT</td>
+<td>43</td>
+<td>Выплата дивидендов на карту</td>
+</tr>
+<tr>
+<td><!-- range .Values -->
+</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <!-- range .HasEnums -->
 
 <!-- range .Enums -->
@@ -3173,7 +3447,7 @@
 <h2 id="ordersstreamservice">OrdersStreamService</h2>
 <h3 id="_5">Методы сервиса</h3>
 <h4 id="tradesstream">TradesStream</h4>
-<p>Bidirectional stream работы со сделками</p>
+<p>Stream сделок пользователя</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#tradesstreamrequest">TradesStreamRequest</a></p>
@@ -3234,9 +3508,11 @@
 
 <h3 id="_7">Сообщения методов</h3>
 <h4 id="tradesstreamrequest">TradesStreamRequest</h4>
+<p>Запрос установки соединения.</p>
 <!-- end HasFields -->
 
 <h4 id="tradesstreamresponse">TradesStreamResponse</h4>
+<p>Информация об исполнении торгового поручения.</p>
 <table>
 <thead>
 <tr>
@@ -3281,6 +3557,7 @@
 <!-- end HasFields -->
 
 <h4 id="ordertrade">OrderTrade</h4>
+<p>Информация о сделке.</p>
 <table>
 <thead>
 <tr>
@@ -3315,6 +3592,7 @@
 <!-- end HasFields -->
 
 <h4 id="postorderrequest">PostOrderRequest</h4>
+<p>Запрос выставления торгового поручения.</p>
 <table>
 <thead>
 <tr>
@@ -3369,6 +3647,7 @@
 <!-- end HasFields -->
 
 <h4 id="postorderresponse">PostOrderResponse</h4>
+<p>Информация о выставлении поручения.</p>
 <table>
 <thead>
 <tr>
@@ -3468,6 +3747,7 @@
 <!-- end HasFields -->
 
 <h4 id="cancelorderrequest">CancelOrderRequest</h4>
+<p>Запрос отмены торгового поручения.</p>
 <table>
 <thead>
 <tr>
@@ -3497,6 +3777,7 @@
 <!-- end HasFields -->
 
 <h4 id="cancelorderresponse">CancelOrderResponse</h4>
+<p>Результат отмены торгового поручения.</p>
 <table>
 <thead>
 <tr>
@@ -3521,6 +3802,7 @@
 <!-- end HasFields -->
 
 <h4 id="getorderstaterequest">GetOrderStateRequest</h4>
+<p>Запрос получения статуса торгового поручения.</p>
 <table>
 <thead>
 <tr>
@@ -3550,6 +3832,7 @@
 <!-- end HasFields -->
 
 <h4 id="getordersrequest">GetOrdersRequest</h4>
+<p>Запрос получения списка активных торговых поручений.</p>
 <table>
 <thead>
 <tr>
@@ -3574,6 +3857,7 @@
 <!-- end HasFields -->
 
 <h4 id="getordersresponse">GetOrdersResponse</h4>
+<p>Список активных торговых поручений.</p>
 <table>
 <thead>
 <tr>
@@ -3598,6 +3882,7 @@
 <!-- end HasFields -->
 
 <h4 id="orderstate">OrderState</h4>
+<p>Информация о торговом поручении.</p>
 <table>
 <thead>
 <tr>
@@ -3707,6 +3992,7 @@
 <!-- end HasFields -->
 
 <h4 id="orderstage">OrderStage</h4>
+<p>Сделки в рамках торгового поручения.</p>
 <table>
 <thead>
 <tr>
@@ -3869,7 +4155,7 @@
 списка счетов пользователя; </br> <strong>2</strong>. маржинальных показателе по счёту.</p>
 <h3 id="_8">Методы сервиса</h3>
 <h4 id="getaccounts">GetAccounts</h4>
-<p>Метод получения счетов пользователя</p>
+<p>Метод получения счетов пользователя.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getaccountsrequest">GetAccountsRequest</a></p>
@@ -3879,7 +4165,7 @@
 </li>
 </ul>
 <h4 id="getmarginattributes">GetMarginAttributes</h4>
-<p>Расчёт маржинальных показателей по счёту</p>
+<p>Расчёт маржинальных показателей по счёту.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getmarginattributesrequest">GetMarginAttributesRequest</a></p>
@@ -3889,7 +4175,7 @@
 </li>
 </ul>
 <h4 id="getusertariff">GetUserTariff</h4>
-<p>Запрос тарифа пользователя</p>
+<p>Запрос тарифа пользователя.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getusertariffrequest">GetUserTariffRequest</a></p>
@@ -3899,7 +4185,7 @@
 </li>
 </ul>
 <h4 id="getinfo">GetInfo</h4>
-<p>Метод получения информации о пользователе</p>
+<p>Метод получения информации о пользователе.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getinforequest">GetInfoRequest</a></p>
@@ -3913,11 +4199,11 @@
 
 <h3 id="_9">Сообщения методов</h3>
 <h4 id="getaccountsrequest">GetAccountsRequest</h4>
-<p>Запрос получения счетов не имеет входных параметров</p>
+<p>Запрос получения счетов пользователя.</p>
 <!-- end HasFields -->
 
 <h4 id="getaccountsresponse">GetAccountsResponse</h4>
-<p>Ответ на запрос получения счетов.</p>
+<p>Список счетов пользователя.</p>
 <table>
 <thead>
 <tr>
@@ -3942,7 +4228,7 @@
 <!-- end HasFields -->
 
 <h4 id="account">Account</h4>
-<p>Счёт клиента.</p>
+<p>Информация о счёте.</p>
 <table>
 <thead>
 <tr>
@@ -4062,9 +4348,11 @@
 <!-- end HasFields -->
 
 <h4 id="getusertariffrequest">GetUserTariffRequest</h4>
+<p>Запрос текущих лимитов пользователя.</p>
 <!-- end HasFields -->
 
 <h4 id="getusertariffresponse">GetUserTariffResponse</h4>
+<p>Текущие лимиты пользователя.</p>
 <table>
 <thead>
 <tr>
@@ -4094,6 +4382,7 @@
 <!-- end HasFields -->
 
 <h4 id="unarylimit">UnaryLimit</h4>
+<p>Лимит unary-методов.</p>
 <table>
 <thead>
 <tr>
@@ -4123,6 +4412,7 @@
 <!-- end HasFields -->
 
 <h4 id="streamlimit">StreamLimit</h4>
+<p>Лимит stream-соединений.</p>
 <table>
 <thead>
 <tr>
@@ -4152,9 +4442,11 @@
 <!-- end HasFields -->
 
 <h4 id="getinforequest">GetInfoRequest</h4>
+<p>Запрос информации о пользователе.</p>
 <!-- end HasFields -->
 
 <h4 id="getinforesponse">GetInfoResponse</h4>
+<p>Информация о пользователе.</p>
 <table>
 <thead>
 <tr>

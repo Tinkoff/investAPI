@@ -142,7 +142,7 @@
 
 
 #### TradingSchedulesRequest
-
+Запрос расписания торгов
 
 
 | Field | Type | Description |
@@ -155,7 +155,7 @@
 
 
 #### TradingSchedulesResponse
-
+Список торговых площадок
 
 
 | Field | Type | Description |
@@ -529,7 +529,7 @@
 
 
 #### GetAccruedInterestsRequest
-
+Запрос НКД по облигации
 
 
 | Field | Type | Description |
@@ -542,7 +542,7 @@
 
 
 #### GetAccruedInterestsResponse
-
+НКД облигации
 
 
 | Field | Type | Description |
@@ -567,7 +567,7 @@
 
 
 #### GetFuturesMarginRequest
-
+Запрос информации о фьючерсе
 
 
 | Field | Type | Description |
@@ -578,13 +578,15 @@
 
 
 #### GetFuturesMarginResponse
-
+Данные по фьючерсу
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | initial_margin_on_buy |  [MoneyValue](#moneyvalue) | Гарантийное обеспечение при покупке. |
 | initial_margin_on_sell |  [MoneyValue](#moneyvalue) | Гарантийное обеспечение при продаже. |
+| min_price_increment |  [float](#float) | Шаг цены. |
+| min_price_increment_amount |  [Quotation](#quotation) | Стоимость шага цены. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -635,7 +637,7 @@
 
 
 #### GetDividendsRequest
-
+Запрос дивидендов.
 
 
 | Field | Type | Description |
@@ -648,7 +650,7 @@
 
 
 #### GetDividendsResponse
-
+Дивиденды.
 
 
 | Field | Type | Description |
@@ -659,7 +661,7 @@
 
 
 #### Dividend
-
+Информация о выплате.
 
 
 | Field | Type | Description |
@@ -706,7 +708,7 @@
 
 
 #### ShareType
-
+Тип акций.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |

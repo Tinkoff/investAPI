@@ -5,13 +5,13 @@
 
 
 ## SandboxService
-Сервис для работы с песочницей Public API
+Сервис для работы с песочницей TINKOFF INVEST API
 
 ###Методы сервиса
 
 
 #### OpenSandboxAccount
-Метод регистрации счёта в песочнице
+Метод регистрации счёта в песочнице.
 
 - Тело запроса — [OpenSandboxAccountRequest](#opensandboxaccountrequest)
 
@@ -19,7 +19,7 @@
 
 
 #### GetSandboxAccounts
-Метод получения счетов в песочнице
+Метод получения счетов в песочнице.
 
 - Тело запроса — [GetAccountsRequest](#getaccountsrequest)
 
@@ -27,7 +27,7 @@
 
 
 #### CloseSandboxAccount
-Метод закрытия счёта в песочнице
+Метод закрытия счёта в песочнице.
 
 - Тело запроса — [CloseSandboxAccountRequest](#closesandboxaccountrequest)
 
@@ -35,7 +35,7 @@
 
 
 #### PostSandboxOrder
-Метод выставления торгового поручения в песочнице
+Метод выставления торгового поручения в песочнице.
 
 - Тело запроса — [PostOrderRequest](#postorderrequest)
 
@@ -43,7 +43,7 @@
 
 
 #### GetSandboxOrders
-Метод получения списка активных заявок по счёту в песочнице
+Метод получения списка активных заявок по счёту в песочнице.
 
 - Тело запроса — [GetOrdersRequest](#getordersrequest)
 
@@ -51,7 +51,7 @@
 
 
 #### CancelSandboxOrder
-Метод отмены торгового поручения в песочнице
+Метод отмены торгового поручения в песочнице.
 
 - Тело запроса — [CancelOrderRequest](#cancelorderrequest)
 
@@ -59,7 +59,7 @@
 
 
 #### GetSandboxOrderState
-Метод получения статуса заявки в песочнице
+Метод получения статуса заявки в песочнице.
 
 - Тело запроса — [GetOrderStateRequest](#getorderstaterequest)
 
@@ -67,7 +67,7 @@
 
 
 #### GetSandboxPositions
-Метод получения позиций по виртуальному счёту песочницы
+Метод получения позиций по виртуальному счёту песочницы.
 
 - Тело запроса — [PositionsRequest](#positionsrequest)
 
@@ -75,7 +75,7 @@
 
 
 #### GetSandboxOperations
-Метод получения операций в песочнице по номеру счёта
+Метод получения операций в песочнице по номеру счёта.
 
 - Тело запроса — [OperationsRequest](#operationsrequest)
 
@@ -83,7 +83,7 @@
 
 
 #### GetSandboxPortfolio
-Метод получения портфолио в песочнице
+Метод получения портфолио в песочнице.
 
 - Тело запроса — [PortfolioRequest](#portfoliorequest)
 
@@ -91,7 +91,7 @@
 
 
 #### SandboxPayIn
-Метод пополнения счёта в песочнице
+Метод пополнения счёта в песочнице.
 
 - Тело запроса — [SandboxPayInRequest](#sandboxpayinrequest)
 
@@ -105,13 +105,15 @@
 
 
 #### OpenSandboxAccountRequest
+Запрос открытия счёта в песочнице.
+
 пустой запрос
 
  <!-- end HasFields -->
 
 
 #### OpenSandboxAccountResponse
-
+Номер открытого счёта в песочнице.
 
 
 | Field | Type | Description |
@@ -122,7 +124,7 @@
 
 
 #### CloseSandboxAccountRequest
-
+Запрос закрытия счёта в песочнице.
 
 
 | Field | Type | Description |
@@ -133,13 +135,15 @@
 
 
 #### CloseSandboxAccountResponse
+Результат закрытия счёта в песочнице.
+
 пустой ответ
 
  <!-- end HasFields -->
 
 
 #### SandboxPayInRequest
-
+Запрос пополнения счёта в песочнице.
 
 
 | Field | Type | Description |
@@ -151,7 +155,7 @@
 
 
 #### SandboxPayInResponse
-
+Результат пополнения счёта, текущий баланс.
 
 
 | Field | Type | Description |
@@ -181,7 +185,7 @@
 
 
 #### GetOperations
-Метод получения списка операций по счёту
+Метод получения списка операций по счёту.
 
 - Тело запроса — [OperationsRequest](#operationsrequest)
 
@@ -189,7 +193,7 @@
 
 
 #### GetPortfolio
-Метод получения портфеля по счёту
+Метод получения портфеля по счёту.
 
 - Тело запроса — [PortfolioRequest](#portfoliorequest)
 
@@ -197,7 +201,7 @@
 
 
 #### GetPositions
-Метод получения списка позиций по счёту
+Метод получения списка позиций по счёту.
 
 - Тело запроса — [PositionsRequest](#positionsrequest)
 
@@ -205,7 +209,7 @@
 
 
 #### GetWithdrawLimits
-Метод получения доступного остатка для вывода средств
+Метод получения доступного остатка для вывода средств.
 
 - Тело запроса — [WithdrawLimitsRequest](#withdrawlimitsrequest)
 
@@ -219,7 +223,7 @@
 
 
 #### OperationsRequest
-
+Запрос получения списка операций по счёту.
 
 
 | Field | Type | Description |
@@ -234,7 +238,7 @@
 
 
 #### OperationsResponse
-
+Список операций.
 
 
 | Field | Type | Description |
@@ -245,7 +249,7 @@
 
 
 #### Operation
-Данные по операции
+Данные по операции.
 
 
 | Field | Type | Description |
@@ -261,13 +265,14 @@
 | figi |  [string](#string) | Figi-идентификатор инструмента, связанного с операцией |
 | instrument_type |  [string](#string) | Тип инструмента. Возможные значения: </br>**bond** — облигация; </br>**share** — акция; </br>**currency** — валюта; </br>**etf** — фонд; </br>**futures** — фьючерс. |
 | date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время операции в формате часовом поясе UTC |
-| type |  [string](#string) | Тип операции |
+| type |  [string](#string) | Текстовое описание типа операции |
+| operation_type |  [OperationType](#operationtype) | Тип операции |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
 #### PortfolioRequest
-
+Запрос получения текущего портфеля по счёту.
 
 
 | Field | Type | Description |
@@ -278,7 +283,7 @@
 
 
 #### PortfolioResponse
-
+Текущий портфель по счёту.
 
 
 | Field | Type | Description |
@@ -295,7 +300,7 @@
 
 
 #### PositionsRequest
-
+Запрос позиций портфеля по счёту.
 
 
 | Field | Type | Description |
@@ -306,7 +311,7 @@
 
 
 #### PositionsResponse
-
+Список позиций по счёту.
 
 
 | Field | Type | Description |
@@ -320,7 +325,7 @@
 
 
 #### WithdrawLimitsRequest
-
+Запрос доступного для вывода остатка.
 
 
 | Field | Type | Description |
@@ -331,7 +336,7 @@
 
 
 #### WithdrawLimitsResponse
-
+Доступный для вывода остаток.
 
 
 | Field | Type | Description |
@@ -343,7 +348,7 @@
 
 
 #### PortfolioPosition
-
+Позиции портфеля.
 
 
 | Field | Type | Description |
@@ -360,7 +365,7 @@
 
 
 #### PositionsSecurities
-
+Баланс позиции ценной бумаги.
 
 
 | Field | Type | Description |
@@ -387,6 +392,59 @@
 | OPERATION_STATE_CANCELED | 2 | Отменена |
  <!-- range .Values -->
 
+
+
+#### OperationType
+Тип операции
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| OPERATION_TYPE_UNSPECIFIED | 0 | Тип операции не определён |
+| OPERATION_TYPE_INPUT | 1 | Завод денежных средств |
+| OPERATION_TYPE_BOND_TAX | 2 | Удержание налога по купонам |
+| OPERATION_TYPE_OUTPUT_SECURITIES | 3 | Вывод ЦБ |
+| OPERATION_TYPE_OVERNIGHT | 4 | Доход по сделке РЕПО овернайт |
+| OPERATION_TYPE_TAX | 5 | Удержание налога |
+| OPERATION_TYPE_BOND_REPAYMENT_FULL | 6 | Полное погашение облигаций |
+| OPERATION_TYPE_SELL_CARD | 7 | Продажа ЦБ с карты |
+| OPERATION_TYPE_DIVIDEND_TAX | 8 | Удержание налога по дивидендам |
+| OPERATION_TYPE_OUTPUT | 9 | Вывод денежных средств |
+| OPERATION_TYPE_BOND_REPAYMENT | 10 | Частичное погашение облигаций |
+| OPERATION_TYPE_TAX_CORRECTION | 11 | Корректировка налога |
+| OPERATION_TYPE_SERVICE_FEE | 12 | Удержание комиссии за обслуживание брокерского счёта |
+| OPERATION_TYPE_BENEFIT_TAX | 13 | Удержание налога за материальную выгоду |
+| OPERATION_TYPE_MARGIN_FEE | 14 | Удержание комиссии за непокрытую позицию |
+| OPERATION_TYPE_BUY | 15 | Покупка ЦБ |
+| OPERATION_TYPE_BUY_CARD | 16 | Покупка ЦБ с карты |
+| OPERATION_TYPE_INPUT_SECURITIES | 17 | Завод ЦБ |
+| OPERATION_TYPE_SELL_MARJIN | 18 | Продажа в результате Margin-call |
+| OPERATION_TYPE_BROKER_FEE | 19 | Удержание комиссии за операцию |
+| OPERATION_TYPE_BUY_MARGIN | 20 | Покупка в результате Margin-call |
+| OPERATION_TYPE_DIVIDEND | 21 | Выплата дивидендов |
+| OPERATION_TYPE_SELL | 22 | Продажа ЦБ |
+| OPERATION_TYPE_COUPON | 23 | Выплата купонов |
+| OPERATION_TYPE_SUCCESS_FEE | 24 | Удержание комиссии SuccessFee |
+| OPERATION_TYPE_DIVIDEND_TRANSFER | 25 | Передача дивидендного дохода |
+| OPERATION_TYPE_ACCRUING_VARMARJIN | 26 | Зачисление вариационной маржи |
+| OPERATION_TYPE_WRITING_OFF_VARMARJIN | 27 | Списание вариационной маржи |
+| OPERATION_TYPE_DELIVERY_BUY | 28 | Покупка в рамках экспирации фьючерсного контракта |
+| OPERATION_TYPE_DELIVERY_SELL | 29 | Продажа в рамках экспирации фьючерсного контракта |
+| OPERATION_TYPE_TRACK_MFEE | 30 | Комиссия за управление по счёту автоследования |
+| OPERATION_TYPE_TRACK_PFEE | 31 | Комиссия за результат по счёту автоследования |
+| OPERATION_TYPE_TAX_PROGRESSIVE | 32 | Удержание налога по ставке 15% |
+| OPERATION_TYPE_BOND_TAX_PROGRESSIVE | 33 | Удержание налога по купонам по ставке 15% |
+| OPERATION_TYPE_DIVIDEND_TAX_PROGRESSIVE | 34 | Удержание налога по дивидендам по ставке 15% |
+| OPERATION_TYPE_BENEFIT_TAX_PROGRESSIVE | 35 | Удержание налога за материальную выгоду по ставке 15% |
+| OPERATION_TYPE_TAX_CORRECTION_PROGRESSIVE | 36 | Корректировка налога по ставке 15% |
+| OPERATION_TYPE_TAX_REPO_PROGRESSIVE | 37 | Удержание налога за возмещение по сделкам РЕПО по ставке 15% |
+| OPERATION_TYPE_TAX_REPO | 38 | Удержание налога за возмещение по сделкам РЕПО |
+| OPERATION_TYPE_TAX_REPO_HOLD | 39 | Удержание налога по сделкам РЕПО |
+| OPERATION_TYPE_TAX_REPO_REFUND | 40 | Возврат налога по сделкам РЕПО |
+| OPERATION_TYPE_TAX_REPO_HOLD_PROGRESSIVE | 41 | Удержание налога по сделкам РЕПО по ставке 15% |
+| OPERATION_TYPE_TAX_REPO_REFUND_PROGRESSIVE | 42 | Возврат налога по сделкам РЕПО по ставке 15% |
+| OPERATION_TYPE_DIV_EXT | 43 | Выплата дивидендов на карту |
+ <!-- range .Values -->
+
  <!-- range .HasEnums -->
 
  <!-- range .Enums -->
@@ -404,7 +462,7 @@
 
 
 #### TradesStream
-Bidirectional stream работы со сделками
+Stream сделок пользователя
 
 - Тело запроса — [TradesStreamRequest](#tradesstreamrequest)
 
@@ -460,13 +518,13 @@ Bidirectional stream работы со сделками
 
 
 #### TradesStreamRequest
-
+Запрос установки соединения.
 
  <!-- end HasFields -->
 
 
 #### TradesStreamResponse
-
+Информация об исполнении торгового поручения.
 
 
 | Field | Type | Description |
@@ -481,7 +539,7 @@ Bidirectional stream работы со сделками
 
 
 #### OrderTrade
-
+Информация о сделке.
 
 
 | Field | Type | Description |
@@ -494,7 +552,7 @@ Bidirectional stream работы со сделками
 
 
 #### PostOrderRequest
-
+Запрос выставления торгового поручения.
 
 
 | Field | Type | Description |
@@ -511,7 +569,7 @@ Bidirectional stream работы со сделками
 
 
 #### PostOrderResponse
-
+Информация о выставлении поручения.
 
 
 | Field | Type | Description |
@@ -537,7 +595,7 @@ Bidirectional stream работы со сделками
 
 
 #### CancelOrderRequest
-
+Запрос отмены торгового поручения.
 
 
 | Field | Type | Description |
@@ -549,7 +607,7 @@ Bidirectional stream работы со сделками
 
 
 #### CancelOrderResponse
-
+Результат отмены торгового поручения.
 
 
 | Field | Type | Description |
@@ -560,7 +618,7 @@ Bidirectional stream работы со сделками
 
 
 #### GetOrderStateRequest
-
+Запрос получения статуса торгового поручения.
 
 
 | Field | Type | Description |
@@ -572,7 +630,7 @@ Bidirectional stream работы со сделками
 
 
 #### GetOrdersRequest
-
+Запрос получения списка активных торговых поручений.
 
 
 | Field | Type | Description |
@@ -583,7 +641,7 @@ Bidirectional stream работы со сделками
 
 
 #### GetOrdersResponse
-
+Список активных торговых поручений.
 
 
 | Field | Type | Description |
@@ -594,7 +652,7 @@ Bidirectional stream работы со сделками
 
 
 #### OrderState
-
+Информация о торговом поручении.
 
 
 | Field | Type | Description |
@@ -622,7 +680,7 @@ Bidirectional stream работы со сделками
 
 
 #### OrderStage
-
+Сделки в рамках торгового поручения.
 
 
 | Field | Type | Description |
@@ -694,7 +752,7 @@ Bidirectional stream работы со сделками
 
 
 #### GetAccounts
-Метод получения счетов пользователя
+Метод получения счетов пользователя.
 
 - Тело запроса — [GetAccountsRequest](#getaccountsrequest)
 
@@ -702,7 +760,7 @@ Bidirectional stream работы со сделками
 
 
 #### GetMarginAttributes
-Расчёт маржинальных показателей по счёту
+Расчёт маржинальных показателей по счёту.
 
 - Тело запроса — [GetMarginAttributesRequest](#getmarginattributesrequest)
 
@@ -710,7 +768,7 @@ Bidirectional stream работы со сделками
 
 
 #### GetUserTariff
-Запрос тарифа пользователя
+Запрос тарифа пользователя.
 
 - Тело запроса — [GetUserTariffRequest](#getusertariffrequest)
 
@@ -718,7 +776,7 @@ Bidirectional stream работы со сделками
 
 
 #### GetInfo
-Метод получения информации о пользователе
+Метод получения информации о пользователе.
 
 - Тело запроса — [GetInfoRequest](#getinforequest)
 
@@ -732,13 +790,13 @@ Bidirectional stream работы со сделками
 
 
 #### GetAccountsRequest
-Запрос получения счетов не имеет входных параметров
+Запрос получения счетов пользователя.
 
  <!-- end HasFields -->
 
 
 #### GetAccountsResponse
-Ответ на запрос получения счетов.
+Список счетов пользователя.
 
 
 | Field | Type | Description |
@@ -749,7 +807,7 @@ Bidirectional stream работы со сделками
 
 
 #### Account
-Счёт клиента.
+Информация о счёте.
 
 
 | Field | Type | Description |
@@ -791,13 +849,13 @@ Bidirectional stream работы со сделками
 
 
 #### GetUserTariffRequest
-
+Запрос текущих лимитов пользователя.
 
  <!-- end HasFields -->
 
 
 #### GetUserTariffResponse
-
+Текущие лимиты пользователя.
 
 
 | Field | Type | Description |
@@ -809,7 +867,7 @@ Bidirectional stream работы со сделками
 
 
 #### UnaryLimit
-
+Лимит unary-методов.
 
 
 | Field | Type | Description |
@@ -821,7 +879,7 @@ Bidirectional stream работы со сделками
 
 
 #### StreamLimit
-
+Лимит stream-соединений.
 
 
 | Field | Type | Description |
@@ -833,13 +891,13 @@ Bidirectional stream работы со сделками
 
 
 #### GetInfoRequest
-
+Запрос информации о пользователе.
 
  <!-- end HasFields -->
 
 
 #### GetInfoResponse
-
+Информация о пользователе.
 
 
 | Field | Type | Description |

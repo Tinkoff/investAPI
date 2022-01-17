@@ -14,7 +14,7 @@
 
 
 #### TradesStream
-Bidirectional stream работы со сделками
+Stream сделок пользователя
 
 - Тело запроса — [TradesStreamRequest](#tradesstreamrequest)
 
@@ -70,13 +70,13 @@ Bidirectional stream работы со сделками
 
 
 #### TradesStreamRequest
-
+Запрос установки соединения.
 
  <!-- end HasFields -->
 
 
 #### TradesStreamResponse
-
+Информация об исполнении торгового поручения.
 
 
 | Field | Type | Description |
@@ -91,7 +91,7 @@ Bidirectional stream работы со сделками
 
 
 #### OrderTrade
-
+Информация о сделке.
 
 
 | Field | Type | Description |
@@ -104,7 +104,7 @@ Bidirectional stream работы со сделками
 
 
 #### PostOrderRequest
-
+Запрос выставления торгового поручения.
 
 
 | Field | Type | Description |
@@ -121,7 +121,7 @@ Bidirectional stream работы со сделками
 
 
 #### PostOrderResponse
-
+Информация о выставлении поручения.
 
 
 | Field | Type | Description |
@@ -147,7 +147,7 @@ Bidirectional stream работы со сделками
 
 
 #### CancelOrderRequest
-
+Запрос отмены торгового поручения.
 
 
 | Field | Type | Description |
@@ -159,7 +159,7 @@ Bidirectional stream работы со сделками
 
 
 #### CancelOrderResponse
-
+Результат отмены торгового поручения.
 
 
 | Field | Type | Description |
@@ -170,7 +170,7 @@ Bidirectional stream работы со сделками
 
 
 #### GetOrderStateRequest
-
+Запрос получения статуса торгового поручения.
 
 
 | Field | Type | Description |
@@ -182,7 +182,7 @@ Bidirectional stream работы со сделками
 
 
 #### GetOrdersRequest
-
+Запрос получения списка активных торговых поручений.
 
 
 | Field | Type | Description |
@@ -193,7 +193,7 @@ Bidirectional stream работы со сделками
 
 
 #### GetOrdersResponse
-
+Список активных торговых поручений.
 
 
 | Field | Type | Description |
@@ -204,7 +204,7 @@ Bidirectional stream работы со сделками
 
 
 #### OrderState
-
+Информация о торговом поручении.
 
 
 | Field | Type | Description |
@@ -232,7 +232,7 @@ Bidirectional stream работы со сделками
 
 
 #### OrderStage
-
+Сделки в рамках торгового поручения.
 
 
 | Field | Type | Description |

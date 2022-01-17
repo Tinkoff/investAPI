@@ -15,7 +15,7 @@
 
 
 #### PostStopOrder
-Метод выставления стоп-заявки
+Метод выставления стоп-заявки.
 
 - Тело запроса — [PostStopOrderRequest](#poststoporderrequest)
 
@@ -23,7 +23,7 @@
 
 
 #### GetStopOrders
-Метод получения списка активных стоп заявок по счёту
+Метод получения списка активных стоп заявок по счёту.
 
 - Тело запроса — [GetStopOrdersRequest](#getstopordersrequest)
 
@@ -31,7 +31,7 @@
 
 
 #### CancelStopOrder
-Метод отмены стоп-заявки
+Метод отмены стоп-заявки.
 
 - Тело запроса — [CancelStopOrderRequest](#cancelstoporderrequest)
 
@@ -45,7 +45,7 @@
 
 
 #### PostStopOrderRequest
-
+Запрос выставления стоп-заявки
 
 
 | Field | Type | Description |
@@ -64,7 +64,7 @@
 
 
 #### PostStopOrderResponse
-
+Результат выставления стоп-заявки.
 
 
 | Field | Type | Description |
@@ -75,7 +75,7 @@
 
 
 #### GetStopOrdersRequest
-
+Запрос получения списка активных стоп-заявок.
 
 
 | Field | Type | Description |
@@ -86,7 +86,7 @@
 
 
 #### GetStopOrdersResponse
-
+Список активных стоп-заявок.
 
 
 | Field | Type | Description |
@@ -97,7 +97,7 @@
 
 
 #### CancelStopOrderRequest
-
+Запрос отмены выставленной стоп-заявки.
 
 
 | Field | Type | Description |
@@ -109,7 +109,7 @@
 
 
 #### CancelStopOrderResponse
-
+Результат отмены выставленной стоп-заявки.
 
 
 | Field | Type | Description |
@@ -120,7 +120,7 @@
 
 
 #### StopOrder
-
+Информация о стоп-заявке.
 
 
 | Field | Type | Description |
@@ -142,7 +142,7 @@
 
 
 #### StopOrderDirection
-Направление операции
+Направление сделки стоп-заявки.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
@@ -154,7 +154,7 @@
 
 
 #### StopOrderExpirationType
-
+Тип экспирации стоп-заявке.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
@@ -166,7 +166,7 @@
 
 
 #### StopOrderType
-
+Тип стоп-заявки.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |

@@ -15,7 +15,7 @@
 
 
 #### GetAccounts
-Метод получения счетов пользователя
+Метод получения счетов пользователя.
 
 - Тело запроса — [GetAccountsRequest](#getaccountsrequest)
 
@@ -23,7 +23,7 @@
 
 
 #### GetMarginAttributes
-Расчёт маржинальных показателей по счёту
+Расчёт маржинальных показателей по счёту.
 
 - Тело запроса — [GetMarginAttributesRequest](#getmarginattributesrequest)
 
@@ -31,7 +31,7 @@
 
 
 #### GetUserTariff
-Запрос тарифа пользователя
+Запрос тарифа пользователя.
 
 - Тело запроса — [GetUserTariffRequest](#getusertariffrequest)
 
@@ -39,7 +39,7 @@
 
 
 #### GetInfo
-Метод получения информации о пользователе
+Метод получения информации о пользователе.
 
 - Тело запроса — [GetInfoRequest](#getinforequest)
 
@@ -53,13 +53,13 @@
 
 
 #### GetAccountsRequest
-Запрос получения счетов не имеет входных параметров
+Запрос получения счетов пользователя.
 
  <!-- end HasFields -->
 
 
 #### GetAccountsResponse
-Ответ на запрос получения счетов.
+Список счетов пользователя.
 
 
 | Field | Type | Description |
@@ -70,7 +70,7 @@
 
 
 #### Account
-Счёт клиента.
+Информация о счёте.
 
 
 | Field | Type | Description |
@@ -112,13 +112,13 @@
 
 
 #### GetUserTariffRequest
-
+Запрос текущих лимитов пользователя.
 
  <!-- end HasFields -->
 
 
 #### GetUserTariffResponse
-
+Текущие лимиты пользователя.
 
 
 | Field | Type | Description |
@@ -130,7 +130,7 @@
 
 
 #### UnaryLimit
-
+Лимит unary-методов.
 
 
 | Field | Type | Description |
@@ -142,7 +142,7 @@
 
 
 #### StreamLimit
-
+Лимит stream-соединений.
 
 
 | Field | Type | Description |
@@ -154,13 +154,13 @@
 
 
 #### GetInfoRequest
-
+Запрос информации о пользователе.
 
  <!-- end HasFields -->
 
 
 #### GetInfoResponse
-
+Информация о пользователе.
 
 
 | Field | Type | Description |

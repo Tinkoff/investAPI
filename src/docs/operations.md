@@ -16,7 +16,7 @@
 
 
 #### GetOperations
-Метод получения списка операций по счёту
+Метод получения списка операций по счёту.
 
 - Тело запроса — [OperationsRequest](#operationsrequest)
 
@@ -24,7 +24,7 @@
 
 
 #### GetPortfolio
-Метод получения портфеля по счёту
+Метод получения портфеля по счёту.
 
 - Тело запроса — [PortfolioRequest](#portfoliorequest)
 
@@ -32,7 +32,7 @@
 
 
 #### GetPositions
-Метод получения списка позиций по счёту
+Метод получения списка позиций по счёту.
 
 - Тело запроса — [PositionsRequest](#positionsrequest)
 
@@ -40,7 +40,7 @@
 
 
 #### GetWithdrawLimits
-Метод получения доступного остатка для вывода средств
+Метод получения доступного остатка для вывода средств.
 
 - Тело запроса — [WithdrawLimitsRequest](#withdrawlimitsrequest)
 
@@ -54,7 +54,7 @@
 
 
 #### OperationsRequest
-
+Запрос получения списка операций по счёту.
 
 
 | Field | Type | Description |
@@ -69,7 +69,7 @@
 
 
 #### OperationsResponse
-
+Список операций.
 
 
 | Field | Type | Description |
@@ -80,7 +80,7 @@
 
 
 #### Operation
-Данные по операции
+Данные по операции.
 
 
 | Field | Type | Description |
@@ -96,13 +96,14 @@
 | figi |  [string](#string) | Figi-идентификатор инструмента, связанного с операцией |
 | instrument_type |  [string](#string) | Тип инструмента. Возможные значения: </br>**bond** — облигация; </br>**share** — акция; </br>**currency** — валюта; </br>**etf** — фонд; </br>**futures** — фьючерс. |
 | date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время операции в формате часовом поясе UTC |
-| type |  [string](#string) | Тип операции |
+| type |  [string](#string) | Текстовое описание типа операции |
+| operation_type |  [OperationType](#operationtype) | Тип операции |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
 #### PortfolioRequest
-
+Запрос получения текущего портфеля по счёту.
 
 
 | Field | Type | Description |
@@ -113,7 +114,7 @@
 
 
 #### PortfolioResponse
-
+Текущий портфель по счёту.
 
 
 | Field | Type | Description |
@@ -130,7 +131,7 @@
 
 
 #### PositionsRequest
-
+Запрос позиций портфеля по счёту.
 
 
 | Field | Type | Description |
@@ -141,7 +142,7 @@
 
 
 #### PositionsResponse
-
+Список позиций по счёту.
 
 
 | Field | Type | Description |
@@ -155,7 +156,7 @@
 
 
 #### WithdrawLimitsRequest
-
+Запрос доступного для вывода остатка.
 
 
 | Field | Type | Description |
@@ -166,7 +167,7 @@
 
 
 #### WithdrawLimitsResponse
-
+Доступный для вывода остаток.
 
 
 | Field | Type | Description |
@@ -178,7 +179,7 @@
 
 
 #### PortfolioPosition
-
+Позиции портфеля.
 
 
 | Field | Type | Description |
@@ -195,7 +196,7 @@
 
 
 #### PositionsSecurities
-
+Баланс позиции ценной бумаги.
 
 
 | Field | Type | Description |
@@ -218,6 +219,59 @@
 | OPERATION_STATE_UNSPECIFIED | 0 | Статус операции не определён |
 | OPERATION_STATE_EXECUTED | 1 | Исполнена |
 | OPERATION_STATE_CANCELED | 2 | Отменена |
+
+
+
+
+#### OperationType
+Тип операции
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| OPERATION_TYPE_UNSPECIFIED | 0 | Тип операции не определён |
+| OPERATION_TYPE_INPUT | 1 | Завод денежных средств |
+| OPERATION_TYPE_BOND_TAX | 2 | Удержание налога по купонам |
+| OPERATION_TYPE_OUTPUT_SECURITIES | 3 | Вывод ЦБ |
+| OPERATION_TYPE_OVERNIGHT | 4 | Доход по сделке РЕПО овернайт |
+| OPERATION_TYPE_TAX | 5 | Удержание налога |
+| OPERATION_TYPE_BOND_REPAYMENT_FULL | 6 | Полное погашение облигаций |
+| OPERATION_TYPE_SELL_CARD | 7 | Продажа ЦБ с карты |
+| OPERATION_TYPE_DIVIDEND_TAX | 8 | Удержание налога по дивидендам |
+| OPERATION_TYPE_OUTPUT | 9 | Вывод денежных средств |
+| OPERATION_TYPE_BOND_REPAYMENT | 10 | Частичное погашение облигаций |
+| OPERATION_TYPE_TAX_CORRECTION | 11 | Корректировка налога |
+| OPERATION_TYPE_SERVICE_FEE | 12 | Удержание комиссии за обслуживание брокерского счёта |
+| OPERATION_TYPE_BENEFIT_TAX | 13 | Удержание налога за материальную выгоду |
+| OPERATION_TYPE_MARGIN_FEE | 14 | Удержание комиссии за непокрытую позицию |
+| OPERATION_TYPE_BUY | 15 | Покупка ЦБ |
+| OPERATION_TYPE_BUY_CARD | 16 | Покупка ЦБ с карты |
+| OPERATION_TYPE_INPUT_SECURITIES | 17 | Завод ЦБ |
+| OPERATION_TYPE_SELL_MARJIN | 18 | Продажа в результате Margin-call |
+| OPERATION_TYPE_BROKER_FEE | 19 | Удержание комиссии за операцию |
+| OPERATION_TYPE_BUY_MARGIN | 20 | Покупка в результате Margin-call |
+| OPERATION_TYPE_DIVIDEND | 21 | Выплата дивидендов |
+| OPERATION_TYPE_SELL | 22 | Продажа ЦБ |
+| OPERATION_TYPE_COUPON | 23 | Выплата купонов |
+| OPERATION_TYPE_SUCCESS_FEE | 24 | Удержание комиссии SuccessFee |
+| OPERATION_TYPE_DIVIDEND_TRANSFER | 25 | Передача дивидендного дохода |
+| OPERATION_TYPE_ACCRUING_VARMARJIN | 26 | Зачисление вариационной маржи |
+| OPERATION_TYPE_WRITING_OFF_VARMARJIN | 27 | Списание вариационной маржи |
+| OPERATION_TYPE_DELIVERY_BUY | 28 | Покупка в рамках экспирации фьючерсного контракта |
+| OPERATION_TYPE_DELIVERY_SELL | 29 | Продажа в рамках экспирации фьючерсного контракта |
+| OPERATION_TYPE_TRACK_MFEE | 30 | Комиссия за управление по счёту автоследования |
+| OPERATION_TYPE_TRACK_PFEE | 31 | Комиссия за результат по счёту автоследования |
+| OPERATION_TYPE_TAX_PROGRESSIVE | 32 | Удержание налога по ставке 15% |
+| OPERATION_TYPE_BOND_TAX_PROGRESSIVE | 33 | Удержание налога по купонам по ставке 15% |
+| OPERATION_TYPE_DIVIDEND_TAX_PROGRESSIVE | 34 | Удержание налога по дивидендам по ставке 15% |
+| OPERATION_TYPE_BENEFIT_TAX_PROGRESSIVE | 35 | Удержание налога за материальную выгоду по ставке 15% |
+| OPERATION_TYPE_TAX_CORRECTION_PROGRESSIVE | 36 | Корректировка налога по ставке 15% |
+| OPERATION_TYPE_TAX_REPO_PROGRESSIVE | 37 | Удержание налога за возмещение по сделкам РЕПО по ставке 15% |
+| OPERATION_TYPE_TAX_REPO | 38 | Удержание налога за возмещение по сделкам РЕПО |
+| OPERATION_TYPE_TAX_REPO_HOLD | 39 | Удержание налога по сделкам РЕПО |
+| OPERATION_TYPE_TAX_REPO_REFUND | 40 | Возврат налога по сделкам РЕПО |
+| OPERATION_TYPE_TAX_REPO_HOLD_PROGRESSIVE | 41 | Удержание налога по сделкам РЕПО по ставке 15% |
+| OPERATION_TYPE_TAX_REPO_REFUND_PROGRESSIVE | 42 | Возврат налога по сделкам РЕПО по ставке 15% |
+| OPERATION_TYPE_DIV_EXT | 43 | Выплата дивидендов на карту |
 
 
  <!-- range .Enums -->

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package tinkoff.public.invest.api.contract.v1;
 
-option go_package = "Tinkoff/investAPI";
+option go_package = "investapi";
 option java_package = "ru.tinkoff.piapi.contract.v1";
 option java_multiple_files = true;
 option csharp_namespace = "Tinkoff.InvestAPI.V1";
@@ -14,25 +14,30 @@ import "common.proto";
 
 service UsersService { /*Сервис предназначен для получения: </br> **1**.
                        списка счетов пользователя; </br> **2**. маржинальных показателе по счёту.*/
-  rpc GetAccounts (GetAccountsRequest) returns (GetAccountsResponse); //Метод получения счетов пользователя
 
-  rpc GetMarginAttributes (GetMarginAttributesRequest) returns (GetMarginAttributesResponse); //Расчёт маржинальных показателей по счёту
+  //Метод получения счетов пользователя.
+  rpc GetAccounts (GetAccountsRequest) returns (GetAccountsResponse);
 
-  rpc GetUserTariff (GetUserTariffRequest) returns (GetUserTariffResponse); //Запрос тарифа пользователя
+  //Расчёт маржинальных показателей по счёту.
+  rpc GetMarginAttributes (GetMarginAttributesRequest) returns (GetMarginAttributesResponse);
 
-  rpc GetInfo (GetInfoRequest) returns (GetInfoResponse); //Метод получения информации о пользователе
+  //Запрос тарифа пользователя.
+  rpc GetUserTariff (GetUserTariffRequest) returns (GetUserTariffResponse);
+
+  //Метод получения информации о пользователе.
+  rpc GetInfo (GetInfoRequest) returns (GetInfoResponse);
 }
 
-// Запрос получения счетов не имеет входных параметров
+//Запрос получения счетов пользователя.
 message GetAccountsRequest {}
 
-// Ответ на запрос получения счетов.
+//Список счетов пользователя.
 message GetAccountsResponse {
   // Массив счетов клиента.
   repeated Account accounts = 1;
 }
 
-// Счёт клиента.
+//Информация о счёте.
 message Account {
 
   // Идентификатор счёта.
@@ -54,7 +59,7 @@ message Account {
   google.protobuf.Timestamp closed_date = 6;
 }
 
-// Тип счёта.
+//Тип счёта.
 enum AccountType {
   ACCOUNT_TYPE_UNSPECIFIED = 0; //Тип аккаунта не определён.
   ACCOUNT_TYPE_TINKOFF = 1; //Брокерский счёт Тинькофф.
@@ -62,7 +67,7 @@ enum AccountType {
   ACCOUNT_TYPE_INVEST_BOX = 3; //Инвесткопилка.
 }
 
-// Статус счёта.
+//Статус счёта.
 enum AccountStatus {
   ACCOUNT_STATUS_UNSPECIFIED = 0; //Статус счёта не определён.
   ACCOUNT_STATUS_NEW = 1; //Новый, в процессе открытия.
@@ -70,14 +75,14 @@ enum AccountStatus {
   ACCOUNT_STATUS_CLOSED = 3; //Закрытый счёт.
 }
 
-// Запрос маржинальных показателей по счёту
+//Запрос маржинальных показателей по счёту
 message GetMarginAttributesRequest {
 
   // Идентификатор счёта пользователя.
   string account_id = 1;
 }
 
-// Маржинальные показатели по счёту.
+//Маржинальные показатели по счёту.
 message GetMarginAttributesResponse {
 
   // Ликвидная стоимость портфеля. Подробнее: [что такое ликвидный портфель?](https://help.tinkoff.ru/margin-trade/short/liquid-portfolio/).
@@ -96,27 +101,33 @@ message GetMarginAttributesResponse {
   MoneyValue amount_of_missing_funds = 5;
 }
 
+//Запрос текущих лимитов пользователя.
 message GetUserTariffRequest {
 }
 
+//Текущие лимиты пользователя.
 message GetUserTariffResponse {
   repeated UnaryLimit unary_limits = 1; //Массив лимитов пользователя по unary-запросам
   repeated StreamLimit stream_limits = 2; //Массив лимитов пользователей для stream-соединений
 }
 
+//Лимит unary-методов.
 message UnaryLimit {
   int32 limit_per_minute = 1; //Количество unary-запросов в минуту
   repeated string methods = 2; //Названия методов
 }
 
+//Лимит stream-соединений.
 message StreamLimit {
   int32 limit = 1; //Максимальное количество stream-соединений
   repeated string streams = 2; //Названия stream-методов
 }
 
+//Запрос информации о пользователе.
 message GetInfoRequest {
 }
 
+//Информация о пользователе.
 message GetInfoResponse {
   bool prem_status = 1; //Признак премиум клиента.
   bool qual_status = 2; //Признак квалифицированного инвестора.

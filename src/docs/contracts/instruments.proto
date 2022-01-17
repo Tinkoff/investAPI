@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package tinkoff.public.invest.api.contract.v1;
 
-option go_package = "Tinkoff/investAPI";
+option go_package = "investapi";
 option java_package = "ru.tinkoff.piapi.contract.v1";
 option java_multiple_files = true;
 option csharp_namespace = "Tinkoff.InvestAPI.V1";
@@ -17,48 +17,71 @@ service InstrumentsService {/*Сервис предназначен для по�
                             расписания торговых сессий;</br>**3**. календаря выплат купонов по облигациям;</br>**4**.
                             размера гарантийного обеспечения по фьючерсам;</br>**5**. дивидендов по ценной бумаге.*/
 
-  rpc TradingSchedules (TradingSchedulesRequest) returns (TradingSchedulesResponse); // Метод получения расписания торгов торговых площадок.
+  //Метод получения расписания торгов торговых площадок.
+  rpc TradingSchedules (TradingSchedulesRequest) returns (TradingSchedulesResponse);
 
-  rpc BondBy (InstrumentRequest) returns (BondResponse); //Метод получения облигации по её идентификатору.
-  rpc Bonds (InstrumentsRequest) returns (BondsResponse); //Метод получения списка облигаций.
+  //Метод получения облигации по её идентификатору.
+  rpc BondBy (InstrumentRequest) returns (BondResponse);
 
-  rpc CurrencyBy (InstrumentRequest) returns (CurrencyResponse); //Метод получения валюты по её идентификатору.
-  rpc Currencies (InstrumentsRequest) returns (CurrenciesResponse); //Метод получения списка валют.
+  //Метод получения списка облигаций.
+  rpc Bonds (InstrumentsRequest) returns (BondsResponse);
 
-  rpc EtfBy (InstrumentRequest) returns (EtfResponse); //Метод получения инвестиционного фонда по его идентификатору.
-  rpc Etfs (InstrumentsRequest) returns (EtfsResponse); //Метод получения списка инвестиционных фондов.
+  //Метод получения валюты по её идентификатору.
+  rpc CurrencyBy (InstrumentRequest) returns (CurrencyResponse);
 
-  rpc FutureBy (InstrumentRequest) returns (FutureResponse); //Метод получения фьючерса по его идентификатору.
-  rpc Futures (InstrumentsRequest) returns (FuturesResponse); //Метод получения списка фьючерсов.
+  //Метод получения списка валют.
+  rpc Currencies (InstrumentsRequest) returns (CurrenciesResponse);
 
-  rpc ShareBy (InstrumentRequest) returns (ShareResponse); //Метод получения акции по её идентификатору.
-  rpc Shares (InstrumentsRequest) returns (SharesResponse); //Метод получения списка акций.
+  //Метод получения инвестиционного фонда по его идентификатору.
+  rpc EtfBy (InstrumentRequest) returns (EtfResponse);
 
-  rpc GetAccruedInterests (GetAccruedInterestsRequest) returns (GetAccruedInterestsResponse); //Метод получения накопленного купонного дохода по облигации.
-  rpc GetFuturesMargin (GetFuturesMarginRequest) returns (GetFuturesMarginResponse); //Метод получения размера гарантийного обеспечения по фьючерсам.
+  //Метод получения списка инвестиционных фондов.
+  rpc Etfs (InstrumentsRequest) returns (EtfsResponse);
 
-  rpc GetInstrumentBy (InstrumentRequest) returns (InstrumentResponse); //Метод получения основной информации об инструменте.
+  //Метод получения фьючерса по его идентификатору.
+  rpc FutureBy (InstrumentRequest) returns (FutureResponse);
 
-  rpc GetDividends (GetDividendsRequest) returns (GetDividendsResponse); //Метод для получения событий выплаты дивидендов по инструменту.
+  //Метод получения списка фьючерсов.
+  rpc Futures (InstrumentsRequest) returns (FuturesResponse);
+
+  //Метод получения акции по её идентификатору.
+  rpc ShareBy (InstrumentRequest) returns (ShareResponse);
+
+  //Метод получения списка акций.
+  rpc Shares (InstrumentsRequest) returns (SharesResponse);
+
+  //Метод получения накопленного купонного дохода по облигации.
+  rpc GetAccruedInterests (GetAccruedInterestsRequest) returns (GetAccruedInterestsResponse);
+
+  //Метод получения размера гарантийного обеспечения по фьючерсам.
+  rpc GetFuturesMargin (GetFuturesMarginRequest) returns (GetFuturesMarginResponse);
+
+  //Метод получения основной информации об инструменте.
+  rpc GetInstrumentBy (InstrumentRequest) returns (InstrumentResponse);
+
+  //Метод для получения событий выплаты дивидендов по инструменту.
+  rpc GetDividends (GetDividendsRequest) returns (GetDividendsResponse);
 }
 
+//Запрос расписания торгов
 message TradingSchedulesRequest {
-  string exchange = 1; // Наименование биржи или расчетного календаря. </br>Если не передаётся, возвращается информация по всем доступным торговым площадкам.
-  google.protobuf.Timestamp from = 2; // Начало периода по часовому поясу UTC.
-  google.protobuf.Timestamp to = 3; // Окончание периода по часовому поясу UTC.
+  string exchange = 1; //Наименование биржи или расчетного календаря. </br>Если не передаётся, возвращается информация по всем доступным торговым площадкам.
+  google.protobuf.Timestamp from = 2; //Начало периода по часовому поясу UTC.
+  google.protobuf.Timestamp to = 3; //Окончание периода по часовому поясу UTC.
 }
 
+//Список торговых площадок
 message TradingSchedulesResponse {
   repeated TradingSchedule exchanges = 1; // Список торговых площадок и режимов торгов.
 }
 
-// Данные по торговой площадке.
+//Данные по торговой площадке.
 message TradingSchedule {
   string exchange = 1; // Наименование торговой площадки.
   repeated TradingDay days = 2; // Массив с торговыми и неторговыми днями.
 }
 
-// Информация о времени торгов.
+//Информация о времени торгов.
 message TradingDay {
   google.protobuf.Timestamp date = 1; // Дата.
   bool is_trading_day = 2; // Признак торгового дня на бирже.
@@ -321,12 +344,14 @@ message Share {
   bool api_trade_available_flag = 32; //Признак доступности торгов через API.
 }
 
+//Запрос НКД по облигации
 message GetAccruedInterestsRequest {
   string figi = 1; //Figi-идентификатор инструмента.
   google.protobuf.Timestamp from = 2; //Начало запрашиваемого периода в часовом поясе UTC.
   google.protobuf.Timestamp to = 3; //Окончание запрашиваемого периода в часовом поясе UTC.
 }
 
+//НКД облигации
 message GetAccruedInterestsResponse {
   repeated AccruedInterest accrued_interests = 1; //Массив операций начисления купонов.
 }
@@ -339,13 +364,17 @@ message AccruedInterest {
   Quotation nominal = 4; //Номинал облигации.
 }
 
+//Запрос информации о фьючерсе
 message GetFuturesMarginRequest {
   string figi = 1; // Идентификатор инструмента.
 }
 
+//Данные по фьючерсу
 message GetFuturesMarginResponse {
-  MoneyValue initial_margin_on_buy = 1; // Гарантийное обеспечение при покупке.
-  MoneyValue initial_margin_on_sell = 2; // Гарантийное обеспечение при продаже.
+  MoneyValue initial_margin_on_buy = 1; //Гарантийное обеспечение при покупке.
+  MoneyValue initial_margin_on_sell = 2; //Гарантийное обеспечение при продаже.
+  float min_price_increment = 3; //Шаг цены.
+  Quotation min_price_increment_amount = 4; //Стоимость шага цены.
 }
 
 //Тип идентификатора инструмента. Подробнее об идентификации инструментов: [Идентификация инструментов](/investAPI/faq_identification/)
@@ -398,16 +427,19 @@ message Instrument {
   bool api_trade_available_flag = 24; //Признак доступности торгов через API.
 }
 
+//Запрос дивидендов.
 message GetDividendsRequest {
   string figi = 1; //Figi-идентификатор инструмента.
   google.protobuf.Timestamp from = 2; //Начало запрашиваемого периода в часовом поясе UTC.
   google.protobuf.Timestamp to = 3; //Окончание запрашиваемого периода в часовом поясе UTC.
 }
 
+//Дивиденды.
 message GetDividendsResponse {
   repeated Dividend dividends = 1;
 }
 
+//Информация о выплате.
 message Dividend {
   MoneyValue dividend_net = 1; //Величина дивиденда на 1 ценную бумагу (включая валюту).
   google.protobuf.Timestamp payment_date = 2; //Дата фактических выплат.
@@ -421,6 +453,7 @@ message Dividend {
   google.protobuf.Timestamp created_at = 10; //Дата и время создания записи.
 }
 
+//Тип акций.
 enum ShareType {
   SHARE_TYPE_UNSPECIFIED = 0; //Значение не определено.
   SHARE_TYPE_COMMON = 1; //Обыкновенная

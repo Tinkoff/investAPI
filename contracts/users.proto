@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package tinkoff.public.invest.api.contract.v1;
 
-option go_package = "investapi";
+option go_package = "./;investapi";
 option java_package = "ru.tinkoff.piapi.contract.v1";
 option java_multiple_files = true;
 option csharp_namespace = "Tinkoff.InvestAPI.V1";

@@ -4,7 +4,7 @@ info:
   termsOfService: https://www.tinkoff.ru/invest/disclaimers/basic-information/
   contact:
     email: al.a.volkov@tinkoff.ru
-  version: '1.0'
+  version: '2.0'
 externalDocs:
   description: Документация Tinkoff Invest API
   url: https://tinkoff.github.io/investAPI/

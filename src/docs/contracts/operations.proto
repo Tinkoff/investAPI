@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package tinkoff.public.invest.api.contract.v1;
 
-option go_package = "investapi";
+option go_package = "./;investapi";
 option java_package = "ru.tinkoff.piapi.contract.v1";
 option java_multiple_files = true;
 option csharp_namespace = "Tinkoff.InvestAPI.V1";
@@ -95,8 +95,9 @@ message WithdrawLimitsRequest {
 
 //Доступный для вывода остаток.
 message WithdrawLimitsResponse {
-  repeated MoneyValue money = 1;  //Массив валютных позиций портфеля
-  repeated MoneyValue blocked = 2;  //Массив заблокированных валютных позиций портфеля
+  repeated MoneyValue money = 1; //Массив валютных позиций портфеля
+  repeated MoneyValue blocked = 2; //Массив заблокированных валютных позиций портфеля
+  repeated MoneyValue blocked_guarantee = 3; //Заблокировано под гарантийное обеспечение фьючерсов
 }
 
 //Позиции портфеля.

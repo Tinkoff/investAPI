@@ -174,6 +174,7 @@
 | ----- | ---- | ----------- |
 | money | Массив объектов [MoneyValue](#moneyvalue) | Массив валютных позиций портфеля |
 | blocked | Массив объектов [MoneyValue](#moneyvalue) | Массив заблокированных валютных позиций портфеля |
+| blocked_guarantee | Массив объектов [MoneyValue](#moneyvalue) | Заблокировано под гарантийное обеспечение фьючерсов |
  <!-- end Fields -->
  <!-- end HasFields -->
 

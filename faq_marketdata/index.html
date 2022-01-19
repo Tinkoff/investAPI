@@ -1127,6 +1127,7 @@ isValidPrice(10.16, 0.1) // false
 <p><strong>nominal</strong> — номинал облигации.</p>
 </li>
 </ul>
+<p><a name="futures"></a></p>
 <h3 id="_5">Перевод цены фьючерса в валюту</h3>
 <p>Стоимость фьючерсов так же предоставляется в пунктах, для пересчёта можно воспользоваться формулой: </p>
 <blockquote>
@@ -1144,6 +1145,9 @@ isValidPrice(10.16, 0.1) // false
 <p><strong>min_price_increment_amount</strong> — стоимость шага цены.</p>
 </li>
 </ul>
+<p>Так же при работе с фьючерсами важно учитывать размер гарантийного обеспечения. Узнать эти параметры фьючерсов
+можно при помощи метода: <a href="/investAPI/instruments#getfuturesmargin">getFuturesMargin</a>. Подробнее про срочный
+рынок читайте <a href="https://help.tinkoff.ru/forts/">тут</a></p>
 <h2 id="tinkoff-invest-api">Внебиржевые инструменты в TINKOFF INVEST API</h2>
 <p>В данный момент TINKOFF INVEST API предполагает работу только с биржевыми инструментами.</p>
 <h2 id="tinkoff-invest-api_1">Торговля бумагами Тинькофф через TINKOFF INVEST API</h2>

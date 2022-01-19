@@ -20,6 +20,7 @@ def isValidPrice(price: BigDecimal, increment: BigDecimal): Boolean = {
 isValidPrice(10.1, 0.1) // true
 isValidPrice(10.16, 0.1) // false
 ```
+
 ##Цены облигаций и фьючерсов
 
 Цены облигаций и фьючерсов в TINKOFF INVEST API предоставляются в пунктах. Методика расчёта стоимости 
@@ -38,6 +39,7 @@ isValidPrice(10.16, 0.1) // false
 
 * **nominal** — номинал облигации.
 
+<a name="futures"></a>
 ###Перевод цены фьючерса в валюту
 
 Стоимость фьючерсов так же предоставляется в пунктах, для пересчёта можно воспользоваться формулой: 
@@ -50,6 +52,10 @@ isValidPrice(10.16, 0.1) // false
 * **min_price_increment** — шаг цены;
 
 * **min_price_increment_amount** — стоимость шага цены.
+
+Так же при работе с фьючерсами важно учитывать размер гарантийного обеспечения. Узнать эти параметры фьючерсов
+можно при помощи метода: [getFuturesMargin](/investAPI/instruments#getfuturesmargin). Подробнее про срочный
+рынок читайте [тут](https://help.tinkoff.ru/forts/)
 
 ##Внебиржевые инструменты в TINKOFF INVEST API
 

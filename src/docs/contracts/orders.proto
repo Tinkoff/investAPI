@@ -38,8 +38,16 @@ message TradesStreamRequest {
 
 }
 
-//Информация об исполнении торгового поручения.
+//Информация о торговых поручениях.
 message TradesStreamResponse {
+  oneof payload {
+    OrderTrades order_trades = 1; //Информация об исполнении торгового поручения.
+    Ping ping = 2; //Проверка активности стрима.
+  }
+}
+
+//Информация об исполнении торгового поручения.
+message OrderTrades {
   string order_id = 1; //Идентификатор торгового поручения
   google.protobuf.Timestamp created_at = 2; //Дата и время создания сообщения
   OrderDirection direction = 3; //Направление сделки (возможные значения)

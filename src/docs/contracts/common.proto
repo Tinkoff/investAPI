@@ -9,6 +9,8 @@ option csharp_namespace = "Tinkoff.InvestApi.V1";
 option objc_class_prefix = "TIAPI";
 option php_namespace = "Tinkoff\\Invest\\V1";
 
+import "google/protobuf/timestamp.proto";
+
 //Денежная сумма в определенной валюте
 message MoneyValue {
 
@@ -51,4 +53,11 @@ enum SecurityTradingStatus {
   SECURITY_TRADING_STATUS_DEALER_NORMAL_TRADING = 14; //Доступна торговля в режиме внутренней ликвидности брокера
   SECURITY_TRADING_STATUS_DEALER_BREAK_IN_TRADING = 15; //Перерыв торговли в режиме внутренней ликвидности брокера
   SECURITY_TRADING_STATUS_DEALER_NOT_AVAILABLE_FOR_TRADING = 16; //Недоступна торговля в режиме внутренней ликвидности брокера
+}
+
+//Проверка активности стрима.
+message Ping {
+
+  //Время проверки.
+  google.protobuf.Timestamp time = 1;
 }

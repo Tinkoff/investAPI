@@ -95,6 +95,7 @@ Bi-directional стрим предоставления биржевой инфо
 | trade |  [Trade](#trade) | Сделки. |
 | orderbook |  [OrderBook](#orderbook) | Стакан. |
 | trading_status |  [TradingStatus](#tradingstatus) | Торговый статус. |
+| ping |  [Ping](#ping) | Проверка активности стрима. |
  <!-- end Fields -->
  <!-- end HasFields -->
 

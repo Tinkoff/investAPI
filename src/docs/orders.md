@@ -76,6 +76,18 @@ Stream сделок пользователя
 
 
 #### TradesStreamResponse
+Информация о торговых поручениях.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| order_trades |  [OrderTrades](#ordertrades) | Информация об исполнении торгового поручения. |
+| ping |  [Ping](#ping) | Проверка активности стрима. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### OrderTrades
 Информация об исполнении торгового поручения.
 
 

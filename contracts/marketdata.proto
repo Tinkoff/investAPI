@@ -53,6 +53,7 @@ message MarketDataResponse {
     Trade trade = 6; //Сделки.
     OrderBook orderbook = 7; //Стакан.
     TradingStatus trading_status = 8; //Торговый статус.
+    Ping ping = 9; //Проверка активности стрима.
   }
 }
 

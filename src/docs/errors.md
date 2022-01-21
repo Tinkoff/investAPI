@@ -42,6 +42,8 @@
 30055|INVALID_ARGUMENT|order_id cannot be longer than 36 characters|order_id не может быть длиннее 36 символов|
 30056|INVALID_ARGUMENT|stop order settlement currency is not supported|Валюта выставления стоп-заявки не поддерживается|
 30057|INVALID_ARGUMENT|the order is a duplicate, but the order report was not found|Заявка является дублем, но отчет по заявке не найден|
+30059|INVALID_ARGUMENT|cancel order error: %s|Ошибка метода отмены заявки. </br>Подробнее в тексте ошибки.|
+30060|INVALID_ARGUMENT|cancel stop-order error: %s|Ошибка метода отмены стоп-заявки. </br>Подробнее в тексте ошибки.|
 40002|PERMISSION_DENIED|insufficient privileges|Недостаточно прав для совершения операции. </br>Токен доступа имеет уровень прав read-only.</br>Подробнее: [Виды токенов](/investAPI/index#_2)|
 50001|NOT_FOUND|exchange not found|Биржа не найдена по переданному *exchange_id*.</br>Укажите корректный *exchange_id*.|
 50002|NOT_FOUND|instrument not found|Инструмент не найден.</br>Укажите корректный идентификатор инструмента.|

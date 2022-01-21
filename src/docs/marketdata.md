@@ -304,7 +304,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | high |  [Quotation](#quotation) | Максимальная цена за 1 лот. |
 | low |  [Quotation](#quotation) | Минимальная цена за 1 лот. |
 | close |  [Quotation](#quotation) | Цена закрытия за 1 лот. |
-| value |  [int64](#int64) | Объём сделок в лотах. |
+| volume |  [int64](#int64) | Объём сделок в лотах. |
 | time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время свечи в часовом поясе UTC. |
  <!-- end Fields -->
  <!-- end HasFields -->

@@ -187,7 +187,7 @@ message Candle {
   Quotation high = 4; //Максимальная цена за 1 лот.
   Quotation low = 5; //Минимальная цена за 1 лот.
   Quotation close = 6; //Цена закрытия за 1 лот.
-  int64 value = 7; //Объём сделок в лотах.
+  int64 volume = 7; //Объём сделок в лотах.
   google.protobuf.Timestamp time = 8; //Время свечи в часовом поясе UTC.
 }
 

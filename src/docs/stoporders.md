@@ -134,6 +134,8 @@
 | create_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время выставления заявки в часовом поясе UTC |
 | activation_date_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время конвертации стоп-заявки в биржевую в часовом поясе UTC |
 | expiration_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время снятия заявки в часовом поясе UTC |
+| price |  [MoneyValue](#moneyvalue) | Цена заявки |
+| stop_price |  [MoneyValue](#moneyvalue) | Цена активации стоп-заявки |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->

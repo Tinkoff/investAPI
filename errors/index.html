@@ -973,6 +973,18 @@
 <td>Входной параметр <em>figi</em> является обязательным. </br> Укажите корректный параметр <em>figi</em>.</td>
 </tr>
 <tr>
+<td>30009</td>
+<td>INVALID_ARGUMENT</td>
+<td>'from' is invalid</td>
+<td>Входной параметр <em>from</em> имеет некорректное значение.</br>Укажите корректный параметр <em>from</em>.</td>
+</tr>
+<tr>
+<td>30010</td>
+<td>INVALID_ARGUMENT</td>
+<td>'to' is invalid</td>
+<td>Входной параметр <em>to</em> имеет некорректное значение.</br>Укажите корректный параметр <em>to</em>.</td>
+</tr>
+<tr>
 <td>30011</td>
 <td>INVALID_ARGUMENT</td>
 <td>interval is invalid</td>
@@ -1003,6 +1015,12 @@
 <td>Входной параметр <em>quantity</em> является обязательным. </br> Укажите корректный параметр <em>quantity</em>.</td>
 </tr>
 <tr>
+<td>30016</td>
+<td>INVALID_ARGUMENT</td>
+<td>'quantity' is invalid</td>
+<td>Входной параметр <em>quantity</em> имеет некорректное значение.</br>Укажите корректный параметр <em>quantity</em>.</td>
+</tr>
+<tr>
 <td>30017</td>
 <td>INVALID_ARGUMENT</td>
 <td>missing parameter: 'price'</td>
@@ -1019,6 +1037,12 @@
 <td>INVALID_ARGUMENT</td>
 <td>missing parameter: 'direction'</td>
 <td>Входной параметр <em>direction</em> является обязательным. </br> Укажите корректный параметр <em>direction</em>.</td>
+</tr>
+<tr>
+<td>30020</td>
+<td>INVALID_ARGUMENT</td>
+<td>'direction' is invalid</td>
+<td>Входной параметр <em>direction</em> имеет некорректное значение.</br>Список доступных значений: <a href="/investAPI/stoporders/#stoporderdirection"><em>direction</em></a>.</td>
 </tr>
 <tr>
 <td>30021</td>
@@ -1075,6 +1099,18 @@
 <td>Входной параметр <em>stop_order_type</em> является обязательным. </br>Укажите корректный параметр <em>stop_order_type</em>.</td>
 </tr>
 <tr>
+<td>30038</td>
+<td>INVALID_ARGUMENT</td>
+<td>'stop_order_type' is invalid</td>
+<td>Входной параметр <em>stop_order_type</em> имеет некорректное значение.</br>Список доступных значений: <a href="/investAPI/stoporders/#stopordertype"><em>stop_order_type</em></a>.</td>
+</tr>
+<tr>
+<td>30040</td>
+<td>INVALID_ARGUMENT</td>
+<td>'expire_date' is invalid</td>
+<td>Входной параметр <em>expire_date</em> имеет некорректное значение.</br>Укажите корректный параметр <em>expire_date</em>.</td>
+</tr>
+<tr>
 <td>30041</td>
 <td>INVALID_ARGUMENT</td>
 <td>the method is available only for futures</td>
@@ -1091,6 +1127,12 @@
 <td>INVALID_ARGUMENT</td>
 <td>missing parameter: 'expiration_type'</td>
 <td>Входной параметр <em>expiration_type</em> является обязательным. </br> Укажите корректный параметр <em>expiration_type</em>.</td>
+</tr>
+<tr>
+<td>30044</td>
+<td>INVALID_ARGUMENT</td>
+<td>'expiration_type' is invalid</td>
+<td>Входной параметр <em>expiration_type</em> имеет некорректное значение.</br>Список доступных значений: <a href="/investAPI/stoporders/#stoporderexpirationtype"><em>expiration_type</em></a>.</td>
 </tr>
 <tr>
 <td>30045</td>
@@ -1175,6 +1217,24 @@
 <td>INVALID_ARGUMENT</td>
 <td>cancel stop-order error: %s</td>
 <td>Ошибка метода отмены стоп-заявки. </br>Подробнее в тексте ошибки.</td>
+</tr>
+<tr>
+<td>30061</td>
+<td>INVALID_ARGUMENT</td>
+<td>'from' value out of range</td>
+<td>Входной параметр <em>from</em> имеет некорректное значение.</br>Укажите значение в пределах от 1970-01-01T00:00:00Z до 2099-12-31T23:59:59.999999999Z включительно.</td>
+</tr>
+<tr>
+<td>30062</td>
+<td>INVALID_ARGUMENT</td>
+<td>'to' value out of range</td>
+<td>Входной параметр <em>to</em> имеет некорректное значение.</br>Укажите значение в пределах от 1970-01-01T00:00:00Z до 2099-12-31T23:59:59.999999999Z включительно.</td>
+</tr>
+<tr>
+<td>30063</td>
+<td>INVALID_ARGUMENT</td>
+<td>'expire_date' value out of range</td>
+<td>Входной параметр <em>expire_date</em> имеет некорректное значение.</br>Дата должна быть не ранее текущей и не позднее 2099-12-31T23:59:59.999999999Z.</td>
 </tr>
 <tr>
 <td>40002</td>

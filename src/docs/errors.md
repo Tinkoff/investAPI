@@ -10,14 +10,18 @@
 30006|INVALID_ARGUMENT|missing parameter: 'id_type'|Входной параметр *id_type* является обязательным. </br> Укажите корректный параметр *id_type*.|
 30007|INVALID_ARGUMENT|missing parameter: 'id'|Входной параметр *id* является обязательным. </br> Укажите корректный параметр *id*.|
 30008|INVALID_ARGUMENT|missing parameter: 'figi'|Входной параметр *figi* является обязательным. </br> Укажите корректный параметр *figi*.|
+30009|INVALID_ARGUMENT|'from' is invalid|Входной параметр *from* имеет некорректное значение.</br>Укажите корректный параметр *from*.|
+30010|INVALID_ARGUMENT|'to' is invalid|Входной параметр *to* имеет некорректное значение.</br>Укажите корректный параметр *to*.|
 30011|INVALID_ARGUMENT|interval is invalid|Входной параметр *interval* имеет некорректное значение.</br>Список доступных значений: [*interval*](/investAPI/marketdata#subscriptioninterval).|
 30012|INVALID_ARGUMENT|'to' can't be less then 'from'|Входной параметр *to* не может быть меньше параметра *from*. </br>Укажите корректные параметры *from* и *to*.|
 30013|INVALID_ARGUMENT|'class_code' require for 'id_type' = 'ticker'|Входной параметр *class_code* не может быть пустым при поиске по тикеру. </br>Укажите корректный параметр *class_code*. </br>Подробнее: [Идентификация инструментов](/investAPI/faq_identification/).|
 30014|INVALID_ARGUMENT|the maximum request period for the given candle interval has been exceeded|Превышен максимальный период запроса для данного интервала свечи. </br>Укажите корректный интервал.|
 30015|INVALID_ARGUMENT|missing parameter: 'quantity'|Входной параметр *quantity* является обязательным. </br> Укажите корректный параметр *quantity*.|
+30016|INVALID_ARGUMENT|'quantity' is invalid|Входной параметр *quantity* имеет некорректное значение.</br>Укажите корректный параметр *quantity*.|
 30017|INVALID_ARGUMENT|missing parameter: 'price'|Входной параметр *price* является обязательным. </br> Укажите корректный параметр *price*.|
 30018|INVALID_ARGUMENT|price is invalid|Входной параметр *price* имеет некорректное значение.</br>Укажите корректный параметр *price*.|
 30019|INVALID_ARGUMENT|missing parameter: 'direction'|Входной параметр *direction* является обязательным. </br> Укажите корректный параметр *direction*.|
+30020|INVALID_ARGUMENT|'direction' is invalid|Входной параметр *direction* имеет некорректное значение.</br>Список доступных значений: [*direction*](/investAPI/stoporders/#stoporderdirection).|
 30021|INVALID_ARGUMENT|missing parameter: 'account_id'|Входной параметр *account_id* является обязательным. </br> Укажите корректный параметр *account_id*.|
 30025|INVALID_ARGUMENT|missing parameter: 'order_type'|Входной параметр *order_type* является обязательным. </br> Укажите корректный параметр *order_type*.|
 30027|INVALID_ARGUMENT|missing parameter: 'order_id'|Входной параметр *order_id* является обязательным. </br> Укажите корректный параметр *order_id*.|
@@ -27,9 +31,12 @@
 30034|INVALID_ARGUMENT|not enough balance|Недостаточно средств для совершения сделки (ошибка песочницы). </br>Пополните баланс нужной валюты.|
 30036|INVALID_ARGUMENT|missing parameter: 'stop_price'|Входной параметр *stop_price* является обязательным. </br>Укажите корректный параметр *stop_price*.|
 30037|INVALID_ARGUMENT|missing parameter: 'stop_order_type'|Входной параметр *stop_order_type* является обязательным. </br>Укажите корректный параметр *stop_order_type*.|
+30038|INVALID_ARGUMENT|'stop_order_type' is invalid|Входной параметр *stop_order_type* имеет некорректное значение.</br>Список доступных значений: [*stop_order_type*](/investAPI/stoporders/#stopordertype).|
+30040|INVALID_ARGUMENT|'expire_date' is invalid|Входной параметр *expire_date* имеет некорректное значение.</br>Укажите корректный параметр *expire_date*.|
 30041|INVALID_ARGUMENT|the method is available only for futures|Метод предназначен только для работы с фьючерсами. </br>Передайте во входные параметры метода идентификатор фьючерса.|
 30042|INVALID_ARGUMENT|not enough assets for a margin trade|Недостаточно активов для маржинальной сделки. </br>Проверьте маржинальные показатели счёта.|
 30043|INVALID_ARGUMENT|missing parameter: 'expiration_type'|Входной параметр *expiration_type* является обязательным. </br> Укажите корректный параметр *expiration_type*.|
+30044|INVALID_ARGUMENT|'expiration_type' is invalid|Входной параметр *expiration_type* имеет некорректное значение.</br>Список доступных значений: [*expiration_type*](/investAPI/stoporders/#stoporderexpirationtype).|
 30045|INVALID_ARGUMENT|missing parameter: 'ticker'|Входной параметр *ticker* является обязательным. </br>Укажите корректный параметр *ticker*.|
 30047|INVALID_ARGUMENT|price currency does not match the settlement currency|Валюта цены не совпадает с валютой расчётов по инструменту. </br>Укажите корректную валюту цены.|
 30048|INVALID_ARGUMENT|instrument type is not bond|Метод предназначен только для запроса информации по облигации. </br>Передайте во входные параметры метода идентификатор облигации.|
@@ -44,6 +51,9 @@
 30057|INVALID_ARGUMENT|the order is a duplicate, but the order report was not found|Заявка является дублем, но отчет по заявке не найден|
 30059|INVALID_ARGUMENT|cancel order error: %s|Ошибка метода отмены заявки. </br>Подробнее в тексте ошибки.|
 30060|INVALID_ARGUMENT|cancel stop-order error: %s|Ошибка метода отмены стоп-заявки. </br>Подробнее в тексте ошибки.|
+30061|INVALID_ARGUMENT|'from' value out of range|Входной параметр *from* имеет некорректное значение.</br>Укажите значение в пределах от 1970-01-01T00:00:00Z до 2099-12-31T23:59:59.999999999Z включительно.|
+30062|INVALID_ARGUMENT|'to' value out of range|Входной параметр *to* имеет некорректное значение.</br>Укажите значение в пределах от 1970-01-01T00:00:00Z до 2099-12-31T23:59:59.999999999Z включительно.|
+30063|INVALID_ARGUMENT|'expire_date' value out of range|Входной параметр *expire_date* имеет некорректное значение.</br>Дата должна быть не ранее текущей и не позднее 2099-12-31T23:59:59.999999999Z.|
 40002|PERMISSION_DENIED|insufficient privileges|Недостаточно прав для совершения операции. </br>Токен доступа имеет уровень прав read-only.</br>Подробнее: [Виды токенов](/investAPI/index#_2)|
 50001|NOT_FOUND|exchange not found|Биржа не найдена по переданному *exchange_id*.</br>Укажите корректный *exchange_id*.|
 50002|NOT_FOUND|instrument not found|Инструмент не найден.</br>Укажите корректный идентификатор инструмента.|

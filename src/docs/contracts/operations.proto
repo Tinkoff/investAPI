@@ -70,7 +70,7 @@ message PortfolioResponse {
   MoneyValue total_amount_bonds = 2; //Общая стоимость облигаций в портфеле в рублях
   MoneyValue total_amount_etf = 3; //Общая стоимость фондов в портфеле в рублях
   MoneyValue total_amount_currencies = 4; //Общая стоимость валют в портфеле в рублях
-  MoneyValue total_amount_futures = 5; //Общая стоимость валют в портфеле в рублях
+  MoneyValue total_amount_futures = 5; //Общая стоимость фьючерсов в портфеле в рублях
   float expected_yield = 6; //Текущая доходность портфеля
   repeated PortfolioPosition positions = 7; //Список позиций портфеля
 }

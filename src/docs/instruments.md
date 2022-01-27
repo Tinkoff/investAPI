@@ -199,7 +199,7 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| id_type |  [InstrumentIdType](#instrumentidtype) | Тип идентификатора инструмента. Возможные значения: figi, ticker, isin. Подробнее об идентификации инструментов: [Идентификация инструментов](/investAPI/faq_identification/) |
+| id_type |  [InstrumentIdType](#instrumentidtype) | Тип идентификатора инструмента. Возможные значения: figi, ticker, isin. Подробнее об идентификации инструментов: [Идентификация инструментов](https://tinkoff.github.io/investAPI/faq_identification/) |
 | class_code |  [string](#string) | Идентификатор class_code. Обязателен при id_type = ticker. |
 | id |  [string](#string) | Идентификатор запрашиваемого инструмента. |
  <!-- end Fields -->
@@ -337,7 +337,7 @@
 | ticker |  [string](#string) | Тикер инструмента. |
 | class_code |  [string](#string) | Класс-код (секция торгов). |
 | isin |  [string](#string) | Isin-идентификатор инструмента. |
-| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](/investAPI/glossary#lot) |
+| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot) |
 | currency |  [string](#string) | Валюта расчётов. |
 | klong |  [double](#double) | Коэффициент ставки риска длинной позиции по инструменту. |
 | kshort |  [double](#double) | Коэффициент ставки риска короткой позиции по инструменту. |
@@ -384,7 +384,7 @@
 | ticker |  [string](#string) | Тикер инструмента. |
 | class_code |  [string](#string) | Класс-код (секция торгов). |
 | isin |  [string](#string) | Isin-идентификатор инструмента. |
-| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](/investAPI/glossary#lot) |
+| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot) |
 | currency |  [string](#string) | Валюта расчётов. |
 | klong |  [double](#double) | Коэффициент ставки риска длинной позиции по инструменту. |
 | kshort |  [double](#double) | Коэффициент ставки риска короткой позиции по инструменту. |
@@ -419,7 +419,7 @@
 | ticker |  [string](#string) | Тикер инструмента. |
 | class_code |  [string](#string) | Класс-код (секция торгов). |
 | isin |  [string](#string) | Isin-идентификатор инструмента. |
-| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](/investAPI/glossary#lot) |
+| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot) |
 | currency |  [string](#string) | Валюта расчётов. |
 | klong |  [double](#double) | Коэффициент ставки риска длинной позиции по инструменту. |
 | kshort |  [double](#double) | Коэффициент ставки риска короткой позиции по инструменту. |
@@ -457,7 +457,7 @@
 | figi |  [string](#string) | Figi-идентификатор инструмента. |
 | ticker |  [string](#string) | Тикер инструмента. |
 | class_code |  [string](#string) | Класс-код (секция торгов). |
-| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](/investAPI/glossary#lot) |
+| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot) |
 | currency |  [string](#string) | Валюта расчётов. |
 | klong |  [double](#double) | Коэффициент ставки риска длинной позиции по клиенту. |
 | kshort |  [double](#double) | Коэффициент ставки риска короткой позиции по клиенту. |
@@ -498,7 +498,7 @@
 | ticker |  [string](#string) | Тикер инструмента. |
 | class_code |  [string](#string) | Класс-код (секция торгов). |
 | isin |  [string](#string) | Isin-идентификатор инструмента. |
-| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](/investAPI/glossary#lot) |
+| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot) |
 | currency |  [string](#string) | Валюта расчётов. |
 | klong |  [double](#double) | Коэффициент ставки риска длинной позиции по инструменту. |
 | kshort |  [double](#double) | Коэффициент ставки риска короткой позиции по инструменту. |
@@ -521,7 +521,7 @@
 | buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
 | div_yield_flag |  [bool](#bool) | Признак наличия дивидендной доходности. |
-| share_type |  [ShareType](#sharetype) | Тип акции. Возможные значения: [ShareType](/investAPI/instruments#sharetype) |
+| share_type |  [ShareType](#sharetype) | Тип акции. Возможные значения: [ShareType](https://tinkoff.github.io/investAPI/instruments#sharetype) |
 | min_price_increment |  [float](#float) | Шаг цены. |
 | api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
  <!-- end Fields -->
@@ -612,7 +612,7 @@
 | ticker |  [string](#string) | Тикер инструмента. |
 | class_code |  [string](#string) | Класс-код инструмента. |
 | isin |  [string](#string) | Isin-идентификатор инструмента. |
-| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](/investAPI/glossary#lot) |
+| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot) |
 | currency |  [string](#string) | Валюта расчётов. |
 | klong |  [double](#double) | Коэффициент ставки риска длинной позиции по инструменту. |
 | kshort |  [double](#double) | Коэффициент ставки риска короткой позиции по инструменту. |
@@ -684,7 +684,7 @@
 
 
 #### InstrumentIdType
-Тип идентификатора инструмента. Подробнее об идентификации инструментов: [Идентификация инструментов](/investAPI/faq_identification/)
+Тип идентификатора инструмента. Подробнее об идентификации инструментов: [Идентификация инструментов](https://tinkoff.github.io/investAPI/faq_identification/)
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |

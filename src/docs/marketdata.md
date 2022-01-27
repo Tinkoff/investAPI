@@ -130,7 +130,7 @@ subscribeCandles | Изменения статуса подписки на св�
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](/investAPI/grpc#tracking-id) |
+| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](https://tinkoff.github.io/investAPI/grpc#tracking-id) |
 | candles_subscriptions | Массив объектов [CandleSubscription](#candlesubscription) | Массив статусов подписки на свечи. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -179,7 +179,7 @@ subscribeCandles | Изменения статуса подписки на св�
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](/investAPI/grpc#tracking-id) |
+| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](https://tinkoff.github.io/investAPI/grpc#tracking-id) |
 | order_book_subscriptions | Массив объектов [OrderBookSubscription](#orderbooksubscription) | Массив статусов подписки на стаканы. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -227,7 +227,7 @@ subscribeCandles | Изменения статуса подписки на св�
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](/investAPI/grpc#tracking-id) |
+| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](https://tinkoff.github.io/investAPI/grpc#tracking-id) |
 | trade_subscriptions | Массив объектов [TradeSubscription](#tradesubscription) | Массив статусов подписки на поток сделок. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -274,7 +274,7 @@ subscribeCandles | Изменения статуса подписки на св�
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](/investAPI/grpc#tracking-id) |
+| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](https://tinkoff.github.io/investAPI/grpc#tracking-id) |
 | info_subscriptions | Массив объектов [InfoSubscription](#infosubscription) | Массив статусов подписки на торговый статус. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -348,7 +348,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | direction |  [TradeDirection](#tradedirection) | Направление сделки. |
 | price |  [Quotation](#quotation) | Цена за 1 лот. |
 | quantity |  [int64](#int64) | Количество лотов. |
-| timestamp |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время сделки в часовом поясе UTC по времени биржи. |
+| time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время сделки в часовом поясе UTC по времени биржи. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -361,6 +361,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Figi-идентификатор инструмента. |
 | trading_status |  [SecurityTradingStatus](#securitytradingstatus) | Статус торговли инструментом. |
+| time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время изменения торгового статуса в часовом поясе UTC. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -528,10 +529,10 @@ subscribeCandles | Изменения статуса подписки на св�
 | SUBSCRIPTION_STATUS_UNSPECIFIED | 0 | Статус подписки не определён. |
 | SUBSCRIPTION_STATUS_SUCCESS | 1 | Успешно. |
 | SUBSCRIPTION_STATUS_INSTRUMENT_NOT_FOUND | 2 | Инструмент не найден. |
-| SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID | 3 | Некорректный статус подписки, список возможных значений: [SubscriptionAction](/investAPI/marketdata#subscriptionaction) |
+| SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID | 3 | Некорректный статус подписки, список возможных значений: [SubscriptionAction](https://tinkoff.github.io/investAPI/marketdata#subscriptionaction) |
 | SUBSCRIPTION_STATUS_DEPTH_IS_INVALID | 4 | Некорректная глубина стакана, доступные значения: 10, 20, 30, 40, 50. |
-| SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID | 5 | Некорректный интервал свечей, список возможных значений: [SubscriptionInterval](/investAPI/marketdata#subscriptioninterval) |
-| SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED | 6 | Превышен лимит подписок в рамках стрима, подробнее: [Лимитная политика](/investAPI/limits/) |
+| SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID | 5 | Некорректный интервал свечей, список возможных значений: [SubscriptionInterval](https://tinkoff.github.io/investAPI/marketdata#subscriptioninterval) |
+| SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED | 6 | Превышен лимит подписок в рамках стрима, подробнее: [Лимитная политика](https://tinkoff.github.io/investAPI/limits/) |
 | SUBSCRIPTION_STATUS_INTERNAL_ERROR | 7 | Внутренняя ошибка сервиса. |
 
 

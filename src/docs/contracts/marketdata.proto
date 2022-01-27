@@ -85,7 +85,7 @@ message CandleInstrument {
 
 //Результат изменения статус подписки на свечи.
 message SubscribeCandlesResponse {
-  string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](/investAPI/grpc#tracking-id)
+  string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](https://tinkoff.github.io/investAPI/grpc#tracking-id)
   repeated CandleSubscription candles_subscriptions = 2; //Массив статусов подписки на свечи.
 }
 
@@ -101,10 +101,10 @@ enum SubscriptionStatus {
   SUBSCRIPTION_STATUS_UNSPECIFIED = 0; //Статус подписки не определён.
   SUBSCRIPTION_STATUS_SUCCESS = 1; //Успешно.
   SUBSCRIPTION_STATUS_INSTRUMENT_NOT_FOUND = 2; //Инструмент не найден.
-  SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID = 3; //Некорректный статус подписки, список возможных значений: [SubscriptionAction](/investAPI/marketdata#subscriptionaction)
+  SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID = 3; //Некорректный статус подписки, список возможных значений: [SubscriptionAction](https://tinkoff.github.io/investAPI/marketdata#subscriptionaction)
   SUBSCRIPTION_STATUS_DEPTH_IS_INVALID = 4; //Некорректная глубина стакана, доступные значения: 10, 20, 30, 40, 50.
-  SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID = 5; //Некорректный интервал свечей, список возможных значений: [SubscriptionInterval](/investAPI/marketdata#subscriptioninterval)
-  SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED = 6; //Превышен лимит подписок в рамках стрима, подробнее: [Лимитная политика](/investAPI/limits/)
+  SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID = 5; //Некорректный интервал свечей, список возможных значений: [SubscriptionInterval](https://tinkoff.github.io/investAPI/marketdata#subscriptioninterval)
+  SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED = 6; //Превышен лимит подписок в рамках стрима, подробнее: [Лимитная политика](https://tinkoff.github.io/investAPI/limits/)
   SUBSCRIPTION_STATUS_INTERNAL_ERROR = 7; //Внутренняя ошибка сервиса.
 }
 
@@ -122,7 +122,7 @@ message OrderBookInstrument {
 
 //Результат изменения статуса подписки на стаканы.
 message SubscribeOrderBookResponse {
-  string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](/investAPI/grpc#tracking-id)
+  string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](https://tinkoff.github.io/investAPI/grpc#tracking-id)
   repeated OrderBookSubscription order_book_subscriptions = 2; //Массив статусов подписки на стаканы.
 }
 
@@ -146,7 +146,7 @@ message TradeInstrument {
 
 //Результат изменения статуса подписки на поток обезличенных сделок.
 message SubscribeTradesResponse {
-  string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](/investAPI/grpc#tracking-id)
+  string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](https://tinkoff.github.io/investAPI/grpc#tracking-id)
   repeated TradeSubscription trade_subscriptions = 2; //Массив статусов подписки на поток сделок.
 }
 
@@ -169,7 +169,7 @@ message InfoInstrument {
 
 //Результат изменения статуса подписки на торговый статус.
 message SubscribeInfoResponse {
-  string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](/investAPI/grpc#tracking-id)
+  string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](https://tinkoff.github.io/investAPI/grpc#tracking-id)
   repeated InfoSubscription info_subscriptions = 2; //Массив статусов подписки на торговый статус.
 }
 
@@ -213,7 +213,7 @@ message Trade {
   TradeDirection direction = 2; //Направление сделки.
   Quotation price = 3; //Цена за 1 лот.
   int64 quantity = 4; //Количество лотов.
-  google.protobuf.Timestamp timestamp = 5; //Время сделки в часовом поясе UTC по времени биржи.
+  google.protobuf.Timestamp time = 5; //Время сделки в часовом поясе UTC по времени биржи.
 }
 
 //Направление сделки.
@@ -227,6 +227,7 @@ enum TradeDirection {
 message TradingStatus {
   string figi = 1; //Figi-идентификатор инструмента.
   SecurityTradingStatus trading_status = 2; //Статус торговли инструментом.
+  google.protobuf.Timestamp time = 3; //Время изменения торгового статуса в часовом поясе UTC.
 }
 
 //Запрос исторических свечей.

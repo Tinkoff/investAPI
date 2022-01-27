@@ -93,7 +93,7 @@ message TradingDay {
 
 //Запрос получения инструмента по идентификатору.
 message InstrumentRequest {
-  InstrumentIdType id_type = 1; // Тип идентификатора инструмента. Возможные значения: figi, ticker, isin. Подробнее об идентификации инструментов: [Идентификация инструментов](/investAPI/faq_identification/)
+  InstrumentIdType id_type = 1; // Тип идентификатора инструмента. Возможные значения: figi, ticker, isin. Подробнее об идентификации инструментов: [Идентификация инструментов](https://tinkoff.github.io/investAPI/faq_identification/)
   string class_code = 2; // Идентификатор class_code. Обязателен при id_type = ticker.
   string id = 3; // Идентификатор запрашиваемого инструмента.
 }
@@ -159,7 +159,7 @@ message Bond {
   string ticker = 2;  //Тикер инструмента.
   string class_code = 3; //Класс-код (секция торгов).
   string isin = 4; //Isin-идентификатор инструмента.
-  int32 lot = 5; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](/investAPI/glossary#lot)
+  int32 lot = 5; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot)
   string currency = 6; //Валюта расчётов.
 
   double klong = 7; //Коэффициент ставки риска длинной позиции по инструменту.
@@ -204,7 +204,7 @@ message Currency {
   string ticker = 2;  //Тикер инструмента.
   string class_code = 3; //Класс-код (секция торгов).
   string isin = 4; //Isin-идентификатор инструмента.
-  int32 lot = 5; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](/investAPI/glossary#lot)
+  int32 lot = 5; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot)
   string currency = 6; //Валюта расчётов.
 
   double klong = 7; //Коэффициент ставки риска длинной позиции по инструменту.
@@ -237,7 +237,7 @@ message Etf {
   string ticker = 2; //Тикер инструмента.
   string class_code = 3; //Класс-код (секция торгов).
   string isin = 4; //Isin-идентификатор инструмента.
-  int32 lot = 5; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](/investAPI/glossary#lot)
+  int32 lot = 5; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot)
   string currency = 6; //Валюта расчётов.
 
   double klong = 7; //Коэффициент ставки риска длинной позиции по инструменту.
@@ -273,7 +273,7 @@ message Future {
   string figi = 1; //Figi-идентификатор инструмента.
   string ticker = 2;  //Тикер инструмента.
   string class_code = 3; //Класс-код (секция торгов).
-  int32 lot = 4; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](/investAPI/glossary#lot)
+  int32 lot = 4; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot)
   string currency = 5; //Валюта расчётов.
 
   double klong = 6; //Коэффициент ставки риска длинной позиции по клиенту.
@@ -312,7 +312,7 @@ message Share {
   string ticker = 2;  //Тикер инструмента.
   string class_code = 3; //Класс-код (секция торгов).
   string isin = 4; //Isin-идентификатор инструмента.
-  int32 lot = 5; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](/investAPI/glossary#lot)
+  int32 lot = 5; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot)
   string currency = 6; //Валюта расчётов.
 
   double klong = 7; //Коэффициент ставки риска длинной позиции по инструменту.
@@ -339,7 +339,7 @@ message Share {
   bool buy_available_flag = 27; //Признак доступности для покупки.
   bool sell_available_flag = 28; //Признак доступности для продажи.
   bool div_yield_flag = 29; //Признак наличия дивидендной доходности.
-  ShareType share_type = 30; //Тип акции. Возможные значения: [ShareType](/investAPI/instruments#sharetype)
+  ShareType share_type = 30; //Тип акции. Возможные значения: [ShareType](https://tinkoff.github.io/investAPI/instruments#sharetype)
   float min_price_increment = 31; //Шаг цены.
   bool api_trade_available_flag = 32; //Признак доступности торгов через API.
 }
@@ -377,7 +377,7 @@ message GetFuturesMarginResponse {
   Quotation min_price_increment_amount = 4; //Стоимость шага цены.
 }
 
-//Тип идентификатора инструмента. Подробнее об идентификации инструментов: [Идентификация инструментов](/investAPI/faq_identification/)
+//Тип идентификатора инструмента. Подробнее об идентификации инструментов: [Идентификация инструментов](https://tinkoff.github.io/investAPI/faq_identification/)
 enum InstrumentIdType {
   INSTRUMENT_ID_UNSPECIFIED = 0; //Значение не определено.
   INSTRUMENT_ID_TYPE_FIGI = 1; //Figi.
@@ -402,7 +402,7 @@ message Instrument {
   string ticker = 2;  //Тикер инструмента.
   string class_code = 3; //Класс-код инструмента.
   string isin = 4; //Isin-идентификатор инструмента.
-  int32 lot = 5; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](/investAPI/glossary#lot)
+  int32 lot = 5; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot)
   string currency = 6; //Валюта расчётов.
 
   double klong = 7; //Коэффициент ставки риска длинной позиции по инструменту.

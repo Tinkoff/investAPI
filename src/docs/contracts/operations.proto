@@ -104,7 +104,7 @@ message WithdrawLimitsResponse {
 message PortfolioPosition {
   string figi = 1; //Figi-идентификатора инструмента
   string instrument_type = 2; //Тип инструмента
-  float quantity = 3; //Количество лотов в портфеле
+  float quantity = 3; //Количество инструмента в портфеле в штуках
   MoneyValue average_position_price = 4; //Средняя цена лота в позиции
   float expected_yield = 5; //Текущая рассчитанная доходность
   MoneyValue current_nkd = 6; // Текущий НКД

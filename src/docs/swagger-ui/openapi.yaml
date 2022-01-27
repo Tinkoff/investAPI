@@ -2774,15 +2774,31 @@ components:
       example:
         stopOrders:
         - activationDateTime: 2000-01-23T04:56:07.000+00:00
+          stopPrice:
+            nano: 3
+            currency: currency
+            units: units
           lotsRequested: lotsRequested
           expirationTime: 2000-01-23T04:56:07.000+00:00
+          price:
+            nano: 3
+            currency: currency
+            units: units
           figi: figi
           currency: currency
           stopOrderId: stopOrderId
           createDate: 2000-01-23T04:56:07.000+00:00
         - activationDateTime: 2000-01-23T04:56:07.000+00:00
+          stopPrice:
+            nano: 3
+            currency: currency
+            units: units
           lotsRequested: lotsRequested
           expirationTime: 2000-01-23T04:56:07.000+00:00
+          price:
+            nano: 3
+            currency: currency
+            units: units
           figi: figi
           currency: currency
           stopOrderId: stopOrderId
@@ -3995,8 +4011,16 @@ components:
       description: Информация о стоп-заявке.
       example:
         activationDateTime: 2000-01-23T04:56:07.000+00:00
+        stopPrice:
+          nano: 3
+          currency: currency
+          units: units
         lotsRequested: lotsRequested
         expirationTime: 2000-01-23T04:56:07.000+00:00
+        price:
+          nano: 3
+          currency: currency
+          units: units
         figi: figi
         currency: currency
         stopOrderId: stopOrderId
@@ -4024,6 +4048,10 @@ components:
         expirationTime:
           format: date-time
           type: string
+        price:
+          $ref: '#/components/schemas/v1MoneyValue'
+        stopPrice:
+          $ref: '#/components/schemas/v1MoneyValue'
       type: object
     v1StopOrderDirection:
       default: STOP_ORDER_DIRECTION_UNSPECIFIED
@@ -4194,6 +4222,13 @@ components:
     v1WithdrawLimitsResponse:
       description: Доступный для вывода остаток.
       example:
+        blockedGuarantee:
+        - nano: 3
+          currency: currency
+          units: units
+        - nano: 3
+          currency: currency
+          units: units
         money:
         - nano: 3
           currency: currency
@@ -4214,6 +4249,10 @@ components:
             $ref: '#/components/schemas/v1MoneyValue'
           type: array
         blocked:
+          items:
+            $ref: '#/components/schemas/v1MoneyValue'
+          type: array
+        blockedGuarantee:
           items:
             $ref: '#/components/schemas/v1MoneyValue'
           type: array

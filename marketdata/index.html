@@ -2010,7 +2010,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса, подробнее: <a href="/investAPI/grpc#tracking-id">tracking_id</a></td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="https://tinkoff.github.io/investAPI/grpc#tracking-id">tracking_id</a></td>
 </tr>
 <tr>
 <td>candles_subscriptions</td>
@@ -2135,7 +2135,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса, подробнее: <a href="/investAPI/grpc#tracking-id">tracking_id</a></td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="https://tinkoff.github.io/investAPI/grpc#tracking-id">tracking_id</a></td>
 </tr>
 <tr>
 <td>order_book_subscriptions</td>
@@ -2255,7 +2255,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса, подробнее: <a href="/investAPI/grpc#tracking-id">tracking_id</a></td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="https://tinkoff.github.io/investAPI/grpc#tracking-id">tracking_id</a></td>
 </tr>
 <tr>
 <td>trade_subscriptions</td>
@@ -2370,7 +2370,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса, подробнее: <a href="/investAPI/grpc#tracking-id">tracking_id</a></td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="https://tinkoff.github.io/investAPI/grpc#tracking-id">tracking_id</a></td>
 </tr>
 <tr>
 <td>info_subscriptions</td>
@@ -2588,7 +2588,7 @@
 <td>Количество лотов.</td>
 </tr>
 <tr>
-<td>timestamp</td>
+<td>time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
 <td>Время сделки в часовом поясе UTC по времени биржи.</td>
 </tr>
@@ -2621,6 +2621,11 @@
 <td>trading_status</td>
 <td><a href="#securitytradingstatus">SecurityTradingStatus</a></td>
 <td>Статус торговли инструментом.</td>
+</tr>
+<tr>
+<td>time</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время изменения торгового статуса в часовом поясе UTC.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3058,7 +3063,7 @@
 <tr>
 <td>SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID</td>
 <td>3</td>
-<td>Некорректный статус подписки, список возможных значений: <a href="/investAPI/marketdata#subscriptionaction">SubscriptionAction</a></td>
+<td>Некорректный статус подписки, список возможных значений: <a href="https://tinkoff.github.io/investAPI/marketdata#subscriptionaction">SubscriptionAction</a></td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_STATUS_DEPTH_IS_INVALID</td>
@@ -3068,12 +3073,12 @@
 <tr>
 <td>SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID</td>
 <td>5</td>
-<td>Некорректный интервал свечей, список возможных значений: <a href="/investAPI/marketdata#subscriptioninterval">SubscriptionInterval</a></td>
+<td>Некорректный интервал свечей, список возможных значений: <a href="https://tinkoff.github.io/investAPI/marketdata#subscriptioninterval">SubscriptionInterval</a></td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED</td>
 <td>6</td>
-<td>Превышен лимит подписок в рамках стрима, подробнее: <a href="/investAPI/limits/">Лимитная политика</a></td>
+<td>Превышен лимит подписок в рамках стрима, подробнее: <a href="https://tinkoff.github.io/investAPI/limits/">Лимитная политика</a></td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_STATUS_INTERNAL_ERROR</td>

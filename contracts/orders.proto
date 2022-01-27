@@ -85,7 +85,7 @@ message PostOrderResponse {
   MoneyValue total_order_amount = 7; //Итоговая стоимость заявки, включающая все комиссии.
   MoneyValue initial_commission = 8; //Начальная комиссия. Комиссия рассчитанная при выставлении заявки.
   MoneyValue executed_commission = 9; //Фактическая комиссия по итогам исполнения заявки.
-  MoneyValue aci_value = 10; //Значение НКД (накопленного купонного дохода) на дату. Подробнее: [НКД при выставлении торговых поручений](/investAPI/head-orders#coupon)
+  MoneyValue aci_value = 10; //Значение НКД (накопленного купонного дохода) на дату. Подробнее: [НКД при выставлении торговых поручений](https://tinkoff.github.io/investAPI/head-orders#coupon)
 
   string figi = 11; // Figi-идентификатор инструмента.
   OrderDirection direction = 12; //Направление сделки.

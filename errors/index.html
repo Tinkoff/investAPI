@@ -1207,6 +1207,12 @@
 <td>Заявка является дублем, но отчет по заявке не найден</td>
 </tr>
 <tr>
+<td>30058</td>
+<td>INVALID_ARGUMENT</td>
+<td>task not completed yet, please try again later</td>
+<td>Выполнение задачи еще не завершено, попробуйте позже.</td>
+</tr>
+<tr>
 <td>30059</td>
 <td>INVALID_ARGUMENT</td>
 <td>cancel order error: %s</td>
@@ -1235,6 +1241,24 @@
 <td>INVALID_ARGUMENT</td>
 <td>'expire_date' value out of range</td>
 <td>Входной параметр <em>expire_date</em> имеет некорректное значение.</br>Дата должна быть не ранее текущей и не позднее 2099-12-31T23:59:59.999999999Z.</td>
+</tr>
+<tr>
+<td>30064</td>
+<td>INVALID_ARGUMENT</td>
+<td>the required period should not exceed 31 days</td>
+<td>Запрошенный период не может превышать 31 дня. </br> Укажите корректный период.</td>
+</tr>
+<tr>
+<td>30065</td>
+<td>INVALID_ARGUMENT</td>
+<td>missing parameter: 'task_id'</td>
+<td>Входной параметр <em>task_id</em> является обязательным. </br> Укажите корректный параметр <em>task_id</em>.</td>
+</tr>
+<tr>
+<td>30066</td>
+<td>INVALID_ARGUMENT</td>
+<td>missing parameter: 'payload'</td>
+<td>Входной параметр <em>payload</em> является обязательным. </br> Укажите корректный параметр <em>payload</em>.</td>
 </tr>
 <tr>
 <td>40002</td>
@@ -1271,6 +1295,12 @@
 <td>NOT_FOUND</td>
 <td>stop-order not found</td>
 <td>Стоп-заявка не найдена по переданному <em>stop_order_id</em>.</br>Укажите корректный <em>stop_order_id</em>.</td>
+</tr>
+<tr>
+<td>50007</td>
+<td>NOT_FOUND</td>
+<td>task not found</td>
+<td>Задача не найдена.</td>
 </tr>
 <tr>
 <td>70001</td>

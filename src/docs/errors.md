@@ -49,17 +49,22 @@
 30055|INVALID_ARGUMENT|order_id cannot be longer than 36 characters|order_id не может быть длиннее 36 символов|
 30056|INVALID_ARGUMENT|stop order settlement currency is not supported|Валюта выставления стоп-заявки не поддерживается|
 30057|INVALID_ARGUMENT|the order is a duplicate, but the order report was not found|Заявка является дублем, но отчет по заявке не найден|
+30058|INVALID_ARGUMENT|task not completed yet, please try again later|Выполнение задачи еще не завершено, попробуйте позже.|
 30059|INVALID_ARGUMENT|cancel order error: %s|Ошибка метода отмены заявки. </br>Подробнее в тексте ошибки.|
 30060|INVALID_ARGUMENT|cancel stop-order error: %s|Ошибка метода отмены стоп-заявки. </br>Подробнее в тексте ошибки.|
 30061|INVALID_ARGUMENT|'from' value out of range|Входной параметр *from* имеет некорректное значение.</br>Укажите значение в пределах от 1970-01-01T00:00:00Z до 2099-12-31T23:59:59.999999999Z включительно.|
 30062|INVALID_ARGUMENT|'to' value out of range|Входной параметр *to* имеет некорректное значение.</br>Укажите значение в пределах от 1970-01-01T00:00:00Z до 2099-12-31T23:59:59.999999999Z включительно.|
 30063|INVALID_ARGUMENT|'expire_date' value out of range|Входной параметр *expire_date* имеет некорректное значение.</br>Дата должна быть не ранее текущей и не позднее 2099-12-31T23:59:59.999999999Z.|
+30064|INVALID_ARGUMENT|the required period should not exceed 31 days|Запрошенный период не может превышать 31 дня. </br> Укажите корректный период.|
+30065|INVALID_ARGUMENT|missing parameter: 'task_id'|Входной параметр *task_id* является обязательным. </br> Укажите корректный параметр *task_id*.|
+30066|INVALID_ARGUMENT|missing parameter: 'payload'|Входной параметр *payload* является обязательным. </br> Укажите корректный параметр *payload*.|
 40002|PERMISSION_DENIED|insufficient privileges|Недостаточно прав для совершения операции. </br>Токен доступа имеет уровень прав read-only.</br>Подробнее: [Виды токенов](/investAPI/index#_2)|
 50001|NOT_FOUND|exchange not found|Биржа не найдена по переданному *exchange_id*.</br>Укажите корректный *exchange_id*.|
 50002|NOT_FOUND|instrument not found|Инструмент не найден.</br>Укажите корректный идентификатор инструмента.|
 50004|NOT_FOUND|account not found|Счёт не найден по переданному *account_id*.</br>Укажите корректный *account_id*.|
 50005|NOT_FOUND|order not found|Торговое поручение не найдено по переданному *order_id*.</br>Укажите корректный *order_id*.|
 50006|NOT_FOUND|stop-order not found|Стоп-заявка не найдена по переданному *stop_order_id*.</br>Укажите корректный *stop_order_id*.|
+50007|NOT_FOUND|task not found|Задача не найдена.|
 70001|INTERNAL|internal error|Внутренняя ошибка сервиса, попробуйте выполнить запрос позднее.</br>Если ошибка повторяется, обратитесь в службу технической поддержки.|
 70002|INTERNAL|internal network error|Неизвестная сетевая ошибка, попробуйте выполнить запрос позднее.</br>Если ошибка повторяется, обратитесь в службу технической поддержки.|
 80001|RESOURCE_EXHAUSTED|limit of open streams exceeded|Превышен лимит одновременных открытых stream-соединений. Подробнее: [Лимитная политика](/investAPI/limits/)|

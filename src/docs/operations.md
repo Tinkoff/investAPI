@@ -123,8 +123,8 @@
 | total_amount_bonds |  [MoneyValue](#moneyvalue) | Общая стоимость облигаций в портфеле в рублях |
 | total_amount_etf |  [MoneyValue](#moneyvalue) | Общая стоимость фондов в портфеле в рублях |
 | total_amount_currencies |  [MoneyValue](#moneyvalue) | Общая стоимость валют в портфеле в рублях |
-| total_amount_futures |  [MoneyValue](#moneyvalue) | Общая стоимость фьючерсов в портфеле в рублях |
-| expected_yield |  [Quotation](#quotation) | Текущая доходность портфеля |
+| total_amount_futures |  [MoneyValue](#moneyvalue) | Общая стоимость валют в портфеле в рублях |
+| expected_yield |  [float](#float) | Текущая доходность портфеля |
 | positions | Массив объектов [PortfolioPosition](#portfolioposition) | Список позиций портфеля |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -187,9 +187,9 @@
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Figi-идентификатора инструмента |
 | instrument_type |  [string](#string) | Тип инструмента |
-| quantity |  [Quotation](#quotation) | Количество инструмента в портфеле в штуках |
+| quantity |  [float](#float) | Количество инструмента в портфеле в штуках |
 | average_position_price |  [MoneyValue](#moneyvalue) | Средняя цена лота в позиции |
-| expected_yield |  [Quotation](#quotation) | Текущая рассчитанная доходность |
+| expected_yield |  [float](#float) | Текущая рассчитанная доходность |
 | current_nkd |  [MoneyValue](#moneyvalue) | Текущий НКД |
 | average_position_price_pt |  [Quotation](#quotation) | Средняя цена лота в позиции в пунктах (для фьючерсов) |
  <!-- end Fields -->
@@ -247,7 +247,7 @@
 | OPERATION_TYPE_BUY | 15 | Покупка ЦБ |
 | OPERATION_TYPE_BUY_CARD | 16 | Покупка ЦБ с карты |
 | OPERATION_TYPE_INPUT_SECURITIES | 17 | Завод ЦБ |
-| OPERATION_TYPE_SELL_MARGIN | 18 | Продажа в результате Margin-call |
+| OPERATION_TYPE_SELL_MARJIN | 18 | Продажа в результате Margin-call |
 | OPERATION_TYPE_BROKER_FEE | 19 | Удержание комиссии за операцию |
 | OPERATION_TYPE_BUY_MARGIN | 20 | Покупка в результате Margin-call |
 | OPERATION_TYPE_DIVIDEND | 21 | Выплата дивидендов |
@@ -255,8 +255,8 @@
 | OPERATION_TYPE_COUPON | 23 | Выплата купонов |
 | OPERATION_TYPE_SUCCESS_FEE | 24 | Удержание комиссии SuccessFee |
 | OPERATION_TYPE_DIVIDEND_TRANSFER | 25 | Передача дивидендного дохода |
-| OPERATION_TYPE_ACCRUING_VARMARGIN | 26 | Зачисление вариационной маржи |
-| OPERATION_TYPE_WRITING_OFF_VARMARGIN | 27 | Списание вариационной маржи |
+| OPERATION_TYPE_ACCRUING_VARMARJIN | 26 | Зачисление вариационной маржи |
+| OPERATION_TYPE_WRITING_OFF_VARMARJIN | 27 | Списание вариационной маржи |
 | OPERATION_TYPE_DELIVERY_BUY | 28 | Покупка в рамках экспирации фьючерсного контракта |
 | OPERATION_TYPE_DELIVERY_SELL | 29 | Продажа в рамках экспирации фьючерсного контракта |
 | OPERATION_TYPE_TRACK_MFEE | 30 | Комиссия за управление по счёту автоследования |

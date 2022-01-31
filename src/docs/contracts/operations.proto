@@ -70,8 +70,8 @@ message PortfolioResponse {
   MoneyValue total_amount_bonds = 2; //Общая стоимость облигаций в портфеле в рублях
   MoneyValue total_amount_etf = 3; //Общая стоимость фондов в портфеле в рублях
   MoneyValue total_amount_currencies = 4; //Общая стоимость валют в портфеле в рублях
-  MoneyValue total_amount_futures = 5; //Общая стоимость валют в портфеле в рублях
-  float expected_yield = 6; //Текущая доходность портфеля
+  MoneyValue total_amount_futures = 5; //Общая стоимость фьючерсов в портфеле в рублях
+  Quotation expected_yield = 6; //Текущая доходность портфеля
   repeated PortfolioPosition positions = 7; //Список позиций портфеля
 }
 
@@ -86,6 +86,7 @@ message PositionsResponse {
   repeated MoneyValue blocked = 2;  //Массив заблокированных валютных позиций портфеля
   repeated PositionsSecurities securities = 3;  //Список ценно-бумажных позиций портфеля
   bool limits_loading_in_progress = 4;  //Признак идущей в данный момент выгрузки лимитов
+  repeated PositionsFutures futures = 5;  //Список фьючерсов портфеля
 }
 
 //Запрос доступного для вывода остатка.
@@ -104,16 +105,24 @@ message WithdrawLimitsResponse {
 message PortfolioPosition {
   string figi = 1; //Figi-идентификатора инструмента
   string instrument_type = 2; //Тип инструмента
-  float quantity = 3; //Количество инструмента в портфеле в штуках
+  Quotation quantity = 3; //Количество инструмента в портфеле в штуках
   MoneyValue average_position_price = 4; //Средняя цена лота в позиции
-  float expected_yield = 5; //Текущая рассчитанная доходность
+  Quotation expected_yield = 5; //Текущая рассчитанная доходность
   MoneyValue current_nkd = 6; // Текущий НКД
   Quotation average_position_price_pt = 7; //Средняя цена лота в позиции в пунктах (для фьючерсов)
+  MoneyValue current_price = 8; //Текущая цена инструмента
 }
 
 //Баланс позиции ценной бумаги.
 message PositionsSecurities {
   string figi = 1; //Figi-идентификатор бумаги
+  int64 blocked = 2; //Заблокировано
+  int64 balance = 3;  //Текущий баланс
+}
+
+//Баланс фьючерса.
+message PositionsFutures {
+  string figi = 1; //Figi-идентификатор фьючерса
   int64 blocked = 2; //Заблокировано
   int64 balance = 3;  //Текущий баланс
 }
@@ -145,7 +154,7 @@ enum OperationType {
   OPERATION_TYPE_BUY = 15; //Покупка ЦБ
   OPERATION_TYPE_BUY_CARD = 16; //Покупка ЦБ с карты
   OPERATION_TYPE_INPUT_SECURITIES = 17; //Завод ЦБ
-  OPERATION_TYPE_SELL_MARJIN = 18; //Продажа в результате Margin-call
+  OPERATION_TYPE_SELL_MARGIN = 18; //Продажа в результате Margin-call
   OPERATION_TYPE_BROKER_FEE = 19; //Удержание комиссии за операцию
   OPERATION_TYPE_BUY_MARGIN = 20; //Покупка в результате Margin-call
   OPERATION_TYPE_DIVIDEND = 21; //Выплата дивидендов
@@ -153,8 +162,8 @@ enum OperationType {
   OPERATION_TYPE_COUPON = 23; //Выплата купонов
   OPERATION_TYPE_SUCCESS_FEE = 24; //Удержание комиссии SuccessFee
   OPERATION_TYPE_DIVIDEND_TRANSFER = 25; //Передача дивидендного дохода
-  OPERATION_TYPE_ACCRUING_VARMARJIN = 26; //Зачисление вариационной маржи
-  OPERATION_TYPE_WRITING_OFF_VARMARJIN = 27; //Списание вариационной маржи
+  OPERATION_TYPE_ACCRUING_VARMARGIN = 26; //Зачисление вариационной маржи
+  OPERATION_TYPE_WRITING_OFF_VARMARGIN = 27; //Списание вариационной маржи
   OPERATION_TYPE_DELIVERY_BUY = 28; //Покупка в рамках экспирации фьючерсного контракта
   OPERATION_TYPE_DELIVERY_SELL = 29; //Продажа в рамках экспирации фьючерсного контракта
   OPERATION_TYPE_TRACK_MFEE = 30; //Комиссия за управление по счёту автоследования

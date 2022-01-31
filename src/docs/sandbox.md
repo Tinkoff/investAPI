@@ -215,14 +215,6 @@
 
 - Тело ответа — [WithdrawLimitsResponse](#withdrawlimitsresponse)
 
-
-#### GetBrokerReport
-
-
-- Тело запроса — [BrokerReportRequest](#brokerreportrequest)
-
-- Тело ответа — [BrokerReportResponse](#brokerreportresponse)
-
  <!-- range .Methods -->
  <!-- range .Services -->
 
@@ -300,8 +292,8 @@
 | total_amount_bonds |  [MoneyValue](#moneyvalue) | Общая стоимость облигаций в портфеле в рублях |
 | total_amount_etf |  [MoneyValue](#moneyvalue) | Общая стоимость фондов в портфеле в рублях |
 | total_amount_currencies |  [MoneyValue](#moneyvalue) | Общая стоимость валют в портфеле в рублях |
-| total_amount_futures |  [MoneyValue](#moneyvalue) | Общая стоимость валют в портфеле в рублях |
-| expected_yield |  [float](#float) | Текущая доходность портфеля |
+| total_amount_futures |  [MoneyValue](#moneyvalue) | Общая стоимость фьючерсов в портфеле в рублях |
+| expected_yield |  [Quotation](#quotation) | Текущая доходность портфеля |
 | positions | Массив объектов [PortfolioPosition](#portfolioposition) | Список позиций портфеля |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -364,9 +356,9 @@
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Figi-идентификатора инструмента |
 | instrument_type |  [string](#string) | Тип инструмента |
-| quantity |  [float](#float) | Количество инструмента в портфеле в штуках |
+| quantity |  [Quotation](#quotation) | Количество инструмента в портфеле в штуках |
 | average_position_price |  [MoneyValue](#moneyvalue) | Средняя цена лота в позиции |
-| expected_yield |  [float](#float) | Текущая рассчитанная доходность |
+| expected_yield |  [Quotation](#quotation) | Текущая рассчитанная доходность |
 | current_nkd |  [MoneyValue](#moneyvalue) | Текущий НКД |
 | average_position_price_pt |  [Quotation](#quotation) | Средняя цена лота в позиции в пунктах (для фьючерсов) |
  <!-- end Fields -->
@@ -382,117 +374,6 @@
 | figi |  [string](#string) | Figi-идентификатор бумаги |
 | blocked |  [int64](#int64) | Заблокировано |
 | balance |  [int64](#int64) | Текущий баланс |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
-#### BrokerReportRequest
-
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| generate_broker_report_request |  [GenerateBrokerReportRequest](#generatebrokerreportrequest) |  |
-| get_broker_report_request |  [GetBrokerReportRequest](#getbrokerreportrequest) |  |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
-#### BrokerReportResponse
-
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| generate_broker_report_response |  [GenerateBrokerReportResponse](#generatebrokerreportresponse) |  |
-| get_broker_report_response |  [GetBrokerReportResponse](#getbrokerreportresponse) |  |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
-#### GenerateBrokerReportRequest
-
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| account_id |  [string](#string) | Идентификатор счёта клиента |
-| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало периода (по UTC) |
-| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание периода (по UTC) |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
-#### GenerateBrokerReportResponse
-
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| task_id |  [string](#string) | Идентификатор задачи формирования брокерского отчёта |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
-#### GetBrokerReportRequest
-
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| task_id |  [string](#string) | Идентификатор задачи формирования брокерского отчёта |
-| page |  [int32](#int32) | Номер страницы отчета (начинается с 1), значение по умолчанию: 0 |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
-#### GetBrokerReportResponse
-
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| broker_report | Массив объектов [BrokerReport](#brokerreport) |  |
-| itemsCount |  [int32](#int32) | Количество записей в отчете |
-| pagesCount |  [int32](#int32) | Количество страниц с данными отчета (начинается с 0) |
-| page |  [int32](#int32) | Текущая страница (начинается с 0) |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
-#### BrokerReport
-
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| trade_id |  [string](#string) | Номер сделки |
-| order_id |  [string](#string) | Номер поручения |
-| figi |  [string](#string) | Figi-идентификатор инструмента |
-| execute_sign |  [string](#string) | Признак исполнения |
-| trade_datetime |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время заключения |
-| exchange |  [string](#string) | Торговая площадка |
-| class_code |  [string](#string) | Режим торгов |
-| direction |  [string](#string) | Вид сделки |
-| name |  [string](#string) | Сокращённое наименование актива |
-| ticker |  [string](#string) | Код актива |
-| price |  [MoneyValue](#moneyvalue) | Цена за единицу |
-| quantity |  [int64](#int64) | Количество |
-| order_amount |  [MoneyValue](#moneyvalue) | Сумма (без НКД) |
-| aci_value |  [double](#double) | НКД |
-| total_order_amount |  [MoneyValue](#moneyvalue) | Сумма сделки |
-| broker_commission |  [MoneyValue](#moneyvalue) | Комиссия брокера |
-| exchange_commission |  [MoneyValue](#moneyvalue) | Комиссия биржи |
-| exchange_clearing_commission |  [MoneyValue](#moneyvalue) | Комиссия клир. центра |
-| repo_rate |  [double](#double) | Ставка РЕПО (%) |
-| party |  [string](#string) | Контрагент/Брокер |
-| clear_value_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата расчётов |
-| sec_value_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата поставки |
-| broker_status |  [string](#string) | Статус брокера |
-| separate_agreement_type |  [string](#string) | Тип дог. |
-| separate_agreement_number |  [string](#string) | Номер дог. |
-| separate_agreement_date |  [string](#string) | Дата дог. |
-| delivery_type |  [string](#string) | Тип расчёта по сделке |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->
@@ -537,7 +418,7 @@
 | OPERATION_TYPE_BUY | 15 | Покупка ЦБ |
 | OPERATION_TYPE_BUY_CARD | 16 | Покупка ЦБ с карты |
 | OPERATION_TYPE_INPUT_SECURITIES | 17 | Завод ЦБ |
-| OPERATION_TYPE_SELL_MARJIN | 18 | Продажа в результате Margin-call |
+| OPERATION_TYPE_SELL_MARGIN | 18 | Продажа в результате Margin-call |
 | OPERATION_TYPE_BROKER_FEE | 19 | Удержание комиссии за операцию |
 | OPERATION_TYPE_BUY_MARGIN | 20 | Покупка в результате Margin-call |
 | OPERATION_TYPE_DIVIDEND | 21 | Выплата дивидендов |
@@ -545,8 +426,8 @@
 | OPERATION_TYPE_COUPON | 23 | Выплата купонов |
 | OPERATION_TYPE_SUCCESS_FEE | 24 | Удержание комиссии SuccessFee |
 | OPERATION_TYPE_DIVIDEND_TRANSFER | 25 | Передача дивидендного дохода |
-| OPERATION_TYPE_ACCRUING_VARMARJIN | 26 | Зачисление вариационной маржи |
-| OPERATION_TYPE_WRITING_OFF_VARMARJIN | 27 | Списание вариационной маржи |
+| OPERATION_TYPE_ACCRUING_VARMARGIN | 26 | Зачисление вариационной маржи |
+| OPERATION_TYPE_WRITING_OFF_VARMARGIN | 27 | Списание вариационной маржи |
 | OPERATION_TYPE_DELIVERY_BUY | 28 | Покупка в рамках экспирации фьючерсного контракта |
 | OPERATION_TYPE_DELIVERY_SELL | 29 | Продажа в рамках экспирации фьючерсного контракта |
 | OPERATION_TYPE_TRACK_MFEE | 30 | Комиссия за управление по счёту автоследования |

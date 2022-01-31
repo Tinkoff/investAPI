@@ -1270,12 +1270,14 @@ components:
       description: Операция начисления купонов.
       example:
         date: 2000-01-23T04:56:07.000+00:00
-        valuePercent: 6.0274563
+        valuePercent:
+          nano: 6
+          units: units
         nominal:
-          nano: 0
+          nano: 6
           units: units
         value:
-          nano: 0
+          nano: 6
           units: units
       properties:
         date:
@@ -1284,8 +1286,7 @@ components:
         value:
           $ref: '#/components/schemas/v1Quotation'
         valuePercent:
-          format: float
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         nominal:
           $ref: '#/components/schemas/v1Quotation'
       type: object
@@ -1293,40 +1294,54 @@ components:
       description: Объект передачи информации об облигации.
       example:
         figi: figi
-        dshortMin: 7.061401241503109
+        dshortMin:
+          nano: 6
+          units: units
         countryOfRisk: countryOfRisk
         lot: 0
-        dlong: 5.962133916683182
+        dlong:
+          nano: 6
+          units: units
         nominal:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         maturityDate: 2000-01-23T04:56:07.000+00:00
         sellAvailableFlag: true
         currency: currency
         placementPrice:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         aciValue:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         sector: sector
         buyAvailableFlag: true
         classCode: classCode
         ticker: ticker
-        couponQuantityPerYear: 9
+        couponQuantityPerYear: 1
         apiTradeAvailableFlag: true
-        dlongMin: 2.3021358869347655
+        dlongMin:
+          nano: 6
+          units: units
         shortEnabledFlag: true
-        kshort: 1.4658129805029452
+        kshort:
+          nano: 6
+          units: units
         stateRegDate: 2000-01-23T04:56:07.000+00:00
         issueSizePlan: issueSizePlan
-        minPriceIncrement: 2.027123
+        minPriceIncrement:
+          nano: 6
+          units: units
         otcFlag: true
-        klong: 6.027456183070403
-        dshort: 5.637376656633329
+        klong:
+          nano: 6
+          units: units
+        dshort:
+          nano: 6
+          units: units
         issueKind: issueKind
         placementDate: 2000-01-23T04:56:07.000+00:00
         amortizationFlag: true
@@ -1352,23 +1367,17 @@ components:
         currency:
           type: string
         klong:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         kshort:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         dlong:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         dshort:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         dlongMin:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         dshortMin:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         shortEnabledFlag:
           type: boolean
         name:
@@ -1422,8 +1431,7 @@ components:
         amortizationFlag:
           type: boolean
         minPriceIncrement:
-          format: float
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         apiTradeAvailableFlag:
           type: boolean
       type: object
@@ -1432,40 +1440,54 @@ components:
       example:
         instrument:
           figi: figi
-          dshortMin: 7.061401241503109
+          dshortMin:
+            nano: 6
+            units: units
           countryOfRisk: countryOfRisk
           lot: 0
-          dlong: 5.962133916683182
+          dlong:
+            nano: 6
+            units: units
           nominal:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           maturityDate: 2000-01-23T04:56:07.000+00:00
           sellAvailableFlag: true
           currency: currency
           placementPrice:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           aciValue:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           sector: sector
           buyAvailableFlag: true
           classCode: classCode
           ticker: ticker
-          couponQuantityPerYear: 9
+          couponQuantityPerYear: 1
           apiTradeAvailableFlag: true
-          dlongMin: 2.3021358869347655
+          dlongMin:
+            nano: 6
+            units: units
           shortEnabledFlag: true
-          kshort: 1.4658129805029452
+          kshort:
+            nano: 6
+            units: units
           stateRegDate: 2000-01-23T04:56:07.000+00:00
           issueSizePlan: issueSizePlan
-          minPriceIncrement: 2.027123
+          minPriceIncrement:
+            nano: 6
+            units: units
           otcFlag: true
-          klong: 6.027456183070403
-          dshort: 5.637376656633329
+          klong:
+            nano: 6
+            units: units
+          dshort:
+            nano: 6
+            units: units
           issueKind: issueKind
           placementDate: 2000-01-23T04:56:07.000+00:00
           amortizationFlag: true
@@ -1485,40 +1507,54 @@ components:
       example:
         instruments:
         - figi: figi
-          dshortMin: 7.061401241503109
+          dshortMin:
+            nano: 6
+            units: units
           countryOfRisk: countryOfRisk
           lot: 0
-          dlong: 5.962133916683182
+          dlong:
+            nano: 6
+            units: units
           nominal:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           maturityDate: 2000-01-23T04:56:07.000+00:00
           sellAvailableFlag: true
           currency: currency
           placementPrice:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           aciValue:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           sector: sector
           buyAvailableFlag: true
           classCode: classCode
           ticker: ticker
-          couponQuantityPerYear: 9
+          couponQuantityPerYear: 1
           apiTradeAvailableFlag: true
-          dlongMin: 2.3021358869347655
+          dlongMin:
+            nano: 6
+            units: units
           shortEnabledFlag: true
-          kshort: 1.4658129805029452
+          kshort:
+            nano: 6
+            units: units
           stateRegDate: 2000-01-23T04:56:07.000+00:00
           issueSizePlan: issueSizePlan
-          minPriceIncrement: 2.027123
+          minPriceIncrement:
+            nano: 6
+            units: units
           otcFlag: true
-          klong: 6.027456183070403
-          dshort: 5.637376656633329
+          klong:
+            nano: 6
+            units: units
+          dshort:
+            nano: 6
+            units: units
           issueKind: issueKind
           placementDate: 2000-01-23T04:56:07.000+00:00
           amortizationFlag: true
@@ -1530,40 +1566,54 @@ components:
           countryOfRiskName: countryOfRiskName
           isin: isin
         - figi: figi
-          dshortMin: 7.061401241503109
+          dshortMin:
+            nano: 6
+            units: units
           countryOfRisk: countryOfRisk
           lot: 0
-          dlong: 5.962133916683182
+          dlong:
+            nano: 6
+            units: units
           nominal:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           maturityDate: 2000-01-23T04:56:07.000+00:00
           sellAvailableFlag: true
           currency: currency
           placementPrice:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           aciValue:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           sector: sector
           buyAvailableFlag: true
           classCode: classCode
           ticker: ticker
-          couponQuantityPerYear: 9
+          couponQuantityPerYear: 1
           apiTradeAvailableFlag: true
-          dlongMin: 2.3021358869347655
+          dlongMin:
+            nano: 6
+            units: units
           shortEnabledFlag: true
-          kshort: 1.4658129805029452
+          kshort:
+            nano: 6
+            units: units
           stateRegDate: 2000-01-23T04:56:07.000+00:00
           issueSizePlan: issueSizePlan
-          minPriceIncrement: 2.027123
+          minPriceIncrement:
+            nano: 6
+            units: units
           otcFlag: true
-          klong: 6.027456183070403
-          dshort: 5.637376656633329
+          klong:
+            nano: 6
+            units: units
+          dshort:
+            nano: 6
+            units: units
           issueKind: issueKind
           placementDate: 2000-01-23T04:56:07.000+00:00
           amortizationFlag: true
@@ -1640,12 +1690,16 @@ components:
         instruments:
         - isoCurrencyName: isoCurrencyName
           figi: figi
-          dshortMin: 7.061401241503109
+          dshortMin:
+            nano: 6
+            units: units
           countryOfRisk: countryOfRisk
           lot: 0
-          dlong: 5.962133916683182
+          dlong:
+            nano: 6
+            units: units
           nominal:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           sellAvailableFlag: true
@@ -1654,25 +1708,39 @@ components:
           classCode: classCode
           ticker: ticker
           apiTradeAvailableFlag: true
-          dlongMin: 2.3021358869347655
+          dlongMin:
+            nano: 6
+            units: units
           shortEnabledFlag: true
-          kshort: 1.4658129805029452
-          minPriceIncrement: 9.301444
+          kshort:
+            nano: 6
+            units: units
+          minPriceIncrement:
+            nano: 6
+            units: units
           otcFlag: true
-          klong: 6.027456183070403
-          dshort: 5.637376656633329
+          klong:
+            nano: 6
+            units: units
+          dshort:
+            nano: 6
+            units: units
           name: name
           exchange: exchange
           countryOfRiskName: countryOfRiskName
           isin: isin
         - isoCurrencyName: isoCurrencyName
           figi: figi
-          dshortMin: 7.061401241503109
+          dshortMin:
+            nano: 6
+            units: units
           countryOfRisk: countryOfRisk
           lot: 0
-          dlong: 5.962133916683182
+          dlong:
+            nano: 6
+            units: units
           nominal:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           sellAvailableFlag: true
@@ -1681,13 +1749,23 @@ components:
           classCode: classCode
           ticker: ticker
           apiTradeAvailableFlag: true
-          dlongMin: 2.3021358869347655
+          dlongMin:
+            nano: 6
+            units: units
           shortEnabledFlag: true
-          kshort: 1.4658129805029452
-          minPriceIncrement: 9.301444
+          kshort:
+            nano: 6
+            units: units
+          minPriceIncrement:
+            nano: 6
+            units: units
           otcFlag: true
-          klong: 6.027456183070403
-          dshort: 5.637376656633329
+          klong:
+            nano: 6
+            units: units
+          dshort:
+            nano: 6
+            units: units
           name: name
           exchange: exchange
           countryOfRiskName: countryOfRiskName
@@ -1703,12 +1781,16 @@ components:
       example:
         isoCurrencyName: isoCurrencyName
         figi: figi
-        dshortMin: 7.061401241503109
+        dshortMin:
+          nano: 6
+          units: units
         countryOfRisk: countryOfRisk
         lot: 0
-        dlong: 5.962133916683182
+        dlong:
+          nano: 6
+          units: units
         nominal:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         sellAvailableFlag: true
@@ -1717,13 +1799,23 @@ components:
         classCode: classCode
         ticker: ticker
         apiTradeAvailableFlag: true
-        dlongMin: 2.3021358869347655
+        dlongMin:
+          nano: 6
+          units: units
         shortEnabledFlag: true
-        kshort: 1.4658129805029452
-        minPriceIncrement: 9.301444
+        kshort:
+          nano: 6
+          units: units
+        minPriceIncrement:
+          nano: 6
+          units: units
         otcFlag: true
-        klong: 6.027456183070403
-        dshort: 5.637376656633329
+        klong:
+          nano: 6
+          units: units
+        dshort:
+          nano: 6
+          units: units
         name: name
         exchange: exchange
         countryOfRiskName: countryOfRiskName
@@ -1743,23 +1835,17 @@ components:
         currency:
           type: string
         klong:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         kshort:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         dlong:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         dshort:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         dlongMin:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         dshortMin:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         shortEnabledFlag:
           type: boolean
         name:
@@ -1783,8 +1869,7 @@ components:
         isoCurrencyName:
           type: string
         minPriceIncrement:
-          format: float
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         apiTradeAvailableFlag:
           type: boolean
       type: object
@@ -1794,12 +1879,16 @@ components:
         instrument:
           isoCurrencyName: isoCurrencyName
           figi: figi
-          dshortMin: 7.061401241503109
+          dshortMin:
+            nano: 6
+            units: units
           countryOfRisk: countryOfRisk
           lot: 0
-          dlong: 5.962133916683182
+          dlong:
+            nano: 6
+            units: units
           nominal:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           sellAvailableFlag: true
@@ -1808,13 +1897,23 @@ components:
           classCode: classCode
           ticker: ticker
           apiTradeAvailableFlag: true
-          dlongMin: 2.3021358869347655
+          dlongMin:
+            nano: 6
+            units: units
           shortEnabledFlag: true
-          kshort: 1.4658129805029452
-          minPriceIncrement: 9.301444
+          kshort:
+            nano: 6
+            units: units
+          minPriceIncrement:
+            nano: 6
+            units: units
           otcFlag: true
-          klong: 6.027456183070403
-          dshort: 5.637376656633329
+          klong:
+            nano: 6
+            units: units
+          dshort:
+            nano: 6
+            units: units
           name: name
           exchange: exchange
           countryOfRiskName: countryOfRiskName
@@ -1830,16 +1929,16 @@ components:
         createdAt: 2000-01-23T04:56:07.000+00:00
         recordDate: 2000-01-23T04:56:07.000+00:00
         yieldValue:
-          nano: 0
+          nano: 6
           units: units
         closePrice:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         paymentDate: 2000-01-23T04:56:07.000+00:00
         regularity: regularity
         dividendNet:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         lastBuyDate: 2000-01-23T04:56:07.000+00:00
@@ -1875,12 +1974,18 @@ components:
       description: Объект передачи информации об инвестиционном фонде.
       example:
         releasedDate: 2000-01-23T04:56:07.000+00:00
-        fixedCommission: 9.301444243932576
+        fixedCommission:
+          nano: 6
+          units: units
         figi: figi
-        dshortMin: 7.061401241503109
+        dshortMin:
+          nano: 6
+          units: units
         countryOfRisk: countryOfRisk
         lot: 0
-        dlong: 5.962133916683182
+        dlong:
+          nano: 6
+          units: units
         sellAvailableFlag: true
         currency: currency
         sector: sector
@@ -1889,16 +1994,28 @@ components:
         focusType: focusType
         ticker: ticker
         apiTradeAvailableFlag: true
-        dlongMin: 2.3021358869347655
+        dlongMin:
+          nano: 6
+          units: units
         shortEnabledFlag: true
-        kshort: 1.4658129805029452
-        minPriceIncrement: 2.027123
+        kshort:
+          nano: 6
+          units: units
+        minPriceIncrement:
+          nano: 6
+          units: units
         otcFlag: true
-        klong: 6.027456183070403
-        dshort: 5.637376656633329
+        klong:
+          nano: 6
+          units: units
+        dshort:
+          nano: 6
+          units: units
         rebalancingFreq: rebalancingFreq
         name: name
-        numShares: 3.616076749251911
+        numShares:
+          nano: 6
+          units: units
         exchange: exchange
         countryOfRiskName: countryOfRiskName
         isin: isin
@@ -1917,23 +2034,17 @@ components:
         currency:
           type: string
         klong:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         kshort:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         dlong:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         dshort:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         dlongMin:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         dshortMin:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         shortEnabledFlag:
           type: boolean
         name:
@@ -1941,16 +2052,14 @@ components:
         exchange:
           type: string
         fixedCommission:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         focusType:
           type: string
         releasedDate:
           format: date-time
           type: string
         numShares:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         countryOfRisk:
           type: string
         countryOfRiskName:
@@ -1968,8 +2077,7 @@ components:
         sellAvailableFlag:
           type: boolean
         minPriceIncrement:
-          format: float
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         apiTradeAvailableFlag:
           type: boolean
       type: object
@@ -1978,12 +2086,18 @@ components:
       example:
         instrument:
           releasedDate: 2000-01-23T04:56:07.000+00:00
-          fixedCommission: 9.301444243932576
+          fixedCommission:
+            nano: 6
+            units: units
           figi: figi
-          dshortMin: 7.061401241503109
+          dshortMin:
+            nano: 6
+            units: units
           countryOfRisk: countryOfRisk
           lot: 0
-          dlong: 5.962133916683182
+          dlong:
+            nano: 6
+            units: units
           sellAvailableFlag: true
           currency: currency
           sector: sector
@@ -1992,16 +2106,28 @@ components:
           focusType: focusType
           ticker: ticker
           apiTradeAvailableFlag: true
-          dlongMin: 2.3021358869347655
+          dlongMin:
+            nano: 6
+            units: units
           shortEnabledFlag: true
-          kshort: 1.4658129805029452
-          minPriceIncrement: 2.027123
+          kshort:
+            nano: 6
+            units: units
+          minPriceIncrement:
+            nano: 6
+            units: units
           otcFlag: true
-          klong: 6.027456183070403
-          dshort: 5.637376656633329
+          klong:
+            nano: 6
+            units: units
+          dshort:
+            nano: 6
+            units: units
           rebalancingFreq: rebalancingFreq
           name: name
-          numShares: 3.616076749251911
+          numShares:
+            nano: 6
+            units: units
           exchange: exchange
           countryOfRiskName: countryOfRiskName
           isin: isin
@@ -2014,12 +2140,18 @@ components:
       example:
         instruments:
         - releasedDate: 2000-01-23T04:56:07.000+00:00
-          fixedCommission: 9.301444243932576
+          fixedCommission:
+            nano: 6
+            units: units
           figi: figi
-          dshortMin: 7.061401241503109
+          dshortMin:
+            nano: 6
+            units: units
           countryOfRisk: countryOfRisk
           lot: 0
-          dlong: 5.962133916683182
+          dlong:
+            nano: 6
+            units: units
           sellAvailableFlag: true
           currency: currency
           sector: sector
@@ -2028,26 +2160,44 @@ components:
           focusType: focusType
           ticker: ticker
           apiTradeAvailableFlag: true
-          dlongMin: 2.3021358869347655
+          dlongMin:
+            nano: 6
+            units: units
           shortEnabledFlag: true
-          kshort: 1.4658129805029452
-          minPriceIncrement: 2.027123
+          kshort:
+            nano: 6
+            units: units
+          minPriceIncrement:
+            nano: 6
+            units: units
           otcFlag: true
-          klong: 6.027456183070403
-          dshort: 5.637376656633329
+          klong:
+            nano: 6
+            units: units
+          dshort:
+            nano: 6
+            units: units
           rebalancingFreq: rebalancingFreq
           name: name
-          numShares: 3.616076749251911
+          numShares:
+            nano: 6
+            units: units
           exchange: exchange
           countryOfRiskName: countryOfRiskName
           isin: isin
         - releasedDate: 2000-01-23T04:56:07.000+00:00
-          fixedCommission: 9.301444243932576
+          fixedCommission:
+            nano: 6
+            units: units
           figi: figi
-          dshortMin: 7.061401241503109
+          dshortMin:
+            nano: 6
+            units: units
           countryOfRisk: countryOfRisk
           lot: 0
-          dlong: 5.962133916683182
+          dlong:
+            nano: 6
+            units: units
           sellAvailableFlag: true
           currency: currency
           sector: sector
@@ -2056,16 +2206,28 @@ components:
           focusType: focusType
           ticker: ticker
           apiTradeAvailableFlag: true
-          dlongMin: 2.3021358869347655
+          dlongMin:
+            nano: 6
+            units: units
           shortEnabledFlag: true
-          kshort: 1.4658129805029452
-          minPriceIncrement: 2.027123
+          kshort:
+            nano: 6
+            units: units
+          minPriceIncrement:
+            nano: 6
+            units: units
           otcFlag: true
-          klong: 6.027456183070403
-          dshort: 5.637376656633329
+          klong:
+            nano: 6
+            units: units
+          dshort:
+            nano: 6
+            units: units
           rebalancingFreq: rebalancingFreq
           name: name
-          numShares: 3.616076749251911
+          numShares:
+            nano: 6
+            units: units
           exchange: exchange
           countryOfRiskName: countryOfRiskName
           isin: isin
@@ -2079,11 +2241,15 @@ components:
       description: Объект передачи информации о фьючерсе.
       example:
         figi: figi
-        dshortMin: 7.061401241503109
+        dshortMin:
+          nano: 6
+          units: units
         countryOfRisk: countryOfRisk
         lot: 0
         futuresType: futuresType
-        dlong: 5.962133916683182
+        dlong:
+          nano: 6
+          units: units
         lastTradeDate: 2000-01-23T04:56:07.000+00:00
         sellAvailableFlag: true
         currency: currency
@@ -2093,16 +2259,28 @@ components:
         classCode: classCode
         ticker: ticker
         firstTradeDate: 2000-01-23T04:56:07.000+00:00
-        basicAssetSize: 9.301444243932576
+        basicAssetSize:
+          nano: 6
+          units: units
         apiTradeAvailableFlag: true
-        dlongMin: 2.3021358869347655
+        dlongMin:
+          nano: 6
+          units: units
         shortEnabledFlag: true
-        kshort: 1.4658129805029452
+        kshort:
+          nano: 6
+          units: units
         assetType: assetType
-        minPriceIncrement: 3.6160767
+        minPriceIncrement:
+          nano: 6
+          units: units
         otcFlag: true
-        klong: 6.027456183070403
-        dshort: 5.637376656633329
+        klong:
+          nano: 6
+          units: units
+        dshort:
+          nano: 6
+          units: units
         name: name
         basicAsset: basicAsset
         exchange: exchange
@@ -2120,23 +2298,17 @@ components:
         currency:
           type: string
         klong:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         kshort:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         dlong:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         dshort:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         dlongMin:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         dshortMin:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         shortEnabledFlag:
           type: boolean
         name:
@@ -2156,8 +2328,7 @@ components:
         basicAsset:
           type: string
         basicAssetSize:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         countryOfRisk:
           type: string
         countryOfRiskName:
@@ -2176,8 +2347,7 @@ components:
         sellAvailableFlag:
           type: boolean
         minPriceIncrement:
-          format: float
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         apiTradeAvailableFlag:
           type: boolean
       type: object
@@ -2186,11 +2356,15 @@ components:
       example:
         instrument:
           figi: figi
-          dshortMin: 7.061401241503109
+          dshortMin:
+            nano: 6
+            units: units
           countryOfRisk: countryOfRisk
           lot: 0
           futuresType: futuresType
-          dlong: 5.962133916683182
+          dlong:
+            nano: 6
+            units: units
           lastTradeDate: 2000-01-23T04:56:07.000+00:00
           sellAvailableFlag: true
           currency: currency
@@ -2200,16 +2374,28 @@ components:
           classCode: classCode
           ticker: ticker
           firstTradeDate: 2000-01-23T04:56:07.000+00:00
-          basicAssetSize: 9.301444243932576
+          basicAssetSize:
+            nano: 6
+            units: units
           apiTradeAvailableFlag: true
-          dlongMin: 2.3021358869347655
+          dlongMin:
+            nano: 6
+            units: units
           shortEnabledFlag: true
-          kshort: 1.4658129805029452
+          kshort:
+            nano: 6
+            units: units
           assetType: assetType
-          minPriceIncrement: 3.6160767
+          minPriceIncrement:
+            nano: 6
+            units: units
           otcFlag: true
-          klong: 6.027456183070403
-          dshort: 5.637376656633329
+          klong:
+            nano: 6
+            units: units
+          dshort:
+            nano: 6
+            units: units
           name: name
           basicAsset: basicAsset
           exchange: exchange
@@ -2223,11 +2409,15 @@ components:
       example:
         instruments:
         - figi: figi
-          dshortMin: 7.061401241503109
+          dshortMin:
+            nano: 6
+            units: units
           countryOfRisk: countryOfRisk
           lot: 0
           futuresType: futuresType
-          dlong: 5.962133916683182
+          dlong:
+            nano: 6
+            units: units
           lastTradeDate: 2000-01-23T04:56:07.000+00:00
           sellAvailableFlag: true
           currency: currency
@@ -2237,26 +2427,42 @@ components:
           classCode: classCode
           ticker: ticker
           firstTradeDate: 2000-01-23T04:56:07.000+00:00
-          basicAssetSize: 9.301444243932576
+          basicAssetSize:
+            nano: 6
+            units: units
           apiTradeAvailableFlag: true
-          dlongMin: 2.3021358869347655
+          dlongMin:
+            nano: 6
+            units: units
           shortEnabledFlag: true
-          kshort: 1.4658129805029452
+          kshort:
+            nano: 6
+            units: units
           assetType: assetType
-          minPriceIncrement: 3.6160767
+          minPriceIncrement:
+            nano: 6
+            units: units
           otcFlag: true
-          klong: 6.027456183070403
-          dshort: 5.637376656633329
+          klong:
+            nano: 6
+            units: units
+          dshort:
+            nano: 6
+            units: units
           name: name
           basicAsset: basicAsset
           exchange: exchange
           countryOfRiskName: countryOfRiskName
         - figi: figi
-          dshortMin: 7.061401241503109
+          dshortMin:
+            nano: 6
+            units: units
           countryOfRisk: countryOfRisk
           lot: 0
           futuresType: futuresType
-          dlong: 5.962133916683182
+          dlong:
+            nano: 6
+            units: units
           lastTradeDate: 2000-01-23T04:56:07.000+00:00
           sellAvailableFlag: true
           currency: currency
@@ -2266,16 +2472,28 @@ components:
           classCode: classCode
           ticker: ticker
           firstTradeDate: 2000-01-23T04:56:07.000+00:00
-          basicAssetSize: 9.301444243932576
+          basicAssetSize:
+            nano: 6
+            units: units
           apiTradeAvailableFlag: true
-          dlongMin: 2.3021358869347655
+          dlongMin:
+            nano: 6
+            units: units
           shortEnabledFlag: true
-          kshort: 1.4658129805029452
+          kshort:
+            nano: 6
+            units: units
           assetType: assetType
-          minPriceIncrement: 3.6160767
+          minPriceIncrement:
+            nano: 6
+            units: units
           otcFlag: true
-          klong: 6.027456183070403
-          dshort: 5.637376656633329
+          klong:
+            nano: 6
+            units: units
+          dshort:
+            nano: 6
+            units: units
           name: name
           basicAsset: basicAsset
           exchange: exchange
@@ -2324,20 +2542,24 @@ components:
       example:
         accruedInterests:
         - date: 2000-01-23T04:56:07.000+00:00
-          valuePercent: 6.0274563
+          valuePercent:
+            nano: 6
+            units: units
           nominal:
-            nano: 0
+            nano: 6
             units: units
           value:
-            nano: 0
+            nano: 6
             units: units
         - date: 2000-01-23T04:56:07.000+00:00
-          valuePercent: 6.0274563
+          valuePercent:
+            nano: 6
+            units: units
           nominal:
-            nano: 0
+            nano: 6
             units: units
           value:
-            nano: 0
+            nano: 6
             units: units
       properties:
         accruedInterests:
@@ -2366,32 +2588,32 @@ components:
         candles:
         - volume: volume
           high:
-            nano: 0
+            nano: 6
             units: units
           low:
-            nano: 0
+            nano: 6
             units: units
           time: 2000-01-23T04:56:07.000+00:00
           close:
-            nano: 0
+            nano: 6
             units: units
           open:
-            nano: 0
+            nano: 6
             units: units
           isComplete: true
         - volume: volume
           high:
-            nano: 0
+            nano: 6
             units: units
           low:
-            nano: 0
+            nano: 6
             units: units
           time: 2000-01-23T04:56:07.000+00:00
           close:
-            nano: 0
+            nano: 6
             units: units
           open:
-            nano: 0
+            nano: 6
             units: units
           isComplete: true
       properties:
@@ -2420,16 +2642,16 @@ components:
           createdAt: 2000-01-23T04:56:07.000+00:00
           recordDate: 2000-01-23T04:56:07.000+00:00
           yieldValue:
-            nano: 0
+            nano: 6
             units: units
           closePrice:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           paymentDate: 2000-01-23T04:56:07.000+00:00
           regularity: regularity
           dividendNet:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           lastBuyDate: 2000-01-23T04:56:07.000+00:00
@@ -2438,16 +2660,16 @@ components:
           createdAt: 2000-01-23T04:56:07.000+00:00
           recordDate: 2000-01-23T04:56:07.000+00:00
           yieldValue:
-            nano: 0
+            nano: 6
             units: units
           closePrice:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           paymentDate: 2000-01-23T04:56:07.000+00:00
           regularity: regularity
           dividendNet:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           lastBuyDate: 2000-01-23T04:56:07.000+00:00
@@ -2467,25 +2689,26 @@ components:
     v1GetFuturesMarginResponse:
       example:
         initialMarginOnBuy:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         initialMarginOnSell:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         minPriceIncrementAmount:
-          nano: 0
+          nano: 6
           units: units
-        minPriceIncrement: 0.8008282
+        minPriceIncrement:
+          nano: 6
+          units: units
       properties:
         initialMarginOnBuy:
           $ref: '#/components/schemas/v1MoneyValue'
         initialMarginOnSell:
           $ref: '#/components/schemas/v1MoneyValue'
         minPriceIncrement:
-          format: float
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         minPriceIncrementAmount:
           $ref: '#/components/schemas/v1Quotation'
       title: Данные по фьючерсу
@@ -2524,12 +2747,12 @@ components:
       example:
         lastPrices:
         - price:
-            nano: 0
+            nano: 6
             units: units
           figi: figi
           time: 2000-01-23T04:56:07.000+00:00
         - price:
-            nano: 0
+            nano: 6
             units: units
           figi: figi
           time: 2000-01-23T04:56:07.000+00:00
@@ -2550,22 +2773,22 @@ components:
       description: Маржинальные показатели по счёту.
       example:
         amountOfMissingFunds:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         liquidPortfolio:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         fundsSufficiencyLevel:
-          nano: 0
+          nano: 6
           units: units
         startingMargin:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         minimalMargin:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
       properties:
@@ -2596,27 +2819,27 @@ components:
         asks:
         - quantity: quantity
           price:
-            nano: 0
+            nano: 6
             units: units
         - quantity: quantity
           price:
-            nano: 0
+            nano: 6
             units: units
         bids:
         - quantity: quantity
           price:
-            nano: 0
+            nano: 6
             units: units
         - quantity: quantity
           price:
-            nano: 0
+            nano: 6
             units: units
         figi: figi
         closePrice:
-          nano: 0
+          nano: 6
           units: units
         lastPrice:
-          nano: 0
+          nano: 6
           units: units
       properties:
         figi:
@@ -2658,50 +2881,50 @@ components:
         - orderId: orderId
           figi: figi
           initialOrderPrice:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           initialCommission:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           averagePositionPrice:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           lotsExecuted: lotsExecuted
           totalOrderAmount:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           lotsRequested: lotsRequested
           stages:
           - quantity: quantity
             price:
-              nano: 3
+              nano: 5
               currency: currency
               units: units
             tradeId: tradeId
           - quantity: quantity
             price:
-              nano: 3
+              nano: 5
               currency: currency
               units: units
             tradeId: tradeId
           executedOrderPrice:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           executedCommission:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           initialSecurityPrice:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           serviceCommission:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           currency: currency
@@ -2709,50 +2932,50 @@ components:
         - orderId: orderId
           figi: figi
           initialOrderPrice:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           initialCommission:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           averagePositionPrice:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           lotsExecuted: lotsExecuted
           totalOrderAmount:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           lotsRequested: lotsRequested
           stages:
           - quantity: quantity
             price:
-              nano: 3
+              nano: 5
               currency: currency
               units: units
             tradeId: tradeId
           - quantity: quantity
             price:
-              nano: 3
+              nano: 5
               currency: currency
               units: units
             tradeId: tradeId
           executedOrderPrice:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           executedCommission:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           initialSecurityPrice:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           serviceCommission:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           currency: currency
@@ -2775,13 +2998,13 @@ components:
         stopOrders:
         - activationDateTime: 2000-01-23T04:56:07.000+00:00
           stopPrice:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           lotsRequested: lotsRequested
           expirationTime: 2000-01-23T04:56:07.000+00:00
           price:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           figi: figi
@@ -2790,13 +3013,13 @@ components:
           createDate: 2000-01-23T04:56:07.000+00:00
         - activationDateTime: 2000-01-23T04:56:07.000+00:00
           stopPrice:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           lotsRequested: lotsRequested
           expirationTime: 2000-01-23T04:56:07.000+00:00
           price:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           figi: figi
@@ -2864,17 +3087,17 @@ components:
       example:
         volume: volume
         high:
-          nano: 0
+          nano: 6
           units: units
         low:
-          nano: 0
+          nano: 6
           units: units
         time: 2000-01-23T04:56:07.000+00:00
         close:
-          nano: 0
+          nano: 6
           units: units
         open:
-          nano: 0
+          nano: 6
           units: units
         isComplete: true
       properties:
@@ -2902,18 +3125,32 @@ components:
         ticker: ticker
         instrumentType: instrumentType
         figi: figi
-        dshortMin: 7.061401241503109
+        dshortMin:
+          nano: 6
+          units: units
         apiTradeAvailableFlag: true
-        dlongMin: 2.3021358869347655
+        dlongMin:
+          nano: 6
+          units: units
         shortEnabledFlag: true
-        kshort: 1.4658129805029452
+        kshort:
+          nano: 6
+          units: units
         countryOfRisk: countryOfRisk
-        minPriceIncrement: 9.301444
+        minPriceIncrement:
+          nano: 6
+          units: units
         lot: 0
         otcFlag: true
-        klong: 6.027456183070403
-        dshort: 5.637376656633329
-        dlong: 5.962133916683182
+        klong:
+          nano: 6
+          units: units
+        dshort:
+          nano: 6
+          units: units
+        dlong:
+          nano: 6
+          units: units
         name: name
         sellAvailableFlag: true
         currency: currency
@@ -2936,23 +3173,17 @@ components:
         currency:
           type: string
         klong:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         kshort:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         dlong:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         dshort:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         dlongMin:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         dshortMin:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         shortEnabledFlag:
           type: boolean
         name:
@@ -2974,8 +3205,7 @@ components:
         sellAvailableFlag:
           type: boolean
         minPriceIncrement:
-          format: float
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         apiTradeAvailableFlag:
           type: boolean
       type: object
@@ -2986,7 +3216,7 @@ components:
       - INSTRUMENT_ID_TYPE_FIGI
       - INSTRUMENT_ID_TYPE_TICKER
       title: 'Тип идентификатора инструмента. Подробнее об идентификации инструментов:
-        [Идентификация инструментов](/investAPI/faq_identification/)'
+        [Идентификация инструментов](https://tinkoff.github.io/investAPI/faq_identification/)'
       type: string
     v1InstrumentRequest:
       description: Запрос получения инструмента по идентификатору.
@@ -3006,18 +3236,32 @@ components:
           ticker: ticker
           instrumentType: instrumentType
           figi: figi
-          dshortMin: 7.061401241503109
+          dshortMin:
+            nano: 6
+            units: units
           apiTradeAvailableFlag: true
-          dlongMin: 2.3021358869347655
+          dlongMin:
+            nano: 6
+            units: units
           shortEnabledFlag: true
-          kshort: 1.4658129805029452
+          kshort:
+            nano: 6
+            units: units
           countryOfRisk: countryOfRisk
-          minPriceIncrement: 9.301444
+          minPriceIncrement:
+            nano: 6
+            units: units
           lot: 0
           otcFlag: true
-          klong: 6.027456183070403
-          dshort: 5.637376656633329
-          dlong: 5.962133916683182
+          klong:
+            nano: 6
+            units: units
+          dshort:
+            nano: 6
+            units: units
+          dlong:
+            nano: 6
+            units: units
           name: name
           sellAvailableFlag: true
           currency: currency
@@ -3047,7 +3291,7 @@ components:
       description: Информация о цене.
       example:
         price:
-          nano: 0
+          nano: 6
           units: units
         figi: figi
         time: 2000-01-23T04:56:07.000+00:00
@@ -3062,7 +3306,7 @@ components:
       type: object
     v1MoneyValue:
       example:
-        nano: 3
+        nano: 5
         currency: currency
         units: units
       properties:
@@ -3100,12 +3344,12 @@ components:
         figi: figi
         type: type
         price:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         currency: currency
         payment:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         id: id
@@ -3170,7 +3414,7 @@ components:
       - OPERATION_TYPE_BUY
       - OPERATION_TYPE_BUY_CARD
       - OPERATION_TYPE_INPUT_SECURITIES
-      - OPERATION_TYPE_SELL_MARJIN
+      - OPERATION_TYPE_SELL_MARGIN
       - OPERATION_TYPE_BROKER_FEE
       - OPERATION_TYPE_BUY_MARGIN
       - OPERATION_TYPE_DIVIDEND
@@ -3178,8 +3422,8 @@ components:
       - OPERATION_TYPE_COUPON
       - OPERATION_TYPE_SUCCESS_FEE
       - OPERATION_TYPE_DIVIDEND_TRANSFER
-      - OPERATION_TYPE_ACCRUING_VARMARJIN
-      - OPERATION_TYPE_WRITING_OFF_VARMARJIN
+      - OPERATION_TYPE_ACCRUING_VARMARGIN
+      - OPERATION_TYPE_WRITING_OFF_VARMARGIN
       - OPERATION_TYPE_DELIVERY_BUY
       - OPERATION_TYPE_DELIVERY_SELL
       - OPERATION_TYPE_TRACK_MFEE
@@ -3225,12 +3469,12 @@ components:
           figi: figi
           type: type
           price:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           currency: currency
           payment:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           id: id
@@ -3242,12 +3486,12 @@ components:
           figi: figi
           type: type
           price:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           currency: currency
           payment:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           id: id
@@ -3263,7 +3507,7 @@ components:
       example:
         quantity: quantity
         price:
-          nano: 0
+          nano: 6
           units: units
       properties:
         price:
@@ -3296,7 +3540,7 @@ components:
       example:
         quantity: quantity
         price:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         tradeId: tradeId
@@ -3315,50 +3559,50 @@ components:
         orderId: orderId
         figi: figi
         initialOrderPrice:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         initialCommission:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         averagePositionPrice:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         lotsExecuted: lotsExecuted
         totalOrderAmount:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         lotsRequested: lotsRequested
         stages:
         - quantity: quantity
           price:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           tradeId: tradeId
         - quantity: quantity
           price:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           tradeId: tradeId
         executedOrderPrice:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         executedCommission:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         initialSecurityPrice:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         serviceCommission:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         currency: currency
@@ -3418,37 +3662,45 @@ components:
       description: Позиции портфеля.
       example:
         averagePositionPrice:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         instrumentType: instrumentType
-        quantity: 6.0274563
+        quantity:
+          nano: 6
+          units: units
         averagePositionPricePt:
-          nano: 0
+          nano: 6
           units: units
         currentNkd:
-          nano: 3
+          nano: 5
+          currency: currency
+          units: units
+        currentPrice:
+          nano: 5
           currency: currency
           units: units
         figi: figi
-        expectedYield: 1.4658129
+        expectedYield:
+          nano: 6
+          units: units
       properties:
         figi:
           type: string
         instrumentType:
           type: string
         quantity:
-          format: float
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         averagePositionPrice:
           $ref: '#/components/schemas/v1MoneyValue'
         expectedYield:
-          format: float
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         currentNkd:
           $ref: '#/components/schemas/v1MoneyValue'
         averagePositionPricePt:
           $ref: '#/components/schemas/v1Quotation'
+        currentPrice:
+          $ref: '#/components/schemas/v1MoneyValue'
       type: object
     v1PortfolioRequest:
       description: Запрос получения текущего портфеля по счёту.
@@ -3460,55 +3712,73 @@ components:
       description: Текущий портфель по счёту.
       example:
         totalAmountBonds:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         totalAmountFutures:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         totalAmountCurrencies:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
-        expectedYield: 0.8008282
+        expectedYield:
+          nano: 6
+          units: units
         positions:
         - averagePositionPrice:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           instrumentType: instrumentType
-          quantity: 6.0274563
+          quantity:
+            nano: 6
+            units: units
           averagePositionPricePt:
-            nano: 0
+            nano: 6
             units: units
           currentNkd:
-            nano: 3
+            nano: 5
+            currency: currency
+            units: units
+          currentPrice:
+            nano: 5
             currency: currency
             units: units
           figi: figi
-          expectedYield: 1.4658129
+          expectedYield:
+            nano: 6
+            units: units
         - averagePositionPrice:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           instrumentType: instrumentType
-          quantity: 6.0274563
+          quantity:
+            nano: 6
+            units: units
           averagePositionPricePt:
-            nano: 0
+            nano: 6
             units: units
           currentNkd:
-            nano: 3
+            nano: 5
+            currency: currency
+            units: units
+          currentPrice:
+            nano: 5
             currency: currency
             units: units
           figi: figi
-          expectedYield: 1.4658129
+          expectedYield:
+            nano: 6
+            units: units
         totalAmountShares:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         totalAmountEtf:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
       properties:
@@ -3523,12 +3793,27 @@ components:
         totalAmountFutures:
           $ref: '#/components/schemas/v1MoneyValue'
         expectedYield:
-          format: float
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         positions:
           items:
             $ref: '#/components/schemas/v1PortfolioPosition'
           type: array
+      type: object
+    v1PositionsFutures:
+      description: Баланс фьючерса.
+      example:
+        blocked: blocked
+        balance: balance
+        figi: figi
+      properties:
+        figi:
+          type: string
+        blocked:
+          format: int64
+          type: string
+        balance:
+          format: int64
+          type: string
       type: object
     v1PositionsRequest:
       description: Запрос позиций портфеля по счёту.
@@ -3541,19 +3826,26 @@ components:
       example:
         limitsLoadingInProgress: true
         money:
-        - nano: 3
+        - nano: 5
           currency: currency
           units: units
-        - nano: 3
+        - nano: 5
           currency: currency
           units: units
         blocked:
-        - nano: 3
+        - nano: 5
           currency: currency
           units: units
-        - nano: 3
+        - nano: 5
           currency: currency
           units: units
+        futures:
+        - blocked: blocked
+          balance: balance
+          figi: figi
+        - blocked: blocked
+          balance: balance
+          figi: figi
         securities:
         - blocked: blocked
           balance: balance
@@ -3576,6 +3868,10 @@ components:
           type: array
         limitsLoadingInProgress:
           type: boolean
+        futures:
+          items:
+            $ref: '#/components/schemas/v1PositionsFutures'
+          type: array
       type: object
     v1PositionsSecurities:
       description: Баланс позиции ценной бумаги.
@@ -3618,37 +3914,37 @@ components:
         orderId: orderId
         figi: figi
         initialOrderPrice:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         initialCommission:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         message: message
         lotsExecuted: lotsExecuted
         totalOrderAmount:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         lotsRequested: lotsRequested
         initialOrderPricePt:
-          nano: 0
+          nano: 6
           units: units
         executedOrderPrice:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         executedCommission:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         initialSecurityPrice:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         aciValue:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
       properties:
@@ -3721,7 +4017,7 @@ components:
       type: object
     v1Quotation:
       example:
-        nano: 0
+        nano: 6
         units: units
       properties:
         units:
@@ -3746,7 +4042,7 @@ components:
       description: Результат пополнения счёта, текущий баланс.
       example:
         balance:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
       properties:
@@ -3779,12 +4075,16 @@ components:
       description: Объект передачи информации об акции.
       example:
         figi: figi
-        dshortMin: 7.061401241503109
+        dshortMin:
+          nano: 6
+          units: units
         countryOfRisk: countryOfRisk
         lot: 0
-        dlong: 5.962133916683182
+        dlong:
+          nano: 6
+          units: units
         nominal:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         sellAvailableFlag: true
@@ -3794,14 +4094,24 @@ components:
         classCode: classCode
         ticker: ticker
         apiTradeAvailableFlag: true
-        dlongMin: 2.3021358869347655
+        dlongMin:
+          nano: 6
+          units: units
         shortEnabledFlag: true
-        kshort: 1.4658129805029452
+        kshort:
+          nano: 6
+          units: units
         issueSizePlan: issueSizePlan
-        minPriceIncrement: 9.301444
+        minPriceIncrement:
+          nano: 6
+          units: units
         otcFlag: true
-        klong: 6.027456183070403
-        dshort: 5.637376656633329
+        klong:
+          nano: 6
+          units: units
+        dshort:
+          nano: 6
+          units: units
         name: name
         issueSize: issueSize
         exchange: exchange
@@ -3824,23 +4134,17 @@ components:
         currency:
           type: string
         klong:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         kshort:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         dlong:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         dshort:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         dlongMin:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         dshortMin:
-          format: double
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         shortEnabledFlag:
           type: boolean
         name:
@@ -3877,8 +4181,7 @@ components:
         shareType:
           $ref: '#/components/schemas/v1ShareType'
         minPriceIncrement:
-          format: float
-          type: number
+          $ref: '#/components/schemas/v1Quotation'
         apiTradeAvailableFlag:
           type: boolean
       type: object
@@ -3887,12 +4190,16 @@ components:
       example:
         instrument:
           figi: figi
-          dshortMin: 7.061401241503109
+          dshortMin:
+            nano: 6
+            units: units
           countryOfRisk: countryOfRisk
           lot: 0
-          dlong: 5.962133916683182
+          dlong:
+            nano: 6
+            units: units
           nominal:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           sellAvailableFlag: true
@@ -3902,14 +4209,24 @@ components:
           classCode: classCode
           ticker: ticker
           apiTradeAvailableFlag: true
-          dlongMin: 2.3021358869347655
+          dlongMin:
+            nano: 6
+            units: units
           shortEnabledFlag: true
-          kshort: 1.4658129805029452
+          kshort:
+            nano: 6
+            units: units
           issueSizePlan: issueSizePlan
-          minPriceIncrement: 9.301444
+          minPriceIncrement:
+            nano: 6
+            units: units
           otcFlag: true
-          klong: 6.027456183070403
-          dshort: 5.637376656633329
+          klong:
+            nano: 6
+            units: units
+          dshort:
+            nano: 6
+            units: units
           name: name
           issueSize: issueSize
           exchange: exchange
@@ -3940,12 +4257,16 @@ components:
       example:
         instruments:
         - figi: figi
-          dshortMin: 7.061401241503109
+          dshortMin:
+            nano: 6
+            units: units
           countryOfRisk: countryOfRisk
           lot: 0
-          dlong: 5.962133916683182
+          dlong:
+            nano: 6
+            units: units
           nominal:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           sellAvailableFlag: true
@@ -3955,14 +4276,24 @@ components:
           classCode: classCode
           ticker: ticker
           apiTradeAvailableFlag: true
-          dlongMin: 2.3021358869347655
+          dlongMin:
+            nano: 6
+            units: units
           shortEnabledFlag: true
-          kshort: 1.4658129805029452
+          kshort:
+            nano: 6
+            units: units
           issueSizePlan: issueSizePlan
-          minPriceIncrement: 9.301444
+          minPriceIncrement:
+            nano: 6
+            units: units
           otcFlag: true
-          klong: 6.027456183070403
-          dshort: 5.637376656633329
+          klong:
+            nano: 6
+            units: units
+          dshort:
+            nano: 6
+            units: units
           name: name
           issueSize: issueSize
           exchange: exchange
@@ -3971,12 +4302,16 @@ components:
           isin: isin
           ipoDate: 2000-01-23T04:56:07.000+00:00
         - figi: figi
-          dshortMin: 7.061401241503109
+          dshortMin:
+            nano: 6
+            units: units
           countryOfRisk: countryOfRisk
           lot: 0
-          dlong: 5.962133916683182
+          dlong:
+            nano: 6
+            units: units
           nominal:
-            nano: 3
+            nano: 5
             currency: currency
             units: units
           sellAvailableFlag: true
@@ -3986,14 +4321,24 @@ components:
           classCode: classCode
           ticker: ticker
           apiTradeAvailableFlag: true
-          dlongMin: 2.3021358869347655
+          dlongMin:
+            nano: 6
+            units: units
           shortEnabledFlag: true
-          kshort: 1.4658129805029452
+          kshort:
+            nano: 6
+            units: units
           issueSizePlan: issueSizePlan
-          minPriceIncrement: 9.301444
+          minPriceIncrement:
+            nano: 6
+            units: units
           otcFlag: true
-          klong: 6.027456183070403
-          dshort: 5.637376656633329
+          klong:
+            nano: 6
+            units: units
+          dshort:
+            nano: 6
+            units: units
           name: name
           issueSize: issueSize
           exchange: exchange
@@ -4012,13 +4357,13 @@ components:
       example:
         activationDateTime: 2000-01-23T04:56:07.000+00:00
         stopPrice:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         lotsRequested: lotsRequested
         expirationTime: 2000-01-23T04:56:07.000+00:00
         price:
-          nano: 3
+          nano: 5
           currency: currency
           units: units
         figi: figi
@@ -4223,24 +4568,24 @@ components:
       description: Доступный для вывода остаток.
       example:
         blockedGuarantee:
-        - nano: 3
+        - nano: 5
           currency: currency
           units: units
-        - nano: 3
+        - nano: 5
           currency: currency
           units: units
         money:
-        - nano: 3
+        - nano: 5
           currency: currency
           units: units
-        - nano: 3
+        - nano: 5
           currency: currency
           units: units
         blocked:
-        - nano: 3
+        - nano: 5
           currency: currency
           units: units
-        - nano: 3
+        - nano: 5
           currency: currency
           units: units
       properties:

@@ -339,12 +339,12 @@
 | isin |  [string](#string) | Isin-идентификатор инструмента. |
 | lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot) |
 | currency |  [string](#string) | Валюта расчётов. |
-| klong |  [double](#double) | Коэффициент ставки риска длинной позиции по инструменту. |
-| kshort |  [double](#double) | Коэффициент ставки риска короткой позиции по инструменту. |
-| dlong |  [double](#double) | Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
-| dshort |  [double](#double) | Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
-| dlong_min |  [double](#double) | Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
-| dshort_min |  [double](#double) | Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
+| klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по инструменту. |
+| kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по инструменту. |
+| dlong |  [Quotation](#quotation) | Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
+| dshort |  [Quotation](#quotation) | Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
+| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
+| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
 | short_enabled_flag |  [bool](#bool) | Признак доступности для операций в шорт. |
 | name |  [string](#string) | Название инструмента. |
 | exchange |  [string](#string) | Торговая площадка. |
@@ -368,7 +368,7 @@
 | floating_coupon_flag |  [bool](#bool) | Признак облигации с плавающим купоном. |
 | perpetual_flag |  [bool](#bool) | Признак бессрочной облигации. |
 | amortization_flag |  [bool](#bool) | Признак облигации с амортизацией долга. |
-| min_price_increment |  [float](#float) | Шаг цены. |
+| min_price_increment |  [Quotation](#quotation) | Шаг цены. |
 | api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -386,12 +386,12 @@
 | isin |  [string](#string) | Isin-идентификатор инструмента. |
 | lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot) |
 | currency |  [string](#string) | Валюта расчётов. |
-| klong |  [double](#double) | Коэффициент ставки риска длинной позиции по инструменту. |
-| kshort |  [double](#double) | Коэффициент ставки риска короткой позиции по инструменту. |
-| dlong |  [double](#double) | Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
-| dshort |  [double](#double) | Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
-| dlong_min |  [double](#double) | Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
-| dshort_min |  [double](#double) | Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
+| klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по инструменту. |
+| kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по инструменту. |
+| dlong |  [Quotation](#quotation) | Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
+| dshort |  [Quotation](#quotation) | Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
+| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
+| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
 | short_enabled_flag |  [bool](#bool) | Признак доступности для операций в шорт. |
 | name |  [string](#string) | Название инструмента. |
 | exchange |  [string](#string) | Торговая площадка. |
@@ -403,7 +403,7 @@
 | buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
 | iso_currency_name |  [string](#string) | Строковый ISO-код валюты. |
-| min_price_increment |  [float](#float) | Шаг цены. |
+| min_price_increment |  [Quotation](#quotation) | Шаг цены. |
 | api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -421,19 +421,19 @@
 | isin |  [string](#string) | Isin-идентификатор инструмента. |
 | lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot) |
 | currency |  [string](#string) | Валюта расчётов. |
-| klong |  [double](#double) | Коэффициент ставки риска длинной позиции по инструменту. |
-| kshort |  [double](#double) | Коэффициент ставки риска короткой позиции по инструменту. |
-| dlong |  [double](#double) | Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
-| dshort |  [double](#double) | Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
-| dlong_min |  [double](#double) | Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
-| dshort_min |  [double](#double) | Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
+| klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по инструменту. |
+| kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по инструменту. |
+| dlong |  [Quotation](#quotation) | Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
+| dshort |  [Quotation](#quotation) | Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
+| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
+| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
 | short_enabled_flag |  [bool](#bool) | Признак доступности для операций в шорт. |
 | name |  [string](#string) | Название инструмента. |
 | exchange |  [string](#string) | Торговая площадка. |
-| fixed_commission |  [double](#double) | Размер фиксированной комиссии фонда. |
+| fixed_commission |  [Quotation](#quotation) | Размер фиксированной комиссии фонда. |
 | focus_type |  [string](#string) | Возможные значения: </br>**equity** — акции;</br>**fixed_income** — облигации;</br>**mixed_allocation** — смешанный;</br>**money_market** — денежный рынок;</br>**real_estate** — недвижимость;</br>**commodity** — товары;</br>**specialty** — специальный;</br>**private_equity** — private equity;</br>**alternative_investment** — альтернативные инвестиции. |
 | released_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата выпуска в часовом поясе UTC. |
-| num_shares |  [double](#double) | Количество акций фонда в обращении. |
+| num_shares |  [Quotation](#quotation) | Количество акций фонда в обращении. |
 | country_of_risk |  [string](#string) | Код страны эмитента. |
 | country_of_risk_name |  [string](#string) | Наименование страны эмитента. |
 | sector |  [string](#string) | Сектор экономики. |
@@ -442,7 +442,7 @@
 | otc_flag |  [bool](#bool) | Признак внебиржевой ценной бумаги. |
 | buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
-| min_price_increment |  [float](#float) | Шаг цены. |
+| min_price_increment |  [Quotation](#quotation) | Шаг цены. |
 | api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -459,12 +459,12 @@
 | class_code |  [string](#string) | Класс-код (секция торгов). |
 | lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot) |
 | currency |  [string](#string) | Валюта расчётов. |
-| klong |  [double](#double) | Коэффициент ставки риска длинной позиции по клиенту. |
-| kshort |  [double](#double) | Коэффициент ставки риска короткой позиции по клиенту. |
-| dlong |  [double](#double) | Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
-| dshort |  [double](#double) | Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
-| dlong_min |  [double](#double) | Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
-| dshort_min |  [double](#double) | Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
+| klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. |
+| kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. |
+| dlong |  [Quotation](#quotation) | Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
+| dshort |  [Quotation](#quotation) | Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
+| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
+| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
 | short_enabled_flag |  [bool](#bool) | Признак доступности для операций шорт. |
 | name |  [string](#string) | Название инструмента. |
 | exchange |  [string](#string) | Торговая площадка. |
@@ -473,7 +473,7 @@
 | futures_type |  [string](#string) | Тип фьючерса. Возможные значения: </br>**physical_delivery** — физические поставки; </br>**cash_settlement** — денежный эквивалент. |
 | asset_type |  [string](#string) | Тип актива. Возможные значения: </br>**commodity** — товар; </br>**currency** — валюта; </br>**security** — ценная бумага; </br>**index** — индекс. |
 | basic_asset |  [string](#string) | Основной актив. |
-| basic_asset_size |  [double](#double) | Размер основного актива. |
+| basic_asset_size |  [Quotation](#quotation) | Размер основного актива. |
 | country_of_risk |  [string](#string) | Код страны эмитента. |
 | country_of_risk_name |  [string](#string) | Наименование страны эмитента. |
 | sector |  [string](#string) | Сектор экономики. |
@@ -482,7 +482,7 @@
 | otc_flag |  [bool](#bool) | Признак внебиржевой ценной бумаги. |
 | buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
-| min_price_increment |  [float](#float) | Шаг цены. |
+| min_price_increment |  [Quotation](#quotation) | Шаг цены. |
 | api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -500,12 +500,12 @@
 | isin |  [string](#string) | Isin-идентификатор инструмента. |
 | lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot) |
 | currency |  [string](#string) | Валюта расчётов. |
-| klong |  [double](#double) | Коэффициент ставки риска длинной позиции по инструменту. |
-| kshort |  [double](#double) | Коэффициент ставки риска короткой позиции по инструменту. |
-| dlong |  [double](#double) | Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
-| dshort |  [double](#double) | Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
-| dlong_min |  [double](#double) | Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
-| dshort_min |  [double](#double) | Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
+| klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по инструменту. |
+| kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по инструменту. |
+| dlong |  [Quotation](#quotation) | Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
+| dshort |  [Quotation](#quotation) | Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
+| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
+| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
 | short_enabled_flag |  [bool](#bool) | Признак доступности для операций в шорт. |
 | name |  [string](#string) | Название инструмента. |
 | exchange |  [string](#string) | Торговая площадка. |
@@ -522,7 +522,7 @@
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
 | div_yield_flag |  [bool](#bool) | Признак наличия дивидендной доходности. |
 | share_type |  [ShareType](#sharetype) | Тип акции. Возможные значения: [ShareType](https://tinkoff.github.io/investAPI/instruments#sharetype) |
-| min_price_increment |  [float](#float) | Шаг цены. |
+| min_price_increment |  [Quotation](#quotation) | Шаг цены. |
 | api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -560,7 +560,7 @@
 | ----- | ---- | ----------- |
 | date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время выплаты в часовом поясе UTC. |
 | value |  [Quotation](#quotation) | Величина выплаты. |
-| value_percent |  [float](#float) | Величина выплаты в процентах от номинала. |
+| value_percent |  [Quotation](#quotation) | Величина выплаты в процентах от номинала. |
 | nominal |  [Quotation](#quotation) | Номинал облигации. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -585,7 +585,7 @@
 | ----- | ---- | ----------- |
 | initial_margin_on_buy |  [MoneyValue](#moneyvalue) | Гарантийное обеспечение при покупке. |
 | initial_margin_on_sell |  [MoneyValue](#moneyvalue) | Гарантийное обеспечение при продаже. |
-| min_price_increment |  [float](#float) | Шаг цены. |
+| min_price_increment |  [Quotation](#quotation) | Шаг цены. |
 | min_price_increment_amount |  [Quotation](#quotation) | Стоимость шага цены. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -614,12 +614,12 @@
 | isin |  [string](#string) | Isin-идентификатор инструмента. |
 | lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot) |
 | currency |  [string](#string) | Валюта расчётов. |
-| klong |  [double](#double) | Коэффициент ставки риска длинной позиции по инструменту. |
-| kshort |  [double](#double) | Коэффициент ставки риска короткой позиции по инструменту. |
-| dlong |  [double](#double) | Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
-| dshort |  [double](#double) | Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
-| dlong_min |  [double](#double) | Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
-| dshort_min |  [double](#double) | Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
+| klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по инструменту. |
+| kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по инструменту. |
+| dlong |  [Quotation](#quotation) | Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
+| dshort |  [Quotation](#quotation) | Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
+| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
+| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
 | short_enabled_flag |  [bool](#bool) | Признак доступности для операций в шорт. |
 | name |  [string](#string) | Название инструмента. |
 | exchange |  [string](#string) | Торговая площадка. |
@@ -630,7 +630,7 @@
 | otc_flag |  [bool](#bool) | Признак внебиржевой ценной бумаги. |
 | buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
-| min_price_increment |  [float](#float) | Шаг цены. |
+| min_price_increment |  [Quotation](#quotation) | Шаг цены. |
 | api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -701,7 +701,7 @@
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | INSTRUMENT_STATUS_UNSPECIFIED | 0 | Значение не определено. |
-| INSTRUMENT_STATUS_BASE | 1 | Базовый список инструментов (по умолчанию). |
+| INSTRUMENT_STATUS_BASE | 1 | Базовый список инструментов (по умолчанию). Инструменты доступные для торговли через TINKOFF INVEST API. |
 | INSTRUMENT_STATUS_ALL | 2 | Список всех инструментов. |
 
 

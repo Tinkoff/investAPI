@@ -843,6 +843,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#positionsfutures" class="md-nav__link">
+    PositionsFutures
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1262,6 +1269,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#positionsfutures" class="md-nav__link">
+    PositionsFutures
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1617,11 +1631,11 @@
 <tr>
 <td>total_amount_futures</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Общая стоимость валют в портфеле в рублях</td>
+<td>Общая стоимость фьючерсов в портфеле в рублях</td>
 </tr>
 <tr>
 <td>expected_yield</td>
-<td><a href="#float">float</a></td>
+<td><a href="#quotation">Quotation</a></td>
 <td>Текущая доходность портфеля</td>
 </tr>
 <tr>
@@ -1693,6 +1707,11 @@
 <td>limits_loading_in_progress</td>
 <td><a href="#bool">bool</a></td>
 <td>Признак идущей в данный момент выгрузки лимитов</td>
+</tr>
+<tr>
+<td>futures</td>
+<td>Массив объектов <a href="#positionsfutures">PositionsFutures</a></td>
+<td>Список фьючерсов портфеля</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -1786,7 +1805,7 @@
 </tr>
 <tr>
 <td>quantity</td>
-<td><a href="#float">float</a></td>
+<td><a href="#quotation">Quotation</a></td>
 <td>Количество инструмента в портфеле в штуках</td>
 </tr>
 <tr>
@@ -1796,7 +1815,7 @@
 </tr>
 <tr>
 <td>expected_yield</td>
-<td><a href="#float">float</a></td>
+<td><a href="#quotation">Quotation</a></td>
 <td>Текущая рассчитанная доходность</td>
 </tr>
 <tr>
@@ -1808,6 +1827,11 @@
 <td>average_position_price_pt</td>
 <td><a href="#quotation">Quotation</a></td>
 <td>Средняя цена лота в позиции в пунктах (для фьючерсов)</td>
+</tr>
+<tr>
+<td>current_price</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Текущая цена инструмента</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -1833,6 +1857,41 @@
 <td>figi</td>
 <td><a href="#string">string</a></td>
 <td>Figi-идентификатор бумаги</td>
+</tr>
+<tr>
+<td>blocked</td>
+<td><a href="#int64">int64</a></td>
+<td>Заблокировано</td>
+</tr>
+<tr>
+<td>balance</td>
+<td><a href="#int64">int64</a></td>
+<td>Текущий баланс</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="positionsfutures">PositionsFutures</h4>
+<p>Баланс фьючерса.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор фьючерса</td>
 </tr>
 <tr>
 <td>blocked</td>
@@ -1985,7 +2044,7 @@
 <td>Завод ЦБ</td>
 </tr>
 <tr>
-<td>OPERATION_TYPE_SELL_MARJIN</td>
+<td>OPERATION_TYPE_SELL_MARGIN</td>
 <td>18</td>
 <td>Продажа в результате Margin-call</td>
 </tr>
@@ -2025,12 +2084,12 @@
 <td>Передача дивидендного дохода</td>
 </tr>
 <tr>
-<td>OPERATION_TYPE_ACCRUING_VARMARJIN</td>
+<td>OPERATION_TYPE_ACCRUING_VARMARGIN</td>
 <td>26</td>
 <td>Зачисление вариационной маржи</td>
 </tr>
 <tr>
-<td>OPERATION_TYPE_WRITING_OFF_VARMARJIN</td>
+<td>OPERATION_TYPE_WRITING_OFF_VARMARGIN</td>
 <td>27</td>
 <td>Списание вариационной маржи</td>
 </tr>

@@ -162,12 +162,12 @@ message Bond {
   int32 lot = 5; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot)
   string currency = 6; //Валюта расчётов.
 
-  double klong = 7; //Коэффициент ставки риска длинной позиции по инструменту.
-  double kshort = 8; //Коэффициент ставки риска короткой позиции по инструменту.
-  double dlong = 9; //Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
-  double dshort = 10; //Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
-  double dlong_min = 11; //Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
-  double dshort_min = 12; //Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
+  Quotation klong = 7; //Коэффициент ставки риска длинной позиции по инструменту.
+  Quotation kshort = 8; //Коэффициент ставки риска короткой позиции по инструменту.
+  Quotation dlong = 9; //Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
+  Quotation dshort = 10; //Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
+  Quotation dlong_min = 11; //Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
+  Quotation dshort_min = 12; //Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
   bool short_enabled_flag = 13; //Признак доступности для операций в шорт.
   string name = 15; //Название инструмента.
   string exchange = 16; //Торговая площадка.
@@ -194,7 +194,7 @@ message Bond {
   bool floating_coupon_flag = 35; //Признак облигации с плавающим купоном.
   bool perpetual_flag = 36; //Признак бессрочной облигации.
   bool amortization_flag = 37; //Признак облигации с амортизацией долга.
-  float min_price_increment = 38; //Шаг цены.
+  Quotation min_price_increment = 38; //Шаг цены.
   bool api_trade_available_flag = 39; //Признак доступности торгов через API.
 }
 
@@ -207,12 +207,12 @@ message Currency {
   int32 lot = 5; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot)
   string currency = 6; //Валюта расчётов.
 
-  double klong = 7; //Коэффициент ставки риска длинной позиции по инструменту.
-  double kshort = 8; //Коэффициент ставки риска короткой позиции по инструменту.
-  double dlong = 9; //Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
-  double dshort = 10; //Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
-  double dlong_min = 11; //Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
-  double dshort_min = 12; //Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
+  Quotation klong = 7; //Коэффициент ставки риска длинной позиции по инструменту.
+  Quotation kshort = 8; //Коэффициент ставки риска короткой позиции по инструменту.
+  Quotation dlong = 9; //Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
+  Quotation dshort = 10; //Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
+  Quotation dlong_min = 11; //Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
+  Quotation dshort_min = 12; //Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
   bool short_enabled_flag = 13; //Признак доступности для операций в шорт.
   string name = 15; //Название инструмента.
   string exchange = 16; //Торговая площадка.
@@ -227,7 +227,7 @@ message Currency {
   bool buy_available_flag = 22; //Признак доступности для покупки.
   bool sell_available_flag = 23; //Признак доступности для продажи.
   string iso_currency_name = 24; //Строковый ISO-код валюты.
-  float min_price_increment = 25; //Шаг цены.
+  Quotation min_price_increment = 25; //Шаг цены.
   bool api_trade_available_flag = 26; //Признак доступности торгов через API.
 }
 
@@ -240,20 +240,20 @@ message Etf {
   int32 lot = 5; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot)
   string currency = 6; //Валюта расчётов.
 
-  double klong = 7; //Коэффициент ставки риска длинной позиции по инструменту.
-  double kshort = 8; //Коэффициент ставки риска короткой позиции по инструменту.
-  double dlong = 9; //Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
-  double dshort = 10; //Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
-  double dlong_min = 11; //Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
-  double dshort_min = 12; //Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
+  Quotation klong = 7; //Коэффициент ставки риска длинной позиции по инструменту.
+  Quotation kshort = 8; //Коэффициент ставки риска короткой позиции по инструменту.
+  Quotation dlong = 9; //Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
+  Quotation dshort = 10; //Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
+  Quotation dlong_min = 11; //Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
+  Quotation dshort_min = 12; //Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
   bool short_enabled_flag = 13; //Признак доступности для операций в шорт.
   string name = 15; //Название инструмента.
   string exchange = 16; //Торговая площадка.
 
-  double fixed_commission = 17; //Размер фиксированной комиссии фонда.
+  Quotation fixed_commission = 17; //Размер фиксированной комиссии фонда.
   string focus_type = 18; //Возможные значения: </br>**equity** — акции;</br>**fixed_income** — облигации;</br>**mixed_allocation** — смешанный;</br>**money_market** — денежный рынок;</br>**real_estate** — недвижимость;</br>**commodity** — товары;</br>**specialty** — специальный;</br>**private_equity** — private equity;</br>**alternative_investment** — альтернативные инвестиции.
   google.protobuf.Timestamp released_date = 19; //Дата выпуска в часовом поясе UTC.
-  double num_shares = 20; //Количество акций фонда в обращении.
+  Quotation num_shares = 20; //Количество акций фонда в обращении.
 
   string country_of_risk = 21; //Код страны эмитента.
   string country_of_risk_name = 22; //Наименование страны эмитента.
@@ -264,7 +264,7 @@ message Etf {
   bool otc_flag = 26; //Признак внебиржевой ценной бумаги.
   bool buy_available_flag = 27; //Признак доступности для покупки.
   bool sell_available_flag = 28; //Признак доступности для продажи.
-  float min_price_increment = 29; //Шаг цены.
+  Quotation min_price_increment = 29; //Шаг цены.
   bool api_trade_available_flag = 30; //Признак доступности торгов через API.
 }
 
@@ -276,12 +276,12 @@ message Future {
   int32 lot = 4; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot)
   string currency = 5; //Валюта расчётов.
 
-  double klong = 6; //Коэффициент ставки риска длинной позиции по клиенту.
-  double kshort = 7; //Коэффициент ставки риска короткой позиции по клиенту.
-  double dlong = 8; //Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
-  double dshort = 9; //Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
-  double dlong_min = 10; //Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
-  double dshort_min = 11; //Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
+  Quotation klong = 6; //Коэффициент ставки риска длинной позиции по клиенту.
+  Quotation kshort = 7; //Коэффициент ставки риска короткой позиции по клиенту.
+  Quotation dlong = 8; //Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
+  Quotation dshort = 9; //Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
+  Quotation dlong_min = 10; //Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
+  Quotation dshort_min = 11; //Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
   bool short_enabled_flag = 12; //Признак доступности для операций шорт.
   string name = 13; //Название инструмента.
   string exchange = 14; //Торговая площадка.
@@ -291,7 +291,7 @@ message Future {
   string futures_type = 17; //Тип фьючерса. Возможные значения: </br>**physical_delivery** — физические поставки; </br>**cash_settlement** — денежный эквивалент.
   string asset_type = 18; //Тип актива. Возможные значения: </br>**commodity** — товар; </br>**currency** — валюта; </br>**security** — ценная бумага; </br>**index** — индекс.
   string basic_asset = 19;  //Основной актив.
-  double basic_asset_size = 20;  //Размер основного актива.
+  Quotation basic_asset_size = 20;  //Размер основного актива.
 
   string country_of_risk = 21; //Код страны эмитента.
   string country_of_risk_name = 22; //Наименование страны эмитента.
@@ -302,7 +302,7 @@ message Future {
   bool otc_flag = 26; //Признак внебиржевой ценной бумаги.
   bool buy_available_flag = 27; //Признак доступности для покупки.
   bool sell_available_flag = 28; //Признак доступности для продажи.
-  float min_price_increment = 29; //Шаг цены.
+  Quotation min_price_increment = 29; //Шаг цены.
   bool api_trade_available_flag = 30; //Признак доступности торгов через API.
 }
 
@@ -315,12 +315,12 @@ message Share {
   int32 lot = 5; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot)
   string currency = 6; //Валюта расчётов.
 
-  double klong = 7; //Коэффициент ставки риска длинной позиции по инструменту.
-  double kshort = 8; //Коэффициент ставки риска короткой позиции по инструменту.
-  double dlong = 9; //Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
-  double dshort = 10; //Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
-  double dlong_min = 11; //Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
-  double dshort_min = 12; //Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
+  Quotation klong = 7; //Коэффициент ставки риска длинной позиции по инструменту.
+  Quotation kshort = 8; //Коэффициент ставки риска короткой позиции по инструменту.
+  Quotation dlong = 9; //Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
+  Quotation dshort = 10; //Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
+  Quotation dlong_min = 11; //Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
+  Quotation dshort_min = 12; //Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
   bool short_enabled_flag = 13; //Признак доступности для операций в шорт.
   string name = 15; //Название инструмента.
   string exchange = 16; //Торговая площадка.
@@ -340,7 +340,7 @@ message Share {
   bool sell_available_flag = 28; //Признак доступности для продажи.
   bool div_yield_flag = 29; //Признак наличия дивидендной доходности.
   ShareType share_type = 30; //Тип акции. Возможные значения: [ShareType](https://tinkoff.github.io/investAPI/instruments#sharetype)
-  float min_price_increment = 31; //Шаг цены.
+  Quotation min_price_increment = 31; //Шаг цены.
   bool api_trade_available_flag = 32; //Признак доступности торгов через API.
 }
 
@@ -360,7 +360,7 @@ message GetAccruedInterestsResponse {
 message AccruedInterest {
   google.protobuf.Timestamp date = 1; //Дата и время выплаты в часовом поясе UTC.
   Quotation value = 2; //Величина выплаты.
-  float value_percent = 3; //Величина выплаты в процентах от номинала.
+  Quotation value_percent = 3; //Величина выплаты в процентах от номинала.
   Quotation nominal = 4; //Номинал облигации.
 }
 
@@ -373,7 +373,7 @@ message GetFuturesMarginRequest {
 message GetFuturesMarginResponse {
   MoneyValue initial_margin_on_buy = 1; //Гарантийное обеспечение при покупке.
   MoneyValue initial_margin_on_sell = 2; //Гарантийное обеспечение при продаже.
-  float min_price_increment = 3; //Шаг цены.
+  Quotation min_price_increment = 3; //Шаг цены.
   Quotation min_price_increment_amount = 4; //Стоимость шага цены.
 }
 
@@ -387,7 +387,7 @@ enum InstrumentIdType {
 //Статус запрашиваемых инструментов.
 enum InstrumentStatus {
   INSTRUMENT_STATUS_UNSPECIFIED = 0; //Значение не определено.
-  INSTRUMENT_STATUS_BASE = 1; //Базовый список инструментов (по умолчанию).
+  INSTRUMENT_STATUS_BASE = 1; //Базовый список инструментов (по умолчанию). Инструменты доступные для торговли через TINKOFF INVEST API.
   INSTRUMENT_STATUS_ALL = 2; //Список всех инструментов.
 }
 
@@ -405,12 +405,12 @@ message Instrument {
   int32 lot = 5; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot)
   string currency = 6; //Валюта расчётов.
 
-  double klong = 7; //Коэффициент ставки риска длинной позиции по инструменту.
-  double kshort = 8; //Коэффициент ставки риска короткой позиции по инструменту.
-  double dlong = 9; //Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
-  double dshort = 10; //Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
-  double dlong_min = 11; //Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
-  double dshort_min = 12; //Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
+  Quotation klong = 7; //Коэффициент ставки риска длинной позиции по инструменту.
+  Quotation kshort = 8; //Коэффициент ставки риска короткой позиции по инструменту.
+  Quotation dlong = 9; //Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
+  Quotation dshort = 10; //Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
+  Quotation dlong_min = 11; //Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
+  Quotation dshort_min = 12; //Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
   bool short_enabled_flag = 13; //Признак доступности для операций в шорт.
   string name = 14; //Название инструмента.
   string exchange = 15; //Торговая площадка.
@@ -423,7 +423,7 @@ message Instrument {
   bool otc_flag = 20; //Признак внебиржевой ценной бумаги.
   bool buy_available_flag = 21; //Признак доступности для покупки.
   bool sell_available_flag = 22; //Признак доступности для продажи.
-  float min_price_increment = 23; //Шаг цены.
+  Quotation min_price_increment = 23; //Шаг цены.
   bool api_trade_available_flag = 24; //Признак доступности торгов через API.
 }
 

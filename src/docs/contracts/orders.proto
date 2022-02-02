@@ -49,7 +49,7 @@ message TradesStreamResponse {
 //Информация об исполнении торгового поручения.
 message OrderTrades {
   string order_id = 1; //Идентификатор торгового поручения
-  google.protobuf.Timestamp created_at = 2; //Дата и время создания сообщения
+  google.protobuf.Timestamp created_at = 2; //Дата и время создания сообщения в часовом поясе UTC.
   OrderDirection direction = 3; //Направление сделки (возможные значения)
   string figi = 4; //Figi-идентификатор инструмента
   repeated OrderTrade trades = 5; //Массив сделок
@@ -57,7 +57,7 @@ message OrderTrades {
 
 //Информация о сделке.
 message OrderTrade {
-  google.protobuf.Timestamp date_time = 1;  //Дата и время совершения сделки по времени биржи
+  google.protobuf.Timestamp date_time = 1;  //Дата и время совершения сделки в часовом поясе UTC.
   Quotation price = 2;  //Цена, по которой совершена сделка
   int64 quantity = 3;  //Количество лотов в сделке
 }

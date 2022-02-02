@@ -57,6 +57,9 @@ message Account {
 
   // Дата закрытия счёта в часовом поясе UTC.
   google.protobuf.Timestamp closed_date = 6;
+
+  // Уровень доступа к текущему счёту (определяется токеном).
+  AccessLevel access_level = 7;
 }
 
 //Тип счёта.
@@ -132,4 +135,12 @@ message GetInfoResponse {
   bool prem_status = 1; //Признак премиум клиента.
   bool qual_status = 2; //Признак квалифицированного инвестора.
   repeated string qualified_for_work_with = 3; //Набор требующих тестирования инструментов и возможностей, с которыми может работать пользователь.
+}
+
+//Уровень доступа к счёту.
+enum AccessLevel {
+  ACCOUNT_ACCESS_LEVEL_UNSPECIFIED = 0; //Уровень доступа не определён.
+  ACCOUNT_ACCESS_LEVEL_FULL_ACCESS = 1; //Полный доступ к счёту.
+  ACCOUNT_ACCESS_LEVEL_READ_ONLY = 2; //Доступ с уровнем прав "только чтение".
+  ACCOUNT_ACCESS_LEVEL_NO_ACCESS = 3; //Доступ отсутствует.
 }

@@ -93,7 +93,7 @@ message TradingDay {
 
 //Запрос получения инструмента по идентификатору.
 message InstrumentRequest {
-  InstrumentIdType id_type = 1; // Тип идентификатора инструмента. Возможные значения: figi, ticker, isin. Подробнее об идентификации инструментов: [Идентификация инструментов](https://tinkoff.github.io/investAPI/faq_identification/)
+  InstrumentIdType id_type = 1; // Тип идентификатора инструмента. Возможные значения: figi, ticker. Подробнее об идентификации инструментов: [Идентификация инструментов](https://tinkoff.github.io/investAPI/faq_identification/)
   string class_code = 2; // Идентификатор class_code. Обязателен при id_type = ticker.
   string id = 3; // Идентификатор запрашиваемого инструмента.
 }
@@ -296,7 +296,7 @@ message Future {
   string country_of_risk = 21; //Код страны эмитента.
   string country_of_risk_name = 22; //Наименование страны эмитента.
   string sector = 23; //Сектор экономики.
-  google.protobuf.Timestamp expiration_date = 24; //Дата истечения срока.
+  google.protobuf.Timestamp expiration_date = 24; //Дата истечения срока в часов поясе UTC.
 
   SecurityTradingStatus trading_status = 25; //Текущий режим торгов инструмента.
   bool otc_flag = 26; //Признак внебиржевой ценной бумаги.
@@ -442,15 +442,15 @@ message GetDividendsResponse {
 //Информация о выплате.
 message Dividend {
   MoneyValue dividend_net = 1; //Величина дивиденда на 1 ценную бумагу (включая валюту).
-  google.protobuf.Timestamp payment_date = 2; //Дата фактических выплат.
-  google.protobuf.Timestamp declared_date = 3; //Дата объявления дивидендов.
-  google.protobuf.Timestamp last_buy_date = 4; //Последний день (включительно) покупки для получения выплаты.
+  google.protobuf.Timestamp payment_date = 2; //Дата фактических выплат в часовом поясе UTC.
+  google.protobuf.Timestamp declared_date = 3; //Дата объявления дивидендов в часовом поясе UTC.
+  google.protobuf.Timestamp last_buy_date = 4; //Последний день (включительно) покупки для получения выплаты в часовом поясе UTC.
   string dividend_type = 5; //Тип выплаты. Возможные значения: Regular Cash – регулярные выплаты, Cancelled – выплата отменена, Daily Accrual – ежедневное начисление, Return of Capital – возврат капитала, прочие типы выплат.
-  google.protobuf.Timestamp record_date = 6;  //Дата фиксации реестра
+  google.protobuf.Timestamp record_date = 6;  //Дата фиксации реестра в часовом поясе UTC.
   string regularity = 7; //Регулярность выплаты. Возможные значения: Annual – ежегодная, Semi-Anl – каждые полгода, прочие типы выплат.
   MoneyValue close_price = 8; //Цена закрытия инструмента на момент ex_dividend_date.
   Quotation yield_value = 9; //Величина доходности.
-  google.protobuf.Timestamp created_at = 10; //Дата и время создания записи.
+  google.protobuf.Timestamp created_at = 10; //Дата и время создания записи в часовом поясе UTC.
 }
 
 //Тип акций.

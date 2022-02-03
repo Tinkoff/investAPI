@@ -199,7 +199,7 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| id_type |  [InstrumentIdType](#instrumentidtype) | Тип идентификатора инструмента. Возможные значения: figi, ticker, isin. Подробнее об идентификации инструментов: [Идентификация инструментов](https://tinkoff.github.io/investAPI/faq_identification/) |
+| id_type |  [InstrumentIdType](#instrumentidtype) | Тип идентификатора инструмента. Возможные значения: figi, ticker. Подробнее об идентификации инструментов: [Идентификация инструментов](https://tinkoff.github.io/investAPI/faq_identification/) |
 | class_code |  [string](#string) | Идентификатор class_code. Обязателен при id_type = ticker. |
 | id |  [string](#string) | Идентификатор запрашиваемого инструмента. |
  <!-- end Fields -->
@@ -477,7 +477,7 @@
 | country_of_risk |  [string](#string) | Код страны эмитента. |
 | country_of_risk_name |  [string](#string) | Наименование страны эмитента. |
 | sector |  [string](#string) | Сектор экономики. |
-| expiration_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата истечения срока. |
+| expiration_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата истечения срока в часов поясе UTC. |
 | trading_status |  [SecurityTradingStatus](#securitytradingstatus) | Текущий режим торгов инструмента. |
 | otc_flag |  [bool](#bool) | Признак внебиржевой ценной бумаги. |
 | buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
@@ -667,15 +667,15 @@
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | dividend_net |  [MoneyValue](#moneyvalue) | Величина дивиденда на 1 ценную бумагу (включая валюту). |
-| payment_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата фактических выплат. |
-| declared_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата объявления дивидендов. |
-| last_buy_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Последний день (включительно) покупки для получения выплаты. |
+| payment_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата фактических выплат в часовом поясе UTC. |
+| declared_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата объявления дивидендов в часовом поясе UTC. |
+| last_buy_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Последний день (включительно) покупки для получения выплаты в часовом поясе UTC. |
 | dividend_type |  [string](#string) | Тип выплаты. Возможные значения: Regular Cash – регулярные выплаты, Cancelled – выплата отменена, Daily Accrual – ежедневное начисление, Return of Capital – возврат капитала, прочие типы выплат. |
-| record_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата фиксации реестра |
+| record_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата фиксации реестра в часовом поясе UTC. |
 | regularity |  [string](#string) | Регулярность выплаты. Возможные значения: Annual – ежегодная, Semi-Anl – каждые полгода, прочие типы выплат. |
 | close_price |  [MoneyValue](#moneyvalue) | Цена закрытия инструмента на момент ex_dividend_date. |
 | yield_value |  [Quotation](#quotation) | Величина доходности. |
-| created_at |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время создания записи. |
+| created_at |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время создания записи в часовом поясе UTC. |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->

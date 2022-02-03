@@ -114,7 +114,7 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время отмены заявки в часовом поясе UTC |
+| time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время отмены заявки в часовом поясе UTC. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -131,9 +131,9 @@
 | direction |  [StopOrderDirection](#stoporderdirection) | Направление операции |
 | currency |  [string](#string) | Валюта стоп-заявки |
 | order_type |  [StopOrderType](#stopordertype) | Тип стоп-заявки |
-| create_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время выставления заявки в часовом поясе UTC |
-| activation_date_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время конвертации стоп-заявки в биржевую в часовом поясе UTC |
-| expiration_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время снятия заявки в часовом поясе UTC |
+| create_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время выставления заявки в часовом поясе UTC. |
+| activation_date_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время конвертации стоп-заявки в биржевую в часовом поясе UTC. |
+| expiration_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время снятия заявки в часовом поясе UTC. |
 | price |  [MoneyValue](#moneyvalue) | Цена заявки |
 | stop_price |  [MoneyValue](#moneyvalue) | Цена активации стоп-заявки |
  <!-- end Fields -->

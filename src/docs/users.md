@@ -81,6 +81,7 @@
 | status |  [AccountStatus](#accountstatus) | Статус счёта. |
 | opened_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата открытия счёта в часовом поясе UTC. |
 | closed_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата закрытия счёта в часовом поясе UTC. |
+| access_level |  [AccessLevel](#accesslevel) | Уровень доступа к текущему счёту (определяется токеном). |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -197,6 +198,19 @@
 | ACCOUNT_STATUS_NEW | 1 | Новый, в процессе открытия. |
 | ACCOUNT_STATUS_OPEN | 2 | Открытый и активный счёт. |
 | ACCOUNT_STATUS_CLOSED | 3 | Закрытый счёт. |
+
+
+
+
+#### AccessLevel
+Уровень доступа к счёту.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ACCOUNT_ACCESS_LEVEL_UNSPECIFIED | 0 | Уровень доступа не определён. |
+| ACCOUNT_ACCESS_LEVEL_FULL_ACCESS | 1 | Полный доступ к счёту. |
+| ACCOUNT_ACCESS_LEVEL_READ_ONLY | 2 | Доступ с уровнем прав "только чтение". |
+| ACCOUNT_ACCESS_LEVEL_NO_ACCESS | 3 | Доступ отсутствует. |
 
 
  <!-- range .Enums -->

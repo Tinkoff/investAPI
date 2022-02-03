@@ -94,7 +94,7 @@ Stream сделок пользователя
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | order_id |  [string](#string) | Идентификатор торгового поручения |
-| created_at |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время создания сообщения |
+| created_at |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время создания сообщения в часовом поясе UTC. |
 | direction |  [OrderDirection](#orderdirection) | Направление сделки (возможные значения) |
 | figi |  [string](#string) | Figi-идентификатор инструмента |
 | trades | Массив объектов [OrderTrade](#ordertrade) | Массив сделок |
@@ -108,7 +108,7 @@ Stream сделок пользователя
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| date_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время совершения сделки по времени биржи |
+| date_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время совершения сделки в часовом поясе UTC. |
 | price |  [Quotation](#quotation) | Цена, по которой совершена сделка |
 | quantity |  [int64](#int64) | Количество лотов в сделке |
  <!-- end Fields -->

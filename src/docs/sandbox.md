@@ -215,6 +215,14 @@
 
 - Тело ответа — [WithdrawLimitsResponse](#withdrawlimitsresponse)
 
+
+#### GetBrokerReport
+
+
+- Тело запроса — [BrokerReportRequest](#brokerreportrequest)
+
+- Тело ответа — [BrokerReportResponse](#brokerreportresponse)
+
  <!-- range .Methods -->
  <!-- range .Services -->
 
@@ -358,11 +366,13 @@
 | figi |  [string](#string) | Figi-идентификатора инструмента |
 | instrument_type |  [string](#string) | Тип инструмента |
 | quantity |  [Quotation](#quotation) | Количество инструмента в портфеле в штуках |
-| average_position_price |  [MoneyValue](#moneyvalue) | Средняя цена лота в позиции |
+| average_position_price |  [MoneyValue](#moneyvalue) | Средневзвешенная цена позиции |
 | expected_yield |  [Quotation](#quotation) | Текущая рассчитанная доходность |
 | current_nkd |  [MoneyValue](#moneyvalue) | Текущий НКД |
 | average_position_price_pt |  [Quotation](#quotation) | Средняя цена лота в позиции в пунктах (для фьючерсов) |
 | current_price |  [MoneyValue](#moneyvalue) | Текущая цена инструмента |
+| average_position_price_fifo |  [MoneyValue](#moneyvalue) | Средняя цена лота в позиции по методу FIFO |
+| quantity_lots |  [Quotation](#quotation) | Количество лотов в портфеле |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -389,6 +399,117 @@
 | figi |  [string](#string) | Figi-идентификатор фьючерса |
 | blocked |  [int64](#int64) | Заблокировано |
 | balance |  [int64](#int64) | Текущий баланс |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### BrokerReportRequest
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| generate_broker_report_request |  [GenerateBrokerReportRequest](#generatebrokerreportrequest) |  |
+| get_broker_report_request |  [GetBrokerReportRequest](#getbrokerreportrequest) |  |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### BrokerReportResponse
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| generate_broker_report_response |  [GenerateBrokerReportResponse](#generatebrokerreportresponse) |  |
+| get_broker_report_response |  [GetBrokerReportResponse](#getbrokerreportresponse) |  |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GenerateBrokerReportRequest
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| account_id |  [string](#string) | Идентификатор счёта клиента |
+| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало периода в часовом поясе UTC. |
+| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание периода в часовом поясе UTC. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GenerateBrokerReportResponse
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| task_id |  [string](#string) | Идентификатор задачи формирования брокерского отчёта |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetBrokerReportRequest
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| task_id |  [string](#string) | Идентификатор задачи формирования брокерского отчёта |
+| page |  [int32](#int32) | Номер страницы отчета (начинается с 1), значение по умолчанию: 0 |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetBrokerReportResponse
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| broker_report | Массив объектов [BrokerReport](#brokerreport) |  |
+| itemsCount |  [int32](#int32) | Количество записей в отчете |
+| pagesCount |  [int32](#int32) | Количество страниц с данными отчета (начинается с 0) |
+| page |  [int32](#int32) | Текущая страница (начинается с 0) |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### BrokerReport
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| trade_id |  [string](#string) | Номер сделки |
+| order_id |  [string](#string) | Номер поручения |
+| figi |  [string](#string) | Figi-идентификатор инструмента |
+| execute_sign |  [string](#string) | Признак исполнения |
+| trade_datetime |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время заключения в часовом поясе UTC. |
+| exchange |  [string](#string) | Торговая площадка |
+| class_code |  [string](#string) | Режим торгов |
+| direction |  [string](#string) | Вид сделки |
+| name |  [string](#string) | Сокращённое наименование актива |
+| ticker |  [string](#string) | Код актива |
+| price |  [MoneyValue](#moneyvalue) | Цена за единицу |
+| quantity |  [int64](#int64) | Количество |
+| order_amount |  [MoneyValue](#moneyvalue) | Сумма (без НКД) |
+| aci_value |  [Quotation](#quotation) | НКД |
+| total_order_amount |  [MoneyValue](#moneyvalue) | Сумма сделки |
+| broker_commission |  [MoneyValue](#moneyvalue) | Комиссия брокера |
+| exchange_commission |  [MoneyValue](#moneyvalue) | Комиссия биржи |
+| exchange_clearing_commission |  [MoneyValue](#moneyvalue) | Комиссия клир. центра |
+| repo_rate |  [Quotation](#quotation) | Ставка РЕПО (%) |
+| party |  [string](#string) | Контрагент/Брокер |
+| clear_value_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата расчётов в часовом поясе UTC. |
+| sec_value_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата поставки в часовом поясе UTC. |
+| broker_status |  [string](#string) | Статус брокера |
+| separate_agreement_type |  [string](#string) | Тип дог. |
+| separate_agreement_number |  [string](#string) | Номер дог. |
+| separate_agreement_date |  [string](#string) | Дата дог. |
+| delivery_type |  [string](#string) | Тип расчёта по сделке |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->
@@ -558,7 +679,7 @@ Stream сделок пользователя
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | order_id |  [string](#string) | Идентификатор торгового поручения |
-| created_at |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время создания сообщения |
+| created_at |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время создания сообщения в часовом поясе UTC. |
 | direction |  [OrderDirection](#orderdirection) | Направление сделки (возможные значения) |
 | figi |  [string](#string) | Figi-идентификатор инструмента |
 | trades | Массив объектов [OrderTrade](#ordertrade) | Массив сделок |
@@ -572,7 +693,7 @@ Stream сделок пользователя
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| date_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время совершения сделки по времени биржи |
+| date_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время совершения сделки в часовом поясе UTC. |
 | price |  [Quotation](#quotation) | Цена, по которой совершена сделка |
 | quantity |  [int64](#int64) | Количество лотов в сделке |
  <!-- end Fields -->
@@ -846,6 +967,7 @@ Stream сделок пользователя
 | status |  [AccountStatus](#accountstatus) | Статус счёта. |
 | opened_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата открытия счёта в часовом поясе UTC. |
 | closed_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата закрытия счёта в часовом поясе UTC. |
+| access_level |  [AccessLevel](#accesslevel) | Уровень доступа к текущему счёту (определяется токеном). |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -964,6 +1086,19 @@ Stream сделок пользователя
 | ACCOUNT_STATUS_NEW | 1 | Новый, в процессе открытия. |
 | ACCOUNT_STATUS_OPEN | 2 | Открытый и активный счёт. |
 | ACCOUNT_STATUS_CLOSED | 3 | Закрытый счёт. |
+ <!-- range .Values -->
+
+
+
+#### AccessLevel
+Уровень доступа к счёту.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ACCOUNT_ACCESS_LEVEL_UNSPECIFIED | 0 | Уровень доступа не определён. |
+| ACCOUNT_ACCESS_LEVEL_FULL_ACCESS | 1 | Полный доступ к счёту. |
+| ACCOUNT_ACCESS_LEVEL_READ_ONLY | 2 | Доступ с уровнем прав "только чтение". |
+| ACCOUNT_ACCESS_LEVEL_NO_ACCESS | 3 | Доступ отсутствует. |
  <!-- range .Values -->
 
  <!-- range .HasEnums -->

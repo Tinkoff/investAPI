@@ -61,7 +61,7 @@ message CancelStopOrderRequest {
 
 //Результат отмены выставленной стоп-заявки.
 message CancelStopOrderResponse {
-  google.protobuf.Timestamp time = 1; //Время отмены заявки в часовом поясе UTC
+  google.protobuf.Timestamp time = 1; //Время отмены заявки в часовом поясе UTC.
 }
 
 //Информация о стоп-заявке.
@@ -72,9 +72,9 @@ message StopOrder {
   StopOrderDirection direction = 4; //Направление операции
   string currency = 5;  //Валюта стоп-заявки
   StopOrderType order_type = 6; //Тип стоп-заявки
-  google.protobuf.Timestamp create_date = 7; //Дата и время выставления заявки в часовом поясе UTC
-  google.protobuf.Timestamp activation_date_time = 8; //Дата и время конвертации стоп-заявки в биржевую в часовом поясе UTC
-  google.protobuf.Timestamp expiration_time = 9; //Дата и время снятия заявки в часовом поясе UTC
+  google.protobuf.Timestamp create_date = 7; //Дата и время выставления заявки в часовом поясе UTC.
+  google.protobuf.Timestamp activation_date_time = 8; //Дата и время конвертации стоп-заявки в биржевую в часовом поясе UTC.
+  google.protobuf.Timestamp expiration_time = 9; //Дата и время снятия заявки в часовом поясе UTC.
   MoneyValue price = 10; //Цена заявки
   MoneyValue stop_price = 11; //Цена активации стоп-заявки
 }

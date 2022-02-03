@@ -4,7 +4,7 @@ info:
   termsOfService: https://www.tinkoff.ru/invest/disclaimers/basic-information/
   contact:
     email: al.a.volkov@tinkoff.ru
-  version: '2.0'
+  version: '1.0.0'
 externalDocs:
   description: Документация Tinkoff Invest API
   url: https://tinkoff.github.io/investAPI/
@@ -515,6 +515,31 @@ paths:
       summary: Метод запроса статуса торгов по инструментам.
       tags:
       - MarketDataService
+      x-codegen-request-body-name: body
+  /tinkoff.public.invest.api.contract.v1.OperationsService/GetBrokerReport:
+    post:
+      operationId: OperationsService_GetBrokerReport
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1BrokerReportRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1BrokerReportResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - OperationsService
       x-codegen-request-body-name: body
   /tinkoff.public.invest.api.contract.v1.OperationsService/GetOperations:
     post:
@@ -1221,6 +1246,15 @@ components:
             $ref: '#/components/schemas/protobufAny'
           type: array
       type: object
+    v1AccessLevel:
+      default: ACCOUNT_ACCESS_LEVEL_UNSPECIFIED
+      description: Уровень доступа к счёту.
+      enum:
+      - ACCOUNT_ACCESS_LEVEL_UNSPECIFIED
+      - ACCOUNT_ACCESS_LEVEL_FULL_ACCESS
+      - ACCOUNT_ACCESS_LEVEL_READ_ONLY
+      - ACCOUNT_ACCESS_LEVEL_NO_ACCESS
+      type: string
     v1Account:
       description: Информация о счёте.
       example:
@@ -1247,6 +1281,8 @@ components:
           description: Дата закрытия счёта в часовом поясе UTC.
           format: date-time
           type: string
+        accessLevel:
+          $ref: '#/components/schemas/v1AccessLevel'
       type: object
     v1AccountStatus:
       default: ACCOUNT_STATUS_UNSPECIFIED
@@ -1629,6 +1665,237 @@ components:
           items:
             $ref: '#/components/schemas/v1Bond'
           type: array
+      type: object
+    v1BrokerReport:
+      example:
+        exchangeClearingCommission:
+          nano: 5
+          currency: currency
+          units: units
+        separateAgreementDate: separateAgreementDate
+        orderId: orderId
+        figi: figi
+        executeSign: executeSign
+        brokerCommission:
+          nano: 5
+          currency: currency
+          units: units
+        repoRate:
+          nano: 6
+          units: units
+        orderAmount:
+          nano: 5
+          currency: currency
+          units: units
+        price:
+          nano: 5
+          currency: currency
+          units: units
+        aciValue:
+          nano: 6
+          units: units
+        secValueDate: 2000-01-23T04:56:07.000+00:00
+        direction: direction
+        classCode: classCode
+        ticker: ticker
+        quantity: quantity
+        deliveryType: deliveryType
+        tradeDatetime: 2000-01-23T04:56:07.000+00:00
+        exchangeCommission:
+          nano: 5
+          currency: currency
+          units: units
+        brokerStatus: brokerStatus
+        totalOrderAmount:
+          nano: 5
+          currency: currency
+          units: units
+        separateAgreementNumber: separateAgreementNumber
+        clearValueDate: 2000-01-23T04:56:07.000+00:00
+        name: name
+        exchange: exchange
+        separateAgreementType: separateAgreementType
+        tradeId: tradeId
+        party: party
+      properties:
+        tradeId:
+          type: string
+        orderId:
+          type: string
+        figi:
+          type: string
+        executeSign:
+          type: string
+        tradeDatetime:
+          format: date-time
+          type: string
+        exchange:
+          type: string
+        classCode:
+          type: string
+        direction:
+          type: string
+        name:
+          type: string
+        ticker:
+          type: string
+        price:
+          $ref: '#/components/schemas/v1MoneyValue'
+        quantity:
+          format: int64
+          type: string
+        orderAmount:
+          $ref: '#/components/schemas/v1MoneyValue'
+        aciValue:
+          $ref: '#/components/schemas/v1Quotation'
+        totalOrderAmount:
+          $ref: '#/components/schemas/v1MoneyValue'
+        brokerCommission:
+          $ref: '#/components/schemas/v1MoneyValue'
+        exchangeCommission:
+          $ref: '#/components/schemas/v1MoneyValue'
+        exchangeClearingCommission:
+          $ref: '#/components/schemas/v1MoneyValue'
+        repoRate:
+          $ref: '#/components/schemas/v1Quotation'
+        party:
+          type: string
+        clearValueDate:
+          format: date-time
+          type: string
+        secValueDate:
+          format: date-time
+          type: string
+        brokerStatus:
+          type: string
+        separateAgreementType:
+          type: string
+        separateAgreementNumber:
+          type: string
+        separateAgreementDate:
+          type: string
+        deliveryType:
+          type: string
+      type: object
+    v1BrokerReportRequest:
+      properties:
+        generateBrokerReportRequest:
+          $ref: '#/components/schemas/v1GenerateBrokerReportRequest'
+        getBrokerReportRequest:
+          $ref: '#/components/schemas/v1GetBrokerReportRequest'
+      type: object
+    v1BrokerReportResponse:
+      example:
+        generateBrokerReportResponse:
+          taskId: taskId
+        getBrokerReportResponse:
+          brokerReport:
+          - exchangeClearingCommission:
+              nano: 5
+              currency: currency
+              units: units
+            separateAgreementDate: separateAgreementDate
+            orderId: orderId
+            figi: figi
+            executeSign: executeSign
+            brokerCommission:
+              nano: 5
+              currency: currency
+              units: units
+            repoRate:
+              nano: 6
+              units: units
+            orderAmount:
+              nano: 5
+              currency: currency
+              units: units
+            price:
+              nano: 5
+              currency: currency
+              units: units
+            aciValue:
+              nano: 6
+              units: units
+            secValueDate: 2000-01-23T04:56:07.000+00:00
+            direction: direction
+            classCode: classCode
+            ticker: ticker
+            quantity: quantity
+            deliveryType: deliveryType
+            tradeDatetime: 2000-01-23T04:56:07.000+00:00
+            exchangeCommission:
+              nano: 5
+              currency: currency
+              units: units
+            brokerStatus: brokerStatus
+            totalOrderAmount:
+              nano: 5
+              currency: currency
+              units: units
+            separateAgreementNumber: separateAgreementNumber
+            clearValueDate: 2000-01-23T04:56:07.000+00:00
+            name: name
+            exchange: exchange
+            separateAgreementType: separateAgreementType
+            tradeId: tradeId
+            party: party
+          - exchangeClearingCommission:
+              nano: 5
+              currency: currency
+              units: units
+            separateAgreementDate: separateAgreementDate
+            orderId: orderId
+            figi: figi
+            executeSign: executeSign
+            brokerCommission:
+              nano: 5
+              currency: currency
+              units: units
+            repoRate:
+              nano: 6
+              units: units
+            orderAmount:
+              nano: 5
+              currency: currency
+              units: units
+            price:
+              nano: 5
+              currency: currency
+              units: units
+            aciValue:
+              nano: 6
+              units: units
+            secValueDate: 2000-01-23T04:56:07.000+00:00
+            direction: direction
+            classCode: classCode
+            ticker: ticker
+            quantity: quantity
+            deliveryType: deliveryType
+            tradeDatetime: 2000-01-23T04:56:07.000+00:00
+            exchangeCommission:
+              nano: 5
+              currency: currency
+              units: units
+            brokerStatus: brokerStatus
+            totalOrderAmount:
+              nano: 5
+              currency: currency
+              units: units
+            separateAgreementNumber: separateAgreementNumber
+            clearValueDate: 2000-01-23T04:56:07.000+00:00
+            name: name
+            exchange: exchange
+            separateAgreementType: separateAgreementType
+            tradeId: tradeId
+            party: party
+          pagesCount: 6
+          page: 1
+          itemsCount: 0
+      properties:
+        generateBrokerReportResponse:
+          $ref: '#/components/schemas/v1GenerateBrokerReportResponse'
+        getBrokerReportResponse:
+          $ref: '#/components/schemas/v1GetBrokerReportResponse'
       type: object
     v1CancelOrderRequest:
       description: Запрос отмены торгового поручения.
@@ -2504,6 +2771,24 @@ components:
             $ref: '#/components/schemas/v1Future'
           type: array
       type: object
+    v1GenerateBrokerReportRequest:
+      properties:
+        accountId:
+          type: string
+        from:
+          format: date-time
+          type: string
+        to:
+          format: date-time
+          type: string
+      type: object
+    v1GenerateBrokerReportResponse:
+      example:
+        taskId: taskId
+      properties:
+        taskId:
+          type: string
+      type: object
     v1GetAccountsRequest:
       description: Запрос получения счетов пользователя.
       type: object
@@ -2567,6 +2852,133 @@ components:
             $ref: '#/components/schemas/v1AccruedInterest'
           type: array
       title: НКД облигации
+      type: object
+    v1GetBrokerReportRequest:
+      properties:
+        taskId:
+          type: string
+        page:
+          format: int32
+          type: integer
+      type: object
+    v1GetBrokerReportResponse:
+      example:
+        brokerReport:
+        - exchangeClearingCommission:
+            nano: 5
+            currency: currency
+            units: units
+          separateAgreementDate: separateAgreementDate
+          orderId: orderId
+          figi: figi
+          executeSign: executeSign
+          brokerCommission:
+            nano: 5
+            currency: currency
+            units: units
+          repoRate:
+            nano: 6
+            units: units
+          orderAmount:
+            nano: 5
+            currency: currency
+            units: units
+          price:
+            nano: 5
+            currency: currency
+            units: units
+          aciValue:
+            nano: 6
+            units: units
+          secValueDate: 2000-01-23T04:56:07.000+00:00
+          direction: direction
+          classCode: classCode
+          ticker: ticker
+          quantity: quantity
+          deliveryType: deliveryType
+          tradeDatetime: 2000-01-23T04:56:07.000+00:00
+          exchangeCommission:
+            nano: 5
+            currency: currency
+            units: units
+          brokerStatus: brokerStatus
+          totalOrderAmount:
+            nano: 5
+            currency: currency
+            units: units
+          separateAgreementNumber: separateAgreementNumber
+          clearValueDate: 2000-01-23T04:56:07.000+00:00
+          name: name
+          exchange: exchange
+          separateAgreementType: separateAgreementType
+          tradeId: tradeId
+          party: party
+        - exchangeClearingCommission:
+            nano: 5
+            currency: currency
+            units: units
+          separateAgreementDate: separateAgreementDate
+          orderId: orderId
+          figi: figi
+          executeSign: executeSign
+          brokerCommission:
+            nano: 5
+            currency: currency
+            units: units
+          repoRate:
+            nano: 6
+            units: units
+          orderAmount:
+            nano: 5
+            currency: currency
+            units: units
+          price:
+            nano: 5
+            currency: currency
+            units: units
+          aciValue:
+            nano: 6
+            units: units
+          secValueDate: 2000-01-23T04:56:07.000+00:00
+          direction: direction
+          classCode: classCode
+          ticker: ticker
+          quantity: quantity
+          deliveryType: deliveryType
+          tradeDatetime: 2000-01-23T04:56:07.000+00:00
+          exchangeCommission:
+            nano: 5
+            currency: currency
+            units: units
+          brokerStatus: brokerStatus
+          totalOrderAmount:
+            nano: 5
+            currency: currency
+            units: units
+          separateAgreementNumber: separateAgreementNumber
+          clearValueDate: 2000-01-23T04:56:07.000+00:00
+          name: name
+          exchange: exchange
+          separateAgreementType: separateAgreementType
+          tradeId: tradeId
+          party: party
+        pagesCount: 6
+        page: 1
+        itemsCount: 0
+      properties:
+        brokerReport:
+          items:
+            $ref: '#/components/schemas/v1BrokerReport'
+          type: array
+        itemsCount:
+          format: int32
+          type: integer
+        pagesCount:
+          format: int32
+          type: integer
+        page:
+          format: int32
+          type: integer
       type: object
     v1GetCandlesRequest:
       description: Запрос исторических свечей.
@@ -3672,6 +4084,10 @@ components:
         averagePositionPricePt:
           nano: 6
           units: units
+        averagePositionPriceFifo:
+          nano: 5
+          currency: currency
+          units: units
         currentNkd:
           nano: 5
           currency: currency
@@ -3682,6 +4098,9 @@ components:
           units: units
         figi: figi
         expectedYield:
+          nano: 6
+          units: units
+        quantityLots:
           nano: 6
           units: units
       properties:
@@ -3701,6 +4120,10 @@ components:
           $ref: '#/components/schemas/v1Quotation'
         currentPrice:
           $ref: '#/components/schemas/v1MoneyValue'
+        averagePositionPriceFifo:
+          $ref: '#/components/schemas/v1MoneyValue'
+        quantityLots:
+          $ref: '#/components/schemas/v1Quotation'
       type: object
     v1PortfolioRequest:
       description: Запрос получения текущего портфеля по счёту.
@@ -3738,6 +4161,10 @@ components:
           averagePositionPricePt:
             nano: 6
             units: units
+          averagePositionPriceFifo:
+            nano: 5
+            currency: currency
+            units: units
           currentNkd:
             nano: 5
             currency: currency
@@ -3748,6 +4175,9 @@ components:
             units: units
           figi: figi
           expectedYield:
+            nano: 6
+            units: units
+          quantityLots:
             nano: 6
             units: units
         - averagePositionPrice:
@@ -3761,6 +4191,10 @@ components:
           averagePositionPricePt:
             nano: 6
             units: units
+          averagePositionPriceFifo:
+            nano: 5
+            currency: currency
+            units: units
           currentNkd:
             nano: 5
             currency: currency
@@ -3771,6 +4205,9 @@ components:
             units: units
           figi: figi
           expectedYield:
+            nano: 6
+            units: units
+          quantityLots:
             nano: 6
             units: units
         totalAmountShares:

@@ -26,6 +26,8 @@ service OperationsService {/*Сервис предназначен для пол
 
   //Метод получения доступного остатка для вывода средств.
   rpc GetWithdrawLimits(WithdrawLimitsRequest) returns (WithdrawLimitsResponse);
+
+  rpc GetBrokerReport(BrokerReportRequest) returns (BrokerReportResponse);
 }
 
 //Запрос получения списка операций по счёту.
@@ -106,11 +108,13 @@ message PortfolioPosition {
   string figi = 1; //Figi-идентификатора инструмента
   string instrument_type = 2; //Тип инструмента
   Quotation quantity = 3; //Количество инструмента в портфеле в штуках
-  MoneyValue average_position_price = 4; //Средняя цена лота в позиции
+  MoneyValue average_position_price = 4; //Средневзвешенная цена позиции
   Quotation expected_yield = 5; //Текущая рассчитанная доходность
   MoneyValue current_nkd = 6; // Текущий НКД
   Quotation average_position_price_pt = 7; //Средняя цена лота в позиции в пунктах (для фьючерсов)
   MoneyValue current_price = 8; //Текущая цена инструмента
+  MoneyValue average_position_price_fifo = 9; //Средняя цена лота в позиции по методу FIFO
+  Quotation quantity_lots = 10; //Количество лотов в портфеле
 }
 
 //Баланс позиции ценной бумаги.
@@ -125,6 +129,72 @@ message PositionsFutures {
   string figi = 1; //Figi-идентификатор фьючерса
   int64 blocked = 2; //Заблокировано
   int64 balance = 3;  //Текущий баланс
+}
+
+message BrokerReportRequest {
+  oneof payload {
+    GenerateBrokerReportRequest generate_broker_report_request = 1;
+    GetBrokerReportRequest get_broker_report_request = 2;
+  }
+}
+
+message BrokerReportResponse {
+  oneof payload {
+    GenerateBrokerReportResponse generate_broker_report_response = 1;
+    GetBrokerReportResponse get_broker_report_response = 2;
+  }
+}
+
+message GenerateBrokerReportRequest {
+  string account_id = 1; //Идентификатор счёта клиента
+  google.protobuf.Timestamp from = 2; //Начало периода в часовом поясе UTC.
+  google.protobuf.Timestamp to = 3; //Окончание периода в часовом поясе UTC.
+}
+
+message GenerateBrokerReportResponse {
+  string task_id = 1; //Идентификатор задачи формирования брокерского отчёта
+}
+
+message GetBrokerReportRequest {
+  string task_id = 1; //Идентификатор задачи формирования брокерского отчёта
+  int32 page = 2; //Номер страницы отчета (начинается с 1), значение по умолчанию: 0
+}
+
+message GetBrokerReportResponse {
+  repeated BrokerReport broker_report = 1;
+  int32 itemsCount = 2; //Количество записей в отчете
+  int32 pagesCount = 3; //Количество страниц с данными отчета (начинается с 0)
+  int32 page = 4; //Текущая страница (начинается с 0)
+}
+
+message BrokerReport {
+  string trade_id = 1;//Номер сделки
+  string order_id = 2; //Номер поручения
+  string figi = 3; //Figi-идентификатор инструмента
+  string execute_sign = 4; //Признак исполнения
+  google.protobuf.Timestamp trade_datetime = 5; //Дата и время заключения в часовом поясе UTC.
+  string exchange = 6; //Торговая площадка
+  string class_code = 7; //Режим торгов
+  string direction = 8; //Вид сделки
+  string name = 9; //Сокращённое наименование актива
+  string ticker = 10; //Код актива
+  MoneyValue price = 11; //Цена за единицу
+  int64 quantity = 12; //Количество
+  MoneyValue order_amount = 13; //Сумма (без НКД)
+  Quotation aci_value = 14; //НКД
+  MoneyValue total_order_amount = 15; //Сумма сделки
+  MoneyValue broker_commission = 16; //Комиссия брокера
+  MoneyValue exchange_commission = 17; //Комиссия биржи
+  MoneyValue exchange_clearing_commission = 18; //Комиссия клир. центра
+  Quotation repo_rate = 19; //Ставка РЕПО (%)
+  string party = 20; //Контрагент/Брокер
+  google.protobuf.Timestamp clear_value_date = 21; //Дата расчётов в часовом поясе UTC.
+  google.protobuf.Timestamp sec_value_date = 22; //Дата поставки в часовом поясе UTC.
+  string broker_status = 23; //Статус брокера
+  string separate_agreement_type = 24; //Тип дог.
+  string separate_agreement_number = 25; //Номер дог.
+  string separate_agreement_date = 26; //Дата дог.
+  string delivery_type = 27; //Тип расчёта по сделке
 }
 
 //Статус запрашиваемых операций

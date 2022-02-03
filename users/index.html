@@ -709,6 +709,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#accesslevel" class="md-nav__link">
+    AccessLevel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#securitytradingstatus" class="md-nav__link">
     SecurityTradingStatus
   </a>
@@ -1290,6 +1297,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#accesslevel" class="md-nav__link">
+    AccessLevel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#securitytradingstatus" class="md-nav__link">
     SecurityTradingStatus
   </a>
@@ -1471,6 +1485,11 @@
 <td>closed_date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
 <td>Дата закрытия счёта в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>access_level</td>
+<td><a href="#accesslevel">AccessLevel</a></td>
+<td>Уровень доступа к текущему счёту (определяется токеном).</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -1749,6 +1768,39 @@
 <td>ACCOUNT_STATUS_CLOSED</td>
 <td>3</td>
 <td>Закрытый счёт.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="accesslevel">AccessLevel</h4>
+<p>Уровень доступа к счёту.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACCOUNT_ACCESS_LEVEL_UNSPECIFIED</td>
+<td>0</td>
+<td>Уровень доступа не определён.</td>
+</tr>
+<tr>
+<td>ACCOUNT_ACCESS_LEVEL_FULL_ACCESS</td>
+<td>1</td>
+<td>Полный доступ к счёту.</td>
+</tr>
+<tr>
+<td>ACCOUNT_ACCESS_LEVEL_READ_ONLY</td>
+<td>2</td>
+<td>Доступ с уровнем прав "только чтение".</td>
+</tr>
+<tr>
+<td>ACCOUNT_ACCESS_LEVEL_NO_ACCESS</td>
+<td>3</td>
+<td>Доступ отсутствует.</td>
 </tr>
 </tbody>
 </table>

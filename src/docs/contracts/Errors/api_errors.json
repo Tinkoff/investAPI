@@ -22,7 +22,7 @@
   "30005": {
     "message": "'id_type' is invalid",
     "type": "INVALID_ARGUMENT",
-    "description": "Входной параметр *id_type* имеет некорректное значение.</br>Список доступных значений: [*id_type*](/investAPI/instruments#instrumentidtype)."
+    "description": "Входной параметр *id_type* имеет некорректное значение.</br>Список доступных значений: [*id_type*](https://tinkoff.github.io/investAPI/instruments#instrumentidtype)."
   },
   "30006": {
     "message": "missing parameter: 'id_type'",
@@ -52,7 +52,7 @@
   "30011": {
     "message": "interval is invalid",
     "type": "INVALID_ARGUMENT",
-    "description": "Входной параметр *interval* имеет некорректное значение.</br>Список доступных значений: [*interval*](/investAPI/marketdata#subscriptioninterval)."
+    "description": "Входной параметр *interval* имеет некорректное значение.</br>Список доступных значений: [*interval*](https://tinkoff.github.io/investAPI/marketdata#subscriptioninterval)."
   },
   "30012": {
     "message": "'to' can't be less then 'from'",
@@ -62,7 +62,7 @@
   "30013": {
     "message": "'class_code' require for 'id_type' = 'ticker'",
     "type": "INVALID_ARGUMENT",
-    "description": "Входной параметр *class_code* не может быть пустым при поиске по тикеру. </br>Укажите корректный параметр *class_code*. </br>Подробнее: [Идентификация инструментов](/investAPI/faq_identification/)."
+    "description": "Входной параметр *class_code* не может быть пустым при поиске по тикеру. </br>Укажите корректный параметр *class_code*. </br>Подробнее: [Идентификация инструментов](https://tinkoff.github.io/investAPI/faq_identification/)."
   },
   "30014": {
     "message": "the maximum request period for the given candle interval has been exceeded",
@@ -97,7 +97,7 @@
   "30020": {
     "message": "'direction' is invalid",
     "type": "INVALID_ARGUMENT",
-    "description": "Входной параметр *direction* имеет некорректное значение.</br>Список доступных значений: [*direction*](/investAPI/stoporders/#stoporderdirection)."
+    "description": "Входной параметр *direction* имеет некорректное значение.</br>Список доступных значений: [*direction*](https://tinkoff.github.io/investAPI/stoporders/#stoporderdirection)."
   },
   "30021": {
     "message": "missing parameter: 'account_id'",
@@ -147,7 +147,7 @@
   "30038": {
     "message": "'stop_order_type' is invalid",
     "type": "INVALID_ARGUMENT",
-    "description": "Входной параметр *stop_order_type* имеет некорректное значение.</br>Список доступных значений: [*stop_order_type*](/investAPI/stoporders/#stopordertype)."
+    "description": "Входной параметр *stop_order_type* имеет некорректное значение.</br>Список доступных значений: [*stop_order_type*](https://tinkoff.github.io/investAPI/stoporders/#stopordertype)."
   },
   "30040": {
     "message": "'expire_date' is invalid",
@@ -172,7 +172,7 @@
   "30044": {
     "message": "'expiration_type' is invalid",
     "type": "INVALID_ARGUMENT",
-    "description": "Входной параметр *expiration_type* имеет некорректное значение.</br>Список доступных значений: [*expiration_type*](/investAPI/stoporders/#stoporderexpirationtype)."
+    "description": "Входной параметр *expiration_type* имеет некорректное значение.</br>Список доступных значений: [*expiration_type*](https://tinkoff.github.io/investAPI/stoporders/#stoporderexpirationtype)."
   },
   "30045": {
     "message": "missing parameter: 'ticker'",
@@ -197,7 +197,7 @@
   "30050": {
     "message": "'instrument_status' is invalid",
     "type": "INVALID_ARGUMENT",
-    "description": "Входной параметр *instrument_status* имеет некорректное значение.</br>Список доступных значений: [*instrument_status*](/investAPI/instruments#instrumentstatus)."
+    "description": "Входной параметр *instrument_status* имеет некорректное значение.</br>Список доступных значений: [*instrument_status*](https://tinkoff.github.io/investAPI/instruments#instrumentstatus)."
   },
   "30051": {
     "message": "account margin status is disabled",
@@ -287,7 +287,7 @@
   "40002": {
     "message": "insufficient privileges",
     "type": "PERMISSION_DENIED",
-    "description": "Недостаточно прав для совершения операции. </br>Токен доступа имеет уровень прав read-only.</br>Подробнее: [Виды токенов](/investAPI/index#_2)"
+    "description": "Недостаточно прав для совершения операции. </br>Токен доступа имеет уровень прав read-only.</br>Подробнее: [Виды токенов](https://tinkoff.github.io/investAPI/index#_2)"
   },
 
   "50001": {
@@ -338,12 +338,12 @@
   "80001": {
     "message": "limit of open streams exceeded",
     "type": "RESOURCE_EXHAUSTED",
-    "description": "Превышен лимит одновременных открытых stream-соединений. Подробнее: [Лимитная политика](/investAPI/limits/)"
+    "description": "Превышен лимит одновременных открытых stream-соединений. Подробнее: [Лимитная политика](https://tinkoff.github.io/investAPI/limits/)"
   },
   "80002": {
     "message": "request limit exceeded",
     "type": "RESOURCE_EXHAUSTED",
-    "description": "Превышен лимит запросов в минуту. Подробнее: [Лимитная политика](/investAPI/limits/)"
+    "description": "Превышен лимит запросов в минуту. Подробнее: [Лимитная политика](https://tinkoff.github.io/investAPI/limits/)"
   },
   "90001": {
     "message": "need confirmation: %s",

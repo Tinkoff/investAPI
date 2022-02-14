@@ -53,6 +53,8 @@ API реализован на быстром, удобном и функцион
 
 ## Официальные
 * [python](https://github.com/Tinkoff/invest-python)
+* [java](https://github.com/Tinkoff/invest-api-java-sdk)
+* [csharp](https://github.com/Tinkoff/invest-api-csharp-sdk)
 
 ## Неофициальные
 * [nodejs](https://github.com/betslus1/unofficial-tinkoff-invest-api_v2-lazy-sdk-NODEJS)

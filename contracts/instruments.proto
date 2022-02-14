@@ -180,8 +180,8 @@ message Bond {
   MoneyValue placement_price = 23; //Цена размещения.
   MoneyValue aci_value = 24; //Значение НКД (накопленного купонного дохода) на дату.
 
-  string country_of_risk = 25; //Код страны эмитента.
-  string country_of_risk_name = 26; //Наименование страны эмитента.
+  string country_of_risk = 25; //Код страны риска, т.е. страны, в которой компания ведёт основной бизнес.
+  string country_of_risk_name = 26; //Наименование страны риска, т.е. страны, в которой компания ведёт основной бизнес.
   string sector = 27; //Сектор экономики.
   string issue_kind = 28; //Форма выпуска. Возможные значения: </br>**documentary** — документарная; </br>**non_documentary** — бездокументарная.
   int64 issue_size = 29; //Размер выпуска.
@@ -219,8 +219,8 @@ message Currency {
 
   MoneyValue nominal = 17; //Номинал.
 
-  string country_of_risk = 18; //Код страны эмитента.
-  string country_of_risk_name = 19; //Наименование страны эмитента.
+  string country_of_risk = 18; //Код страны риска, т.е. страны, в которой компания ведёт основной бизнес.
+  string country_of_risk_name = 19; //Наименование страны риска, т.е. страны, в которой компания ведёт основной бизнес.
 
   SecurityTradingStatus trading_status = 20; //Текущий режим торгов инструмента.
   bool otc_flag = 21; //Признак внебиржевой ценной бумаги.
@@ -255,8 +255,8 @@ message Etf {
   google.protobuf.Timestamp released_date = 19; //Дата выпуска в часовом поясе UTC.
   Quotation num_shares = 20; //Количество акций фонда в обращении.
 
-  string country_of_risk = 21; //Код страны эмитента.
-  string country_of_risk_name = 22; //Наименование страны эмитента.
+  string country_of_risk = 21; //Код страны риска, т.е. страны, в которой компания ведёт основной бизнес.
+  string country_of_risk_name = 22; //Наименование страны риска, т.е. страны, в которой компания ведёт основной бизнес.
   string sector = 23; //Сектор экономики.
   string rebalancing_freq = 24; //Частота ребалансировки.
 
@@ -293,8 +293,8 @@ message Future {
   string basic_asset = 19;  //Основной актив.
   Quotation basic_asset_size = 20;  //Размер основного актива.
 
-  string country_of_risk = 21; //Код страны эмитента.
-  string country_of_risk_name = 22; //Наименование страны эмитента.
+  string country_of_risk = 21; //Код страны риска, т.е. страны, в которой компания ведёт основной бизнес.
+  string country_of_risk_name = 22; //Наименование страны риска, т.е. страны, в которой компания ведёт основной бизнес.
   string sector = 23; //Сектор экономики.
   google.protobuf.Timestamp expiration_date = 24; //Дата истечения срока в часов поясе UTC.
 
@@ -328,8 +328,8 @@ message Share {
   google.protobuf.Timestamp  ipo_date = 17; //Дата IPO акции в часовом поясе UTC.
   int64 issue_size = 18; //Размер выпуска.
 
-  string country_of_risk = 19; //Код страны эмитента.
-  string country_of_risk_name = 20; //Наименование страны эмитента.
+  string country_of_risk = 19; //Код страны риска, т.е. страны, в которой компания ведёт основной бизнес.
+  string country_of_risk_name = 20; //Наименование страны риска, т.е. страны, в которой компания ведёт основной бизнес.
   string sector = 21; //Сектор экономики.
   int64 issue_size_plan = 22; //Плановый размер выпуска.
   MoneyValue nominal = 23; //Номинал.
@@ -415,8 +415,8 @@ message Instrument {
   string name = 14; //Название инструмента.
   string exchange = 15; //Торговая площадка.
 
-  string country_of_risk = 16; //Код страны эмитента.
-  string country_of_risk_name = 17; //Наименование страны эмитента.
+  string country_of_risk = 16; //Код страны риска, т.е. страны, в которой компания ведёт основной бизнес.
+  string country_of_risk_name = 17; //Наименование страны риска, т.е. страны, в которой компания ведёт основной бизнес.
   string instrument_type = 18; //Тип инструмента.
 
   SecurityTradingStatus trading_status = 19; //Текущий режим торгов инструмента.

@@ -355,8 +355,8 @@
 | placement_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата размещения в часовом поясе UTC. |
 | placement_price |  [MoneyValue](#moneyvalue) | Цена размещения. |
 | aci_value |  [MoneyValue](#moneyvalue) | Значение НКД (накопленного купонного дохода) на дату. |
-| country_of_risk |  [string](#string) | Код страны эмитента. |
-| country_of_risk_name |  [string](#string) | Наименование страны эмитента. |
+| country_of_risk |  [string](#string) | Код страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
+| country_of_risk_name |  [string](#string) | Наименование страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
 | sector |  [string](#string) | Сектор экономики. |
 | issue_kind |  [string](#string) | Форма выпуска. Возможные значения: </br>**documentary** — документарная; </br>**non_documentary** — бездокументарная. |
 | issue_size |  [int64](#int64) | Размер выпуска. |
@@ -396,8 +396,8 @@
 | name |  [string](#string) | Название инструмента. |
 | exchange |  [string](#string) | Торговая площадка. |
 | nominal |  [MoneyValue](#moneyvalue) | Номинал. |
-| country_of_risk |  [string](#string) | Код страны эмитента. |
-| country_of_risk_name |  [string](#string) | Наименование страны эмитента. |
+| country_of_risk |  [string](#string) | Код страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
+| country_of_risk_name |  [string](#string) | Наименование страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
 | trading_status |  [SecurityTradingStatus](#securitytradingstatus) | Текущий режим торгов инструмента. |
 | otc_flag |  [bool](#bool) | Признак внебиржевой ценной бумаги. |
 | buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
@@ -434,8 +434,8 @@
 | focus_type |  [string](#string) | Возможные значения: </br>**equity** — акции;</br>**fixed_income** — облигации;</br>**mixed_allocation** — смешанный;</br>**money_market** — денежный рынок;</br>**real_estate** — недвижимость;</br>**commodity** — товары;</br>**specialty** — специальный;</br>**private_equity** — private equity;</br>**alternative_investment** — альтернативные инвестиции. |
 | released_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата выпуска в часовом поясе UTC. |
 | num_shares |  [Quotation](#quotation) | Количество акций фонда в обращении. |
-| country_of_risk |  [string](#string) | Код страны эмитента. |
-| country_of_risk_name |  [string](#string) | Наименование страны эмитента. |
+| country_of_risk |  [string](#string) | Код страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
+| country_of_risk_name |  [string](#string) | Наименование страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
 | sector |  [string](#string) | Сектор экономики. |
 | rebalancing_freq |  [string](#string) | Частота ребалансировки. |
 | trading_status |  [SecurityTradingStatus](#securitytradingstatus) | Текущий режим торгов инструмента. |
@@ -474,8 +474,8 @@
 | asset_type |  [string](#string) | Тип актива. Возможные значения: </br>**commodity** — товар; </br>**currency** — валюта; </br>**security** — ценная бумага; </br>**index** — индекс. |
 | basic_asset |  [string](#string) | Основной актив. |
 | basic_asset_size |  [Quotation](#quotation) | Размер основного актива. |
-| country_of_risk |  [string](#string) | Код страны эмитента. |
-| country_of_risk_name |  [string](#string) | Наименование страны эмитента. |
+| country_of_risk |  [string](#string) | Код страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
+| country_of_risk_name |  [string](#string) | Наименование страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
 | sector |  [string](#string) | Сектор экономики. |
 | expiration_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата истечения срока в часов поясе UTC. |
 | trading_status |  [SecurityTradingStatus](#securitytradingstatus) | Текущий режим торгов инструмента. |
@@ -511,8 +511,8 @@
 | exchange |  [string](#string) | Торговая площадка. |
 | ipo_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата IPO акции в часовом поясе UTC. |
 | issue_size |  [int64](#int64) | Размер выпуска. |
-| country_of_risk |  [string](#string) | Код страны эмитента. |
-| country_of_risk_name |  [string](#string) | Наименование страны эмитента. |
+| country_of_risk |  [string](#string) | Код страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
+| country_of_risk_name |  [string](#string) | Наименование страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
 | sector |  [string](#string) | Сектор экономики. |
 | issue_size_plan |  [int64](#int64) | Плановый размер выпуска. |
 | nominal |  [MoneyValue](#moneyvalue) | Номинал. |
@@ -623,8 +623,8 @@
 | short_enabled_flag |  [bool](#bool) | Признак доступности для операций в шорт. |
 | name |  [string](#string) | Название инструмента. |
 | exchange |  [string](#string) | Торговая площадка. |
-| country_of_risk |  [string](#string) | Код страны эмитента. |
-| country_of_risk_name |  [string](#string) | Наименование страны эмитента. |
+| country_of_risk |  [string](#string) | Код страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
+| country_of_risk_name |  [string](#string) | Наименование страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
 | instrument_type |  [string](#string) | Тип инструмента. |
 | trading_status |  [SecurityTradingStatus](#securitytradingstatus) | Текущий режим торгов инструмента. |
 | otc_flag |  [bool](#bool) | Признак внебиржевой ценной бумаги. |

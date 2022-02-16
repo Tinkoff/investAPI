@@ -1,0 +1,353 @@
+{
+  "30001": {
+    "message": "missing parameter: 'from'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *from* является обязательным. </br> Укажите корректный параметр *from*."
+  },
+  "30002": {
+    "message": "the required period should not exceed 7 days",
+    "type": "INVALID_ARGUMENT",
+    "description": "Запрошенный период не может превышать 7 дней. </br> Укажите корректный период."
+  },
+  "30003": {
+    "message": "'from' can't be less than the current date",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *from* не может быть меньше текущей даты. </br> Укажите корректный параметр *from*."
+  },
+  "30004": {
+    "message": "missing parameter: 'to'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *to* является обязательным. </br> Укажите корректный параметр *to*."
+  },
+  "30005": {
+    "message": "'id_type' is invalid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *id_type* имеет некорректное значение.</br>Список доступных значений: [*id_type*](https://tinkoff.github.io/investAPI/instruments#instrumentidtype)."
+  },
+  "30006": {
+    "message": "missing parameter: 'id_type'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *id_type* является обязательным. </br> Укажите корректный параметр *id_type*."
+  },
+  "30007": {
+    "message": "missing parameter: 'id'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *id* является обязательным. </br> Укажите корректный параметр *id*."
+  },
+  "30008": {
+    "message": "missing parameter: 'figi'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *figi* является обязательным. </br> Укажите корректный параметр *figi*."
+  },
+  "30009": {
+    "message": "'from' is invalid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *from* имеет некорректное значение.</br>Укажите корректный параметр *from*."
+  },
+  "30010": {
+    "message": "'to' is invalid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *to* имеет некорректное значение.</br>Укажите корректный параметр *to*."
+  },
+  "30011": {
+    "message": "interval is invalid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *interval* имеет некорректное значение.</br>Список доступных значений: [*interval*](https://tinkoff.github.io/investAPI/marketdata#subscriptioninterval)."
+  },
+  "30012": {
+    "message": "'to' can't be less then 'from'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *to* не может быть меньше параметра *from*. </br>Укажите корректные параметры *from* и *to*."
+  },
+  "30013": {
+    "message": "'class_code' require for 'id_type' = 'ticker'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *class_code* не может быть пустым при поиске по тикеру. </br>Укажите корректный параметр *class_code*. </br>Подробнее: [Идентификация инструментов](https://tinkoff.github.io/investAPI/faq_identification/)."
+  },
+  "30014": {
+    "message": "the maximum request period for the given candle interval has been exceeded",
+    "type": "INVALID_ARGUMENT",
+    "description": "Превышен максимальный период запроса для данного интервала свечи. </br>Укажите корректный интервал."
+  },
+  "30015": {
+    "message": "missing parameter: 'quantity'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *quantity* является обязательным. </br> Укажите корректный параметр *quantity*."
+  },
+  "30016": {
+    "message": "'quantity' is invalid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *quantity* имеет некорректное значение.</br>Укажите корректный параметр *quantity*."
+  },
+  "30017": {
+    "message": "missing parameter: 'price'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *price* является обязательным. </br> Укажите корректный параметр *price*."
+  },
+  "30018": {
+    "message": "price is invalid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *price* имеет некорректное значение.</br>Укажите корректный параметр *price*."
+  },
+  "30019": {
+    "message": "missing parameter: 'direction'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *direction* является обязательным. </br> Укажите корректный параметр *direction*."
+  },
+  "30020": {
+    "message": "'direction' is invalid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *direction* имеет некорректное значение.</br>Список доступных значений: [*direction*](https://tinkoff.github.io/investAPI/stoporders/#stoporderdirection)."
+  },
+  "30021": {
+    "message": "missing parameter: 'account_id'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *account_id* является обязательным. </br> Укажите корректный параметр *account_id*."
+  },
+  "30025": {
+    "message": "missing parameter: 'order_type'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *order_type* является обязательным. </br> Укажите корректный параметр *order_type*."
+  },
+  "30027": {
+    "message": "missing parameter: 'order_id'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *order_id* является обязательным. </br> Укажите корректный параметр *order_id*."
+  },
+  "30031": {
+    "message": "missing parameter: 'depth'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *depth* является обязательным. </br>Укажите корректный параметр *depth*."
+  },
+  "30032": {
+    "message": "depth is invalid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *depth* имеет некорректное значение.</br>Укажите корректный параметр *depth*."
+  },
+  "30033": {
+    "message": "missing parameter: 'trade_clearing_account' or 'class_code'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Параметр *trade_clearing_account* или *class_code* не может быть пустым."
+  },
+  "30034": {
+    "message": "not enough balance",
+    "type": "INVALID_ARGUMENT",
+    "description": "Недостаточно средств для совершения сделки (ошибка песочницы). </br>Пополните баланс нужной валюты."
+  },
+  "30036": {
+    "message": "missing parameter: 'stop_price'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *stop_price* является обязательным. </br>Укажите корректный параметр *stop_price*."
+  },
+  "30037": {
+    "message": "missing parameter: 'stop_order_type'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *stop_order_type* является обязательным. </br>Укажите корректный параметр *stop_order_type*."
+  },
+  "30038": {
+    "message": "'stop_order_type' is invalid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *stop_order_type* имеет некорректное значение.</br>Список доступных значений: [*stop_order_type*](https://tinkoff.github.io/investAPI/stoporders/#stopordertype)."
+  },
+  "30040": {
+    "message": "'expire_date' is invalid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *expire_date* имеет некорректное значение.</br>Укажите корректный параметр *expire_date*."
+  },
+  "30041": {
+    "message": "the method is available only for futures",
+    "type": "INVALID_ARGUMENT",
+    "description": "Метод предназначен только для работы с фьючерсами. </br>Передайте во входные параметры метода идентификатор фьючерса."
+  },
+  "30042": {
+    "message": "not enough assets for a margin trade",
+    "type": "INVALID_ARGUMENT",
+    "description": "Недостаточно активов для маржинальной сделки. </br>Проверьте маржинальные показатели счёта."
+  },
+  "30043": {
+    "message": "missing parameter: 'expiration_type'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *expiration_type* является обязательным. </br> Укажите корректный параметр *expiration_type*."
+  },
+  "30044": {
+    "message": "'expiration_type' is invalid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *expiration_type* имеет некорректное значение.</br>Список доступных значений: [*expiration_type*](https://tinkoff.github.io/investAPI/stoporders/#stoporderexpirationtype)."
+  },
+  "30045": {
+    "message": "missing parameter: 'ticker'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *ticker* является обязательным. </br>Укажите корректный параметр *ticker*."
+  },
+  "30047": {
+    "message": "price currency does not match the settlement currency",
+    "type": "INVALID_ARGUMENT",
+    "description": "Валюта цены не совпадает с валютой расчётов по инструменту. </br>Укажите корректную валюту цены."
+  },
+  "30048": {
+    "message": "instrument type is not bond",
+    "type": "INVALID_ARGUMENT",
+    "description": "Метод предназначен только для запроса информации по облигации. </br>Передайте во входные параметры метода идентификатор облигации."
+  },
+  "30049": {
+    "message": "post order error: %s",
+    "type": "INVALID_ARGUMENT",
+    "description": "Ошибка метода выставления торгового поручения. </br>Подробнее в тексте ошибки."
+  },
+  "30050": {
+    "message": "'instrument_status' is invalid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *instrument_status* имеет некорректное значение.</br>Список доступных значений: [*instrument_status*](https://tinkoff.github.io/investAPI/instruments#instrumentstatus)."
+  },
+  "30051": {
+    "message": "account margin status is disabled",
+    "type": "INVALID_ARGUMENT",
+    "description": "Для данного договора недоступна маржинальная торговля."
+  },
+  "30052": {
+    "message": "instrument forbidden for trading by API",
+    "type": "INVALID_ARGUMENT",
+    "description": "Для данного инструмента недоступна торговля через API."
+  },
+  "30053": {
+    "message": "post stop_order error: %s",
+    "type": "INVALID_ARGUMENT",
+    "description": "Ошибка метода выставления стоп-заявки. </br>Подробнее в тексте ошибки."
+  },
+  "30054": {
+    "message": "instrument type is not a share or etf",
+    "type": "INVALID_ARGUMENT",
+    "description": "Тип инструмента не инвестиционный фонд или акция"
+  },
+  "30055": {
+    "message": "order_id cannot be longer than 36 characters",
+    "type": "INVALID_ARGUMENT",
+    "description": "order_id не может быть длиннее 36 символов"
+  },
+  "30056": {
+    "message": "stop order settlement currency is not supported",
+    "type": "INVALID_ARGUMENT",
+    "description": "Валюта выставления стоп-заявки не поддерживается"
+  },
+  "30057": {
+    "message": "the order is a duplicate, but the order report was not found",
+    "type": "INVALID_ARGUMENT",
+    "description": "Заявка является дублем, но отчет по заявке не найден"
+  },
+  "30058": {
+    "message": "task not completed yet, please try again later",
+    "type": "INVALID_ARGUMENT",
+    "description": "Выполнение задачи еще не завершено, попробуйте позже."
+  },
+  "30059": {
+    "message": "cancel order error: %s",
+    "type": "INVALID_ARGUMENT",
+    "description": "Ошибка метода отмены заявки. </br>Подробнее в тексте ошибки."
+  },
+  "30060": {
+    "message": "cancel stop-order error: %s",
+    "type": "INVALID_ARGUMENT",
+    "description": "Ошибка метода отмены стоп-заявки. </br>Подробнее в тексте ошибки."
+  },
+  "30061": {
+    "message": "'from' value out of range",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *from* имеет некорректное значение.</br>Укажите значение в пределах от 1970-01-01T00:00:00Z до 2099-12-31T23:59:59.999999999Z включительно."
+  },
+  "30062": {
+    "message": "'to' value out of range",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *to* имеет некорректное значение.</br>Укажите значение в пределах от 1970-01-01T00:00:00Z до 2099-12-31T23:59:59.999999999Z включительно."
+  },
+  "30063": {
+    "message": "'expire_date' value out of range",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *expire_date* имеет некорректное значение.</br>Дата должна быть не ранее текущей и не позднее 2099-12-31T23:59:59.999999999Z."
+  },
+  "30064": {
+    "message": "the required period should not exceed 31 days",
+    "type": "INVALID_ARGUMENT",
+    "description": "Запрошенный период не может превышать 31 дня. </br> Укажите корректный период."
+  },
+  "30065": {
+    "message": "missing parameter: 'task_id'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *task_id* является обязательным. </br> Укажите корректный параметр *task_id*."
+  },
+  "30066": {
+    "message": "missing parameter: 'payload'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *payload* является обязательным. </br> Укажите корректный параметр *payload*."
+  },
+  "30077": {
+    "message": "not available for OTC instruments",
+    "type": "INVALID_ARGUMENT",
+    "description": "Метод недоступен для внебиржевых инструментов."
+  },
+  "40002": {
+    "message": "insufficient privileges",
+    "type": "PERMISSION_DENIED",
+    "description": "Недостаточно прав для совершения операции. </br>Токен доступа имеет уровень прав read-only.</br>Подробнее: [Виды токенов](https://tinkoff.github.io/investAPI/index#_2)"
+  },
+
+  "50001": {
+    "message": "exchange not found",
+    "type": "NOT_FOUND",
+    "description": "Биржа не найдена по переданному *exchange_id*.</br>Укажите корректный *exchange_id*."
+  },
+  "50002": {
+    "message": "instrument not found",
+    "type": "NOT_FOUND",
+    "description": "Инструмент не найден.</br>Укажите корректный идентификатор инструмента."
+  },
+  "50004": {
+    "message": "account not found",
+    "type": "NOT_FOUND",
+    "description": "Счёт не найден по переданному *account_id*.</br>Укажите корректный *account_id*."
+  },
+  "50005": {
+    "message": "order not found",
+    "type": "NOT_FOUND",
+    "description": "Торговое поручение не найдено по переданному *order_id*.</br>Укажите корректный *order_id*."
+  },
+  "50006": {
+    "message": "stop-order not found",
+    "type": "NOT_FOUND",
+    "description": "Стоп-заявка не найдена по переданному *stop_order_id*.</br>Укажите корректный *stop_order_id*."
+  },
+  "50007": {
+    "message": "task not found",
+    "type": "NOT_FOUND",
+    "description": "Задача не найдена."
+  },
+  "50008": {
+    "message": "no orderbook provider",
+    "type": "NOT_FOUND",
+    "description": "Отсутствует источник данных по стаканам."
+  },
+  "70001": {
+    "message": "internal error",
+    "type": "INTERNAL",
+    "description": "Внутренняя ошибка сервиса, попробуйте выполнить запрос позднее.</br>Если ошибка повторяется, обратитесь в службу технической поддержки."
+  },
+  "70002": {
+    "message": "internal network error",
+    "type": "INTERNAL",
+    "description": "Неизвестная сетевая ошибка, попробуйте выполнить запрос позднее.</br>Если ошибка повторяется, обратитесь в службу технической поддержки."
+  },
+  "80001": {
+    "message": "limit of open streams exceeded",
+    "type": "RESOURCE_EXHAUSTED",
+    "description": "Превышен лимит одновременных открытых stream-соединений. Подробнее: [Лимитная политика](https://tinkoff.github.io/investAPI/limits/)"
+  },
+  "80002": {
+    "message": "request limit exceeded",
+    "type": "RESOURCE_EXHAUSTED",
+    "description": "Превышен лимит запросов в минуту. Подробнее: [Лимитная политика](https://tinkoff.github.io/investAPI/limits/)"
+  },
+  "90001": {
+    "message": "need confirmation: %s",
+    "type": "FAILED_PRECONDITION",
+    "description": "Требуется подтверждение операции. </br>Подробнее в тексте ошибки."
+  }
+}

@@ -366,12 +366,12 @@
 | figi |  [string](#string) | Figi-идентификатора инструмента |
 | instrument_type |  [string](#string) | Тип инструмента |
 | quantity |  [Quotation](#quotation) | Количество инструмента в портфеле в штуках |
-| average_position_price |  [MoneyValue](#moneyvalue) | Средневзвешенная цена позиции |
+| average_position_price |  [MoneyValue](#moneyvalue) | Средневзвешенная цена позиции. **Возможна задержка до секунды для пересчёта**. |
 | expected_yield |  [Quotation](#quotation) | Текущая рассчитанная доходность |
 | current_nkd |  [MoneyValue](#moneyvalue) | Текущий НКД |
-| average_position_price_pt |  [Quotation](#quotation) | Средняя цена лота в позиции в пунктах (для фьючерсов) |
+| average_position_price_pt |  [Quotation](#quotation) | Средняя цена лота в позиции в пунктах (для фьючерсов). **Возможна задержка до секунды для пересчёта**. |
 | current_price |  [MoneyValue](#moneyvalue) | Текущая цена инструмента |
-| average_position_price_fifo |  [MoneyValue](#moneyvalue) | Средняя цена лота в позиции по методу FIFO |
+| average_position_price_fifo |  [MoneyValue](#moneyvalue) | Средняя цена лота в позиции по методу FIFO. **Возможна задержка до секунды для пересчёта**. |
 | quantity_lots |  [Quotation](#quotation) | Количество лотов в портфеле |
  <!-- end Fields -->
  <!-- end HasFields -->

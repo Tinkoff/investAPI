@@ -14,7 +14,7 @@
     
     
       
-        <title>Описание - TINKOFF INVEST API</title>
+        <title>Faq - TINKOFF INVEST API</title>
       
     
     
@@ -64,11 +64,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#_1" class="md-skip">
-          Перейти к содержанию
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -95,7 +90,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Описание
+              Faq
             
           </span>
         </div>
@@ -644,14 +639,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
       
       <label class="md-nav__link" for="__nav_7">
         Сервис операций
@@ -667,72 +660,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Описание
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../head-operations/" class="md-nav__link">
         Описание
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Получение списка операций по счёту
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    Получение портфолио
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    Получение списка позиций портфеля по счёту
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    Получение доступного остатка для вывода денежных средств
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -939,102 +871,19 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Получение списка операций по счёту
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    Получение портфолио
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    Получение списка позиций портфеля по счёту
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    Получение доступного остатка для вывода денежных средств
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Tinkoff/investAPI/edit/master/docs/head-operations.md" title="Редактировать страницу" class="md-content__button md-icon">
+                  <a href="https://github.com/Tinkoff/investAPI/edit/master/docs/faq.md" title="Редактировать страницу" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="_1">Сервис получения информации о портфеле по конкретному счёту</h1>
-<h2 id="_2">Получение списка операций по счёту</h2>
-<p>В процессе работы торговому роботу требуется получать информацию об операциях по счёту. Например, чтобы
-корректно рассчитывать доходности и собирать статистику своей работы. Для реализации данных потребностей
-можно использовать метод <a href="/investAPI/operations#getoperations">getOperations</a>. </p>
-<p>Данный метод, в том числе, возвращает отменённые операции (параметр <em>state</em>), это нужно обязательно учитывать
-в алгоритме работы. </p>
-<p>Команда TINKOFF INVEST API не рекомендует использовать метод получения операций для идентификации изменения
-статусов торговых поручений, т.к. некоторые операции могут происходить с задержкой относительно реального
-исполнения. Для получения статусов исполнения торговых поручений рекомендуется использовать соответствующий
-stream <a href="/investAPI/head-orders/">сервиса работы с торговыми поручениями</a>. </p>
-<h2 id="_3">Получение портфолио</h2>
-<p>Для получения торговым роботом текущего состояния портфеля по счёту используется метод <a href="/investAPI/operations#getportfolio">getPortfolio</a>.
-Данный метод в отличие от метода <a href="/investAPI/operations#getpositions">getPositions</a> 
-возвращает также статистическую информацию по портфелю (абсолютные и относительные доходности, текущую 
-стоимость активов и т.п.).</p>
-<p>Обратите внимание, что для расчёта суммарной стоимости активов используются текущие цены биржевых
-инструментов. Если торги в данный момент не ведутся, то берётся цена закрытия последней торговой 
-сессии. </p>
-<p><strong>Значения средних цен покупки инструментов (параметры <em>average_position_price</em>, <em>average_position_price_pt</em> и 
-<em>average_position_price_fifo</em>) рассчитываются асинхронно. Возможна задержка в пересчёте до одной секунды.</strong></p>
-<h2 id="_4">Получение списка позиций портфеля по счёту</h2>
-<p>Для принятия решений торговому роботу требуется получать список актуальных позиций в портфеле, т.е. 
-количество ценных бумаг, валютных позиций по счёту, включая заблокированные средства. Для этого используется
-метод <a href="/investAPI/operations#getpositions">getPositions</a>. Команда TINKOFF 
-INVEST API рекомендует использовать именно этот метод, когда требуется получить актуальный список позиций, 
-т.к. он является более быстрым и "лёгким" по сравнению с методом получения портфолио. </p>
-<p><strong>Важно</strong>. Данный метод не возвращает объём средств, заблокированных под гарантийное обеспечение фьючерсов. Для 
-получения этой информации воспользуйтесь методом <a href="/investAPI/operations#getwithdrawlimits">getWithdrawLimits</a>. </p>
-<h2 id="_5">Получение доступного остатка для вывода денежных средств</h2>
-<p>Метод <a href="/investAPI/operations#getwithdrawlimits">getWithdrawLimits</a> позволяет в 
-удобном виде получить доступный для вывода баланс денежных средств, а также количество заблокированных 
-валютных позиций. </p>
+                  <h1>Faq</h1>
+                
+                
                 
               
               
@@ -1050,41 +899,6 @@ INVEST API рекомендует использовать именно этот
       
         
 <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../orders/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Методы" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Назад
-              </span>
-              Методы
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../operations/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Методы" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Вперед
-              </span>
-              Методы
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

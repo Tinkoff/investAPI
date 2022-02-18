@@ -108,12 +108,12 @@ message PortfolioPosition {
   string figi = 1; //Figi-идентификатора инструмента
   string instrument_type = 2; //Тип инструмента
   Quotation quantity = 3; //Количество инструмента в портфеле в штуках
-  MoneyValue average_position_price = 4; //Средневзвешенная цена позиции
+  MoneyValue average_position_price = 4; //Средневзвешенная цена позиции. **Возможна задержка до секунды для пересчёта**.
   Quotation expected_yield = 5; //Текущая рассчитанная доходность
   MoneyValue current_nkd = 6; // Текущий НКД
-  Quotation average_position_price_pt = 7; //Средняя цена лота в позиции в пунктах (для фьючерсов)
+  Quotation average_position_price_pt = 7; //Средняя цена лота в позиции в пунктах (для фьючерсов). **Возможна задержка до секунды для пересчёта**.
   MoneyValue current_price = 8; //Текущая цена инструмента
-  MoneyValue average_position_price_fifo = 9; //Средняя цена лота в позиции по методу FIFO
+  MoneyValue average_position_price_fifo = 9; //Средняя цена лота в позиции по методу FIFO. **Возможна задержка до секунды для пересчёта**.
   Quotation quantity_lots = 10; //Количество лотов в портфеле
 }
 

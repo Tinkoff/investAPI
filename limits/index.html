@@ -893,6 +893,7 @@
 <th align="left">Unary-запросов в минуту</br><a href="/investAPI/head-instruments/">Сервиса инструментов</a></th>
 <th align="left">Unary-запросов в минуту</br><a href="/investAPI/head-users/">Сервиса аккаунтов</a></th>
 <th align="left">Unary-запросов в минуту</br><a href="/investAPI/head-operations/">Сервиса операций</a></th>
+<th align="left">Unary-запросов в минуту формирования отчётов </br><a href="/investAPI/head-operations/">Сервиса операций</a></th>
 <th align="left">Unary-запросов в минуту</br><a href="/investAPI/head-marketdata/">Сервиса котировок</a></th>
 <th align="left">Unary-запросов в минуту</br><a href="/investAPI/head-stoporders/">Сервиса стоп-заявок</a></th>
 <th align="left">Unary-запросов в минуту</br><a href="/investAPI/head-sandbox/">Песочницы</a></th>
@@ -907,6 +908,7 @@
 <td align="left">100</td>
 <td align="left">100</td>
 <td align="left">100</td>
+<td align="left">5</td>
 <td align="left">100</td>
 <td align="left">10</td>
 <td align="left">100</td>
@@ -919,6 +921,7 @@
 <td align="left">200</td>
 <td align="left">100</td>
 <td align="left">200</td>
+<td align="left">5</td>
 <td align="left">200</td>
 <td align="left">20</td>
 <td align="left">200</td>
@@ -931,6 +934,7 @@
 <td align="left">200</td>
 <td align="left">100</td>
 <td align="left">200</td>
+<td align="left">5</td>
 <td align="left">300</td>
 <td align="left">30</td>
 <td align="left">200</td>
@@ -943,6 +947,7 @@
 <td align="left">200</td>
 <td align="left">100</td>
 <td align="left">200</td>
+<td align="left">5</td>
 <td align="left">300</td>
 <td align="left">40</td>
 <td align="left">200</td>
@@ -955,6 +960,7 @@
 <td align="left">200</td>
 <td align="left">100</td>
 <td align="left">200</td>
+<td align="left">5</td>
 <td align="left">300</td>
 <td align="left">50</td>
 <td align="left">200</td>
@@ -972,6 +978,11 @@
 грейда берётся статистика заявок, выполненных пользователем за последние 30 дней от текущей даты. 
 Т.е. чем больше пользователь выставляет торговых поручений при сохранении высокого уровня исполнения, 
 тем выше его лимиты.</p>
+<p>Расчёт тарифных грейдов происходит только для пользователей TINKOFF INVEST API,
+выставлявших торговые поручения. Поэтому, если вы не используете данную
+версию апи для выставления поручений, у вас будет 1 грейд. 
+Для того чтобы расчёт грейда происходил, нужно выставить хотя бы одно поручение
+в месяц.</p>
 <table>
 <thead>
 <tr>

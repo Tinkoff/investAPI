@@ -59,6 +59,15 @@ message Operation {
   google.protobuf.Timestamp date = 11; //Дата и время операции в формате часовом поясе UTC
   string type = 12; //Текстовое описание типа операции
   OperationType operation_type = 13; //Тип операции
+  repeated OperationTrade trades = 14; //Массив сделок
+}
+
+//Сделка по операции.
+message OperationTrade {
+  string trade_id = 1; //Идентификатор сделки
+  google.protobuf.Timestamp date_time = 2; //Дата и время сделки в часовом поясе UTC
+  int64 quantity = 3; //Количество инструментов
+  MoneyValue price = 4; //Цена
 }
 
 //Запрос получения текущего портфеля по счёту.
@@ -108,12 +117,12 @@ message PortfolioPosition {
   string figi = 1; //Figi-идентификатора инструмента
   string instrument_type = 2; //Тип инструмента
   Quotation quantity = 3; //Количество инструмента в портфеле в штуках
-  MoneyValue average_position_price = 4; //Средневзвешенная цена позиции. **Возможна задержка до секунды для пересчёта**.
+  MoneyValue average_position_price = 4; //Средневзвешенная цена позиции
   Quotation expected_yield = 5; //Текущая рассчитанная доходность
   MoneyValue current_nkd = 6; // Текущий НКД
-  Quotation average_position_price_pt = 7; //Средняя цена лота в позиции в пунктах (для фьючерсов). **Возможна задержка до секунды для пересчёта**.
+  Quotation average_position_price_pt = 7; //Средняя цена лота в позиции в пунктах (для фьючерсов)
   MoneyValue current_price = 8; //Текущая цена инструмента
-  MoneyValue average_position_price_fifo = 9; //Средняя цена лота в позиции по методу FIFO. **Возможна задержка до секунды для пересчёта**.
+  MoneyValue average_position_price_fifo = 9; //Средняя цена лота в позиции по методу FIFO
   Quotation quantity_lots = 10; //Количество лотов в портфеле
 }
 

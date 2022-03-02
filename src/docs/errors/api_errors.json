@@ -55,7 +55,7 @@
     "description": "Входной параметр *interval* имеет некорректное значение.</br>Список доступных значений: [*interval*](https://tinkoff.github.io/investAPI/marketdata#subscriptioninterval)."
   },
   "30012": {
-    "message": "'to' can't be less then 'from'",
+    "message": "'to' can't be less than 'from'",
     "type": "INVALID_ARGUMENT",
     "description": "Входной параметр *to* не может быть меньше параметра *from*. </br>Укажите корректные параметры *from* и *to*."
   },
@@ -283,6 +283,16 @@
     "message": "not available for OTC instruments",
     "type": "INVALID_ARGUMENT",
     "description": "Метод недоступен для внебиржевых инструментов."
+  },
+  "30081": {
+    "message": "account status is closed",
+    "type": "INVALID_ARGUMENT",
+    "description": "Аккаунт закрыт."
+  },
+  "30082": {
+    "message": "account status is blocked",
+    "type": "INVALID_ARGUMENT",
+    "description": "Аккаунт заблокирован."
   },
   "40002": {
     "message": "insufficient privileges",

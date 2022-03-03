@@ -169,6 +169,7 @@
 | prem_status |  [bool](#bool) | Признак премиум клиента. |
 | qual_status |  [bool](#bool) | Признак квалифицированного инвестора. |
 | qualified_for_work_with | Массив объектов [string](#string) | Набор требующих тестирования инструментов и возможностей, с которыми может работать пользователь. |
+| tariff |  [string](#string) | Наименование тарифа пользователя. |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->

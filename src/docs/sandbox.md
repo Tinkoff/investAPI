@@ -275,6 +275,21 @@
 | date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время операции в формате часовом поясе UTC |
 | type |  [string](#string) | Текстовое описание типа операции |
 | operation_type |  [OperationType](#operationtype) | Тип операции |
+| trades | Массив объектов [OperationTrade](#operationtrade) | Массив сделок |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### OperationTrade
+Сделка по операции.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| trade_id |  [string](#string) | Идентификатор сделки |
+| date_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время сделки в часовом поясе UTC |
+| quantity |  [int64](#int64) | Количество инструментов |
+| price |  [MoneyValue](#moneyvalue) | Цена |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1055,6 +1070,7 @@ Stream сделок пользователя
 | prem_status |  [bool](#bool) | Признак премиум клиента. |
 | qual_status |  [bool](#bool) | Признак квалифицированного инвестора. |
 | qualified_for_work_with | Массив объектов [string](#string) | Набор требующих тестирования инструментов и возможностей, с которыми может работать пользователь. |
+| tariff |  [string](#string) | Наименование тарифа пользователя. |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->

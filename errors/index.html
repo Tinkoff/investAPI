@@ -916,7 +916,7 @@
 <td>30005</td>
 <td>INVALID_ARGUMENT</td>
 <td>'id_type' is invalid</td>
-<td>Входной параметр <em>id_type</em> имеет некорректное значение.</br>Список доступных значений: <a href="/investAPI/instruments#instrumentidtype"><em>id_type</em></a>.</td>
+<td>Входной параметр <em>id_type</em> имеет некорректное значение.</br>Список доступных значений: <a href="https://tinkoff.github.io/investAPI/instruments#instrumentidtype"><em>id_type</em></a>.</td>
 </tr>
 <tr>
 <td>30006</td>
@@ -952,19 +952,19 @@
 <td>30011</td>
 <td>INVALID_ARGUMENT</td>
 <td>interval is invalid</td>
-<td>Входной параметр <em>interval</em> имеет некорректное значение.</br>Список доступных значений: <a href="/investAPI/marketdata#subscriptioninterval"><em>interval</em></a>.</td>
+<td>Входной параметр <em>interval</em> имеет некорректное значение.</br>Список доступных значений: <a href="https://tinkoff.github.io/investAPI/marketdata#subscriptioninterval"><em>interval</em></a>.</td>
 </tr>
 <tr>
 <td>30012</td>
 <td>INVALID_ARGUMENT</td>
-<td>'to' can't be less then 'from'</td>
+<td>'to' can't be less than 'from'</td>
 <td>Входной параметр <em>to</em> не может быть меньше параметра <em>from</em>. </br>Укажите корректные параметры <em>from</em> и <em>to</em>.</td>
 </tr>
 <tr>
 <td>30013</td>
 <td>INVALID_ARGUMENT</td>
 <td>'class_code' require for 'id_type' = 'ticker'</td>
-<td>Входной параметр <em>class_code</em> не может быть пустым при поиске по тикеру. </br>Укажите корректный параметр <em>class_code</em>. </br>Подробнее: <a href="/investAPI/faq_identification/">Идентификация инструментов</a>.</td>
+<td>Входной параметр <em>class_code</em> не может быть пустым при поиске по тикеру. </br>Укажите корректный параметр <em>class_code</em>. </br>Подробнее: <a href="https://tinkoff.github.io/investAPI/faq_identification/">Идентификация инструментов</a>.</td>
 </tr>
 <tr>
 <td>30014</td>
@@ -1006,7 +1006,7 @@
 <td>30020</td>
 <td>INVALID_ARGUMENT</td>
 <td>'direction' is invalid</td>
-<td>Входной параметр <em>direction</em> имеет некорректное значение.</br>Список доступных значений: <a href="/investAPI/stoporders/#stoporderdirection"><em>direction</em></a>.</td>
+<td>Входной параметр <em>direction</em> имеет некорректное значение.</br>Список доступных значений: <a href="https://tinkoff.github.io/investAPI/stoporders/#stoporderdirection"><em>direction</em></a>.</td>
 </tr>
 <tr>
 <td>30021</td>
@@ -1066,7 +1066,7 @@
 <td>30038</td>
 <td>INVALID_ARGUMENT</td>
 <td>'stop_order_type' is invalid</td>
-<td>Входной параметр <em>stop_order_type</em> имеет некорректное значение.</br>Список доступных значений: <a href="/investAPI/stoporders/#stopordertype"><em>stop_order_type</em></a>.</td>
+<td>Входной параметр <em>stop_order_type</em> имеет некорректное значение.</br>Список доступных значений: <a href="https://tinkoff.github.io/investAPI/stoporders/#stopordertype"><em>stop_order_type</em></a>.</td>
 </tr>
 <tr>
 <td>30040</td>
@@ -1096,7 +1096,7 @@
 <td>30044</td>
 <td>INVALID_ARGUMENT</td>
 <td>'expiration_type' is invalid</td>
-<td>Входной параметр <em>expiration_type</em> имеет некорректное значение.</br>Список доступных значений: <a href="/investAPI/stoporders/#stoporderexpirationtype"><em>expiration_type</em></a>.</td>
+<td>Входной параметр <em>expiration_type</em> имеет некорректное значение.</br>Список доступных значений: <a href="https://tinkoff.github.io/investAPI/stoporders/#stoporderexpirationtype"><em>expiration_type</em></a>.</td>
 </tr>
 <tr>
 <td>30045</td>
@@ -1126,7 +1126,7 @@
 <td>30050</td>
 <td>INVALID_ARGUMENT</td>
 <td>'instrument_status' is invalid</td>
-<td>Входной параметр <em>instrument_status</em> имеет некорректное значение.</br>Список доступных значений: <a href="/investAPI/instruments#instrumentstatus"><em>instrument_status</em></a>.</td>
+<td>Входной параметр <em>instrument_status</em> имеет некорректное значение.</br>Список доступных значений: <a href="https://tinkoff.github.io/investAPI/instruments#instrumentstatus"><em>instrument_status</em></a>.</td>
 </tr>
 <tr>
 <td>30051</td>
@@ -1231,10 +1231,22 @@
 <td>Метод недоступен для внебиржевых инструментов.</td>
 </tr>
 <tr>
+<td>30081</td>
+<td>INVALID_ARGUMENT</td>
+<td>account status is closed</td>
+<td>Аккаунт закрыт.</td>
+</tr>
+<tr>
+<td>30082</td>
+<td>INVALID_ARGUMENT</td>
+<td>account status is blocked</td>
+<td>Аккаунт заблокирован.</td>
+</tr>
+<tr>
 <td>40002</td>
 <td>PERMISSION_DENIED</td>
 <td>insufficient privileges</td>
-<td>Недостаточно прав для совершения операции. </br>Токен доступа имеет уровень прав read-only.</br>Подробнее: <a href="/investAPI/index#_2">Виды токенов</a></td>
+<td>Недостаточно прав для совершения операции. </br>Токен доступа имеет уровень прав read-only.</br>Подробнее: <a href="https://tinkoff.github.io/investAPI/index#_2">Виды токенов</a></td>
 </tr>
 <tr>
 <td>50001</td>
@@ -1294,13 +1306,13 @@
 <td>80001</td>
 <td>RESOURCE_EXHAUSTED</td>
 <td>limit of open streams exceeded</td>
-<td>Превышен лимит одновременных открытых stream-соединений. Подробнее: <a href="/investAPI/limits/">Лимитная политика</a></td>
+<td>Превышен лимит одновременных открытых stream-соединений. Подробнее: <a href="https://tinkoff.github.io/investAPI/limits/">Лимитная политика</a></td>
 </tr>
 <tr>
 <td>80002</td>
 <td>RESOURCE_EXHAUSTED</td>
 <td>request limit exceeded</td>
-<td>Превышен лимит запросов в минуту. Подробнее: <a href="/investAPI/limits/">Лимитная политика</a></td>
+<td>Превышен лимит запросов в минуту. Подробнее: <a href="https://tinkoff.github.io/investAPI/limits/">Лимитная политика</a></td>
 </tr>
 <tr>
 <td>90001</td>

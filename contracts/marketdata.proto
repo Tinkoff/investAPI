@@ -199,6 +199,8 @@ message OrderBook {
   repeated Order bids = 4; //Массив предложений.
   repeated Order asks = 5; //Массив спроса.
   google.protobuf.Timestamp time = 6; //Время стакана в часовом поясе UTC.
+  Quotation limit_up = 7; //Верхний лимит цены инструмента.
+  Quotation limit_down = 8; //Нижний лимит цены инструмента.
 }
 
 //Массив предложений/спроса.
@@ -295,6 +297,8 @@ message GetOrderBookResponse {
   repeated Order asks = 4; //Множество пар значений на продажу.
   Quotation last_price = 5; //Цена последней сделки.
   Quotation close_price = 6; //Цена закрытия.
+  Quotation limit_up = 7; //Верхний лимит цены.
+  Quotation limit_down = 8; //Нижний лимит цены.
 }
 
 //Запрос получения торгового статуса.

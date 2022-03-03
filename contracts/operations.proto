@@ -59,6 +59,15 @@ message Operation {
   google.protobuf.Timestamp date = 11; //Дата и время операции в формате часовом поясе UTC
   string type = 12; //Текстовое описание типа операции
   OperationType operation_type = 13; //Тип операции
+  repeated OperationTrade trades = 14; //Массив сделок
+}
+
+//Сделка по операции.
+message OperationTrade {
+  string trade_id = 1; //Идентификатор сделки
+  google.protobuf.Timestamp date_time = 2; //Дата и время сделки в часовом поясе UTC
+  int64 quantity = 3; //Количество инструментов
+  MoneyValue price = 4; //Цена
 }
 
 //Запрос получения текущего портфеля по счёту.

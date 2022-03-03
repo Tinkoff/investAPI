@@ -759,6 +759,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#operationtrade" class="md-nav__link">
+    OperationTrade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#portfoliorequest" class="md-nav__link">
     PortfolioRequest
   </a>
@@ -1241,6 +1248,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#operationtrade" class="md-nav__link">
+    OperationTrade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#portfoliorequest" class="md-nav__link">
     PortfolioRequest
   </a>
@@ -1647,6 +1661,51 @@
 <td>operation_type</td>
 <td><a href="#operationtype">OperationType</a></td>
 <td>Тип операции</td>
+</tr>
+<tr>
+<td>trades</td>
+<td>Массив объектов <a href="#operationtrade">OperationTrade</a></td>
+<td>Массив сделок</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="operationtrade">OperationTrade</h4>
+<p>Сделка по операции.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trade_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор сделки</td>
+</tr>
+<tr>
+<td>date_time</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата и время сделки в часовом поясе UTC</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td><a href="#int64">int64</a></td>
+<td>Количество инструментов</td>
+</tr>
+<tr>
+<td>price</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Цена</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>

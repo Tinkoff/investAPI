@@ -3136,6 +3136,7 @@ components:
         - qualifiedForWorkWith
         qualStatus: true
         premStatus: true
+        tariff: tariff
       properties:
         premStatus:
           type: boolean
@@ -3145,6 +3146,8 @@ components:
           items:
             type: string
           type: array
+        tariff:
+          type: string
       type: object
     v1GetLastPricesRequest:
       description: Запрос получения последних цен.
@@ -3246,8 +3249,14 @@ components:
           price:
             nano: 6
             units: units
+        limitUp:
+          nano: 6
+          units: units
         figi: figi
         closePrice:
+          nano: 6
+          units: units
+        limitDown:
           nano: 6
           units: units
         lastPrice:
@@ -3270,6 +3279,10 @@ components:
         lastPrice:
           $ref: '#/components/schemas/v1Quotation'
         closePrice:
+          $ref: '#/components/schemas/v1Quotation'
+        limitUp:
+          $ref: '#/components/schemas/v1Quotation'
+        limitDown:
           $ref: '#/components/schemas/v1Quotation'
       type: object
     v1GetOrderStateRequest:
@@ -3753,6 +3766,21 @@ components:
         instrumentType: instrumentType
         quantity: quantity
         parentOperationId: parentOperationId
+        trades:
+        - dateTime: 2000-01-23T04:56:07.000+00:00
+          quantity: quantity
+          price:
+            nano: 5
+            currency: currency
+            units: units
+          tradeId: tradeId
+        - dateTime: 2000-01-23T04:56:07.000+00:00
+          quantity: quantity
+          price:
+            nano: 5
+            currency: currency
+            units: units
+          tradeId: tradeId
         figi: figi
         type: type
         price:
@@ -3796,6 +3824,10 @@ components:
           type: string
         operationType:
           $ref: '#/components/schemas/v1OperationType'
+        trades:
+          items:
+            $ref: '#/components/schemas/v1OperationTrade'
+          type: array
       type: object
     v1OperationState:
       default: OPERATION_STATE_UNSPECIFIED
@@ -3805,6 +3837,28 @@ components:
       - OPERATION_STATE_CANCELED
       title: Статус запрашиваемых операций
       type: string
+    v1OperationTrade:
+      description: Сделка по операции.
+      example:
+        dateTime: 2000-01-23T04:56:07.000+00:00
+        quantity: quantity
+        price:
+          nano: 5
+          currency: currency
+          units: units
+        tradeId: tradeId
+      properties:
+        tradeId:
+          type: string
+        dateTime:
+          format: date-time
+          type: string
+        quantity:
+          format: int64
+          type: string
+        price:
+          $ref: '#/components/schemas/v1MoneyValue'
+      type: object
     v1OperationType:
       default: OPERATION_TYPE_UNSPECIFIED
       enum:
@@ -3878,6 +3932,21 @@ components:
           instrumentType: instrumentType
           quantity: quantity
           parentOperationId: parentOperationId
+          trades:
+          - dateTime: 2000-01-23T04:56:07.000+00:00
+            quantity: quantity
+            price:
+              nano: 5
+              currency: currency
+              units: units
+            tradeId: tradeId
+          - dateTime: 2000-01-23T04:56:07.000+00:00
+            quantity: quantity
+            price:
+              nano: 5
+              currency: currency
+              units: units
+            tradeId: tradeId
           figi: figi
           type: type
           price:
@@ -3895,6 +3964,21 @@ components:
           instrumentType: instrumentType
           quantity: quantity
           parentOperationId: parentOperationId
+          trades:
+          - dateTime: 2000-01-23T04:56:07.000+00:00
+            quantity: quantity
+            price:
+              nano: 5
+              currency: currency
+              units: units
+            tradeId: tradeId
+          - dateTime: 2000-01-23T04:56:07.000+00:00
+            quantity: quantity
+            price:
+              nano: 5
+              currency: currency
+              units: units
+            tradeId: tradeId
           figi: figi
           type: type
           price:

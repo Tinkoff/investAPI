@@ -952,103 +952,103 @@
 </thead>
 <tbody>
 <tr>
-<td align="left">SECURITY_TRADING_STATUS_UNSPECIFIED</td>
+<td align="left">UNSPECIFIED</td>
 <td align="left">Торговый статус не определён</td>
 <td align="left">Нет</td>
 <td align="left">Нет</td>
 </tr>
 <tr>
-<td align="left">SECURITY_TRADING_STATUS_NOT_AVAILABLE_FOR_TRADING</td>
+<td align="left">NOT_AVAILABLE_FOR_TRADING</td>
 <td align="left">Недоступен для торгов</td>
 <td align="left">Нет</td>
 <td align="left">Нет</td>
 </tr>
 <tr>
-<td align="left">SECURITY_TRADING_STATUS_OPENING_PERIOD</td>
+<td align="left">OPENING_PERIOD</td>
 <td align="left">Период открытия торгов</td>
 <td align="left">Да</td>
 <td align="left">Нет</td>
 </tr>
 <tr>
-<td align="left">SECURITY_TRADING_STATUS_CLOSING_PERIOD</td>
+<td align="left">CLOSING_PERIOD</td>
 <td align="left">Период закрытия торгов</td>
 <td align="left">Да</td>
 <td align="left">Нет</td>
 </tr>
 <tr>
-<td align="left">SECURITY_TRADING_STATUS_BREAK_IN_TRADING</td>
+<td align="left">BREAK_IN_TRADING</td>
 <td align="left">Перерыв в торговле</td>
 <td align="left">Нет</td>
 <td align="left">Нет</td>
 </tr>
 <tr>
-<td align="left">SECURITY_TRADING_STATUS_NORMAL_TRADING</td>
+<td align="left">NORMAL_TRADING</td>
 <td align="left">Нормальная торговля</td>
 <td align="left">Да</td>
 <td align="left">Да</td>
 </tr>
 <tr>
-<td align="left">SECURITY_TRADING_STATUS_CLOSING_AUCTION</td>
+<td align="left">CLOSING_AUCTION</td>
 <td align="left">Аукцион закрытия</td>
 <td align="left">Да</td>
 <td align="left">Нет</td>
 </tr>
 <tr>
-<td align="left">SECURITY_TRADING_STATUS_DARK_POOL_AUCTION</td>
+<td align="left">DARK_POOL_AUCTION</td>
 <td align="left">Аукцион крупных пакетов</td>
 <td align="left">Нет</td>
 <td align="left">Да</td>
 </tr>
 <tr>
-<td align="left">SECURITY_TRADING_STATUS_DISCRETE_AUCTION</td>
+<td align="left">DISCRETE_AUCTION</td>
 <td align="left">Дискретный аукцион</td>
 <td align="left">Да</td>
 <td align="left">Нет</td>
 </tr>
 <tr>
-<td align="left">SECURITY_TRADING_STATUS_OPENING_AUCTION_PERIOD</td>
+<td align="left">OPENING_AUCTION_PERIOD</td>
 <td align="left">Аукцион открытия</td>
 <td align="left">Да</td>
 <td align="left">Нет</td>
 </tr>
 <tr>
-<td align="left">SECURITY_TRADING_STATUS_TRADING_AT_CLOSING_AUCTION_PRICE</td>
+<td align="left">TRADING_AT_CLOSING_AUCTION_PRICE</td>
 <td align="left">Период торгов по цене аукциона закрытия</td>
 <td align="left">Да</td>
 <td align="left">Нет</td>
 </tr>
 <tr>
-<td align="left">SECURITY_TRADING_STATUS_SESSION_ASSIGNED</td>
+<td align="left">SESSION_ASSIGNED</td>
 <td align="left">Сессия назначена</td>
 <td align="left">Да</td>
 <td align="left">Нет</td>
 </tr>
 <tr>
-<td align="left">SECURITY_TRADING_STATUS_SESSION_CLOSE</td>
+<td align="left">SESSION_CLOSE</td>
 <td align="left">Сессия закрыта</td>
 <td align="left">Да</td>
 <td align="left">Нет</td>
 </tr>
 <tr>
-<td align="left">SECURITY_TRADING_STATUS_SESSION_OPEN</td>
+<td align="left">SESSION_OPEN</td>
 <td align="left">Сессия открыта</td>
 <td align="left">Да</td>
 <td align="left">Нет</td>
 </tr>
 <tr>
-<td align="left">SECURITY_TRADING_STATUS_DEALER_NORMAL_TRADING</td>
+<td align="left">DEALER_NORMAL_TRADING</td>
 <td align="left">Доступна торговля в режиме внутренней ликвидности брокера</td>
 <td align="left">Нет</td>
 <td align="left">Да</td>
 </tr>
 <tr>
-<td align="left">SECURITY_TRADING_STATUS_DEALER_BREAK_IN_TRADING</td>
+<td align="left">DEALER_BREAK_IN_TRADING</td>
 <td align="left">Перерыв торговли в режиме внутренней ликвидности брокера</td>
 <td align="left">Нет</td>
 <td align="left">Нет</td>
 </tr>
 <tr>
-<td align="left">SECURITY_TRADING_STATUS_DEALER_NOT_AVAILABLE_FOR_TRADING</td>
+<td align="left">DEALER_NOT_AVAILABLE_FOR_TRADING</td>
 <td align="left">Недоступна торговля в режиме внутренней ликвидности брокера</td>
 <td align="left">Нет</td>
 <td align="left">Нет</td>
@@ -1056,44 +1056,44 @@
 </tbody>
 </table>
 <h2 id="_2">Описание торговых статусов</h2>
-<p>SECURITY_TRADING_STATUS_UNSPECIFIED — служебное значение торгового статуса. Устанавливается, если от биржи пришёл
+<p>UNSPECIFIED — служебное значение торгового статуса. Устанавливается, если от биржи пришёл
 неизвестный торговый статус инструмента.</p>
-<p>SECURITY_TRADING_STATUS_NOT_AVAILABLE_FOR_TRADING — торговля инструментом недоступна. Данный статус возвращается, когда
+<p>NOT_AVAILABLE_FOR_TRADING — торговля инструментом недоступна. Данный статус возвращается, когда
 торги по инструменту недоступны. Например, при закрытии торговой площадки.</p>
-<p>SECURITY_TRADING_STATUS_OPENING_PERIOD — период открытия торгов (премаркет). По инструменту происходит
+<p>OPENING_PERIOD — период открытия торгов (премаркет). По инструменту происходит
 аукцион открытия. Это особый режим торгов, когда биржа собирает заявки на покупку/продажу в биржевой стакан. По 
 результатам аукциона открытия при помощи специального алгоритма биржи определяется цена открытия торгов основной сессии.
 В данном режиме торгов доступно выставление только лимитных поручений.</p>
-<p>SECURITY_TRADING_STATUS_CLOSING_PERIOD — период закрытия торгов (постмаркет). По инструменту происходит аукцион закрытия.
+<p>CLOSING_PERIOD — период закрытия торгов (постмаркет). По инструменту происходит аукцион закрытия.
 Это режим торгов, когда биржа собирается заявки для определения цены закрытия сессии. Доступны только лимитные заявки.</p>
-<p>SECURITY_TRADING_STATUS_BREAK_IN_TRADING — перерыв в торговле инструментов. Перерыв в торгах по конкретным или всем 
+<p>BREAK_IN_TRADING — перерыв в торговле инструментов. Перерыв в торгах по конкретным или всем 
 инструментам биржа может устанавливать по разным причинам. Например, технические сбои или высокая волатильность на рынке.
 В данном статусе недоступно выставление поручений по инструменту. </p>
-<p>SECURITY_TRADING_STATUS_NORMAL_TRADING — нормальный режим торгов по инструменту. В данном режиме доступны все виды 
+<p>NORMAL_TRADING — нормальный режим торгов по инструменту. В данном режиме доступны все виды 
 поручений.</p>
-<p>SECURITY_TRADING_STATUS_CLOSING_AUCTION — то же, что и SECURITY_TRADING_STATUS_CLOSING_PERIOD.</p>
-<p>SECURITY_TRADING_STATUS_DARK_POOL_AUCTION — режим торгов крупными пакетами (Dark Pool). Это режим торгов со скрытым 
+<p>CLOSING_AUCTION — то же, что и CLOSING_PERIOD.</p>
+<p>DARK_POOL_AUCTION — режим торгов крупными пакетами (Dark Pool). Это режим торгов со скрытым 
 стаканом для заключения крупных сделок. Торги проходят в формате непрерывного заключения сделок (при наличии встречных 
 заявок) по Цене аукциона. Цена аукциона определяется перед его началом на основе заявок в Режиме основных торгов. В 
 данном режиме доступно выставление только рыночных торговых поручений с ограничением на минимальный объём заявки.</p>
-<p>SECURITY_TRADING_STATUS_DISCRETE_AUCTION — дискретный аукцион. Особый режим, который применяется вместо перерыва
+<p>DISCRETE_AUCTION — дискретный аукцион. Особый режим, который применяется вместо перерыва
 в торгах в моменты высокой волатильности рынков. В данном режиме возможно выставление только лимитных заявок, исполнение
 сделок не происходит до момента возобновления торгов. Отсутствуют механизмы расчёта "рыночной цены". </p>
-<p>SECURITY_TRADING_STATUS_OPENING_AUCTION_PERIOD — то же, что и SECURITY_TRADING_STATUS_OPENING_PERIOD.</p>
-<p>SECURITY_TRADING_STATUS_TRADING_AT_CLOSING_AUCTION_PRICE — режим торгов по цене аукциона закрытия. В данном режиме
+<p>OPENING_AUCTION_PERIOD — то же, что и OPENING_PERIOD.</p>
+<p>TRADING_AT_CLOSING_AUCTION_PRICE — режим торгов по цене аукциона закрытия. В данном режиме
 возможно выставление рыночных заявок и лимитных заявок с ценой аукциона закрытия. Все заявки во время данного режима
 исполняются по цене аукциона закрытия (при наличии встречных предложений).</p>
-<p>SECURITY_TRADING_STATUS_SESSION_ASSIGNED — торговая сессия назначена. Технический статус, время клиринга. В данном 
+<p>SESSION_ASSIGNED — торговая сессия назначена. Технический статус, время клиринга. В данном 
 режиме выставление всех видов торговых поручений недоступно. </p>
-<p>SECURITY_TRADING_STATUS_SESSION_CLOSE — то же, что и SECURITY_TRADING_STATUS_NOT_AVAILABLE_FOR_TRADING.</p>
-<p>SECURITY_TRADING_STATUS_SESSION_OPEN — то же, что и SECURITY_TRADING_STATUS_NOT_AVAILABLE_FOR_TRADING.</p>
-<p>SECURITY_TRADING_STATUS_DEALER_NORMAL_TRADING — торги в режиме внутренней ликвидности брокера. Данный статус 
+<p>SESSION_CLOSE — то же, что и NOT_AVAILABLE_FOR_TRADING.</p>
+<p>SESSION_OPEN — то же, что и NOT_AVAILABLE_FOR_TRADING.</p>
+<p>DEALER_NORMAL_TRADING — торги в режиме внутренней ликвидности брокера. Данный статус 
 устанавливается брокером (Тинькофф Инвестиции) во время торговли по выходным. В этом режиме недоступно выставление
 лимитных заявок. Исполняются только рыночные заявки по цене, сформированной по алгоритмам брокера (при наличии 
 встречных предложений).</p>
-<p>SECURITY_TRADING_STATUS_DEALER_BREAK_IN_TRADING — перерыв в торгах в режиме внутренней ликвидности брокера. Выставление
+<p>DEALER_BREAK_IN_TRADING — перерыв в торгах в режиме внутренней ликвидности брокера. Выставление
 торговых поручений недоступно.</p>
-<p>SECURITY_TRADING_STATUS_DEALER_NOT_AVAILABLE_FOR_TRADING — то же, что и SECURITY_TRADING_STATUS_NOT_AVAILABLE_FOR_TRADING.</p>
+<p>DEALER_NOT_AVAILABLE_FOR_TRADING — то же, что и NOT_AVAILABLE_FOR_TRADING.</p>
                 
               
               

@@ -8,24 +8,23 @@ Timestamp всегда работает в формате UTC с нулевым 
 
 Seconds содержит количество секунд с полуночи(00:00:00) 01.01.1970, а nanos принимает значения от 0 до 999999999.
 
-###Примеры timestamp
+####Примеры timestamp
 |Seconds|Nanos|Значение|
 |:-------|:----------------|
-|1645718039|0|24 February 2022, 15:53:59.000
-|1|500000000|1 January 1970, 0:00:01.500
+|1645718039|0|24 February 2022, 15:53:59.000|
+|1|500000000|1 January 1970, 0:00:01.500|
  
 
-###Пример конвертации из POSIX функции time()
-
     {
+	//Пример конвертации из POSIX функции time()
 	Timestamp timestamp;
     	timestamp.set_seconds(time(NULL));
     	timestamp.set_nanos(0);
     }
 
 
-###Пример конвертации из POSIX функции gettimeofday()
     {
+	//Пример конвертации из POSIX функции gettimeofday()
     struct timeval tv;
     gettimeofday(&tv, NULL);
 
@@ -35,8 +34,8 @@ Seconds содержит количество секунд с полуночи(0
     }
 
 
-###Пример конвертации из Windows функции GetSystemTimeAsFileTime()
     {
+	//Пример конвертации из Windows функции GetSystemTimeAsFileTime()
     FILETIME ft;
     GetSystemTimeAsFileTime(&ft);
     UINT64 ticks = (((UINT64)ft.dwHighDateTime) << 32) | ft.dwLowDateTime;

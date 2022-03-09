@@ -10,7 +10,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.3">
     
     
       
@@ -334,6 +334,47 @@
       Содержание
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#timestamp" class="md-nav__link">
+    Timestamp
+  </a>
+  
+    <nav class="md-nav" aria-label="Timestamp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#timestamp_1" class="md-nav__link">
+    Примеры timestamp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posix-time" class="md-nav__link">
+    Пример конвертации из POSIX функции time()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posix-gettimeofday" class="md-nav__link">
+    Пример конвертации из POSIX функции gettimeofday()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-getsystemtimeasfiletime" class="md-nav__link">
+    Пример конвертации из Windows функции GetSystemTimeAsFileTime()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#moneyvalue" class="md-nav__link">
@@ -1074,6 +1115,47 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#timestamp" class="md-nav__link">
+    Timestamp
+  </a>
+  
+    <nav class="md-nav" aria-label="Timestamp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#timestamp_1" class="md-nav__link">
+    Примеры timestamp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posix-time" class="md-nav__link">
+    Пример конвертации из POSIX функции time()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posix-gettimeofday" class="md-nav__link">
+    Пример конвертации из POSIX функции gettimeofday()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-getsystemtimeasfiletime" class="md-nav__link">
+    Пример конвертации из Windows функции GetSystemTimeAsFileTime()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#moneyvalue" class="md-nav__link">
     MoneyValue
   </a>
@@ -1157,8 +1239,44 @@
                 
                 
                 <h1 id="tinkoff-invest-api">Нестандартные типы данных TINKOFF INVEST API</h1>
+<h2 id="timestamp">Timestamp</h2>
+<p>Тип данных Timestamp является основным для передачи времени <a href="https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#timestamp">в формате protoсol-buffers</a> и представляет собой значение в диапазоне интервала дат от 0001-01-01T00:00:00Z до 9999-12-31T23:59:59.999999999Z
+Timestamp всегда работает в формате UTC с нулевым смещением. Тип Timestamp состоит из двух полей целого типа:
+seconds и nanos. Seconds содержит количество секунд с полуночи(00:00:00) 01.01.1970, а nanos принимает значения от 0 до 999999999. Например, для 0.5 </p>
+<h3 id="timestamp_1">Примеры timestamp</h3>
+<p>|Seconds|Nanos|Значение|
+|:-------|:----------------|
+|1645718039|0|24 February 2022, 15:53:59.000
+|1|500000000|1 January 1970, 0:00:01.500</p>
+<h3 id="posix-time">Пример конвертации из POSIX функции time()</h3>
+<p>{
+    Timestamp timestamp;
+    timestamp.set_seconds(time(NULL));
+    timestamp.set_nanos(0);
+}</p>
+<h3 id="posix-gettimeofday">Пример конвертации из POSIX функции gettimeofday()</h3>
+<p>{
+    struct timeval tv;
+    gettimeofday(&amp;tv, NULL);</p>
+<pre><code>Timestamp timestamp;
+timestamp.set_seconds(tv.tv_sec);
+timestamp.set_nanos(tv.tv_usec * 1000);
+</code></pre>
+<p>}</p>
+<h3 id="windows-getsystemtimeasfiletime">Пример конвертации из Windows функции GetSystemTimeAsFileTime()</h3>
+<p>{
+    FILETIME ft;
+    GetSystemTimeAsFileTime(&amp;ft);
+    UINT64 ticks = (((UINT64)ft.dwHighDateTime) &lt;&lt; 32) | ft.dwLowDateTime;</p>
+<pre><code>// A Windows tick is 100 nanoseconds. Windows epoch 1601-01-01T00:00:00Z
+//  is 11644473600 seconds before Unix epoch 1970-01-01T00:00:00Z.
+Timestamp timestamp;
+timestamp.set_seconds((INT64) ((ticks / 10000000) - 11644473600LL));
+timestamp.set_nanos((INT32) ((ticks % 10000000) * 100));
+</code></pre>
+<p>}</p>
 <h2 id="moneyvalue">MoneyValue</h2>
-<p>Данный тип данных используется для параметров, имеющих денежный эквивалент. Например, цены на ценные бумаги.</p>
+<p>Данный тип данных используется для параметров, имеющих денежный эквивалент. Например, стоимость ценных бумаг.</p>
 <p>Тип состоит из трёх параметров: </p>
 <ul>
 <li>currency — строковый <a href="https://ru.wikipedia.org/wiki/ISO_4217">ISO-код валюты</a>. Например, RUB или USD.</li>
@@ -1316,7 +1434,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e # \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.febc23d1.min.js"></script>
+      <script src="../assets/javascripts/bundle.29db7785.min.js"></script>
       
     
   </body>

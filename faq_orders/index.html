@@ -14,7 +14,7 @@
     
     
       
-        <title>FAQ - TINKOFF INVEST API</title>
+        <title>FAQ Сервиса торговых поручений - TINKOFF INVEST API</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#faq" class="md-skip">
+        <a href="#order_id-postorder" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              FAQ
+              FAQ Сервиса торговых поручений
             
           </span>
         </div>
@@ -611,12 +611,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          FAQ
+          FAQ Сервиса торговых поручений
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        FAQ
+        FAQ Сервиса торговых поручений
       </a>
       
         
@@ -632,50 +632,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
-    FAQ сервиса торговых поручений
-  </a>
-  
-    <nav class="md-nav" aria-label="FAQ сервиса торговых поручений">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#order_id-postorder" class="md-nav__link">
     Для чего используется параметр order_id метода PostOrder?
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#order_id" class="md-nav__link">
     Можно ли увидеть ключ идемпотентности (order_id) в операциях, выставленных поручениях и т.п.?
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#order_id_1" class="md-nav__link">
     Как долго хранится ключ идемпотентности (order_id) на стороне брокера?
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#quantity-postorder" class="md-nav__link">
     Что передавать в параметр quantity метода PostOrder? Количество бумаг или количество лотов?
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -801,7 +788,7 @@
   
     <li class="md-nav__item">
       <a href="../faq_marketdata/" class="md-nav__link">
-        FAQ
+        FAQ Сервиса котировок
       </a>
     </li>
   
@@ -972,50 +959,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
-    FAQ сервиса торговых поручений
-  </a>
-  
-    <nav class="md-nav" aria-label="FAQ сервиса торговых поручений">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#order_id-postorder" class="md-nav__link">
     Для чего используется параметр order_id метода PostOrder?
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#order_id" class="md-nav__link">
     Можно ли увидеть ключ идемпотентности (order_id) в операциях, выставленных поручениях и т.п.?
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#order_id_1" class="md-nav__link">
     Как долго хранится ключ идемпотентности (order_id) на стороне брокера?
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#quantity-postorder" class="md-nav__link">
     Что передавать в параметр quantity метода PostOrder? Количество бумаг или количество лотов?
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1036,10 +1010,9 @@
                   </a>
                 
                 
-                  <h1>FAQ</h1>
+                  <h1>FAQ Сервиса торговых поручений</h1>
                 
-                <h2 id="faq">FAQ сервиса торговых поручений</h2>
-<h3 id="order_id-postorder">Для чего используется параметр order_id метода <a href="/investAPI/orders#postorder">PostOrder</a>?</h3>
+                <h3 id="order_id-postorder">Для чего используется параметр order_id метода <a href="/investAPI/orders#postorder">PostOrder</a>?</h3>
 <p>Данный параметр используется в качестве ключа идемпотентности. Это значит, что многократный вызов метода
 <a href="/investAPI/orders#postorder">PostOrder</a> с одинаковым order_id не приведёт к выставлению более одного
 торгового поручения. 

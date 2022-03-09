@@ -316,7 +316,7 @@
 | total_amount_etf |  [MoneyValue](#moneyvalue) | Общая стоимость фондов в портфеле в рублях |
 | total_amount_currencies |  [MoneyValue](#moneyvalue) | Общая стоимость валют в портфеле в рублях |
 | total_amount_futures |  [MoneyValue](#moneyvalue) | Общая стоимость фьючерсов в портфеле в рублях |
-| expected_yield |  [Quotation](#quotation) | Текущая доходность портфеля |
+| expected_yield |  [Quotation](#quotation) | Текущая относительная доходность портфеля, в % |
 | positions | Массив объектов [PortfolioPosition](#portfolioposition) | Список позиций портфеля |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -382,7 +382,7 @@
 | instrument_type |  [string](#string) | Тип инструмента |
 | quantity |  [Quotation](#quotation) | Количество инструмента в портфеле в штуках |
 | average_position_price |  [MoneyValue](#moneyvalue) | Средневзвешенная цена позиции. **Возможна задержка до секунды для пересчёта**. |
-| expected_yield |  [Quotation](#quotation) | Текущая рассчитанная доходность |
+| expected_yield |  [Quotation](#quotation) | Текущая рассчитанная относительная доходность позиции, в %. |
 | current_nkd |  [MoneyValue](#moneyvalue) | Текущий НКД |
 | average_position_price_pt |  [Quotation](#quotation) | Средняя цена лота в позиции в пунктах (для фьючерсов). **Возможна задержка до секунды для пересчёта**. |
 | current_price |  [MoneyValue](#moneyvalue) | Текущая цена инструмента |

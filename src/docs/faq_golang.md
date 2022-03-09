@@ -1,5 +1,3 @@
-#Вопросы по работе с TINKOFF INVEST API в Golang
-
 ##Пример подключения на Golang
 
 ```golang

@@ -36,14 +36,14 @@ nav:
   - Методы: instruments.md
 - Сервис торговых поручений:
   - Описание: head-orders.md
-  - FAQ: faq_orders.md
+  - "FAQ Сервиса торговых поручений": faq_orders.md
   - Методы: orders.md
 - Сервис операций:
   - Описание: head-operations.md
   - Методы: operations.md
 - Сервис котировок:
   - Описание: head-marketdata.md
-  - FAQ: faq_marketdata.md
+  - "FAQ Сервиса котировок": faq_marketdata.md
   - Методы: marketdata.md
 - Сервис стоп-заявок:
   - Описание: head-stoporders.md

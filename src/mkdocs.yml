@@ -22,7 +22,7 @@ nav:
   - "Торговые площадки и режимы торгов": markets.md
   - "Торговые статусы инструментов и расписание торгов": faq_trading_status.md
   - "Порядок работы с историческими данными": load_history.md
-  - "Работа с торговыми поручениями": faq_orders.md
+  - "Работа с торговыми поручениями": orders_details.md
   - "Квалифицированный инвестор": accredited_investor.md
 - FAQ:
   - Глоссарий: glossary.md
@@ -36,12 +36,14 @@ nav:
   - Методы: instruments.md
 - Сервис торговых поручений:
   - Описание: head-orders.md
+  - FAQ: faq_orders.md
   - Методы: orders.md
 - Сервис операций:
   - Описание: head-operations.md
   - Методы: operations.md
 - Сервис котировок:
   - Описание: head-marketdata.md
+  - FAQ: faq_marketdata.md
   - Методы: marketdata.md
 - Сервис стоп-заявок:
   - Описание: head-stoporders.md

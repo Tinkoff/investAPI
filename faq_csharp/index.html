@@ -14,7 +14,7 @@
     
     
       
-        <title>Faq golang - TINKOFF INVEST API</title>
+        <title>С# - TINKOFF INVEST API</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#golang" class="md-skip">
+        <a href="#sdk-c" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Faq golang
+              С#
             
           </span>
         </div>
@@ -494,12 +494,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       <label class="md-nav__link" for="__nav_4">
         Языки программирования
@@ -539,11 +541,81 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../faq_csharp/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          С#
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         С#
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sdk-c" class="md-nav__link">
+    SDK для c
+  </a>
+  
+    <nav class="md-nav" aria-label="SDK для c">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sdk" class="md-nav__link">
+    Официальные SDK:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sdk_1" class="md-nav__link">
+    Неофициальные SDK:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Примеры подключения
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    FAQ
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -971,8 +1043,42 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#golang" class="md-nav__link">
-    Пример подключения на Golang
+  <a href="#sdk-c" class="md-nav__link">
+    SDK для c
+  </a>
+  
+    <nav class="md-nav" aria-label="SDK для c">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sdk" class="md-nav__link">
+    Официальные SDK:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sdk_1" class="md-nav__link">
+    Неофициальные SDK:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Примеры подключения
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    FAQ
   </a>
   
 </li>
@@ -989,78 +1095,23 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Tinkoff/investAPI/edit/master/docs/faq_golang.md" title="Редактировать страницу" class="md-content__button md-icon">
+                  <a href="https://github.com/Tinkoff/investAPI/edit/master/docs/faq_csharp.md" title="Редактировать страницу" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Faq golang</h1>
+                  <h1>С#</h1>
                 
-                <h2 id="golang">Пример подключения на Golang</h2>
-<pre><code class="language-golang">package main
-
-import (
- &quot;context&quot;
- &quot;crypto/tls&quot;
- &quot;fmt&quot;
- &quot;golang.org/x/oauth2&quot;
- &quot;google.golang.org/grpc&quot;
- &quot;google.golang.org/grpc/credentials&quot;
- &quot;google.golang.org/grpc/credentials/oauth&quot;
- &quot;log&quot;
- &quot;os&quot;
- t &quot;tink-grpc-robot/Tinkoff/investAPI&quot;
-)
-
-func main() {
-
- conn, err := grpc.Dial(&quot;invest-public-api.tinkoff.ru:443&quot;,
-  grpc.WithTransportCredentials(credentials.NewTLS(&amp;tls.Config{})),
-  grpc.WithPerRPCCredentials(oauth.NewOauthAccess(&amp;oauth2.Token{
-   AccessToken: os.Getenv(&quot;TINK_TOKEN&quot;),
-  })))
- if err != nil {
-  log.Fatalf(&quot;did not connect: %v&quot;, err)
- }
- defer conn.Close()
-
- instr, err := t.NewInstrumentsServiceClient(conn).GetInstrumentBy(context.Background(), &amp;t.InstrumentRequest{
-  IdType:    t.InstrumentIdType_INSTRUMENT_ID_TYPE_TICKER,
-  ClassCode: &quot;SPBXM&quot;,
-  Id:        &quot;SPCE&quot;,
- })
- if err != nil {
-  panic(err)
- }
-
- dataStream, err := t.NewMarketDataStreamServiceClient(conn).MarketDataStream(context.Background())
- err = dataStream.Send(&amp;t.MarketDataRequest{
-  Payload: &amp;t.MarketDataRequest_SubscribeCandlesRequest{
-   SubscribeCandlesRequest: &amp;t.SubscribeCandlesRequest{
-    SubscriptionAction: t.SubscriptionAction_SUBSCRIPTION_ACTION_SUBSCRIBE,
-    Instruments: []*t.CandleInstrument{
-     {
-      Figi:     instr.Instrument.Figi,
-      Interval: t.SubscriptionInterval_SUBSCRIPTION_INTERVAL_ONE_MINUTE,
-     },
-    },
-   },
-  },
- })
- if err != nil {
-  panic(err)
- }
-
- for {
-  recv, err := dataStream.Recv()
-  if err != nil {
-   panic(err)
-  }
-  fmt.Println(recv.Payload)
- }
-
-}
-</code></pre>
+                <h2 id="sdk-c">SDK для c</h2>
+<h4 id="sdk">Официальные SDK:</h4>
+<ul>
+<li><a href="https://github.com/Tinkoff/invest-api-csharp-sdk">InvestApi .NET SDK</a></li>
+</ul>
+<h4 id="sdk_1">Неофициальные SDK:</h4>
+<h2 id="_1">Примеры подключения</h2>
+<p>Примеры подключения и получения данных доступны в репозитории официальной SDK:
+https://github.com/Tinkoff/invest-api-csharp-sdk/tree/main/Tinkoff.InvestApi.Sample</p>
+<h2 id="faq">FAQ</h2>
                 
               
               
@@ -1076,6 +1127,41 @@ func main() {
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../faq_java/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Java" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Java
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../head-users/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Описание" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Описание
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

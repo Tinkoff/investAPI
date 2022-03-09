@@ -2,8 +2,11 @@
 
 ##Timestamp 
 Тип данных Timestamp является основным для передачи времени [в формате protoсol-buffers](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#timestamp) и представляет собой значение в диапазоне интервала дат от 0001-01-01T00:00:00Z до 9999-12-31T23:59:59.999999999Z
-Timestamp всегда работает в формате UTC с нулевым смещением. Тип Timestamp состоит из двух полей целого типа:
-seconds и nanos. Seconds содержит количество секунд с полуночи(00:00:00) 01.01.1970, а nanos принимает значения от 0 до 999999999. Например, для 0.5 
+
+
+Timestamp всегда работает в формате UTC с нулевым смещением. Тип Timestamp состоит из двух полей целого типа: seconds и nanos. 
+
+Seconds содержит количество секунд с полуночи(00:00:00) 01.01.1970, а nanos принимает значения от 0 до 999999999.
 
 ###Примеры timestamp
 |Seconds|Nanos|Значение|
@@ -14,23 +17,26 @@ seconds и nanos. Seconds содержит количество секунд с 
 
 ###Пример конвертации из POSIX функции time()
 
-{
-    Timestamp timestamp;
-    timestamp.set_seconds(time(NULL));
-    timestamp.set_nanos(0);
-}
+    {
+	Timestamp timestamp;
+    	timestamp.set_seconds(time(NULL));
+    	timestamp.set_nanos(0);
+    }
+
+
 ###Пример конвертации из POSIX функции gettimeofday()
-{
+    {
     struct timeval tv;
     gettimeofday(&tv, NULL);
 
     Timestamp timestamp;
     timestamp.set_seconds(tv.tv_sec);
     timestamp.set_nanos(tv.tv_usec * 1000);
-}
-###Пример конвертации из Windows функции GetSystemTimeAsFileTime()
+    }
 
-{
+
+###Пример конвертации из Windows функции GetSystemTimeAsFileTime()
+    {
     FILETIME ft;
     GetSystemTimeAsFileTime(&ft);
     UINT64 ticks = (((UINT64)ft.dwHighDateTime) << 32) | ft.dwLowDateTime;
@@ -40,7 +46,8 @@ seconds и nanos. Seconds содержит количество секунд с 
     Timestamp timestamp;
     timestamp.set_seconds((INT64) ((ticks / 10000000) - 11644473600LL));
     timestamp.set_nanos((INT32) ((ticks % 10000000) * 100));
-}
+    }
+
 
 ##MoneyValue
 Данный тип данных используется для параметров, имеющих денежный эквивалент. Например, стоимость ценных бумаг.

@@ -2,6 +2,8 @@
 
 Tinkoff Invest API — это интерфейс для взаимодействия с торговой платформой [Тинькофф Инвестиции](https://www.tinkoff.ru/invest/).
 
+[Документация для разработчиков](https://tinkoff.github.io/investAPI/)
+
 # Примеры решаемых задач
 
 ### Анализ котировок бумаг
@@ -65,7 +67,6 @@ API реализован на быстром, удобном и функцион
 
 SDK на других языках в процессе разработки.
 
-
 # Как работать с этим репозитарием
 
 В [Issues](https://github.com/Tinkoff/investAPI/issues) вы можете задать вопрос или найти ответ, если вопрос уже был задан другими пользователями.
@@ -74,4 +75,6 @@ SDK на других языках в процессе разработки.
 
 # Сообщество
 
-[Telegram-чат](https://t.me/joinchat/VaW05CDzcSdsPULM)
+* [Telegram-канал](https://t.me/tinkoffinvestopenapi)
+* [Telegram-чат по общим вопросам](https://t.me/joinchat/VaW05CDzcSdsPULM)
+* [Telegram-чат для заказчиков и разработчиков торговых роботов](https://t.me/tinkoffinvestopenapi)

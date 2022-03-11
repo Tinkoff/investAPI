@@ -28,8 +28,11 @@ nav:
   - "Правила обработки корпоративных действий": faq_corp_action.md
 - Ответы на частые вопросы:
   - "Часто задаваемые вопросы": faq.md
+  - "FAQ Сервиса инструментов": faq_instruments.md
   - "FAQ Сервис торговых поручений": faq_orders.md
   - "FAQ Сервис котировок": faq_marketdata.md
+  - "FAQ Сервиса операций": faq_operations.md
+  - "FAQ Сервиса аккаунтов": faq_users.md
   - "FAQ Песочница": faq_sandbox.md
 - Языки программирования:
   - Python: faq_python.md

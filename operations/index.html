@@ -1723,7 +1723,7 @@
 <h2 id="operationsservice">OperationsService</h2>
 <p>Сервис предназначен для получения:</br> <strong>1</strong>.  списка операций по счёту;</br> <strong>2</strong>.
 портфеля по счёту;</br> <strong>3</strong>. позиций ценных бумаг на счёте;</br> <strong>4</strong>.
-доступного остатка для вывода средств.</p>
+доступного остатка для вывода средств;</br> <strong>4</strong>. получения различных отчётов.</p>
 <h3 id="_1">Методы сервиса</h3>
 <h4 id="getoperations">GetOperations</h4>
 <p>Метод получения списка операций по счёту.</p>
@@ -2053,7 +2053,7 @@
 <tr>
 <td>expected_yield</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Текущая доходность портфеля</td>
+<td>Текущая относительная доходность портфеля, в %</td>
 </tr>
 <tr>
 <td>positions</td>
@@ -2233,7 +2233,7 @@
 <tr>
 <td>expected_yield</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Текущая рассчитанная доходность</td>
+<td>Текущая рассчитанная относительная доходность позиции, в %.</td>
 </tr>
 <tr>
 <td>current_nkd</td>
@@ -2293,7 +2293,7 @@
 <tr>
 <td>balance</td>
 <td><a href="#int64">int64</a></td>
-<td>Текущий баланс</td>
+<td>Текущий незаблокированный баланс</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2328,7 +2328,7 @@
 <tr>
 <td>balance</td>
 <td><a href="#int64">int64</a></td>
-<td>Текущий баланс</td>
+<td>Текущий незаблокированный баланс</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>

@@ -14,7 +14,7 @@
     
     
       
-        <title>Faq multiaccounts - TINKOFF INVEST API</title>
+        <title>FAQ Сервиса аккаунтов - TINKOFF INVEST API</title>
       
     
     
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Faq multiaccounts
+              FAQ Сервиса аккаунтов
             
           </span>
         </div>
@@ -416,12 +416,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       <label class="md-nav__link" for="__nav_3">
         Ответы на частые вопросы
@@ -497,11 +499,47 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../faq_users/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          FAQ Сервиса аккаунтов
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         FAQ Сервиса аккаунтов
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Как быстро после появления счёта можно начинать с ним работать?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1008,21 +1046,7 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    Как открыть дополнительные брокерские счета?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Какая логика работы с мультисчетами?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tinkoff-invest-api" class="md-nav__link">
-    Поддерживаются ли сейчас мультисчета в TINKOFF INVEST API?
+    Как быстро после появления счёта можно начинать с ним работать?
   </a>
   
 </li>
@@ -1039,24 +1063,16 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Tinkoff/investAPI/edit/master/docs/faq_multiaccounts.md" title="Редактировать страницу" class="md-content__button md-icon">
+                  <a href="https://github.com/Tinkoff/investAPI/edit/master/docs/faq_users.md" title="Редактировать страницу" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Faq multiaccounts</h1>
+                  <h1>FAQ Сервиса аккаунтов</h1>
                 
-                <h2 id="_1">Как открыть дополнительные брокерские счета?</h2>
-<p>Открыть счета можно через мобильное приложение.</p>
-<h2 id="_2">Какая логика работы с мультисчетами?</h2>
-<p>Каждый новый счет полностью изолирован от остальных - портфолио, операции, лимиты, 
-гарантийные обеспечения, уровни достаточности средств учитываются по каждому счету 
-отдельно. Поэтому может быть ситуация, при которой на одном счете средств хватает с 
-избытком, а на другом при нехватке средств и активной маржинальной торговле может 
-наступить маржин-колл. </p>
-<h2 id="tinkoff-invest-api">Поддерживаются ли сейчас мультисчета в TINKOFF INVEST API?</h2>
-<p>Да, в TINKOFF INVEST API можно работать с несколькими счетами. Все ключевые методы принимают
-на вход параметр <em>account_id</em> (идентификатор счёта).</p>
+                <h3 id="_1">Как быстро после появления счёта можно начинать с ним работать?</h3>
+<p>Обычно новый счёт становится доступен для работы через TINKOFF INVEST API в течении часа после открытия. 
+В редких случаях эта задержка может составлять до двух часов.</p>
                 
               
               
@@ -1072,6 +1088,41 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../faq_operations/" class="md-footer__link md-footer__link--prev" aria-label="Назад: FAQ Сервиса операций" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              FAQ Сервиса операций
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../faq_sandbox/" class="md-footer__link md-footer__link--next" aria-label="Вперед: FAQ Песочница" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              FAQ Песочница
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

@@ -26,9 +26,6 @@ service InstrumentsService {/*Сервис предназначен для по�
   //Метод получения списка облигаций.
   rpc Bonds (InstrumentsRequest) returns (BondsResponse);
 
-  //Метод получения графика выплат купонов по облигации
-  rpc GetBondCoupons (GetBondCouponsRequest) returns (GetBondCouponsResponse);
-
   //Метод получения валюты по её идентификатору.
   rpc CurrencyBy (InstrumentRequest) returns (CurrencyResponse);
 
@@ -86,20 +83,12 @@ message TradingSchedule {
 
 //Информация о времени торгов.
 message TradingDay {
-  reserved 5,6;
   google.protobuf.Timestamp date = 1; // Дата.
   bool is_trading_day = 2; // Признак торгового дня на бирже.
   google.protobuf.Timestamp start_time = 3; // Время начала торгов по часовому поясу UTC.
   google.protobuf.Timestamp end_time = 4; // Время окончания торгов по часовому поясу UTC.
-  google.protobuf.Timestamp opening_auction_start_time = 7; // Время начала аукциона открытия в часовом поясе UTC.
-  google.protobuf.Timestamp closing_auction_end_time = 8; // Время окончания аукциона закрытия в часовом поясе UTC.
-  google.protobuf.Timestamp evening_opening_auction_start_time = 9; // Время начала аукциона открытия вечерней сессии в часовом поясе UTC.
-  google.protobuf.Timestamp evening_start_time = 10; // Время начала вечерней сессии в часовом поясе UTC.
-  google.protobuf.Timestamp evening_end_time = 11; // Время окончания вечерней сессии в часовом поясе UTC.
-  google.protobuf.Timestamp clearing_start_time = 12; // Время начала основного клиринга в часовом поясе UTC.
-  google.protobuf.Timestamp clearing_end_time = 13; // Время окончания основного клиринга в часовом поясе UTC.
-  google.protobuf.Timestamp premarket_start_time = 14; // Время начала премаркета в часовом поясе UTC.
-  google.protobuf.Timestamp premarket_end_time = 15; // Время окончания премаркета в часовом поясе UTC.
+  google.protobuf.Timestamp market_order_start_time = 5; // Время начала подачи заявки по часовому поясу UTC.
+  google.protobuf.Timestamp market_order_end_time = 6; // Время окончания подачи заявки по часовому поясу UTC.
 }
 
 //Запрос получения инструмента по идентификатору.
@@ -122,43 +111,6 @@ message BondResponse {
 //Список облигаций.
 message BondsResponse {
   repeated Bond instruments = 1; //Массив облигаций.
-}
-
-//Запрос купонов по облигации.
-message GetBondCouponsRequest {
-  string figi = 1; //Figi-идентификатор инструмента.
-  google.protobuf.Timestamp from = 2; //Начало запрашиваемого периода в часовом поясе UTC.
-  google.protobuf.Timestamp to = 3; //Окончание запрашиваемого периода в часовом поясе UTC.
-}
-
-//Купоны по облигации.
-message GetBondCouponsResponse {
-  repeated Coupon events = 1;
-}
-
-//Объект передачи информации о купоне облигации.
-message Coupon {
-  string figi = 1; //Figi-идентификатор инструмента.
-  google.protobuf.Timestamp coupon_date = 2; //Дата события
-  int64 coupon_number = 3; //Номер купона
-  google.protobuf.Timestamp fix_date = 4; //(Опционально) Дата фиксации реестра для выплаты купона
-  MoneyValue pay_one_bond = 5; //Выплата на одну облигацию
-  CouponType coupon_type = 6;  //Тип купона
-  google.protobuf.Timestamp coupon_start_date = 7; //Начало купонного периода.
-  google.protobuf.Timestamp coupon_end_date = 8;   //Окончание купонного периода.
-  int32 coupon_period = 9; //Купонный период в днях.
-}
-
-//Тип купонов.
-enum CouponType {
-  COUPON_TYPE_UNSPECIFIED = 0; //Неопределенное значение
-  COUPON_TYPE_CONSTANT = 1;    //Постоянный
-  COUPON_TYPE_FLOATING = 2;    //Плавающий
-  COUPON_TYPE_DISCOUNT = 3;    //Дисконт
-  COUPON_TYPE_MORTGAGE = 4;    //Ипотечный
-  COUPON_TYPE_FIX = 5;         //Фиксированный
-  COUPON_TYPE_VARIABLE = 6;    //Переменный
-  COUPON_TYPE_OTHER = 7;       //Прочее
 }
 
 //Данные по валюте.
@@ -478,8 +430,8 @@ message Instrument {
 //Запрос дивидендов.
 message GetDividendsRequest {
   string figi = 1; //Figi-идентификатор инструмента.
-  google.protobuf.Timestamp from = 2; //Начало запрашиваемого периода в часовом поясе UTC.
-  google.protobuf.Timestamp to = 3; //Окончание запрашиваемого периода в часовом поясе UTC.
+  google.protobuf.Timestamp from = 2; //Начало запрашиваемого периода в часовом поясе UTC. Фильтрация происходит по параметру *record_date* (дата фиксации реестра).
+  google.protobuf.Timestamp to = 3; //Окончание запрашиваемого периода в часовом поясе UTC. Фильтрация происходит по параметру *record_date* (дата фиксации реестра).
 }
 
 //Дивиденды.

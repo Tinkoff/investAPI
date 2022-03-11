@@ -14,7 +14,7 @@
     
     
       
-        <title>Faq golang - TINKOFF INVEST API</title>
+        <title>Faq instruments - TINKOFF INVEST API</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#golang" class="md-skip">
+        <a href="#figi" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Faq golang
+              Faq instruments
             
           </span>
         </div>
@@ -971,8 +971,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#golang" class="md-nav__link">
-    Пример подключения на Golang
+  <a href="#figi" class="md-nav__link">
+    Что такое Figi инструмента?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#figi-isin" class="md-nav__link">
+    Как мне найти Figi инструмента по его названию, тикеру или isin?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class_code" class="md-nav__link">
+    Что такое class_code и где его найти?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tinkoff-invest-api" class="md-nav__link">
+    Как понять, что бумага доступна для торговли через TINKOFF INVEST API?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Что такое накопленный купонный доход облигации и как его узнать?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#min_price_increment_amount" class="md-nav__link">
+    Как узнать стоимость шага цены (min_price_increment_amount) фьючерса?
   </a>
   
 </li>
@@ -989,78 +1024,66 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Tinkoff/investAPI/edit/master/docs/faq_golang.md" title="Редактировать страницу" class="md-content__button md-icon">
+                  <a href="https://github.com/Tinkoff/investAPI/edit/master/docs/faq_instruments.md" title="Редактировать страницу" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Faq golang</h1>
+                  <h1>Faq instruments</h1>
                 
-                <h2 id="golang">Пример подключения на Golang</h2>
-<pre><code class="language-golang">package main
-
-import (
- &quot;context&quot;
- &quot;crypto/tls&quot;
- &quot;fmt&quot;
- &quot;golang.org/x/oauth2&quot;
- &quot;google.golang.org/grpc&quot;
- &quot;google.golang.org/grpc/credentials&quot;
- &quot;google.golang.org/grpc/credentials/oauth&quot;
- &quot;log&quot;
- &quot;os&quot;
- t &quot;tink-grpc-robot/Tinkoff/investAPI&quot;
-)
-
-func main() {
-
- conn, err := grpc.Dial(&quot;invest-public-api.tinkoff.ru:443&quot;,
-  grpc.WithTransportCredentials(credentials.NewTLS(&amp;tls.Config{})),
-  grpc.WithPerRPCCredentials(oauth.NewOauthAccess(&amp;oauth2.Token{
-   AccessToken: os.Getenv(&quot;TINK_TOKEN&quot;),
-  })))
- if err != nil {
-  log.Fatalf(&quot;did not connect: %v&quot;, err)
- }
- defer conn.Close()
-
- instr, err := t.NewInstrumentsServiceClient(conn).GetInstrumentBy(context.Background(), &amp;t.InstrumentRequest{
-  IdType:    t.InstrumentIdType_INSTRUMENT_ID_TYPE_TICKER,
-  ClassCode: &quot;SPBXM&quot;,
-  Id:        &quot;SPCE&quot;,
- })
- if err != nil {
-  panic(err)
- }
-
- dataStream, err := t.NewMarketDataStreamServiceClient(conn).MarketDataStream(context.Background())
- err = dataStream.Send(&amp;t.MarketDataRequest{
-  Payload: &amp;t.MarketDataRequest_SubscribeCandlesRequest{
-   SubscribeCandlesRequest: &amp;t.SubscribeCandlesRequest{
-    SubscriptionAction: t.SubscriptionAction_SUBSCRIPTION_ACTION_SUBSCRIBE,
-    Instruments: []*t.CandleInstrument{
-     {
-      Figi:     instr.Instrument.Figi,
-      Interval: t.SubscriptionInterval_SUBSCRIPTION_INTERVAL_ONE_MINUTE,
-     },
-    },
-   },
-  },
- })
- if err != nil {
-  panic(err)
- }
-
- for {
-  recv, err := dataStream.Recv()
-  if err != nil {
-   panic(err)
-  }
-  fmt.Println(recv.Payload)
- }
-
-}
-</code></pre>
+                <h3 id="figi">Что такое Figi инструмента?</h3>
+<p><strong>FIGI</strong>(<em>англ.:</em> Financial Instrument Global Identifier) — глобальный идентификатор
+финансового инструмента. Представляет собой 12-символьный код из латинских букв и цифр,
+определяется как идентификатор ценной бумаги на торговой площадке (бирже), которая
+является некоторым <em>"источником цен"</em>.</p>
+<p>В контексте работы с TINKOFF INVEST API основным идентификатором инструмента является Figi.
+Нужно понимать, что не все инструменты, доступные в Тинькофф Инвестициях, имеют общепринятый
+Figi. Поэтому не гарантируется уникальность инструментов с другими источниками. Узнать актуальный
+Figi-идентификатор инструмента можно при помощи методов <a href="/investAPI/instruments/">сервиса инструментов</a>.</p>
+<p>В будущем планируется переход на использование абстрактного идентификатора инструмента внутри Тинькофф
+Инвестиций (uid), чтобы избежать возможной путаницы. </p>
+<h3 id="figi-isin">Как мне найти Figi инструмента по его названию, тикеру или isin?</h3>
+<p>Методы поиска инструментов по идентификатору (<a href="/investAPI/instruments#bondby">BondBy</a>, 
+<a href="/investAPI/instruments#currencyby">CurrencyBy</a>, <a href="/investAPI/instruments#etfby">EtfBy</a>, 
+<a href="/instruments#futureby">FutureBy</a>, <a href="/investAPI/instruments#shareby">ShareBy</a>) позволяют получить 
+информацию об инструменте зная его Figi или связку ticker + class_code. Если же эти идентификаторы
+вам неизвестны, вы можете получить полный список инструментов определённого типа методами запроса
+списков инструментов (<a href="/investAPI/instruments#bonds">Bonds</a>,
+<a href="/investAPI/instruments#currencies">Currencies</a>, <a href="/investAPI/instruments#etfs">Etfs</a>,
+<a href="/instruments#futures">Futures</a>, <a href="/investAPI/instruments#shares">Shares</a>) и выполнить поиск по известным
+параметрам самостоятельно. Сделать это можно в коде робота или при помощи любого доступного gRPC-клиента,
+например, Kreya. Инструкция по настройке Kreya доступна по <a href="/investAPI/grpc#kreya">ссылке</a>.</p>
+<h3 id="class_code">Что такое class_code и где его найти?</h3>
+<p>Сlass_code — это технический параметр "Режим торгов", используемый для обозначения секции биржи, на
+которой торгуется данный инструмент. Узнать его можно, получив детали по инструменту методами сервиса
+инструментов.</p>
+<h3 id="tinkoff-invest-api">Как понять, что бумага доступна для торговли через TINKOFF INVEST API?</h3>
+<p>Чтобы получить все доступные для торговли инструменты определённого типа можно воспользоваться
+соответствующими методами, передав параметр <strong>instrument_status</strong> = <strong><em>INSTRUMENT_STATUS_BASE</em></strong>: 
+* <a href="/investAPI/instruments#bonds">Bonds</a>
+* <a href="/investAPI/instruments#currencies">Currencies</a>
+* <a href="/investAPI/instruments#etfs">Etfs</a>
+* <a href="/instruments#futures">Futures</a>
+* <a href="/investAPI/instruments#shares">Shares</a></p>
+<p>Если же нет необходимости получать полный список инструментов, можно использовать параметр
+<strong>api_trade_available_flag</strong> из ответа метода получения инструмента по его идентификатору 
+(<a href="/investAPI/instruments#bondby">BondBy</a>,
+<a href="/investAPI/instruments#currencyby">CurrencyBy</a>, <a href="/investAPI/instruments#etfby">EtfBy</a>,
+<a href="/instruments#futureby">FutureBy</a>, <a href="/investAPI/instruments#shareby">ShareBy</a>). Этот флаг
+отвечает за доступность инструмента для торгов через TINKOFF INVEST API.</p>
+<p>Кроме того следует учитывать расписание работы бирж и торговый статус инструмента. Подробнее:
+<a href="/investAPI/faq_trading_status/">Торговые статусы инструментов и расписание торгов</a>.</p>
+<h3 id="_1">Что такое накопленный купонный доход облигации и как его узнать?</h3>
+<p><strong>Купон, или купонный доход</strong> — это процентные выплаты держателям облигаций со стороны эмитента, то есть
+компании или госоргана, выпустивших этот тип ценных бумаг.
+Даты выплат процентов по облигациям и размер купона известны заранее. Размер купона задается в процентах от
+номинала — то есть от цены облигации при ее выпуске. Величина купона может быть фиксированной или плавающей —
+то есть привязанной к инфляции, ключевой ставке Центробанка России или другим ориентирам. Иногда у облигации
+может вовсе не быть купона. <a href="https://www.tinkoff.ru/invest/account/help/get-profit/coupon-yield">Купонный доход по облигациям</a>.</p>
+<p>Получить календарь купонных выплат можно методом <a href="/investAPI/instruments#getaccruedinterests">GetAccruedInterests</a>.</p>
+<h3 id="min_price_increment_amount">Как узнать стоимость шага цены (min_price_increment_amount) фьючерса?</h3>
+<p>Данный параметр может изменяться довольно часто в течении дня, поэтому для его получения существует 
+отдельный метод сервиса инструментов <a href="/investAPI/instruments#getfuturesmargin">GetFuturesMargin</a>.</p>
                 
               
               

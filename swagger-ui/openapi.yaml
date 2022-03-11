@@ -4,7 +4,7 @@ info:
   termsOfService: https://www.tinkoff.ru/invest/disclaimers/basic-information/
   contact:
     email: al.a.volkov@tinkoff.ru
-  version: '1.0.0'
+  version: '1.0.3'
 externalDocs:
   description: Документация Tinkoff Invest API
   url: https://tinkoff.github.io/investAPI/
@@ -253,6 +253,32 @@ paths:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
       summary: Метод получения накопленного купонного дохода по облигации.
+      tags:
+      - InstrumentsService
+      x-codegen-request-body-name: body
+  /tinkoff.public.invest.api.contract.v1.InstrumentsService/GetBondCoupons:
+    post:
+      operationId: InstrumentsService_GetBondCoupons
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1GetBondCouponsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1GetBondCouponsResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Метод получения графика выплат купонов по облигации
       tags:
       - InstrumentsService
       x-codegen-request-body-name: body
@@ -538,6 +564,33 @@ paths:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      summary: Метод получения брокерского отчёта.
+      tags:
+      - OperationsService
+      x-codegen-request-body-name: body
+  /tinkoff.public.invest.api.contract.v1.OperationsService/GetDividendsForeignIssuer:
+    post:
+      operationId: OperationsService_GetDividendsForeignIssuer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1GetDividendsForeignIssuerRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1GetDividendsForeignIssuerResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Метод получения отчёта "Справка о доходах за пределами РФ".
       tags:
       - OperationsService
       x-codegen-request-body-name: body
@@ -1951,6 +2004,59 @@ components:
     v1CloseSandboxAccountResponse:
       description: Результат закрытия счёта в песочнице.
       type: object
+    v1Coupon:
+      description: Объект передачи информации о купоне облигации.
+      example:
+        fixDate: 2000-01-23T04:56:07.000+00:00
+        couponPeriod: 0
+        couponNumber: couponNumber
+        couponEndDate: 2000-01-23T04:56:07.000+00:00
+        figi: figi
+        couponDate: 2000-01-23T04:56:07.000+00:00
+        couponStartDate: 2000-01-23T04:56:07.000+00:00
+        payOneBond:
+          nano: 5
+          currency: currency
+          units: units
+      properties:
+        figi:
+          type: string
+        couponDate:
+          format: date-time
+          type: string
+        couponNumber:
+          format: int64
+          type: string
+        fixDate:
+          format: date-time
+          type: string
+        payOneBond:
+          $ref: '#/components/schemas/v1MoneyValue'
+        couponType:
+          $ref: '#/components/schemas/v1CouponType'
+        couponStartDate:
+          format: date-time
+          type: string
+        couponEndDate:
+          format: date-time
+          type: string
+        couponPeriod:
+          format: int32
+          type: integer
+      type: object
+    v1CouponType:
+      default: COUPON_TYPE_UNSPECIFIED
+      description: Тип купонов.
+      enum:
+      - COUPON_TYPE_UNSPECIFIED
+      - COUPON_TYPE_CONSTANT
+      - COUPON_TYPE_FLOATING
+      - COUPON_TYPE_DISCOUNT
+      - COUPON_TYPE_MORTGAGE
+      - COUPON_TYPE_FIX
+      - COUPON_TYPE_VARIABLE
+      - COUPON_TYPE_OTHER
+      type: string
     v1CurrenciesResponse:
       description: Данные по валютам.
       example:
@@ -2235,6 +2341,60 @@ components:
           $ref: '#/components/schemas/v1Quotation'
         createdAt:
           format: date-time
+          type: string
+      type: object
+    v1DividendsForeignIssuerReport:
+      description: Отчёт "Справка о доходах за пределами РФ".
+      example:
+        issuerCountry: issuerCountry
+        externalCommission:
+          nano: 6
+          units: units
+        securityName: securityName
+        dividendGross:
+          nano: 6
+          units: units
+        quantity: quantity
+        dividendAmount:
+          nano: 6
+          units: units
+        recordDate: 2000-01-23T04:56:07.000+00:00
+        dividend:
+          nano: 6
+          units: units
+        tax:
+          nano: 6
+          units: units
+        currency: currency
+        paymentDate: 2000-01-23T04:56:07.000+00:00
+        isin: isin
+      properties:
+        recordDate:
+          format: date-time
+          type: string
+        paymentDate:
+          format: date-time
+          type: string
+        securityName:
+          type: string
+        isin:
+          type: string
+        issuerCountry:
+          type: string
+        quantity:
+          format: int64
+          type: string
+        dividend:
+          $ref: '#/components/schemas/v1Quotation'
+        externalCommission:
+          $ref: '#/components/schemas/v1Quotation'
+        dividendGross:
+          $ref: '#/components/schemas/v1Quotation'
+        tax:
+          $ref: '#/components/schemas/v1Quotation'
+        dividendAmount:
+          $ref: '#/components/schemas/v1Quotation'
+        currency:
           type: string
       type: object
     v1Etf:
@@ -2789,6 +2949,28 @@ components:
         taskId:
           type: string
       type: object
+    v1GenerateDividendsForeignIssuerReportRequest:
+      description: Объект запроса формирования отчёта "Справка о доходах за пределами
+        РФ".
+      properties:
+        accountId:
+          type: string
+        from:
+          format: date-time
+          type: string
+        to:
+          format: date-time
+          type: string
+      type: object
+    v1GenerateDividendsForeignIssuerReportResponse:
+      description: Объект результата задачи запуска формирования отчёта "Справка о
+        доходах за пределами РФ".
+      example:
+        taskId: taskId
+      properties:
+        taskId:
+          type: string
+      type: object
     v1GetAccountsRequest:
       description: Запрос получения счетов пользователя.
       type: object
@@ -2852,6 +3034,50 @@ components:
             $ref: '#/components/schemas/v1AccruedInterest'
           type: array
       title: НКД облигации
+      type: object
+    v1GetBondCouponsRequest:
+      description: Запрос купонов по облигации.
+      properties:
+        figi:
+          type: string
+        from:
+          format: date-time
+          type: string
+        to:
+          format: date-time
+          type: string
+      type: object
+    v1GetBondCouponsResponse:
+      description: Купоны по облигации.
+      example:
+        events:
+        - fixDate: 2000-01-23T04:56:07.000+00:00
+          couponPeriod: 0
+          couponNumber: couponNumber
+          couponEndDate: 2000-01-23T04:56:07.000+00:00
+          figi: figi
+          couponDate: 2000-01-23T04:56:07.000+00:00
+          couponStartDate: 2000-01-23T04:56:07.000+00:00
+          payOneBond:
+            nano: 5
+            currency: currency
+            units: units
+        - fixDate: 2000-01-23T04:56:07.000+00:00
+          couponPeriod: 0
+          couponNumber: couponNumber
+          couponEndDate: 2000-01-23T04:56:07.000+00:00
+          figi: figi
+          couponDate: 2000-01-23T04:56:07.000+00:00
+          couponStartDate: 2000-01-23T04:56:07.000+00:00
+          payOneBond:
+            nano: 5
+            currency: currency
+            units: units
+      properties:
+        events:
+          items:
+            $ref: '#/components/schemas/v1Coupon'
+          type: array
       type: object
     v1GetBrokerReportRequest:
       properties:
@@ -3033,6 +3259,147 @@ components:
           items:
             $ref: '#/components/schemas/v1HistoricCandle'
           type: array
+      type: object
+    v1GetDividendsForeignIssuerReportRequest:
+      description: Объект запроса сформированного отчёта "Справка о доходах за пределами
+        РФ".
+      properties:
+        taskId:
+          type: string
+        page:
+          format: int32
+          type: integer
+      type: object
+    v1GetDividendsForeignIssuerReportResponse:
+      example:
+        pagesCount: 6
+        page: 1
+        dividendsForeignIssuerReport:
+        - issuerCountry: issuerCountry
+          externalCommission:
+            nano: 6
+            units: units
+          securityName: securityName
+          dividendGross:
+            nano: 6
+            units: units
+          quantity: quantity
+          dividendAmount:
+            nano: 6
+            units: units
+          recordDate: 2000-01-23T04:56:07.000+00:00
+          dividend:
+            nano: 6
+            units: units
+          tax:
+            nano: 6
+            units: units
+          currency: currency
+          paymentDate: 2000-01-23T04:56:07.000+00:00
+          isin: isin
+        - issuerCountry: issuerCountry
+          externalCommission:
+            nano: 6
+            units: units
+          securityName: securityName
+          dividendGross:
+            nano: 6
+            units: units
+          quantity: quantity
+          dividendAmount:
+            nano: 6
+            units: units
+          recordDate: 2000-01-23T04:56:07.000+00:00
+          dividend:
+            nano: 6
+            units: units
+          tax:
+            nano: 6
+            units: units
+          currency: currency
+          paymentDate: 2000-01-23T04:56:07.000+00:00
+          isin: isin
+        itemsCount: 0
+      properties:
+        dividendsForeignIssuerReport:
+          items:
+            $ref: '#/components/schemas/v1DividendsForeignIssuerReport'
+          type: array
+        itemsCount:
+          format: int32
+          type: integer
+        pagesCount:
+          format: int32
+          type: integer
+        page:
+          format: int32
+          type: integer
+      type: object
+    v1GetDividendsForeignIssuerRequest:
+      properties:
+        generateDivForeignIssuerReport:
+          $ref: '#/components/schemas/v1GenerateDividendsForeignIssuerReportRequest'
+        getDivForeignIssuerReport:
+          $ref: '#/components/schemas/v1GetDividendsForeignIssuerReportRequest'
+      type: object
+    v1GetDividendsForeignIssuerResponse:
+      example:
+        generateDivForeignIssuerReportResponse:
+          taskId: taskId
+        divForeignIssuerReport:
+          pagesCount: 6
+          page: 1
+          dividendsForeignIssuerReport:
+          - issuerCountry: issuerCountry
+            externalCommission:
+              nano: 6
+              units: units
+            securityName: securityName
+            dividendGross:
+              nano: 6
+              units: units
+            quantity: quantity
+            dividendAmount:
+              nano: 6
+              units: units
+            recordDate: 2000-01-23T04:56:07.000+00:00
+            dividend:
+              nano: 6
+              units: units
+            tax:
+              nano: 6
+              units: units
+            currency: currency
+            paymentDate: 2000-01-23T04:56:07.000+00:00
+            isin: isin
+          - issuerCountry: issuerCountry
+            externalCommission:
+              nano: 6
+              units: units
+            securityName: securityName
+            dividendGross:
+              nano: 6
+              units: units
+            quantity: quantity
+            dividendAmount:
+              nano: 6
+              units: units
+            recordDate: 2000-01-23T04:56:07.000+00:00
+            dividend:
+              nano: 6
+              units: units
+            tax:
+              nano: 6
+              units: units
+            currency: currency
+            paymentDate: 2000-01-23T04:56:07.000+00:00
+            isin: isin
+          itemsCount: 0
+      properties:
+        generateDivForeignIssuerReportResponse:
+          $ref: '#/components/schemas/v1GenerateDividendsForeignIssuerReportResponse'
+        divForeignIssuerReport:
+          $ref: '#/components/schemas/v1GetDividendsForeignIssuerReportResponse'
       type: object
     v1GetDividendsRequest:
       description: Запрос дивидендов.
@@ -3906,6 +4273,7 @@ components:
       - OPERATION_TYPE_TAX_REPO_HOLD_PROGRESSIVE
       - OPERATION_TYPE_TAX_REPO_REFUND_PROGRESSIVE
       - OPERATION_TYPE_DIV_EXT
+      - OPERATION_TYPE_TAX_CORRECTION_COUPON
       title: Тип операции
       type: string
     v1OperationsRequest:
@@ -4964,9 +5332,16 @@ components:
       description: Информация о времени торгов.
       example:
         date: 2000-01-23T04:56:07.000+00:00
+        clearingEndTime: 2000-01-23T04:56:07.000+00:00
+        openingAuctionStartTime: 2000-01-23T04:56:07.000+00:00
+        closingAuctionEndTime: 2000-01-23T04:56:07.000+00:00
+        eveningEndTime: 2000-01-23T04:56:07.000+00:00
+        premarketStartTime: 2000-01-23T04:56:07.000+00:00
+        eveningOpeningAuctionStartTime: 2000-01-23T04:56:07.000+00:00
         isTradingDay: true
-        marketOrderStartTime: 2000-01-23T04:56:07.000+00:00
-        marketOrderEndTime: 2000-01-23T04:56:07.000+00:00
+        eveningStartTime: 2000-01-23T04:56:07.000+00:00
+        premarketEndTime: 2000-01-23T04:56:07.000+00:00
+        clearingStartTime: 2000-01-23T04:56:07.000+00:00
         startTime: 2000-01-23T04:56:07.000+00:00
         endTime: 2000-01-23T04:56:07.000+00:00
       properties:
@@ -4981,10 +5356,31 @@ components:
         endTime:
           format: date-time
           type: string
-        marketOrderStartTime:
+        openingAuctionStartTime:
           format: date-time
           type: string
-        marketOrderEndTime:
+        closingAuctionEndTime:
+          format: date-time
+          type: string
+        eveningOpeningAuctionStartTime:
+          format: date-time
+          type: string
+        eveningStartTime:
+          format: date-time
+          type: string
+        eveningEndTime:
+          format: date-time
+          type: string
+        clearingStartTime:
+          format: date-time
+          type: string
+        clearingEndTime:
+          format: date-time
+          type: string
+        premarketStartTime:
+          format: date-time
+          type: string
+        premarketEndTime:
           format: date-time
           type: string
       type: object
@@ -4993,15 +5389,29 @@ components:
       example:
         days:
         - date: 2000-01-23T04:56:07.000+00:00
+          clearingEndTime: 2000-01-23T04:56:07.000+00:00
+          openingAuctionStartTime: 2000-01-23T04:56:07.000+00:00
+          closingAuctionEndTime: 2000-01-23T04:56:07.000+00:00
+          eveningEndTime: 2000-01-23T04:56:07.000+00:00
+          premarketStartTime: 2000-01-23T04:56:07.000+00:00
+          eveningOpeningAuctionStartTime: 2000-01-23T04:56:07.000+00:00
           isTradingDay: true
-          marketOrderStartTime: 2000-01-23T04:56:07.000+00:00
-          marketOrderEndTime: 2000-01-23T04:56:07.000+00:00
+          eveningStartTime: 2000-01-23T04:56:07.000+00:00
+          premarketEndTime: 2000-01-23T04:56:07.000+00:00
+          clearingStartTime: 2000-01-23T04:56:07.000+00:00
           startTime: 2000-01-23T04:56:07.000+00:00
           endTime: 2000-01-23T04:56:07.000+00:00
         - date: 2000-01-23T04:56:07.000+00:00
+          clearingEndTime: 2000-01-23T04:56:07.000+00:00
+          openingAuctionStartTime: 2000-01-23T04:56:07.000+00:00
+          closingAuctionEndTime: 2000-01-23T04:56:07.000+00:00
+          eveningEndTime: 2000-01-23T04:56:07.000+00:00
+          premarketStartTime: 2000-01-23T04:56:07.000+00:00
+          eveningOpeningAuctionStartTime: 2000-01-23T04:56:07.000+00:00
           isTradingDay: true
-          marketOrderStartTime: 2000-01-23T04:56:07.000+00:00
-          marketOrderEndTime: 2000-01-23T04:56:07.000+00:00
+          eveningStartTime: 2000-01-23T04:56:07.000+00:00
+          premarketEndTime: 2000-01-23T04:56:07.000+00:00
+          clearingStartTime: 2000-01-23T04:56:07.000+00:00
           startTime: 2000-01-23T04:56:07.000+00:00
           endTime: 2000-01-23T04:56:07.000+00:00
         exchange: exchange
@@ -5030,29 +5440,57 @@ components:
         exchanges:
         - days:
           - date: 2000-01-23T04:56:07.000+00:00
+            clearingEndTime: 2000-01-23T04:56:07.000+00:00
+            openingAuctionStartTime: 2000-01-23T04:56:07.000+00:00
+            closingAuctionEndTime: 2000-01-23T04:56:07.000+00:00
+            eveningEndTime: 2000-01-23T04:56:07.000+00:00
+            premarketStartTime: 2000-01-23T04:56:07.000+00:00
+            eveningOpeningAuctionStartTime: 2000-01-23T04:56:07.000+00:00
             isTradingDay: true
-            marketOrderStartTime: 2000-01-23T04:56:07.000+00:00
-            marketOrderEndTime: 2000-01-23T04:56:07.000+00:00
+            eveningStartTime: 2000-01-23T04:56:07.000+00:00
+            premarketEndTime: 2000-01-23T04:56:07.000+00:00
+            clearingStartTime: 2000-01-23T04:56:07.000+00:00
             startTime: 2000-01-23T04:56:07.000+00:00
             endTime: 2000-01-23T04:56:07.000+00:00
           - date: 2000-01-23T04:56:07.000+00:00
+            clearingEndTime: 2000-01-23T04:56:07.000+00:00
+            openingAuctionStartTime: 2000-01-23T04:56:07.000+00:00
+            closingAuctionEndTime: 2000-01-23T04:56:07.000+00:00
+            eveningEndTime: 2000-01-23T04:56:07.000+00:00
+            premarketStartTime: 2000-01-23T04:56:07.000+00:00
+            eveningOpeningAuctionStartTime: 2000-01-23T04:56:07.000+00:00
             isTradingDay: true
-            marketOrderStartTime: 2000-01-23T04:56:07.000+00:00
-            marketOrderEndTime: 2000-01-23T04:56:07.000+00:00
+            eveningStartTime: 2000-01-23T04:56:07.000+00:00
+            premarketEndTime: 2000-01-23T04:56:07.000+00:00
+            clearingStartTime: 2000-01-23T04:56:07.000+00:00
             startTime: 2000-01-23T04:56:07.000+00:00
             endTime: 2000-01-23T04:56:07.000+00:00
           exchange: exchange
         - days:
           - date: 2000-01-23T04:56:07.000+00:00
+            clearingEndTime: 2000-01-23T04:56:07.000+00:00
+            openingAuctionStartTime: 2000-01-23T04:56:07.000+00:00
+            closingAuctionEndTime: 2000-01-23T04:56:07.000+00:00
+            eveningEndTime: 2000-01-23T04:56:07.000+00:00
+            premarketStartTime: 2000-01-23T04:56:07.000+00:00
+            eveningOpeningAuctionStartTime: 2000-01-23T04:56:07.000+00:00
             isTradingDay: true
-            marketOrderStartTime: 2000-01-23T04:56:07.000+00:00
-            marketOrderEndTime: 2000-01-23T04:56:07.000+00:00
+            eveningStartTime: 2000-01-23T04:56:07.000+00:00
+            premarketEndTime: 2000-01-23T04:56:07.000+00:00
+            clearingStartTime: 2000-01-23T04:56:07.000+00:00
             startTime: 2000-01-23T04:56:07.000+00:00
             endTime: 2000-01-23T04:56:07.000+00:00
           - date: 2000-01-23T04:56:07.000+00:00
+            clearingEndTime: 2000-01-23T04:56:07.000+00:00
+            openingAuctionStartTime: 2000-01-23T04:56:07.000+00:00
+            closingAuctionEndTime: 2000-01-23T04:56:07.000+00:00
+            eveningEndTime: 2000-01-23T04:56:07.000+00:00
+            premarketStartTime: 2000-01-23T04:56:07.000+00:00
+            eveningOpeningAuctionStartTime: 2000-01-23T04:56:07.000+00:00
             isTradingDay: true
-            marketOrderStartTime: 2000-01-23T04:56:07.000+00:00
-            marketOrderEndTime: 2000-01-23T04:56:07.000+00:00
+            eveningStartTime: 2000-01-23T04:56:07.000+00:00
+            premarketEndTime: 2000-01-23T04:56:07.000+00:00
+            clearingStartTime: 2000-01-23T04:56:07.000+00:00
             startTime: 2000-01-23T04:56:07.000+00:00
             endTime: 2000-01-23T04:56:07.000+00:00
           exchange: exchange

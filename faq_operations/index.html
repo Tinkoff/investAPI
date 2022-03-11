@@ -14,7 +14,7 @@
     
     
       
-        <title>Faq golang - TINKOFF INVEST API</title>
+        <title>Faq operations - TINKOFF INVEST API</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#golang" class="md-skip">
+        <a href="#_1" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Faq golang
+              Faq operations
             
           </span>
         </div>
@@ -971,8 +971,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#golang" class="md-nav__link">
-    Пример подключения на Golang
+  <a href="#_1" class="md-nav__link">
+    Можно ли узнать идентификатор поручения из операции?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#figi" class="md-nav__link">
+    Почему в операции пустой Figi?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Будут ли отображаться операции по бумагам, которые прошли делистинг?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantity" class="md-nav__link">
+    Параметр quantity в лотах или количествах?
   </a>
   
 </li>
@@ -989,78 +1010,23 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Tinkoff/investAPI/edit/master/docs/faq_golang.md" title="Редактировать страницу" class="md-content__button md-icon">
+                  <a href="https://github.com/Tinkoff/investAPI/edit/master/docs/faq_operations.md" title="Редактировать страницу" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Faq golang</h1>
+                  <h1>Faq operations</h1>
                 
-                <h2 id="golang">Пример подключения на Golang</h2>
-<pre><code class="language-golang">package main
-
-import (
- &quot;context&quot;
- &quot;crypto/tls&quot;
- &quot;fmt&quot;
- &quot;golang.org/x/oauth2&quot;
- &quot;google.golang.org/grpc&quot;
- &quot;google.golang.org/grpc/credentials&quot;
- &quot;google.golang.org/grpc/credentials/oauth&quot;
- &quot;log&quot;
- &quot;os&quot;
- t &quot;tink-grpc-robot/Tinkoff/investAPI&quot;
-)
-
-func main() {
-
- conn, err := grpc.Dial(&quot;invest-public-api.tinkoff.ru:443&quot;,
-  grpc.WithTransportCredentials(credentials.NewTLS(&amp;tls.Config{})),
-  grpc.WithPerRPCCredentials(oauth.NewOauthAccess(&amp;oauth2.Token{
-   AccessToken: os.Getenv(&quot;TINK_TOKEN&quot;),
-  })))
- if err != nil {
-  log.Fatalf(&quot;did not connect: %v&quot;, err)
- }
- defer conn.Close()
-
- instr, err := t.NewInstrumentsServiceClient(conn).GetInstrumentBy(context.Background(), &amp;t.InstrumentRequest{
-  IdType:    t.InstrumentIdType_INSTRUMENT_ID_TYPE_TICKER,
-  ClassCode: &quot;SPBXM&quot;,
-  Id:        &quot;SPCE&quot;,
- })
- if err != nil {
-  panic(err)
- }
-
- dataStream, err := t.NewMarketDataStreamServiceClient(conn).MarketDataStream(context.Background())
- err = dataStream.Send(&amp;t.MarketDataRequest{
-  Payload: &amp;t.MarketDataRequest_SubscribeCandlesRequest{
-   SubscribeCandlesRequest: &amp;t.SubscribeCandlesRequest{
-    SubscriptionAction: t.SubscriptionAction_SUBSCRIPTION_ACTION_SUBSCRIBE,
-    Instruments: []*t.CandleInstrument{
-     {
-      Figi:     instr.Instrument.Figi,
-      Interval: t.SubscriptionInterval_SUBSCRIPTION_INTERVAL_ONE_MINUTE,
-     },
-    },
-   },
-  },
- })
- if err != nil {
-  panic(err)
- }
-
- for {
-  recv, err := dataStream.Recv()
-  if err != nil {
-   panic(err)
-  }
-  fmt.Println(recv.Payload)
- }
-
-}
-</code></pre>
+                <h3 id="_1">Можно ли узнать идентификатор поручения из операции?</h3>
+<p>Нет, в данный момент такой информации в операции нет, но мы работаем над этим. </p>
+<h3 id="figi">Почему в операции пустой Figi?</h3>
+<p>Такое возможно для операций завода денежных средств, т.к. нет связанного с операцией биржевого
+инструмента</p>
+<h3 id="_2">Будут ли отображаться операции по бумагам, которые прошли делистинг?</h3>
+<p>Да, такие операции отображаться будут. В том числе будут отображаться операции по бумагам после
+различных корпоративных действий. Подробнее: <a href="/investAPI/faq_corp_action/">Корпоративные действия</a>.</p>
+<h3 id="quantity">Параметр quantity в лотах или количествах?</h3>
+<p>В рамках сервиса операций данный параметр всегда передаётся в лотах инструмента.</p>
                 
               
               

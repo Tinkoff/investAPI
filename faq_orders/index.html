@@ -10,7 +10,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.3">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
     
     
       
@@ -511,7 +511,35 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    
+    Как рассчитать полную стоимость сделки?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Можно ли получить список уже исполненных торговых поручений?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Какие статусы торговых поручений бывают и что они значат?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Почему лимитная заявка исполнилась по другой цене?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quotation" class="md-nav__link">
+    Как перевести цену поручения в тип Quotation?
   </a>
   
 </li>
@@ -1066,7 +1094,35 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    
+    Как рассчитать полную стоимость сделки?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Можно ли получить список уже исполненных торговых поручений?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Какие статусы торговых поручений бывают и что они значат?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Почему лимитная заявка исполнилась по другой цене?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quotation" class="md-nav__link">
+    Как перевести цену поручения в тип Quotation?
   </a>
   
 </li>
@@ -1108,7 +1164,27 @@
 <p>Метод <a href="/investAPI/orders#postorder">PostOrder</a> принимает в качестве параметра quantity требуемое количество <strong>лотов</strong>.
 Многие инструменты имеют <a href="/investAPI/glossary#lot">лотность</a> отличную от единицы, это следует обязательно учитывать
 при выставлении торговых поручений. </p>
-<h3 id="_1"></h3>
+<h3 id="_1">Как рассчитать полную стоимость сделки?</h3>
+<p>Полная стоимость сделки включает в себя не только сумму операции покупки или продажи биржевого инструмента,
+но и комиссии брокера, сервисные комиссии, гарантийное обеспечение для операций с фьючерсами и т.п. 
+Рассчитать размеры комиссий можно из описания вашего тарифа, но нужно учитывать, что комиссии берутся за
+сделки, а не за поручение, т.е. одно торговое поручение может рождать несколько сделок. Размер начальной
+комиссии и фактической можно узнать в деталях торгового поручения (методом <a href="/investAPI/orders#getorderstate">GetOrderState</a>).</p>
+<p>Подробнее про расчёт стоимости сделок с фьючерсами и облигациями: 
+<a href="/investAPI/faq#_5">Цены облигаций и фьючерсов</a>.</p>
+<h3 id="_2">Можно ли получить список уже исполненных торговых поручений?</h3>
+<p>В данный момент метод <a href="/investAPI/orders#getorders">GetOrders</a> возвращает только список активных торговых
+поручений, т.е. поручений, которые ещё не исполнены и не отменены. Получить полный список уже исполненных
+торговых поручений в данный момент невозможно. </p>
+<h3 id="_3">Какие статусы торговых поручений бывают и что они значат?</h3>
+<p>Описание статусной модели торговых поручений: <a href="/investAPI/head-orders#_2">Статусная модель торговых поручений</a>.</p>
+<p>Некоторые нюансы исполнения поручений: <a href="/investAPI/orders_details/">Алгоритм и особенности исполнения торговых поручений</a>.</p>
+<h3 id="_4">Почему лимитная заявка исполнилась по другой цене?</h3>
+<p>Лимитное торговое поручение исполняется либо по указанной при её выставлении цене, либо по цене "лучше"
+для определённого направления сделки. Этот механизм на бирже называется Best Execution и подразумевает
+исполнение торгового поручения по цене выгоднее, указанной в поручении. </p>
+<h3 id="quotation">Как перевести цену поручения в тип Quotation?</h3>
+<p>Подробнее о работе с нестандартными типами данных: <a href="/investAPI/faq_custom_types/">Нестандартные типы данных TINKOFF INVEST API</a></p>
                 
               
               
@@ -1182,7 +1258,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e # \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.29db7785.min.js"></script>
+      <script src="../assets/javascripts/bundle.febc23d1.min.js"></script>
       
     
   </body>

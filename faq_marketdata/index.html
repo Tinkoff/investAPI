@@ -10,7 +10,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.3">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
     
     
       
@@ -544,6 +544,27 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Какие интервалы доступны при запросе исторических свечей?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    Как одним запросом получить последние цены по нескольким инструментам?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stream-" class="md-nav__link">
+    Как подписаться на разные типы данных в рамках stream-соединения сервиса котировок.
+  </a>
   
 </li>
       
@@ -1138,6 +1159,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Какие интервалы доступны при запросе исторических свечей?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    Как одним запросом получить последние цены по нескольким инструментам?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stream-" class="md-nav__link">
+    Как подписаться на разные типы данных в рамках stream-соединения сервиса котировок.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tinkoff-invest-api" class="md-nav__link">
     Внебиржевые инструменты в TINKOFF INVEST API
   </a>
@@ -1249,6 +1291,52 @@ isValidPrice(10.16, 0.1) // false
 <p>Так же при работе с фьючерсами важно учитывать размер гарантийного обеспечения. Узнать эти параметры фьючерсов
 можно при помощи метода: <a href="/investAPI/instruments#getfuturesmargin">getFuturesMargin</a>. Подробнее про срочный
 рынок читайте <a href="https://help.tinkoff.ru/forts/">тут</a></p>
+<h3 id="_7">Какие интервалы доступны при запросе исторических свечей?</h3>
+<p>Метод <a href="/investAPI/marketdata#getcandles">GetCandles</a> позволяет получать исторические свечи разных 
+таймфреймов. Существует ограничение на максимальный и минимальный период запроса для каждого интервала 
+свечей: </p>
+<table>
+<thead>
+<tr>
+<th align="left">Запрошенный интервал свечей</th>
+<th align="right">Допустимый период запроса</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CANDLE_INTERVAL_1_MIN</td>
+<td align="right">от 1 минут до 1 дня</td>
+</tr>
+<tr>
+<td align="left">CANDLE_INTERVAL_5_MIN</td>
+<td align="right">от 5 минут до 1 дня</td>
+</tr>
+<tr>
+<td align="left">CANDLE_INTERVAL_15_MIN</td>
+<td align="right">от 15 минут до 1 дня</td>
+</tr>
+<tr>
+<td align="left">CANDLE_INTERVAL_HOUR</td>
+<td align="right">от 1 часа до 1 недели</td>
+</tr>
+<tr>
+<td align="left">CANDLE_INTERVAL_DAY</td>
+<td align="right">от 1 дня до 1 года</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Важно!</strong> При запросе дневных свечей CANDLE_INTERVAL_DAY время, переданное в поля from и to игнорируется,
+Т.е. при запросе дневной свечи по интервалу с 12:00 01.01.2021 по 07:00 02.01.2021 вернётся две дневных 
+свечи за 01.01.2021 и за 02.01.2021</p>
+<h3 id="_8">Как одним запросом получить последние цены по нескольким инструментам?</h3>
+<p>Для получения цен последних сделок по массиву инструментов можно методом 
+<a href="/investAPI/marketdata#getlastprices">GetLastPrices</a>. Во входные параметры метода можно передать массив
+идентификаторов инструментов.</p>
+<h3 id="stream-">Как подписаться на разные типы данных в рамках stream-соединения сервиса котировок.</h3>
+<p>Bi-directional stream Сервиса котировок поддерживает одновременную подписку на разные типы данных (свечи,
+стаканы, сделки и т.п.) в рамках одного соединения. Для этого следует последовательно отправить пакеты
+подписки на разные данные. Т.е. отдельно реализуется подписка на свечи, отдельно на стаканы и т.п. 
+Подробнее можно узнать в примерах выбранного вами SDK.</p>
 <h3 id="tinkoff-invest-api">Внебиржевые инструменты в TINKOFF INVEST API</h3>
 <p>В данный момент TINKOFF INVEST API предполагает работу только с биржевыми инструментами.</p>
 <h3 id="tinkoff-invest-api_1">Торговля бумагами Тинькофф через TINKOFF INVEST API</h3>
@@ -1335,7 +1423,7 @@ isValidPrice(10.16, 0.1) // false
     <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e # \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.29db7785.min.js"></script>
+      <script src="../assets/javascripts/bundle.febc23d1.min.js"></script>
       
     
   </body>

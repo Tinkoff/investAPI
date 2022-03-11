@@ -39,6 +39,14 @@
 - Тело ответа — [BondsResponse](#bondsresponse)
 
 
+#### GetBondCoupons
+Метод получения графика выплат купонов по облигации
+
+- Тело запроса — [GetBondCouponsRequest](#getbondcouponsrequest)
+
+- Тело ответа — [GetBondCouponsResponse](#getbondcouponsresponse)
+
+
 #### CurrencyBy
 Метод получения валюты по её идентификатору.
 
@@ -187,8 +195,15 @@
 | is_trading_day |  [bool](#bool) | Признак торгового дня на бирже. |
 | start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала торгов по часовому поясу UTC. |
 | end_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания торгов по часовому поясу UTC. |
-| market_order_start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала подачи заявки по часовому поясу UTC. |
-| market_order_end_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания подачи заявки по часовому поясу UTC. |
+| opening_auction_start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала аукциона открытия в часовом поясе UTC. |
+| closing_auction_end_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания аукциона закрытия в часовом поясе UTC. |
+| evening_opening_auction_start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала аукциона открытия вечерней сессии в часовом поясе UTC. |
+| evening_start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала вечерней сессии в часовом поясе UTC. |
+| evening_end_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания вечерней сессии в часовом поясе UTC. |
+| clearing_start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала основного клиринга в часовом поясе UTC. |
+| clearing_end_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания основного клиринга в часовом поясе UTC. |
+| premarket_start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала премаркета в часовом поясе UTC. |
+| premarket_end_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания премаркета в часовом поясе UTC. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -235,6 +250,49 @@
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | instruments | Массив объектов [Bond](#bond) | Массив облигаций. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetBondCouponsRequest
+Запрос купонов по облигации.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| figi |  [string](#string) | Figi-идентификатор инструмента. |
+| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода в часовом поясе UTC. |
+| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода в часовом поясе UTC. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetBondCouponsResponse
+Купоны по облигации.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| events | Массив объектов [Coupon](#coupon) |  |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### Coupon
+Объект передачи информации о купоне облигации.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| figi |  [string](#string) | Figi-идентификатор инструмента. |
+| coupon_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата события |
+| coupon_number |  [int64](#int64) | Номер купона |
+| fix_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | (Опционально) Дата фиксации реестра для выплаты купона |
+| pay_one_bond |  [MoneyValue](#moneyvalue) | Выплата на одну облигацию |
+| coupon_type |  [CouponType](#coupontype) | Тип купона |
+| coupon_start_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало купонного периода. |
+| coupon_end_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание купонного периода. |
+| coupon_period |  [int32](#int32) | Купонный период в днях. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -643,8 +701,8 @@
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Figi-идентификатор инструмента. |
-| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода в часовом поясе UTC. Фильтрация происходит по параметру *record_date* (дата фиксации реестра). |
-| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода в часовом поясе UTC. Фильтрация происходит по параметру *record_date* (дата фиксации реестра). |
+| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода в часовом поясе UTC. |
+| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода в часовом поясе UTC. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -681,6 +739,23 @@
  <!-- end messages -->
 
 ### Enums
+
+
+#### CouponType
+Тип купонов.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| COUPON_TYPE_UNSPECIFIED | 0 | Неопределенное значение |
+| COUPON_TYPE_CONSTANT | 1 | Постоянный |
+| COUPON_TYPE_FLOATING | 2 | Плавающий |
+| COUPON_TYPE_DISCOUNT | 3 | Дисконт |
+| COUPON_TYPE_MORTGAGE | 4 | Ипотечный |
+| COUPON_TYPE_FIX | 5 | Фиксированный |
+| COUPON_TYPE_VARIABLE | 6 | Переменный |
+| COUPON_TYPE_OTHER | 7 | Прочее |
+
+
 
 
 #### InstrumentIdType

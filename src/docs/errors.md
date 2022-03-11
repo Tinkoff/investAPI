@@ -69,9 +69,8 @@
 50006|NOT_FOUND|stop-order not found|Стоп-заявка не найдена по переданному *stop_order_id*.</br>Укажите корректный *stop_order_id*.|
 50007|NOT_FOUND|task not found|Задача не найдена.|
 50008|NOT_FOUND|no orderbook provider|Отсутствует источник данных по стаканам.|
-70001|INTERNAL|internal error|Внутренняя ошибка сервиса.</br>Если ошибка повторяется, обратитесь в службу технической поддержки.|
+70001|INTERNAL|internal error|Внутренняя ошибка сервиса, попробуйте выполнить запрос позднее.</br>Если ошибка повторяется, обратитесь в службу технической поддержки.|
 70002|INTERNAL|internal network error|Неизвестная сетевая ошибка, попробуйте выполнить запрос позднее.</br>Если ошибка повторяется, обратитесь в службу технической поддержки.|
-70003|INTERNAL|internal error, please try again later|Внутренняя ошибка сервиса, попробуйте выполнить запрос позднее.</br>Если ошибка повторяется, обратитесь в службу технической поддержки.|
 80001|RESOURCE_EXHAUSTED|limit of open streams exceeded|Превышен лимит одновременных открытых stream-соединений. Подробнее: [Лимитная политика](https://tinkoff.github.io/investAPI/limits/)|
 80002|RESOURCE_EXHAUSTED|request limit exceeded|Превышен лимит запросов в минуту. Подробнее: [Лимитная политика](https://tinkoff.github.io/investAPI/limits/)|
 90001|FAILED_PRECONDITION|need confirmation: %s|Требуется подтверждение операции. </br>Подробнее в тексте ошибки.|

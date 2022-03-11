@@ -48,19 +48,11 @@
 
 
 #### GetBrokerReport
-Метод получения брокерского отчёта.
+
 
 - Тело запроса — [BrokerReportRequest](#brokerreportrequest)
 
 - Тело ответа — [BrokerReportResponse](#brokerreportresponse)
-
-
-#### GetDividendsForeignIssuer
-Метод получения отчёта "Справка о доходах за пределами РФ".
-
-- Тело запроса — [GetDividendsForeignIssuerRequest](#getdividendsforeignissuerrequest)
-
-- Тело ответа — [GetDividendsForeignIssuerResponse](#getdividendsforeignissuerresponse)
 
  <!-- range .Methods -->
  <!-- range .Services -->
@@ -155,7 +147,7 @@
 | total_amount_etf |  [MoneyValue](#moneyvalue) | Общая стоимость фондов в портфеле в рублях |
 | total_amount_currencies |  [MoneyValue](#moneyvalue) | Общая стоимость валют в портфеле в рублях |
 | total_amount_futures |  [MoneyValue](#moneyvalue) | Общая стоимость фьючерсов в портфеле в рублях |
-| expected_yield |  [Quotation](#quotation) | Текущая доходность портфеля |
+| expected_yield |  [Quotation](#quotation) | Текущая относительная доходность портфеля, в % |
 | positions | Массив объектов [PortfolioPosition](#portfolioposition) | Список позиций портфеля |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -221,7 +213,7 @@
 | instrument_type |  [string](#string) | Тип инструмента |
 | quantity |  [Quotation](#quotation) | Количество инструмента в портфеле в штуках |
 | average_position_price |  [MoneyValue](#moneyvalue) | Средневзвешенная цена позиции. **Возможна задержка до секунды для пересчёта**. |
-| expected_yield |  [Quotation](#quotation) | Текущая рассчитанная доходность |
+| expected_yield |  [Quotation](#quotation) | Текущая рассчитанная относительная доходность позиции, в %. |
 | current_nkd |  [MoneyValue](#moneyvalue) | Текущий НКД |
 | average_position_price_pt |  [Quotation](#quotation) | Средняя цена лота в позиции в пунктах (для фьючерсов). **Возможна задержка до секунды для пересчёта**. |
 | current_price |  [MoneyValue](#moneyvalue) | Текущая цена инструмента |
@@ -366,102 +358,6 @@
 | delivery_type |  [string](#string) | Тип расчёта по сделке |
  <!-- end Fields -->
  <!-- end HasFields -->
-
-
-#### GetDividendsForeignIssuerRequest
-
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| generate_div_foreign_issuer_report |  [GenerateDividendsForeignIssuerReportRequest](#generatedividendsforeignissuerreportrequest) | Объект запроса формирования отчёта. |
-| get_div_foreign_issuer_report |  [GetDividendsForeignIssuerReportRequest](#getdividendsforeignissuerreportrequest) | Объект запроса сформированного отчёта. |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
-#### GetDividendsForeignIssuerResponse
-
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| generate_div_foreign_issuer_report_response |  [GenerateDividendsForeignIssuerReportResponse](#generatedividendsforeignissuerreportresponse) | Объект результата задачи запуска формирования отчёта. |
-| div_foreign_issuer_report |  [GetDividendsForeignIssuerReportResponse](#getdividendsforeignissuerreportresponse) | Отчёт "Справка о доходах за пределами РФ". |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
-#### GenerateDividendsForeignIssuerReportRequest
-Объект запроса формирования отчёта "Справка о доходах за пределами РФ".
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| account_id |  [string](#string) | Идентификатор счёта клиента. |
-| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало периода (по UTC). |
-| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание периода (по UTC). |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
-#### GetDividendsForeignIssuerReportRequest
-Объект запроса сформированного отчёта "Справка о доходах за пределами РФ".
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| task_id |  [string](#string) | Идентификатор задачи формирования отчёта. |
-| page |  [int32](#int32) | Номер страницы отчета (начинается с 0), значение по умолчанию: 0 |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
-#### GenerateDividendsForeignIssuerReportResponse
-Объект результата задачи запуска формирования отчёта "Справка о доходах за пределами РФ".
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| task_id |  [string](#string) | Идентификатор задачи формирования отчёта. |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
-#### GetDividendsForeignIssuerReportResponse
-
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| dividends_foreign_issuer_report | Массив объектов [DividendsForeignIssuerReport](#dividendsforeignissuerreport) |  |
-| itemsCount |  [int32](#int32) | Количество записей в отчете |
-| pagesCount |  [int32](#int32) | Количество страниц с данными отчета (начинается с 0) |
-| page |  [int32](#int32) | Текущая страница (начинается с 0) |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
-#### DividendsForeignIssuerReport
-Отчёт "Справка о доходах за пределами РФ".
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| record_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата фиксации реестра. |
-| payment_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата выплаты. |
-| security_name |  [string](#string) | Наименование ценной бумаги. |
-| isin |  [string](#string) | ISIN-идентификатор ценной бумаги. |
-| issuer_country |  [string](#string) | Страна эмитента. Для депозитарных расписок указывается страна эмитента базового актива. |
-| quantity |  [int64](#int64) | Количество ценных бумаг. |
-| dividend |  [Quotation](#quotation) | Выплаты на одну бумагу |
-| external_commission |  [Quotation](#quotation) | Комиссия внешних платёжных агентов. |
-| dividend_gross |  [Quotation](#quotation) | Сумма до удержания налога. |
-| tax |  [Quotation](#quotation) | Сумма налога, удержанного агентом. |
-| dividend_amount |  [Quotation](#quotation) | Итоговая сумма выплаты. |
-| currency |  [string](#string) | Валюта. |
- <!-- end Fields -->
- <!-- end HasFields -->
  <!-- end messages -->
 
 ### Enums
@@ -528,7 +424,6 @@
 | OPERATION_TYPE_TAX_REPO_HOLD_PROGRESSIVE | 41 | Удержание налога по сделкам РЕПО по ставке 15% |
 | OPERATION_TYPE_TAX_REPO_REFUND_PROGRESSIVE | 42 | Возврат налога по сделкам РЕПО по ставке 15% |
 | OPERATION_TYPE_DIV_EXT | 43 | Выплата дивидендов на карту |
-| OPERATION_TYPE_TAX_CORRECTION_COUPON | 44 | Корректировка налога по купонам |
 
 
  <!-- range .Enums -->

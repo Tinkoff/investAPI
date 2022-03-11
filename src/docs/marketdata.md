@@ -77,7 +77,6 @@ Bi-directional стрим предоставления биржевой инфо
 | subscribe_order_book_request |  [SubscribeOrderBookRequest](#subscribeorderbookrequest) | Запрос подписки на стаканы. |
 | subscribe_trades_request |  [SubscribeTradesRequest](#subscribetradesrequest) | Запрос подписки на ленту обезличенных сделок. |
 | subscribe_info_request |  [SubscribeInfoRequest](#subscribeinforequest) | Запрос подписки на торговые статусы инструментов. |
-| subscribe_last_price_request |  [SubscribeLastPriceRequest](#subscribelastpricerequest) | Запрос подписки на последние цены. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -97,8 +96,6 @@ Bi-directional стрим предоставления биржевой инфо
 | orderbook |  [OrderBook](#orderbook) | Стакан. |
 | trading_status |  [TradingStatus](#tradingstatus) | Торговый статус. |
 | ping |  [Ping](#ping) | Проверка активности стрима. |
-| subscribe_last_price_response |  [SubscribeLastPriceResponse](#subscribelastpriceresponse) | Результат подписки на последние цены инструментов. |
-| last_price |  [LastPrice](#lastprice) | Последняя цена. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -295,53 +292,6 @@ subscribeCandles | Изменения статуса подписки на св�
  <!-- end HasFields -->
 
 
-#### SubscribeLastPriceRequest
-Изменение статуса подписки на последнюю цену инструмента.
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| subscription_action |  [SubscriptionAction](#subscriptionaction) | Изменение статуса подписки. |
-| instruments | Массив объектов [LastPriceInstrument](#lastpriceinstrument) | Массив инструментов для подписки на последнюю цену. |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
-#### LastPriceInstrument
-Запрос подписки на последнюю цену.
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| figi |  [string](#string) | Figi-идентификатор инструмента. |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
-#### SubscribeLastPriceResponse
-Результат изменения статуса подписки на последнюю цену.
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](https://tinkoff.github.io/investAPI/grpc#tracking-id) |
-| last_price_subscriptions | Массив объектов [LastPriceSubscription](#lastpricesubscription) | Массив статусов подписки на последнюю цену. |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
-#### LastPriceSubscription
-Статус подписки на последнюю цену.
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| figi |  [string](#string) | Figi-идентификатор инструмента. |
-| subscription_status |  [SubscriptionStatus](#subscriptionstatus) | Статус подписки. |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
 #### Candle
 Пакет свечей в рамках стрима.
 
@@ -356,7 +306,6 @@ subscribeCandles | Изменения статуса подписки на св�
 | close |  [Quotation](#quotation) | Цена закрытия за 1 лот. |
 | volume |  [int64](#int64) | Объём сделок в лотах. |
 | time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время свечи в часовом поясе UTC. |
-| last_trade_ts |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время последней сделки, вошедшей в свечу в часовом поясе UTC. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -450,11 +399,11 @@ subscribeCandles | Изменения статуса подписки на св�
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| open |  [Quotation](#quotation) | Цена открытия за 1 лот. |
-| high |  [Quotation](#quotation) | Максимальная цена за 1 лот. |
-| low |  [Quotation](#quotation) | Минимальная цена за 1 лот. |
-| close |  [Quotation](#quotation) | Цена закрытия за 1 лот. |
-| volume |  [int64](#int64) | Объём торгов в лотах. |
+| open |  [Quotation](#quotation) | Цена открытия за 1 инструмент. |
+| high |  [Quotation](#quotation) | Максимальная цена за 1 инструмент. |
+| low |  [Quotation](#quotation) | Минимальная цена за 1 инструмент. |
+| close |  [Quotation](#quotation) | Цена закрытия за 1 инструмент. |
+| volume |  [int64](#int64) | Объём торгов в штуках. |
 | time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время свечи в часовом поясе UTC. |
 | is_complete |  [bool](#bool) | Признак завершённости свечи. **false** значит, свеча за текущие интервал ещё сформирована не полностью. |
  <!-- end Fields -->
@@ -490,7 +439,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Идентификатор инструмента. |
-| price |  [Quotation](#quotation) | Последняя цена за 1 лот. |
+| price |  [Quotation](#quotation) | Последняя цена за один инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. |
 | time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время получения последней цены в часовом поясе UTC по времени биржи. |
  <!-- end Fields -->
  <!-- end HasFields -->

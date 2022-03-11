@@ -27,7 +27,11 @@ service OperationsService {/*Сервис предназначен для пол
   //Метод получения доступного остатка для вывода средств.
   rpc GetWithdrawLimits(WithdrawLimitsRequest) returns (WithdrawLimitsResponse);
 
+  //Метод получения брокерского отчёта.
   rpc GetBrokerReport(BrokerReportRequest) returns (BrokerReportResponse);
+
+  //Метод получения отчёта "Справка о доходах за пределами РФ".
+  rpc GetDividendsForeignIssuer(GetDividendsForeignIssuerRequest) returns (GetDividendsForeignIssuerResponse);
 }
 
 //Запрос получения списка операций по счёту.
@@ -82,7 +86,7 @@ message PortfolioResponse {
   MoneyValue total_amount_etf = 3; //Общая стоимость фондов в портфеле в рублях
   MoneyValue total_amount_currencies = 4; //Общая стоимость валют в портфеле в рублях
   MoneyValue total_amount_futures = 5; //Общая стоимость фьючерсов в портфеле в рублях
-  Quotation expected_yield = 6; //Текущая относительная доходность портфеля, в %
+  Quotation expected_yield = 6; //Текущая доходность портфеля
   repeated PortfolioPosition positions = 7; //Список позиций портфеля
 }
 
@@ -118,7 +122,7 @@ message PortfolioPosition {
   string instrument_type = 2; //Тип инструмента
   Quotation quantity = 3; //Количество инструмента в портфеле в штуках
   MoneyValue average_position_price = 4; //Средневзвешенная цена позиции. **Возможна задержка до секунды для пересчёта**.
-  Quotation expected_yield = 5; //Текущая рассчитанная относительная доходность позиции, в %.
+  Quotation expected_yield = 5; //Текущая рассчитанная доходность
   MoneyValue current_nkd = 6; // Текущий НКД
   Quotation average_position_price_pt = 7; //Средняя цена лота в позиции в пунктах (для фьючерсов). **Возможна задержка до секунды для пересчёта**.
   MoneyValue current_price = 8; //Текущая цена инструмента
@@ -259,4 +263,60 @@ enum OperationType {
   OPERATION_TYPE_TAX_REPO_HOLD_PROGRESSIVE = 41; //Удержание налога по сделкам РЕПО по ставке 15%
   OPERATION_TYPE_TAX_REPO_REFUND_PROGRESSIVE = 42; //Возврат налога по сделкам РЕПО по ставке 15%
   OPERATION_TYPE_DIV_EXT = 43; //Выплата дивидендов на карту
+  OPERATION_TYPE_TAX_CORRECTION_COUPON = 44; //Корректировка налога по купонам
+}
+
+message GetDividendsForeignIssuerRequest {
+  oneof payload {
+    GenerateDividendsForeignIssuerReportRequest generate_div_foreign_issuer_report = 1; //Объект запроса формирования отчёта.
+    GetDividendsForeignIssuerReportRequest get_div_foreign_issuer_report = 2; //Объект запроса сформированного отчёта.
+  }
+}
+
+message GetDividendsForeignIssuerResponse {
+  oneof payload {
+    GenerateDividendsForeignIssuerReportResponse generate_div_foreign_issuer_report_response = 1; //Объект результата задачи запуска формирования отчёта.
+    GetDividendsForeignIssuerReportResponse div_foreign_issuer_report = 2; //Отчёт "Справка о доходах за пределами РФ".
+  }
+}
+
+//Объект запроса формирования отчёта "Справка о доходах за пределами РФ".
+message GenerateDividendsForeignIssuerReportRequest {
+  string account_id = 1; //Идентификатор счёта клиента.
+  google.protobuf.Timestamp from = 2; //Начало периода (по UTC).
+  google.protobuf.Timestamp to = 3; //Окончание периода (по UTC).
+}
+
+// Объект запроса сформированного отчёта "Справка о доходах за пределами РФ".
+message GetDividendsForeignIssuerReportRequest {
+  string task_id = 1; //Идентификатор задачи формирования отчёта.
+  int32 page = 2; //Номер страницы отчета (начинается с 0), значение по умолчанию: 0
+}
+
+// Объект результата задачи запуска формирования отчёта "Справка о доходах за пределами РФ".
+message GenerateDividendsForeignIssuerReportResponse {
+  string task_id = 1; //Идентификатор задачи формирования отчёта.
+}
+
+message GetDividendsForeignIssuerReportResponse {
+  repeated DividendsForeignIssuerReport dividends_foreign_issuer_report = 1;
+  int32 itemsCount = 2; //Количество записей в отчете
+  int32 pagesCount = 3; //Количество страниц с данными отчета (начинается с 0)
+  int32 page = 4; //Текущая страница (начинается с 0)
+}
+
+// Отчёт "Справка о доходах за пределами РФ".
+message DividendsForeignIssuerReport {
+  google.protobuf.Timestamp record_date = 1; //Дата фиксации реестра.
+  google.protobuf.Timestamp payment_date = 2; //Дата выплаты.
+  string security_name = 3; //Наименование ценной бумаги.
+  string isin = 4; //ISIN-идентификатор ценной бумаги.
+  string issuer_country = 5; //Страна эмитента. Для депозитарных расписок указывается страна эмитента базового актива.
+  int64 quantity = 6; //Количество ценных бумаг.
+  Quotation dividend = 7; //Выплаты на одну бумагу
+  Quotation external_commission = 8; //Комиссия внешних платёжных агентов.
+  Quotation dividend_gross = 9; //Сумма до удержания налога.
+  Quotation tax = 10; //Сумма налога, удержанного агентом.
+  Quotation dividend_amount = 11; //Итоговая сумма выплаты.
+  string currency = 12; //Валюта.
 }

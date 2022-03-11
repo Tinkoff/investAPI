@@ -717,6 +717,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getbondcoupons" class="md-nav__link">
+    GetBondCoupons
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#currencyby" class="md-nav__link">
     CurrencyBy
   </a>
@@ -865,6 +872,27 @@
           <li class="md-nav__item">
   <a href="#bondsresponse" class="md-nav__link">
     BondsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbondcouponsrequest" class="md-nav__link">
+    GetBondCouponsRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbondcouponsresponse" class="md-nav__link">
+    GetBondCouponsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coupon" class="md-nav__link">
+    Coupon
   </a>
   
 </li>
@@ -1042,6 +1070,13 @@
   
     <nav class="md-nav" aria-label="Enums">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coupontype" class="md-nav__link">
+    CouponType
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#instrumentidtype" class="md-nav__link">
@@ -1468,6 +1503,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getbondcoupons" class="md-nav__link">
+    GetBondCoupons
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#currencyby" class="md-nav__link">
     CurrencyBy
   </a>
@@ -1616,6 +1658,27 @@
           <li class="md-nav__item">
   <a href="#bondsresponse" class="md-nav__link">
     BondsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbondcouponsrequest" class="md-nav__link">
+    GetBondCouponsRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbondcouponsresponse" class="md-nav__link">
+    GetBondCouponsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coupon" class="md-nav__link">
+    Coupon
   </a>
   
 </li>
@@ -1795,6 +1858,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#coupontype" class="md-nav__link">
+    CouponType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#instrumentidtype" class="md-nav__link">
     InstrumentIdType
   </a>
@@ -1913,6 +1983,16 @@
 </li>
 <li>
 <p>Тело ответа — <a href="#bondsresponse">BondsResponse</a></p>
+</li>
+</ul>
+<h4 id="getbondcoupons">GetBondCoupons</h4>
+<p>Метод получения графика выплат купонов по облигации</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#getbondcouponsrequest">GetBondCouponsRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#getbondcouponsresponse">GetBondCouponsResponse</a></p>
 </li>
 </ul>
 <h4 id="currencyby">CurrencyBy</h4>
@@ -2161,14 +2241,49 @@
 <td>Время окончания торгов по часовому поясу UTC.</td>
 </tr>
 <tr>
-<td>market_order_start_time</td>
+<td>opening_auction_start_time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Время начала подачи заявки по часовому поясу UTC.</td>
+<td>Время начала аукциона открытия в часовом поясе UTC.</td>
 </tr>
 <tr>
-<td>market_order_end_time</td>
+<td>closing_auction_end_time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Время окончания подачи заявки по часовому поясу UTC.</td>
+<td>Время окончания аукциона закрытия в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>evening_opening_auction_start_time</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время начала аукциона открытия вечерней сессии в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>evening_start_time</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время начала вечерней сессии в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>evening_end_time</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время окончания вечерней сессии в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>clearing_start_time</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время начала основного клиринга в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>clearing_end_time</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время окончания основного клиринга в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>premarket_start_time</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время начала премаркета в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>premarket_end_time</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время окончания премаркета в часовом поясе UTC.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2279,6 +2394,131 @@
 <td>instruments</td>
 <td>Массив объектов <a href="#bond">Bond</a></td>
 <td>Массив облигаций.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getbondcouponsrequest">GetBondCouponsRequest</h4>
+<p>Запрос купонов по облигации.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>from</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Начало запрашиваемого периода в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>to</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Окончание запрашиваемого периода в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getbondcouponsresponse">GetBondCouponsResponse</h4>
+<p>Купоны по облигации.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>events</td>
+<td>Массив объектов <a href="#coupon">Coupon</a></td>
+<td></td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="coupon">Coupon</h4>
+<p>Объект передачи информации о купоне облигации.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>coupon_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата события</td>
+</tr>
+<tr>
+<td>coupon_number</td>
+<td><a href="#int64">int64</a></td>
+<td>Номер купона</td>
+</tr>
+<tr>
+<td>fix_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>(Опционально) Дата фиксации реестра для выплаты купона</td>
+</tr>
+<tr>
+<td>pay_one_bond</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Выплата на одну облигацию</td>
+</tr>
+<tr>
+<td>coupon_type</td>
+<td><a href="#coupontype">CouponType</a></td>
+<td>Тип купона</td>
+</tr>
+<tr>
+<td>coupon_start_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Начало купонного периода.</td>
+</tr>
+<tr>
+<td>coupon_end_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Окончание купонного периода.</td>
+</tr>
+<tr>
+<td>coupon_period</td>
+<td><a href="#int32">int32</a></td>
+<td>Купонный период в днях.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3693,12 +3933,12 @@
 <tr>
 <td>from</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Начало запрашиваемого периода в часовом поясе UTC. Фильтрация происходит по параметру <em>record_date</em> (дата фиксации реестра).</td>
+<td>Начало запрашиваемого периода в часовом поясе UTC.</td>
 </tr>
 <tr>
 <td>to</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Окончание запрашиваемого периода в часовом поясе UTC. Фильтрация происходит по параметру <em>record_date</em> (дата фиксации реестра).</td>
+<td>Окончание запрашиваемого периода в часовом поясе UTC.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3806,6 +4046,59 @@
 <!-- end messages -->
 
 <h3 id="enums">Enums</h3>
+<h4 id="coupontype">CouponType</h4>
+<p>Тип купонов.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>COUPON_TYPE_UNSPECIFIED</td>
+<td>0</td>
+<td>Неопределенное значение</td>
+</tr>
+<tr>
+<td>COUPON_TYPE_CONSTANT</td>
+<td>1</td>
+<td>Постоянный</td>
+</tr>
+<tr>
+<td>COUPON_TYPE_FLOATING</td>
+<td>2</td>
+<td>Плавающий</td>
+</tr>
+<tr>
+<td>COUPON_TYPE_DISCOUNT</td>
+<td>3</td>
+<td>Дисконт</td>
+</tr>
+<tr>
+<td>COUPON_TYPE_MORTGAGE</td>
+<td>4</td>
+<td>Ипотечный</td>
+</tr>
+<tr>
+<td>COUPON_TYPE_FIX</td>
+<td>5</td>
+<td>Фиксированный</td>
+</tr>
+<tr>
+<td>COUPON_TYPE_VARIABLE</td>
+<td>6</td>
+<td>Переменный</td>
+</tr>
+<tr>
+<td>COUPON_TYPE_OTHER</td>
+<td>7</td>
+<td>Прочее</td>
+</tr>
+</tbody>
+</table>
 <h4 id="instrumentidtype">InstrumentIdType</h4>
 <p>Тип идентификатора инструмента. Подробнее об идентификации инструментов: <a href="https://tinkoff.github.io/investAPI/faq_identification/">Идентификация инструментов</a></p>
 <table>

@@ -1058,6 +1058,34 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#subscribelastpricerequest" class="md-nav__link">
+    SubscribeLastPriceRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lastpriceinstrument" class="md-nav__link">
+    LastPriceInstrument
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscribelastpriceresponse" class="md-nav__link">
+    SubscribeLastPriceResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lastpricesubscription" class="md-nav__link">
+    LastPriceSubscription
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#candle" class="md-nav__link">
     Candle
   </a>
@@ -1631,6 +1659,34 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#subscribelastpricerequest" class="md-nav__link">
+    SubscribeLastPriceRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lastpriceinstrument" class="md-nav__link">
+    LastPriceInstrument
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscribelastpriceresponse" class="md-nav__link">
+    SubscribeLastPriceResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lastpricesubscription" class="md-nav__link">
+    LastPriceSubscription
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#candle" class="md-nav__link">
     Candle
   </a>
@@ -1941,6 +1997,11 @@
 <td>Запрос подписки на торговые статусы инструментов.</td>
 </tr>
 <tr>
+<td>subscribe_last_price_request</td>
+<td><a href="#subscribelastpricerequest">SubscribeLastPriceRequest</a></td>
+<td>Запрос подписки на последние цены.</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -2004,6 +2065,16 @@
 <td>ping</td>
 <td><a href="#ping">Ping</a></td>
 <td>Проверка активности стрима.</td>
+</tr>
+<tr>
+<td>subscribe_last_price_response</td>
+<td><a href="#subscribelastpriceresponse">SubscribeLastPriceResponse</a></td>
+<td>Результат подписки на последние цены инструментов.</td>
+</tr>
+<tr>
+<td>last_price</td>
+<td><a href="#lastprice">LastPrice</a></td>
+<td>Последняя цена.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2494,6 +2565,121 @@
 </table>
 <!-- end HasFields -->
 
+<h4 id="subscribelastpricerequest">SubscribeLastPriceRequest</h4>
+<p>Изменение статуса подписки на последнюю цену инструмента.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>subscription_action</td>
+<td><a href="#subscriptionaction">SubscriptionAction</a></td>
+<td>Изменение статуса подписки.</td>
+</tr>
+<tr>
+<td>instruments</td>
+<td>Массив объектов <a href="#lastpriceinstrument">LastPriceInstrument</a></td>
+<td>Массив инструментов для подписки на последнюю цену.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="lastpriceinstrument">LastPriceInstrument</h4>
+<p>Запрос подписки на последнюю цену.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="subscribelastpriceresponse">SubscribeLastPriceResponse</h4>
+<p>Результат изменения статуса подписки на последнюю цену.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tracking_id</td>
+<td><a href="#string">string</a></td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="https://tinkoff.github.io/investAPI/grpc#tracking-id">tracking_id</a></td>
+</tr>
+<tr>
+<td>last_price_subscriptions</td>
+<td>Массив объектов <a href="#lastpricesubscription">LastPriceSubscription</a></td>
+<td>Массив статусов подписки на последнюю цену.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="lastpricesubscription">LastPriceSubscription</h4>
+<p>Статус подписки на последнюю цену.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>subscription_status</td>
+<td><a href="#subscriptionstatus">SubscriptionStatus</a></td>
+<td>Статус подписки.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
 <h4 id="candle">Candle</h4>
 <p>Пакет свечей в рамках стрима.</p>
 <table>
@@ -2544,6 +2730,11 @@
 <td>time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
 <td>Время свечи в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>last_trade_ts</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время последней сделки, вошедшей в свечу в часовом поясе UTC.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2803,27 +2994,27 @@
 <tr>
 <td>open</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена открытия за 1 инструмент.</td>
+<td>Цена открытия за 1 лот.</td>
 </tr>
 <tr>
 <td>high</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Максимальная цена за 1 инструмент.</td>
+<td>Максимальная цена за 1 лот.</td>
 </tr>
 <tr>
 <td>low</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Минимальная цена за 1 инструмент.</td>
+<td>Минимальная цена за 1 лот.</td>
 </tr>
 <tr>
 <td>close</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена закрытия за 1 инструмент.</td>
+<td>Цена закрытия за 1 лот.</td>
 </tr>
 <tr>
 <td>volume</td>
 <td><a href="#int64">int64</a></td>
-<td>Объём торгов в штуках.</td>
+<td>Объём торгов в лотах.</td>
 </tr>
 <tr>
 <td>time</td>
@@ -2913,7 +3104,7 @@
 <tr>
 <td>price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Последняя цена за один инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Последняя цена за 1 лот.</td>
 </tr>
 <tr>
 <td>time</td>

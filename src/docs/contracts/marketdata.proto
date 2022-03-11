@@ -284,11 +284,11 @@ message GetCandlesResponse {
 
 //Информация о свече.
 message HistoricCandle {
-  Quotation open = 1; //Цена открытия за 1 лот.
-  Quotation high = 2; //Максимальная цена за 1 лот.
-  Quotation low = 3; //Минимальная цена за 1 лот.
-  Quotation close = 4; //Цена закрытия за 1 лот.
-  int64 volume = 5; //Объём торгов в лотах.
+  Quotation open = 1; //Цена открытия за 1 инструмент.
+  Quotation high = 2; //Максимальная цена за 1 инструмент.
+  Quotation low = 3; //Минимальная цена за 1 инструмент.
+  Quotation close = 4; //Цена закрытия за 1 инструмент.
+  int64 volume = 5; //Объём торгов в штуках.
   google.protobuf.Timestamp time = 6; //Время свечи в часовом поясе UTC.
   bool is_complete = 7; //Признак завершённости свечи. **false** значит, свеча за текущие интервал ещё сформирована не полностью.
 }
@@ -306,7 +306,7 @@ message GetLastPricesResponse {
 //Информация о цене.
 message LastPrice {
   string figi = 1; //Идентификатор инструмента.
-  Quotation price = 2; //Последняя цена за 1 лот.
+  Quotation price = 2; //Последняя цена за один инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
   google.protobuf.Timestamp time = 3; //Время получения последней цены в часовом поясе UTC по времени биржи.
 }
 

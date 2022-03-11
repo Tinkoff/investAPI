@@ -14,7 +14,7 @@ import "common.proto";
 
 service OperationsService {/*Сервис предназначен для получения:</br> **1**.  списка операций по счёту;</br> **2**.
                               портфеля по счёту;</br> **3**. позиций ценных бумаг на счёте;</br> **4**.
-                              доступного остатка для вывода средств.*/
+                              доступного остатка для вывода средств;</br> **4**. получения различных отчётов.*/
   //Метод получения списка операций по счёту.
   rpc GetOperations(OperationsRequest) returns (OperationsResponse);
 
@@ -86,7 +86,7 @@ message PortfolioResponse {
   MoneyValue total_amount_etf = 3; //Общая стоимость фондов в портфеле в рублях
   MoneyValue total_amount_currencies = 4; //Общая стоимость валют в портфеле в рублях
   MoneyValue total_amount_futures = 5; //Общая стоимость фьючерсов в портфеле в рублях
-  Quotation expected_yield = 6; //Текущая доходность портфеля
+  Quotation expected_yield = 6; //Текущая относительная доходность портфеля, в %
   repeated PortfolioPosition positions = 7; //Список позиций портфеля
 }
 
@@ -122,7 +122,7 @@ message PortfolioPosition {
   string instrument_type = 2; //Тип инструмента
   Quotation quantity = 3; //Количество инструмента в портфеле в штуках
   MoneyValue average_position_price = 4; //Средневзвешенная цена позиции. **Возможна задержка до секунды для пересчёта**.
-  Quotation expected_yield = 5; //Текущая рассчитанная доходность
+  Quotation expected_yield = 5; //Текущая рассчитанная относительная доходность позиции, в %.
   MoneyValue current_nkd = 6; // Текущий НКД
   Quotation average_position_price_pt = 7; //Средняя цена лота в позиции в пунктах (для фьючерсов). **Возможна задержка до секунды для пересчёта**.
   MoneyValue current_price = 8; //Текущая цена инструмента
@@ -134,14 +134,14 @@ message PortfolioPosition {
 message PositionsSecurities {
   string figi = 1; //Figi-идентификатор бумаги
   int64 blocked = 2; //Заблокировано
-  int64 balance = 3;  //Текущий баланс
+  int64 balance = 3;  //Текущий незаблокированный баланс
 }
 
 //Баланс фьючерса.
 message PositionsFutures {
   string figi = 1; //Figi-идентификатор фьючерса
   int64 blocked = 2; //Заблокировано
-  int64 balance = 3;  //Текущий баланс
+  int64 balance = 3;  //Текущий незаблокированный баланс
 }
 
 message BrokerReportRequest {

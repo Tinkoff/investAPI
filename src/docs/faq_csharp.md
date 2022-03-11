@@ -8,6 +8,6 @@
 ##Примеры подключения
 
 Примеры подключения и получения данных доступны в репозитории официальной SDK:
-https://github.com/Tinkoff/invest-api-csharp-sdk/tree/main/Tinkoff.InvestApi.Sample
+[Tinkoff/invest-api-csharp-sdk/tree/main/Tinkoff.InvestApi.Sample](https://github.com/Tinkoff/invest-api-csharp-sdk/tree/main/Tinkoff.InvestApi.Sample)
 
 ##FAQ

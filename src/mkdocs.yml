@@ -26,14 +26,7 @@ nav:
   - "Работа с торговыми поручениями": orders_details.md
   - "Квалифицированный инвестор": accredited_investor.md
   - "Правила обработки корпоративных действий": faq_corp_action.md
-- Ответы на частые вопросы:
-  - "Часто задаваемые вопросы": faq.md
-  - "FAQ Сервиса инструментов": faq_instruments.md
-  - "FAQ Сервис торговых поручений": faq_orders.md
-  - "FAQ Сервис котировок": faq_marketdata.md
-  - "FAQ Сервиса операций": faq_operations.md
-  - "FAQ Сервиса аккаунтов": faq_users.md
-  - "FAQ Песочница": faq_sandbox.md
+- Ответы на частые вопросы: faq.md
 - Языки программирования:
   - Python: faq_python.md
   - Java: faq_java.md
@@ -41,22 +34,28 @@ nav:
 - Сервис аккаунтов:
   - Описание: head-users.md
   - Методы: users.md
+  - "FAQ Сервиса аккаунтов": faq_users.md
 - Сервис инструментов: 
   - Описание: head-instruments.md
   - Методы: instruments.md
+  - "FAQ Сервиса инструментов": faq_instruments.md
 - Сервис торговых поручений:
   - Описание: head-orders.md
   - Методы: orders.md
+  - "FAQ Сервис торговых поручений": faq_orders.md
 - Сервис операций:
   - Описание: head-operations.md
   - Методы: operations.md
+  - "FAQ Сервиса операций": faq_operations.md
 - Сервис котировок:
   - Описание: head-marketdata.md
   - Методы: marketdata.md
+  - "FAQ Сервис котировок": faq_marketdata.md
 - Сервис стоп-заявок:
   - Описание: head-stoporders.md
   - Методы: stoporders.md
 - Песочница:
   - Описание: head-sandbox.md
   - Методы: sandbox.md
+  - "FAQ Песочница": faq_sandbox.md
 - Коды ошибок: errors.md

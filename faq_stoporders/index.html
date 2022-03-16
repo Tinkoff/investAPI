@@ -14,7 +14,7 @@
     
     
       
-        <title>Порядок работы с историческими данными - TINKOFF INVEST API</title>
+        <title>FAQ - TINKOFF INVEST API</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#-" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Порядок работы с историческими данными
+              FAQ
             
           </span>
         </div>
@@ -218,14 +218,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       <label class="md-nav__link" for="__nav_2">
         Полезная информация
@@ -361,21 +359,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../load_history/" class="md-nav__link">
         Порядок работы с историческими данными
       </a>
-      
     </li>
   
 
@@ -839,12 +827,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" checked>
       
       <label class="md-nav__link" for="__nav_10">
         Сервис стоп-заявок
@@ -884,11 +874,54 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../faq_stoporders/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          FAQ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         FAQ
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    Можно ли узнать, что торговое поручение было создано из стоп-заявки?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-_1" class="md-nav__link">
+    Можно ли получить информацию об исполненных или снятых стоп-заявках?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -996,8 +1029,28 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    Можно ли узнать, что торговое поручение было создано из стоп-заявки?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-_1" class="md-nav__link">
+    Можно ли получить информацию об исполненных или снятых стоп-заявках?
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1009,53 +1062,19 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Tinkoff/investAPI/edit/master/docs/load_history.md" title="Редактировать страницу" class="md-content__button md-icon">
+                  <a href="https://github.com/Tinkoff/investAPI/edit/master/docs/faq_stoporders.md" title="Редактировать страницу" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="_1">Загрузка исторических котировок</h1>
-<p>TINKOFF INVEST API предоставляет своим пользователям возможность получения исторических рыночных данных по
-инструментам. Для загрузки истории котировок можно воспользоваться unary-методом 
-<a href="#getcandles">GetCandles</a> <a href="/investAPI/head-marketdata">сервиса котировок</a>. </p>
-<p>Обратите внимание, что глубина исторических данных по одному и тому же инструменту может отличаться на 
-разных интервалах свечей. Также глубина исторических данных может быть разной для разных инструментов.<br />
-Связано это с особенностями получения исторических данных в <a href="https://www.tinkoff.ru/invest/">Тинькофф Инвестициях</a>.</p>
-<p>С целью сокращения нагрузки на инфраструктуру системы в TINKOFF INVEST API имеется ограничение на 
-максимальную длину запрашиваемого интервала. Ограничение зависит от интервала свечи: </p>
-<table>
-<thead>
-<tr>
-<th align="left">Интервал свечи</th>
-<th align="left">Допустимы период</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">1 минута</td>
-<td align="left">от 1 минут до 1 дня</td>
-</tr>
-<tr>
-<td align="left">5 минут</td>
-<td align="left">от 5 минут до 1 дня</td>
-</tr>
-<tr>
-<td align="left">15 минут</td>
-<td align="left">от 15 минут до 1 дня</td>
-</tr>
-<tr>
-<td align="left">1 час</td>
-<td align="left">от 1 часа до 1 недели</td>
-</tr>
-<tr>
-<td align="left">1 день</td>
-<td align="left">от 1 дня до 1 года</td>
-</tr>
-</tbody>
-</table>
-<p>Таким образом загрузку исторических данных за весь интересующий период следует организовывать порционно. 
-В связи с разной глубиной истории начинать следует с конца интересующего периода и постепенно двигаться в
-"прошлое" до момента получения пустых ответов. </p>
+                  <h1>FAQ</h1>
+                
+                <h3 id="-">Можно ли узнать, что торговое поручение было создано из стоп-заявки?</h3>
+<p>В данный момент соотнести стоп-заявку с торговым поручением можно лишь по косвенным
+признакам (тип, количество инструментов, цена и т.п.). В будущих обновления такая функциональность
+появится.</p>
+<h3 id="-_1">Можно ли получить информацию об исполненных или снятых стоп-заявках?</h3>
+<p>На текущий момент такая функциональность не предоставляется, но планируется в будущих релизах. </p>
                 
               
               
@@ -1075,7 +1094,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../faq_trading_status/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Торговые статусы инструментов и расписание торгов" rel="prev">
+        <a href="../stoporders/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Методы" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1084,20 +1103,20 @@
               <span class="md-footer__direction">
                 Назад
               </span>
-              Торговые статусы инструментов и расписание торгов
+              Методы
             </div>
           </div>
         </a>
       
       
         
-        <a href="../orders_details/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Работа с торговыми поручениями" rel="next">
+        <a href="../head-sandbox/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Описание" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Вперед
               </span>
-              Работа с торговыми поручениями
+              Описание
             </div>
           </div>
           <div class="md-footer__button md-icon">

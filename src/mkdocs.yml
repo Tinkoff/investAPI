@@ -38,24 +38,24 @@ nav:
 - Сервис инструментов: 
   - Описание: head-instruments.md
   - Методы: instruments.md
-  - "FAQ Сервиса инструментов": faq_instruments.md
+  - FAQ: faq_instruments.md
 - Сервис торговых поручений:
   - Описание: head-orders.md
   - Методы: orders.md
-  - "FAQ Сервис торговых поручений": faq_orders.md
+  - FAQ: faq_orders.md
 - Сервис операций:
   - Описание: head-operations.md
   - Методы: operations.md
-  - "FAQ Сервиса операций": faq_operations.md
+  - FAQ: faq_operations.md
 - Сервис котировок:
   - Описание: head-marketdata.md
   - Методы: marketdata.md
-  - "FAQ Сервис котировок": faq_marketdata.md
+  - FAQ: faq_marketdata.md
 - Сервис стоп-заявок:
   - Описание: head-stoporders.md
   - Методы: stoporders.md
 - Песочница:
   - Описание: head-sandbox.md
   - Методы: sandbox.md
-  - "FAQ Песочница": faq_sandbox.md
+  - FAQ: faq_sandbox.md
 - Коды ошибок: errors.md

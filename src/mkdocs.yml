@@ -54,6 +54,7 @@ nav:
 - Сервис стоп-заявок:
   - Описание: head-stoporders.md
   - Методы: stoporders.md
+  - FAQ: faq_stoporders.md
 - Песочница:
   - Описание: head-sandbox.md
   - Методы: sandbox.md

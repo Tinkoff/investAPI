@@ -5,6 +5,7 @@
 * [FAQ Сервиса торговых поручений](/investAPI/faq_orders/)
 * [FAQ Сервиса операций](/investAPI/faq_operations/)
 * [FAQ Сервиса котировок](/investAPI/faq_marketdata/)
+* [FAQ Сервиса стоп-заявок](/investAPI/faq_stoporders/)
 * [FAQ Песочница](/investAPI/faq_sandbox/)
 
 

@@ -478,8 +478,8 @@ message Instrument {
 //Запрос дивидендов.
 message GetDividendsRequest {
   string figi = 1; //Figi-идентификатор инструмента.
-  google.protobuf.Timestamp from = 2; //Начало запрашиваемого периода в часовом поясе UTC. Фильтрация происходит по параметру *record_date* (дата фиксации реестра).
-  google.protobuf.Timestamp to = 3; //Окончание запрашиваемого периода в часовом поясе UTC. Фильтрация происходит по параметру *record_date* (дата фиксации реестра).
+  google.protobuf.Timestamp from = 2; //Начало запрашиваемого периода в часовом поясе UTC.
+  google.protobuf.Timestamp to = 3; //Окончание запрашиваемого периода в часовом поясе UTC.
 }
 
 //Дивиденды.

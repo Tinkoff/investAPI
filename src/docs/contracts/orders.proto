@@ -53,6 +53,7 @@ message OrderTrades {
   OrderDirection direction = 3; //Направление сделки (возможные значения)
   string figi = 4; //Figi-идентификатор инструмента
   repeated OrderTrade trades = 5; //Массив сделок
+  string account_id = 6; //Идентификатор счёта
 }
 
 //Информация о сделке.

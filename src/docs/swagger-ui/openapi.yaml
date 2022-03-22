@@ -4,7 +4,7 @@ info:
   termsOfService: https://www.tinkoff.ru/invest/disclaimers/basic-information/
   contact:
     email: al.a.volkov@tinkoff.ru
-  version: '1.0.3'
+  version: '1.0.4'
 externalDocs:
   description: Документация Tinkoff Invest API
   url: https://tinkoff.github.io/investAPI/
@@ -3833,12 +3833,18 @@ components:
     v1GetTradingStatusResponse:
       description: Информация о торговом статусе.
       example:
+        limitOrderAvailableFlag: true
+        marketOrderAvailableFlag: true
         figi: figi
       properties:
         figi:
           type: string
         tradingStatus:
           $ref: '#/components/schemas/v1SecurityTradingStatus'
+        limitOrderAvailableFlag:
+          type: boolean
+        marketOrderAvailableFlag:
+          type: boolean
       type: object
     v1GetUserTariffRequest:
       description: Запрос текущих лимитов пользователя.

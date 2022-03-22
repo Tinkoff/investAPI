@@ -257,6 +257,8 @@ message TradingStatus {
   string figi = 1; //Figi-идентификатор инструмента.
   SecurityTradingStatus trading_status = 2; //Статус торговли инструментом.
   google.protobuf.Timestamp time = 3; //Время изменения торгового статуса в часовом поясе UTC.
+  bool limit_order_available_flag = 4; //Признак доступности выставления лимитной заявки по инструменту
+  bool market_order_available_flag = 5; //Признак доступности выставления рыночной заявки по инструменту
 }
 
 //Запрос исторических свечей.
@@ -284,11 +286,11 @@ message GetCandlesResponse {
 
 //Информация о свече.
 message HistoricCandle {
-  Quotation open = 1; //Цена открытия за 1 инструмент.
-  Quotation high = 2; //Максимальная цена за 1 инструмент.
-  Quotation low = 3; //Минимальная цена за 1 инструмент.
-  Quotation close = 4; //Цена закрытия за 1 инструмент.
-  int64 volume = 5; //Объём торгов в штуках.
+  Quotation open = 1; //Цена открытия за 1 лот.
+  Quotation high = 2; //Максимальная цена за 1 лот.
+  Quotation low = 3; //Минимальная цена за 1 лот.
+  Quotation close = 4; //Цена закрытия за 1 лот.
+  int64 volume = 5; //Объём торгов в лотах.
   google.protobuf.Timestamp time = 6; //Время свечи в часовом поясе UTC.
   bool is_complete = 7; //Признак завершённости свечи. **false** значит, свеча за текущие интервал ещё сформирована не полностью.
 }
@@ -306,7 +308,7 @@ message GetLastPricesResponse {
 //Информация о цене.
 message LastPrice {
   string figi = 1; //Идентификатор инструмента.
-  Quotation price = 2; //Последняя цена за один инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
+  Quotation price = 2; //Последняя цена за 1 лот.
   google.protobuf.Timestamp time = 3; //Время получения последней цены в часовом поясе UTC по времени биржи.
 }
 
@@ -337,4 +339,6 @@ message GetTradingStatusRequest {
 message GetTradingStatusResponse {
   string figi = 1; //Figi-идентификатор инструмента.
   SecurityTradingStatus trading_status = 2; //Статус торговли инструментом.
+  bool limit_order_available_flag = 3; //Признак доступности выставления лимитной заявки по инструменту
+  bool market_order_available_flag = 4; //Признак доступности выставления рыночной заявки по инструменту
 }

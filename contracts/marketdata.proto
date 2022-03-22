@@ -257,6 +257,8 @@ message TradingStatus {
   string figi = 1; //Figi-идентификатор инструмента.
   SecurityTradingStatus trading_status = 2; //Статус торговли инструментом.
   google.protobuf.Timestamp time = 3; //Время изменения торгового статуса в часовом поясе UTC.
+  bool limit_order_available_flag = 4; //Признак доступности выставления лимитной заявки по инструменту
+  bool market_order_available_flag = 5; //Признак доступности выставления рыночной заявки по инструменту
 }
 
 //Запрос исторических свечей.
@@ -337,4 +339,6 @@ message GetTradingStatusRequest {
 message GetTradingStatusResponse {
   string figi = 1; //Figi-идентификатор инструмента.
   SecurityTradingStatus trading_status = 2; //Статус торговли инструментом.
+  bool limit_order_available_flag = 3; //Признак доступности выставления лимитной заявки по инструменту
+  bool market_order_available_flag = 4; //Признак доступности выставления рыночной заявки по инструменту
 }

@@ -59,8 +59,12 @@
 30065|INVALID_ARGUMENT|missing parameter: 'task_id'|Входной параметр *task_id* является обязательным. </br> Укажите корректный параметр *task_id*.|
 30066|INVALID_ARGUMENT|missing parameter: 'payload'|Входной параметр *payload* является обязательным. </br> Укажите корректный параметр *payload*.|
 30077|INVALID_ARGUMENT|not available for OTC instruments|Метод недоступен для внебиржевых инструментов.|
+30078|INVALID_ARGUMENT|Incorrect minimum price increment|Некорректный шаг изменения цены.|
+30079|INVALID_ARGUMENT|instrument is not available for trading|Инструмент недоступен для торгов.|
+30080|INVALID_ARGUMENT|quantity must be positive|Количество лотов должно быть положительным числом.|
 30081|INVALID_ARGUMENT|account status is closed|Аккаунт закрыт.|
 30082|INVALID_ARGUMENT|account status is blocked|Аккаунт заблокирован.|
+30083|INVALID_ARGUMENT|order_type is invalid|Некорректный тип заявки.|
 40002|PERMISSION_DENIED|insufficient privileges|Недостаточно прав для совершения операции. </br>Токен доступа имеет уровень прав read-only.</br>Подробнее: [Виды токенов](https://tinkoff.github.io/investAPI/index#_2)|
 50001|NOT_FOUND|exchange not found|Биржа не найдена по переданному *exchange_id*.</br>Укажите корректный *exchange_id*.|
 50002|NOT_FOUND|instrument not found|Инструмент не найден.</br>Укажите корректный идентификатор инструмента.|

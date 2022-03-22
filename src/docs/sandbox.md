@@ -803,6 +803,7 @@ Stream сделок пользователя
 | direction |  [OrderDirection](#orderdirection) | Направление сделки (возможные значения) |
 | figi |  [string](#string) | Figi-идентификатор инструмента |
 | trades | Массив объектов [OrderTrade](#ordertrade) | Массив сделок |
+| account_id |  [string](#string) | Идентификатор счёта |
  <!-- end Fields -->
  <!-- end HasFields -->
 

@@ -77,4 +77,8 @@ SDK на других языках в процессе разработки.
 
 * [Telegram-канал](https://t.me/tinkoffinvestopenapi)
 * [Telegram-чат по общим вопросам](https://t.me/joinchat/VaW05CDzcSdsPULM)
-* [Telegram-чат для заказчиков и разработчиков торговых роботов](https://t.me/tinkoffinvestopenapi)
+* [Telegram-чат для заказчиков и разработчиков торговых роботов](https://t.me/tinkoff_invest_robot_development)
+
+# Разработчикам ПО для широкого круга пользователей
+
+Если Вы разрабатываете публичное ПО, использующее Tinkoff Invest API, то необходимо написать на al.a.volkov@tinkoff.ru краткую информацию о проекте для регистрации выделенного appname и получения дополнительной техподдержки.

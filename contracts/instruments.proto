@@ -127,8 +127,8 @@ message BondsResponse {
 //Запрос купонов по облигации.
 message GetBondCouponsRequest {
   string figi = 1; //Figi-идентификатор инструмента.
-  google.protobuf.Timestamp from = 2; //Начало запрашиваемого периода в часовом поясе UTC.
-  google.protobuf.Timestamp to = 3; //Окончание запрашиваемого периода в часовом поясе UTC.
+  google.protobuf.Timestamp from = 2; //Начало запрашиваемого периода в часовом поясе UTC. Фильтрация по coupon_date (дата выплаты купона)
+  google.protobuf.Timestamp to = 3; //Окончание запрашиваемого периода в часовом поясе UTC. Фильтрация по coupon_date (дата выплаты купона)
 }
 
 //Купоны по облигации.
@@ -139,7 +139,7 @@ message GetBondCouponsResponse {
 //Объект передачи информации о купоне облигации.
 message Coupon {
   string figi = 1; //Figi-идентификатор инструмента.
-  google.protobuf.Timestamp coupon_date = 2; //Дата события
+  google.protobuf.Timestamp coupon_date = 2; //Дата выплаты купона
   int64 coupon_number = 3; //Номер купона
   google.protobuf.Timestamp fix_date = 4; //(Опционально) Дата фиксации реестра для выплаты купона
   MoneyValue pay_one_bond = 5; //Выплата на одну облигацию

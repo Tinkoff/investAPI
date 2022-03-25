@@ -800,6 +800,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#tinkoff-invest-api" class="md-nav__link">
+    Как с помощью TINKOFF INVEST API получить брокерский отчёт?
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1078,6 +1085,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#tinkoff-invest-api" class="md-nav__link">
+    Как с помощью TINKOFF INVEST API получить брокерский отчёт?
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1107,6 +1121,14 @@
 различных корпоративных действий. Подробнее: <a href="/investAPI/faq_corp_action/">Корпоративные действия</a>.</p>
 <h3 id="quantity">Параметр quantity в лотах или количествах?</h3>
 <p>В рамках сервиса операций данный параметр всегда передаётся в лотах инструмента.</p>
+<h3 id="tinkoff-invest-api">Как с помощью TINKOFF INVEST API получить брокерский отчёт?</h3>
+<p>Для получения брокерского отчёта можно воспользоваться методом <a href="/investAPI/operations#getbrokerreport">GetBrokerReport</a>.
+Обратите внимание, что получение брокерского отчёта асинхронно, т.е. сперва вы запрашиваете формирование
+отчёта (отправляя пакет <a href="/investAPI/operations#generatebrokerreportrequest">generate_broker_report_request</a>),
+получаете идентификатор задачи формирования отчёта (параметр task_id). После этого вы можете запросить 
+отчёт по его идентификатору, в случае если формирование отчёта ещё не закончено, вы получите соответствующее
+сообщение об ошибке.</p>
+<p>Подробнее о брокерском отчёте: <a href="https://www.tinkoff.ru/invest/account/help/trade-on-bs/get-report/">Отчёты и справки</a>.</p>
                 
               
               

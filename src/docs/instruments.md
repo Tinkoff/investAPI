@@ -261,8 +261,8 @@
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Figi-идентификатор инструмента. |
-| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода в часовом поясе UTC. |
-| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода в часовом поясе UTC. |
+| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода в часовом поясе UTC. Фильтрация по coupon_date (дата выплаты купона) |
+| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода в часовом поясе UTC. Фильтрация по coupon_date (дата выплаты купона) |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -285,7 +285,7 @@
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Figi-идентификатор инструмента. |
-| coupon_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата события |
+| coupon_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата выплаты купона |
 | coupon_number |  [int64](#int64) | Номер купона |
 | fix_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | (Опционально) Дата фиксации реестра для выплаты купона |
 | pay_one_bond |  [MoneyValue](#moneyvalue) | Выплата на одну облигацию |

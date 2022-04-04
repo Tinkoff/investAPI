@@ -870,6 +870,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#getlasttrades" class="md-nav__link">
+    GetLastTrades
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1171,6 +1178,20 @@
           <li class="md-nav__item">
   <a href="#gettradingstatusresponse" class="md-nav__link">
     GetTradingStatusResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlasttradesrequest" class="md-nav__link">
+    GetLastTradesRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlasttradesresponse" class="md-nav__link">
+    GetLastTradesResponse
   </a>
   
 </li>
@@ -1507,6 +1528,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#getlasttrades" class="md-nav__link">
+    GetLastTrades
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1812,6 +1840,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#getlasttradesrequest" class="md-nav__link">
+    GetLastTradesRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlasttradesresponse" class="md-nav__link">
+    GetLastTradesResponse
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1966,6 +2008,16 @@
 </li>
 <li>
 <p>Тело ответа — <a href="#gettradingstatusresponse">GetTradingStatusResponse</a></p>
+</li>
+</ul>
+<h4 id="getlasttrades">GetLastTrades</h4>
+<p>Метод запроса последних обезличенных сделок по инструменту.</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#getlasttradesrequest">GetLastTradesRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#getlasttradesresponse">GetLastTradesResponse</a></p>
 </li>
 </ul>
 <!-- range .Methods -->
@@ -3296,6 +3348,66 @@
 <td>market_order_available_flag</td>
 <td><a href="#bool">bool</a></td>
 <td>Признак доступности выставления рыночной заявки по инструменту</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getlasttradesrequest">GetLastTradesRequest</h4>
+<p>Запрос последних обезличенных сделок по инструменту.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента</td>
+</tr>
+<tr>
+<td>from</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Начало запрашиваемого периода в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>to</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Окончание запрашиваемого периода в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getlasttradesresponse">GetLastTradesResponse</h4>
+<p>Последние обезличенные сделки по инструменту.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trades</td>
+<td>Массив объектов <a href="#trade">Trade</a></td>
+<td>Массив сделок</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>

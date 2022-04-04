@@ -48,26 +48,26 @@ message TradesStreamResponse {
 
 //Информация об исполнении торгового поручения.
 message OrderTrades {
-  string order_id = 1; //Идентификатор торгового поручения
+  string order_id = 1; //Идентификатор торгового поручения.
   google.protobuf.Timestamp created_at = 2; //Дата и время создания сообщения в часовом поясе UTC.
-  OrderDirection direction = 3; //Направление сделки (возможные значения)
-  string figi = 4; //Figi-идентификатор инструмента
-  repeated OrderTrade trades = 5; //Массив сделок
-  string account_id = 6; //Идентификатор счёта
+  OrderDirection direction = 3; //Направление сделки.
+  string figi = 4; //Figi-идентификатор инструмента.
+  repeated OrderTrade trades = 5; //Массив сделок.
+  string account_id = 6; //Идентификатор счёта.
 }
 
 //Информация о сделке.
 message OrderTrade {
   google.protobuf.Timestamp date_time = 1;  //Дата и время совершения сделки в часовом поясе UTC.
-  Quotation price = 2;  //Цена, по которой совершена сделка
-  int64 quantity = 3;  //Количество лотов в сделке
+  Quotation price = 2;  //Цена одного инструмента, по которой совершена сделка.
+  int64 quantity = 3;  //Количество лотов в сделке.
 }
 
 //Запрос выставления торгового поручения.
 message PostOrderRequest {
   string figi = 1; //Figi-идентификатор инструмента.
   int64 quantity = 2; //Количество лотов.
-  Quotation price = 3; //Цена лота.
+  Quotation price = 3; //Цена одного инструмента. Для получения стоимости лота требуется умножить на лотность инструмента.
   OrderDirection direction = 4; //Направление операции.
   string account_id = 5; //Номер счёта.
   OrderType order_type = 6; //Тип заявки.
@@ -90,7 +90,7 @@ message PostOrderResponse {
 
   string figi = 11; // Figi-идентификатор инструмента.
   OrderDirection direction = 12; //Направление сделки.
-  MoneyValue initial_security_price = 13;  //Начальная цена инструмента заявки.
+  MoneyValue initial_security_price = 13;  //Начальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
   OrderType order_type = 14; //Тип заявки.
   string message = 15; //Дополнительные данные об исполнении заявки.
   Quotation initial_order_price_pt = 16; //Начальная цена заявки в пунктах (для фьючерсов).
@@ -137,7 +137,7 @@ message OrderState {
   MoneyValue executed_commission = 10; //Фактическая комиссия по итогам исполнения заявки.
   string figi = 11; //Figi-идентификатор инструмента.
   OrderDirection direction = 12; //Направление заявки.
-  MoneyValue initial_security_price = 13; //Начальная цена инструмента. Цена инструмента на момент выставления заявки.
+  MoneyValue initial_security_price = 13; //Начальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
   repeated OrderStage stages = 14; //Стадии выполнения заявки.
   MoneyValue service_commission = 15; //Сервисная комиссия.
   string currency = 16; //Валюта заявки.
@@ -147,7 +147,7 @@ message OrderState {
 
 //Сделки в рамках торгового поручения.
 message OrderStage {
-  MoneyValue price = 1; //Цена.
+  MoneyValue price = 1; //Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента..
   int64 quantity = 2; //Количество лотов.
   string trade_id = 3; //Идентификатор торговой операции.
 }

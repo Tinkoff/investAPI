@@ -91,7 +91,7 @@ message CandleInstrument {
 
 //Результат изменения статус подписки на свечи.
 message SubscribeCandlesResponse {
-  string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](https://tinkoff.github.io/investAPI/grpc#tracking-id)
+  string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](https://tinkoff.github.io/investAPI/grpc#tracking-id).
   repeated CandleSubscription candles_subscriptions = 2; //Массив статусов подписки на свечи.
 }
 
@@ -107,10 +107,10 @@ enum SubscriptionStatus {
   SUBSCRIPTION_STATUS_UNSPECIFIED = 0; //Статус подписки не определён.
   SUBSCRIPTION_STATUS_SUCCESS = 1; //Успешно.
   SUBSCRIPTION_STATUS_INSTRUMENT_NOT_FOUND = 2; //Инструмент не найден.
-  SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID = 3; //Некорректный статус подписки, список возможных значений: [SubscriptionAction](https://tinkoff.github.io/investAPI/marketdata#subscriptionaction)
+  SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID = 3; //Некорректный статус подписки, список возможных значений: [SubscriptionAction](https://tinkoff.github.io/investAPI/marketdata#subscriptionaction).
   SUBSCRIPTION_STATUS_DEPTH_IS_INVALID = 4; //Некорректная глубина стакана, доступные значения: 1, 10, 20, 30, 40, 50.
-  SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID = 5; //Некорректный интервал свечей, список возможных значений: [SubscriptionInterval](https://tinkoff.github.io/investAPI/marketdata#subscriptioninterval)
-  SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED = 6; //Превышен лимит подписок в рамках стрима, подробнее: [Лимитная политика](https://tinkoff.github.io/investAPI/limits/)
+  SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID = 5; //Некорректный интервал свечей, список возможных значений: [SubscriptionInterval](https://tinkoff.github.io/investAPI/marketdata#subscriptioninterval).
+  SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED = 6; //Превышен лимит подписок в рамках стрима, подробнее: [Лимитная политика](https://tinkoff.github.io/investAPI/limits/).
   SUBSCRIPTION_STATUS_INTERNAL_ERROR = 7; //Внутренняя ошибка сервиса.
 }
 
@@ -128,7 +128,7 @@ message OrderBookInstrument {
 
 //Результат изменения статуса подписки на стаканы.
 message SubscribeOrderBookResponse {
-  string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](https://tinkoff.github.io/investAPI/grpc#tracking-id)
+  string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](https://tinkoff.github.io/investAPI/grpc#tracking-id).
   repeated OrderBookSubscription order_book_subscriptions = 2; //Массив статусов подписки на стаканы.
 }
 
@@ -152,7 +152,7 @@ message TradeInstrument {
 
 //Результат изменения статуса подписки на поток обезличенных сделок.
 message SubscribeTradesResponse {
-  string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](https://tinkoff.github.io/investAPI/grpc#tracking-id)
+  string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](https://tinkoff.github.io/investAPI/grpc#tracking-id).
   repeated TradeSubscription trade_subscriptions = 2; //Массив статусов подписки на поток сделок.
 }
 
@@ -175,7 +175,7 @@ message InfoInstrument {
 
 //Результат изменения статуса подписки на торговый статус.
 message SubscribeInfoResponse {
-  string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](https://tinkoff.github.io/investAPI/grpc#tracking-id)
+  string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](https://tinkoff.github.io/investAPI/grpc#tracking-id).
   repeated InfoSubscription info_subscriptions = 2; //Массив статусов подписки на торговый статус.
 }
 
@@ -198,7 +198,7 @@ message LastPriceInstrument {
 
 //Результат изменения статуса подписки на последнюю цену.
 message SubscribeLastPriceResponse {
-  string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](https://tinkoff.github.io/investAPI/grpc#tracking-id)
+  string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](https://tinkoff.github.io/investAPI/grpc#tracking-id).
   repeated LastPriceSubscription last_price_subscriptions = 2; //Массив статусов подписки на последнюю цену.
 }
 
@@ -212,12 +212,12 @@ message LastPriceSubscription {
 message Candle {
   string figi = 1; //Figi-идентификатор инструмента.
   SubscriptionInterval interval = 2; //Интервал свечи.
-  Quotation open = 3; //Цена открытия за 1 лот.
-  Quotation high = 4; //Максимальная цена за 1 лот.
-  Quotation low = 5; //Минимальная цена за 1 лот.
-  Quotation close = 6; //Цена закрытия за 1 лот.
+  Quotation open = 3; //Цена открытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
+  Quotation high = 4; //Максимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
+  Quotation low = 5; //Минимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
+  Quotation close = 6; //Цена закрытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
   int64 volume = 7; //Объём сделок в лотах.
-  google.protobuf.Timestamp time = 8; //Время свечи в часовом поясе UTC.
+  google.protobuf.Timestamp time = 8; //Время начала интервала свечи в часовом поясе UTC.
   google.protobuf.Timestamp last_trade_ts = 9; //Время последней сделки, вошедшей в свечу в часовом поясе UTC.
 }
 
@@ -228,14 +228,14 @@ message OrderBook {
   bool is_consistent = 3; //Флаг консистентности стакана. **false** значит не все заявки попали в стакан по причинам сетевых задержек или нарушения порядка доставки.
   repeated Order bids = 4; //Массив предложений.
   repeated Order asks = 5; //Массив спроса.
-  google.protobuf.Timestamp time = 6; //Время стакана в часовом поясе UTC.
-  Quotation limit_up = 7; //Верхний лимит цены инструмента.
-  Quotation limit_down = 8; //Нижний лимит цены инструмента.
+  google.protobuf.Timestamp time = 6; //Время формирования стакана в часовом поясе UTC по времени биржи.
+  Quotation limit_up = 7; //Верхний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
+  Quotation limit_down = 8; //Нижний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
 }
 
 //Массив предложений/спроса.
 message Order {
-  Quotation price = 1; //Цена за 1 лот.
+  Quotation price = 1; //Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
   int64 quantity = 2; //Количество в лотах.
 }
 
@@ -243,7 +243,7 @@ message Order {
 message Trade {
   string figi = 1; //Figi-идентификатор инструмента.
   TradeDirection direction = 2; //Направление сделки.
-  Quotation price = 3; //Цена за 1 лот.
+  Quotation price = 3; //Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
   int64 quantity = 4; //Количество лотов.
   google.protobuf.Timestamp time = 5; //Время сделки в часовом поясе UTC по времени биржи.
 }
@@ -260,13 +260,13 @@ message TradingStatus {
   string figi = 1; //Figi-идентификатор инструмента.
   SecurityTradingStatus trading_status = 2; //Статус торговли инструментом.
   google.protobuf.Timestamp time = 3; //Время изменения торгового статуса в часовом поясе UTC.
-  bool limit_order_available_flag = 4; //Признак доступности выставления лимитной заявки по инструменту
-  bool market_order_available_flag = 5; //Признак доступности выставления рыночной заявки по инструменту
+  bool limit_order_available_flag = 4; //Признак доступности выставления лимитной заявки по инструменту.
+  bool market_order_available_flag = 5; //Признак доступности выставления рыночной заявки по инструменту.
 }
 
 //Запрос исторических свечей.
 message GetCandlesRequest {
-  string figi = 1; //Figi-идентификатор инструмента
+  string figi = 1; //Figi-идентификатор инструмента.
   google.protobuf.Timestamp from = 2; //Начало запрашиваемого периода в часовом поясе UTC.
   google.protobuf.Timestamp to = 3; //Окончание запрашиваемого периода в часовом поясе UTC.
   CandleInterval interval = 4; //Интервал запрошенных свечей.
@@ -289,11 +289,11 @@ message GetCandlesResponse {
 
 //Информация о свече.
 message HistoricCandle {
-  Quotation open = 1; //Цена открытия за 1 инструмент.
-  Quotation high = 2; //Максимальная цена за 1 инструмент.
-  Quotation low = 3; //Минимальная цена за 1 инструмент.
-  Quotation close = 4; //Цена закрытия за 1 инструмент.
-  int64 volume = 5; //Объём торгов в штуках.
+  Quotation open = 1; //Цена открытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
+  Quotation high = 2; //Максимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
+  Quotation low = 3; //Минимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
+  Quotation close = 4; //Цена закрытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
+  int64 volume = 5; //Объём торгов в лотах.
   google.protobuf.Timestamp time = 6; //Время свечи в часовом поясе UTC.
   bool is_complete = 7; //Признак завершённости свечи. **false** значит, свеча за текущие интервал ещё сформирована не полностью.
 }
@@ -311,7 +311,7 @@ message GetLastPricesResponse {
 //Информация о цене.
 message LastPrice {
   string figi = 1; //Идентификатор инструмента.
-  Quotation price = 2; //Последняя цена за один инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
+  Quotation price = 2; //Последняя цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
   google.protobuf.Timestamp time = 3; //Время получения последней цены в часовом поясе UTC по времени биржи.
 }
 
@@ -327,10 +327,10 @@ message GetOrderBookResponse {
   int32 depth = 2; //Глубина стакана.
   repeated Order bids = 3; //Множество пар значений на покупку.
   repeated Order asks = 4; //Множество пар значений на продажу.
-  Quotation last_price = 5; //Цена последней сделки.
-  Quotation close_price = 6; //Цена закрытия.
-  Quotation limit_up = 7; //Верхний лимит цены.
-  Quotation limit_down = 8; //Нижний лимит цены.
+  Quotation last_price = 5; //Цена последней сделки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
+  Quotation close_price = 6; //Цена закрытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
+  Quotation limit_up = 7; //Верхний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
+  Quotation limit_down = 8; //Нижний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
 }
 
 //Запрос получения торгового статуса.
@@ -342,8 +342,8 @@ message GetTradingStatusRequest {
 message GetTradingStatusResponse {
   string figi = 1; //Figi-идентификатор инструмента.
   SecurityTradingStatus trading_status = 2; //Статус торговли инструментом.
-  bool limit_order_available_flag = 3; //Признак доступности выставления лимитной заявки по инструменту
-  bool market_order_available_flag = 4; //Признак доступности выставления рыночной заявки по инструменту
+  bool limit_order_available_flag = 3; //Признак доступности выставления лимитной заявки по инструменту.
+  bool market_order_available_flag = 4; //Признак доступности выставления рыночной заявки по инструменту.
 }
 
 //Запрос последних обезличенных сделок по инструменту.

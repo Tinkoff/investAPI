@@ -3132,27 +3132,27 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта клиента</td>
+<td>Идентификатор счёта клиента.</td>
 </tr>
 <tr>
 <td>from</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Начало периода (по UTC)</td>
+<td>Начало периода (по UTC).</td>
 </tr>
 <tr>
 <td>to</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Окончание периода (по UTC)</td>
+<td>Окончание периода (по UTC).</td>
 </tr>
 <tr>
 <td>state</td>
 <td><a href="#operationstate">OperationState</a></td>
-<td>Статус запрашиваемых операций</td>
+<td>Статус запрашиваемых операций.</td>
 </tr>
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента для фильтрации</td>
+<td>Figi-идентификатор инструмента для фильтрации.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3177,7 +3177,7 @@
 <tr>
 <td>operations</td>
 <td>Массив объектов <a href="#operation">Operation</a></td>
-<td>Массив операций</td>
+<td>Массив операций.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3202,47 +3202,47 @@
 <tr>
 <td>id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор операции</td>
+<td>Идентификатор операции.</td>
 </tr>
 <tr>
 <td>parent_operation_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор родительской операции</td>
+<td>Идентификатор родительской операции.</td>
 </tr>
 <tr>
 <td>currency</td>
 <td><a href="#string">string</a></td>
-<td>Валюта операции</td>
+<td>Валюта операции.</td>
 </tr>
 <tr>
 <td>payment</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Сумма операции</td>
+<td>Сумма операции.</td>
 </tr>
 <tr>
 <td>price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Цена операции</td>
+<td>Цена операции за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>state</td>
 <td><a href="#operationstate">OperationState</a></td>
-<td>Статус операции</td>
+<td>Статус операции.</td>
 </tr>
 <tr>
 <td>quantity</td>
 <td><a href="#int64">int64</a></td>
-<td>Количество лотов инструмента</td>
+<td>Количество лотов инструмента.</td>
 </tr>
 <tr>
 <td>quantity_rest</td>
 <td><a href="#int64">int64</a></td>
-<td>Неисполненный остаток по сделке</td>
+<td>Неисполненный остаток по сделке.</td>
 </tr>
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента, связанного с операцией</td>
+<td>Figi-идентификатор инструмента, связанного с операцией.</td>
 </tr>
 <tr>
 <td>instrument_type</td>
@@ -3252,22 +3252,22 @@
 <tr>
 <td>date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата и время операции в формате часовом поясе UTC</td>
+<td>Дата и время операции в формате часовом поясе UTC.</td>
 </tr>
 <tr>
 <td>type</td>
 <td><a href="#string">string</a></td>
-<td>Текстовое описание типа операции</td>
+<td>Текстовое описание типа операции.</td>
 </tr>
 <tr>
 <td>operation_type</td>
 <td><a href="#operationtype">OperationType</a></td>
-<td>Тип операции</td>
+<td>Тип операции.</td>
 </tr>
 <tr>
 <td>trades</td>
 <td>Массив объектов <a href="#operationtrade">OperationTrade</a></td>
-<td>Массив сделок</td>
+<td>Массив сделок.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3292,22 +3292,22 @@
 <tr>
 <td>trade_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор сделки</td>
+<td>Идентификатор сделки.</td>
 </tr>
 <tr>
 <td>date_time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата и время сделки в часовом поясе UTC</td>
+<td>Дата и время сделки в часовом поясе UTC.</td>
 </tr>
 <tr>
 <td>quantity</td>
 <td><a href="#int64">int64</a></td>
-<td>Количество инструментов</td>
+<td>Количество инструментов.</td>
 </tr>
 <tr>
 <td>price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Цена</td>
+<td>Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3332,7 +3332,7 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта пользователя</td>
+<td>Идентификатор счёта пользователя.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3357,37 +3357,37 @@
 <tr>
 <td>total_amount_shares</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Общая стоимость акций в портфеле в рублях</td>
+<td>Общая стоимость акций в портфеле в рублях.</td>
 </tr>
 <tr>
 <td>total_amount_bonds</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Общая стоимость облигаций в портфеле в рублях</td>
+<td>Общая стоимость облигаций в портфеле в рублях.</td>
 </tr>
 <tr>
 <td>total_amount_etf</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Общая стоимость фондов в портфеле в рублях</td>
+<td>Общая стоимость фондов в портфеле в рублях.</td>
 </tr>
 <tr>
 <td>total_amount_currencies</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Общая стоимость валют в портфеле в рублях</td>
+<td>Общая стоимость валют в портфеле в рублях.</td>
 </tr>
 <tr>
 <td>total_amount_futures</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Общая стоимость фьючерсов в портфеле в рублях</td>
+<td>Общая стоимость фьючерсов в портфеле в рублях.</td>
 </tr>
 <tr>
 <td>expected_yield</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Текущая относительная доходность портфеля, в %</td>
+<td>Текущая относительная доходность портфеля, в %.</td>
 </tr>
 <tr>
 <td>positions</td>
 <td>Массив объектов <a href="#portfolioposition">PortfolioPosition</a></td>
-<td>Список позиций портфеля</td>
+<td>Список позиций портфеля.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3412,7 +3412,7 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта пользователя</td>
+<td>Идентификатор счёта пользователя.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3437,27 +3437,27 @@
 <tr>
 <td>money</td>
 <td>Массив объектов <a href="#moneyvalue">MoneyValue</a></td>
-<td>Массив валютных позиций портфеля</td>
+<td>Массив валютных позиций портфеля.</td>
 </tr>
 <tr>
 <td>blocked</td>
 <td>Массив объектов <a href="#moneyvalue">MoneyValue</a></td>
-<td>Массив заблокированных валютных позиций портфеля</td>
+<td>Массив заблокированных валютных позиций портфеля.</td>
 </tr>
 <tr>
 <td>securities</td>
 <td>Массив объектов <a href="#positionssecurities">PositionsSecurities</a></td>
-<td>Список ценно-бумажных позиций портфеля</td>
+<td>Список ценно-бумажных позиций портфеля.</td>
 </tr>
 <tr>
 <td>limits_loading_in_progress</td>
 <td><a href="#bool">bool</a></td>
-<td>Признак идущей в данный момент выгрузки лимитов</td>
+<td>Признак идущей в данный момент выгрузки лимитов.</td>
 </tr>
 <tr>
 <td>futures</td>
 <td>Массив объектов <a href="#positionsfutures">PositionsFutures</a></td>
-<td>Список фьючерсов портфеля</td>
+<td>Список фьючерсов портфеля.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3482,7 +3482,7 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта пользователя</td>
+<td>Идентификатор счёта пользователя.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3507,17 +3507,17 @@
 <tr>
 <td>money</td>
 <td>Массив объектов <a href="#moneyvalue">MoneyValue</a></td>
-<td>Массив валютных позиций портфеля</td>
+<td>Массив валютных позиций портфеля.</td>
 </tr>
 <tr>
 <td>blocked</td>
 <td>Массив объектов <a href="#moneyvalue">MoneyValue</a></td>
-<td>Массив заблокированных валютных позиций портфеля</td>
+<td>Массив заблокированных валютных позиций портфеля.</td>
 </tr>
 <tr>
 <td>blocked_guarantee</td>
 <td>Массив объектов <a href="#moneyvalue">MoneyValue</a></td>
-<td>Заблокировано под гарантийное обеспечение фьючерсов</td>
+<td>Заблокировано под гарантийное обеспечение фьючерсов.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3542,17 +3542,17 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатора инструмента</td>
+<td>Figi-идентификатора инструмента.</td>
 </tr>
 <tr>
 <td>instrument_type</td>
 <td><a href="#string">string</a></td>
-<td>Тип инструмента</td>
+<td>Тип инструмента.</td>
 </tr>
 <tr>
 <td>quantity</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Количество инструмента в портфеле в штуках</td>
+<td>Количество инструмента в портфеле в штуках.</td>
 </tr>
 <tr>
 <td>average_position_price</td>
@@ -3567,7 +3567,7 @@
 <tr>
 <td>current_nkd</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Текущий НКД</td>
+<td>Текущий НКД.</td>
 </tr>
 <tr>
 <td>average_position_price_pt</td>
@@ -3577,7 +3577,7 @@
 <tr>
 <td>current_price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Текущая цена инструмента</td>
+<td>Текущая цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента..</td>
 </tr>
 <tr>
 <td>average_position_price_fifo</td>
@@ -3587,7 +3587,7 @@
 <tr>
 <td>quantity_lots</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Количество лотов в портфеле</td>
+<td>Количество лотов в портфеле.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3612,17 +3612,17 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор бумаги</td>
+<td>Figi-идентификатор бумаги.</td>
 </tr>
 <tr>
 <td>blocked</td>
 <td><a href="#int64">int64</a></td>
-<td>Заблокировано</td>
+<td>Заблокировано.</td>
 </tr>
 <tr>
 <td>balance</td>
 <td><a href="#int64">int64</a></td>
-<td>Текущий незаблокированный баланс</td>
+<td>Текущий незаблокированный баланс.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3647,17 +3647,17 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор фьючерса</td>
+<td>Figi-идентификатор фьючерса.</td>
 </tr>
 <tr>
 <td>blocked</td>
 <td><a href="#int64">int64</a></td>
-<td>Заблокировано</td>
+<td>Заблокировано.</td>
 </tr>
 <tr>
 <td>balance</td>
 <td><a href="#int64">int64</a></td>
-<td>Текущий незаблокированный баланс</td>
+<td>Текущий незаблокированный баланс.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3739,7 +3739,7 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта клиента</td>
+<td>Идентификатор счёта клиента.</td>
 </tr>
 <tr>
 <td>from</td>
@@ -3773,7 +3773,7 @@
 <tr>
 <td>task_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор задачи формирования брокерского отчёта</td>
+<td>Идентификатор задачи формирования брокерского отчёта.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3797,12 +3797,12 @@
 <tr>
 <td>task_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор задачи формирования брокерского отчёта</td>
+<td>Идентификатор задачи формирования брокерского отчёта.</td>
 </tr>
 <tr>
 <td>page</td>
 <td><a href="#int32">int32</a></td>
-<td>Номер страницы отчета (начинается с 1), значение по умолчанию: 0</td>
+<td>Номер страницы отчета (начинается с 1), значение по умолчанию: 0.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3831,17 +3831,17 @@
 <tr>
 <td>itemsCount</td>
 <td><a href="#int32">int32</a></td>
-<td>Количество записей в отчете</td>
+<td>Количество записей в отчете.</td>
 </tr>
 <tr>
 <td>pagesCount</td>
 <td><a href="#int32">int32</a></td>
-<td>Количество страниц с данными отчета (начинается с 0)</td>
+<td>Количество страниц с данными отчета (начинается с 0).</td>
 </tr>
 <tr>
 <td>page</td>
 <td><a href="#int32">int32</a></td>
-<td>Текущая страница (начинается с 0)</td>
+<td>Текущая страница (начинается с 0).</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3865,22 +3865,22 @@
 <tr>
 <td>trade_id</td>
 <td><a href="#string">string</a></td>
-<td>Номер сделки</td>
+<td>Номер сделки.</td>
 </tr>
 <tr>
 <td>order_id</td>
 <td><a href="#string">string</a></td>
-<td>Номер поручения</td>
+<td>Номер поручения.</td>
 </tr>
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента</td>
+<td>Figi-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>execute_sign</td>
 <td><a href="#string">string</a></td>
-<td>Признак исполнения</td>
+<td>Признак исполнения.</td>
 </tr>
 <tr>
 <td>trade_datetime</td>
@@ -3890,77 +3890,77 @@
 <tr>
 <td>exchange</td>
 <td><a href="#string">string</a></td>
-<td>Торговая площадка</td>
+<td>Торговая площадка.</td>
 </tr>
 <tr>
 <td>class_code</td>
 <td><a href="#string">string</a></td>
-<td>Режим торгов</td>
+<td>Режим торгов.</td>
 </tr>
 <tr>
 <td>direction</td>
 <td><a href="#string">string</a></td>
-<td>Вид сделки</td>
+<td>Вид сделки.</td>
 </tr>
 <tr>
 <td>name</td>
 <td><a href="#string">string</a></td>
-<td>Сокращённое наименование актива</td>
+<td>Сокращённое наименование актива.</td>
 </tr>
 <tr>
 <td>ticker</td>
 <td><a href="#string">string</a></td>
-<td>Код актива</td>
+<td>Код актива.</td>
 </tr>
 <tr>
 <td>price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Цена за единицу</td>
+<td>Цена за единицу.</td>
 </tr>
 <tr>
 <td>quantity</td>
 <td><a href="#int64">int64</a></td>
-<td>Количество</td>
+<td>Количество.</td>
 </tr>
 <tr>
 <td>order_amount</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Сумма (без НКД)</td>
+<td>Сумма (без НКД).</td>
 </tr>
 <tr>
 <td>aci_value</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>НКД</td>
+<td>НКД.</td>
 </tr>
 <tr>
 <td>total_order_amount</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Сумма сделки</td>
+<td>Сумма сделки.</td>
 </tr>
 <tr>
 <td>broker_commission</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Комиссия брокера</td>
+<td>Комиссия брокера.</td>
 </tr>
 <tr>
 <td>exchange_commission</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Комиссия биржи</td>
+<td>Комиссия биржи.</td>
 </tr>
 <tr>
 <td>exchange_clearing_commission</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Комиссия клир. центра</td>
+<td>Комиссия клир. центра.</td>
 </tr>
 <tr>
 <td>repo_rate</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка РЕПО (%)</td>
+<td>Ставка РЕПО (%).</td>
 </tr>
 <tr>
 <td>party</td>
 <td><a href="#string">string</a></td>
-<td>Контрагент/Брокер</td>
+<td>Контрагент/Брокер.</td>
 </tr>
 <tr>
 <td>clear_value_date</td>
@@ -3975,7 +3975,7 @@
 <tr>
 <td>broker_status</td>
 <td><a href="#string">string</a></td>
-<td>Статус брокера</td>
+<td>Статус брокера.</td>
 </tr>
 <tr>
 <td>separate_agreement_type</td>
@@ -3995,7 +3995,7 @@
 <tr>
 <td>delivery_type</td>
 <td><a href="#string">string</a></td>
-<td>Тип расчёта по сделке</td>
+<td>Тип расчёта по сделке.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4118,7 +4118,7 @@
 <tr>
 <td>page</td>
 <td><a href="#int32">int32</a></td>
-<td>Номер страницы отчета (начинается с 0), значение по умолчанию: 0</td>
+<td>Номер страницы отчета (начинается с 0), значение по умолчанию: 0.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4172,17 +4172,17 @@
 <tr>
 <td>itemsCount</td>
 <td><a href="#int32">int32</a></td>
-<td>Количество записей в отчете</td>
+<td>Количество записей в отчете.</td>
 </tr>
 <tr>
 <td>pagesCount</td>
 <td><a href="#int32">int32</a></td>
-<td>Количество страниц с данными отчета (начинается с 0)</td>
+<td>Количество страниц с данными отчета (начинается с 0).</td>
 </tr>
 <tr>
 <td>page</td>
 <td><a href="#int32">int32</a></td>
-<td>Текущая страница (начинается с 0)</td>
+<td>Текущая страница (начинается с 0).</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4276,7 +4276,7 @@
 
 <h3 id="enums">Enums</h3>
 <h4 id="operationstate">OperationState</h4>
-<p>Статус запрашиваемых операций</p>
+<p>Статус запрашиваемых операций.</p>
 <table>
 <thead>
 <tr>
@@ -4294,12 +4294,12 @@
 <tr>
 <td>OPERATION_STATE_EXECUTED</td>
 <td>1</td>
-<td>Исполнена</td>
+<td>Исполнена.</td>
 </tr>
 <tr>
 <td>OPERATION_STATE_CANCELED</td>
 <td>2</td>
-<td>Отменена</td>
+<td>Отменена.</td>
 </tr>
 <tr>
 <td><!-- range .Values -->
@@ -4310,7 +4310,7 @@
 </tbody>
 </table>
 <h4 id="operationtype">OperationType</h4>
-<p>Тип операции</p>
+<p>Тип операции.</p>
 <table>
 <thead>
 <tr>
@@ -4323,227 +4323,227 @@
 <tr>
 <td>OPERATION_TYPE_UNSPECIFIED</td>
 <td>0</td>
-<td>Тип операции не определён</td>
+<td>Тип операции не определён.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_INPUT</td>
 <td>1</td>
-<td>Завод денежных средств</td>
+<td>Завод денежных средств.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_BOND_TAX</td>
 <td>2</td>
-<td>Удержание налога по купонам</td>
+<td>Удержание налога по купонам.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_OUTPUT_SECURITIES</td>
 <td>3</td>
-<td>Вывод ЦБ</td>
+<td>Вывод ЦБ.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_OVERNIGHT</td>
 <td>4</td>
-<td>Доход по сделке РЕПО овернайт</td>
+<td>Доход по сделке РЕПО овернайт.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_TAX</td>
 <td>5</td>
-<td>Удержание налога</td>
+<td>Удержание налога.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_BOND_REPAYMENT_FULL</td>
 <td>6</td>
-<td>Полное погашение облигаций</td>
+<td>Полное погашение облигаций.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_SELL_CARD</td>
 <td>7</td>
-<td>Продажа ЦБ с карты</td>
+<td>Продажа ЦБ с карты.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_DIVIDEND_TAX</td>
 <td>8</td>
-<td>Удержание налога по дивидендам</td>
+<td>Удержание налога по дивидендам.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_OUTPUT</td>
 <td>9</td>
-<td>Вывод денежных средств</td>
+<td>Вывод денежных средств.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_BOND_REPAYMENT</td>
 <td>10</td>
-<td>Частичное погашение облигаций</td>
+<td>Частичное погашение облигаций.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_TAX_CORRECTION</td>
 <td>11</td>
-<td>Корректировка налога</td>
+<td>Корректировка налога.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_SERVICE_FEE</td>
 <td>12</td>
-<td>Удержание комиссии за обслуживание брокерского счёта</td>
+<td>Удержание комиссии за обслуживание брокерского счёта.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_BENEFIT_TAX</td>
 <td>13</td>
-<td>Удержание налога за материальную выгоду</td>
+<td>Удержание налога за материальную выгоду.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_MARGIN_FEE</td>
 <td>14</td>
-<td>Удержание комиссии за непокрытую позицию</td>
+<td>Удержание комиссии за непокрытую позицию.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_BUY</td>
 <td>15</td>
-<td>Покупка ЦБ</td>
+<td>Покупка ЦБ.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_BUY_CARD</td>
 <td>16</td>
-<td>Покупка ЦБ с карты</td>
+<td>Покупка ЦБ с карты.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_INPUT_SECURITIES</td>
 <td>17</td>
-<td>Завод ЦБ</td>
+<td>Завод ЦБ.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_SELL_MARGIN</td>
 <td>18</td>
-<td>Продажа в результате Margin-call</td>
+<td>Продажа в результате Margin-call.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_BROKER_FEE</td>
 <td>19</td>
-<td>Удержание комиссии за операцию</td>
+<td>Удержание комиссии за операцию.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_BUY_MARGIN</td>
 <td>20</td>
-<td>Покупка в результате Margin-call</td>
+<td>Покупка в результате Margin-call.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_DIVIDEND</td>
 <td>21</td>
-<td>Выплата дивидендов</td>
+<td>Выплата дивидендов.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_SELL</td>
 <td>22</td>
-<td>Продажа ЦБ</td>
+<td>Продажа ЦБ.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_COUPON</td>
 <td>23</td>
-<td>Выплата купонов</td>
+<td>Выплата купонов.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_SUCCESS_FEE</td>
 <td>24</td>
-<td>Удержание комиссии SuccessFee</td>
+<td>Удержание комиссии SuccessFee.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_DIVIDEND_TRANSFER</td>
 <td>25</td>
-<td>Передача дивидендного дохода</td>
+<td>Передача дивидендного дохода.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_ACCRUING_VARMARGIN</td>
 <td>26</td>
-<td>Зачисление вариационной маржи</td>
+<td>Зачисление вариационной маржи.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_WRITING_OFF_VARMARGIN</td>
 <td>27</td>
-<td>Списание вариационной маржи</td>
+<td>Списание вариационной маржи.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_DELIVERY_BUY</td>
 <td>28</td>
-<td>Покупка в рамках экспирации фьючерсного контракта</td>
+<td>Покупка в рамках экспирации фьючерсного контракта.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_DELIVERY_SELL</td>
 <td>29</td>
-<td>Продажа в рамках экспирации фьючерсного контракта</td>
+<td>Продажа в рамках экспирации фьючерсного контракта.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_TRACK_MFEE</td>
 <td>30</td>
-<td>Комиссия за управление по счёту автоследования</td>
+<td>Комиссия за управление по счёту автоследования.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_TRACK_PFEE</td>
 <td>31</td>
-<td>Комиссия за результат по счёту автоследования</td>
+<td>Комиссия за результат по счёту автоследования.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_TAX_PROGRESSIVE</td>
 <td>32</td>
-<td>Удержание налога по ставке 15%</td>
+<td>Удержание налога по ставке 15%.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_BOND_TAX_PROGRESSIVE</td>
 <td>33</td>
-<td>Удержание налога по купонам по ставке 15%</td>
+<td>Удержание налога по купонам по ставке 15%.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_DIVIDEND_TAX_PROGRESSIVE</td>
 <td>34</td>
-<td>Удержание налога по дивидендам по ставке 15%</td>
+<td>Удержание налога по дивидендам по ставке 15%.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_BENEFIT_TAX_PROGRESSIVE</td>
 <td>35</td>
-<td>Удержание налога за материальную выгоду по ставке 15%</td>
+<td>Удержание налога за материальную выгоду по ставке 15%.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_TAX_CORRECTION_PROGRESSIVE</td>
 <td>36</td>
-<td>Корректировка налога по ставке 15%</td>
+<td>Корректировка налога по ставке 15%.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_TAX_REPO_PROGRESSIVE</td>
 <td>37</td>
-<td>Удержание налога за возмещение по сделкам РЕПО по ставке 15%</td>
+<td>Удержание налога за возмещение по сделкам РЕПО по ставке 15%.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_TAX_REPO</td>
 <td>38</td>
-<td>Удержание налога за возмещение по сделкам РЕПО</td>
+<td>Удержание налога за возмещение по сделкам РЕПО.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_TAX_REPO_HOLD</td>
 <td>39</td>
-<td>Удержание налога по сделкам РЕПО</td>
+<td>Удержание налога по сделкам РЕПО.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_TAX_REPO_REFUND</td>
 <td>40</td>
-<td>Возврат налога по сделкам РЕПО</td>
+<td>Возврат налога по сделкам РЕПО.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_TAX_REPO_HOLD_PROGRESSIVE</td>
 <td>41</td>
-<td>Удержание налога по сделкам РЕПО по ставке 15%</td>
+<td>Удержание налога по сделкам РЕПО по ставке 15%.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_TAX_REPO_REFUND_PROGRESSIVE</td>
 <td>42</td>
-<td>Возврат налога по сделкам РЕПО по ставке 15%</td>
+<td>Возврат налога по сделкам РЕПО по ставке 15%.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_DIV_EXT</td>
 <td>43</td>
-<td>Выплата дивидендов на карту</td>
+<td>Выплата дивидендов на карту.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_TAX_CORRECTION_COUPON</td>
 <td>44</td>
-<td>Корректировка налога по купонам</td>
+<td>Корректировка налога по купонам.</td>
 </tr>
 <tr>
 <td><!-- range .Values -->
@@ -4669,7 +4669,7 @@
 <tr>
 <td>order_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор торгового поручения</td>
+<td>Идентификатор торгового поручения.</td>
 </tr>
 <tr>
 <td>created_at</td>
@@ -4679,22 +4679,22 @@
 <tr>
 <td>direction</td>
 <td><a href="#orderdirection">OrderDirection</a></td>
-<td>Направление сделки (возможные значения)</td>
+<td>Направление сделки.</td>
 </tr>
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента</td>
+<td>Figi-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>trades</td>
 <td>Массив объектов <a href="#ordertrade">OrderTrade</a></td>
-<td>Массив сделок</td>
+<td>Массив сделок.</td>
 </tr>
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта</td>
+<td>Идентификатор счёта.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4724,12 +4724,12 @@
 <tr>
 <td>price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена, по которой совершена сделка</td>
+<td>Цена одного инструмента, по которой совершена сделка.</td>
 </tr>
 <tr>
 <td>quantity</td>
 <td><a href="#int64">int64</a></td>
-<td>Количество лотов в сделке</td>
+<td>Количество лотов в сделке.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4764,7 +4764,7 @@
 <tr>
 <td>price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена лота.</td>
+<td>Цена одного инструмента. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>direction</td>
@@ -4869,7 +4869,7 @@
 <tr>
 <td>initial_security_price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Начальная цена инструмента заявки.</td>
+<td>Начальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>order_type</td>
@@ -5104,7 +5104,7 @@
 <tr>
 <td>initial_security_price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Начальная цена инструмента. Цена инструмента на момент выставления заявки.</td>
+<td>Начальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>stages</td>
@@ -5154,7 +5154,7 @@
 <tr>
 <td>price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Цена.</td>
+<td>Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента..</td>
 </tr>
 <tr>
 <td>quantity</td>

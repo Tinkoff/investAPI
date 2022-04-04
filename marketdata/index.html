@@ -2232,7 +2232,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса, подробнее: <a href="https://tinkoff.github.io/investAPI/grpc#tracking-id">tracking_id</a></td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="https://tinkoff.github.io/investAPI/grpc#tracking-id">tracking_id</a>.</td>
 </tr>
 <tr>
 <td>candles_subscriptions</td>
@@ -2357,7 +2357,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса, подробнее: <a href="https://tinkoff.github.io/investAPI/grpc#tracking-id">tracking_id</a></td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="https://tinkoff.github.io/investAPI/grpc#tracking-id">tracking_id</a>.</td>
 </tr>
 <tr>
 <td>order_book_subscriptions</td>
@@ -2477,7 +2477,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса, подробнее: <a href="https://tinkoff.github.io/investAPI/grpc#tracking-id">tracking_id</a></td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="https://tinkoff.github.io/investAPI/grpc#tracking-id">tracking_id</a>.</td>
 </tr>
 <tr>
 <td>trade_subscriptions</td>
@@ -2592,7 +2592,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса, подробнее: <a href="https://tinkoff.github.io/investAPI/grpc#tracking-id">tracking_id</a></td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="https://tinkoff.github.io/investAPI/grpc#tracking-id">tracking_id</a>.</td>
 </tr>
 <tr>
 <td>info_subscriptions</td>
@@ -2707,7 +2707,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса, подробнее: <a href="https://tinkoff.github.io/investAPI/grpc#tracking-id">tracking_id</a></td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="https://tinkoff.github.io/investAPI/grpc#tracking-id">tracking_id</a>.</td>
 </tr>
 <tr>
 <td>last_price_subscriptions</td>
@@ -2777,22 +2777,22 @@
 <tr>
 <td>open</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена открытия за 1 лот.</td>
+<td>Цена открытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>high</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Максимальная цена за 1 лот.</td>
+<td>Максимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>low</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Минимальная цена за 1 лот.</td>
+<td>Минимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>close</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена закрытия за 1 лот.</td>
+<td>Цена закрытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>volume</td>
@@ -2802,7 +2802,7 @@
 <tr>
 <td>time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Время свечи в часовом поясе UTC.</td>
+<td>Время начала интервала свечи в часовом поясе UTC.</td>
 </tr>
 <tr>
 <td>last_trade_ts</td>
@@ -2857,17 +2857,17 @@
 <tr>
 <td>time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Время стакана в часовом поясе UTC.</td>
+<td>Время формирования стакана в часовом поясе UTC по времени биржи.</td>
 </tr>
 <tr>
 <td>limit_up</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Верхний лимит цены инструмента.</td>
+<td>Верхний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>limit_down</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Нижний лимит цены инструмента.</td>
+<td>Нижний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2892,7 +2892,7 @@
 <tr>
 <td>price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена за 1 лот.</td>
+<td>Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>quantity</td>
@@ -2932,7 +2932,7 @@
 <tr>
 <td>price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена за 1 лот.</td>
+<td>Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>quantity</td>
@@ -2982,12 +2982,12 @@
 <tr>
 <td>limit_order_available_flag</td>
 <td><a href="#bool">bool</a></td>
-<td>Признак доступности выставления лимитной заявки по инструменту</td>
+<td>Признак доступности выставления лимитной заявки по инструменту.</td>
 </tr>
 <tr>
 <td>market_order_available_flag</td>
 <td><a href="#bool">bool</a></td>
-<td>Признак доступности выставления рыночной заявки по инструменту</td>
+<td>Признак доступности выставления рыночной заявки по инструменту.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3012,7 +3012,7 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента</td>
+<td>Figi-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>from</td>
@@ -3077,27 +3077,27 @@
 <tr>
 <td>open</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена открытия за 1 инструмент.</td>
+<td>Цена открытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>high</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Максимальная цена за 1 инструмент.</td>
+<td>Максимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>low</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Минимальная цена за 1 инструмент.</td>
+<td>Минимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>close</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена закрытия за 1 инструмент.</td>
+<td>Цена закрытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>volume</td>
 <td><a href="#int64">int64</a></td>
-<td>Объём торгов в штуках.</td>
+<td>Объём торгов в лотах.</td>
 </tr>
 <tr>
 <td>time</td>
@@ -3187,7 +3187,7 @@
 <tr>
 <td>price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Последняя цена за один инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Последняя цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>time</td>
@@ -3267,22 +3267,22 @@
 <tr>
 <td>last_price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена последней сделки.</td>
+<td>Цена последней сделки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>close_price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена закрытия.</td>
+<td>Цена закрытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>limit_up</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Верхний лимит цены.</td>
+<td>Верхний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>limit_down</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Нижний лимит цены.</td>
+<td>Нижний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3342,12 +3342,12 @@
 <tr>
 <td>limit_order_available_flag</td>
 <td><a href="#bool">bool</a></td>
-<td>Признак доступности выставления лимитной заявки по инструменту</td>
+<td>Признак доступности выставления лимитной заявки по инструменту.</td>
 </tr>
 <tr>
 <td>market_order_available_flag</td>
 <td><a href="#bool">bool</a></td>
-<td>Признак доступности выставления рыночной заявки по инструменту</td>
+<td>Признак доступности выставления рыночной заявки по инструменту.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3505,7 +3505,7 @@
 <tr>
 <td>SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID</td>
 <td>3</td>
-<td>Некорректный статус подписки, список возможных значений: <a href="https://tinkoff.github.io/investAPI/marketdata#subscriptionaction">SubscriptionAction</a></td>
+<td>Некорректный статус подписки, список возможных значений: <a href="https://tinkoff.github.io/investAPI/marketdata#subscriptionaction">SubscriptionAction</a>.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_STATUS_DEPTH_IS_INVALID</td>
@@ -3515,12 +3515,12 @@
 <tr>
 <td>SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID</td>
 <td>5</td>
-<td>Некорректный интервал свечей, список возможных значений: <a href="https://tinkoff.github.io/investAPI/marketdata#subscriptioninterval">SubscriptionInterval</a></td>
+<td>Некорректный интервал свечей, список возможных значений: <a href="https://tinkoff.github.io/investAPI/marketdata#subscriptioninterval">SubscriptionInterval</a>.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED</td>
 <td>6</td>
-<td>Превышен лимит подписок в рамках стрима, подробнее: <a href="https://tinkoff.github.io/investAPI/limits/">Лимитная политика</a></td>
+<td>Превышен лимит подписок в рамках стрима, подробнее: <a href="https://tinkoff.github.io/investAPI/limits/">Лимитная политика</a>.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_STATUS_INTERNAL_ERROR</td>

@@ -44,6 +44,14 @@
 
 - Тело ответа — [GetTradingStatusResponse](#gettradingstatusresponse)
 
+
+#### GetLastTrades
+Метод запроса последних обезличенных сделок по инструменту.
+
+- Тело запроса — [GetLastTradesRequest](#getlasttradesrequest)
+
+- Тело ответа — [GetLastTradesResponse](#getlasttradesresponse)
+
  <!-- range .Methods -->
 
 
@@ -549,6 +557,30 @@ subscribeCandles | Изменения статуса подписки на св�
 | trading_status |  [SecurityTradingStatus](#securitytradingstatus) | Статус торговли инструментом. |
 | limit_order_available_flag |  [bool](#bool) | Признак доступности выставления лимитной заявки по инструменту |
 | market_order_available_flag |  [bool](#bool) | Признак доступности выставления рыночной заявки по инструменту |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetLastTradesRequest
+Запрос последних обезличенных сделок по инструменту.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| figi |  [string](#string) | Figi-идентификатор инструмента |
+| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода в часовом поясе UTC. |
+| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода в часовом поясе UTC. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetLastTradesResponse
+Последние обезличенные сделки по инструменту.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| trades | Массив объектов [Trade](#trade) | Массив сделок |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->

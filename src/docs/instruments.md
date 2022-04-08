@@ -142,6 +142,22 @@
 
 - Тело ответа — [GetDividendsResponse](#getdividendsresponse)
 
+
+#### GetAssetBy
+Метод получения актива по его идентификатору.
+
+- Тело запроса — [AssetRequest](#assetrequest)
+
+- Тело ответа — [AssetResponse](#assetresponse)
+
+
+#### GetAssets
+Метод получения списка активов.
+
+- Тело запроса — [AssetsRequest](#assetsrequest)
+
+- Тело ответа — [AssetsResponse](#assetsresponse)
+
  <!-- range .Methods -->
  <!-- range .Services -->
 
@@ -428,6 +444,7 @@
 | amortization_flag |  [bool](#bool) | Признак облигации с амортизацией долга. |
 | min_price_increment |  [Quotation](#quotation) | Шаг цены. |
 | api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
+| uid |  [string](#string) | Уникальный идентификатор инструмента. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -463,6 +480,7 @@
 | iso_currency_name |  [string](#string) | Строковый ISO-код валюты. |
 | min_price_increment |  [Quotation](#quotation) | Шаг цены. |
 | api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
+| uid |  [string](#string) | Уникальный идентификатор инструмента. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -502,6 +520,7 @@
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
 | min_price_increment |  [Quotation](#quotation) | Шаг цены. |
 | api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
+| uid |  [string](#string) | Уникальный идентификатор инструмента. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -542,6 +561,7 @@
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
 | min_price_increment |  [Quotation](#quotation) | Шаг цены. |
 | api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
+| uid |  [string](#string) | Уникальный идентификатор инструмента. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -582,6 +602,7 @@
 | share_type |  [ShareType](#sharetype) | Тип акции. Возможные значения: [ShareType](https://tinkoff.github.io/investAPI/instruments#sharetype) |
 | min_price_increment |  [Quotation](#quotation) | Шаг цены. |
 | api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
+| uid |  [string](#string) | Уникальный идентификатор инструмента. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -690,6 +711,7 @@
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
 | min_price_increment |  [Quotation](#quotation) | Шаг цены. |
 | api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
+| uid |  [string](#string) | Уникальный идентификатор инструмента. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -736,6 +758,293 @@
 | created_at |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время создания записи в часовом поясе UTC. |
  <!-- end Fields -->
  <!-- end HasFields -->
+
+
+#### AssetRequest
+Запрос актива по идентификатору.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| id |  [string](#string) | uid-идентификатор актива. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### AssetResponse
+Данные по активу.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| asset |  [AssetFull](#assetfull) | Актив. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### AssetsRequest
+Запрос списка активов.
+
+ <!-- end HasFields -->
+
+
+#### AssetsResponse
+Список активов.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| assets | Массив объектов [Asset](#asset) | Активы. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### AssetFull
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| uid |  [string](#string) | Уникальный идентификатор актива. |
+| type |  [AssetType](#assettype) | Тип актива. |
+| name |  [string](#string) | Наименование актива. |
+| name_brief |  [string](#string) | Короткое наименование актива. |
+| description |  [string](#string) | Описание актива. |
+| deleted_at |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время удаления актива. |
+| required_tests | Массив объектов [string](#string) | Тестирование клиентов. |
+| currency |  [AssetCurrency](#assetcurrency) | Валюта. Обязательно и заполняется только для type = "ASSET_TYPE_CURRENCY". |
+| security |  [AssetSecurity](#assetsecurity) | Ценная бумага. Обязательно и заполняется только для type = "ASSET_TYPE_SECURITY". |
+| gos_reg_code |  [string](#string) | Номер государственной регистрации. |
+| cfi |  [string](#string) | Код CFI. |
+| code_nsd |  [string](#string) | Код НРД инструмента. |
+| status |  [string](#string) | Статус актива. |
+| brand |  [Brand](#brand) | Бренд. |
+| updated_at |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время последнего обновления записи. |
+| br_code |  [string](#string) | Код типа ц.б. по классификации Банка России. |
+| br_code_name |  [string](#string) | Наименование кода типа ц.б. по классификации Банка России. |
+| instruments | Массив объектов [AssetInstrument](#assetinstrument) | Массив идентификаторов инструментов. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### Asset
+Информация об активе.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| uid |  [string](#string) | Уникальный идентификатор актива. |
+| type |  [AssetType](#assettype) | Тип актива. |
+| name |  [string](#string) | Наименование актива. |
+| instruments | Массив объектов [AssetInstrument](#assetinstrument) | Массив идентификаторов инструментов. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### AssetCurrency
+Валюта.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| base_currency |  [string](#string) | ISO-код валюты. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### AssetSecurity
+Ценная бумага.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| isin |  [string](#string) | ISIN-идентификатор ценной бумаги. |
+| type |  [string](#string) | Тип ценной бумаги. |
+| share |  [AssetShare](#assetshare) | Акция. Заполняется только для акций (тип актива asset.type = "ASSET_TYPE_SECURITY" и security.type = share). |
+| bond |  [AssetBond](#assetbond) | Облигация. Заполняется только для облигаций (тип актива asset.type = "ASSET_TYPE_SECURITY" и security.type = bond). |
+| sp |  [AssetStructuredProduct](#assetstructuredproduct) | Структурная нота. Заполняется только для структурных продуктов (тип актива asset.type = "ASSET_TYPE_SECURITY" и security.type = sp). |
+| etf |  [AssetEtf](#assetetf) | Фонд. Заполняется только для фондов (тип актива asset.type = "ASSET_TYPE_SECURITY" и security.type = etf). |
+| clearing_certificate |  [AssetClearingCertificate](#assetclearingcertificate) | Клиринговый сертификат участия. Заполняется только для клиринговых сертификатов (тип актива asset.type = "ASSET_TYPE_SECURITY" и security.type = clearing_certificate). |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### AssetShare
+Акция.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| type |  [ShareType](#sharetype) | Тип акции. |
+| issue_size |  [Quotation](#quotation) | Объем выпуска (шт.). |
+| nominal |  [Quotation](#quotation) | Номинал. |
+| nominal_currency |  [string](#string) | Валюта номинала. |
+| primary_index |  [string](#string) | Индекс (Bloomberg). |
+| dividend_rate |  [Quotation](#quotation) | Ставка дивиденда (для привилегированных акций). |
+| preferred_share_type |  [string](#string) | Тип привилегированных акций. |
+| ipo_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата IPO. |
+| registry_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата регистрации. |
+| div_yield_flag |  [bool](#bool) | Признак наличия дивидендной доходности. |
+| issue_kind |  [string](#string) | Форма выпуска ФИ. |
+| placement_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата размещения акции. |
+| repres_isin |  [string](#string) | ISIN базового актива. |
+| issue_size_plan |  [Quotation](#quotation) | Объявленное количество шт. |
+| total_float |  [Quotation](#quotation) | Количество акций в свободном обращении. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### AssetBond
+Облигация.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| current_nominal |  [Quotation](#quotation) | Текущий номинал. |
+| borrow_name |  [string](#string) | Наименование заемщика. |
+| issue_size |  [Quotation](#quotation) | Объем эмиссии облигации (стоимость). |
+| nominal |  [Quotation](#quotation) | Номинал облигации. |
+| nominal_currency |  [string](#string) | Валюта номинала. |
+| issue_kind |  [string](#string) | Форма выпуска облигации. |
+| interest_kind |  [string](#string) | Форма дохода облигации. |
+| coupon_quantity_per_year |  [int32](#int32) | Количество выплат в год. |
+| indexed_nominal_flag |  [bool](#bool) | Признак облигации с индексируемым номиналом. |
+| subordinated_flag |  [bool](#bool) | Признак субординированной облигации. |
+| collateral_flag |  [bool](#bool) | Признак обеспеченной облигации. |
+| tax_free_flag |  [bool](#bool) | Признак показывает, что купоны облигации не облагаются налогом (для mass market). |
+| amortization_flag |  [bool](#bool) | Признак облигации с амортизацией долга. |
+| floating_coupon_flag |  [bool](#bool) | Признак облигации с плавающим купоном. |
+| perpetual_flag |  [bool](#bool) | Признак бессрочной облигации. |
+| maturity_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата погашения облигации. |
+| return_condition |  [string](#string) | Описание и условия получения дополнительного дохода. |
+| state_reg_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата выпуска облигации. |
+| placement_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата размещения облигации. |
+| placement_price |  [Quotation](#quotation) | Цена размещения облигации. |
+| issue_size_plan |  [Quotation](#quotation) | Объявленное количество шт. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### AssetStructuredProduct
+Структурная нота.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| borrow_name |  [string](#string) | Наименование заемщика. |
+| nominal |  [Quotation](#quotation) | Номинал. |
+| nominal_currency |  [string](#string) | Валюта номинала. |
+| type |  [StructuredProductType](#structuredproducttype) | Тип структурной ноты. |
+| logic_portfolio |  [string](#string) | Стратегия портфеля. |
+| asset_type |  [AssetType](#assettype) | Тип базового актива. |
+| basic_asset |  [string](#string) | Вид базового актива в зависимости от типа базового актива. |
+| safety_barrier |  [Quotation](#quotation) | Барьер сохранности (в процентах). |
+| maturity_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата погашения. |
+| issue_size_plan |  [Quotation](#quotation) | Объявленное количество шт. |
+| issue_size |  [Quotation](#quotation) | Объем размещения. |
+| placement_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата размещения ноты. |
+| issue_kind |  [string](#string) | Форма выпуска. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### AssetEtf
+Фонд.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| total_expense |  [Quotation](#quotation) | Суммарные расходы фонда (в %). |
+| hurdle_rate |  [Quotation](#quotation) | Барьерная ставка доходности после которой фонд имеет право на perfomance fee (в процентах). |
+| performance_fee |  [Quotation](#quotation) | Комиссия за успешные результаты фонда (в процентах). |
+| fixed_commission |  [Quotation](#quotation) | Фиксированная комиссия за управление (в процентах). |
+| payment_type |  [string](#string) | Тип распределения доходов от выплат по бумагам. |
+| watermark_flag |  [bool](#bool) | Признак необходимости выхода фонда в плюс для получения комиссии. |
+| buy_premium |  [Quotation](#quotation) | Премия (надбавка к цене) при покупке доли в фонде (в процентах). |
+| sell_discount |  [Quotation](#quotation) | Ставка дисконта (вычет из цены) при продаже доли в фонде (в процентах). |
+| rebalancing_flag |  [bool](#bool) | Признак ребалансируемости портфеля фонда. |
+| rebalancing_freq |  [string](#string) | Периодичность ребалансировки. |
+| management_type |  [string](#string) | Тип управления. |
+| primary_index |  [string](#string) | Индекс, который реплицирует (старается копировать) фонд. |
+| focus_type |  [string](#string) | База ETF. |
+| leveraged_flag |  [bool](#bool) | Признак использования заемных активов (плечо). |
+| num_share |  [Quotation](#quotation) | Количество акций в обращении. |
+| ucits_flag |  [bool](#bool) | Признак обязательства по отчетности перед регулятором. |
+| released_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата выпуска. |
+| description |  [string](#string) | Описание фонда. |
+| primary_index_description |  [string](#string) | Описание индекса, за которым следует фонд. |
+| primary_index_company |  [string](#string) | Основные компании, в которые вкладывается фонд. |
+| index_recovery_period |  [Quotation](#quotation) | Срок восстановления индекса (после просадки). |
+| inav_code |  [string](#string) | IVAV-код. |
+| div_yield_flag |  [bool](#bool) | Признак наличия дивидендной доходности. |
+| expense_commission |  [Quotation](#quotation) | Комиссия на покрытие расходов фонда (в процентах). |
+| primary_index_tracking_error |  [Quotation](#quotation) | Ошибка следования за индексом (в процентах). |
+| rebalancing_plan |  [string](#string) | Плановая ребалансировка портфеля. |
+| tax_rate |  [string](#string) | Ставки налогообложения дивидендов и купонов. |
+| rebalancing_dates | Массив объектов [google.protobuf.Timestamp](#googleprotobuftimestamp) | Даты ребалансировок. |
+| issue_kind |  [string](#string) | Форма выпуска. |
+| nominal |  [Quotation](#quotation) | Номинал. |
+| nominal_currency |  [string](#string) | Валюта номинала. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### AssetClearingCertificate
+Клиринговый сертификат участия.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| nominal |  [Quotation](#quotation) | Номинал. |
+| nominal_currency |  [string](#string) | Валюта номинала. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### Brand
+Бренд.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| uid |  [string](#string) | uid идентификатор бренда. |
+| name |  [string](#string) | Наименование бренда. |
+| description |  [string](#string) | Описание. |
+| info |  [string](#string) | Информация о бренде. |
+| company |  [string](#string) | Компания. |
+| sector |  [string](#string) | Сектор. |
+| country_of_risk |  [string](#string) | Код страны риска. |
+| country_of_risk_name |  [string](#string) | Наименование страны риска. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### AssetInstrument
+Идентификаторы инструмента.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| uid |  [string](#string) | uid идентификатор инструмента. |
+| figi |  [string](#string) | figi идентификатор инструмента. |
+| instrument_type |  [string](#string) | Тип инструмента. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
+| links | Массив объектов [InstrumentLink](#instrumentlink) | Массив связанных инструментов. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### InstrumentLink
+Связь с другим инструментом.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| type |  [string](#string) | Тип связи. |
+| instrument_uid |  [string](#string) | uid идентификатор связанного инструмента. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
  <!-- end messages -->
 
 ### Enums
@@ -766,6 +1075,7 @@
 | INSTRUMENT_ID_UNSPECIFIED | 0 | Значение не определено. |
 | INSTRUMENT_ID_TYPE_FIGI | 1 | Figi. |
 | INSTRUMENT_ID_TYPE_TICKER | 2 | Ticker. |
+| INSTRUMENT_ID_TYPE_UID | 3 | Уникальный идентификатор. |
 
 
 
@@ -796,6 +1106,32 @@
 | SHARE_TYPE_NY_REG_SHRS | 6 | Акции из реестра Нью-Йорка |
 | SHARE_TYPE_CLOSED_END_FUND | 7 | Закрытый инвестиционный фонд |
 | SHARE_TYPE_REIT | 8 | Траст недвижимости |
+
+
+
+
+#### AssetType
+Тип актива.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ASSET_TYPE_UNSPECIFIED | 0 | Тип не определён. |
+| ASSET_TYPE_CURRENCY | 1 | Валюта. |
+| ASSET_TYPE_COMMODITY | 2 | Товар. |
+| ASSET_TYPE_INDEX | 3 | Индекс. |
+| ASSET_TYPE_SECURITY | 4 | Ценная бумага. |
+
+
+
+
+#### StructuredProductType
+Тип структурной ноты.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SP_TYPE_UNSPECIFIED | 0 | Тип не определён. |
+| SP_TYPE_DELIVERABLE | 1 | Поставочный. |
+| SP_TYPE_NON_DELIVERABLE | 2 | Беспоставочный. |
 
 
  <!-- range .Enums -->

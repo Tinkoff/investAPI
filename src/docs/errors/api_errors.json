@@ -360,6 +360,11 @@
     "type": "NOT_FOUND",
     "description": "Отсутствует источник данных по стаканам."
   },
+  "50009": {
+    "message": "asset not found",
+    "type": "NOT_FOUND",
+    "description": "Актив не найден.</br>Укажите корректный идентификатор актива."
+  },
   "70001": {
     "message": "internal error",
     "type": "INTERNAL",

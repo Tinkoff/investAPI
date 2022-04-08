@@ -14,7 +14,7 @@
     
     
       
-        <title>Коды ошибок - TINKOFF INVEST API</title>
+        <title>Points - TINKOFF INVEST API</title>
       
     
     
@@ -64,11 +64,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#tinkoff-invest-api" class="md-skip">
-          Перейти к содержанию
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -95,7 +90,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Коды ошибок
+              Points
             
           </span>
         </div>
@@ -959,21 +954,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../errors/" class="md-nav__link">
         Коды ошибок
       </a>
-      
     </li>
   
 
@@ -985,517 +970,119 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-    
-  
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Tinkoff/investAPI/edit/master/docs/errors.md" title="Редактировать страницу" class="md-content__button md-icon">
+                  <a href="https://github.com/Tinkoff/investAPI/edit/master/docs/points.md" title="Редактировать страницу" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="tinkoff-invest-api">Ошибки TINKOFF INVEST API</h1>
-<table>
+                  <h1>Points</h1>
+                
+                <table>
 <thead>
 <tr>
-<th>Код ошибки</th>
-<th>Тип ошибки</th>
-<th>Текст ошибки</th>
-<th>Причины возникновения и </br> рекомендации по устранению</th>
+<th align="left">Сервис</th>
+<th align="left">Метод</th>
+<th align="left">Параметры</th>
+<th align="left">share/etf/currency</th>
+<th align="left">bond/futures</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>30001</td>
-<td>INVALID_ARGUMENT</td>
-<td>missing parameter: 'from'</td>
-<td>Входной параметр <em>from</em> является обязательным. </br> Укажите корректный параметр <em>from</em>.</td>
+<td align="left">Instruments</td>
+<td align="left">Все методы сервиса</td>
+<td align="left">Все параметры</td>
+<td align="left">В валюте расчётов</td>
+<td align="left">В валюте расчётов</td>
 </tr>
 <tr>
-<td>30002</td>
-<td>INVALID_ARGUMENT</td>
-<td>the required period should not exceed 7 days</td>
-<td>Запрошенный период не может превышать 7 дней. </br> Укажите корректный период.</td>
+<td align="left">MarketData</td>
+<td align="left">Все методы сервиса</td>
+<td align="left">Все параметры</td>
+<td align="left">В валюте расчётов</td>
+<td align="left">В пунктах цены</td>
 </tr>
 <tr>
-<td>30003</td>
-<td>INVALID_ARGUMENT</td>
-<td>'from' can't be less than the current date</td>
-<td>Входной параметр <em>from</em> не может быть меньше текущей даты. </br> Укажите корректный параметр <em>from</em>.</td>
+<td align="left">Operations</td>
+<td align="left">Все методы сервиса</td>
+<td align="left">Все параметры</td>
+<td align="left">В валюте расчётов</td>
+<td align="left">В валюте расчётов</td>
 </tr>
 <tr>
-<td>30004</td>
-<td>INVALID_ARGUMENT</td>
-<td>missing parameter: 'to'</td>
-<td>Входной параметр <em>to</em> является обязательным. </br> Укажите корректный параметр <em>to</em>.</td>
+<td align="left">Orders</td>
+<td align="left">PostOrder</td>
+<td align="left">Входные параметры</td>
+<td align="left">В валюте расчётов</td>
+<td align="left">В зависимости от price_type</td>
 </tr>
 <tr>
-<td>30005</td>
-<td>INVALID_ARGUMENT</td>
-<td>'id_type' is invalid</td>
-<td>Входной параметр <em>id_type</em> имеет некорректное значение.</br>Список доступных значений: <a href="https://tinkoff.github.io/investAPI/instruments#instrumentidtype"><em>id_type</em></a>.</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">Выходные параметры</td>
+<td align="left">В валюте расчётов</td>
+<td align="left">В валюте расчётов</td>
 </tr>
 <tr>
-<td>30006</td>
-<td>INVALID_ARGUMENT</td>
-<td>missing parameter: 'id_type'</td>
-<td>Входной параметр <em>id_type</em> является обязательным. </br> Укажите корректный параметр <em>id_type</em>.</td>
+<td align="left"></td>
+<td align="left">Прочие методы сервиса</td>
+<td align="left">Все параметры</td>
+<td align="left">В валюте расчётов</td>
+<td align="left">В валюте расчётов</td>
 </tr>
 <tr>
-<td>30007</td>
-<td>INVALID_ARGUMENT</td>
-<td>missing parameter: 'id'</td>
-<td>Входной параметр <em>id</em> является обязательным. </br> Укажите корректный параметр <em>id</em>.</td>
+<td align="left">StopOrders</td>
+<td align="left">PostStopOrder</td>
+<td align="left">Входные параметры</td>
+<td align="left">В валюте расчётов</td>
+<td align="left">В зависимости от price_type</td>
 </tr>
 <tr>
-<td>30008</td>
-<td>INVALID_ARGUMENT</td>
-<td>missing parameter: 'figi'</td>
-<td>Входной параметр <em>figi</em> является обязательным. </br> Укажите корректный параметр <em>figi</em>.</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">Выходные параметры</td>
+<td align="left">В валюте расчётов</td>
+<td align="left">В валюте расчётов</td>
 </tr>
 <tr>
-<td>30009</td>
-<td>INVALID_ARGUMENT</td>
-<td>'from' is invalid</td>
-<td>Входной параметр <em>from</em> имеет некорректное значение.</br>Укажите корректный параметр <em>from</em>.</td>
+<td align="left"></td>
+<td align="left">Прочие методы сервиса</td>
+<td align="left">Все параметры</td>
+<td align="left">В валюте расчётов</td>
+<td align="left">В валюте расчётов</td>
 </tr>
 <tr>
-<td>30010</td>
-<td>INVALID_ARGUMENT</td>
-<td>'to' is invalid</td>
-<td>Входной параметр <em>to</em> имеет некорректное значение.</br>Укажите корректный параметр <em>to</em>.</td>
+<td align="left">Operations</td>
+<td align="left">Все методы сервиса</td>
+<td align="left">Все параметры</td>
+<td align="left">В валюте расчётов</td>
+<td align="left">В валюте расчётов</td>
 </tr>
 <tr>
-<td>30011</td>
-<td>INVALID_ARGUMENT</td>
-<td>interval is invalid</td>
-<td>Входной параметр <em>interval</em> имеет некорректное значение.</br>Список доступных значений: <a href="https://tinkoff.github.io/investAPI/marketdata#subscriptioninterval"><em>interval</em></a>.</td>
+<td align="left">Sandbox</td>
+<td align="left">PostSandboxOrder</td>
+<td align="left">Входные параметры</td>
+<td align="left">В валюте расчётов</td>
+<td align="left">В зависимости от price_type</td>
 </tr>
 <tr>
-<td>30012</td>
-<td>INVALID_ARGUMENT</td>
-<td>'to' can't be less than 'from'</td>
-<td>Входной параметр <em>to</em> не может быть меньше параметра <em>from</em>. </br>Укажите корректные параметры <em>from</em> и <em>to</em>.</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">Выходные параметры</td>
+<td align="left">В валюте расчётов</td>
+<td align="left">В валюте расчётов</td>
 </tr>
 <tr>
-<td>30013</td>
-<td>INVALID_ARGUMENT</td>
-<td>'class_code' require for 'id_type' = 'ticker'</td>
-<td>Входной параметр <em>class_code</em> не может быть пустым при поиске по тикеру. </br>Укажите корректный параметр <em>class_code</em>. </br>Подробнее: <a href="https://tinkoff.github.io/investAPI/faq_identification/">Идентификация инструментов</a>.</td>
-</tr>
-<tr>
-<td>30014</td>
-<td>INVALID_ARGUMENT</td>
-<td>the maximum request period for the given candle interval has been exceeded</td>
-<td>Превышен максимальный период запроса для данного интервала свечи. </br>Укажите корректный интервал.</td>
-</tr>
-<tr>
-<td>30015</td>
-<td>INVALID_ARGUMENT</td>
-<td>missing parameter: 'quantity'</td>
-<td>Входной параметр <em>quantity</em> является обязательным. </br> Укажите корректный параметр <em>quantity</em>.</td>
-</tr>
-<tr>
-<td>30016</td>
-<td>INVALID_ARGUMENT</td>
-<td>'quantity' is invalid</td>
-<td>Входной параметр <em>quantity</em> имеет некорректное значение.</br>Укажите корректный параметр <em>quantity</em>.</td>
-</tr>
-<tr>
-<td>30017</td>
-<td>INVALID_ARGUMENT</td>
-<td>missing parameter: 'price'</td>
-<td>Входной параметр <em>price</em> является обязательным. </br> Укажите корректный параметр <em>price</em>.</td>
-</tr>
-<tr>
-<td>30018</td>
-<td>INVALID_ARGUMENT</td>
-<td>price is invalid</td>
-<td>Входной параметр <em>price</em> имеет некорректное значение.</br>Укажите корректный параметр <em>price</em>.</td>
-</tr>
-<tr>
-<td>30019</td>
-<td>INVALID_ARGUMENT</td>
-<td>missing parameter: 'direction'</td>
-<td>Входной параметр <em>direction</em> является обязательным. </br> Укажите корректный параметр <em>direction</em>.</td>
-</tr>
-<tr>
-<td>30020</td>
-<td>INVALID_ARGUMENT</td>
-<td>'direction' is invalid</td>
-<td>Входной параметр <em>direction</em> имеет некорректное значение.</br>Список доступных значений: <a href="https://tinkoff.github.io/investAPI/stoporders/#stoporderdirection"><em>direction</em></a>.</td>
-</tr>
-<tr>
-<td>30021</td>
-<td>INVALID_ARGUMENT</td>
-<td>missing parameter: 'account_id'</td>
-<td>Входной параметр <em>account_id</em> является обязательным. </br> Укажите корректный параметр <em>account_id</em>.</td>
-</tr>
-<tr>
-<td>30025</td>
-<td>INVALID_ARGUMENT</td>
-<td>missing parameter: 'order_type'</td>
-<td>Входной параметр <em>order_type</em> является обязательным. </br> Укажите корректный параметр <em>order_type</em>.</td>
-</tr>
-<tr>
-<td>30027</td>
-<td>INVALID_ARGUMENT</td>
-<td>missing parameter: 'order_id'</td>
-<td>Входной параметр <em>order_id</em> является обязательным. </br> Укажите корректный параметр <em>order_id</em>.</td>
-</tr>
-<tr>
-<td>30031</td>
-<td>INVALID_ARGUMENT</td>
-<td>missing parameter: 'depth'</td>
-<td>Входной параметр <em>depth</em> является обязательным. </br>Укажите корректный параметр <em>depth</em>.</td>
-</tr>
-<tr>
-<td>30032</td>
-<td>INVALID_ARGUMENT</td>
-<td>depth is invalid</td>
-<td>Входной параметр <em>depth</em> имеет некорректное значение.</br>Укажите корректный параметр <em>depth</em>.</td>
-</tr>
-<tr>
-<td>30033</td>
-<td>INVALID_ARGUMENT</td>
-<td>missing parameter: 'trade_clearing_account' or 'class_code'</td>
-<td>Параметр <em>trade_clearing_account</em> или <em>class_code</em> не может быть пустым.</td>
-</tr>
-<tr>
-<td>30034</td>
-<td>INVALID_ARGUMENT</td>
-<td>not enough balance</td>
-<td>Недостаточно средств для совершения сделки (ошибка песочницы). </br>Пополните баланс нужной валюты.</td>
-</tr>
-<tr>
-<td>30036</td>
-<td>INVALID_ARGUMENT</td>
-<td>missing parameter: 'stop_price'</td>
-<td>Входной параметр <em>stop_price</em> является обязательным. </br>Укажите корректный параметр <em>stop_price</em>.</td>
-</tr>
-<tr>
-<td>30037</td>
-<td>INVALID_ARGUMENT</td>
-<td>missing parameter: 'stop_order_type'</td>
-<td>Входной параметр <em>stop_order_type</em> является обязательным. </br>Укажите корректный параметр <em>stop_order_type</em>.</td>
-</tr>
-<tr>
-<td>30038</td>
-<td>INVALID_ARGUMENT</td>
-<td>'stop_order_type' is invalid</td>
-<td>Входной параметр <em>stop_order_type</em> имеет некорректное значение.</br>Список доступных значений: <a href="https://tinkoff.github.io/investAPI/stoporders/#stopordertype"><em>stop_order_type</em></a>.</td>
-</tr>
-<tr>
-<td>30040</td>
-<td>INVALID_ARGUMENT</td>
-<td>'expire_date' is invalid</td>
-<td>Входной параметр <em>expire_date</em> имеет некорректное значение.</br>Укажите корректный параметр <em>expire_date</em>.</td>
-</tr>
-<tr>
-<td>30041</td>
-<td>INVALID_ARGUMENT</td>
-<td>the method is available only for futures</td>
-<td>Метод предназначен только для работы с фьючерсами. </br>Передайте во входные параметры метода идентификатор фьючерса.</td>
-</tr>
-<tr>
-<td>30042</td>
-<td>INVALID_ARGUMENT</td>
-<td>not enough assets for a margin trade</td>
-<td>Недостаточно активов для маржинальной сделки. </br>Проверьте маржинальные показатели счёта.</td>
-</tr>
-<tr>
-<td>30043</td>
-<td>INVALID_ARGUMENT</td>
-<td>missing parameter: 'expiration_type'</td>
-<td>Входной параметр <em>expiration_type</em> является обязательным. </br> Укажите корректный параметр <em>expiration_type</em>.</td>
-</tr>
-<tr>
-<td>30044</td>
-<td>INVALID_ARGUMENT</td>
-<td>'expiration_type' is invalid</td>
-<td>Входной параметр <em>expiration_type</em> имеет некорректное значение.</br>Список доступных значений: <a href="https://tinkoff.github.io/investAPI/stoporders/#stoporderexpirationtype"><em>expiration_type</em></a>.</td>
-</tr>
-<tr>
-<td>30045</td>
-<td>INVALID_ARGUMENT</td>
-<td>missing parameter: 'ticker'</td>
-<td>Входной параметр <em>ticker</em> является обязательным. </br>Укажите корректный параметр <em>ticker</em>.</td>
-</tr>
-<tr>
-<td>30047</td>
-<td>INVALID_ARGUMENT</td>
-<td>price currency does not match the settlement currency</td>
-<td>Валюта цены не совпадает с валютой расчётов по инструменту. </br>Укажите корректную валюту цены.</td>
-</tr>
-<tr>
-<td>30048</td>
-<td>INVALID_ARGUMENT</td>
-<td>instrument type is not bond</td>
-<td>Метод предназначен только для запроса информации по облигации. </br>Передайте во входные параметры метода идентификатор облигации.</td>
-</tr>
-<tr>
-<td>30049</td>
-<td>INVALID_ARGUMENT</td>
-<td>post order error: %s</td>
-<td>Ошибка метода выставления торгового поручения. </br>Подробнее в тексте ошибки.</td>
-</tr>
-<tr>
-<td>30050</td>
-<td>INVALID_ARGUMENT</td>
-<td>'instrument_status' is invalid</td>
-<td>Входной параметр <em>instrument_status</em> имеет некорректное значение.</br>Список доступных значений: <a href="https://tinkoff.github.io/investAPI/instruments#instrumentstatus"><em>instrument_status</em></a>.</td>
-</tr>
-<tr>
-<td>30051</td>
-<td>INVALID_ARGUMENT</td>
-<td>account margin status is disabled</td>
-<td>Для данного договора недоступна маржинальная торговля.</td>
-</tr>
-<tr>
-<td>30052</td>
-<td>INVALID_ARGUMENT</td>
-<td>instrument forbidden for trading by API</td>
-<td>Для данного инструмента недоступна торговля через API.</td>
-</tr>
-<tr>
-<td>30053</td>
-<td>INVALID_ARGUMENT</td>
-<td>post stop_order error: %s</td>
-<td>Ошибка метода выставления стоп-заявки. </br>Подробнее в тексте ошибки.</td>
-</tr>
-<tr>
-<td>30054</td>
-<td>INVALID_ARGUMENT</td>
-<td>instrument type is not a share or etf</td>
-<td>Тип инструмента не инвестиционный фонд или акция</td>
-</tr>
-<tr>
-<td>30055</td>
-<td>INVALID_ARGUMENT</td>
-<td>order_id cannot be longer than 36 characters</td>
-<td>order_id не может быть длиннее 36 символов</td>
-</tr>
-<tr>
-<td>30056</td>
-<td>INVALID_ARGUMENT</td>
-<td>stop order settlement currency is not supported</td>
-<td>Валюта выставления стоп-заявки не поддерживается</td>
-</tr>
-<tr>
-<td>30057</td>
-<td>INVALID_ARGUMENT</td>
-<td>the order is a duplicate, but the order report was not found</td>
-<td>Заявка является дублем, но отчет по заявке не найден</td>
-</tr>
-<tr>
-<td>30058</td>
-<td>INVALID_ARGUMENT</td>
-<td>task not completed yet, please try again later</td>
-<td>Выполнение задачи еще не завершено, попробуйте позже.</td>
-</tr>
-<tr>
-<td>30059</td>
-<td>INVALID_ARGUMENT</td>
-<td>cancel order error: %s</td>
-<td>Ошибка метода отмены заявки. </br>Подробнее в тексте ошибки.</td>
-</tr>
-<tr>
-<td>30060</td>
-<td>INVALID_ARGUMENT</td>
-<td>cancel stop-order error: %s</td>
-<td>Ошибка метода отмены стоп-заявки. </br>Подробнее в тексте ошибки.</td>
-</tr>
-<tr>
-<td>30061</td>
-<td>INVALID_ARGUMENT</td>
-<td>'from' value out of range</td>
-<td>Входной параметр <em>from</em> имеет некорректное значение.</br>Укажите значение в пределах от 1970-01-01T00:00:00Z до 2099-12-31T23:59:59.999999999Z включительно.</td>
-</tr>
-<tr>
-<td>30062</td>
-<td>INVALID_ARGUMENT</td>
-<td>'to' value out of range</td>
-<td>Входной параметр <em>to</em> имеет некорректное значение.</br>Укажите значение в пределах от 1970-01-01T00:00:00Z до 2099-12-31T23:59:59.999999999Z включительно.</td>
-</tr>
-<tr>
-<td>30063</td>
-<td>INVALID_ARGUMENT</td>
-<td>'expire_date' value out of range</td>
-<td>Входной параметр <em>expire_date</em> имеет некорректное значение.</br>Дата должна быть не ранее текущей и не позднее 2099-12-31T23:59:59.999999999Z.</td>
-</tr>
-<tr>
-<td>30064</td>
-<td>INVALID_ARGUMENT</td>
-<td>the required period should not exceed 31 days</td>
-<td>Запрошенный период не может превышать 31 дня. </br> Укажите корректный период.</td>
-</tr>
-<tr>
-<td>30065</td>
-<td>INVALID_ARGUMENT</td>
-<td>missing parameter: 'task_id'</td>
-<td>Входной параметр <em>task_id</em> является обязательным. </br> Укажите корректный параметр <em>task_id</em>.</td>
-</tr>
-<tr>
-<td>30066</td>
-<td>INVALID_ARGUMENT</td>
-<td>missing parameter: 'payload'</td>
-<td>Входной параметр <em>payload</em> является обязательным. </br> Укажите корректный параметр <em>payload</em>.</td>
-</tr>
-<tr>
-<td>30077</td>
-<td>INVALID_ARGUMENT</td>
-<td>not available for OTC instruments</td>
-<td>Метод недоступен для внебиржевых инструментов.</td>
-</tr>
-<tr>
-<td>30078</td>
-<td>INVALID_ARGUMENT</td>
-<td>Incorrect minimum price increment</td>
-<td>Некорректный шаг изменения цены.</td>
-</tr>
-<tr>
-<td>30079</td>
-<td>INVALID_ARGUMENT</td>
-<td>instrument is not available for trading</td>
-<td>Инструмент недоступен для торгов.</td>
-</tr>
-<tr>
-<td>30080</td>
-<td>INVALID_ARGUMENT</td>
-<td>quantity must be positive</td>
-<td>Количество лотов должно быть положительным числом.</td>
-</tr>
-<tr>
-<td>30081</td>
-<td>INVALID_ARGUMENT</td>
-<td>account status is closed</td>
-<td>Аккаунт закрыт.</td>
-</tr>
-<tr>
-<td>30082</td>
-<td>INVALID_ARGUMENT</td>
-<td>account status is blocked</td>
-<td>Аккаунт заблокирован.</td>
-</tr>
-<tr>
-<td>30083</td>
-<td>INVALID_ARGUMENT</td>
-<td>order_type is invalid</td>
-<td>Некорректный тип заявки.</td>
-</tr>
-<tr>
-<td>30084</td>
-<td>INVALID_ARGUMENT</td>
-<td>maximum request period has been exceeded</td>
-<td>Превышен лимит запрашиваемого периода.</td>
-</tr>
-<tr>
-<td>40002</td>
-<td>PERMISSION_DENIED</td>
-<td>insufficient privileges</td>
-<td>Недостаточно прав для совершения операции. </br>Токен доступа имеет уровень прав read-only.</br>Подробнее: <a href="https://tinkoff.github.io/investAPI/index#_2">Виды токенов</a></td>
-</tr>
-<tr>
-<td>50001</td>
-<td>NOT_FOUND</td>
-<td>exchange not found</td>
-<td>Биржа не найдена по переданному <em>exchange_id</em>.</br>Укажите корректный <em>exchange_id</em>.</td>
-</tr>
-<tr>
-<td>50002</td>
-<td>NOT_FOUND</td>
-<td>instrument not found</td>
-<td>Инструмент не найден.</br>Укажите корректный идентификатор инструмента.</td>
-</tr>
-<tr>
-<td>50004</td>
-<td>NOT_FOUND</td>
-<td>account not found</td>
-<td>Счёт не найден по переданному <em>account_id</em>.</br>Укажите корректный <em>account_id</em>.</td>
-</tr>
-<tr>
-<td>50005</td>
-<td>NOT_FOUND</td>
-<td>order not found</td>
-<td>Торговое поручение не найдено по переданному <em>order_id</em>.</br>Укажите корректный <em>order_id</em>.</td>
-</tr>
-<tr>
-<td>50006</td>
-<td>NOT_FOUND</td>
-<td>stop-order not found</td>
-<td>Стоп-заявка не найдена по переданному <em>stop_order_id</em>.</br>Укажите корректный <em>stop_order_id</em>.</td>
-</tr>
-<tr>
-<td>50007</td>
-<td>NOT_FOUND</td>
-<td>task not found</td>
-<td>Задача не найдена.</td>
-</tr>
-<tr>
-<td>50008</td>
-<td>NOT_FOUND</td>
-<td>no orderbook provider</td>
-<td>Отсутствует источник данных по стаканам.</td>
-</tr>
-<tr>
-<td>50009</td>
-<td>NOT_FOUND</td>
-<td>asset not found</td>
-<td>Актив не найден.</br>Укажите корректный идентификатор актива.</td>
-</tr>
-<tr>
-<td>70001</td>
-<td>INTERNAL</td>
-<td>internal error</td>
-<td>Внутренняя ошибка сервиса.</br>Если ошибка повторяется, обратитесь в службу технической поддержки.</td>
-</tr>
-<tr>
-<td>70002</td>
-<td>INTERNAL</td>
-<td>internal network error</td>
-<td>Неизвестная сетевая ошибка, попробуйте выполнить запрос позднее.</br>Если ошибка повторяется, обратитесь в службу технической поддержки.</td>
-</tr>
-<tr>
-<td>70003</td>
-<td>INTERNAL</td>
-<td>internal error, please try again later</td>
-<td>Внутренняя ошибка сервиса, попробуйте выполнить запрос позднее.</br>Если ошибка повторяется, обратитесь в службу технической поддержки.</td>
-</tr>
-<tr>
-<td>80001</td>
-<td>RESOURCE_EXHAUSTED</td>
-<td>limit of open streams exceeded</td>
-<td>Превышен лимит одновременных открытых stream-соединений. Подробнее: <a href="https://tinkoff.github.io/investAPI/limits/">Лимитная политика</a></td>
-</tr>
-<tr>
-<td>80002</td>
-<td>RESOURCE_EXHAUSTED</td>
-<td>request limit exceeded</td>
-<td>Превышен лимит запросов в минуту. Подробнее: <a href="https://tinkoff.github.io/investAPI/limits/">Лимитная политика</a></td>
-</tr>
-<tr>
-<td>90001</td>
-<td>FAILED_PRECONDITION</td>
-<td>need confirmation: %s</td>
-<td>Требуется подтверждение операции. </br>Подробнее в тексте ошибки.</td>
+<td align="left"></td>
+<td align="left">Прочие методы сервиса</td>
+<td align="left">Все параметры</td>
+<td align="left">В валюте расчётов</td>
+<td align="left">В валюте расчётов</td>
 </tr>
 </tbody>
 </table>
@@ -1514,26 +1101,6 @@
       
         
 <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../faq_sandbox/" class="md-footer__link md-footer__link--prev" aria-label="Назад: FAQ" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Назад
-              </span>
-              FAQ
-            </div>
-          </div>
-        </a>
-      
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

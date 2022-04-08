@@ -4,7 +4,7 @@ info:
   termsOfService: https://www.tinkoff.ru/invest/disclaimers/basic-information/
   contact:
     email: al.a.volkov@tinkoff.ru
-  version: '1.0.4'
+  version: '1.0.6'
 externalDocs:
   description: Документация Tinkoff Invest API
   url: https://tinkoff.github.io/investAPI/
@@ -256,6 +256,58 @@ paths:
       tags:
       - InstrumentsService
       x-codegen-request-body-name: body
+  /tinkoff.public.invest.api.contract.v1.InstrumentsService/GetAssetBy:
+    post:
+      operationId: InstrumentsService_GetAssetBy
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1AssetRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1AssetResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Метод получения актива по его идентификатору.
+      tags:
+      - InstrumentsService
+      x-codegen-request-body-name: body
+  /tinkoff.public.invest.api.contract.v1.InstrumentsService/GetAssets:
+    post:
+      operationId: InstrumentsService_GetAssets
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1AssetsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1AssetsResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Метод получения списка активов.
+      tags:
+      - InstrumentsService
+      x-codegen-request-body-name: body
   /tinkoff.public.invest.api.contract.v1.InstrumentsService/GetBondCoupons:
     post:
       operationId: InstrumentsService_GetBondCoupons
@@ -487,6 +539,32 @@ paths:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
       summary: Метод запроса последних цен по инструментам.
+      tags:
+      - MarketDataService
+      x-codegen-request-body-name: body
+  /tinkoff.public.invest.api.contract.v1.MarketDataService/GetLastTrades:
+    post:
+      operationId: MarketDataService_GetLastTrades
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1GetLastTradesRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1GetLastTradesResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Метод запроса последних обезличенных сделок по инструменту.
       tags:
       - MarketDataService
       x-codegen-request-body-name: body
@@ -1379,6 +1457,1080 @@ components:
         nominal:
           $ref: '#/components/schemas/v1Quotation'
       type: object
+    v1Asset:
+      description: Информация об активе.
+      example:
+        uid: uid
+        instruments:
+        - uid: uid
+          classCode: classCode
+          instrumentType: instrumentType
+          ticker: ticker
+          figi: figi
+          links:
+          - instrumentUid: instrumentUid
+            type: type
+          - instrumentUid: instrumentUid
+            type: type
+        - uid: uid
+          classCode: classCode
+          instrumentType: instrumentType
+          ticker: ticker
+          figi: figi
+          links:
+          - instrumentUid: instrumentUid
+            type: type
+          - instrumentUid: instrumentUid
+            type: type
+        name: name
+      properties:
+        uid:
+          type: string
+        type:
+          $ref: '#/components/schemas/v1AssetType'
+        name:
+          type: string
+        instruments:
+          items:
+            $ref: '#/components/schemas/v1AssetInstrument'
+          type: array
+      type: object
+    v1AssetBond:
+      description: Облигация.
+      example:
+        indexedNominalFlag: true
+        couponQuantityPerYear: 0
+        currentNominal:
+          nano: 6
+          units: units
+        taxFreeFlag: true
+        returnCondition: returnCondition
+        collateralFlag: true
+        stateRegDate: 2000-01-23T04:56:07.000+00:00
+        issueSizePlan:
+          nano: 6
+          units: units
+        borrowName: borrowName
+        issueKind: issueKind
+        placementDate: 2000-01-23T04:56:07.000+00:00
+        nominal:
+          nano: 6
+          units: units
+        amortizationFlag: true
+        perpetualFlag: true
+        maturityDate: 2000-01-23T04:56:07.000+00:00
+        issueSize:
+          nano: 6
+          units: units
+        interestKind: interestKind
+        subordinatedFlag: true
+        nominalCurrency: nominalCurrency
+        floatingCouponFlag: true
+        placementPrice:
+          nano: 6
+          units: units
+      properties:
+        currentNominal:
+          $ref: '#/components/schemas/v1Quotation'
+        borrowName:
+          type: string
+        issueSize:
+          $ref: '#/components/schemas/v1Quotation'
+        nominal:
+          $ref: '#/components/schemas/v1Quotation'
+        nominalCurrency:
+          type: string
+        issueKind:
+          type: string
+        interestKind:
+          type: string
+        couponQuantityPerYear:
+          format: int32
+          type: integer
+        indexedNominalFlag:
+          type: boolean
+        subordinatedFlag:
+          type: boolean
+        collateralFlag:
+          type: boolean
+        taxFreeFlag:
+          type: boolean
+        amortizationFlag:
+          type: boolean
+        floatingCouponFlag:
+          type: boolean
+        perpetualFlag:
+          type: boolean
+        maturityDate:
+          format: date-time
+          type: string
+        returnCondition:
+          type: string
+        stateRegDate:
+          format: date-time
+          type: string
+        placementDate:
+          format: date-time
+          type: string
+        placementPrice:
+          $ref: '#/components/schemas/v1Quotation'
+        issueSizePlan:
+          $ref: '#/components/schemas/v1Quotation'
+      type: object
+    v1AssetClearingCertificate:
+      description: Клиринговый сертификат участия.
+      example:
+        nominal:
+          nano: 6
+          units: units
+        nominalCurrency: nominalCurrency
+      properties:
+        nominal:
+          $ref: '#/components/schemas/v1Quotation'
+        nominalCurrency:
+          type: string
+      type: object
+    v1AssetCurrency:
+      description: Валюта.
+      example:
+        baseCurrency: baseCurrency
+      properties:
+        baseCurrency:
+          type: string
+      type: object
+    v1AssetEtf:
+      description: Фонд.
+      example:
+        releasedDate: 2000-01-23T04:56:07.000+00:00
+        fixedCommission:
+          nano: 6
+          units: units
+        numShare:
+          nano: 6
+          units: units
+        watermarkFlag: true
+        description: description
+        primaryIndexCompany: primaryIndexCompany
+        inavCode: inavCode
+        indexRecoveryPeriod:
+          nano: 6
+          units: units
+        performanceFee:
+          nano: 6
+          units: units
+        paymentType: paymentType
+        managementType: managementType
+        primaryIndexTrackingError:
+          nano: 6
+          units: units
+        nominal:
+          nano: 6
+          units: units
+        ucitsFlag: true
+        expenseCommission:
+          nano: 6
+          units: units
+        focusType: focusType
+        primaryIndexDescription: primaryIndexDescription
+        rebalancingPlan: rebalancingPlan
+        hurdleRate:
+          nano: 6
+          units: units
+        primaryIndex: primaryIndex
+        leveragedFlag: true
+        taxRate: taxRate
+        issueKind: issueKind
+        sellDiscount:
+          nano: 6
+          units: units
+        rebalancingDates:
+        - 2000-01-23T04:56:07.000+00:00
+        - 2000-01-23T04:56:07.000+00:00
+        rebalancingFreq: rebalancingFreq
+        rebalancingFlag: true
+        nominalCurrency: nominalCurrency
+        divYieldFlag: true
+        totalExpense:
+          nano: 6
+          units: units
+        buyPremium:
+          nano: 6
+          units: units
+      properties:
+        totalExpense:
+          $ref: '#/components/schemas/v1Quotation'
+        hurdleRate:
+          $ref: '#/components/schemas/v1Quotation'
+        performanceFee:
+          $ref: '#/components/schemas/v1Quotation'
+        fixedCommission:
+          $ref: '#/components/schemas/v1Quotation'
+        paymentType:
+          type: string
+        watermarkFlag:
+          type: boolean
+        buyPremium:
+          $ref: '#/components/schemas/v1Quotation'
+        sellDiscount:
+          $ref: '#/components/schemas/v1Quotation'
+        rebalancingFlag:
+          type: boolean
+        rebalancingFreq:
+          type: string
+        managementType:
+          type: string
+        primaryIndex:
+          type: string
+        focusType:
+          type: string
+        leveragedFlag:
+          type: boolean
+        numShare:
+          $ref: '#/components/schemas/v1Quotation'
+        ucitsFlag:
+          type: boolean
+        releasedDate:
+          format: date-time
+          type: string
+        description:
+          type: string
+        primaryIndexDescription:
+          type: string
+        primaryIndexCompany:
+          type: string
+        indexRecoveryPeriod:
+          $ref: '#/components/schemas/v1Quotation'
+        inavCode:
+          type: string
+        divYieldFlag:
+          type: boolean
+        expenseCommission:
+          $ref: '#/components/schemas/v1Quotation'
+        primaryIndexTrackingError:
+          $ref: '#/components/schemas/v1Quotation'
+        rebalancingPlan:
+          type: string
+        taxRate:
+          type: string
+        rebalancingDates:
+          items:
+            format: date-time
+            type: string
+          type: array
+        issueKind:
+          type: string
+        nominal:
+          $ref: '#/components/schemas/v1Quotation'
+        nominalCurrency:
+          type: string
+      type: object
+    v1AssetFull:
+      example:
+        cfi: cfi
+        description: description
+        uid: uid
+        requiredTests:
+        - requiredTests
+        - requiredTests
+        codeNsd: codeNsd
+        deletedAt: 2000-01-23T04:56:07.000+00:00
+        security:
+          etf:
+            releasedDate: 2000-01-23T04:56:07.000+00:00
+            fixedCommission:
+              nano: 6
+              units: units
+            numShare:
+              nano: 6
+              units: units
+            watermarkFlag: true
+            description: description
+            primaryIndexCompany: primaryIndexCompany
+            inavCode: inavCode
+            indexRecoveryPeriod:
+              nano: 6
+              units: units
+            performanceFee:
+              nano: 6
+              units: units
+            paymentType: paymentType
+            managementType: managementType
+            primaryIndexTrackingError:
+              nano: 6
+              units: units
+            nominal:
+              nano: 6
+              units: units
+            ucitsFlag: true
+            expenseCommission:
+              nano: 6
+              units: units
+            focusType: focusType
+            primaryIndexDescription: primaryIndexDescription
+            rebalancingPlan: rebalancingPlan
+            hurdleRate:
+              nano: 6
+              units: units
+            primaryIndex: primaryIndex
+            leveragedFlag: true
+            taxRate: taxRate
+            issueKind: issueKind
+            sellDiscount:
+              nano: 6
+              units: units
+            rebalancingDates:
+            - 2000-01-23T04:56:07.000+00:00
+            - 2000-01-23T04:56:07.000+00:00
+            rebalancingFreq: rebalancingFreq
+            rebalancingFlag: true
+            nominalCurrency: nominalCurrency
+            divYieldFlag: true
+            totalExpense:
+              nano: 6
+              units: units
+            buyPremium:
+              nano: 6
+              units: units
+          clearingCertificate:
+            nominal:
+              nano: 6
+              units: units
+            nominalCurrency: nominalCurrency
+          share:
+            totalFloat:
+              nano: 6
+              units: units
+            dividendRate:
+              nano: 6
+              units: units
+            registryDate: 2000-01-23T04:56:07.000+00:00
+            primaryIndex: primaryIndex
+            preferredShareType: preferredShareType
+            issueSizePlan:
+              nano: 6
+              units: units
+            issueKind: issueKind
+            placementDate: 2000-01-23T04:56:07.000+00:00
+            nominal:
+              nano: 6
+              units: units
+            issueSize:
+              nano: 6
+              units: units
+            nominalCurrency: nominalCurrency
+            divYieldFlag: true
+            represIsin: represIsin
+            ipoDate: 2000-01-23T04:56:07.000+00:00
+          type: type
+          bond:
+            indexedNominalFlag: true
+            couponQuantityPerYear: 0
+            currentNominal:
+              nano: 6
+              units: units
+            taxFreeFlag: true
+            returnCondition: returnCondition
+            collateralFlag: true
+            stateRegDate: 2000-01-23T04:56:07.000+00:00
+            issueSizePlan:
+              nano: 6
+              units: units
+            borrowName: borrowName
+            issueKind: issueKind
+            placementDate: 2000-01-23T04:56:07.000+00:00
+            nominal:
+              nano: 6
+              units: units
+            amortizationFlag: true
+            perpetualFlag: true
+            maturityDate: 2000-01-23T04:56:07.000+00:00
+            issueSize:
+              nano: 6
+              units: units
+            interestKind: interestKind
+            subordinatedFlag: true
+            nominalCurrency: nominalCurrency
+            floatingCouponFlag: true
+            placementPrice:
+              nano: 6
+              units: units
+          sp:
+            issueSizePlan:
+              nano: 6
+              units: units
+            borrowName: borrowName
+            issueKind: issueKind
+            placementDate: 2000-01-23T04:56:07.000+00:00
+            nominal:
+              nano: 6
+              units: units
+            maturityDate: 2000-01-23T04:56:07.000+00:00
+            logicPortfolio: logicPortfolio
+            safetyBarrier:
+              nano: 6
+              units: units
+            basicAsset: basicAsset
+            issueSize:
+              nano: 6
+              units: units
+            nominalCurrency: nominalCurrency
+          isin: isin
+        instruments:
+        - uid: uid
+          classCode: classCode
+          instrumentType: instrumentType
+          ticker: ticker
+          figi: figi
+          links:
+          - instrumentUid: instrumentUid
+            type: type
+          - instrumentUid: instrumentUid
+            type: type
+        - uid: uid
+          classCode: classCode
+          instrumentType: instrumentType
+          ticker: ticker
+          figi: figi
+          links:
+          - instrumentUid: instrumentUid
+            type: type
+          - instrumentUid: instrumentUid
+            type: type
+        gosRegCode: gosRegCode
+        name: name
+        brCodeName: brCodeName
+        currency:
+          baseCurrency: baseCurrency
+        brCode: brCode
+        brand:
+          uid: uid
+          name: name
+          description: description
+          company: company
+          sector: sector
+          countryOfRiskName: countryOfRiskName
+          info: info
+          countryOfRisk: countryOfRisk
+        nameBrief: nameBrief
+        status: status
+        updatedAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        uid:
+          type: string
+        type:
+          $ref: '#/components/schemas/v1AssetType'
+        name:
+          type: string
+        nameBrief:
+          type: string
+        description:
+          type: string
+        deletedAt:
+          format: date-time
+          type: string
+        requiredTests:
+          items:
+            type: string
+          type: array
+        currency:
+          $ref: '#/components/schemas/v1AssetCurrency'
+        security:
+          $ref: '#/components/schemas/v1AssetSecurity'
+        gosRegCode:
+          type: string
+        cfi:
+          type: string
+        codeNsd:
+          type: string
+        status:
+          type: string
+        brand:
+          $ref: '#/components/schemas/v1Brand'
+        updatedAt:
+          format: date-time
+          type: string
+        brCode:
+          type: string
+        brCodeName:
+          type: string
+        instruments:
+          items:
+            $ref: '#/components/schemas/v1AssetInstrument'
+          type: array
+      type: object
+    v1AssetInstrument:
+      description: Идентификаторы инструмента.
+      example:
+        uid: uid
+        classCode: classCode
+        instrumentType: instrumentType
+        ticker: ticker
+        figi: figi
+        links:
+        - instrumentUid: instrumentUid
+          type: type
+        - instrumentUid: instrumentUid
+          type: type
+      properties:
+        uid:
+          type: string
+        figi:
+          type: string
+        instrumentType:
+          type: string
+        ticker:
+          type: string
+        classCode:
+          type: string
+        links:
+          items:
+            $ref: '#/components/schemas/v1InstrumentLink'
+          type: array
+      type: object
+    v1AssetRequest:
+      description: Запрос актива по идентификатору.
+      properties:
+        id:
+          type: string
+      type: object
+    v1AssetResponse:
+      description: Данные по активу.
+      example:
+        asset:
+          cfi: cfi
+          description: description
+          uid: uid
+          requiredTests:
+          - requiredTests
+          - requiredTests
+          codeNsd: codeNsd
+          deletedAt: 2000-01-23T04:56:07.000+00:00
+          security:
+            etf:
+              releasedDate: 2000-01-23T04:56:07.000+00:00
+              fixedCommission:
+                nano: 6
+                units: units
+              numShare:
+                nano: 6
+                units: units
+              watermarkFlag: true
+              description: description
+              primaryIndexCompany: primaryIndexCompany
+              inavCode: inavCode
+              indexRecoveryPeriod:
+                nano: 6
+                units: units
+              performanceFee:
+                nano: 6
+                units: units
+              paymentType: paymentType
+              managementType: managementType
+              primaryIndexTrackingError:
+                nano: 6
+                units: units
+              nominal:
+                nano: 6
+                units: units
+              ucitsFlag: true
+              expenseCommission:
+                nano: 6
+                units: units
+              focusType: focusType
+              primaryIndexDescription: primaryIndexDescription
+              rebalancingPlan: rebalancingPlan
+              hurdleRate:
+                nano: 6
+                units: units
+              primaryIndex: primaryIndex
+              leveragedFlag: true
+              taxRate: taxRate
+              issueKind: issueKind
+              sellDiscount:
+                nano: 6
+                units: units
+              rebalancingDates:
+              - 2000-01-23T04:56:07.000+00:00
+              - 2000-01-23T04:56:07.000+00:00
+              rebalancingFreq: rebalancingFreq
+              rebalancingFlag: true
+              nominalCurrency: nominalCurrency
+              divYieldFlag: true
+              totalExpense:
+                nano: 6
+                units: units
+              buyPremium:
+                nano: 6
+                units: units
+            clearingCertificate:
+              nominal:
+                nano: 6
+                units: units
+              nominalCurrency: nominalCurrency
+            share:
+              totalFloat:
+                nano: 6
+                units: units
+              dividendRate:
+                nano: 6
+                units: units
+              registryDate: 2000-01-23T04:56:07.000+00:00
+              primaryIndex: primaryIndex
+              preferredShareType: preferredShareType
+              issueSizePlan:
+                nano: 6
+                units: units
+              issueKind: issueKind
+              placementDate: 2000-01-23T04:56:07.000+00:00
+              nominal:
+                nano: 6
+                units: units
+              issueSize:
+                nano: 6
+                units: units
+              nominalCurrency: nominalCurrency
+              divYieldFlag: true
+              represIsin: represIsin
+              ipoDate: 2000-01-23T04:56:07.000+00:00
+            type: type
+            bond:
+              indexedNominalFlag: true
+              couponQuantityPerYear: 0
+              currentNominal:
+                nano: 6
+                units: units
+              taxFreeFlag: true
+              returnCondition: returnCondition
+              collateralFlag: true
+              stateRegDate: 2000-01-23T04:56:07.000+00:00
+              issueSizePlan:
+                nano: 6
+                units: units
+              borrowName: borrowName
+              issueKind: issueKind
+              placementDate: 2000-01-23T04:56:07.000+00:00
+              nominal:
+                nano: 6
+                units: units
+              amortizationFlag: true
+              perpetualFlag: true
+              maturityDate: 2000-01-23T04:56:07.000+00:00
+              issueSize:
+                nano: 6
+                units: units
+              interestKind: interestKind
+              subordinatedFlag: true
+              nominalCurrency: nominalCurrency
+              floatingCouponFlag: true
+              placementPrice:
+                nano: 6
+                units: units
+            sp:
+              issueSizePlan:
+                nano: 6
+                units: units
+              borrowName: borrowName
+              issueKind: issueKind
+              placementDate: 2000-01-23T04:56:07.000+00:00
+              nominal:
+                nano: 6
+                units: units
+              maturityDate: 2000-01-23T04:56:07.000+00:00
+              logicPortfolio: logicPortfolio
+              safetyBarrier:
+                nano: 6
+                units: units
+              basicAsset: basicAsset
+              issueSize:
+                nano: 6
+                units: units
+              nominalCurrency: nominalCurrency
+            isin: isin
+          instruments:
+          - uid: uid
+            classCode: classCode
+            instrumentType: instrumentType
+            ticker: ticker
+            figi: figi
+            links:
+            - instrumentUid: instrumentUid
+              type: type
+            - instrumentUid: instrumentUid
+              type: type
+          - uid: uid
+            classCode: classCode
+            instrumentType: instrumentType
+            ticker: ticker
+            figi: figi
+            links:
+            - instrumentUid: instrumentUid
+              type: type
+            - instrumentUid: instrumentUid
+              type: type
+          gosRegCode: gosRegCode
+          name: name
+          brCodeName: brCodeName
+          currency:
+            baseCurrency: baseCurrency
+          brCode: brCode
+          brand:
+            uid: uid
+            name: name
+            description: description
+            company: company
+            sector: sector
+            countryOfRiskName: countryOfRiskName
+            info: info
+            countryOfRisk: countryOfRisk
+          nameBrief: nameBrief
+          status: status
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        asset:
+          $ref: '#/components/schemas/v1AssetFull'
+      type: object
+    v1AssetSecurity:
+      description: Ценная бумага.
+      example:
+        etf:
+          releasedDate: 2000-01-23T04:56:07.000+00:00
+          fixedCommission:
+            nano: 6
+            units: units
+          numShare:
+            nano: 6
+            units: units
+          watermarkFlag: true
+          description: description
+          primaryIndexCompany: primaryIndexCompany
+          inavCode: inavCode
+          indexRecoveryPeriod:
+            nano: 6
+            units: units
+          performanceFee:
+            nano: 6
+            units: units
+          paymentType: paymentType
+          managementType: managementType
+          primaryIndexTrackingError:
+            nano: 6
+            units: units
+          nominal:
+            nano: 6
+            units: units
+          ucitsFlag: true
+          expenseCommission:
+            nano: 6
+            units: units
+          focusType: focusType
+          primaryIndexDescription: primaryIndexDescription
+          rebalancingPlan: rebalancingPlan
+          hurdleRate:
+            nano: 6
+            units: units
+          primaryIndex: primaryIndex
+          leveragedFlag: true
+          taxRate: taxRate
+          issueKind: issueKind
+          sellDiscount:
+            nano: 6
+            units: units
+          rebalancingDates:
+          - 2000-01-23T04:56:07.000+00:00
+          - 2000-01-23T04:56:07.000+00:00
+          rebalancingFreq: rebalancingFreq
+          rebalancingFlag: true
+          nominalCurrency: nominalCurrency
+          divYieldFlag: true
+          totalExpense:
+            nano: 6
+            units: units
+          buyPremium:
+            nano: 6
+            units: units
+        clearingCertificate:
+          nominal:
+            nano: 6
+            units: units
+          nominalCurrency: nominalCurrency
+        share:
+          totalFloat:
+            nano: 6
+            units: units
+          dividendRate:
+            nano: 6
+            units: units
+          registryDate: 2000-01-23T04:56:07.000+00:00
+          primaryIndex: primaryIndex
+          preferredShareType: preferredShareType
+          issueSizePlan:
+            nano: 6
+            units: units
+          issueKind: issueKind
+          placementDate: 2000-01-23T04:56:07.000+00:00
+          nominal:
+            nano: 6
+            units: units
+          issueSize:
+            nano: 6
+            units: units
+          nominalCurrency: nominalCurrency
+          divYieldFlag: true
+          represIsin: represIsin
+          ipoDate: 2000-01-23T04:56:07.000+00:00
+        type: type
+        bond:
+          indexedNominalFlag: true
+          couponQuantityPerYear: 0
+          currentNominal:
+            nano: 6
+            units: units
+          taxFreeFlag: true
+          returnCondition: returnCondition
+          collateralFlag: true
+          stateRegDate: 2000-01-23T04:56:07.000+00:00
+          issueSizePlan:
+            nano: 6
+            units: units
+          borrowName: borrowName
+          issueKind: issueKind
+          placementDate: 2000-01-23T04:56:07.000+00:00
+          nominal:
+            nano: 6
+            units: units
+          amortizationFlag: true
+          perpetualFlag: true
+          maturityDate: 2000-01-23T04:56:07.000+00:00
+          issueSize:
+            nano: 6
+            units: units
+          interestKind: interestKind
+          subordinatedFlag: true
+          nominalCurrency: nominalCurrency
+          floatingCouponFlag: true
+          placementPrice:
+            nano: 6
+            units: units
+        sp:
+          issueSizePlan:
+            nano: 6
+            units: units
+          borrowName: borrowName
+          issueKind: issueKind
+          placementDate: 2000-01-23T04:56:07.000+00:00
+          nominal:
+            nano: 6
+            units: units
+          maturityDate: 2000-01-23T04:56:07.000+00:00
+          logicPortfolio: logicPortfolio
+          safetyBarrier:
+            nano: 6
+            units: units
+          basicAsset: basicAsset
+          issueSize:
+            nano: 6
+            units: units
+          nominalCurrency: nominalCurrency
+        isin: isin
+      properties:
+        isin:
+          type: string
+        type:
+          type: string
+        share:
+          $ref: '#/components/schemas/v1AssetShare'
+        bond:
+          $ref: '#/components/schemas/v1AssetBond'
+        sp:
+          $ref: '#/components/schemas/v1AssetStructuredProduct'
+        etf:
+          $ref: '#/components/schemas/v1AssetEtf'
+        clearingCertificate:
+          $ref: '#/components/schemas/v1AssetClearingCertificate'
+      type: object
+    v1AssetShare:
+      description: Акция.
+      example:
+        totalFloat:
+          nano: 6
+          units: units
+        dividendRate:
+          nano: 6
+          units: units
+        registryDate: 2000-01-23T04:56:07.000+00:00
+        primaryIndex: primaryIndex
+        preferredShareType: preferredShareType
+        issueSizePlan:
+          nano: 6
+          units: units
+        issueKind: issueKind
+        placementDate: 2000-01-23T04:56:07.000+00:00
+        nominal:
+          nano: 6
+          units: units
+        issueSize:
+          nano: 6
+          units: units
+        nominalCurrency: nominalCurrency
+        divYieldFlag: true
+        represIsin: represIsin
+        ipoDate: 2000-01-23T04:56:07.000+00:00
+      properties:
+        type:
+          $ref: '#/components/schemas/v1ShareType'
+        issueSize:
+          $ref: '#/components/schemas/v1Quotation'
+        nominal:
+          $ref: '#/components/schemas/v1Quotation'
+        nominalCurrency:
+          type: string
+        primaryIndex:
+          type: string
+        dividendRate:
+          $ref: '#/components/schemas/v1Quotation'
+        preferredShareType:
+          type: string
+        ipoDate:
+          format: date-time
+          type: string
+        registryDate:
+          format: date-time
+          type: string
+        divYieldFlag:
+          type: boolean
+        issueKind:
+          type: string
+        placementDate:
+          format: date-time
+          type: string
+        represIsin:
+          type: string
+        issueSizePlan:
+          $ref: '#/components/schemas/v1Quotation'
+        totalFloat:
+          $ref: '#/components/schemas/v1Quotation'
+      type: object
+    v1AssetStructuredProduct:
+      description: Структурная нота.
+      example:
+        issueSizePlan:
+          nano: 6
+          units: units
+        borrowName: borrowName
+        issueKind: issueKind
+        placementDate: 2000-01-23T04:56:07.000+00:00
+        nominal:
+          nano: 6
+          units: units
+        maturityDate: 2000-01-23T04:56:07.000+00:00
+        logicPortfolio: logicPortfolio
+        safetyBarrier:
+          nano: 6
+          units: units
+        basicAsset: basicAsset
+        issueSize:
+          nano: 6
+          units: units
+        nominalCurrency: nominalCurrency
+      properties:
+        borrowName:
+          type: string
+        nominal:
+          $ref: '#/components/schemas/v1Quotation'
+        nominalCurrency:
+          type: string
+        type:
+          $ref: '#/components/schemas/v1StructuredProductType'
+        logicPortfolio:
+          type: string
+        assetType:
+          $ref: '#/components/schemas/v1AssetType'
+        basicAsset:
+          type: string
+        safetyBarrier:
+          $ref: '#/components/schemas/v1Quotation'
+        maturityDate:
+          format: date-time
+          type: string
+        issueSizePlan:
+          $ref: '#/components/schemas/v1Quotation'
+        issueSize:
+          $ref: '#/components/schemas/v1Quotation'
+        placementDate:
+          format: date-time
+          type: string
+        issueKind:
+          type: string
+      type: object
+    v1AssetType:
+      default: ASSET_TYPE_UNSPECIFIED
+      description: Тип актива.
+      enum:
+      - ASSET_TYPE_UNSPECIFIED
+      - ASSET_TYPE_CURRENCY
+      - ASSET_TYPE_COMMODITY
+      - ASSET_TYPE_INDEX
+      - ASSET_TYPE_SECURITY
+      type: string
+    v1AssetsRequest:
+      description: Запрос списка активов.
+      type: object
+    v1AssetsResponse:
+      description: Список активов.
+      example:
+        assets:
+        - uid: uid
+          instruments:
+          - uid: uid
+            classCode: classCode
+            instrumentType: instrumentType
+            ticker: ticker
+            figi: figi
+            links:
+            - instrumentUid: instrumentUid
+              type: type
+            - instrumentUid: instrumentUid
+              type: type
+          - uid: uid
+            classCode: classCode
+            instrumentType: instrumentType
+            ticker: ticker
+            figi: figi
+            links:
+            - instrumentUid: instrumentUid
+              type: type
+            - instrumentUid: instrumentUid
+              type: type
+          name: name
+        - uid: uid
+          instruments:
+          - uid: uid
+            classCode: classCode
+            instrumentType: instrumentType
+            ticker: ticker
+            figi: figi
+            links:
+            - instrumentUid: instrumentUid
+              type: type
+            - instrumentUid: instrumentUid
+              type: type
+          - uid: uid
+            classCode: classCode
+            instrumentType: instrumentType
+            ticker: ticker
+            figi: figi
+            links:
+            - instrumentUid: instrumentUid
+              type: type
+            - instrumentUid: instrumentUid
+              type: type
+          name: name
+      properties:
+        assets:
+          items:
+            $ref: '#/components/schemas/v1Asset'
+          type: array
+      type: object
     v1Bond:
       description: Объект передачи информации об облигации.
       example:
@@ -1388,6 +2540,7 @@ components:
           units: units
         countryOfRisk: countryOfRisk
         lot: 0
+        uid: uid
         dlong:
           nano: 6
           units: units
@@ -1523,6 +2676,8 @@ components:
           $ref: '#/components/schemas/v1Quotation'
         apiTradeAvailableFlag:
           type: boolean
+        uid:
+          type: string
       type: object
     v1BondResponse:
       description: Информация об облигации.
@@ -1534,6 +2689,7 @@ components:
             units: units
           countryOfRisk: countryOfRisk
           lot: 0
+          uid: uid
           dlong:
             nano: 6
             units: units
@@ -1601,6 +2757,7 @@ components:
             units: units
           countryOfRisk: countryOfRisk
           lot: 0
+          uid: uid
           dlong:
             nano: 6
             units: units
@@ -1660,6 +2817,7 @@ components:
             units: units
           countryOfRisk: countryOfRisk
           lot: 0
+          uid: uid
           dlong:
             nano: 6
             units: units
@@ -1718,6 +2876,35 @@ components:
           items:
             $ref: '#/components/schemas/v1Bond'
           type: array
+      type: object
+    v1Brand:
+      description: Бренд.
+      example:
+        uid: uid
+        name: name
+        description: description
+        company: company
+        sector: sector
+        countryOfRiskName: countryOfRiskName
+        info: info
+        countryOfRisk: countryOfRisk
+      properties:
+        uid:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        info:
+          type: string
+        company:
+          type: string
+        sector:
+          type: string
+        countryOfRisk:
+          type: string
+        countryOfRiskName:
+          type: string
       type: object
     v1BrokerReport:
       example:
@@ -2068,6 +3255,7 @@ components:
             units: units
           countryOfRisk: countryOfRisk
           lot: 0
+          uid: uid
           dlong:
             nano: 6
             units: units
@@ -2109,6 +3297,7 @@ components:
             units: units
           countryOfRisk: countryOfRisk
           lot: 0
+          uid: uid
           dlong:
             nano: 6
             units: units
@@ -2159,6 +3348,7 @@ components:
           units: units
         countryOfRisk: countryOfRisk
         lot: 0
+        uid: uid
         dlong:
           nano: 6
           units: units
@@ -2245,6 +3435,8 @@ components:
           $ref: '#/components/schemas/v1Quotation'
         apiTradeAvailableFlag:
           type: boolean
+        uid:
+          type: string
       type: object
     v1CurrencyResponse:
       description: Данные по валюте.
@@ -2257,6 +3449,7 @@ components:
             units: units
           countryOfRisk: countryOfRisk
           lot: 0
+          uid: uid
           dlong:
             nano: 6
             units: units
@@ -2410,6 +3603,7 @@ components:
           units: units
         countryOfRisk: countryOfRisk
         lot: 0
+        uid: uid
         dlong:
           nano: 6
           units: units
@@ -2507,6 +3701,8 @@ components:
           $ref: '#/components/schemas/v1Quotation'
         apiTradeAvailableFlag:
           type: boolean
+        uid:
+          type: string
       type: object
     v1EtfResponse:
       description: Данные по фонду.
@@ -2522,6 +3718,7 @@ components:
             units: units
           countryOfRisk: countryOfRisk
           lot: 0
+          uid: uid
           dlong:
             nano: 6
             units: units
@@ -2576,6 +3773,7 @@ components:
             units: units
           countryOfRisk: countryOfRisk
           lot: 0
+          uid: uid
           dlong:
             nano: 6
             units: units
@@ -2622,6 +3820,7 @@ components:
             units: units
           countryOfRisk: countryOfRisk
           lot: 0
+          uid: uid
           dlong:
             nano: 6
             units: units
@@ -2673,6 +3872,7 @@ components:
           units: units
         countryOfRisk: countryOfRisk
         lot: 0
+        uid: uid
         futuresType: futuresType
         dlong:
           nano: 6
@@ -2777,6 +3977,8 @@ components:
           $ref: '#/components/schemas/v1Quotation'
         apiTradeAvailableFlag:
           type: boolean
+        uid:
+          type: string
       type: object
     v1FutureResponse:
       description: Данные по фьючерсу.
@@ -2788,6 +3990,7 @@ components:
             units: units
           countryOfRisk: countryOfRisk
           lot: 0
+          uid: uid
           futuresType: futuresType
           dlong:
             nano: 6
@@ -2841,6 +4044,7 @@ components:
             units: units
           countryOfRisk: countryOfRisk
           lot: 0
+          uid: uid
           futuresType: futuresType
           dlong:
             nano: 6
@@ -2886,6 +4090,7 @@ components:
             units: units
           countryOfRisk: countryOfRisk
           lot: 0
+          uid: uid
           futuresType: futuresType
           dlong:
             nano: 6
@@ -3544,6 +4749,40 @@ components:
             $ref: '#/components/schemas/v1LastPrice'
           type: array
       type: object
+    v1GetLastTradesRequest:
+      description: Запрос последних обезличенных сделок по инструменту.
+      properties:
+        figi:
+          type: string
+        from:
+          format: date-time
+          type: string
+        to:
+          format: date-time
+          type: string
+      type: object
+    v1GetLastTradesResponse:
+      description: Последние обезличенные сделки по инструменту.
+      example:
+        trades:
+        - quantity: quantity
+          price:
+            nano: 6
+            units: units
+          figi: figi
+          time: 2000-01-23T04:56:07.000+00:00
+        - quantity: quantity
+          price:
+            nano: 6
+            units: units
+          figi: figi
+          time: 2000-01-23T04:56:07.000+00:00
+      properties:
+        trades:
+          items:
+            $ref: '#/components/schemas/v1Trade'
+          type: array
+      type: object
     v1GetMarginAttributesRequest:
       properties:
         accountId:
@@ -3919,13 +5158,22 @@ components:
     v1Instrument:
       description: Объект передачи основной информации об инструменте.
       example:
-        classCode: classCode
-        ticker: ticker
-        instrumentType: instrumentType
         figi: figi
         dshortMin:
           nano: 6
           units: units
+        countryOfRisk: countryOfRisk
+        lot: 0
+        uid: uid
+        dlong:
+          nano: 6
+          units: units
+        sellAvailableFlag: true
+        currency: currency
+        buyAvailableFlag: true
+        classCode: classCode
+        ticker: ticker
+        instrumentType: instrumentType
         apiTradeAvailableFlag: true
         dlongMin:
           nano: 6
@@ -3934,11 +5182,9 @@ components:
         kshort:
           nano: 6
           units: units
-        countryOfRisk: countryOfRisk
         minPriceIncrement:
           nano: 6
           units: units
-        lot: 0
         otcFlag: true
         klong:
           nano: 6
@@ -3946,16 +5192,10 @@ components:
         dshort:
           nano: 6
           units: units
-        dlong:
-          nano: 6
-          units: units
         name: name
-        sellAvailableFlag: true
-        currency: currency
         exchange: exchange
         countryOfRiskName: countryOfRiskName
         isin: isin
-        buyAvailableFlag: true
       properties:
         figi:
           type: string
@@ -4006,6 +5246,8 @@ components:
           $ref: '#/components/schemas/v1Quotation'
         apiTradeAvailableFlag:
           type: boolean
+        uid:
+          type: string
       type: object
     v1InstrumentIdType:
       default: INSTRUMENT_ID_UNSPECIFIED
@@ -4013,9 +5255,21 @@ components:
       - INSTRUMENT_ID_UNSPECIFIED
       - INSTRUMENT_ID_TYPE_FIGI
       - INSTRUMENT_ID_TYPE_TICKER
+      - INSTRUMENT_ID_TYPE_UID
       title: 'Тип идентификатора инструмента. Подробнее об идентификации инструментов:
         [Идентификация инструментов](https://tinkoff.github.io/investAPI/faq_identification/)'
       type: string
+    v1InstrumentLink:
+      description: Связь с другим инструментом.
+      example:
+        instrumentUid: instrumentUid
+        type: type
+      properties:
+        type:
+          type: string
+        instrumentUid:
+          type: string
+      type: object
     v1InstrumentRequest:
       description: Запрос получения инструмента по идентификатору.
       properties:
@@ -4030,13 +5284,22 @@ components:
       description: Данные по инструменту.
       example:
         instrument:
-          classCode: classCode
-          ticker: ticker
-          instrumentType: instrumentType
           figi: figi
           dshortMin:
             nano: 6
             units: units
+          countryOfRisk: countryOfRisk
+          lot: 0
+          uid: uid
+          dlong:
+            nano: 6
+            units: units
+          sellAvailableFlag: true
+          currency: currency
+          buyAvailableFlag: true
+          classCode: classCode
+          ticker: ticker
+          instrumentType: instrumentType
           apiTradeAvailableFlag: true
           dlongMin:
             nano: 6
@@ -4045,11 +5308,9 @@ components:
           kshort:
             nano: 6
             units: units
-          countryOfRisk: countryOfRisk
           minPriceIncrement:
             nano: 6
             units: units
-          lot: 0
           otcFlag: true
           klong:
             nano: 6
@@ -4057,16 +5318,10 @@ components:
           dshort:
             nano: 6
             units: units
-          dlong:
-            nano: 6
-            units: units
           name: name
-          sellAvailableFlag: true
-          currency: currency
           exchange: exchange
           countryOfRiskName: countryOfRiskName
           isin: isin
-          buyAvailableFlag: true
       properties:
         instrument:
           $ref: '#/components/schemas/v1Instrument'
@@ -4204,11 +5459,11 @@ components:
       type: object
     v1OperationState:
       default: OPERATION_STATE_UNSPECIFIED
+      description: Статус запрашиваемых операций.
       enum:
       - OPERATION_STATE_UNSPECIFIED
       - OPERATION_STATE_EXECUTED
       - OPERATION_STATE_CANCELED
-      title: Статус запрашиваемых операций
       type: string
     v1OperationTrade:
       description: Сделка по операции.
@@ -4234,6 +5489,7 @@ components:
       type: object
     v1OperationType:
       default: OPERATION_TYPE_UNSPECIFIED
+      description: Тип операции.
       enum:
       - OPERATION_TYPE_UNSPECIFIED
       - OPERATION_TYPE_INPUT
@@ -4280,7 +5536,6 @@ components:
       - OPERATION_TYPE_TAX_REPO_REFUND_PROGRESSIVE
       - OPERATION_TYPE_DIV_EXT
       - OPERATION_TYPE_TAX_CORRECTION_COUPON
-      title: Тип операции
       type: string
     v1OperationsRequest:
       description: Запрос получения списка операций по счёту.
@@ -4879,6 +6134,7 @@ components:
           $ref: '#/components/schemas/v1Quotation'
       type: object
     v1PostStopOrderRequest:
+      description: Запрос выставления стоп-заявки.
       properties:
         figi:
           type: string
@@ -4900,7 +6156,6 @@ components:
         expireDate:
           format: date-time
           type: string
-      title: Запрос выставления стоп-заявки
       type: object
     v1PostStopOrderResponse:
       description: Результат выставления стоп-заявки.
@@ -4975,6 +6230,7 @@ components:
           units: units
         countryOfRisk: countryOfRisk
         lot: 0
+        uid: uid
         dlong:
           nano: 6
           units: units
@@ -5079,6 +6335,8 @@ components:
           $ref: '#/components/schemas/v1Quotation'
         apiTradeAvailableFlag:
           type: boolean
+        uid:
+          type: string
       type: object
     v1ShareResponse:
       description: Данные по акции.
@@ -5090,6 +6348,7 @@ components:
             units: units
           countryOfRisk: countryOfRisk
           lot: 0
+          uid: uid
           dlong:
             nano: 6
             units: units
@@ -5157,6 +6416,7 @@ components:
             units: units
           countryOfRisk: countryOfRisk
           lot: 0
+          uid: uid
           dlong:
             nano: 6
             units: units
@@ -5202,6 +6462,7 @@ components:
             units: units
           countryOfRisk: countryOfRisk
           lot: 0
+          uid: uid
           dlong:
             nano: 6
             units: units
@@ -5334,6 +6595,45 @@ components:
             type: string
           type: array
       type: object
+    v1StructuredProductType:
+      default: SP_TYPE_UNSPECIFIED
+      description: Тип структурной ноты.
+      enum:
+      - SP_TYPE_UNSPECIFIED
+      - SP_TYPE_DELIVERABLE
+      - SP_TYPE_NON_DELIVERABLE
+      type: string
+    v1Trade:
+      description: Информация о сделке.
+      example:
+        quantity: quantity
+        price:
+          nano: 6
+          units: units
+        figi: figi
+        time: 2000-01-23T04:56:07.000+00:00
+      properties:
+        figi:
+          type: string
+        direction:
+          $ref: '#/components/schemas/v1TradeDirection'
+        price:
+          $ref: '#/components/schemas/v1Quotation'
+        quantity:
+          format: int64
+          type: string
+        time:
+          format: date-time
+          type: string
+      type: object
+    v1TradeDirection:
+      default: TRADE_DIRECTION_UNSPECIFIED
+      description: Направление сделки.
+      enum:
+      - TRADE_DIRECTION_UNSPECIFIED
+      - TRADE_DIRECTION_BUY
+      - TRADE_DIRECTION_SELL
+      type: string
     v1TradingDay:
       description: Информация о времени торгов.
       example:

@@ -284,6 +284,21 @@
     "type": "INVALID_ARGUMENT",
     "description": "Метод недоступен для внебиржевых инструментов."
   },
+  "30078": {
+    "message": "Incorrect minimum price increment",
+    "type": "INVALID_ARGUMENT",
+    "description": "Некорректный шаг изменения цены."
+  },
+  "30079": {
+    "message": "instrument is not available for trading",
+    "type": "INVALID_ARGUMENT",
+    "description": "Инструмент недоступен для торгов."
+  },
+  "30080": {
+    "message": "quantity must be positive",
+    "type": "INVALID_ARGUMENT",
+    "description": "Количество лотов должно быть положительным числом."
+  },
   "30081": {
     "message": "account status is closed",
     "type": "INVALID_ARGUMENT",
@@ -293,6 +308,16 @@
     "message": "account status is blocked",
     "type": "INVALID_ARGUMENT",
     "description": "Аккаунт заблокирован."
+  },
+  "30083": {
+    "message": "order_type is invalid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Некорректный тип заявки."
+  },
+  "30084": {
+    "message": "maximum request period has been exceeded",
+    "type": "INVALID_ARGUMENT",
+    "description": "Превышен лимит запрашиваемого периода."
   },
   "40002": {
     "message": "insufficient privileges",
@@ -335,15 +360,25 @@
     "type": "NOT_FOUND",
     "description": "Отсутствует источник данных по стаканам."
   },
+  "50009": {
+    "message": "asset not found",
+    "type": "NOT_FOUND",
+    "description": "Актив не найден.</br>Укажите корректный идентификатор актива."
+  },
   "70001": {
     "message": "internal error",
     "type": "INTERNAL",
-    "description": "Внутренняя ошибка сервиса, попробуйте выполнить запрос позднее.</br>Если ошибка повторяется, обратитесь в службу технической поддержки."
+    "description": "Внутренняя ошибка сервиса.</br>Если ошибка повторяется, обратитесь в службу технической поддержки."
   },
   "70002": {
     "message": "internal network error",
     "type": "INTERNAL",
     "description": "Неизвестная сетевая ошибка, попробуйте выполнить запрос позднее.</br>Если ошибка повторяется, обратитесь в службу технической поддержки."
+  },
+  "70003": {
+    "message": "internal error, please try again later",
+    "type": "INTERNAL",
+    "description": "Внутренняя ошибка сервиса, попробуйте выполнить запрос позднее.</br>Если ошибка повторяется, обратитесь в службу технической поддержки."
   },
   "80001": {
     "message": "limit of open streams exceeded",

@@ -14,7 +14,7 @@
     
     
       
-        <title>Points - TINKOFF INVEST API</title>
+        <title>Стоимость в пунктах цены - TINKOFF INVEST API</title>
       
     
     
@@ -64,6 +64,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -90,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Points
+              Стоимость в пунктах цены
             
           </span>
         </div>
@@ -213,12 +218,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       <label class="md-nav__link" for="__nav_2">
         Полезная информация
@@ -299,6 +306,81 @@
       <a href="../faq_custom_types/" class="md-nav__link">
         Нестандартные типы данных
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Стоимость в пунктах цены
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Стоимость в пунктах цены
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Цены облигаций и фьючерсов
+  </a>
+  
+    <nav class="md-nav" aria-label="Цены облигаций и фьючерсов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Перевод цены облигации в валюту
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Перевод цены фьючерса в валюту
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    В каких параметрах методов используются пункты цены?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -970,6 +1052,63 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Цены облигаций и фьючерсов
+  </a>
+  
+    <nav class="md-nav" aria-label="Цены облигаций и фьючерсов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Перевод цены облигации в валюту
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Перевод цены фьючерса в валюту
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    В каких параметрах методов используются пункты цены?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -980,9 +1119,49 @@
                   </a>
                 
                 
-                  <h1>Points</h1>
+                  <h1>Стоимость в пунктах цены</h1>
                 
-                <table>
+                <h2 id="_1">Цены облигаций и фьючерсов</h2>
+<p>Цены облигаций и фьючерсов в TINKOFF INVEST API предоставляются в пунктах. Методика расчёта стоимости
+лота в валюте отличается в зависимости от типа биржевого инструмента.</p>
+<h3 id="_2">Перевод цены облигации в валюту</h3>
+<p>Пункты цены для котировок облигаций представляют собой проценты номинала облигации. Для пересчёта пунктов
+в валюту можно воспользоваться формулой:</p>
+<blockquote>
+<p><strong>price</strong> / 100 * <strong>nominal</strong></p>
+</blockquote>
+<p>Где</p>
+<ul>
+<li>
+<p><strong>price</strong> — текущая котировка ценной бумаги;</p>
+</li>
+<li>
+<p><strong>nominal</strong> — номинал облигации.</p>
+</li>
+</ul>
+<p><a name="futures"></a></p>
+<h3 id="_3">Перевод цены фьючерса в валюту</h3>
+<p>Стоимость фьючерсов так же предоставляется в пунктах, для пересчёта можно воспользоваться формулой:</p>
+<blockquote>
+<p><strong>price</strong> / <strong>min_price_increment</strong> * <strong>min_price_increment_amount</strong></p>
+</blockquote>
+<p>Где</p>
+<ul>
+<li>
+<p><strong>price</strong> — текущая котировка ценной бумаги;</p>
+</li>
+<li>
+<p><strong>min_price_increment</strong> — шаг цены;</p>
+</li>
+<li>
+<p><strong>min_price_increment_amount</strong> — стоимость шага цены.</p>
+</li>
+</ul>
+<p>Так же при работе с фьючерсами важно учитывать размер гарантийного обеспечения. Узнать эти параметры фьючерсов
+можно при помощи метода: <a href="/investAPI/instruments#getfuturesmargin">getFuturesMargin</a>. Подробнее про срочный
+рынок читайте <a href="https://help.tinkoff.ru/forts/">тут</a></p>
+<h2 id="_4">В каких параметрах методов используются пункты цены?</h2>
+<table>
 <thead>
 <tr>
 <th align="left">Сервис</th>
@@ -1101,6 +1280,41 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../faq_custom_types/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Нестандартные типы данных" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Нестандартные типы данных
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../algorithmic_trading/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Алгоритмический трейдинг" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Алгоритмический трейдинг
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

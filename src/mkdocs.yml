@@ -18,7 +18,6 @@ nav:
   - "Токен доступа": token.md
   - "Идентификация торговых инструментов": faq_identification.md
   - "Нестандартные типы данных": faq_custom_types.md
-  - "Стоимость в пунктах цены": points.md
   - "Алгоритмический трейдинг": algorithmic_trading.md
   - "Индикаторы технического анализа": tech_indicators.md
   - "Торговые площадки и режимы торгов": markets.md

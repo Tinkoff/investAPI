@@ -244,11 +244,11 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| account_id |  [string](#string) | Идентификатор счёта клиента. |
-| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало периода (по UTC). |
-| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание периода (по UTC). |
-| state |  [OperationState](#operationstate) | Статус запрашиваемых операций. |
-| figi |  [string](#string) | Figi-идентификатор инструмента для фильтрации. |
+| account_id |  [string](#string) | Идентификатор счёта клиента |
+| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало периода (по UTC) |
+| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание периода (по UTC) |
+| state |  [OperationState](#operationstate) | Статус запрашиваемых операций |
+| figi |  [string](#string) | Figi-идентификатор инструмента для фильтрации |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -259,7 +259,7 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| operations | Массив объектов [Operation](#operation) | Массив операций. |
+| operations | Массив объектов [Operation](#operation) | Массив операций |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -270,20 +270,20 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| id |  [string](#string) | Идентификатор операции. |
-| parent_operation_id |  [string](#string) | Идентификатор родительской операции. |
-| currency |  [string](#string) | Валюта операции. |
-| payment |  [MoneyValue](#moneyvalue) | Сумма операции. |
-| price |  [MoneyValue](#moneyvalue) | Цена операции за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. |
-| state |  [OperationState](#operationstate) | Статус операции. |
-| quantity |  [int64](#int64) | Количество лотов инструмента. |
-| quantity_rest |  [int64](#int64) | Неисполненный остаток по сделке. |
-| figi |  [string](#string) | Figi-идентификатор инструмента, связанного с операцией. |
+| id |  [string](#string) | Идентификатор операции |
+| parent_operation_id |  [string](#string) | Идентификатор родительской операции |
+| currency |  [string](#string) | Валюта операции |
+| payment |  [MoneyValue](#moneyvalue) | Сумма операции |
+| price |  [MoneyValue](#moneyvalue) | Цена операции |
+| state |  [OperationState](#operationstate) | Статус операции |
+| quantity |  [int64](#int64) | Количество лотов инструмента |
+| quantity_rest |  [int64](#int64) | Неисполненный остаток по сделке |
+| figi |  [string](#string) | Figi-идентификатор инструмента, связанного с операцией |
 | instrument_type |  [string](#string) | Тип инструмента. Возможные значения: </br>**bond** — облигация; </br>**share** — акция; </br>**currency** — валюта; </br>**etf** — фонд; </br>**futures** — фьючерс. |
-| date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время операции в формате часовом поясе UTC. |
-| type |  [string](#string) | Текстовое описание типа операции. |
-| operation_type |  [OperationType](#operationtype) | Тип операции. |
-| trades | Массив объектов [OperationTrade](#operationtrade) | Массив сделок. |
+| date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время операции в формате часовом поясе UTC |
+| type |  [string](#string) | Текстовое описание типа операции |
+| operation_type |  [OperationType](#operationtype) | Тип операции |
+| trades | Массив объектов [OperationTrade](#operationtrade) | Массив сделок |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -294,10 +294,10 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| trade_id |  [string](#string) | Идентификатор сделки. |
-| date_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время сделки в часовом поясе UTC. |
-| quantity |  [int64](#int64) | Количество инструментов. |
-| price |  [MoneyValue](#moneyvalue) | Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. |
+| trade_id |  [string](#string) | Идентификатор сделки |
+| date_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время сделки в часовом поясе UTC |
+| quantity |  [int64](#int64) | Количество инструментов |
+| price |  [MoneyValue](#moneyvalue) | Цена |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -308,7 +308,7 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| account_id |  [string](#string) | Идентификатор счёта пользователя. |
+| account_id |  [string](#string) | Идентификатор счёта пользователя |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -319,13 +319,13 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| total_amount_shares |  [MoneyValue](#moneyvalue) | Общая стоимость акций в портфеле в рублях. |
-| total_amount_bonds |  [MoneyValue](#moneyvalue) | Общая стоимость облигаций в портфеле в рублях. |
-| total_amount_etf |  [MoneyValue](#moneyvalue) | Общая стоимость фондов в портфеле в рублях. |
-| total_amount_currencies |  [MoneyValue](#moneyvalue) | Общая стоимость валют в портфеле в рублях. |
-| total_amount_futures |  [MoneyValue](#moneyvalue) | Общая стоимость фьючерсов в портфеле в рублях. |
-| expected_yield |  [Quotation](#quotation) | Текущая относительная доходность портфеля, в %. |
-| positions | Массив объектов [PortfolioPosition](#portfolioposition) | Список позиций портфеля. |
+| total_amount_shares |  [MoneyValue](#moneyvalue) | Общая стоимость акций в портфеле в рублях |
+| total_amount_bonds |  [MoneyValue](#moneyvalue) | Общая стоимость облигаций в портфеле в рублях |
+| total_amount_etf |  [MoneyValue](#moneyvalue) | Общая стоимость фондов в портфеле в рублях |
+| total_amount_currencies |  [MoneyValue](#moneyvalue) | Общая стоимость валют в портфеле в рублях |
+| total_amount_futures |  [MoneyValue](#moneyvalue) | Общая стоимость фьючерсов в портфеле в рублях |
+| expected_yield |  [Quotation](#quotation) | Текущая относительная доходность портфеля, в % |
+| positions | Массив объектов [PortfolioPosition](#portfolioposition) | Список позиций портфеля |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -336,7 +336,7 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| account_id |  [string](#string) | Идентификатор счёта пользователя. |
+| account_id |  [string](#string) | Идентификатор счёта пользователя |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -347,11 +347,11 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| money | Массив объектов [MoneyValue](#moneyvalue) | Массив валютных позиций портфеля. |
-| blocked | Массив объектов [MoneyValue](#moneyvalue) | Массив заблокированных валютных позиций портфеля. |
-| securities | Массив объектов [PositionsSecurities](#positionssecurities) | Список ценно-бумажных позиций портфеля. |
-| limits_loading_in_progress |  [bool](#bool) | Признак идущей в данный момент выгрузки лимитов. |
-| futures | Массив объектов [PositionsFutures](#positionsfutures) | Список фьючерсов портфеля. |
+| money | Массив объектов [MoneyValue](#moneyvalue) | Массив валютных позиций портфеля |
+| blocked | Массив объектов [MoneyValue](#moneyvalue) | Массив заблокированных валютных позиций портфеля |
+| securities | Массив объектов [PositionsSecurities](#positionssecurities) | Список ценно-бумажных позиций портфеля |
+| limits_loading_in_progress |  [bool](#bool) | Признак идущей в данный момент выгрузки лимитов |
+| futures | Массив объектов [PositionsFutures](#positionsfutures) | Список фьючерсов портфеля |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -362,7 +362,7 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| account_id |  [string](#string) | Идентификатор счёта пользователя. |
+| account_id |  [string](#string) | Идентификатор счёта пользователя |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -373,9 +373,9 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| money | Массив объектов [MoneyValue](#moneyvalue) | Массив валютных позиций портфеля. |
-| blocked | Массив объектов [MoneyValue](#moneyvalue) | Массив заблокированных валютных позиций портфеля. |
-| blocked_guarantee | Массив объектов [MoneyValue](#moneyvalue) | Заблокировано под гарантийное обеспечение фьючерсов. |
+| money | Массив объектов [MoneyValue](#moneyvalue) | Массив валютных позиций портфеля |
+| blocked | Массив объектов [MoneyValue](#moneyvalue) | Массив заблокированных валютных позиций портфеля |
+| blocked_guarantee | Массив объектов [MoneyValue](#moneyvalue) | Заблокировано под гарантийное обеспечение фьючерсов |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -386,16 +386,16 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| figi |  [string](#string) | Figi-идентификатора инструмента. |
-| instrument_type |  [string](#string) | Тип инструмента. |
-| quantity |  [Quotation](#quotation) | Количество инструмента в портфеле в штуках. |
+| figi |  [string](#string) | Figi-идентификатора инструмента |
+| instrument_type |  [string](#string) | Тип инструмента |
+| quantity |  [Quotation](#quotation) | Количество инструмента в портфеле в штуках |
 | average_position_price |  [MoneyValue](#moneyvalue) | Средневзвешенная цена позиции. **Возможна задержка до секунды для пересчёта**. |
 | expected_yield |  [Quotation](#quotation) | Текущая рассчитанная относительная доходность позиции, в %. |
-| current_nkd |  [MoneyValue](#moneyvalue) | Текущий НКД. |
+| current_nkd |  [MoneyValue](#moneyvalue) | Текущий НКД |
 | average_position_price_pt |  [Quotation](#quotation) | Средняя цена лота в позиции в пунктах (для фьючерсов). **Возможна задержка до секунды для пересчёта**. |
-| current_price |  [MoneyValue](#moneyvalue) | Текущая цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.. |
+| current_price |  [MoneyValue](#moneyvalue) | Текущая цена инструмента |
 | average_position_price_fifo |  [MoneyValue](#moneyvalue) | Средняя цена лота в позиции по методу FIFO. **Возможна задержка до секунды для пересчёта**. |
-| quantity_lots |  [Quotation](#quotation) | Количество лотов в портфеле. |
+| quantity_lots |  [Quotation](#quotation) | Количество лотов в портфеле |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -406,9 +406,9 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| figi |  [string](#string) | Figi-идентификатор бумаги. |
-| blocked |  [int64](#int64) | Заблокировано. |
-| balance |  [int64](#int64) | Текущий незаблокированный баланс. |
+| figi |  [string](#string) | Figi-идентификатор бумаги |
+| blocked |  [int64](#int64) | Заблокировано |
+| balance |  [int64](#int64) | Текущий незаблокированный баланс |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -419,9 +419,9 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| figi |  [string](#string) | Figi-идентификатор фьючерса. |
-| blocked |  [int64](#int64) | Заблокировано. |
-| balance |  [int64](#int64) | Текущий незаблокированный баланс. |
+| figi |  [string](#string) | Figi-идентификатор фьючерса |
+| blocked |  [int64](#int64) | Заблокировано |
+| balance |  [int64](#int64) | Текущий незаблокированный баланс |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -456,7 +456,7 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| account_id |  [string](#string) | Идентификатор счёта клиента. |
+| account_id |  [string](#string) | Идентификатор счёта клиента |
 | from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало периода в часовом поясе UTC. |
 | to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание периода в часовом поясе UTC. |
  <!-- end Fields -->
@@ -469,7 +469,7 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| task_id |  [string](#string) | Идентификатор задачи формирования брокерского отчёта. |
+| task_id |  [string](#string) | Идентификатор задачи формирования брокерского отчёта |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -480,8 +480,8 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| task_id |  [string](#string) | Идентификатор задачи формирования брокерского отчёта. |
-| page |  [int32](#int32) | Номер страницы отчета (начинается с 1), значение по умолчанию: 0. |
+| task_id |  [string](#string) | Идентификатор задачи формирования брокерского отчёта |
+| page |  [int32](#int32) | Номер страницы отчета (начинается с 1), значение по умолчанию: 0 |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -493,9 +493,9 @@
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | broker_report | Массив объектов [BrokerReport](#brokerreport) |  |
-| itemsCount |  [int32](#int32) | Количество записей в отчете. |
-| pagesCount |  [int32](#int32) | Количество страниц с данными отчета (начинается с 0). |
-| page |  [int32](#int32) | Текущая страница (начинается с 0). |
+| itemsCount |  [int32](#int32) | Количество записей в отчете |
+| pagesCount |  [int32](#int32) | Количество страниц с данными отчета (начинается с 0) |
+| page |  [int32](#int32) | Текущая страница (начинается с 0) |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -506,33 +506,33 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| trade_id |  [string](#string) | Номер сделки. |
-| order_id |  [string](#string) | Номер поручения. |
-| figi |  [string](#string) | Figi-идентификатор инструмента. |
-| execute_sign |  [string](#string) | Признак исполнения. |
+| trade_id |  [string](#string) | Номер сделки |
+| order_id |  [string](#string) | Номер поручения |
+| figi |  [string](#string) | Figi-идентификатор инструмента |
+| execute_sign |  [string](#string) | Признак исполнения |
 | trade_datetime |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время заключения в часовом поясе UTC. |
-| exchange |  [string](#string) | Торговая площадка. |
-| class_code |  [string](#string) | Режим торгов. |
-| direction |  [string](#string) | Вид сделки. |
-| name |  [string](#string) | Сокращённое наименование актива. |
-| ticker |  [string](#string) | Код актива. |
-| price |  [MoneyValue](#moneyvalue) | Цена за единицу. |
-| quantity |  [int64](#int64) | Количество. |
-| order_amount |  [MoneyValue](#moneyvalue) | Сумма (без НКД). |
-| aci_value |  [Quotation](#quotation) | НКД. |
-| total_order_amount |  [MoneyValue](#moneyvalue) | Сумма сделки. |
-| broker_commission |  [MoneyValue](#moneyvalue) | Комиссия брокера. |
-| exchange_commission |  [MoneyValue](#moneyvalue) | Комиссия биржи. |
-| exchange_clearing_commission |  [MoneyValue](#moneyvalue) | Комиссия клир. центра. |
-| repo_rate |  [Quotation](#quotation) | Ставка РЕПО (%). |
-| party |  [string](#string) | Контрагент/Брокер. |
+| exchange |  [string](#string) | Торговая площадка |
+| class_code |  [string](#string) | Режим торгов |
+| direction |  [string](#string) | Вид сделки |
+| name |  [string](#string) | Сокращённое наименование актива |
+| ticker |  [string](#string) | Код актива |
+| price |  [MoneyValue](#moneyvalue) | Цена за единицу |
+| quantity |  [int64](#int64) | Количество |
+| order_amount |  [MoneyValue](#moneyvalue) | Сумма (без НКД) |
+| aci_value |  [Quotation](#quotation) | НКД |
+| total_order_amount |  [MoneyValue](#moneyvalue) | Сумма сделки |
+| broker_commission |  [MoneyValue](#moneyvalue) | Комиссия брокера |
+| exchange_commission |  [MoneyValue](#moneyvalue) | Комиссия биржи |
+| exchange_clearing_commission |  [MoneyValue](#moneyvalue) | Комиссия клир. центра |
+| repo_rate |  [Quotation](#quotation) | Ставка РЕПО (%) |
+| party |  [string](#string) | Контрагент/Брокер |
 | clear_value_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата расчётов в часовом поясе UTC. |
 | sec_value_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата поставки в часовом поясе UTC. |
-| broker_status |  [string](#string) | Статус брокера. |
+| broker_status |  [string](#string) | Статус брокера |
 | separate_agreement_type |  [string](#string) | Тип дог. |
 | separate_agreement_number |  [string](#string) | Номер дог. |
 | separate_agreement_date |  [string](#string) | Дата дог. |
-| delivery_type |  [string](#string) | Тип расчёта по сделке. |
+| delivery_type |  [string](#string) | Тип расчёта по сделке |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -581,7 +581,7 @@
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | task_id |  [string](#string) | Идентификатор задачи формирования отчёта. |
-| page |  [int32](#int32) | Номер страницы отчета (начинается с 0), значение по умолчанию: 0. |
+| page |  [int32](#int32) | Номер страницы отчета (начинается с 0), значение по умолчанию: 0 |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -604,9 +604,9 @@
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | dividends_foreign_issuer_report | Массив объектов [DividendsForeignIssuerReport](#dividendsforeignissuerreport) |  |
-| itemsCount |  [int32](#int32) | Количество записей в отчете. |
-| pagesCount |  [int32](#int32) | Количество страниц с данными отчета (начинается с 0). |
-| page |  [int32](#int32) | Текущая страница (начинается с 0). |
+| itemsCount |  [int32](#int32) | Количество записей в отчете |
+| pagesCount |  [int32](#int32) | Количество страниц с данными отчета (начинается с 0) |
+| page |  [int32](#int32) | Текущая страница (начинается с 0) |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -639,67 +639,67 @@
 
 
 #### OperationState
-Статус запрашиваемых операций.
+Статус запрашиваемых операций
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | OPERATION_STATE_UNSPECIFIED | 0 | Статус операции не определён |
-| OPERATION_STATE_EXECUTED | 1 | Исполнена. |
-| OPERATION_STATE_CANCELED | 2 | Отменена. |
+| OPERATION_STATE_EXECUTED | 1 | Исполнена |
+| OPERATION_STATE_CANCELED | 2 | Отменена |
  <!-- range .Values -->
 
 
 
 #### OperationType
-Тип операции.
+Тип операции
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| OPERATION_TYPE_UNSPECIFIED | 0 | Тип операции не определён. |
-| OPERATION_TYPE_INPUT | 1 | Завод денежных средств. |
-| OPERATION_TYPE_BOND_TAX | 2 | Удержание налога по купонам. |
-| OPERATION_TYPE_OUTPUT_SECURITIES | 3 | Вывод ЦБ. |
-| OPERATION_TYPE_OVERNIGHT | 4 | Доход по сделке РЕПО овернайт. |
-| OPERATION_TYPE_TAX | 5 | Удержание налога. |
-| OPERATION_TYPE_BOND_REPAYMENT_FULL | 6 | Полное погашение облигаций. |
-| OPERATION_TYPE_SELL_CARD | 7 | Продажа ЦБ с карты. |
-| OPERATION_TYPE_DIVIDEND_TAX | 8 | Удержание налога по дивидендам. |
-| OPERATION_TYPE_OUTPUT | 9 | Вывод денежных средств. |
-| OPERATION_TYPE_BOND_REPAYMENT | 10 | Частичное погашение облигаций. |
-| OPERATION_TYPE_TAX_CORRECTION | 11 | Корректировка налога. |
-| OPERATION_TYPE_SERVICE_FEE | 12 | Удержание комиссии за обслуживание брокерского счёта. |
-| OPERATION_TYPE_BENEFIT_TAX | 13 | Удержание налога за материальную выгоду. |
-| OPERATION_TYPE_MARGIN_FEE | 14 | Удержание комиссии за непокрытую позицию. |
-| OPERATION_TYPE_BUY | 15 | Покупка ЦБ. |
-| OPERATION_TYPE_BUY_CARD | 16 | Покупка ЦБ с карты. |
-| OPERATION_TYPE_INPUT_SECURITIES | 17 | Завод ЦБ. |
-| OPERATION_TYPE_SELL_MARGIN | 18 | Продажа в результате Margin-call. |
-| OPERATION_TYPE_BROKER_FEE | 19 | Удержание комиссии за операцию. |
-| OPERATION_TYPE_BUY_MARGIN | 20 | Покупка в результате Margin-call. |
-| OPERATION_TYPE_DIVIDEND | 21 | Выплата дивидендов. |
-| OPERATION_TYPE_SELL | 22 | Продажа ЦБ. |
-| OPERATION_TYPE_COUPON | 23 | Выплата купонов. |
-| OPERATION_TYPE_SUCCESS_FEE | 24 | Удержание комиссии SuccessFee. |
-| OPERATION_TYPE_DIVIDEND_TRANSFER | 25 | Передача дивидендного дохода. |
-| OPERATION_TYPE_ACCRUING_VARMARGIN | 26 | Зачисление вариационной маржи. |
-| OPERATION_TYPE_WRITING_OFF_VARMARGIN | 27 | Списание вариационной маржи. |
-| OPERATION_TYPE_DELIVERY_BUY | 28 | Покупка в рамках экспирации фьючерсного контракта. |
-| OPERATION_TYPE_DELIVERY_SELL | 29 | Продажа в рамках экспирации фьючерсного контракта. |
-| OPERATION_TYPE_TRACK_MFEE | 30 | Комиссия за управление по счёту автоследования. |
-| OPERATION_TYPE_TRACK_PFEE | 31 | Комиссия за результат по счёту автоследования. |
-| OPERATION_TYPE_TAX_PROGRESSIVE | 32 | Удержание налога по ставке 15%. |
-| OPERATION_TYPE_BOND_TAX_PROGRESSIVE | 33 | Удержание налога по купонам по ставке 15%. |
-| OPERATION_TYPE_DIVIDEND_TAX_PROGRESSIVE | 34 | Удержание налога по дивидендам по ставке 15%. |
-| OPERATION_TYPE_BENEFIT_TAX_PROGRESSIVE | 35 | Удержание налога за материальную выгоду по ставке 15%. |
-| OPERATION_TYPE_TAX_CORRECTION_PROGRESSIVE | 36 | Корректировка налога по ставке 15%. |
-| OPERATION_TYPE_TAX_REPO_PROGRESSIVE | 37 | Удержание налога за возмещение по сделкам РЕПО по ставке 15%. |
-| OPERATION_TYPE_TAX_REPO | 38 | Удержание налога за возмещение по сделкам РЕПО. |
-| OPERATION_TYPE_TAX_REPO_HOLD | 39 | Удержание налога по сделкам РЕПО. |
-| OPERATION_TYPE_TAX_REPO_REFUND | 40 | Возврат налога по сделкам РЕПО. |
-| OPERATION_TYPE_TAX_REPO_HOLD_PROGRESSIVE | 41 | Удержание налога по сделкам РЕПО по ставке 15%. |
-| OPERATION_TYPE_TAX_REPO_REFUND_PROGRESSIVE | 42 | Возврат налога по сделкам РЕПО по ставке 15%. |
-| OPERATION_TYPE_DIV_EXT | 43 | Выплата дивидендов на карту. |
-| OPERATION_TYPE_TAX_CORRECTION_COUPON | 44 | Корректировка налога по купонам. |
+| OPERATION_TYPE_UNSPECIFIED | 0 | Тип операции не определён |
+| OPERATION_TYPE_INPUT | 1 | Завод денежных средств |
+| OPERATION_TYPE_BOND_TAX | 2 | Удержание налога по купонам |
+| OPERATION_TYPE_OUTPUT_SECURITIES | 3 | Вывод ЦБ |
+| OPERATION_TYPE_OVERNIGHT | 4 | Доход по сделке РЕПО овернайт |
+| OPERATION_TYPE_TAX | 5 | Удержание налога |
+| OPERATION_TYPE_BOND_REPAYMENT_FULL | 6 | Полное погашение облигаций |
+| OPERATION_TYPE_SELL_CARD | 7 | Продажа ЦБ с карты |
+| OPERATION_TYPE_DIVIDEND_TAX | 8 | Удержание налога по дивидендам |
+| OPERATION_TYPE_OUTPUT | 9 | Вывод денежных средств |
+| OPERATION_TYPE_BOND_REPAYMENT | 10 | Частичное погашение облигаций |
+| OPERATION_TYPE_TAX_CORRECTION | 11 | Корректировка налога |
+| OPERATION_TYPE_SERVICE_FEE | 12 | Удержание комиссии за обслуживание брокерского счёта |
+| OPERATION_TYPE_BENEFIT_TAX | 13 | Удержание налога за материальную выгоду |
+| OPERATION_TYPE_MARGIN_FEE | 14 | Удержание комиссии за непокрытую позицию |
+| OPERATION_TYPE_BUY | 15 | Покупка ЦБ |
+| OPERATION_TYPE_BUY_CARD | 16 | Покупка ЦБ с карты |
+| OPERATION_TYPE_INPUT_SECURITIES | 17 | Завод ЦБ |
+| OPERATION_TYPE_SELL_MARGIN | 18 | Продажа в результате Margin-call |
+| OPERATION_TYPE_BROKER_FEE | 19 | Удержание комиссии за операцию |
+| OPERATION_TYPE_BUY_MARGIN | 20 | Покупка в результате Margin-call |
+| OPERATION_TYPE_DIVIDEND | 21 | Выплата дивидендов |
+| OPERATION_TYPE_SELL | 22 | Продажа ЦБ |
+| OPERATION_TYPE_COUPON | 23 | Выплата купонов |
+| OPERATION_TYPE_SUCCESS_FEE | 24 | Удержание комиссии SuccessFee |
+| OPERATION_TYPE_DIVIDEND_TRANSFER | 25 | Передача дивидендного дохода |
+| OPERATION_TYPE_ACCRUING_VARMARGIN | 26 | Зачисление вариационной маржи |
+| OPERATION_TYPE_WRITING_OFF_VARMARGIN | 27 | Списание вариационной маржи |
+| OPERATION_TYPE_DELIVERY_BUY | 28 | Покупка в рамках экспирации фьючерсного контракта |
+| OPERATION_TYPE_DELIVERY_SELL | 29 | Продажа в рамках экспирации фьючерсного контракта |
+| OPERATION_TYPE_TRACK_MFEE | 30 | Комиссия за управление по счёту автоследования |
+| OPERATION_TYPE_TRACK_PFEE | 31 | Комиссия за результат по счёту автоследования |
+| OPERATION_TYPE_TAX_PROGRESSIVE | 32 | Удержание налога по ставке 15% |
+| OPERATION_TYPE_BOND_TAX_PROGRESSIVE | 33 | Удержание налога по купонам по ставке 15% |
+| OPERATION_TYPE_DIVIDEND_TAX_PROGRESSIVE | 34 | Удержание налога по дивидендам по ставке 15% |
+| OPERATION_TYPE_BENEFIT_TAX_PROGRESSIVE | 35 | Удержание налога за материальную выгоду по ставке 15% |
+| OPERATION_TYPE_TAX_CORRECTION_PROGRESSIVE | 36 | Корректировка налога по ставке 15% |
+| OPERATION_TYPE_TAX_REPO_PROGRESSIVE | 37 | Удержание налога за возмещение по сделкам РЕПО по ставке 15% |
+| OPERATION_TYPE_TAX_REPO | 38 | Удержание налога за возмещение по сделкам РЕПО |
+| OPERATION_TYPE_TAX_REPO_HOLD | 39 | Удержание налога по сделкам РЕПО |
+| OPERATION_TYPE_TAX_REPO_REFUND | 40 | Возврат налога по сделкам РЕПО |
+| OPERATION_TYPE_TAX_REPO_HOLD_PROGRESSIVE | 41 | Удержание налога по сделкам РЕПО по ставке 15% |
+| OPERATION_TYPE_TAX_REPO_REFUND_PROGRESSIVE | 42 | Возврат налога по сделкам РЕПО по ставке 15% |
+| OPERATION_TYPE_DIV_EXT | 43 | Выплата дивидендов на карту |
+| OPERATION_TYPE_TAX_CORRECTION_COUPON | 44 | Корректировка налога по купонам |
  <!-- range .Values -->
 
  <!-- range .HasEnums -->
@@ -798,12 +798,12 @@ Stream сделок пользователя
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| order_id |  [string](#string) | Идентификатор торгового поручения. |
+| order_id |  [string](#string) | Идентификатор торгового поручения |
 | created_at |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время создания сообщения в часовом поясе UTC. |
-| direction |  [OrderDirection](#orderdirection) | Направление сделки. |
-| figi |  [string](#string) | Figi-идентификатор инструмента. |
-| trades | Массив объектов [OrderTrade](#ordertrade) | Массив сделок. |
-| account_id |  [string](#string) | Идентификатор счёта. |
+| direction |  [OrderDirection](#orderdirection) | Направление сделки (возможные значения) |
+| figi |  [string](#string) | Figi-идентификатор инструмента |
+| trades | Массив объектов [OrderTrade](#ordertrade) | Массив сделок |
+| account_id |  [string](#string) | Идентификатор счёта |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -815,8 +815,8 @@ Stream сделок пользователя
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | date_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время совершения сделки в часовом поясе UTC. |
-| price |  [Quotation](#quotation) | Цена одного инструмента, по которой совершена сделка. |
-| quantity |  [int64](#int64) | Количество лотов в сделке. |
+| price |  [Quotation](#quotation) | Цена, по которой совершена сделка |
+| quantity |  [int64](#int64) | Количество лотов в сделке |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -829,7 +829,7 @@ Stream сделок пользователя
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Figi-идентификатор инструмента. |
 | quantity |  [int64](#int64) | Количество лотов. |
-| price |  [Quotation](#quotation) | Цена одного инструмента. Для получения стоимости лота требуется умножить на лотность инструмента. |
+| price |  [Quotation](#quotation) | Цена лота. |
 | direction |  [OrderDirection](#orderdirection) | Направление операции. |
 | account_id |  [string](#string) | Номер счёта. |
 | order_type |  [OrderType](#ordertype) | Тип заявки. |
@@ -856,7 +856,7 @@ Stream сделок пользователя
 | aci_value |  [MoneyValue](#moneyvalue) | Значение НКД (накопленного купонного дохода) на дату. Подробнее: [НКД при выставлении торговых поручений](https://tinkoff.github.io/investAPI/head-orders#coupon) |
 | figi |  [string](#string) | Figi-идентификатор инструмента. |
 | direction |  [OrderDirection](#orderdirection) | Направление сделки. |
-| initial_security_price |  [MoneyValue](#moneyvalue) | Начальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. |
+| initial_security_price |  [MoneyValue](#moneyvalue) | Начальная цена инструмента заявки. |
 | order_type |  [OrderType](#ordertype) | Тип заявки. |
 | message |  [string](#string) | Дополнительные данные об исполнении заявки. |
 | initial_order_price_pt |  [Quotation](#quotation) | Начальная цена заявки в пунктах (для фьючерсов). |
@@ -939,7 +939,7 @@ Stream сделок пользователя
 | executed_commission |  [MoneyValue](#moneyvalue) | Фактическая комиссия по итогам исполнения заявки. |
 | figi |  [string](#string) | Figi-идентификатор инструмента. |
 | direction |  [OrderDirection](#orderdirection) | Направление заявки. |
-| initial_security_price |  [MoneyValue](#moneyvalue) | Начальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. |
+| initial_security_price |  [MoneyValue](#moneyvalue) | Начальная цена инструмента. Цена инструмента на момент выставления заявки. |
 | stages | Массив объектов [OrderStage](#orderstage) | Стадии выполнения заявки. |
 | service_commission |  [MoneyValue](#moneyvalue) | Сервисная комиссия. |
 | currency |  [string](#string) | Валюта заявки. |
@@ -955,7 +955,7 @@ Stream сделок пользователя
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| price |  [MoneyValue](#moneyvalue) | Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.. |
+| price |  [MoneyValue](#moneyvalue) | Цена. |
 | quantity |  [int64](#int64) | Количество лотов. |
 | trade_id |  [string](#string) | Идентификатор торговой операции. |
  <!-- end Fields -->

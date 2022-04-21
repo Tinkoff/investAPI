@@ -93,12 +93,12 @@ Stream сделок пользователя
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| order_id |  [string](#string) | Идентификатор торгового поручения. |
+| order_id |  [string](#string) | Идентификатор торгового поручения |
 | created_at |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время создания сообщения в часовом поясе UTC. |
-| direction |  [OrderDirection](#orderdirection) | Направление сделки. |
-| figi |  [string](#string) | Figi-идентификатор инструмента. |
-| trades | Массив объектов [OrderTrade](#ordertrade) | Массив сделок. |
-| account_id |  [string](#string) | Идентификатор счёта. |
+| direction |  [OrderDirection](#orderdirection) | Направление сделки (возможные значения) |
+| figi |  [string](#string) | Figi-идентификатор инструмента |
+| trades | Массив объектов [OrderTrade](#ordertrade) | Массив сделок |
+| account_id |  [string](#string) | Идентификатор счёта |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -110,8 +110,8 @@ Stream сделок пользователя
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | date_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время совершения сделки в часовом поясе UTC. |
-| price |  [Quotation](#quotation) | Цена одного инструмента, по которой совершена сделка. |
-| quantity |  [int64](#int64) | Количество лотов в сделке. |
+| price |  [Quotation](#quotation) | Цена, по которой совершена сделка |
+| quantity |  [int64](#int64) | Количество лотов в сделке |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -124,7 +124,7 @@ Stream сделок пользователя
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Figi-идентификатор инструмента. |
 | quantity |  [int64](#int64) | Количество лотов. |
-| price |  [Quotation](#quotation) | Цена одного инструмента. Для получения стоимости лота требуется умножить на лотность инструмента. |
+| price |  [Quotation](#quotation) | Цена лота. |
 | direction |  [OrderDirection](#orderdirection) | Направление операции. |
 | account_id |  [string](#string) | Номер счёта. |
 | order_type |  [OrderType](#ordertype) | Тип заявки. |
@@ -151,7 +151,7 @@ Stream сделок пользователя
 | aci_value |  [MoneyValue](#moneyvalue) | Значение НКД (накопленного купонного дохода) на дату. Подробнее: [НКД при выставлении торговых поручений](https://tinkoff.github.io/investAPI/head-orders#coupon) |
 | figi |  [string](#string) | Figi-идентификатор инструмента. |
 | direction |  [OrderDirection](#orderdirection) | Направление сделки. |
-| initial_security_price |  [MoneyValue](#moneyvalue) | Начальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. |
+| initial_security_price |  [MoneyValue](#moneyvalue) | Начальная цена инструмента заявки. |
 | order_type |  [OrderType](#ordertype) | Тип заявки. |
 | message |  [string](#string) | Дополнительные данные об исполнении заявки. |
 | initial_order_price_pt |  [Quotation](#quotation) | Начальная цена заявки в пунктах (для фьючерсов). |
@@ -234,7 +234,7 @@ Stream сделок пользователя
 | executed_commission |  [MoneyValue](#moneyvalue) | Фактическая комиссия по итогам исполнения заявки. |
 | figi |  [string](#string) | Figi-идентификатор инструмента. |
 | direction |  [OrderDirection](#orderdirection) | Направление заявки. |
-| initial_security_price |  [MoneyValue](#moneyvalue) | Начальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. |
+| initial_security_price |  [MoneyValue](#moneyvalue) | Начальная цена инструмента. Цена инструмента на момент выставления заявки. |
 | stages | Массив объектов [OrderStage](#orderstage) | Стадии выполнения заявки. |
 | service_commission |  [MoneyValue](#moneyvalue) | Сервисная комиссия. |
 | currency |  [string](#string) | Валюта заявки. |
@@ -250,7 +250,7 @@ Stream сделок пользователя
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| price |  [MoneyValue](#moneyvalue) | Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.. |
+| price |  [MoneyValue](#moneyvalue) | Цена. |
 | quantity |  [int64](#int64) | Количество лотов. |
 | trade_id |  [string](#string) | Идентификатор торговой операции. |
  <!-- end Fields -->

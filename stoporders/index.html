@@ -10,7 +10,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.3">
     
     
       
@@ -1436,7 +1436,7 @@
 
 <h3 id="_2">Сообщения методов</h3>
 <h4 id="poststoporderrequest">PostStopOrderRequest</h4>
-<p>Запрос выставления стоп-заявки.</p>
+<p>Запрос выставления стоп-заявки</p>
 <table>
 <thead>
 <tr>
@@ -1449,42 +1449,42 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента.</td>
+<td>Figi-идентификатор инструмента</td>
 </tr>
 <tr>
 <td>quantity</td>
 <td><a href="#int64">int64</a></td>
-<td>Количество лотов.</td>
+<td>Количество лотов</td>
 </tr>
 <tr>
 <td>price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Цена лота</td>
 </tr>
 <tr>
 <td>stop_price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Стоп-цена заявки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Стоп-цена заявки</td>
 </tr>
 <tr>
 <td>direction</td>
 <td><a href="#stoporderdirection">StopOrderDirection</a></td>
-<td>Направление операции.</td>
+<td>Направление операции</td>
 </tr>
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Номер счёта.</td>
+<td>Номер счёта</td>
 </tr>
 <tr>
 <td>expiration_type</td>
 <td><a href="#stoporderexpirationtype">StopOrderExpirationType</a></td>
-<td>Тип экспирации заявки.</td>
+<td>Тип экспирации заявки</td>
 </tr>
 <tr>
 <td>stop_order_type</td>
 <td><a href="#stopordertype">StopOrderType</a></td>
-<td>Тип заявки.</td>
+<td>Тип заявки</td>
 </tr>
 <tr>
 <td>expire_date</td>
@@ -1539,7 +1539,7 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта клиента.</td>
+<td>Идентификатор счёта клиента</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -1564,7 +1564,7 @@
 <tr>
 <td>stop_orders</td>
 <td>Массив объектов <a href="#stoporder">StopOrder</a></td>
-<td>Массив стоп-заявок по счёту.</td>
+<td>Массив стоп-заявок по счёту</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -1589,7 +1589,7 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта клиента.</td>
+<td>Идентификатор счёта клиента</td>
 </tr>
 <tr>
 <td>stop_order_id</td>
@@ -1644,32 +1644,32 @@
 <tr>
 <td>stop_order_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор-идентификатор стоп-заявки.</td>
+<td>Идентификатор-идентификатор стоп-заявки</td>
 </tr>
 <tr>
 <td>lots_requested</td>
 <td><a href="#int64">int64</a></td>
-<td>Запрошено лотов.</td>
+<td>Запрошено лотов</td>
 </tr>
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента.</td>
+<td>Figi-идентификатор инструмента</td>
 </tr>
 <tr>
 <td>direction</td>
 <td><a href="#stoporderdirection">StopOrderDirection</a></td>
-<td>Направление операции.</td>
+<td>Направление операции</td>
 </tr>
 <tr>
 <td>currency</td>
 <td><a href="#string">string</a></td>
-<td>Валюта стоп-заявки.</td>
+<td>Валюта стоп-заявки</td>
 </tr>
 <tr>
 <td>order_type</td>
 <td><a href="#stopordertype">StopOrderType</a></td>
-<td>Тип стоп-заявки.</td>
+<td>Тип стоп-заявки</td>
 </tr>
 <tr>
 <td>create_date</td>
@@ -1689,12 +1689,12 @@
 <tr>
 <td>price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Цена заявки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Цена заявки</td>
 </tr>
 <tr>
 <td>stop_price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Цена активации стоп-заявки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Цена активации стоп-заявки</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -1721,17 +1721,17 @@
 <tr>
 <td>STOP_ORDER_DIRECTION_UNSPECIFIED</td>
 <td>0</td>
-<td>Значение не указано.</td>
+<td>Значение не указано</td>
 </tr>
 <tr>
 <td>STOP_ORDER_DIRECTION_BUY</td>
 <td>1</td>
-<td>Покупка.</td>
+<td>Покупка</td>
 </tr>
 <tr>
 <td>STOP_ORDER_DIRECTION_SELL</td>
 <td>2</td>
-<td>Продажа.</td>
+<td>Продажа</td>
 </tr>
 </tbody>
 </table>
@@ -1777,22 +1777,22 @@
 <tr>
 <td>STOP_ORDER_TYPE_UNSPECIFIED</td>
 <td>0</td>
-<td>Значение не указано.</td>
+<td>Значение не указано</td>
 </tr>
 <tr>
 <td>STOP_ORDER_TYPE_TAKE_PROFIT</td>
 <td>1</td>
-<td>Take-profit заявка.</td>
+<td>Take-profit заявка</td>
 </tr>
 <tr>
 <td>STOP_ORDER_TYPE_STOP_LOSS</td>
 <td>2</td>
-<td>Stop-loss заявка.</td>
+<td>Stop-loss заявка</td>
 </tr>
 <tr>
 <td>STOP_ORDER_TYPE_STOP_LIMIT</td>
 <td>3</td>
-<td>Stop-limit заявка.</td>
+<td>Stop-limit заявка</td>
 </tr>
 </tbody>
 </table>
@@ -2022,7 +2022,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e # \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.febc23d1.min.js"></script>
+      <script src="../assets/javascripts/bundle.29db7785.min.js"></script>
       
     
   </body>

@@ -344,6 +344,7 @@ message GetTradingStatusResponse {
   SecurityTradingStatus trading_status = 2; //Статус торговли инструментом.
   bool limit_order_available_flag = 3; //Признак доступности выставления лимитной заявки по инструменту.
   bool market_order_available_flag = 4; //Признак доступности выставления рыночной заявки по инструменту.
+  bool api_trade_available_flag = 5; //Признак доступности торгов через API.
 }
 
 //Запрос последних обезличенных сделок по инструменту.

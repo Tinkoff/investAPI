@@ -58,6 +58,7 @@
 30064|INVALID_ARGUMENT|the required period should not exceed 31 days|Запрошенный период не может превышать 31 дня. </br> Укажите корректный период.|
 30065|INVALID_ARGUMENT|missing parameter: 'task_id'|Входной параметр *task_id* является обязательным. </br> Укажите корректный параметр *task_id*.|
 30066|INVALID_ARGUMENT|missing parameter: 'payload'|Входной параметр *payload* является обязательным. </br> Укажите корректный параметр *payload*.|
+30067|INVALID_ARGUMENT|'action_type' is invalid|Некорректное значение *action_type*. </br> Выберите допустимое значение.|
 30077|INVALID_ARGUMENT|not available for OTC instruments|Метод недоступен для внебиржевых инструментов.|
 30078|INVALID_ARGUMENT|Incorrect minimum price increment|Некорректный шаг изменения цены.|
 30079|INVALID_ARGUMENT|instrument is not available for trading|Инструмент недоступен для торгов.|
@@ -66,6 +67,7 @@
 30082|INVALID_ARGUMENT|account status is blocked|Аккаунт заблокирован.|
 30083|INVALID_ARGUMENT|order_type is invalid|Некорректный тип заявки.|
 30084|INVALID_ARGUMENT|maximum request period has been exceeded|Превышен лимит запрашиваемого периода.|
+30085|INVALID_ARGUMENT|price in points is available only for futures and bonds|Тип цены в пунктах доступен только для фьючерсов и облигаций.|
 40002|PERMISSION_DENIED|insufficient privileges|Недостаточно прав для совершения операции. </br>Токен доступа имеет уровень прав read-only.</br>Подробнее: [Виды токенов](https://tinkoff.github.io/investAPI/index#_2)|
 50001|NOT_FOUND|exchange not found|Биржа не найдена по переданному *exchange_id*.</br>Укажите корректный *exchange_id*.|
 50002|NOT_FOUND|instrument not found|Инструмент не найден.</br>Укажите корректный идентификатор инструмента.|
@@ -74,6 +76,7 @@
 50006|NOT_FOUND|stop-order not found|Стоп-заявка не найдена по переданному *stop_order_id*.</br>Укажите корректный *stop_order_id*.|
 50007|NOT_FOUND|task not found|Задача не найдена.|
 50008|NOT_FOUND|no orderbook provider|Отсутствует источник данных по стаканам.|
+50009|NOT_FOUND|asset not found|Актив не найден.</br>Укажите корректный идентификатор актива.|
 70001|INTERNAL|internal error|Внутренняя ошибка сервиса.</br>Если ошибка повторяется, обратитесь в службу технической поддержки.|
 70002|INTERNAL|internal network error|Неизвестная сетевая ошибка, попробуйте выполнить запрос позднее.</br>Если ошибка повторяется, обратитесь в службу технической поддержки.|
 70003|INTERNAL|internal error, please try again later|Внутренняя ошибка сервиса, попробуйте выполнить запрос позднее.</br>Если ошибка повторяется, обратитесь в службу технической поддержки.|

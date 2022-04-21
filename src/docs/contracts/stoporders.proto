@@ -25,16 +25,16 @@ service StopOrdersService { /* Сервис предназначен для ра
   rpc CancelStopOrder(CancelStopOrderRequest) returns (CancelStopOrderResponse);
 }
 
-//Запрос выставления стоп-заявки
+//Запрос выставления стоп-заявки.
 message PostStopOrderRequest {
-  string figi = 1; //Figi-идентификатор инструмента
-  int64 quantity = 2; //Количество лотов
-  Quotation price = 3; //Цена лота
-  Quotation stop_price = 4; //Стоп-цена заявки
-  StopOrderDirection direction = 5; //Направление операции
-  string account_id = 6; //Номер счёта
-  StopOrderExpirationType expiration_type = 7; //Тип экспирации заявки
-  StopOrderType stop_order_type = 8; //Тип заявки
+  string figi = 1; //Figi-идентификатор инструмента.
+  int64 quantity = 2; //Количество лотов.
+  Quotation price = 3; //Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
+  Quotation stop_price = 4; //Стоп-цена заявки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
+  StopOrderDirection direction = 5; //Направление операции.
+  string account_id = 6; //Номер счёта.
+  StopOrderExpirationType expiration_type = 7; //Тип экспирации заявки.
+  StopOrderType stop_order_type = 8; //Тип заявки.
   google.protobuf.Timestamp expire_date = 9; //Дата и время окончания действия стоп-заявки в часовом поясе UTC. **Для ExpirationType = GoodTillDate заполнение обязательно**.
 }
 
@@ -45,17 +45,17 @@ message PostStopOrderResponse {
 
 //Запрос получения списка активных стоп-заявок.
 message GetStopOrdersRequest {
-  string account_id = 1; //Идентификатор счёта клиента
+  string account_id = 1; //Идентификатор счёта клиента.
 }
 
 //Список активных стоп-заявок.
 message GetStopOrdersResponse {
-  repeated StopOrder stop_orders = 1; //Массив стоп-заявок по счёту
+  repeated StopOrder stop_orders = 1; //Массив стоп-заявок по счёту.
 }
 
 //Запрос отмены выставленной стоп-заявки.
 message CancelStopOrderRequest {
-  string account_id = 1; //Идентификатор счёта клиента
+  string account_id = 1; //Идентификатор счёта клиента.
   string stop_order_id = 2; //Уникальный идентификатор стоп-заявки.
 }
 
@@ -66,24 +66,24 @@ message CancelStopOrderResponse {
 
 //Информация о стоп-заявке.
 message StopOrder {
-  string stop_order_id = 1; //Идентификатор-идентификатор стоп-заявки
-  int64 lots_requested = 2;  //Запрошено лотов
-  string figi = 3; //Figi-идентификатор инструмента
-  StopOrderDirection direction = 4; //Направление операции
-  string currency = 5;  //Валюта стоп-заявки
-  StopOrderType order_type = 6; //Тип стоп-заявки
+  string stop_order_id = 1; //Идентификатор-идентификатор стоп-заявки.
+  int64 lots_requested = 2;  //Запрошено лотов.
+  string figi = 3; //Figi-идентификатор инструмента.
+  StopOrderDirection direction = 4; //Направление операции.
+  string currency = 5;  //Валюта стоп-заявки.
+  StopOrderType order_type = 6; //Тип стоп-заявки.
   google.protobuf.Timestamp create_date = 7; //Дата и время выставления заявки в часовом поясе UTC.
   google.protobuf.Timestamp activation_date_time = 8; //Дата и время конвертации стоп-заявки в биржевую в часовом поясе UTC.
   google.protobuf.Timestamp expiration_time = 9; //Дата и время снятия заявки в часовом поясе UTC.
-  MoneyValue price = 10; //Цена заявки
-  MoneyValue stop_price = 11; //Цена активации стоп-заявки
+  MoneyValue price = 10; //Цена заявки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
+  MoneyValue stop_price = 11; //Цена активации стоп-заявки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
 }
 
 //Направление сделки стоп-заявки.
 enum StopOrderDirection {
-  STOP_ORDER_DIRECTION_UNSPECIFIED = 0; //Значение не указано
-  STOP_ORDER_DIRECTION_BUY = 1; //Покупка
-  STOP_ORDER_DIRECTION_SELL = 2; //Продажа
+  STOP_ORDER_DIRECTION_UNSPECIFIED = 0; //Значение не указано.
+  STOP_ORDER_DIRECTION_BUY = 1; //Покупка.
+  STOP_ORDER_DIRECTION_SELL = 2; //Продажа.
 }
 
 //Тип экспирации стоп-заявке.
@@ -95,8 +95,8 @@ enum StopOrderExpirationType {
 
 //Тип стоп-заявки.
 enum StopOrderType {
-  STOP_ORDER_TYPE_UNSPECIFIED = 0; //Значение не указано
-  STOP_ORDER_TYPE_TAKE_PROFIT = 1; //Take-profit заявка
-  STOP_ORDER_TYPE_STOP_LOSS = 2; //Stop-loss заявка
-  STOP_ORDER_TYPE_STOP_LIMIT = 3; //Stop-limit заявка
+  STOP_ORDER_TYPE_UNSPECIFIED = 0; //Значение не указано.
+  STOP_ORDER_TYPE_TAKE_PROFIT = 1; //Take-profit заявка.
+  STOP_ORDER_TYPE_STOP_LOSS = 2; //Stop-loss заявка.
+  STOP_ORDER_TYPE_STOP_LIMIT = 3; //Stop-limit заявка.
 }

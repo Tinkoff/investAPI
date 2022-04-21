@@ -45,19 +45,19 @@
 
 
 #### PostStopOrderRequest
-Запрос выставления стоп-заявки
+Запрос выставления стоп-заявки.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| figi |  [string](#string) | Figi-идентификатор инструмента |
-| quantity |  [int64](#int64) | Количество лотов |
-| price |  [Quotation](#quotation) | Цена лота |
-| stop_price |  [Quotation](#quotation) | Стоп-цена заявки |
-| direction |  [StopOrderDirection](#stoporderdirection) | Направление операции |
-| account_id |  [string](#string) | Номер счёта |
-| expiration_type |  [StopOrderExpirationType](#stoporderexpirationtype) | Тип экспирации заявки |
-| stop_order_type |  [StopOrderType](#stopordertype) | Тип заявки |
+| figi |  [string](#string) | Figi-идентификатор инструмента. |
+| quantity |  [int64](#int64) | Количество лотов. |
+| price |  [Quotation](#quotation) | Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. |
+| stop_price |  [Quotation](#quotation) | Стоп-цена заявки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. |
+| direction |  [StopOrderDirection](#stoporderdirection) | Направление операции. |
+| account_id |  [string](#string) | Номер счёта. |
+| expiration_type |  [StopOrderExpirationType](#stoporderexpirationtype) | Тип экспирации заявки. |
+| stop_order_type |  [StopOrderType](#stopordertype) | Тип заявки. |
 | expire_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время окончания действия стоп-заявки в часовом поясе UTC. **Для ExpirationType = GoodTillDate заполнение обязательно**. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -80,7 +80,7 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| account_id |  [string](#string) | Идентификатор счёта клиента |
+| account_id |  [string](#string) | Идентификатор счёта клиента. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -91,7 +91,7 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| stop_orders | Массив объектов [StopOrder](#stoporder) | Массив стоп-заявок по счёту |
+| stop_orders | Массив объектов [StopOrder](#stoporder) | Массив стоп-заявок по счёту. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -102,7 +102,7 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| account_id |  [string](#string) | Идентификатор счёта клиента |
+| account_id |  [string](#string) | Идентификатор счёта клиента. |
 | stop_order_id |  [string](#string) | Уникальный идентификатор стоп-заявки. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -125,17 +125,17 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| stop_order_id |  [string](#string) | Идентификатор-идентификатор стоп-заявки |
-| lots_requested |  [int64](#int64) | Запрошено лотов |
-| figi |  [string](#string) | Figi-идентификатор инструмента |
-| direction |  [StopOrderDirection](#stoporderdirection) | Направление операции |
-| currency |  [string](#string) | Валюта стоп-заявки |
-| order_type |  [StopOrderType](#stopordertype) | Тип стоп-заявки |
+| stop_order_id |  [string](#string) | Идентификатор-идентификатор стоп-заявки. |
+| lots_requested |  [int64](#int64) | Запрошено лотов. |
+| figi |  [string](#string) | Figi-идентификатор инструмента. |
+| direction |  [StopOrderDirection](#stoporderdirection) | Направление операции. |
+| currency |  [string](#string) | Валюта стоп-заявки. |
+| order_type |  [StopOrderType](#stopordertype) | Тип стоп-заявки. |
 | create_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время выставления заявки в часовом поясе UTC. |
 | activation_date_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время конвертации стоп-заявки в биржевую в часовом поясе UTC. |
 | expiration_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время снятия заявки в часовом поясе UTC. |
-| price |  [MoneyValue](#moneyvalue) | Цена заявки |
-| stop_price |  [MoneyValue](#moneyvalue) | Цена активации стоп-заявки |
+| price |  [MoneyValue](#moneyvalue) | Цена заявки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. |
+| stop_price |  [MoneyValue](#moneyvalue) | Цена активации стоп-заявки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->
@@ -148,9 +148,9 @@
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| STOP_ORDER_DIRECTION_UNSPECIFIED | 0 | Значение не указано |
-| STOP_ORDER_DIRECTION_BUY | 1 | Покупка |
-| STOP_ORDER_DIRECTION_SELL | 2 | Продажа |
+| STOP_ORDER_DIRECTION_UNSPECIFIED | 0 | Значение не указано. |
+| STOP_ORDER_DIRECTION_BUY | 1 | Покупка. |
+| STOP_ORDER_DIRECTION_SELL | 2 | Продажа. |
 
 
 
@@ -172,10 +172,10 @@
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| STOP_ORDER_TYPE_UNSPECIFIED | 0 | Значение не указано |
-| STOP_ORDER_TYPE_TAKE_PROFIT | 1 | Take-profit заявка |
-| STOP_ORDER_TYPE_STOP_LOSS | 2 | Stop-loss заявка |
-| STOP_ORDER_TYPE_STOP_LIMIT | 3 | Stop-limit заявка |
+| STOP_ORDER_TYPE_UNSPECIFIED | 0 | Значение не указано. |
+| STOP_ORDER_TYPE_TAKE_PROFIT | 1 | Take-profit заявка. |
+| STOP_ORDER_TYPE_STOP_LOSS | 2 | Stop-loss заявка. |
+| STOP_ORDER_TYPE_STOP_LIMIT | 3 | Stop-limit заявка. |
 
 
  <!-- range .Enums -->

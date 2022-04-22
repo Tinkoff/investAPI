@@ -4,7 +4,7 @@ info:
   termsOfService: https://www.tinkoff.ru/invest/disclaimers/basic-information/
   contact:
     email: al.a.volkov@tinkoff.ru
-  version: '1.0.6'
+  version: '1.0.7'
 externalDocs:
   description: Документация Tinkoff Invest API
   url: https://tinkoff.github.io/investAPI/
@@ -123,6 +123,32 @@ paths:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
       summary: Метод получения валюты по её идентификатору.
+      tags:
+      - InstrumentsService
+      x-codegen-request-body-name: body
+  /tinkoff.public.invest.api.contract.v1.InstrumentsService/EditFavorites:
+    post:
+      operationId: InstrumentsService_EditFavorites
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1EditFavoritesRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1EditFavoritesResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Метод редактирования избранных инструментов.
       tags:
       - InstrumentsService
       x-codegen-request-body-name: body
@@ -357,6 +383,32 @@ paths:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
       summary: Метод для получения событий выплаты дивидендов по инструменту.
+      tags:
+      - InstrumentsService
+      x-codegen-request-body-name: body
+  /tinkoff.public.invest.api.contract.v1.InstrumentsService/GetFavorites:
+    post:
+      operationId: InstrumentsService_GetFavorites
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1GetFavoritesRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1GetFavoritesResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Метод получения избранных инструментов.
       tags:
       - InstrumentsService
       x-codegen-request-body-name: body
@@ -2678,6 +2730,8 @@ components:
           type: boolean
         uid:
           type: string
+        realExchange:
+          $ref: '#/components/schemas/v1RealExchange'
       type: object
     v1BondResponse:
       description: Информация об облигации.
@@ -3437,6 +3491,8 @@ components:
           type: boolean
         uid:
           type: string
+        realExchange:
+          $ref: '#/components/schemas/v1RealExchange'
       type: object
     v1CurrencyResponse:
       description: Данные по валюте.
@@ -3590,6 +3646,54 @@ components:
         currency:
           type: string
       type: object
+    v1EditFavoritesActionType:
+      default: EDIT_FAVORITES_ACTION_TYPE_UNSPECIFIED
+      description: Тип действия со списком избранных инструментов.
+      enum:
+      - EDIT_FAVORITES_ACTION_TYPE_UNSPECIFIED
+      - EDIT_FAVORITES_ACTION_TYPE_ADD
+      - EDIT_FAVORITES_ACTION_TYPE_DEL
+      type: string
+    v1EditFavoritesRequest:
+      description: Запрос редактирования избранных инструментов.
+      properties:
+        instruments:
+          items:
+            $ref: '#/components/schemas/v1EditFavoritesRequestInstrument'
+          type: array
+        actionType:
+          $ref: '#/components/schemas/v1EditFavoritesActionType'
+      type: object
+    v1EditFavoritesRequestInstrument:
+      description: Избранный инструмент для редактирования.
+      properties:
+        figi:
+          type: string
+      type: object
+    v1EditFavoritesResponse:
+      description: Результат редактирования избранных инструментов.
+      example:
+        favoriteInstruments:
+        - otcFlag: true
+          classCode: classCode
+          ticker: ticker
+          instrumentType: instrumentType
+          figi: figi
+          apiTradeAvailableFlag: true
+          isin: isin
+        - otcFlag: true
+          classCode: classCode
+          ticker: ticker
+          instrumentType: instrumentType
+          figi: figi
+          apiTradeAvailableFlag: true
+          isin: isin
+      properties:
+        favoriteInstruments:
+          items:
+            $ref: '#/components/schemas/v1FavoriteInstrument'
+          type: array
+      type: object
     v1Etf:
       description: Объект передачи информации об инвестиционном фонде.
       example:
@@ -3703,6 +3807,8 @@ components:
           type: boolean
         uid:
           type: string
+        realExchange:
+          $ref: '#/components/schemas/v1RealExchange'
       type: object
     v1EtfResponse:
       description: Данные по фонду.
@@ -3863,6 +3969,32 @@ components:
             $ref: '#/components/schemas/v1Etf'
           type: array
       type: object
+    v1FavoriteInstrument:
+      description: Избранный инструмент.
+      example:
+        otcFlag: true
+        classCode: classCode
+        ticker: ticker
+        instrumentType: instrumentType
+        figi: figi
+        apiTradeAvailableFlag: true
+        isin: isin
+      properties:
+        figi:
+          type: string
+        ticker:
+          type: string
+        classCode:
+          type: string
+        isin:
+          type: string
+        instrumentType:
+          type: string
+        otcFlag:
+          type: boolean
+        apiTradeAvailableFlag:
+          type: boolean
+      type: object
     v1Future:
       description: Объект передачи информации о фьючерсе.
       example:
@@ -3979,6 +4111,8 @@ components:
           type: boolean
         uid:
           type: string
+        realExchange:
+          $ref: '#/components/schemas/v1RealExchange'
       type: object
     v1FutureResponse:
       description: Данные по фьючерсу.
@@ -4664,6 +4798,33 @@ components:
             $ref: '#/components/schemas/v1Dividend'
           type: array
       type: object
+    v1GetFavoritesRequest:
+      description: Запрос избранных инструментов.
+      type: object
+    v1GetFavoritesResponse:
+      description: Ответ избранных инструментов.
+      example:
+        favoriteInstruments:
+        - otcFlag: true
+          classCode: classCode
+          ticker: ticker
+          instrumentType: instrumentType
+          figi: figi
+          apiTradeAvailableFlag: true
+          isin: isin
+        - otcFlag: true
+          classCode: classCode
+          ticker: ticker
+          instrumentType: instrumentType
+          figi: figi
+          apiTradeAvailableFlag: true
+          isin: isin
+      properties:
+        favoriteInstruments:
+          items:
+            $ref: '#/components/schemas/v1FavoriteInstrument'
+          type: array
+      type: object
     v1GetFuturesMarginRequest:
       properties:
         figi:
@@ -5075,6 +5236,7 @@ components:
         limitOrderAvailableFlag: true
         marketOrderAvailableFlag: true
         figi: figi
+        apiTradeAvailableFlag: true
       properties:
         figi:
           type: string
@@ -5083,6 +5245,8 @@ components:
         limitOrderAvailableFlag:
           type: boolean
         marketOrderAvailableFlag:
+          type: boolean
+        apiTradeAvailableFlag:
           type: boolean
       type: object
     v1GetUserTariffRequest:
@@ -5248,6 +5412,8 @@ components:
           type: boolean
         uid:
           type: string
+        realExchange:
+          $ref: '#/components/schemas/v1RealExchange'
       type: object
     v1InstrumentIdType:
       default: INSTRUMENT_ID_UNSPECIFIED
@@ -6180,6 +6346,15 @@ components:
           type: integer
       title: Котировка - денежная сумма без указания валюты
       type: object
+    v1RealExchange:
+      default: REAL_EXCHANGE_UNSPECIFIED
+      description: Реальная площадка исполнения расчётов.
+      enum:
+      - REAL_EXCHANGE_UNSPECIFIED
+      - REAL_EXCHANGE_MOEX
+      - REAL_EXCHANGE_RTS
+      - REAL_EXCHANGE_OTC
+      type: string
     v1SandboxPayInRequest:
       description: Запрос пополнения счёта в песочнице.
       properties:
@@ -6337,6 +6512,8 @@ components:
           type: boolean
         uid:
           type: string
+        realExchange:
+          $ref: '#/components/schemas/v1RealExchange'
       type: object
     v1ShareResponse:
       description: Данные по акции.

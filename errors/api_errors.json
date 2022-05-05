@@ -279,6 +279,11 @@
     "type": "INVALID_ARGUMENT",
     "description": "Входной параметр *payload* является обязательным. </br> Укажите корректный параметр *payload*."
   },
+  "30067": {
+    "message": "'action_type' is invalid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Некорректное значение *action_type*. </br> Выберите допустимое значение."
+  },
   "30077": {
     "message": "not available for OTC instruments",
     "type": "INVALID_ARGUMENT",
@@ -318,6 +323,11 @@
     "message": "maximum request period has been exceeded",
     "type": "INVALID_ARGUMENT",
     "description": "Превышен лимит запрашиваемого периода."
+  },
+  "30085": {
+    "message": "price in points is available only for futures and bonds",
+    "type": "INVALID_ARGUMENT",
+    "description": "Тип цены в пунктах доступен только для фьючерсов и облигаций."
   },
   "40002": {
     "message": "insufficient privileges",

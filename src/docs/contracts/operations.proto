@@ -122,7 +122,7 @@ message PortfolioPosition {
   string instrument_type = 2; //Тип инструмента.
   Quotation quantity = 3; //Количество инструмента в портфеле в штуках.
   MoneyValue average_position_price = 4; //Средневзвешенная цена позиции. **Возможна задержка до секунды для пересчёта**.
-  Quotation expected_yield = 5; //Текущая рассчитанная относительная доходность позиции, в %.
+  Quotation expected_yield = 5; //Текущая рассчитанная относительная доходность позиции.
   MoneyValue current_nkd = 6; // Текущий НКД.
   Quotation average_position_price_pt = 7; //Средняя цена лота в позиции в пунктах (для фьючерсов). **Возможна задержка до секунды для пересчёта**.
   MoneyValue current_price = 8; //Текущая цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента..

@@ -64,6 +64,7 @@ API реализован на быстром, удобном и функцион
 * [php YII2](https://packagist.org/packages/metaseller/tinkoff-invest-api-v2-yii2)
 * [swift](https://github.com/JohnReeze/TinkoffInvestSwiftSDK)
 * [rust](https://github.com/ovr/tinkoff-invest-rust)
+* [c++](https://github.com/samoilovv/TinkoffInvestSDK)
 
 SDK на других языках в процессе разработки.
 

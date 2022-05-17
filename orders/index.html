@@ -8,9 +8,8 @@
       
       
       
-      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.3">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
@@ -18,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.f7f47774.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.c382b1dc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
         
           
           
@@ -33,16 +32,16 @@
     
       
         
+        
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
-    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-
 
     
     
@@ -57,7 +56,6 @@
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="yellow">
   
     
-    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -65,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ordersstreamservice" class="md-skip">
+        <a href="#ordersservice" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -74,16 +72,19 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
     <a href=".." title="TINKOFF INVEST API" class="md-header__button md-logo" aria-label="TINKOFF INVEST API" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -105,22 +106,21 @@
     
     
       <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="Поиск">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        <button type="reset" class="md-search__icon md-icon" aria-label="Очистить" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
       
@@ -129,7 +129,7 @@
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            Инициализация поиска
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -140,11 +140,10 @@
     
     
       <div class="md-header__source">
-        
-<a href="https://github.com/Tinkoff/investAPI/" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+        <a href="https://github.com/Tinkoff/investAPI" title="Перейти к репозиторию" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -153,11 +152,14 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -171,23 +173,22 @@
                     
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="TINKOFF INVEST API" class="md-nav__button md-logo" aria-label="TINKOFF INVEST API" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
     TINKOFF INVEST API
   </label>
   
     <div class="md-nav__source">
-      
-<a href="https://github.com/Tinkoff/investAPI/" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+      <a href="https://github.com/Tinkoff/investAPI" title="Перейти к репозиторию" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -225,10 +226,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
-      <label class="md-nav__link" for="__nav_2">
-        Полезная информация
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Полезная информация
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Полезная информация" data-md-level="1">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
@@ -237,6 +242,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -247,8 +253,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -259,8 +267,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -271,8 +281,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -283,8 +295,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -295,8 +309,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -307,8 +323,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -319,8 +337,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -331,8 +351,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -343,8 +365,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -355,8 +379,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -367,8 +393,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -379,8 +407,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -391,8 +421,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -403,6 +435,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -438,10 +471,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
-      <label class="md-nav__link" for="__nav_4">
-        Языки программирования
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Языки программирования
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Языки программирования" data-md-level="1">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
@@ -450,6 +487,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -460,8 +498,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -472,8 +512,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -484,6 +526,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -504,10 +547,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
-      <label class="md-nav__link" for="__nav_5">
-        Сервис аккаунтов
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Сервис аккаунтов
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Сервис аккаунтов" data-md-level="1">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
@@ -516,6 +563,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -526,8 +574,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -538,8 +588,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -550,6 +602,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -570,10 +623,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
-      <label class="md-nav__link" for="__nav_6">
-        Сервис инструментов
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Сервис инструментов
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Сервис инструментов" data-md-level="1">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
@@ -582,6 +639,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -592,8 +650,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -604,8 +664,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -616,6 +678,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -638,10 +701,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
-      <label class="md-nav__link" for="__nav_7">
-        Сервис торговых поручений
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Сервис торговых поручений
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Сервис торговых поручений" data-md-level="1">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
@@ -650,6 +717,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -660,8 +728,10 @@
     </li>
   
 
+            
           
             
+              
   
   
     
@@ -683,49 +753,17 @@
       </a>
       
         
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
   
   
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Содержание
+      Содержание раздела
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#ordersstreamservice" class="md-nav__link">
-    OrdersStreamService
-  </a>
-  
-    <nav class="md-nav" aria-label="OrdersStreamService">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    Методы сервиса
-  </a>
-  
-    <nav class="md-nav" aria-label="Методы сервиса">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tradesstream" class="md-nav__link">
-    TradesStream
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#ordersservice" class="md-nav__link">
@@ -736,7 +774,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     Методы сервиса
   </a>
   
@@ -776,6 +814,39 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ordersstreamservice" class="md-nav__link">
+    OrdersStreamService
+  </a>
+  
+    <nav class="md-nav" aria-label="OrdersStreamService">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Методы сервиса
+  </a>
+  
+    <nav class="md-nav" aria-label="Методы сервиса">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tradesstream" class="md-nav__link">
+    TradesStream
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     Сообщения методов
@@ -783,48 +854,6 @@
   
     <nav class="md-nav" aria-label="Сообщения методов">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tradesstreamrequest" class="md-nav__link">
-    TradesStreamRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tradesstreamresponse" class="md-nav__link">
-    TradesStreamResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ordertrades" class="md-nav__link">
-    OrderTrades
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ordertrade" class="md-nav__link">
-    OrderTrade
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#postorderrequest" class="md-nav__link">
-    PostOrderRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#postorderresponse" class="md-nav__link">
-    PostOrderResponse
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#cancelorderrequest" class="md-nav__link">
@@ -862,6 +891,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#orderstage" class="md-nav__link">
+    OrderStage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#orderstate" class="md-nav__link">
     OrderState
   </a>
@@ -869,8 +905,43 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#orderstage" class="md-nav__link">
-    OrderStage
+  <a href="#ordertrade" class="md-nav__link">
+    OrderTrade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordertrades" class="md-nav__link">
+    OrderTrades
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postorderrequest" class="md-nav__link">
+    PostOrderRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postorderresponse" class="md-nav__link">
+    PostOrderResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tradesstreamrequest" class="md-nav__link">
+    TradesStreamRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tradesstreamresponse" class="md-nav__link">
+    TradesStreamResponse
   </a>
   
 </li>
@@ -896,15 +967,193 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#orderexecutionreportstatus" class="md-nav__link">
+    OrderExecutionReportStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ordertype" class="md-nav__link">
     OrderType
   </a>
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usersservice" class="md-nav__link">
+    UsersService
+  </a>
+  
+    <nav class="md-nav" aria-label="UsersService">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
-  <a href="#orderexecutionreportstatus" class="md-nav__link">
-    OrderExecutionReportStatus
+  <a href="#_4" class="md-nav__link">
+    Методы сервиса
+  </a>
+  
+    <nav class="md-nav" aria-label="Методы сервиса">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getaccounts" class="md-nav__link">
+    GetAccounts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmarginattributes" class="md-nav__link">
+    GetMarginAttributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getusertariff" class="md-nav__link">
+    GetUserTariff
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinfo" class="md-nav__link">
+    GetInfo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Сообщения методов
+  </a>
+  
+    <nav class="md-nav" aria-label="Сообщения методов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#account" class="md-nav__link">
+    Account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getaccountsrequest" class="md-nav__link">
+    GetAccountsRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getaccountsresponse" class="md-nav__link">
+    GetAccountsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinforequest" class="md-nav__link">
+    GetInfoRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinforesponse" class="md-nav__link">
+    GetInfoResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmarginattributesrequest" class="md-nav__link">
+    GetMarginAttributesRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmarginattributesresponse" class="md-nav__link">
+    GetMarginAttributesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getusertariffrequest" class="md-nav__link">
+    GetUserTariffRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getusertariffresponse" class="md-nav__link">
+    GetUserTariffResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streamlimit" class="md-nav__link">
+    StreamLimit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unarylimit" class="md-nav__link">
+    UnaryLimit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enums_1" class="md-nav__link">
+    Enums
+  </a>
+  
+    <nav class="md-nav" aria-label="Enums">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accesslevel" class="md-nav__link">
+    AccessLevel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accountstatus" class="md-nav__link">
+    AccountStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accounttype" class="md-nav__link">
+    AccountType
   </a>
   
 </li>
@@ -922,7 +1171,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     Нестандартные типы данных
   </a>
   
@@ -960,8 +1209,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -972,6 +1223,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -992,10 +1244,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
       
-      <label class="md-nav__link" for="__nav_8">
-        Сервис операций
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Сервис операций
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Сервис операций" data-md-level="1">
         <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
@@ -1004,6 +1260,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1014,8 +1271,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1026,8 +1285,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1038,6 +1299,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -1058,10 +1320,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
       
-      <label class="md-nav__link" for="__nav_9">
-        Сервис котировок
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Сервис котировок
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Сервис котировок" data-md-level="1">
         <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
@@ -1070,6 +1336,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1080,8 +1347,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1092,8 +1361,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1104,6 +1375,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -1124,10 +1396,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
       
-      <label class="md-nav__link" for="__nav_10">
-        Сервис стоп-заявок
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Сервис стоп-заявок
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Сервис стоп-заявок" data-md-level="1">
         <label class="md-nav__title" for="__nav_10">
           <span class="md-nav__icon md-icon"></span>
@@ -1136,6 +1412,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1146,8 +1423,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1158,8 +1437,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1170,6 +1451,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -1190,10 +1472,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
       
-      <label class="md-nav__link" for="__nav_11">
-        Песочница
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_11">
+          Песочница
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Песочница" data-md-level="1">
         <label class="md-nav__title" for="__nav_11">
           <span class="md-nav__icon md-icon"></span>
@@ -1202,6 +1488,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1212,8 +1499,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1224,8 +1513,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1236,6 +1527,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -1270,49 +1562,17 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
   
   
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Содержание
+      Содержание раздела
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#ordersstreamservice" class="md-nav__link">
-    OrdersStreamService
-  </a>
-  
-    <nav class="md-nav" aria-label="OrdersStreamService">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    Методы сервиса
-  </a>
-  
-    <nav class="md-nav" aria-label="Методы сервиса">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tradesstream" class="md-nav__link">
-    TradesStream
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#ordersservice" class="md-nav__link">
@@ -1323,7 +1583,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     Методы сервиса
   </a>
   
@@ -1363,6 +1623,39 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ordersstreamservice" class="md-nav__link">
+    OrdersStreamService
+  </a>
+  
+    <nav class="md-nav" aria-label="OrdersStreamService">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Методы сервиса
+  </a>
+  
+    <nav class="md-nav" aria-label="Методы сервиса">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tradesstream" class="md-nav__link">
+    TradesStream
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     Сообщения методов
@@ -1370,48 +1663,6 @@
   
     <nav class="md-nav" aria-label="Сообщения методов">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tradesstreamrequest" class="md-nav__link">
-    TradesStreamRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tradesstreamresponse" class="md-nav__link">
-    TradesStreamResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ordertrades" class="md-nav__link">
-    OrderTrades
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ordertrade" class="md-nav__link">
-    OrderTrade
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#postorderrequest" class="md-nav__link">
-    PostOrderRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#postorderresponse" class="md-nav__link">
-    PostOrderResponse
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#cancelorderrequest" class="md-nav__link">
@@ -1449,6 +1700,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#orderstage" class="md-nav__link">
+    OrderStage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#orderstate" class="md-nav__link">
     OrderState
   </a>
@@ -1456,8 +1714,43 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#orderstage" class="md-nav__link">
-    OrderStage
+  <a href="#ordertrade" class="md-nav__link">
+    OrderTrade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordertrades" class="md-nav__link">
+    OrderTrades
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postorderrequest" class="md-nav__link">
+    PostOrderRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postorderresponse" class="md-nav__link">
+    PostOrderResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tradesstreamrequest" class="md-nav__link">
+    TradesStreamRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tradesstreamresponse" class="md-nav__link">
+    TradesStreamResponse
   </a>
   
 </li>
@@ -1483,15 +1776,193 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#orderexecutionreportstatus" class="md-nav__link">
+    OrderExecutionReportStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ordertype" class="md-nav__link">
     OrderType
   </a>
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usersservice" class="md-nav__link">
+    UsersService
+  </a>
+  
+    <nav class="md-nav" aria-label="UsersService">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
-  <a href="#orderexecutionreportstatus" class="md-nav__link">
-    OrderExecutionReportStatus
+  <a href="#_4" class="md-nav__link">
+    Методы сервиса
+  </a>
+  
+    <nav class="md-nav" aria-label="Методы сервиса">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getaccounts" class="md-nav__link">
+    GetAccounts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmarginattributes" class="md-nav__link">
+    GetMarginAttributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getusertariff" class="md-nav__link">
+    GetUserTariff
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinfo" class="md-nav__link">
+    GetInfo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Сообщения методов
+  </a>
+  
+    <nav class="md-nav" aria-label="Сообщения методов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#account" class="md-nav__link">
+    Account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getaccountsrequest" class="md-nav__link">
+    GetAccountsRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getaccountsresponse" class="md-nav__link">
+    GetAccountsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinforequest" class="md-nav__link">
+    GetInfoRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinforesponse" class="md-nav__link">
+    GetInfoResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmarginattributesrequest" class="md-nav__link">
+    GetMarginAttributesRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmarginattributesresponse" class="md-nav__link">
+    GetMarginAttributesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getusertariffrequest" class="md-nav__link">
+    GetUserTariffRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getusertariffresponse" class="md-nav__link">
+    GetUserTariffResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streamlimit" class="md-nav__link">
+    StreamLimit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unarylimit" class="md-nav__link">
+    UnaryLimit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enums_1" class="md-nav__link">
+    Enums
+  </a>
+  
+    <nav class="md-nav" aria-label="Enums">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accesslevel" class="md-nav__link">
+    AccessLevel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accountstatus" class="md-nav__link">
+    AccountStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accounttype" class="md-nav__link">
+    AccountType
   </a>
   
 </li>
@@ -1509,7 +1980,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     Нестандартные типы данных
   </a>
   
@@ -1552,34 +2023,21 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Tinkoff/investAPI/edit/master/docs/orders.md" title="Редактировать страницу" class="md-content__button md-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
-                  </a>
-                
-                
-                  <h1>Методы</h1>
-                
-                <!-- range HasServices -->
+  <a href="https://github.com/Tinkoff/investAPI/edit/master/docs/orders.md" title="Редактировать страницу" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
 
-<h2 id="ordersstreamservice">OrdersStreamService</h2>
-<h3 id="_1">Методы сервиса</h3>
-<h4 id="tradesstream">TradesStream</h4>
-<p>Stream сделок пользователя</p>
-<ul>
-<li>
-<p>Тело запроса — <a href="#tradesstreamrequest">TradesStreamRequest</a></p>
-</li>
-<li>
-<p>Тело ответа — <a href="#tradesstreamresponse">TradesStreamResponse</a></p>
-</li>
-</ul>
-<!-- range .Methods -->
+
+
+  <h1>Методы</h1>
+
+<!-- range HasServices -->
 
 <h2 id="ordersservice">OrdersService</h2>
 <p>Сервис предназначен для работы с торговыми поручениями:</br> <strong>1</strong>.
 выставление;</br> <strong>2</strong>. отмена;</br> <strong>3</strong>. получение статуса;</br> <strong>4</strong>.
 расчёт полной стоимости;</br> <strong>5</strong>. получение списка заявок.</p>
-<h3 id="_2">Методы сервиса</h3>
+<h3 id="_1">Методы сервиса</h3>
 <h4 id="postorder">PostOrder</h4>
 <p>Метод выставления заявки.</p>
 <ul>
@@ -1621,11 +2079,25 @@
 </li>
 </ul>
 <!-- range .Methods -->
+
+<h2 id="ordersstreamservice">OrdersStreamService</h2>
+<h3 id="_2">Методы сервиса</h3>
+<h4 id="tradesstream">TradesStream</h4>
+<p>Stream сделок пользователя</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#tradesstreamrequest">TradesStreamRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#tradesstreamresponse">TradesStreamResponse</a></p>
+</li>
+</ul>
+<!-- range .Methods -->
 <!-- range .Services -->
 
 <h3 id="_3">Сообщения методов</h3>
-<h4 id="tradesstreamrequest">TradesStreamRequest</h4>
-<p>Запрос установки соединения.</p>
+<h4 id="cancelorderrequest">CancelOrderRequest</h4>
+<p>Запрос отмены торгового поручения.</p>
 <table>
 <thead>
 <tr>
@@ -1636,9 +2108,14 @@
 </thead>
 <tbody>
 <tr>
-<td>accounts</td>
-<td>Массив объектов <a href="#string">string</a></td>
-<td>Идентификаторы счетов.</td>
+<td>account_id</td>
+<td><a href="#string">string</a></td>
+<td>Номер счёта.</td>
+</tr>
+<tr>
+<td>order_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор заявки.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -1649,8 +2126,8 @@
 </table>
 <!-- end HasFields -->
 
-<h4 id="tradesstreamresponse">TradesStreamResponse</h4>
-<p>Информация о торговых поручениях.</p>
+<h4 id="cancelorderresponse">CancelOrderResponse</h4>
+<p>Результат отмены торгового поручения.</p>
 <table>
 <thead>
 <tr>
@@ -1661,14 +2138,269 @@
 </thead>
 <tbody>
 <tr>
-<td>order_trades</td>
-<td><a href="#ordertrades">OrderTrades</a></td>
-<td>Информация об исполнении торгового поручения.</td>
+<td>time</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата и время отмены заявки в часовом поясе UTC.</td>
 </tr>
 <tr>
-<td>ping</td>
-<td><a href="#ping">Ping</a></td>
-<td>Проверка активности стрима.</td>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getorderstaterequest">GetOrderStateRequest</h4>
+<p>Запрос получения статуса торгового поручения.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account_id</td>
+<td><a href="#string">string</a></td>
+<td>Номер счёта.</td>
+</tr>
+<tr>
+<td>order_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор заявки.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getordersrequest">GetOrdersRequest</h4>
+<p>Запрос получения списка активных торговых поручений.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account_id</td>
+<td><a href="#string">string</a></td>
+<td>Номер счёта.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getordersresponse">GetOrdersResponse</h4>
+<p>Список активных торговых поручений.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>orders</td>
+<td>Массив объектов <a href="#orderstate">OrderState</a></td>
+<td>Массив активных заявок.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="orderstage">OrderStage</h4>
+<p>Сделки в рамках торгового поручения.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>price</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента..</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td><a href="#int64">int64</a></td>
+<td>Количество лотов.</td>
+</tr>
+<tr>
+<td>trade_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор торговой операции.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="orderstate">OrderState</h4>
+<p>Информация о торговом поручении.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>order_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор заявки.</td>
+</tr>
+<tr>
+<td>execution_report_status</td>
+<td><a href="#orderexecutionreportstatus">OrderExecutionReportStatus</a></td>
+<td>Текущий статус заявки.</td>
+</tr>
+<tr>
+<td>lots_requested</td>
+<td><a href="#int64">int64</a></td>
+<td>Запрошено лотов.</td>
+</tr>
+<tr>
+<td>lots_executed</td>
+<td><a href="#int64">int64</a></td>
+<td>Исполнено лотов.</td>
+</tr>
+<tr>
+<td>initial_order_price</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Начальная цена заявки. Произведение количества запрошенных лотов на цену.</td>
+</tr>
+<tr>
+<td>executed_order_price</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Исполненная цена заявки. Произведение средней цены покупки на количество лотов.</td>
+</tr>
+<tr>
+<td>total_order_amount</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Итоговая стоимость заявки, включающая все комиссии.</td>
+</tr>
+<tr>
+<td>average_position_price</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Средняя цена позиции по сделке.</td>
+</tr>
+<tr>
+<td>initial_commission</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Начальная комиссия. Комиссия, рассчитанная на момент подачи заявки.</td>
+</tr>
+<tr>
+<td>executed_commission</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Фактическая комиссия по итогам исполнения заявки.</td>
+</tr>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>direction</td>
+<td><a href="#orderdirection">OrderDirection</a></td>
+<td>Направление заявки.</td>
+</tr>
+<tr>
+<td>initial_security_price</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Начальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+</tr>
+<tr>
+<td>stages</td>
+<td>Массив объектов <a href="#orderstage">OrderStage</a></td>
+<td>Стадии выполнения заявки.</td>
+</tr>
+<tr>
+<td>service_commission</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Сервисная комиссия.</td>
+</tr>
+<tr>
+<td>currency</td>
+<td><a href="#string">string</a></td>
+<td>Валюта заявки.</td>
+</tr>
+<tr>
+<td>order_type</td>
+<td><a href="#ordertype">OrderType</a></td>
+<td>Тип заявки.</td>
+</tr>
+<tr>
+<td>order_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата и время выставления заявки в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="ordertrade">OrderTrade</h4>
+<p>Информация о сделке.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>date_time</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата и время совершения сделки в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>price</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Цена одного инструмента, по которой совершена сделка.</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td><a href="#int64">int64</a></td>
+<td>Количество лотов в сделке.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -1719,41 +2451,6 @@
 <td>account_id</td>
 <td><a href="#string">string</a></td>
 <td>Идентификатор счёта.</td>
-</tr>
-<tr>
-<td><!-- end Fields --></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<!-- end HasFields -->
-
-<h4 id="ordertrade">OrderTrade</h4>
-<p>Информация о сделке.</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>date_time</td>
-<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата и время совершения сделки в часовом поясе UTC.</td>
-</tr>
-<tr>
-<td>price</td>
-<td><a href="#quotation">Quotation</a></td>
-<td>Цена одного инструмента, по которой совершена сделка.</td>
-</tr>
-<tr>
-<td>quantity</td>
-<td><a href="#int64">int64</a></td>
-<td>Количество лотов в сделке.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -1919,8 +2616,8 @@
 </table>
 <!-- end HasFields -->
 
-<h4 id="cancelorderrequest">CancelOrderRequest</h4>
-<p>Запрос отмены торгового поручения.</p>
+<h4 id="tradesstreamrequest">TradesStreamRequest</h4>
+<p>Запрос установки соединения.</p>
 <table>
 <thead>
 <tr>
@@ -1931,14 +2628,9 @@
 </thead>
 <tbody>
 <tr>
-<td>account_id</td>
-<td><a href="#string">string</a></td>
-<td>Номер счёта.</td>
-</tr>
-<tr>
-<td>order_id</td>
-<td><a href="#string">string</a></td>
-<td>Идентификатор заявки.</td>
+<td>accounts</td>
+<td>Массив объектов <a href="#string">string</a></td>
+<td>Идентификаторы счетов.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -1949,8 +2641,8 @@
 </table>
 <!-- end HasFields -->
 
-<h4 id="cancelorderresponse">CancelOrderResponse</h4>
-<p>Результат отмены торгового поручения.</p>
+<h4 id="tradesstreamresponse">TradesStreamResponse</h4>
+<p>Информация о торговых поручениях.</p>
 <table>
 <thead>
 <tr>
@@ -1961,234 +2653,14 @@
 </thead>
 <tbody>
 <tr>
-<td>time</td>
-<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата и время отмены заявки в часовом поясе UTC.</td>
+<td>order_trades</td>
+<td><a href="#ordertrades">OrderTrades</a></td>
+<td>Информация об исполнении торгового поручения.</td>
 </tr>
 <tr>
-<td><!-- end Fields --></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<!-- end HasFields -->
-
-<h4 id="getorderstaterequest">GetOrderStateRequest</h4>
-<p>Запрос получения статуса торгового поручения.</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>account_id</td>
-<td><a href="#string">string</a></td>
-<td>Номер счёта.</td>
-</tr>
-<tr>
-<td>order_id</td>
-<td><a href="#string">string</a></td>
-<td>Идентификатор заявки.</td>
-</tr>
-<tr>
-<td><!-- end Fields --></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<!-- end HasFields -->
-
-<h4 id="getordersrequest">GetOrdersRequest</h4>
-<p>Запрос получения списка активных торговых поручений.</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>account_id</td>
-<td><a href="#string">string</a></td>
-<td>Номер счёта.</td>
-</tr>
-<tr>
-<td><!-- end Fields --></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<!-- end HasFields -->
-
-<h4 id="getordersresponse">GetOrdersResponse</h4>
-<p>Список активных торговых поручений.</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>orders</td>
-<td>Массив объектов <a href="#orderstate">OrderState</a></td>
-<td>Массив активных заявок.</td>
-</tr>
-<tr>
-<td><!-- end Fields --></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<!-- end HasFields -->
-
-<h4 id="orderstate">OrderState</h4>
-<p>Информация о торговом поручении.</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>order_id</td>
-<td><a href="#string">string</a></td>
-<td>Идентификатор заявки.</td>
-</tr>
-<tr>
-<td>execution_report_status</td>
-<td><a href="#orderexecutionreportstatus">OrderExecutionReportStatus</a></td>
-<td>Текущий статус заявки.</td>
-</tr>
-<tr>
-<td>lots_requested</td>
-<td><a href="#int64">int64</a></td>
-<td>Запрошено лотов.</td>
-</tr>
-<tr>
-<td>lots_executed</td>
-<td><a href="#int64">int64</a></td>
-<td>Исполнено лотов.</td>
-</tr>
-<tr>
-<td>initial_order_price</td>
-<td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Начальная цена заявки. Произведение количества запрошенных лотов на цену.</td>
-</tr>
-<tr>
-<td>executed_order_price</td>
-<td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Исполненная цена заявки. Произведение средней цены покупки на количество лотов.</td>
-</tr>
-<tr>
-<td>total_order_amount</td>
-<td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Итоговая стоимость заявки, включающая все комиссии.</td>
-</tr>
-<tr>
-<td>average_position_price</td>
-<td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Средняя цена позиции по сделке.</td>
-</tr>
-<tr>
-<td>initial_commission</td>
-<td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Начальная комиссия. Комиссия, рассчитанная на момент подачи заявки.</td>
-</tr>
-<tr>
-<td>executed_commission</td>
-<td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Фактическая комиссия по итогам исполнения заявки.</td>
-</tr>
-<tr>
-<td>figi</td>
-<td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента.</td>
-</tr>
-<tr>
-<td>direction</td>
-<td><a href="#orderdirection">OrderDirection</a></td>
-<td>Направление заявки.</td>
-</tr>
-<tr>
-<td>initial_security_price</td>
-<td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Начальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
-</tr>
-<tr>
-<td>stages</td>
-<td>Массив объектов <a href="#orderstage">OrderStage</a></td>
-<td>Стадии выполнения заявки.</td>
-</tr>
-<tr>
-<td>service_commission</td>
-<td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Сервисная комиссия.</td>
-</tr>
-<tr>
-<td>currency</td>
-<td><a href="#string">string</a></td>
-<td>Валюта заявки.</td>
-</tr>
-<tr>
-<td>order_type</td>
-<td><a href="#ordertype">OrderType</a></td>
-<td>Тип заявки.</td>
-</tr>
-<tr>
-<td>order_date</td>
-<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата и время выставления заявки в часовом поясе UTC.</td>
-</tr>
-<tr>
-<td><!-- end Fields --></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<!-- end HasFields -->
-
-<h4 id="orderstage">OrderStage</h4>
-<p>Сделки в рамках торгового поручения.</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>price</td>
-<td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента..</td>
-</tr>
-<tr>
-<td>quantity</td>
-<td><a href="#int64">int64</a></td>
-<td>Количество лотов.</td>
-</tr>
-<tr>
-<td>trade_id</td>
-<td><a href="#string">string</a></td>
-<td>Идентификатор торговой операции.</td>
+<td>ping</td>
+<td><a href="#ping">Ping</a></td>
+<td>Проверка активности стрима.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2226,34 +2698,6 @@
 <td>ORDER_DIRECTION_SELL</td>
 <td>2</td>
 <td>Продажа</td>
-</tr>
-</tbody>
-</table>
-<h4 id="ordertype">OrderType</h4>
-<p>Тип заявки</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Number</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ORDER_TYPE_UNSPECIFIED</td>
-<td>0</td>
-<td>Значение не указано</td>
-</tr>
-<tr>
-<td>ORDER_TYPE_LIMIT</td>
-<td>1</td>
-<td>Лимитная</td>
-</tr>
-<tr>
-<td>ORDER_TYPE_MARKET</td>
-<td>2</td>
-<td>Рыночная</td>
 </tr>
 </tbody>
 </table>
@@ -2297,6 +2741,478 @@
 <td>EXECUTION_REPORT_STATUS_PARTIALLYFILL</td>
 <td>5</td>
 <td>Частично исполнена</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ordertype">OrderType</h4>
+<p>Тип заявки</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ORDER_TYPE_UNSPECIFIED</td>
+<td>0</td>
+<td>Значение не указано</td>
+</tr>
+<tr>
+<td>ORDER_TYPE_LIMIT</td>
+<td>1</td>
+<td>Лимитная</td>
+</tr>
+<tr>
+<td>ORDER_TYPE_MARKET</td>
+<td>2</td>
+<td>Рыночная</td>
+</tr>
+</tbody>
+</table>
+<!-- range .Enums -->
+<!-- range HasServices -->
+
+<h2 id="usersservice">UsersService</h2>
+<p>Сервис предназначен для получения: </br> <strong>1</strong>.
+списка счетов пользователя; </br> <strong>2</strong>. маржинальных показателей по счёту.</p>
+<h3 id="_4">Методы сервиса</h3>
+<h4 id="getaccounts">GetAccounts</h4>
+<p>Метод получения счетов пользователя.</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#getaccountsrequest">GetAccountsRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#getaccountsresponse">GetAccountsResponse</a></p>
+</li>
+</ul>
+<h4 id="getmarginattributes">GetMarginAttributes</h4>
+<p>Расчёт маржинальных показателей по счёту.</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#getmarginattributesrequest">GetMarginAttributesRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#getmarginattributesresponse">GetMarginAttributesResponse</a></p>
+</li>
+</ul>
+<h4 id="getusertariff">GetUserTariff</h4>
+<p>Запрос тарифа пользователя.</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#getusertariffrequest">GetUserTariffRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#getusertariffresponse">GetUserTariffResponse</a></p>
+</li>
+</ul>
+<h4 id="getinfo">GetInfo</h4>
+<p>Метод получения информации о пользователе.</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#getinforequest">GetInfoRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#getinforesponse">GetInfoResponse</a></p>
+</li>
+</ul>
+<!-- range .Methods -->
+<!-- range .Services -->
+
+<h3 id="_5">Сообщения методов</h3>
+<h4 id="account">Account</h4>
+<p>Информация о счёте.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор счёта.</td>
+</tr>
+<tr>
+<td>type</td>
+<td><a href="#accounttype">AccountType</a></td>
+<td>Тип счёта.</td>
+</tr>
+<tr>
+<td>name</td>
+<td><a href="#string">string</a></td>
+<td>Название счёта.</td>
+</tr>
+<tr>
+<td>status</td>
+<td><a href="#accountstatus">AccountStatus</a></td>
+<td>Статус счёта.</td>
+</tr>
+<tr>
+<td>opened_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата открытия счёта в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>closed_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата закрытия счёта в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>access_level</td>
+<td><a href="#accesslevel">AccessLevel</a></td>
+<td>Уровень доступа к текущему счёту (определяется токеном).</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getaccountsrequest">GetAccountsRequest</h4>
+<p>Запрос получения счетов пользователя.</p>
+<!-- end HasFields -->
+
+<h4 id="getaccountsresponse">GetAccountsResponse</h4>
+<p>Список счетов пользователя.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>accounts</td>
+<td>Массив объектов <a href="#account">Account</a></td>
+<td>Массив счетов клиента.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getinforequest">GetInfoRequest</h4>
+<p>Запрос информации о пользователе.</p>
+<!-- end HasFields -->
+
+<h4 id="getinforesponse">GetInfoResponse</h4>
+<p>Информация о пользователе.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>prem_status</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак премиум клиента.</td>
+</tr>
+<tr>
+<td>qual_status</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак квалифицированного инвестора.</td>
+</tr>
+<tr>
+<td>qualified_for_work_with</td>
+<td>Массив объектов <a href="#string">string</a></td>
+<td>Набор требующих тестирования инструментов и возможностей, с которыми может работать пользователь. <a href="https://tinkoff.github.io/investAPI/faq_users/">Подробнее</a>.</td>
+</tr>
+<tr>
+<td>tariff</td>
+<td><a href="#string">string</a></td>
+<td>Наименование тарифа пользователя.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getmarginattributesrequest">GetMarginAttributesRequest</h4>
+<p>Запрос маржинальных показателей по счёту</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор счёта пользователя.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getmarginattributesresponse">GetMarginAttributesResponse</h4>
+<p>Маржинальные показатели по счёту.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>liquid_portfolio</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Ликвидная стоимость портфеля. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/liquid-portfolio/">что такое ликвидный портфель?</a>.</td>
+</tr>
+<tr>
+<td>starting_margin</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Начальная маржа — начальное обеспечение для совершения новой сделки. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/initial-and-maintenance-margin/">начальная и минимальная маржа</a>.</td>
+</tr>
+<tr>
+<td>minimal_margin</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Минимальная маржа — это минимальное обеспечение для поддержания позиции, которую вы уже открыли. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/initial-and-maintenance-margin/">начальная и минимальная маржа</a>.</td>
+</tr>
+<tr>
+<td>funds_sufficiency_level</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Уровень достаточности средств. Соотношение стоимости ликвидного портфеля к начальной марже.</td>
+</tr>
+<tr>
+<td>amount_of_missing_funds</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Объем недостающих средств. Разница между стартовой маржой и ликвидной стоимости портфеля.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getusertariffrequest">GetUserTariffRequest</h4>
+<p>Запрос текущих лимитов пользователя.</p>
+<!-- end HasFields -->
+
+<h4 id="getusertariffresponse">GetUserTariffResponse</h4>
+<p>Текущие лимиты пользователя.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>unary_limits</td>
+<td>Массив объектов <a href="#unarylimit">UnaryLimit</a></td>
+<td>Массив лимитов пользователя по unary-запросам</td>
+</tr>
+<tr>
+<td>stream_limits</td>
+<td>Массив объектов <a href="#streamlimit">StreamLimit</a></td>
+<td>Массив лимитов пользователей для stream-соединений</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="streamlimit">StreamLimit</h4>
+<p>Лимит stream-соединений.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>limit</td>
+<td><a href="#int32">int32</a></td>
+<td>Максимальное количество stream-соединений</td>
+</tr>
+<tr>
+<td>streams</td>
+<td>Массив объектов <a href="#string">string</a></td>
+<td>Названия stream-методов</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="unarylimit">UnaryLimit</h4>
+<p>Лимит unary-методов.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>limit_per_minute</td>
+<td><a href="#int32">int32</a></td>
+<td>Количество unary-запросов в минуту</td>
+</tr>
+<tr>
+<td>methods</td>
+<td>Массив объектов <a href="#string">string</a></td>
+<td>Названия методов</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+<!-- end messages -->
+
+<h3 id="enums_1">Enums</h3>
+<h4 id="accesslevel">AccessLevel</h4>
+<p>Уровень доступа к счёту.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACCOUNT_ACCESS_LEVEL_UNSPECIFIED</td>
+<td>0</td>
+<td>Уровень доступа не определён.</td>
+</tr>
+<tr>
+<td>ACCOUNT_ACCESS_LEVEL_FULL_ACCESS</td>
+<td>1</td>
+<td>Полный доступ к счёту.</td>
+</tr>
+<tr>
+<td>ACCOUNT_ACCESS_LEVEL_READ_ONLY</td>
+<td>2</td>
+<td>Доступ с уровнем прав "только чтение".</td>
+</tr>
+<tr>
+<td>ACCOUNT_ACCESS_LEVEL_NO_ACCESS</td>
+<td>3</td>
+<td>Доступ отсутствует.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="accountstatus">AccountStatus</h4>
+<p>Статус счёта.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACCOUNT_STATUS_UNSPECIFIED</td>
+<td>0</td>
+<td>Статус счёта не определён.</td>
+</tr>
+<tr>
+<td>ACCOUNT_STATUS_NEW</td>
+<td>1</td>
+<td>Новый, в процессе открытия.</td>
+</tr>
+<tr>
+<td>ACCOUNT_STATUS_OPEN</td>
+<td>2</td>
+<td>Открытый и активный счёт.</td>
+</tr>
+<tr>
+<td>ACCOUNT_STATUS_CLOSED</td>
+<td>3</td>
+<td>Закрытый счёт.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="accounttype">AccountType</h4>
+<p>Тип счёта.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACCOUNT_TYPE_UNSPECIFIED</td>
+<td>0</td>
+<td>Тип аккаунта не определён.</td>
+</tr>
+<tr>
+<td>ACCOUNT_TYPE_TINKOFF</td>
+<td>1</td>
+<td>Брокерский счёт Тинькофф.</td>
+</tr>
+<tr>
+<td>ACCOUNT_TYPE_TINKOFF_IIS</td>
+<td>2</td>
+<td>ИИС счёт.</td>
+</tr>
+<tr>
+<td>ACCOUNT_TYPE_INVEST_BOX</td>
+<td>3</td>
+<td>Инвесткопилка.</td>
 </tr>
 </tbody>
 </table>
@@ -2401,7 +3317,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_4">Нестандартные типы данных</h3>
+<h3 id="_6">Нестандартные типы данных</h3>
 <h4 id="moneyvalue">MoneyValue</h4>
 <p>Денежная сумма в определенной валюте</p>
 <table>
@@ -2453,11 +3369,6 @@
 </tr>
 </tbody>
 </table>
-                
-              
-              
-                
-
 
               
             </article>
@@ -2466,15 +3377,14 @@
         
       </main>
       
-        
-<footer class="md-footer">
+        <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
+    <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул">
       
         
         <a href="../head-orders/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Описание" rel="prev">
           <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
           <div class="md-footer__title">
             <div class="md-ellipsis">
@@ -2498,7 +3408,7 @@
             </div>
           </div>
           <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
           </div>
         </a>
       
@@ -2506,14 +3416,15 @@
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-        
-      </div>
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
     </div>
   </div>
@@ -2523,10 +3434,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e # \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version.title": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.29db7785.min.js"></script>
+      <script src="../assets/javascripts/bundle.a6c66575.min.js"></script>
       
     
   </body>

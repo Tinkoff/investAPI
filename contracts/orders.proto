@@ -67,7 +67,7 @@ message OrderTrade {
 message PostOrderRequest {
   string figi = 1; //Figi-идентификатор инструмента.
   int64 quantity = 2; //Количество лотов.
-  Quotation price = 3; //Цена одного инструмента. Для получения стоимости лота требуется умножить на лотность инструмента.
+  Quotation price = 3; //Цена одного инструмента. Для получения стоимости лота требуется умножить на лотность инструмента. Игнорируется для рыночных поручений.
   OrderDirection direction = 4; //Направление операции.
   string account_id = 5; //Номер счёта.
   OrderType order_type = 6; //Тип заявки.

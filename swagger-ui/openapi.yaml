@@ -4,7 +4,7 @@ info:
   termsOfService: https://www.tinkoff.ru/invest/disclaimers/basic-information/
   contact:
     email: al.a.volkov@tinkoff.ru
-  version: '1.0.7'
+  version: '1.0.8'
 externalDocs:
   description: Документация Tinkoff Invest API
   url: https://tinkoff.github.io/investAPI/
@@ -204,6 +204,32 @@ paths:
       tags:
       - InstrumentsService
       x-codegen-request-body-name: body
+  /tinkoff.public.invest.api.contract.v1.InstrumentsService/FindInstrument:
+    post:
+      operationId: InstrumentsService_FindInstrument
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1FindInstrumentRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1FindInstrumentResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Метод поиска инструмента.
+      tags:
+      - InstrumentsService
+      x-codegen-request-body-name: body
   /tinkoff.public.invest.api.contract.v1.InstrumentsService/FutureBy:
     post:
       operationId: InstrumentsService_FutureBy
@@ -357,6 +383,84 @@ paths:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
       summary: Метод получения графика выплат купонов по облигации
+      tags:
+      - InstrumentsService
+      x-codegen-request-body-name: body
+  /tinkoff.public.invest.api.contract.v1.InstrumentsService/GetBrandBy:
+    post:
+      operationId: InstrumentsService_GetBrandBy
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1GetBrandRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1Brand'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Метод получения бренда по его идентификатору.
+      tags:
+      - InstrumentsService
+      x-codegen-request-body-name: body
+  /tinkoff.public.invest.api.contract.v1.InstrumentsService/GetBrands:
+    post:
+      operationId: InstrumentsService_GetBrands
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1GetBrandsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1GetBrandsResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Метод получения списка брендов.
+      tags:
+      - InstrumentsService
+      x-codegen-request-body-name: body
+  /tinkoff.public.invest.api.contract.v1.InstrumentsService/GetCountries:
+    post:
+      operationId: InstrumentsService_GetCountries
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1GetCountriesRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1GetCountriesResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Метод получения списка стран.
       tags:
       - InstrumentsService
       x-codegen-request-body-name: body
@@ -3245,6 +3349,23 @@ components:
     v1CloseSandboxAccountResponse:
       description: Результат закрытия счёта в песочнице.
       type: object
+    v1CountryResponse:
+      description: Данные о стране.
+      example:
+        alfaTwo: alfaTwo
+        alfaThree: alfaThree
+        name: name
+        nameBrief: nameBrief
+      properties:
+        alfaTwo:
+          type: string
+        alfaThree:
+          type: string
+        name:
+          type: string
+        nameBrief:
+          type: string
+      type: object
     v1Coupon:
       description: Объект передачи информации о купоне облигации.
       example:
@@ -3995,6 +4116,36 @@ components:
         apiTradeAvailableFlag:
           type: boolean
       type: object
+    v1FindInstrumentRequest:
+      description: Запрос на поиск инструментов.
+      properties:
+        query:
+          type: string
+      type: object
+    v1FindInstrumentResponse:
+      description: Результат поиска инструментов.
+      example:
+        instruments:
+        - classCode: classCode
+          uid: uid
+          ticker: ticker
+          instrumentType: instrumentType
+          name: name
+          figi: figi
+          isin: isin
+        - classCode: classCode
+          uid: uid
+          ticker: ticker
+          instrumentType: instrumentType
+          name: name
+          figi: figi
+          isin: isin
+      properties:
+        instruments:
+          items:
+            $ref: '#/components/schemas/v1InstrumentShort'
+          type: array
+      type: object
     v1Future:
       description: Объект передачи информации о фьючерсе.
       example:
@@ -4418,6 +4569,41 @@ components:
             $ref: '#/components/schemas/v1Coupon'
           type: array
       type: object
+    v1GetBrandRequest:
+      description: Запрос бренда.
+      properties:
+        id:
+          type: string
+      type: object
+    v1GetBrandsRequest:
+      description: Запрос списка брендов.
+      type: object
+    v1GetBrandsResponse:
+      description: Список брендов.
+      example:
+        brands:
+        - uid: uid
+          name: name
+          description: description
+          company: company
+          sector: sector
+          countryOfRiskName: countryOfRiskName
+          info: info
+          countryOfRisk: countryOfRisk
+        - uid: uid
+          name: name
+          description: description
+          company: company
+          sector: sector
+          countryOfRiskName: countryOfRiskName
+          info: info
+          countryOfRisk: countryOfRisk
+      properties:
+        brands:
+          items:
+            $ref: '#/components/schemas/v1Brand'
+          type: array
+      type: object
     v1GetBrokerReportRequest:
       properties:
         taskId:
@@ -4597,6 +4783,27 @@ components:
         candles:
           items:
             $ref: '#/components/schemas/v1HistoricCandle'
+          type: array
+      type: object
+    v1GetCountriesRequest:
+      description: Запрос справочника стран.
+      type: object
+    v1GetCountriesResponse:
+      description: Справочник стран.
+      example:
+        countries:
+        - alfaTwo: alfaTwo
+          alfaThree: alfaThree
+          name: name
+          nameBrief: nameBrief
+        - alfaTwo: alfaTwo
+          alfaThree: alfaThree
+          name: name
+          nameBrief: nameBrief
+      properties:
+        countries:
+          items:
+            $ref: '#/components/schemas/v1CountryResponse'
           type: array
       type: object
     v1GetDividendsForeignIssuerReportRequest:
@@ -5491,6 +5698,32 @@ components:
       properties:
         instrument:
           $ref: '#/components/schemas/v1Instrument'
+      type: object
+    v1InstrumentShort:
+      description: Краткая информация об инструменте.
+      example:
+        classCode: classCode
+        uid: uid
+        ticker: ticker
+        instrumentType: instrumentType
+        name: name
+        figi: figi
+        isin: isin
+      properties:
+        isin:
+          type: string
+        figi:
+          type: string
+        ticker:
+          type: string
+        classCode:
+          type: string
+        instrumentType:
+          type: string
+        name:
+          type: string
+        uid:
+          type: string
       type: object
     v1InstrumentStatus:
       default: INSTRUMENT_STATUS_UNSPECIFIED

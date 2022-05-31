@@ -76,6 +76,18 @@ service InstrumentsService {/*Сервис предназначен для по�
 
   //Метод редактирования избранных инструментов.
   rpc EditFavorites (EditFavoritesRequest) returns (EditFavoritesResponse);
+
+  //Метод получения списка стран.
+  rpc GetCountries (GetCountriesRequest) returns (GetCountriesResponse);
+
+  //Метод поиска инструмента.
+  rpc FindInstrument (FindInstrumentRequest) returns (FindInstrumentResponse);
+
+  //Метод получения списка брендов.
+  rpc GetBrands(GetBrandsRequest) returns (GetBrandsResponse);
+
+  //Метод получения бренда по его идентификатору.
+  rpc GetBrandBy(GetBrandRequest) returns (Brand);
 }
 
 //Запрос расписания торгов
@@ -808,4 +820,54 @@ enum RealExchange {
   REAL_EXCHANGE_MOEX = 1; //Московская биржа.
   REAL_EXCHANGE_RTS = 2; //Санкт-Петербургская биржа.
   REAL_EXCHANGE_OTC = 3; //Внебиржевой инструмент.
+}
+
+//Запрос справочника стран.
+message GetCountriesRequest { }
+
+//Справочник стран.
+message GetCountriesResponse {
+  repeated CountryResponse countries = 1; //Массив стран.
+}
+
+//Данные о стране.
+message CountryResponse {
+  string alfa_two = 1; //Двухбуквенный код страны.
+  string alfa_three = 2; //Трёхбуквенный код страны.
+  string name = 3; //Наименование страны.
+  string name_brief = 4; //Краткое наименование страны.
+}
+
+//Запрос на поиск инструментов.
+message FindInstrumentRequest {
+  string query = 1; //Строка поиска.
+}
+
+//Результат поиска инструментов.
+message FindInstrumentResponse {
+  repeated InstrumentShort instruments = 1; //Массив инструментов, удовлетворяющих условиям поиска.
+}
+
+//Краткая информация об инструменте.
+message InstrumentShort {
+  string isin = 1; //Isin инструмента.
+  string figi	= 2; //Figi инструмента.
+  string ticker	= 3; //Ticker инструмента.
+  string class_code	= 4; //ClassCode инструмента.
+  string instrument_type = 5; //Тип инструмента.
+  string name	= 6; //Название инструмента.
+  string uid = 7; //Уникальный идентификатор инструмента.
+}
+
+//Запрос списка брендов.
+message GetBrandsRequest { }
+
+//Запрос бренда.
+message GetBrandRequest {
+  string id = 1; //Uid-идентификатор бренда.
+}
+
+//Список брендов.
+message GetBrandsResponse {
+  repeated Brand brands = 1; //Массив брендов.
 }

@@ -33,6 +33,9 @@ service MarketDataService { //Сервис получения биржевой �
 service MarketDataStreamService {
   //Bi-directional стрим предоставления биржевой информации.
   rpc MarketDataStream(stream MarketDataRequest) returns (stream MarketDataResponse);
+
+  //Server-side стрим предоставления биржевой информации.
+  rpc MarketDataServerSideStream(MarketDataServerSideStreamRequest) returns (stream MarketDataResponse);
 }
 
 //Запрос подписки или отписки на определённые биржевые данные.
@@ -44,6 +47,14 @@ message MarketDataRequest {
     SubscribeInfoRequest subscribe_info_request = 4; //Запрос подписки на торговые статусы инструментов.
     SubscribeLastPriceRequest subscribe_last_price_request = 5; //Запрос подписки на последние цены.
   }
+}
+
+message MarketDataServerSideStreamRequest {
+  SubscribeCandlesRequest subscribe_candles_request = 1; //Запрос подписки на свечи.
+  SubscribeOrderBookRequest subscribe_order_book_request = 2; //Запрос подписки на стаканы.
+  SubscribeTradesRequest subscribe_trades_request = 3; //Запрос подписки на ленту обезличенных сделок.
+  SubscribeInfoRequest subscribe_info_request = 4; //Запрос подписки на торговые статусы инструментов.
+  SubscribeLastPriceRequest subscribe_last_price_request = 5; //Запрос подписки на последние цены.
 }
 
 //Пакет биржевой информации по подписке.
@@ -67,6 +78,7 @@ message MarketDataResponse {
 message SubscribeCandlesRequest {
   SubscriptionAction subscription_action = 1; //Изменение статуса подписки.
   repeated CandleInstrument instruments = 2; //Массив инструментов для подписки на свечи.
+  bool waiting_close = 3; //Флаг ожидания закрытия временного интервала для отправки свечи.
 }
 
 //Тип операции со списком подписок.
@@ -110,8 +122,9 @@ enum SubscriptionStatus {
   SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID = 3; //Некорректный статус подписки, список возможных значений: [SubscriptionAction](https://tinkoff.github.io/investAPI/marketdata#subscriptionaction).
   SUBSCRIPTION_STATUS_DEPTH_IS_INVALID = 4; //Некорректная глубина стакана, доступные значения: 1, 10, 20, 30, 40, 50.
   SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID = 5; //Некорректный интервал свечей, список возможных значений: [SubscriptionInterval](https://tinkoff.github.io/investAPI/marketdata#subscriptioninterval).
-  SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED = 6; //Превышен лимит подписок в рамках стрима, подробнее: [Лимитная политика](https://tinkoff.github.io/investAPI/limits/).
+  SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED = 6; //Превышен лимит на общее количество подписок в рамках стрима, подробнее: [Лимитная политика](https://tinkoff.github.io/investAPI/limits/).
   SUBSCRIPTION_STATUS_INTERNAL_ERROR = 7; //Внутренняя ошибка сервиса.
+  SUBSCRIPTION_STATUS_TOO_MANY_REQUESTS = 8; //Превышен лимит на количество запросов на подписки в течение установленного отрезка времени
 }
 
 //Запрос на изменение статуса подписки на стаканы.

@@ -107,7 +107,7 @@
 | payment |  [MoneyValue](#moneyvalue) | Сумма операции. |
 | price |  [MoneyValue](#moneyvalue) | Цена операции за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. |
 | state |  [OperationState](#operationstate) | Статус операции. |
-| quantity |  [int64](#int64) | Количество лотов инструмента. |
+| quantity |  [int64](#int64) | Количество единиц инструмента. |
 | quantity_rest |  [int64](#int64) | Неисполненный остаток по сделке. |
 | figi |  [string](#string) | Figi-идентификатор инструмента, связанного с операцией. |
 | instrument_type |  [string](#string) | Тип инструмента. Возможные значения: </br>**bond** — облигация; </br>**share** — акция; </br>**currency** — валюта; </br>**etf** — фонд; </br>**futures** — фьючерс. |
@@ -221,7 +221,7 @@
 | instrument_type |  [string](#string) | Тип инструмента. |
 | quantity |  [Quotation](#quotation) | Количество инструмента в портфеле в штуках. |
 | average_position_price |  [MoneyValue](#moneyvalue) | Средневзвешенная цена позиции. **Возможна задержка до секунды для пересчёта**. |
-| expected_yield |  [Quotation](#quotation) | Текущая рассчитанная относительная доходность позиции, в %. |
+| expected_yield |  [Quotation](#quotation) | Текущая рассчитанная доходность позиции. |
 | current_nkd |  [MoneyValue](#moneyvalue) | Текущий НКД. |
 | average_position_price_pt |  [Quotation](#quotation) | Средняя цена лота в позиции в пунктах (для фьючерсов). **Возможна задержка до секунды для пересчёта**. |
 | current_price |  [MoneyValue](#moneyvalue) | Текущая цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.. |
@@ -501,7 +501,7 @@
 | OPERATION_TYPE_MARGIN_FEE | 14 | Удержание комиссии за непокрытую позицию. |
 | OPERATION_TYPE_BUY | 15 | Покупка ЦБ. |
 | OPERATION_TYPE_BUY_CARD | 16 | Покупка ЦБ с карты. |
-| OPERATION_TYPE_INPUT_SECURITIES | 17 | Завод ценных бумаг из другого депозитария. |
+| OPERATION_TYPE_INPUT_SECURITIES | 17 | Перевод ценных бумаг из другого депозитария. |
 | OPERATION_TYPE_SELL_MARGIN | 18 | Продажа в результате Margin-call. |
 | OPERATION_TYPE_BROKER_FEE | 19 | Удержание комиссии за операцию. |
 | OPERATION_TYPE_BUY_MARGIN | 20 | Покупка в результате Margin-call. |

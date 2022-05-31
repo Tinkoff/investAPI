@@ -46,7 +46,7 @@
 
 
 #### GetLastTrades
-Метод запроса последних обезличенных сделок по инструменту.
+Метод запроса последних обезличенных сделок по инструменту на текущий торговый день с максимальным интервалом в 1 час.
 
 - Тело запроса — [GetLastTradesRequest](#getlasttradesrequest)
 
@@ -68,6 +68,14 @@ Bi-directional стрим предоставления биржевой инфо
 
 - Тело ответа — [MarketDataResponse](#marketdataresponse)
 
+
+#### MarketDataServerSideStream
+Server-side стрим предоставления биржевой информации.
+
+- Тело запроса — [MarketDataServerSideStreamRequest](#marketdataserversidestreamrequest)
+
+- Тело ответа — [MarketDataResponse](#marketdataresponse)
+
  <!-- range .Methods -->
  <!-- range .Services -->
 
@@ -77,6 +85,21 @@ Bi-directional стрим предоставления биржевой инфо
 
 #### MarketDataRequest
 Запрос подписки или отписки на определённые биржевые данные.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| subscribe_candles_request |  [SubscribeCandlesRequest](#subscribecandlesrequest) | Запрос подписки на свечи. |
+| subscribe_order_book_request |  [SubscribeOrderBookRequest](#subscribeorderbookrequest) | Запрос подписки на стаканы. |
+| subscribe_trades_request |  [SubscribeTradesRequest](#subscribetradesrequest) | Запрос подписки на ленту обезличенных сделок. |
+| subscribe_info_request |  [SubscribeInfoRequest](#subscribeinforequest) | Запрос подписки на торговые статусы инструментов. |
+| subscribe_last_price_request |  [SubscribeLastPriceRequest](#subscribelastpricerequest) | Запрос подписки на последние цены. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### MarketDataServerSideStreamRequest
+
 
 
 | Field | Type | Description |
@@ -119,6 +142,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | ----- | ---- | ----------- |
 | subscription_action |  [SubscriptionAction](#subscriptionaction) | Изменение статуса подписки. |
 | instruments | Массив объектов [CandleInstrument](#candleinstrument) | Массив инструментов для подписки на свечи. |
+| waiting_close |  [bool](#bool) | Флаг ожидания закрытия временного интервала для отправки свечи. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -563,7 +587,7 @@ subscribeCandles | Изменения статуса подписки на св�
 
 
 #### GetLastTradesRequest
-Запрос последних обезличенных сделок по инструменту.
+Запрос последних обезличенных сделок по инструменту на текущий торговый день с максимальным интервалом в 1 час.
 
 
 | Field | Type | Description |
@@ -576,7 +600,7 @@ subscribeCandles | Изменения статуса подписки на св�
 
 
 #### GetLastTradesResponse
-Последние обезличенные сделки по инструменту.
+Последние обезличенные сделки по инструменту на текущий торговый день с максимальным интервалом в 1 час.
 
 
 | Field | Type | Description |
@@ -624,8 +648,9 @@ subscribeCandles | Изменения статуса подписки на св�
 | SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID | 3 | Некорректный статус подписки, список возможных значений: [SubscriptionAction](https://tinkoff.github.io/investAPI/marketdata#subscriptionaction). |
 | SUBSCRIPTION_STATUS_DEPTH_IS_INVALID | 4 | Некорректная глубина стакана, доступные значения: 1, 10, 20, 30, 40, 50. |
 | SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID | 5 | Некорректный интервал свечей, список возможных значений: [SubscriptionInterval](https://tinkoff.github.io/investAPI/marketdata#subscriptioninterval). |
-| SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED | 6 | Превышен лимит подписок в рамках стрима, подробнее: [Лимитная политика](https://tinkoff.github.io/investAPI/limits/). |
+| SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED | 6 | Превышен лимит на общее количество подписок в рамках стрима, подробнее: [Лимитная политика](https://tinkoff.github.io/investAPI/limits/). |
 | SUBSCRIPTION_STATUS_INTERNAL_ERROR | 7 | Внутренняя ошибка сервиса. |
+| SUBSCRIPTION_STATUS_TOO_MANY_REQUESTS | 8 | Превышен лимит на количество запросов на подписки в течение установленного отрезка времени |
 
 
 

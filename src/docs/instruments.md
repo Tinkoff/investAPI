@@ -174,6 +174,38 @@
 
 - Тело ответа — [EditFavoritesResponse](#editfavoritesresponse)
 
+
+#### GetCountries
+Метод получения списка стран.
+
+- Тело запроса — [GetCountriesRequest](#getcountriesrequest)
+
+- Тело ответа — [GetCountriesResponse](#getcountriesresponse)
+
+
+#### FindInstrument
+Метод поиска инструмента.
+
+- Тело запроса — [FindInstrumentRequest](#findinstrumentrequest)
+
+- Тело ответа — [FindInstrumentResponse](#findinstrumentresponse)
+
+
+#### GetBrands
+Метод получения списка брендов.
+
+- Тело запроса — [GetBrandsRequest](#getbrandsrequest)
+
+- Тело ответа — [GetBrandsResponse](#getbrandsresponse)
+
+
+#### GetBrandBy
+Метод получения бренда по его идентификатору.
+
+- Тело запроса — [GetBrandRequest](#getbrandrequest)
+
+- Тело ответа — [Brand](#brand)
+
  <!-- range .Methods -->
  <!-- range .Services -->
 
@@ -1133,6 +1165,104 @@
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | favorite_instruments | Массив объектов [FavoriteInstrument](#favoriteinstrument) | Массив инструментов |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetCountriesRequest
+Запрос справочника стран.
+
+ <!-- end HasFields -->
+
+
+#### GetCountriesResponse
+Справочник стран.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| countries | Массив объектов [CountryResponse](#countryresponse) | Массив стран. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### CountryResponse
+Данные о стране.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| alfa_two |  [string](#string) | Двухбуквенный код страны. |
+| alfa_three |  [string](#string) | Трёхбуквенный код страны. |
+| name |  [string](#string) | Наименование страны. |
+| name_brief |  [string](#string) | Краткое наименование страны. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### FindInstrumentRequest
+Запрос на поиск инструментов.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| query |  [string](#string) | Строка поиска. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### FindInstrumentResponse
+Результат поиска инструментов.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instruments | Массив объектов [InstrumentShort](#instrumentshort) | Массив инструментов, удовлетворяющих условиям поиска. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### InstrumentShort
+Краткая информация об инструменте.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| isin |  [string](#string) | Isin инструмента. |
+| figi |  [string](#string) | Figi инструмента. |
+| ticker |  [string](#string) | Ticker инструмента. |
+| class_code |  [string](#string) | ClassCode инструмента. |
+| instrument_type |  [string](#string) | Тип инструмента. |
+| name |  [string](#string) | Название инструмента. |
+| uid |  [string](#string) | Уникальный идентификатор инструмента. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetBrandsRequest
+Запрос списка брендов.
+
+ <!-- end HasFields -->
+
+
+#### GetBrandRequest
+Запрос бренда.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| id |  [string](#string) | Uid-идентификатор бренда. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetBrandsResponse
+Список брендов.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| brands | Массив объектов [Brand](#brand) | Массив брендов. |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->

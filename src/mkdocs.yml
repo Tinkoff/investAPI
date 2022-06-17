@@ -50,6 +50,7 @@ nav:
 - Сервис котировок:
   - Описание: head-marketdata.md
   - Методы: marketdata.md
+  - Получение исторических рыночных данных: get_history.md
   - FAQ: faq_marketdata.md
 - Сервис стоп-заявок:
   - Описание: head-stoporders.md

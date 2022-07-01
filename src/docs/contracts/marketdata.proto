@@ -46,6 +46,7 @@ message MarketDataRequest {
     SubscribeTradesRequest subscribe_trades_request = 3; //Запрос подписки на ленту обезличенных сделок.
     SubscribeInfoRequest subscribe_info_request = 4; //Запрос подписки на торговые статусы инструментов.
     SubscribeLastPriceRequest subscribe_last_price_request = 5; //Запрос подписки на последние цены.
+    GetMySubscriptions get_my_subscriptions = 6; //Запрос своих подписок.
   }
 }
 
@@ -78,7 +79,7 @@ message MarketDataResponse {
 message SubscribeCandlesRequest {
   SubscriptionAction subscription_action = 1; //Изменение статуса подписки.
   repeated CandleInstrument instruments = 2; //Массив инструментов для подписки на свечи.
-  bool waiting_close = 3; //Флаг ожидания закрытия временного интервала для отправки свечи.
+  bool waiting_close = 3; //Флаг ожидания закрытия временного интервала для отправки свечи, применяется только для минутных свечей.
 }
 
 //Тип операции со списком подписок.
@@ -371,3 +372,6 @@ message GetLastTradesRequest {
 message GetLastTradesResponse {
   repeated Trade trades = 1; //Массив сделок
 }
+
+//Запрос активных подписок.
+message GetMySubscriptions { }

@@ -1,4 +1,9 @@
 {
+  "12001": {
+    "message": "Method is unimplemented",
+    "type": "UNIMPLEMENTED",
+    "description": "Метод не реализован."
+  },
   "30001": {
     "message": "missing parameter: 'from'",
     "type": "INVALID_ARGUMENT",
@@ -97,17 +102,32 @@
   "30020": {
     "message": "'direction' is invalid",
     "type": "INVALID_ARGUMENT",
-    "description": "Входной параметр *direction* имеет некорректное значение.</br>Список доступных значений: [*direction*](https://tinkoff.github.io/investAPI/stoporders/#stoporderdirection)."
+    "description": "Входной параметр *direction* имеет некорректное значение."
   },
   "30021": {
     "message": "missing parameter: 'account_id'",
     "type": "INVALID_ARGUMENT",
     "description": "Входной параметр *account_id* является обязательным. </br> Укажите корректный параметр *account_id*."
   },
+  "30022": {
+    "message": "missing parameter: 'state'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *state* является обязательным. </br> Укажите корректный параметр *state*.</br>Список доступных значений: [*direction*](https://tinkoff.github.io/investAPI/operations/#operationstate)."
+  },
+  "30023": {
+    "message": "invalid parameter: 'state'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *state* имеет некорректное значение. </br> Укажите корректный параметр *state*.</br>Список доступных значений: [*direction*](https://tinkoff.github.io/investAPI/operations/#operationstate)."
+  },
   "30025": {
     "message": "missing parameter: 'order_type'",
     "type": "INVALID_ARGUMENT",
     "description": "Входной параметр *order_type* является обязательным. </br> Укажите корректный параметр *order_type*."
+  },
+  "30026": {
+    "message": "invalid parameter: 'order_type'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *order_type* имеет некорректное значение. </br> Укажите корректный параметр *order_type*."
   },
   "30027": {
     "message": "missing parameter: 'order_id'",
@@ -284,6 +304,21 @@
     "type": "INVALID_ARGUMENT",
     "description": "Некорректное значение *action_type*. </br> Выберите допустимое значение."
   },
+  "30068": {
+    "message": "Only limit order is allowed",
+    "type": "INVALID_ARGUMENT",
+    "description": "В настоящий момент возможно выставление только лимитного торгового поручения."
+  },
+  "30069": {
+    "message": "Invalid parameter: 'limit'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *limit* имеет некорректное значение.</br>Значение должно быть меньше или равно 1000."
+  },
+  "30070": {
+    "message": "'from' can't be more than the current date",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *from* имеет некорректное значение.</br>Укажите корректный параметр."
+  },
   "30077": {
     "message": "not available for OTC instruments",
     "type": "INVALID_ARGUMENT",
@@ -329,10 +364,41 @@
     "type": "INVALID_ARGUMENT",
     "description": "Тип цены в пунктах доступен только для фьючерсов и облигаций."
   },
+  "30086": {
+    "message": "year is invalid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Некорректный год."
+  },
+  "30087": {
+    "message": "missing parameter: query",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *query* является обязательным. </br>Укажите не пустой параметр *query*."
+  },
+  "30088": {
+    "message": "'from' and 'to' must have the same year",
+    "type": "INVALID_ARGUMENT",
+    "description": "Запрашиваемые даты должны быть в рамках одного года."
+  },
+  "30089": {
+    "message": "'to' must not be later than %s",
+    "type": "INVALID_ARGUMENT",
+    "description": "Поле to не должно быть позднее даты, указанной в тексте ошибки. </br>Дата указана в формате ISO 8601."
+  },
+  "30090": {
+    "message": "missing parameter: 'siebel_id'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *siebel_id* является обязательным. </br> Укажите корректный параметр *siebel_id*."
+  },
+
   "40002": {
     "message": "insufficient privileges",
     "type": "PERMISSION_DENIED",
     "description": "Недостаточно прав для совершения операции. </br>Токен доступа имеет уровень прав read-only.</br>Подробнее: [Виды токенов](https://tinkoff.github.io/investAPI/index#_2)"
+  },
+  "40003": {
+    "message": "authentication token is missing or invalid",
+    "type": "UNAUTHENTICATED",
+    "description": "Токен доступа не найден или не активен. </br>Вы можете выпустить новый токен по ссылке [Настройки](https://www.tinkoff.ru/invest/settings/)"
   },
 
   "50001": {
@@ -375,6 +441,11 @@
     "type": "NOT_FOUND",
     "description": "Актив не найден.</br>Укажите корректный идентификатор актива."
   },
+  "50010": {
+    "message": "brand not found",
+    "type": "NOT_FOUND",
+    "description": "Бренд не найден.</br>Укажите корректный идентификатор бренда."
+  },
   "70001": {
     "message": "internal error",
     "type": "INTERNAL",
@@ -404,5 +475,10 @@
     "message": "need confirmation: %s",
     "type": "FAILED_PRECONDITION",
     "description": "Требуется подтверждение операции. </br>Подробнее в тексте ошибки."
+  },
+  "90002": {
+    "message": "only for qualified investors",
+    "type": "FAILED_PRECONDITION",
+    "description": "Торговля этим инструментом доступна только квалифицированным инвесторам."
   }
 }

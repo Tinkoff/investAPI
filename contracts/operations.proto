@@ -34,6 +34,11 @@ service OperationsService {/*Сервис предназначен для пол
   rpc GetDividendsForeignIssuer(GetDividendsForeignIssuerRequest) returns (GetDividendsForeignIssuerResponse);
 }
 
+service OperationsStreamService {
+  //Server-side stream обновлений портфеля
+  rpc PortfolioStream(PortfolioStreamRequest) returns (stream PortfolioStreamResponse);
+}
+
 //Запрос получения списка операций по счёту.
 message OperationsRequest {
   string account_id = 1; //Идентификатор счёта клиента.
@@ -128,6 +133,7 @@ message PortfolioPosition {
   MoneyValue current_price = 8; //Текущая цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента..
   MoneyValue average_position_price_fifo = 9; //Средняя цена лота в позиции по методу FIFO. **Возможна задержка до секунды для пересчёта**.
   Quotation quantity_lots = 10; //Количество лотов в портфеле.
+  bool blocked = 21; //Заблокировано.
 }
 
 //Баланс позиции ценной бумаги.
@@ -135,6 +141,8 @@ message PositionsSecurities {
   string figi = 1; //Figi-идентификатор бумаги.
   int64 blocked = 2; //Заблокировано.
   int64 balance = 3;  //Текущий незаблокированный баланс.
+  bool exchange_blocked = 11; //Заблокировано на бирже.
+  string instrument_type = 16; //Тип инструмента.
 }
 
 //Баланс фьючерса.
@@ -215,6 +223,7 @@ enum OperationState {
   OPERATION_STATE_UNSPECIFIED = 0; //Статус операции не определён
   OPERATION_STATE_EXECUTED = 1; //Исполнена.
   OPERATION_STATE_CANCELED = 2; //Отменена.
+  OPERATION_STATE_PROGRESS = 3; //Исполняется.
 }
 
 //Тип операции.
@@ -319,4 +328,37 @@ message DividendsForeignIssuerReport {
   Quotation tax = 10; //Сумма налога, удержанного агентом.
   Quotation dividend_amount = 11; //Итоговая сумма выплаты.
   string currency = 12; //Валюта.
+}
+
+//Запрос установки stream-соединения.
+message PortfolioStreamRequest {
+  repeated string accounts = 1; //Массив идентификаторов счётов пользователя
+}
+
+//Информация по позициям и доходностям портфелей.
+message PortfolioStreamResponse {
+  oneof payload {
+    PortfolioSubscriptionResult subscriptions = 1; //Объект результата подписки.
+    PortfolioResponse portfolio = 2; //Объект стриминга портфеля.
+    Ping ping = 3; //Проверка активности стрима.
+  }
+}
+
+//Объект результата подписки.
+message PortfolioSubscriptionResult {
+  repeated AccountSubscriptionStatus accounts = 1; //Массив счетов клиента.
+}
+
+//Счет клиента.
+message AccountSubscriptionStatus {
+  string account_id = 1; //Идентификатор счёта
+  PortfolioSubscriptionStatus subscription_status = 6; //Результат подписки.
+}
+
+//Результат подписки.
+enum PortfolioSubscriptionStatus {
+  PORTFOLIO_SUBSCRIPTION_STATUS_UNSPECIFIED = 0; //Тип не определён.
+  PORTFOLIO_SUBSCRIPTION_STATUS_SUCCESS = 1; //Успешно.
+  PORTFOLIO_SUBSCRIPTION_STATUS_ACCOUNT_NOT_FOUND = 2; //Счёт не найден или недостаточно прав.
+  PORTFOLIO_SUBSCRIPTION_STATUS_INTERNAL_ERROR = 3; //Произошла ошибка.
 }

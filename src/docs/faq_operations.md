@@ -26,3 +26,10 @@
 сообщение об ошибке.
 
 Подробнее о брокерском отчёте: [Отчёты и справки](https://www.tinkoff.ru/invest/account/help/trade-on-bs/get-report/).
+
+###Как получить информацию о позициях и доходности портфеля?
+
+Для получения информации о позиция и доходности портфеля необходимо подписаться gRPC server-side stream 
+получения сделок с биржи [PortfolioStream](/investAPI/operations/#portfoliostream) или выполнить запросы в [метод получения портфеля](/investAPI/operations/#getportfolio) и [метод получения позиций по счету](/investAPI/operations/#getpositions).
+В [PortfolioStream](/investAPI/operations/#portfoliostream) не отображаются заблокированные биржей бумаги. 
+Получить заблокированные бумаги можно в методе [GetPortfolio](/investAPI/operations/#getportfolio) и [GetPossitions](/investAPI/operations/#getpositions).

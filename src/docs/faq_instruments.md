@@ -85,3 +85,9 @@ Figi-идентификатор инструмента можно при пом�
 * [GetFutures](/investAPI/instruments/#futures) - Метод получения списка фьючерсов.
 * [GetCurrencyBy](/investAPI/instruments/#currencyby) - Метод получения валюты по её идентификатору.
 * [GetCurrencies](/investAPI/instruments/#currencies) - Метод получения списка валют.
+
+
+###Как найти базовый актив фьючерса?
+
+В методах [GetFutureBy](/investAPI/instruments/#futureby) и [GetFutures](/investAPI/instruments/#futures) доступен параметр `basic_asset_position_uid`,
+с помощью которого Вы можете найти позицию базового актива фьючерса используя метод [FindInstrument](/investAPI/instruments/#findinstrument)

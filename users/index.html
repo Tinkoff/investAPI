@@ -685,6 +685,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#account" class="md-nav__link">
+    Account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getaccountsrequest" class="md-nav__link">
     GetAccountsRequest
   </a>
@@ -699,8 +706,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#account" class="md-nav__link">
-    Account
+  <a href="#getinforequest" class="md-nav__link">
+    GetInfoRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinforesponse" class="md-nav__link">
+    GetInfoResponse
   </a>
   
 </li>
@@ -734,13 +748,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#unarylimit" class="md-nav__link">
-    UnaryLimit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#streamlimit" class="md-nav__link">
     StreamLimit
   </a>
@@ -748,15 +755,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#getinforequest" class="md-nav__link">
-    GetInfoRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getinforesponse" class="md-nav__link">
-    GetInfoResponse
+  <a href="#unarylimit" class="md-nav__link">
+    UnaryLimit
   </a>
   
 </li>
@@ -775,8 +775,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#accounttype" class="md-nav__link">
-    AccountType
+  <a href="#accesslevel" class="md-nav__link">
+    AccessLevel
   </a>
   
 </li>
@@ -789,8 +789,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#accesslevel" class="md-nav__link">
-    AccessLevel
+  <a href="#accounttype" class="md-nav__link">
+    AccountType
   </a>
   
 </li>
@@ -1435,6 +1435,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#account" class="md-nav__link">
+    Account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getaccountsrequest" class="md-nav__link">
     GetAccountsRequest
   </a>
@@ -1449,8 +1456,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#account" class="md-nav__link">
-    Account
+  <a href="#getinforequest" class="md-nav__link">
+    GetInfoRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinforesponse" class="md-nav__link">
+    GetInfoResponse
   </a>
   
 </li>
@@ -1484,13 +1498,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#unarylimit" class="md-nav__link">
-    UnaryLimit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#streamlimit" class="md-nav__link">
     StreamLimit
   </a>
@@ -1498,15 +1505,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#getinforequest" class="md-nav__link">
-    GetInfoRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getinforesponse" class="md-nav__link">
-    GetInfoResponse
+  <a href="#unarylimit" class="md-nav__link">
+    UnaryLimit
   </a>
   
 </li>
@@ -1525,8 +1525,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#accounttype" class="md-nav__link">
-    AccountType
+  <a href="#accesslevel" class="md-nav__link">
+    AccessLevel
   </a>
   
 </li>
@@ -1539,8 +1539,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#accesslevel" class="md-nav__link">
-    AccessLevel
+  <a href="#accounttype" class="md-nav__link">
+    AccountType
   </a>
   
 </li>
@@ -1659,35 +1659,6 @@
 <!-- range .Services -->
 
 <h3 id="_2">Сообщения методов</h3>
-<h4 id="getaccountsrequest">GetAccountsRequest</h4>
-<p>Запрос получения счетов пользователя.</p>
-<!-- end HasFields -->
-
-<h4 id="getaccountsresponse">GetAccountsResponse</h4>
-<p>Список счетов пользователя.</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>accounts</td>
-<td>Массив объектов <a href="#account">Account</a></td>
-<td>Массив счетов клиента.</td>
-</tr>
-<tr>
-<td><!-- end Fields --></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<!-- end HasFields -->
-
 <h4 id="account">Account</h4>
 <p>Информация о счёте.</p>
 <table>
@@ -1733,6 +1704,79 @@
 <td>access_level</td>
 <td><a href="#accesslevel">AccessLevel</a></td>
 <td>Уровень доступа к текущему счёту (определяется токеном).</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getaccountsrequest">GetAccountsRequest</h4>
+<p>Запрос получения счетов пользователя.</p>
+<!-- end HasFields -->
+
+<h4 id="getaccountsresponse">GetAccountsResponse</h4>
+<p>Список счетов пользователя.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>accounts</td>
+<td>Массив объектов <a href="#account">Account</a></td>
+<td>Массив счетов клиента.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getinforequest">GetInfoRequest</h4>
+<p>Запрос информации о пользователе.</p>
+<!-- end HasFields -->
+
+<h4 id="getinforesponse">GetInfoResponse</h4>
+<p>Информация о пользователе.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>prem_status</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак премиум клиента.</td>
+</tr>
+<tr>
+<td>qual_status</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак квалифицированного инвестора.</td>
+</tr>
+<tr>
+<td>qualified_for_work_with</td>
+<td>Массив объектов <a href="#string">string</a></td>
+<td>Набор требующих тестирования инструментов и возможностей, с которыми может работать пользователь. <a href="https://tinkoff.github.io/investAPI/faq_users/">Подробнее</a>.</td>
+</tr>
+<tr>
+<td>tariff</td>
+<td><a href="#string">string</a></td>
+<td>Наименование тарифа пользователя.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -1847,36 +1891,6 @@
 </table>
 <!-- end HasFields -->
 
-<h4 id="unarylimit">UnaryLimit</h4>
-<p>Лимит unary-методов.</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>limit_per_minute</td>
-<td><a href="#int32">int32</a></td>
-<td>Количество unary-запросов в минуту</td>
-</tr>
-<tr>
-<td>methods</td>
-<td>Массив объектов <a href="#string">string</a></td>
-<td>Названия методов</td>
-</tr>
-<tr>
-<td><!-- end Fields --></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<!-- end HasFields -->
-
 <h4 id="streamlimit">StreamLimit</h4>
 <p>Лимит stream-соединений.</p>
 <table>
@@ -1907,12 +1921,8 @@
 </table>
 <!-- end HasFields -->
 
-<h4 id="getinforequest">GetInfoRequest</h4>
-<p>Запрос информации о пользователе.</p>
-<!-- end HasFields -->
-
-<h4 id="getinforesponse">GetInfoResponse</h4>
-<p>Информация о пользователе.</p>
+<h4 id="unarylimit">UnaryLimit</h4>
+<p>Лимит unary-методов.</p>
 <table>
 <thead>
 <tr>
@@ -1923,24 +1933,14 @@
 </thead>
 <tbody>
 <tr>
-<td>prem_status</td>
-<td><a href="#bool">bool</a></td>
-<td>Признак премиум клиента.</td>
+<td>limit_per_minute</td>
+<td><a href="#int32">int32</a></td>
+<td>Количество unary-запросов в минуту</td>
 </tr>
 <tr>
-<td>qual_status</td>
-<td><a href="#bool">bool</a></td>
-<td>Признак квалифицированного инвестора.</td>
-</tr>
-<tr>
-<td>qualified_for_work_with</td>
+<td>methods</td>
 <td>Массив объектов <a href="#string">string</a></td>
-<td>Набор требующих тестирования инструментов и возможностей, с которыми может работать пользователь. <a href="https://tinkoff.github.io/investAPI/faq_users/">Подробнее</a>.</td>
-</tr>
-<tr>
-<td>tariff</td>
-<td><a href="#string">string</a></td>
-<td>Наименование тарифа пользователя.</td>
+<td>Названия методов</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -1953,8 +1953,8 @@
 <!-- end messages -->
 
 <h3 id="enums">Enums</h3>
-<h4 id="accounttype">AccountType</h4>
-<p>Тип счёта.</p>
+<h4 id="accesslevel">AccessLevel</h4>
+<p>Уровень доступа к счёту.</p>
 <table>
 <thead>
 <tr>
@@ -1965,24 +1965,24 @@
 </thead>
 <tbody>
 <tr>
-<td>ACCOUNT_TYPE_UNSPECIFIED</td>
+<td>ACCOUNT_ACCESS_LEVEL_UNSPECIFIED</td>
 <td>0</td>
-<td>Тип аккаунта не определён.</td>
+<td>Уровень доступа не определён.</td>
 </tr>
 <tr>
-<td>ACCOUNT_TYPE_TINKOFF</td>
+<td>ACCOUNT_ACCESS_LEVEL_FULL_ACCESS</td>
 <td>1</td>
-<td>Брокерский счёт Тинькофф.</td>
+<td>Полный доступ к счёту.</td>
 </tr>
 <tr>
-<td>ACCOUNT_TYPE_TINKOFF_IIS</td>
+<td>ACCOUNT_ACCESS_LEVEL_READ_ONLY</td>
 <td>2</td>
-<td>ИИС счёт.</td>
+<td>Доступ с уровнем прав "только чтение".</td>
 </tr>
 <tr>
-<td>ACCOUNT_TYPE_INVEST_BOX</td>
+<td>ACCOUNT_ACCESS_LEVEL_NO_ACCESS</td>
 <td>3</td>
-<td>Инвесткопилка.</td>
+<td>Доступ отсутствует.</td>
 </tr>
 </tbody>
 </table>
@@ -2019,8 +2019,8 @@
 </tr>
 </tbody>
 </table>
-<h4 id="accesslevel">AccessLevel</h4>
-<p>Уровень доступа к счёту.</p>
+<h4 id="accounttype">AccountType</h4>
+<p>Тип счёта.</p>
 <table>
 <thead>
 <tr>
@@ -2031,24 +2031,24 @@
 </thead>
 <tbody>
 <tr>
-<td>ACCOUNT_ACCESS_LEVEL_UNSPECIFIED</td>
+<td>ACCOUNT_TYPE_UNSPECIFIED</td>
 <td>0</td>
-<td>Уровень доступа не определён.</td>
+<td>Тип аккаунта не определён.</td>
 </tr>
 <tr>
-<td>ACCOUNT_ACCESS_LEVEL_FULL_ACCESS</td>
+<td>ACCOUNT_TYPE_TINKOFF</td>
 <td>1</td>
-<td>Полный доступ к счёту.</td>
+<td>Брокерский счёт Тинькофф.</td>
 </tr>
 <tr>
-<td>ACCOUNT_ACCESS_LEVEL_READ_ONLY</td>
+<td>ACCOUNT_TYPE_TINKOFF_IIS</td>
 <td>2</td>
-<td>Доступ с уровнем прав "только чтение".</td>
+<td>ИИС счёт.</td>
 </tr>
 <tr>
-<td>ACCOUNT_ACCESS_LEVEL_NO_ACCESS</td>
+<td>ACCOUNT_TYPE_INVEST_BOX</td>
 <td>3</td>
-<td>Доступ отсутствует.</td>
+<td>Инвесткопилка.</td>
 </tr>
 </tbody>
 </table>

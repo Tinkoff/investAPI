@@ -134,6 +134,21 @@
     "type": "INVALID_ARGUMENT",
     "description": "Входной параметр *order_id* является обязательным. </br> Укажите корректный параметр *order_id*."
   },
+  "30028": {
+    "message": "'order id' is invalid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *order_id* имеет некорректное значение.</br>Укажите корректный параметр *order_id*."
+  },
+  "30029": {
+    "message": "missing parameter: 'idempotency_key'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *idempotency_key* является обязательным. </br> Укажите корректный параметр *idempotency_key*."
+  },
+  "30030": {
+    "message": "'idempotency_key' is invalid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр *idempotency_key* имеет некорректное значение.</br>Укажите корректный параметр *idempotency_key*."
+  },
   "30031": {
     "message": "missing parameter: 'depth'",
     "type": "INVALID_ARGUMENT",
@@ -389,7 +404,16 @@
     "type": "INVALID_ARGUMENT",
     "description": "Входной параметр *siebel_id* является обязательным. </br> Укажите корректный параметр *siebel_id*."
   },
-
+  "30091": {
+    "message": "quantity of instruments can't be more than 100",
+    "type": "INVALID_ARGUMENT",
+    "description": "Количество инструментов не может превышать 100."
+  },
+  "30092": {
+    "message": "trading unavailable on weekends",
+    "type": "INVALID_ARGUMENT",
+    "description": "Торги недоступны по нерабочим дням."
+  },
   "40002": {
     "message": "insufficient privileges",
     "type": "PERMISSION_DENIED",
@@ -399,6 +423,11 @@
     "message": "authentication token is missing or invalid",
     "type": "UNAUTHENTICATED",
     "description": "Токен доступа не найден или не активен. </br>Вы можете выпустить новый токен по ссылке [Настройки](https://www.tinkoff.ru/invest/settings/)"
+  },
+  "40004": {
+    "message": "Working with orders is not available with this account",
+    "type": "PERMISSION_DENIED",
+    "description": "Выставление заявок недоступно с текущего аккаунта."
   },
 
   "50001": {
@@ -470,6 +499,11 @@
     "message": "request limit exceeded",
     "type": "RESOURCE_EXHAUSTED",
     "description": "Превышен лимит запросов в минуту. Подробнее: [Лимитная политика](https://tinkoff.github.io/investAPI/limits/)"
+  },
+  "80003": {
+    "message": "The limit on SMS sending has been exceeded, try again in a minute",
+    "type": "RESOURCE_EXHAUSTED",
+    "description": "Превышен лимит на отправку СМС, попробуйте через минуту."
   },
   "90001": {
     "message": "need confirmation: %s",

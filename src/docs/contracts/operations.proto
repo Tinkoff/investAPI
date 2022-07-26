@@ -14,7 +14,7 @@ import "common.proto";
 
 service OperationsService {/*Сервис предназначен для получения:</br> **1**.  списка операций по счёту;</br> **2**.
                               портфеля по счёту;</br> **3**. позиций ценных бумаг на счёте;</br> **4**.
-                              доступного остатка для вывода средств;</br> **4**. получения различных отчётов.*/
+                              доступного остатка для вывода средств;</br> **5**. получения различных отчётов.*/
   //Метод получения списка операций по счёту.
   rpc GetOperations(OperationsRequest) returns (OperationsResponse);
 
@@ -32,6 +32,9 @@ service OperationsService {/*Сервис предназначен для пол
 
   //Метод получения отчёта "Справка о доходах за пределами РФ".
   rpc GetDividendsForeignIssuer(GetDividendsForeignIssuerRequest) returns (GetDividendsForeignIssuerResponse);
+
+  //Метод получения списка операций по счёту с пагинацией.
+  rpc GetOperationsByCursor(GetOperationsByCursorRequest) returns (GetOperationsByCursorResponse);
 }
 
 service OperationsStreamService {
@@ -361,4 +364,83 @@ enum PortfolioSubscriptionStatus {
   PORTFOLIO_SUBSCRIPTION_STATUS_SUCCESS = 1; //Успешно.
   PORTFOLIO_SUBSCRIPTION_STATUS_ACCOUNT_NOT_FOUND = 2; //Счёт не найден или недостаточно прав.
   PORTFOLIO_SUBSCRIPTION_STATUS_INTERNAL_ERROR = 3; //Произошла ошибка.
+}
+
+//Запрос списка операций по счёту с пагинацией.
+message GetOperationsByCursorRequest {
+  string account_id = 1; //Идентификатор счёта клиента.
+  string instrument_id	= 2; //Идентификатор инструмента (Figi инструмента или uid инструмента)
+  google.protobuf.Timestamp from = 6; //Начало периода (по UTC).
+  google.protobuf.Timestamp to = 7; //Окончание периода (по UTC).
+  string cursor	= 11; //Идентификатор элемента, с которого начать формировать ответ.
+  int32 limit	= 12; //Лимит количества операций.
+  repeated OperationType operation_types	= 13; //Тип операции. Принимает значение из списка OperationType.
+  OperationState state  = 14;	//Статус запрашиваемых операций, возможные значения указаны в OperationState.
+  bool without_commissions	= 15; //Флаг возвращать ли комиссии, по умолчанию false
+  bool without_trades	= 16; //Флаг ответ без сделок.
+  bool without_overnights = 17; //Флаг не показывать overnight операций.
+}
+
+//Список операций по счёту с пагинацией.
+message GetOperationsByCursorResponse {
+  bool has_next = 1; //Признак, есть ли следующий элемент.
+  string next_cursor = 2; //Следующий курсор.
+  repeated OperationItem items = 6; //Список операций.
+}
+
+//Данные об операции.
+message OperationItem {
+  string cursor = 1; //Курсор.
+  string broker_account_id = 6; //Номер счета клиента.
+  string id = 16; //Номер поручения.
+  string parent_operation_id = 17; //Номер родительского поручения.
+  string name = 18; //Название операции.
+  google.protobuf.Timestamp	date = 21; //Дата поручения.
+  OperationType type = 22; //Тип операции.
+  string description = 23; //Описание операции.
+  OperationState state = 24; //Статус поручения.
+  string instrument_uid = 31; //Уникальный идентификатор инструмента.
+  string figi = 32; //Figi.
+  string instrument_type = 33; //Тип инструмента.
+  InstrumentType instrument_kind	= 34; //Тип инструмента.
+  MoneyValue payment = 41; //Сумма операции.
+  MoneyValue price = 42; //Цена операции за 1 инструмент.
+  MoneyValue commission = 43; //Комиссия.
+  MoneyValue yield = 44; //Доходность.
+  Quotation yield_relative = 45; //Относительная доходность.
+  MoneyValue accrued_int = 46; //Накопленный купонный доход.
+  int64 quantity = 51; //Количество единиц инструмента.
+  int64 quantity_rest = 52; //Неисполненный остаток по сделке.
+  int64 quantity_done = 53; //Исполненный остаток.
+  google.protobuf.Timestamp cancel_date_time = 56; //Дата и время снятия заявки.
+  string cancel_reason = 57; //Причина отмены операции.
+  OperationItemTrades trades_info = 61; //Массив сделок.
+}
+
+//Массив с информацией о сделках.
+message OperationItemTrades {
+  int32 trades_size = 1;
+  repeated OperationItemTrade trades = 6;
+}
+
+//Сделка по операции.
+message OperationItemTrade {
+  string num = 1; //Номер сделки
+  google.protobuf.Timestamp date = 6; //Дата сделки
+  int64 quantity = 11; //Количество в единицах.
+  MoneyValue price = 16; //Цена.
+  MoneyValue yield = 21; //Доходность.
+  Quotation yield_relative = 22; //Относительная доходность.
+}
+
+//Тип инструмента.
+enum InstrumentType {
+  INSTRUMENT_TYPE_UNSPECIFIED = 0;
+  INSTRUMENT_TYPE_BOND = 1; //Облигация.
+  INSTRUMENT_TYPE_SHARE	= 2; //Акция.
+  INSTRUMENT_TYPE_CURRENCY = 3; //Валюта.
+  INSTRUMENT_TYPE_ETF = 4; //Exchange-traded fund. Фонд.
+  INSTRUMENT_TYPE_FUTURES = 5; //Фьючерс.
+  INSTRUMENT_TYPE_SP = 6; //Структурная нота.
+  INSTRUMENT_TYPE_OPTION = 7; //Опцион.
 }

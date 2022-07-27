@@ -286,9 +286,40 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Лимитная политика
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Лимитная политика
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unary-" class="md-nav__link">
+    Таблица лимитов Unary-методов
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -457,6 +488,20 @@
     <li class="md-nav__item">
       <a href="../speedup/" class="md-nav__link">
         Как ускорить работу с биржей
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deadlines/" class="md-nav__link">
+        Дедлайны запросов
       </a>
     </li>
   
@@ -1141,6 +1186,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unary-" class="md-nav__link">
+    Таблица лимитов Unary-методов
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1162,89 +1222,90 @@
 алгоритмической торговли можно назвать большой процент отмен торговых поручений. Таким образом пользователи 
 могут генерировать большую нагрузку на инфраструктуру брокера. По этой причине TINKOFF INVEST API 
 обладает системой динамического формирования лимитов для пользователей. </p>
+<h3 id="unary-">Таблица лимитов Unary-методов</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Сервисы</th>
+<th align="left">Лимит unary-запросов в минуту</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="/investAPI/head-instruments/">Сервис инструментов</a></td>
+<td align="left">200</td>
+</tr>
+<tr>
+<td align="left"><a href="/investAPI/head-users/">Сервис аккаунтов</a></td>
+<td align="left">100</td>
+</tr>
+<tr>
+<td align="left"><a href="/investAPI/head-operations/">Сервис операций</a></td>
+<td align="left">200</td>
+</tr>
+<tr>
+<td align="left">Формирование отчётов в</br><a href="/investAPI/head-operations/">Сервисе операций</a></td>
+<td align="left">5</td>
+</tr>
+<tr>
+<td align="left"><a href="/investAPI/head-marketdata/">Сервис котировок</a></td>
+<td align="left">300</td>
+</tr>
+<tr>
+<td align="left"><a href="/investAPI/head-stoporders/">Сервис стоп-заявок</a></td>
+<td align="left">50</td>
+</tr>
+<tr>
+<td align="left"><a href="/investAPI/head-sandbox/">Песочницы</a></td>
+<td align="left">200</td>
+</tr>
+<tr>
+<td align="left"><a href="/investAPI/head-orders/">Сервис торговых поручений</a></td>
+<td align="left">300</td>
+</tr>
+</tbody>
+</table>
 <p>Всего существует 5 уровней доступа, которые зависят от количества выставленных заявок (любого типа) и
 процента их исполнения:</p>
 <table>
 <thead>
 <tr>
 <th align="left">Лимитный грейд</th>
-<th align="left">Unary-запросов в минуту</br><a href="/investAPI/head-instruments/">Сервиса инструментов</a></th>
-<th align="left">Unary-запросов в минуту</br><a href="/investAPI/head-users/">Сервиса аккаунтов</a></th>
-<th align="left">Unary-запросов в минуту</br><a href="/investAPI/head-operations/">Сервиса операций</a></th>
-<th align="left">Unary-запросов в минуту формирования отчётов </br><a href="/investAPI/head-operations/">Сервиса операций</a></th>
-<th align="left">Unary-запросов в минуту</br><a href="/investAPI/head-marketdata/">Сервиса котировок</a></th>
-<th align="left">Unary-запросов в минуту</br><a href="/investAPI/head-stoporders/">Сервиса стоп-заявок</a></th>
-<th align="left">Unary-запросов в минуту</br><a href="/investAPI/head-sandbox/">Песочницы</a></th>
 <th align="left">Активных stream-соединений</br><a href="/investAPI/head-marketdata/">Сервиса котировок</a></th>
 <th align="left">Активных stream-соединений</br><a href="/investAPI/head-orders/">Сервиса торговых поручений</a></th>
-<th align="left">Unary-запросов в минуту</br><a href="/investAPI/head-orders/">Сервиса торговых поручений</a></th>
+<th align="left">Активных stream-соединений</br><a href="/investAPI/head-operations/">Сервиса операций</a></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="left">1</td>
-<td align="left">100</td>
-<td align="left">100</td>
-<td align="left">100</td>
-<td align="left">5</td>
-<td align="left">100</td>
-<td align="left">10</td>
-<td align="left">100</td>
 <td align="left">2</td>
 <td align="left">1</td>
-<td align="left">100</td>
+<td align="left">1</td>
 </tr>
 <tr>
 <td align="left">2</td>
-<td align="left">200</td>
-<td align="left">100</td>
-<td align="left">200</td>
-<td align="left">5</td>
-<td align="left">200</td>
-<td align="left">20</td>
-<td align="left">200</td>
 <td align="left">4</td>
 <td align="left">1</td>
-<td align="left">100</td>
+<td align="left">1</td>
 </tr>
 <tr>
 <td align="left">3</td>
-<td align="left">200</td>
-<td align="left">100</td>
-<td align="left">200</td>
-<td align="left">5</td>
-<td align="left">300</td>
-<td align="left">30</td>
-<td align="left">200</td>
 <td align="left">5</td>
 <td align="left">1</td>
-<td align="left">100</td>
+<td align="left">1</td>
 </tr>
 <tr>
 <td align="left">4</td>
-<td align="left">200</td>
-<td align="left">100</td>
-<td align="left">200</td>
-<td align="left">5</td>
-<td align="left">300</td>
-<td align="left">40</td>
-<td align="left">200</td>
 <td align="left">16</td>
 <td align="left">1</td>
-<td align="left">200</td>
+<td align="left">1</td>
 </tr>
 <tr>
 <td align="left">5</td>
-<td align="left">200</td>
-<td align="left">100</td>
-<td align="left">200</td>
-<td align="left">5</td>
-<td align="left">300</td>
-<td align="left">50</td>
-<td align="left">200</td>
 <td align="left">Не ограничено</td>
 <td align="left">1</td>
-<td align="left">300</td>
+<td align="left">1</td>
 </tr>
 </tbody>
 </table>

@@ -1228,40 +1228,69 @@
 <tr>
 <th align="left">Сервисы</th>
 <th align="left">Лимит unary-запросов в минуту</th>
+<th align="left">Лимит unary-запросов в минуту</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="left"><a href="/investAPI/head-instruments/">Сервис инструментов</a></td>
-<td align="left">200</td>
+<td align="left">gRPC<br/>REST</td>
+<td align="left">200      <br/>100</td>
 </tr>
 <tr>
 <td align="left"><a href="/investAPI/head-users/">Сервис аккаунтов</a></td>
-<td align="left">100</td>
+<td align="left">gRPC<br/>REST</td>
+<td align="left">100<br/>50</td>
 </tr>
 <tr>
 <td align="left"><a href="/investAPI/head-operations/">Сервис операций</a></td>
-<td align="left">200</td>
+<td align="left">gRPC<br/>REST</td>
+<td align="left">200<br/>100</td>
 </tr>
 <tr>
 <td align="left">Формирование отчётов в</br><a href="/investAPI/head-operations/">Сервисе операций</a></td>
+<td align="left">gRPC</td>
 <td align="left">5</td>
 </tr>
 <tr>
 <td align="left"><a href="/investAPI/head-marketdata/">Сервис котировок</a></td>
-<td align="left">300</td>
+<td align="left">gRPC<br/>REST</td>
+<td align="left">300        <br/>150</td>
+</tr>
+<tr>
+<td align="left">*<a href="/investAPI/get_history">GetHistory</a></td>
+<td align="left">REST</td>
+<td align="left">30</td>
 </tr>
 <tr>
 <td align="left"><a href="/investAPI/head-stoporders/">Сервис стоп-заявок</a></td>
-<td align="left">50</td>
+<td align="left">gRPC<br/>REST</td>
+<td align="left">50<br/>25</td>
 </tr>
 <tr>
 <td align="left"><a href="/investAPI/head-sandbox/">Песочницы</a></td>
-<td align="left">200</td>
+<td align="left">gRPC<br/>REST</td>
+<td align="left">200        <br/>100</td>
 </tr>
 <tr>
 <td align="left"><a href="/investAPI/head-orders/">Сервис торговых поручений</a></td>
-<td align="left">300</td>
+<td align="left">gRPC<br/>REST</td>
+<td align="left">100<br/>50</td>
+</tr>
+<tr>
+<td align="left">* <a href="/investAPI/orders#getorders">getOrders</a></td>
+<td align="left">gRPC<br/>REST</td>
+<td align="left">200<br/>100</td>
+</tr>
+<tr>
+<td align="left">* <a href="/investAPI/orders#postorder">postOrder</a></td>
+<td align="left">gRPC<br/>REST</td>
+<td align="left">300<br/>150</td>
+</tr>
+<tr>
+<td align="left">* <a href="/investAPI/orders#cancelorder">cancelOrder</a></td>
+<td align="left">gRPC<br/>REST</td>
+<td align="left">300<br/>150</td>
 </tr>
 </tbody>
 </table>

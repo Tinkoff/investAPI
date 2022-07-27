@@ -1293,7 +1293,8 @@
 корректно рассчитывать доходности и собирать статистику своей работы. Для реализации данных потребностей
 можно использовать метод <a href="/investAPI/operations#getoperations">getOperations</a>, а так же более новый метод <a href="/investAPI/operations#getoperationsbycursor">getOperationsByCursor</a>.</p>
 <p>Метод <a href="/investAPI/operations#getoperationsbycursor">getOperationsByCursor</a> является более предпочтительным для использования, возвращает список всех операций по указанному счету.
-Данный метод возвращает постранично информацию обо всех операциях, в том числе отмененных, с использованием курсора. Плюс обладает всеми преимуществами метода <a href="/investAPI/operations#getoperations">getOperations</a>.</p>
+Данный метод возвращает информацию обо всех операциях, в том числе отмененных, поддерживает пагинацию и расширенную фильтрацию. 
+Плюс обладает всеми преимуществами метода <a href="/investAPI/operations#getoperations">getOperations</a>.</p>
 <p>Метод <a href="/investAPI/operations#getoperations">getOperations</a>, в том числе, возвращает отменённые операции (параметр <em>state</em>), это нужно обязательно учитывать
 в алгоритме работы. </p>
 <p>Команда TINKOFF INVEST API не рекомендует использовать метод получения операций для идентификации изменения

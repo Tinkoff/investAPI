@@ -1090,6 +1090,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    Как узнать дату, с которой можно получить свечи по инструменту?
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1413,6 +1420,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    Как узнать дату, с которой можно получить свечи по инструменту?
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1563,6 +1577,9 @@ isValidPrice(10.16, 0.1) // false
 <p>Для всех типов подписок в <a href="/investAPI/marketdata/#marketdatastream">методе</a> установлены ограничения максимального количества запросов на подписку.
 Если количество запросов за минуту превысит 100, то для всех элементов будет установлен статус <a href="/investAPI/marketdata/#subscriptionstatus">SUBSCRIPTION_STATUS_TOO_MANY_REQUESTS</a>.</p>
 <p>Максимальное количество запросов в минуту = 100.</p>
+<h3 id="_10">Как узнать дату, с которой можно получить свечи по инструменту?</h3>
+<p>Для того что бы понять с какой даты запрашивать свечи по инструменту в <a href="/investAPI/head-instruments/">Сервис инструментов</a> TINKOFF INVEST API добавлены параметры <code>first_1min_candle_date</code> и <code>first_1day_candle_date</code>.
+Данные параметры возвращаются в методах получения информации об инструментах. Параметр <code>first_1min_candle_date</code> возвращает дату первой минутной свечи, а  <code>first_1day_candle_date</code> дату первой дневной свечи.</p>
 
               
             </article>

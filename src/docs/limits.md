@@ -7,20 +7,21 @@
 
 ###Таблица лимитов Unary-методов
 
-| Сервисы                                                                    | Лимит unary-запросов в минуту | Лимит unary-запросов в минуту |
-|:---------------------------------------------------------------------------|:------------------------------|:------------------------------|
-| [Сервис инструментов](/investAPI/head-instruments/)                        | gRPC<br/>REST                 | 200      <br/>100             |
-| [Сервис аккаунтов](/investAPI/head-users/)                                 | gRPC<br/>REST                 | 100<br/>50                    |
-| [Сервис операций](/investAPI/head-operations/)                             | gRPC<br/>REST                 | 200<br/>100                   |
-| Формирование отчётов в</br>[Сервисе операций](/investAPI/head-operations/) | gRPC                          | 5                             |
-| [Сервис котировок](/investAPI/head-marketdata/)                            | gRPC<br/>REST                 | 300        <br/>150           |
-| * Метод [getHistory](/investAPI/get_history)                               | REST                          | 30                            |
-| [Сервис стоп-заявок](/investAPI/head-stoporders/)                          | gRPC<br/>REST                 | 50<br/>25                     |
-| [Песочницы](/investAPI/head-sandbox/)                                      | gRPC<br/>REST                 | 200        <br/>100           |
-| [Сервис торговых поручений](/investAPI/head-orders/)                       | gRPC<br/>REST                 | 100<br/>50                    |
- | * Метод [getOrders](/investAPI/orders#getorders)                           | gRPC<br/>REST                 | 200<br/>100                   |
- | * Метод [postOrder](/investAPI/orders#postorder)                           | gRPC<br/>REST                 | 300<br/>150                   |
-| * Метод [cancelOrder](/investAPI/orders#cancelorder)                       | gRPC<br/>REST                 | 300<br/>150                   |
+| Сервисы                                                                    | Способ интеграции | Лимит unary-запросов в минуту |
+|:---------------------------------------------------------------------------|:------------------|:------------------------------|
+| [Сервис инструментов](/investAPI/head-instruments/)                        | gRPC<br/>REST     | 200      <br/>100             |
+| [Сервис аккаунтов](/investAPI/head-users/)                                 | gRPC<br/>REST     | 100<br/>50                    |
+| [Сервис операций](/investAPI/head-operations/)                             | gRPC<br/>REST     | 200<br/>100                   |
+| Формирование отчётов в</br>[Сервисе операций](/investAPI/head-operations/) | gRPC              | 5                             |
+| [Сервис котировок](/investAPI/head-marketdata/)                            | gRPC<br/>REST     | 300        <br/>150           |
+| <dl><dd> Метод [getHistory](/investAPI/get_history)</dd></dl>              | REST              | 30                            |
+| [Сервис стоп-заявок](/investAPI/head-stoporders/)                          | gRPC<br/>REST     | 50<br/>25                     |
+| [Песочницы](/investAPI/head-sandbox/)                                      | gRPC<br/>REST     | 200        <br/>100           |
+| [Сервис торговых поручений](/investAPI/head-orders/)                       | gRPC<br/>REST     | 100<br/>50                    |
+ | <dl><dd> Метод [getOrders](/investAPI/orders#getorders)</dd></dl>          | gRPC<br/>REST     | 200<br/>100                   |
+ | <dl><dd>Метод [postOrder](/investAPI/orders#postorder)     </dd></dl>      | gRPC<br/>REST     | 300<br/>150                   |
+| <dl><dd>  Метод [cancelOrder](/investAPI/orders#cancelorder)    </dd></dl>  | gRPC<br/>REST     | 300<br/>150                   |
+|                                                                            | gRPC<br/>REST     | 300<br/>150                   |
 
 
 Всего существует 5 уровней доступа, которые зависят от количества выставленных заявок (любого типа) и

@@ -7,7 +7,8 @@
 можно использовать метод [getOperations](/investAPI/operations#getoperations), а так же более новый метод [getOperationsByCursor](/investAPI/operations#getoperationsbycursor).
 
 Метод [getOperationsByCursor](/investAPI/operations#getoperationsbycursor) является более предпочтительным для использования, возвращает список всех операций по указанному счету.
-Данный метод возвращает постранично информацию обо всех операциях, в том числе отмененных, с использованием курсора. Плюс обладает всеми преимуществами метода [getOperations](/investAPI/operations#getoperations).
+Данный метод возвращает информацию обо всех операциях, в том числе отмененных, поддерживает пагинацию и расширенную фильтрацию. 
+Плюс обладает всеми преимуществами метода [getOperations](/investAPI/operations#getoperations).
 
 Метод [getOperations](/investAPI/operations#getoperations), в том числе, возвращает отменённые операции (параметр *state*), это нужно обязательно учитывать
 в алгоритме работы. 

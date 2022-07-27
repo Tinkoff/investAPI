@@ -33,3 +33,11 @@
 получения сделок с биржи [PortfolioStream](/investAPI/operations/#portfoliostream) или выполнить запросы в [метод получения портфеля](/investAPI/operations/#getportfolio) и [метод получения позиций по счету](/investAPI/operations/#getpositions).
 В [PortfolioStream](/investAPI/operations/#portfoliostream) не отображаются заблокированные биржей бумаги. 
 Получить заблокированные бумаги можно в методе [GetPortfolio](/investAPI/operations/#getportfolio) и [GetPossitions](/investAPI/operations/#getpositions).
+
+###Как получить информацию об операциях?
+
+Для получения информации об операциях в TINKOFF INVEST API предусмотрен метод [getOperationsByCursor](/investAPI/operations#getoperationsbycursor).
+Данный метод имеет широкие возможности фильтрации, а так же возвращает постраничную информацию об операциях.
+
+Так же в TINKOFF INVEST API для получения списка операций существует метод [getOperations](/investAPI/operations#getoperations), являющийся более старой версией метода [getOperationsByCursor](/investAPI/operations#getoperationsbycursor).
+Однако, метод [getOperationsByCursor](/investAPI/operations#getoperationsbycursor) является более **предпочтительным** для использования.

@@ -7,16 +7,20 @@
 
 ###Таблица лимитов Unary-методов
 
-| Сервисы                                                                    | Лимит unary-запросов в минуту |
-|:---------------------------------------------------------------------------|:------------------------------|
-| [Сервис инструментов](/investAPI/head-instruments/)                        | 200                           |
-| [Сервис аккаунтов](/investAPI/head-users/)                                 | 100                           |
-| [Сервис операций](/investAPI/head-operations/)                             | 200                           |
-| Формирование отчётов в</br>[Сервисе операций](/investAPI/head-operations/) | 5                             |
-| [Сервис котировок](/investAPI/head-marketdata/)                            | 300                           |
-| [Сервис стоп-заявок](/investAPI/head-stoporders/)                          | 50                            |
-| [Песочницы](/investAPI/head-sandbox/)                                      | 200                           |
-| [Сервис торговых поручений](/investAPI/head-orders/)                       | 300                           |
+| Сервисы                                                                    | Лимит unary-запросов в минуту | Лимит unary-запросов в минуту |
+|:---------------------------------------------------------------------------|:------------------------------|:------------------------------|
+| [Сервис инструментов](/investAPI/head-instruments/)                        | gRPC<br/>REST                 | 200      <br/>100             |
+| [Сервис аккаунтов](/investAPI/head-users/)                                 | gRPC<br/>REST                 | 100<br/>50                    |
+| [Сервис операций](/investAPI/head-operations/)                             | gRPC<br/>REST                 | 200<br/>100                   |
+| Формирование отчётов в</br>[Сервисе операций](/investAPI/head-operations/) | gRPC                          | 5                             |
+| [Сервис котировок](/investAPI/head-marketdata/)                            | gRPC<br/>REST                 | 300        <br/>150           |
+| *[GetHistory](/investAPI/get_history)                                      | REST                          | 30                            |
+| [Сервис стоп-заявок](/investAPI/head-stoporders/)                          | gRPC<br/>REST                 | 50<br/>25                     |
+| [Песочницы](/investAPI/head-sandbox/)                                      | gRPC<br/>REST                 | 200        <br/>100           |
+| [Сервис торговых поручений](/investAPI/head-orders/)                       | gRPC<br/>REST                 | 100<br/>50                    |
+| * [getOrders](/investAPI/orders#getorders)                                 | gRPC<br/>REST                 | 200<br/>100                   |
+| * [postOrder](/investAPI/orders#postorder)                                 | gRPC<br/>REST                 | 300<br/>150                   |
+| * [cancelOrder](/investAPI/orders#cancelorder)                             | gRPC<br/>REST                 | 300<br/>150                   |
 
 
 Всего существует 5 уровней доступа, которые зависят от количества выставленных заявок (любого типа) и

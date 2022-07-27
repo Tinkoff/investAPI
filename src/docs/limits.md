@@ -21,7 +21,7 @@
  | <dl><dd> Метод [getOrders](/investAPI/orders#getorders)</dd></dl>          | gRPC<br/>REST     | 200<br/>100                   |
  | <dl><dd>Метод [postOrder](/investAPI/orders#postorder)     </dd></dl>      | gRPC<br/>REST     | 300<br/>150                   |
 | <dl><dd>  Метод [cancelOrder](/investAPI/orders#cancelorder)    </dd></dl>  | gRPC<br/>REST     | 300<br/>150                   |
-|                                                                            | gRPC<br/>REST     | 300<br/>150                   |
+
 
 
 Всего существует 5 уровней доступа, которые зависят от количества выставленных заявок (любого типа) и

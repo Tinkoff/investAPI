@@ -5934,6 +5934,20 @@ components:
         subscriptionStatus:
           $ref: '#/components/schemas/v1SubscriptionStatus'
       type: object
+    v1SubscriptionStatus:
+      default: SUBSCRIPTION_STATUS_UNSPECIFIED
+      enum:
+        - SUBSCRIPTION_STATUS_UNSPECIFIED
+        - SUBSCRIPTION_STATUS_SUCCESS
+        - SUBSCRIPTION_STATUS_INSTRUMENT_NOT_FOUND
+        - SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID
+        - SUBSCRIPTION_STATUS_DEPTH_IS_INVALID
+        - SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID
+        - SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED
+        - SUBSCRIPTION_STATUS_INTERNAL_ERROR
+        - SUBSCRIPTION_STATUS_TOO_MANY_REQUESTS
+      title: 'Статус запрашиваемых инструментов.'
+      type: string
     v1Instrument:
       description: Объект передачи основной информации об инструменте.
       example:

@@ -41,3 +41,7 @@
 
 Так же в TINKOFF INVEST API для получения списка операций существует метод [getOperations](/investAPI/operations#getoperations), являющийся более старой версией метода [getOperationsByCursor](/investAPI/operations#getoperationsbycursor).
 Однако, метод [getOperationsByCursor](/investAPI/operations#getoperationsbycursor) является более **предпочтительным** для использования.
+
+###Как понять какие бумаги в портфеле заблокированы по решению ЦБ?
+
+В методах [getPortfolio](/investAPI/operations#getportfolio) и  [getPositions](/investAPI/operations#getpositions) добавлены специальные булевы параметры, означающие что данный инструмент заблокирован депозитарием.

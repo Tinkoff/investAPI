@@ -52,6 +52,23 @@
 
 
 
+#### Account
+Информация о счёте.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| id |  [string](#string) | Идентификатор счёта. |
+| type |  [AccountType](#accounttype) | Тип счёта. |
+| name |  [string](#string) | Название счёта. |
+| status |  [AccountStatus](#accountstatus) | Статус счёта. |
+| opened_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата открытия счёта в часовом поясе UTC. |
+| closed_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата закрытия счёта в часовом поясе UTC. |
+| access_level |  [AccessLevel](#accesslevel) | Уровень доступа к текущему счёту (определяется токеном). |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
 #### GetAccountsRequest
 Запрос получения счетов пользователя.
 
@@ -69,19 +86,22 @@
  <!-- end HasFields -->
 
 
-#### Account
-Информация о счёте.
+#### GetInfoRequest
+Запрос информации о пользователе.
+
+ <!-- end HasFields -->
+
+
+#### GetInfoResponse
+Информация о пользователе.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| id |  [string](#string) | Идентификатор счёта. |
-| type |  [AccountType](#accounttype) | Тип счёта. |
-| name |  [string](#string) | Название счёта. |
-| status |  [AccountStatus](#accountstatus) | Статус счёта. |
-| opened_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата открытия счёта в часовом поясе UTC. |
-| closed_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата закрытия счёта в часовом поясе UTC. |
-| access_level |  [AccessLevel](#accesslevel) | Уровень доступа к текущему счёту (определяется токеном). |
+| prem_status |  [bool](#bool) | Признак премиум клиента. |
+| qual_status |  [bool](#bool) | Признак квалифицированного инвестора. |
+| qualified_for_work_with | Массив объектов [string](#string) | Набор требующих тестирования инструментов и возможностей, с которыми может работать пользователь. [Подробнее](https://tinkoff.github.io/investAPI/faq_users/). |
+| tariff |  [string](#string) | Наименование тарифа пользователя. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -130,18 +150,6 @@
  <!-- end HasFields -->
 
 
-#### UnaryLimit
-Лимит unary-методов.
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| limit_per_minute |  [int32](#int32) | Количество unary-запросов в минуту |
-| methods | Массив объектов [string](#string) | Названия методов |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
 #### StreamLimit
 Лимит stream-соединений.
 
@@ -154,22 +162,14 @@
  <!-- end HasFields -->
 
 
-#### GetInfoRequest
-Запрос информации о пользователе.
-
- <!-- end HasFields -->
-
-
-#### GetInfoResponse
-Информация о пользователе.
+#### UnaryLimit
+Лимит unary-методов.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| prem_status |  [bool](#bool) | Признак премиум клиента. |
-| qual_status |  [bool](#bool) | Признак квалифицированного инвестора. |
-| qualified_for_work_with | Массив объектов [string](#string) | Набор требующих тестирования инструментов и возможностей, с которыми может работать пользователь. [Подробнее](https://tinkoff.github.io/investAPI/faq_users/). |
-| tariff |  [string](#string) | Наименование тарифа пользователя. |
+| limit_per_minute |  [int32](#int32) | Количество unary-запросов в минуту |
+| methods | Массив объектов [string](#string) | Названия методов |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->
@@ -177,15 +177,15 @@
 ### Enums
 
 
-#### AccountType
-Тип счёта.
+#### AccessLevel
+Уровень доступа к счёту.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| ACCOUNT_TYPE_UNSPECIFIED | 0 | Тип аккаунта не определён. |
-| ACCOUNT_TYPE_TINKOFF | 1 | Брокерский счёт Тинькофф. |
-| ACCOUNT_TYPE_TINKOFF_IIS | 2 | ИИС счёт. |
-| ACCOUNT_TYPE_INVEST_BOX | 3 | Инвесткопилка. |
+| ACCOUNT_ACCESS_LEVEL_UNSPECIFIED | 0 | Уровень доступа не определён. |
+| ACCOUNT_ACCESS_LEVEL_FULL_ACCESS | 1 | Полный доступ к счёту. |
+| ACCOUNT_ACCESS_LEVEL_READ_ONLY | 2 | Доступ с уровнем прав "только чтение". |
+| ACCOUNT_ACCESS_LEVEL_NO_ACCESS | 3 | Доступ отсутствует. |
 
 
 
@@ -203,15 +203,15 @@
 
 
 
-#### AccessLevel
-Уровень доступа к счёту.
+#### AccountType
+Тип счёта.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| ACCOUNT_ACCESS_LEVEL_UNSPECIFIED | 0 | Уровень доступа не определён. |
-| ACCOUNT_ACCESS_LEVEL_FULL_ACCESS | 1 | Полный доступ к счёту. |
-| ACCOUNT_ACCESS_LEVEL_READ_ONLY | 2 | Доступ с уровнем прав "только чтение". |
-| ACCOUNT_ACCESS_LEVEL_NO_ACCESS | 3 | Доступ отсутствует. |
+| ACCOUNT_TYPE_UNSPECIFIED | 0 | Тип аккаунта не определён. |
+| ACCOUNT_TYPE_TINKOFF | 1 | Брокерский счёт Тинькофф. |
+| ACCOUNT_TYPE_TINKOFF_IIS | 2 | ИИС счёт. |
+| ACCOUNT_TYPE_INVEST_BOX | 3 | Инвесткопилка. |
 
 
  <!-- range .Enums -->

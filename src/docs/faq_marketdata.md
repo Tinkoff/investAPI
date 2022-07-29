@@ -138,3 +138,8 @@ Bi-directional stream Сервиса котировок поддерживает
 
 Для того что бы понять с какой даты запрашивать свечи по инструменту в [Сервис инструментов](/investAPI/head-instruments/) TINKOFF INVEST API добавлены параметры `first_1min_candle_date` и `first_1day_candle_date`.
 Данные параметры возвращаются в методах получения информации об инструментах. Параметр `first_1min_candle_date` возвращает дату первой минутной свечи, а  `first_1day_candle_date` дату первой дневной свечи.
+
+###Как узнать доступности торгов инструментом через API?
+
+Узнать доступность торгов инструментом можно получить в [методе](/investAPI/marketdata/#gettradingstatus) в параметре `api_trade_available_flag`.
+Так же можно получить информацию по доступности торгов инструментом через API в сервисе инструментов с помощью [метода](/investAPI/instruments/#findinstrument) и параметра `api_trade_available_flag`.

@@ -1,0 +1,551 @@
+{
+  "trackingId": "62e38cdaf006c2711e2632231d2f4e17",
+  "payload": {
+    "portfolioAverageYieldRelative": -1.95,
+    "totalAmountNotes": {
+      "currency": "RUB",
+      "value": 0
+    },
+    "totalAmountFutures": {
+      "currency": "RUB",
+      "value": 9690
+    },
+    "benefits": {
+      "currency": "RUB",
+      "value": 0
+    },
+    "totalAmountCurrencies": {
+      "rub": 9928,
+      "try": 0,
+      "xau": 0,
+      "gbp": 0,
+      "amd": 0,
+      "hkd": 453,
+      "kzt": 0,
+      "byn": 0,
+      "cny": 0,
+      "jpy": 0,
+      "xag": 0,
+      "usd": 0,
+      "chf": 0,
+      "eur": 0
+    },
+    "data": [
+      {
+        "avgCostPriceDaily": 4.65,
+        "currentPrice": {
+          "currency": "HKD",
+          "value": 4.53
+        },
+        "isin": "KYG8167W1380",
+        "averagePositionPrice": {
+          "currency": "HKD",
+          "value": 4.8
+        },
+        "securityType": "Stock",
+        "currentBalance": 100,
+        "expectedYield": {
+          "currency": "HKD",
+          "value": -27
+        },
+        "expectedYieldPerDayRelative": -2.58,
+        "yieldAverageRelative": -5.63,
+        "activeMarketingOffers": {
+          "noLossesPlus": false
+        },
+        "yieldAverage": -27,
+        "ticker": "1177",
+        "expectedYieldPerDay": {
+          "currency": "HKD",
+          "value": -12
+        },
+        "limits": {
+          "sell": 100,
+          "stopLoss": 100,
+          "stopLimit": 100,
+          "takeProfit": 100
+        },
+        "portfolioPercent": 6.42,
+        "expectedYieldRelative": -5.63,
+        "avgCostPriceAverage": 4.8,
+        "currentAmount": {
+          "currency": "HKD",
+          "value": 453
+        }
+      },
+      {
+        "avgCostPriceDaily": 125.27,
+        "currentPrice": {
+          "currency": "RUB",
+          "value": 125.88
+        },
+        "isin": "RU0009029557",
+        "averagePositionPrice": {
+          "currency": "RUB",
+          "value": 112.48
+        },
+        "securityType": "Stock",
+        "currentBalance": 10,
+        "expectedYield": {
+          "currency": "RUB",
+          "value": 134.01
+        },
+        "expectedYieldPerDayRelative": 0.49,
+        "yieldAverageRelative": 11.91,
+        "activeMarketingOffers": {
+          "noLossesPlus": false
+        },
+        "yieldAverage": 134.01,
+        "ticker": "SBERP",
+        "expectedYieldPerDay": {
+          "currency": "RUB",
+          "value": 6.1
+        },
+        "limits": {
+          "sell": 10,
+          "stopLoss": 10,
+          "stopLimit": 10,
+          "takeProfit": 10
+        },
+        "portfolioPercent": 2.18,
+        "expectedYieldRelative": 11.91,
+        "avgCostPriceAverage": 112.48,
+        "currentAmount": {
+          "currency": "RUB",
+          "value": 1258.8
+        }
+      },
+      {
+        "avgCostPriceDaily": 264,
+        "currentPrice": {
+          "currency": "RUB",
+          "value": 262.7
+        },
+        "isin": "JE00B6T5S470",
+        "averagePositionPrice": {
+          "currency": "RUB",
+          "value": 339.9
+        },
+        "securityType": "Stock",
+        "currentBalance": 15,
+        "expectedYield": {
+          "currency": "RUB",
+          "value": -1157.79
+        },
+        "expectedYieldPerDayRelative": -0.49,
+        "yieldAverageRelative": -22.71,
+        "activeMarketingOffers": {
+          "noLossesPlus": false
+        },
+        "yieldAverage": -1157.79,
+        "ticker": "POLY",
+        "expectedYieldPerDay": {
+          "currency": "RUB",
+          "value": -19.5
+        },
+        "limits": {
+          "sell": 15,
+          "stopLoss": 15,
+          "stopLimit": 15,
+          "takeProfit": 15
+        },
+        "portfolioPercent": 6.82,
+        "expectedYieldRelative": -22.71,
+        "avgCostPriceAverage": 339.89,
+        "currentAmount": {
+          "currency": "RUB",
+          "value": 3940.5
+        }
+      },
+      {
+        "avgCostPriceDaily": 395,
+        "currentPrice": {
+          "currency": "RUB",
+          "value": 398.7
+        },
+        "isin": "RU0009033591",
+        "averagePositionPrice": {
+          "currency": "RUB",
+          "value": 409.1
+        },
+        "securityType": "Stock",
+        "currentBalance": 5,
+        "expectedYield": {
+          "currency": "RUB",
+          "value": -51.8
+        },
+        "expectedYieldPerDayRelative": 0.94,
+        "yieldAverageRelative": -2.53,
+        "activeMarketingOffers": {
+          "noLossesPlus": false
+        },
+        "yieldAverage": -51.8,
+        "ticker": "TATN",
+        "expectedYieldPerDay": {
+          "currency": "RUB",
+          "value": 18.5
+        },
+        "limits": {
+          "sell": 5,
+          "stopLoss": 5,
+          "stopLimit": 5,
+          "takeProfit": 5
+        },
+        "portfolioPercent": 3.45,
+        "expectedYieldRelative": -2.53,
+        "avgCostPriceAverage": 409.06,
+        "currentAmount": {
+          "currency": "RUB",
+          "value": 1993.5
+        }
+      },
+      {
+        "avgCostPriceDaily": 0.76,
+        "currentPrice": {
+          "currency": "RUB",
+          "value": 0.7727
+        },
+        "isin": "RU000A0JPKH7",
+        "averagePositionPrice": {
+          "currency": "RUB",
+          "value": 0.8029
+        },
+        "securityType": "Stock",
+        "currentBalance": 1000,
+        "expectedYield": {
+          "currency": "RUB",
+          "value": -30.2
+        },
+        "expectedYieldPerDayRelative": 1.42,
+        "yieldAverageRelative": -3.76,
+        "activeMarketingOffers": {
+          "noLossesPlus": false
+        },
+        "yieldAverage": -30.2,
+        "ticker": "HYDR",
+        "expectedYieldPerDay": {
+          "currency": "RUB",
+          "value": 10.8
+        },
+        "limits": {
+          "sell": 1000,
+          "stopLoss": 1000,
+          "stopLimit": 1000,
+          "takeProfit": 1000
+        },
+        "portfolioPercent": 1.34,
+        "expectedYieldRelative": -3.76,
+        "avgCostPriceAverage": 0.8,
+        "currentAmount": {
+          "currency": "RUB",
+          "value": 772.7
+        }
+      },
+      {
+        "avgCostPriceDaily": 196.25,
+        "currentPrice": {
+          "currency": "RUB",
+          "value": 196.25
+        },
+        "isin": "RU0007661625",
+        "averagePositionPrice": {
+          "currency": "RUB",
+          "value": 222.22
+        },
+        "securityType": "Stock",
+        "currentBalance": 10,
+        "expectedYield": {
+          "currency": "RUB",
+          "value": -259.7
+        },
+        "expectedYieldPerDayRelative": 0,
+        "yieldAverageRelative": -11.69,
+        "activeMarketingOffers": {
+          "noLossesPlus": false
+        },
+        "yieldAverage": -259.7,
+        "ticker": "GAZP",
+        "expectedYieldPerDay": {
+          "currency": "RUB",
+          "value": 0
+        },
+        "limits": {
+          "sell": 10,
+          "stopLoss": 10,
+          "stopLimit": 10,
+          "takeProfit": 10
+        },
+        "portfolioPercent": 3.39,
+        "expectedYieldRelative": -11.69,
+        "avgCostPriceAverage": 222.22,
+        "currentAmount": {
+          "currency": "RUB",
+          "value": 1962.5
+        }
+      },
+      {
+        "avgCostPriceDaily": 9.73,
+        "stopOrders": [
+          {
+            "orderId": "1001856445",
+            "orderType": "StopLimit",
+            "stopPrice": 9.61,
+            "quantity": 1
+          }
+        ],
+        "securityType": "Futures",
+        "currentVarMargin": -20,
+        "currentBalance": 1,
+        "expectedYield": {
+          "currency": "RUB",
+          "value": 90
+        },
+        "expectedYieldPerDayRelative": -0.41,
+        "yieldAverageRelative": 0.94,
+        "activeMarketingOffers": {
+          "noLossesPlus": false
+        },
+        "yieldAverage": 90,
+        "currentPricePt": 9.69,
+        "ticker": "CRZ2",
+        "averagePositionPricePt": 9.6,
+        "expectedYieldPerDay": {
+          "currency": "RUB",
+          "value": -40
+        },
+        "limits": {
+          "sell": 1,
+          "stopLoss": 0,
+          "stopLimit": 0,
+          "takeProfit": 1
+        },
+        "portfolioPercent": 16.76,
+        "expectedYieldRelative": 0.94,
+        "avgCostPriceAverage": 9.6,
+        "currentAmount": {
+          "currency": "RUB",
+          "value": 9690
+        }
+      },
+      {
+        "avgCostPriceDaily": 9.14,
+        "currentPrice": {
+          "currency": "RUB",
+          "value": 9.0907
+        },
+        "isin": "CNYRUB_TOM",
+        "averagePositionPrice": {
+          "currency": "RUB",
+          "value": 8.495
+        },
+        "securityType": "Currency",
+        "currentBalance": 1,
+        "expectedYield": {
+          "currency": "RUB",
+          "value": 0.6
+        },
+        "expectedYieldPerDayRelative": -0.54,
+        "yieldAverageRelative": 7.01,
+        "activeMarketingOffers": {
+          "noLossesPlus": false
+        },
+        "yieldAverage": 0.6,
+        "ticker": "CNYRUB",
+        "expectedYieldPerDay": {
+          "currency": "RUB",
+          "value": -0.05
+        },
+        "limits": {
+          "sell": 1,
+          "stopLoss": 1,
+          "stopLimit": 1,
+          "takeProfit": 1
+        },
+        "portfolioPercent": 0.02,
+        "expectedYieldRelative": 7.01,
+        "avgCostPriceAverage": 8.5,
+        "currentAmount": {
+          "currency": "RUB",
+          "value": 9.09
+        }
+      },
+      {
+        "avgCostPriceDaily": 60.82,
+        "currentPrice": {
+          "currency": "RUB",
+          "value": 60.6325
+        },
+        "isin": "USD000UTSTOM",
+        "averagePositionPrice": {
+          "currency": "RUB",
+          "value": 58.3375
+        },
+        "securityType": "Currency",
+        "currentBalance": 0.82,
+        "expectedYield": {
+          "currency": "RUB",
+          "value": 1.88
+        },
+        "expectedYieldPerDayRelative": -0.31,
+        "yieldAverageRelative": 3.94,
+        "activeMarketingOffers": {
+          "noLossesPlus": false
+        },
+        "yieldAverage": 1.88,
+        "ticker": "USDRUB",
+        "expectedYieldPerDay": {
+          "currency": "RUB",
+          "value": -0.15
+        },
+        "limits": {
+          "sell": 0,
+          "stopLoss": 0,
+          "stopLimit": 0,
+          "takeProfit": 0
+        },
+        "portfolioPercent": 0.09,
+        "expectedYieldRelative": 3.93,
+        "avgCostPriceAverage": 58.34,
+        "currentAmount": {
+          "currency": "RUB",
+          "value": 49.72
+        }
+      },
+      {
+        "avgCostPriceDaily": 8.15,
+        "currentPrice": {
+          "currency": "RUB",
+          "value": 8.199
+        },
+        "isin": "HKDRUB_TOM",
+        "averagePositionPrice": {
+          "currency": "RUB",
+          "value": 7.08
+        },
+        "securityType": "Currency",
+        "currentBalance": 0.81,
+        "expectedYield": {
+          "currency": "RUB",
+          "value": 0.91
+        },
+        "expectedYieldPerDayRelative": 0.61,
+        "yieldAverageRelative": 15.81,
+        "activeMarketingOffers": {
+          "noLossesPlus": false
+        },
+        "yieldAverage": 0.91,
+        "ticker": "HKDRUB",
+        "expectedYieldPerDay": {
+          "currency": "RUB",
+          "value": 0.04
+        },
+        "limits": {
+          "sell": 0,
+          "stopLoss": 0,
+          "stopLimit": 0,
+          "takeProfit": 0
+        },
+        "portfolioPercent": 0.01,
+        "expectedYieldRelative": 15.81,
+        "avgCostPriceAverage": 7.08,
+        "currentAmount": {
+          "currency": "RUB",
+          "value": 6.64
+        }
+      }
+    ],
+    "totalAmountVirtualEtf": {
+      "currency": "RUB",
+      "value": 0
+    },
+    "portfolioAverageYield": -958.85,
+    "totalAmountEtf": {
+      "currency": "RUB",
+      "value": 0
+    },
+    "totalAmountStocks": {
+      "currency": "RUB",
+      "value": 13642.14
+    },
+    "expectedYield": {
+      "currency": "RUB",
+      "value": -958.85
+    },
+    "fromCache": false,
+    "totalAmountBonds": {
+      "currency": "RUB",
+      "value": 0
+    },
+    "expectedYieldPerDayRelative": -0.21,
+    "virtualData": [
+      {
+        "avgCostPriceDaily": 1.88,
+        "endDate": "2022-09-30",
+        "currentPrice": {
+          "currency": "RUB",
+          "value": 1.865
+        },
+        "averagePositionPrice": {
+          "currency": "RUB",
+          "value": 2.062
+        },
+        "securityType": "VirtualStock",
+        "currentBalance": 20,
+        "expectedYield": {
+          "currency": "RUB",
+          "value": -3.94
+        },
+        "expectedYieldPerDayRelative": -0.8,
+        "yieldAverageRelative": -9.55,
+        "yieldAverage": -3.94,
+        "ticker": "MSNG",
+        "expectedYieldPerDay": {
+          "currency": "RUB",
+          "value": -0.3
+        },
+        "portfolioPercent": 0.06,
+        "expectedYieldRelative": -9.55,
+        "avgCostPriceAverage": 2.06,
+        "currentAmount": {
+          "currency": "RUB",
+          "value": 37.3
+        }
+      }
+    ],
+    "totalAmountCurrency": {
+      "currency": "RUB",
+      "value": 34448.54
+    },
+    "portfolioAmountByCurrency": {
+      "rub": 48127.98,
+      "try": 14118.33,
+      "xau": 14.2,
+      "gbp": 641.69,
+      "amd": 304462.99,
+      "hkd": 5869.98,
+      "kzt": 378067.46,
+      "byn": 2069.13,
+      "cny": 5294.2,
+      "jpy": 105706.1,
+      "xag": 958.53,
+      "usd": 793.8,
+      "chf": 794.95,
+      "eur": 777.23
+    },
+    "totalAmountPortfolio": {
+      "currency": "RUB",
+      "value": 48127.98
+    },
+    "expectedYieldPerDay": {
+      "currency": "RUB",
+      "value": -99.98
+    },
+    "totalAmountVirtualStocks": {
+      "currency": "RUB",
+      "value": 37.3
+    },
+    "expectedYieldRelative": -1.95
+  },
+  "status": "Ok",
+  "time": "2022-07-29T10:31:38.694284+03:00"
+}

@@ -64,6 +64,7 @@ API реализован на быстром, удобном и функцион
 * [golang](https://github.com/ssummers02/invest-api-go-sdk)
 * [nodejs](https://github.com/betslus1/unofficial-tinkoff-invest-api_v2-lazy-sdk-NODEJS)
 * [golang](https://github.com/vodolaz095/go-investAPI)
+* [haskell](https://github.com/nickmi11er/tinkoff-invest-haskell)
 * [php](https://github.com/metaseller/tinkoff-invest-api-v2-php)
 * [php YII2](https://packagist.org/packages/metaseller/tinkoff-invest-api-v2-yii2)
 * [swift](https://github.com/JohnReeze/TinkoffInvestSwiftSDK)

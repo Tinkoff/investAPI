@@ -1595,8 +1595,7 @@ isValidPrice(10.16, 0.1) // false
 <p>Для того что бы понять с какой даты запрашивать свечи по инструменту в <a href="/investAPI/head-instruments/">Сервис инструментов</a> TINKOFF INVEST API добавлены параметры <code>first_1min_candle_date</code> и <code>first_1day_candle_date</code>.
 Данные параметры возвращаются в методах получения информации об инструментах. Параметр <code>first_1min_candle_date</code> возвращает дату первой минутной свечи, а  <code>first_1day_candle_date</code> дату первой дневной свечи.</p>
 <h3 id="api">Как узнать доступности торгов инструментом через API?</h3>
-<p>Узнать доступность торгов инструментом можно получить в <a href="/investAPI/marketdata/#gettradingstatus">методе</a> в параметре <code>api_trade_available_flag</code>.
-Так же можно получить информацию по доступности торгов инструментом через API в сервисе инструментов с помощью <a href="/investAPI/instruments/#findinstrument">метода</a> и параметра <code>api_trade_available_flag</code>.</p>
+<p>Узнать доступность торгов инструментом можно по параметру <code>api_trade_available_flag</code> в методе <a href="/investAPI/marketdata/#gettradingstatus">getTradingStatus</a> или <a href="/investAPI/instruments/#findinstrument">FindInstrument</a>.</p>
 
               
             </article>

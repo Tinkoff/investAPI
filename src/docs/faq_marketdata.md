@@ -141,5 +141,4 @@ Bi-directional stream Сервиса котировок поддерживает
 
 ###Как узнать доступности торгов инструментом через API?
 
-Узнать доступность торгов инструментом можно получить в [методе](/investAPI/marketdata/#gettradingstatus) в параметре `api_trade_available_flag`.
-Так же можно получить информацию по доступности торгов инструментом через API в сервисе инструментов с помощью [метода](/investAPI/instruments/#findinstrument) и параметра `api_trade_available_flag`.
+Узнать доступность торгов инструментом можно по параметру `api_trade_available_flag` в методе [getTradingStatus](/investAPI/marketdata/#gettradingstatus) или [FindInstrument](/investAPI/instruments/#findinstrument).

@@ -47,3 +47,17 @@
 ##Отзыв токена
 
 Отозвать токен TINKOFF INVEST API можно на странице [https://id.tinkoff.ru/account](https://id.tinkoff.ru/account).
+
+##Невалидный токен
+
+В случае использования невалидного токена Вы получите ошибку:
+```
+"code": "40003"
+"message": "authentication token is missing or invalid"
+```
+
+###Использование токена песочницы
+
+Токен песочницы можно использовать только для [сервиса песочницы](https://tinkoff.github.io/investAPI/head-sandbox/).
+
+В случае использования sandbox-токена для обычных методов и стримов, будет возвращена ошибка.

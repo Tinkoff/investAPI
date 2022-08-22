@@ -3,7 +3,7 @@ docs_dir: docs
 repo_url: https://github.com/Tinkoff/investAPI
 theme:
   name: material
-  language: 'en'
+  language: 'ru'
   palette:
     primary: black
     accent: yellow
@@ -11,7 +11,9 @@ theme:
 plugins:
   - search:
       indexing: 'full'
-      lang: ["en", "ru"]
+      lang:
+        - en
+        - ru
       min_search_length: 3
       prebuild_index: false
       separator: "[\\s\\-]+"

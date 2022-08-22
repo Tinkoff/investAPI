@@ -8,6 +8,13 @@ theme:
     primary: black
     accent: yellow
   # custom_dir: swagger-iu/
+plugins:
+  - search:
+      indexing: 'full'
+      lang: ["en", "ru"]
+      min_search_length: 3
+      prebuild_index: false
+      separator: "[\\s\\-]+"
 
 nav:
 - Начало работы: index.md

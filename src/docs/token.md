@@ -56,7 +56,7 @@
 "message": "authentication token is missing or invalid"
 ```
 
-###Использование токена песочницы
+##Использование токена песочницы
 
 Токен песочницы можно использовать только для [сервиса песочницы](https://tinkoff.github.io/investAPI/head-sandbox/).
 

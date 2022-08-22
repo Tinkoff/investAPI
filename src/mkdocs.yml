@@ -3,7 +3,7 @@ docs_dir: docs
 repo_url: https://github.com/Tinkoff/investAPI
 theme:
   name: material
-  language: 'ru'
+  language: 'en'
   palette:
     primary: black
     accent: yellow

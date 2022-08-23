@@ -996,6 +996,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#getcloseprices" class="md-nav__link">
+    GetClosePrices
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1085,6 +1092,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getclosepricesrequest" class="md-nav__link">
+    GetClosePricesRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getclosepricesresponse" class="md-nav__link">
+    GetClosePricesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getlastpricesrequest" class="md-nav__link">
     GetLastPricesRequest
   </a>
@@ -1164,6 +1185,20 @@
           <li class="md-nav__item">
   <a href="#infosubscription" class="md-nav__link">
     InfoSubscription
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instrumentclosepricerequest" class="md-nav__link">
+    InstrumentClosePriceRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instrumentclosepriceresponse" class="md-nav__link">
+    InstrumentClosePriceResponse
   </a>
   
 </li>
@@ -1713,6 +1748,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#getcloseprices" class="md-nav__link">
+    GetClosePrices
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1802,6 +1844,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getclosepricesrequest" class="md-nav__link">
+    GetClosePricesRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getclosepricesresponse" class="md-nav__link">
+    GetClosePricesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getlastpricesrequest" class="md-nav__link">
     GetLastPricesRequest
   </a>
@@ -1881,6 +1937,20 @@
           <li class="md-nav__item">
   <a href="#infosubscription" class="md-nav__link">
     InfoSubscription
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instrumentclosepricerequest" class="md-nav__link">
+    InstrumentClosePriceRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instrumentclosepriceresponse" class="md-nav__link">
+    InstrumentClosePriceResponse
   </a>
   
 </li>
@@ -2220,6 +2290,16 @@
 <p>Тело ответа — <a href="#getlasttradesresponse">GetLastTradesResponse</a></p>
 </li>
 </ul>
+<h4 id="getcloseprices">GetClosePrices</h4>
+<p>Метод запроса цен закрытия торговой сессии по инструментам.</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#getclosepricesrequest">GetClosePricesRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#getclosepricesresponse">GetClosePricesResponse</a></p>
+</li>
+</ul>
 <!-- range .Methods -->
 
 <h2 id="marketdatastreamservice">MarketDataStreamService</h2>
@@ -2443,6 +2523,56 @@
 </table>
 <!-- end HasFields -->
 
+<h4 id="getclosepricesrequest">GetClosePricesRequest</h4>
+<p>Запрос цен закрытия торговой сессии по инструментам.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instruments</td>
+<td>Массив объектов <a href="#instrumentclosepricerequest">InstrumentClosePriceRequest</a></td>
+<td>Массив по инструментам.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getclosepricesresponse">GetClosePricesResponse</h4>
+<p>Цены закрытия торговой сессии по инструментам.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>close_prices</td>
+<td>Массив объектов <a href="#instrumentclosepriceresponse">InstrumentClosePriceResponse</a></td>
+<td>Массив по инструментам.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
 <h4 id="getlastpricesrequest">GetLastPricesRequest</h4>
 <p>Запрос получения последних цен.</p>
 <table>
@@ -2639,6 +2769,21 @@
 <td>Нижний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
 </tr>
 <tr>
+<td>last_price_ts</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время получения цены последней сделки.</td>
+</tr>
+<tr>
+<td>close_price_ts</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время получения цены закрытия.</td>
+</tr>
+<tr>
+<td>orderbook_ts</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время формирования стакана на бирже.</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -2827,6 +2972,71 @@
 </table>
 <!-- end HasFields -->
 
+<h4 id="instrumentclosepricerequest">InstrumentClosePriceRequest</h4>
+<p>Запрос цен закрытия торговой сессии по инструменту.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента, принимает значение figi или instrument_uid</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="instrumentclosepriceresponse">InstrumentClosePriceResponse</h4>
+<p>Цена закрытия торговой сессии по инструменту.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi инструмента.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Uid инструмента.</td>
+</tr>
+<tr>
+<td>price</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Цена закрытия торговой сессии.</td>
+</tr>
+<tr>
+<td>time</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата совершения торгов.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
 <h4 id="lastprice">LastPrice</h4>
 <p>Информация о цене.</p>
 <table>
@@ -2841,7 +3051,7 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор инструмента.</td>
+<td>Figi инструмента.</td>
 </tr>
 <tr>
 <td>price</td>
@@ -2852,6 +3062,11 @@
 <td>time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
 <td>Время получения последней цены в часовом поясе UTC по времени биржи.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Uid инструмента</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>

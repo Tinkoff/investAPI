@@ -1336,7 +1336,8 @@
 Получить заблокированные бумаги можно в методе <a href="/investAPI/operations/#getportfolio">GetPortfolio</a> и <a href="/investAPI/operations/#getpositions">GetPossitions</a>.</p>
 <h3 id="_4">Как получить информацию об операциях?</h3>
 <p>Для получения информации об операциях в TINKOFF INVEST API предусмотрен метод <a href="/investAPI/operations#getoperationsbycursor">getOperationsByCursor</a>.
-Данный метод имеет широкие возможности фильтрации, а так же возвращает постраничную информацию об операциях.</p>
+Данный метод имеет широкие возможности фильтрации, а так же возвращает постраничную информацию об операциях.
+Для вызова метода во входных параметрах достаточно указать только <strong><code>account_id</code></strong>.</p>
 <p>Так же в TINKOFF INVEST API для получения списка операций существует метод <a href="/investAPI/operations#getoperations">getOperations</a>, являющийся более старой версией метода <a href="/investAPI/operations#getoperationsbycursor">getOperationsByCursor</a>.
 Однако, метод <a href="/investAPI/operations#getoperationsbycursor">getOperationsByCursor</a> является более <strong>предпочтительным</strong> для использования.</p>
 <h3 id="_5">Как понять какие бумаги в портфеле заблокированы по решению ЦБ?</h3>

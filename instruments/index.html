@@ -804,6 +804,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#optionby" class="md-nav__link">
+    OptionBy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#shareby" class="md-nav__link">
     ShareBy
   </a>
@@ -1321,6 +1335,27 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#option" class="md-nav__link">
+    Option
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optionresponse" class="md-nav__link">
+    OptionResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optionsresponse" class="md-nav__link">
+    OptionsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#share" class="md-nav__link">
     Share
   </a>
@@ -1413,6 +1448,34 @@
           <li class="md-nav__item">
   <a href="#instrumentstatus" class="md-nav__link">
     InstrumentStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optiondirection" class="md-nav__link">
+    OptionDirection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optionpaymenttype" class="md-nav__link">
+    OptionPaymentType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optionsettlementtype" class="md-nav__link">
+    OptionSettlementType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optionstyle" class="md-nav__link">
+    OptionStyle
   </a>
   
 </li>
@@ -2031,6 +2094,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#optionby" class="md-nav__link">
+    OptionBy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#shareby" class="md-nav__link">
     ShareBy
   </a>
@@ -2548,6 +2625,27 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#option" class="md-nav__link">
+    Option
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optionresponse" class="md-nav__link">
+    OptionResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optionsresponse" class="md-nav__link">
+    OptionsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#share" class="md-nav__link">
     Share
   </a>
@@ -2640,6 +2738,34 @@
           <li class="md-nav__item">
   <a href="#instrumentstatus" class="md-nav__link">
     InstrumentStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optiondirection" class="md-nav__link">
+    OptionDirection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optionpaymenttype" class="md-nav__link">
+    OptionPaymentType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optionsettlementtype" class="md-nav__link">
+    OptionSettlementType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optionstyle" class="md-nav__link">
+    OptionStyle
   </a>
   
 </li>
@@ -2834,6 +2960,26 @@
 </li>
 <li>
 <p>Тело ответа — <a href="#futuresresponse">FuturesResponse</a></p>
+</li>
+</ul>
+<h4 id="optionby">OptionBy</h4>
+<p>Метод получения опциона по его идентификатору.</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#instrumentrequest">InstrumentRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#optionresponse">OptionResponse</a></p>
+</li>
+</ul>
+<h4 id="options">Options</h4>
+<p>Метод получения списка опционов.</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#instrumentsrequest">InstrumentsRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#optionsresponse">OptionsResponse</a></p>
 </li>
 </ul>
 <h4 id="shareby">ShareBy</h4>
@@ -6040,6 +6186,276 @@
 </table>
 <!-- end HasFields -->
 
+<h4 id="option">Option</h4>
+<p>Опцион.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uid</td>
+<td><a href="#string">string</a></td>
+<td>Уникальный идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>position_uid</td>
+<td><a href="#string">string</a></td>
+<td>Уникальный идентификатор позиции.</td>
+</tr>
+<tr>
+<td>ticker</td>
+<td><a href="#string">string</a></td>
+<td>Тикер инструмента.</td>
+</tr>
+<tr>
+<td>class_code</td>
+<td><a href="#string">string</a></td>
+<td>Класс-код.</td>
+</tr>
+<tr>
+<td>basic_asset_position_uid</td>
+<td><a href="#string">string</a></td>
+<td>Уникальный идентификатор позиции основного инструмента.</td>
+</tr>
+<tr>
+<td>trading_status</td>
+<td><a href="#securitytradingstatus">SecurityTradingStatus</a></td>
+<td>Текущий режим торгов инструмента.</td>
+</tr>
+<tr>
+<td>real_exchange</td>
+<td><a href="#realexchange">RealExchange</a></td>
+<td>Реальная площадка исполнения расчётов. Допустимые значения: [REAL_EXCHANGE_MOEX, REAL_EXCHANGE_RTS]</td>
+</tr>
+<tr>
+<td>direction</td>
+<td><a href="#optiondirection">OptionDirection</a></td>
+<td>Направление опциона.</td>
+</tr>
+<tr>
+<td>payment_type</td>
+<td><a href="#optionpaymenttype">OptionPaymentType</a></td>
+<td>Тип расчетов по опциону.</td>
+</tr>
+<tr>
+<td>style</td>
+<td><a href="#optionstyle">OptionStyle</a></td>
+<td>Стиль опциона.</td>
+</tr>
+<tr>
+<td>settlement_type</td>
+<td><a href="#optionsettlementtype">OptionSettlementType</a></td>
+<td>Способ исполнения опциона.</td>
+</tr>
+<tr>
+<td>name</td>
+<td><a href="#string">string</a></td>
+<td>Название инструмента.</td>
+</tr>
+<tr>
+<td>currency</td>
+<td><a href="#string">string</a></td>
+<td>Валюта.</td>
+</tr>
+<tr>
+<td>settlement_currency</td>
+<td><a href="#string">string</a></td>
+<td>Валюта, в которой оценивается контракт.</td>
+</tr>
+<tr>
+<td>asset_type</td>
+<td><a href="#string">string</a></td>
+<td>Тип актива.</td>
+</tr>
+<tr>
+<td>basic_asset</td>
+<td><a href="#string">string</a></td>
+<td>Основной актив.</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td><a href="#string">string</a></td>
+<td>Биржа.</td>
+</tr>
+<tr>
+<td>country_of_risk</td>
+<td><a href="#string">string</a></td>
+<td>Код страны рисков.</td>
+</tr>
+<tr>
+<td>country_of_risk_name</td>
+<td><a href="#string">string</a></td>
+<td>Наименование страны рисков.</td>
+</tr>
+<tr>
+<td>sector</td>
+<td><a href="#string">string</a></td>
+<td>Сектор экономики.</td>
+</tr>
+<tr>
+<td>lot</td>
+<td><a href="#int32">int32</a></td>
+<td>Количество бумаг в лоте.</td>
+</tr>
+<tr>
+<td>basic_asset_size</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Размер основного актива.</td>
+</tr>
+<tr>
+<td>klong</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Коэффициент ставки риска длинной позиции по клиенту.</td>
+</tr>
+<tr>
+<td>kshort</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Коэффициент ставки риска короткой позиции по клиенту.</td>
+</tr>
+<tr>
+<td>dlong</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Ставка риска минимальной маржи лонг.</td>
+</tr>
+<tr>
+<td>dshort</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Ставка риска минимальной маржи шорт.</td>
+</tr>
+<tr>
+<td>dlong_min</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Ставка риска начальной маржи лонг.</td>
+</tr>
+<tr>
+<td>dshort_min</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Ставка риска начальной маржи шорт.</td>
+</tr>
+<tr>
+<td>min_price_increment</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Минимальный шаг цены.</td>
+</tr>
+<tr>
+<td>strike_price</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Цена страйка.</td>
+</tr>
+<tr>
+<td>expiration_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата истечения срока в формате UTC.</td>
+</tr>
+<tr>
+<td>first_trade_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата начала обращения контракта в формате UTC.</td>
+</tr>
+<tr>
+<td>last_trade_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата исполнения в формате UTC.</td>
+</tr>
+<tr>
+<td>first_1min_candle_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата первой минутной свечи в формате UTC.</td>
+</tr>
+<tr>
+<td>first_1day_candle_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата первой дневной свечи в формате UTC.</td>
+</tr>
+<tr>
+<td>short_enabled_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности для операций шорт.</td>
+</tr>
+<tr>
+<td>for_iis_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Возможность покупки/продажи на ИИС.</td>
+</tr>
+<tr>
+<td>otc_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак внебиржевой ценной бумаги.</td>
+</tr>
+<tr>
+<td>buy_available_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности для покупки.</td>
+</tr>
+<tr>
+<td>sell_available_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности для продажи.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="optionresponse">OptionResponse</h4>
+<p>Данные по опциону.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instrument</td>
+<td><a href="#option">Option</a></td>
+<td>Информация по опциону.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="optionsresponse">OptionsResponse</h4>
+<p>Данные по опционам.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instruments</td>
+<td>Массив объектов <a href="#option">Option</a></td>
+<td>Массив данных по опциону.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
 <h4 id="share">Share</h4>
 <p>Объект передачи информации об акции.</p>
 <table>
@@ -6617,6 +7033,11 @@
 <td>3</td>
 <td>Уникальный идентификатор.</td>
 </tr>
+<tr>
+<td>INSTRUMENT_ID_TYPE_POSITION_UID</td>
+<td>4</td>
+<td>Идентификатор позиции.</td>
+</tr>
 </tbody>
 </table>
 <h4 id="instrumentstatus">InstrumentStatus</h4>
@@ -6644,6 +7065,118 @@
 <td>INSTRUMENT_STATUS_ALL</td>
 <td>2</td>
 <td>Список всех инструментов.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="optiondirection">OptionDirection</h4>
+<p>Тип опциона по направлению сделки.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OPTION_DIRECTION_UNSPECIFIED</td>
+<td>0</td>
+<td>none</td>
+</tr>
+<tr>
+<td>OPTION_DIRECTION_PUT</td>
+<td>1</td>
+<td>none</td>
+</tr>
+<tr>
+<td>OPTION_DIRECTION_CALL</td>
+<td>2</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h4 id="optionpaymenttype">OptionPaymentType</h4>
+<p>Тип расчетов по опциону.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OPTION_PAYMENT_TYPE_UNSPECIFIED</td>
+<td>0</td>
+<td>none</td>
+</tr>
+<tr>
+<td>OPTION_PAYMENT_TYPE_PREMIUM</td>
+<td>1</td>
+<td>none</td>
+</tr>
+<tr>
+<td>OPTION_PAYMENT_TYPE_MARGINAL</td>
+<td>2</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h4 id="optionsettlementtype">OptionSettlementType</h4>
+<p>Тип опциона по способу исполнения.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OPTION_EXECUTION_TYPE_UNSPECIFIED</td>
+<td>0</td>
+<td>none</td>
+</tr>
+<tr>
+<td>OPTION_EXECUTION_TYPE_PHYSICAL_DELIVERY</td>
+<td>1</td>
+<td>none</td>
+</tr>
+<tr>
+<td>OPTION_EXECUTION_TYPE_CASH_SETTLEMENT</td>
+<td>2</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h4 id="optionstyle">OptionStyle</h4>
+<p>Тип опциона по стилю.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OPTION_STYLE_UNSPECIFIED</td>
+<td>0</td>
+<td>none</td>
+</tr>
+<tr>
+<td>OPTION_STYLE_AMERICAN</td>
+<td>1</td>
+<td>none</td>
+</tr>
+<tr>
+<td>OPTION_STYLE_EUROPEAN</td>
+<td>2</td>
+<td>none</td>
 </tr>
 </tbody>
 </table>

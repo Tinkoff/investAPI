@@ -511,16 +511,16 @@ Server-side stream обновлений информации по изменен
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| account_id |  [string](#string) | Идентификатор счёта клиента. |
+| account_id |  [string](#string) | Идентификатор счёта клиента. Обязательный параметр для данного метода, остальные параметры опциональны. |
 | instrument_id |  [string](#string) | Идентификатор инструмента (Figi инструмента или uid инструмента) |
 | from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало периода (по UTC). |
 | to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание периода (по UTC). |
 | cursor |  [string](#string) | Идентификатор элемента, с которого начать формировать ответ. |
-| limit |  [int32](#int32) | Лимит количества операций. |
+| limit |  [int32](#int32) | Лимит количества операций. По умолчанию устанавливается значение **100**, максимальное значение 1000. |
 | operation_types | Массив объектов [OperationType](#operationtype) | Тип операции. Принимает значение из списка OperationType. |
 | state |  [OperationState](#operationstate) | Статус запрашиваемых операций, возможные значения указаны в OperationState. |
 | without_commissions |  [bool](#bool) | Флаг возвращать ли комиссии, по умолчанию false |
-| without_trades |  [bool](#bool) | Флаг ответ без сделок. |
+| without_trades |  [bool](#bool) | Флаг получения ответа без массива сделок. |
 | without_overnights |  [bool](#bool) | Флаг не показывать overnight операций. |
  <!-- end Fields -->
  <!-- end HasFields -->

@@ -30,7 +30,7 @@ bidirectional-stream [сервиса котировок](/investAPI/head-marketd
 
 Все вызовы сервиса песочницы выполняются по адресу **`sandbox-invest-public-api.tinkoff.ru:443`**.
 
-Различия работы контуров описаны на [странице](/investAPI/sandbox#url_difference).
+Различия работы контуров описаны на [странице](/investAPI/url_difference/).
 
 ##tracking-id запросов
 

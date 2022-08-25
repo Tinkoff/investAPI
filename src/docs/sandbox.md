@@ -42,6 +42,14 @@
 - Тело ответа — [PostOrderResponse](#postorderresponse)
 
 
+#### ReplaceSandboxOrder
+Метод изменения выставленной заявки.
+
+- Тело запроса — [ReplaceOrderRequest](#replaceorderrequest)
+
+- Тело ответа — [PostOrderResponse](#postorderresponse)
+
+
 #### GetSandboxOrders
 Метод получения списка активных заявок по счёту в песочнице.
 
@@ -96,6 +104,14 @@
 - Тело запроса — [SandboxPayInRequest](#sandboxpayinrequest)
 
 - Тело ответа — [SandboxPayInResponse](#sandboxpayinresponse)
+
+
+#### GetSandboxWithdrawLimits
+Метод получения доступного остатка для вывода средств в песочнице.
+
+- Тело запроса — [WithdrawLimitsRequest](#withdrawlimitsrequest)
+
+- Тело ответа — [WithdrawLimitsResponse](#withdrawlimitsresponse)
 
  <!-- range .Methods -->
  <!-- range .Services -->
@@ -254,6 +270,14 @@ Server-side stream обновлений портфеля
 - Тело запроса — [PortfolioStreamRequest](#portfoliostreamrequest)
 
 - Тело ответа — [PortfolioStreamResponse](#portfoliostreamresponse)
+
+
+#### PositionsStream
+Server-side stream обновлений информации по изменению позиций портфеля
+
+- Тело запроса — [PositionsStreamRequest](#positionsstreamrequest)
+
+- Тело ответа — [PositionsStreamResponse](#positionsstreamresponse)
 
  <!-- range .Methods -->
  <!-- range .Services -->
@@ -726,6 +750,22 @@ Server-side stream обновлений портфеля
  <!-- end HasFields -->
 
 
+#### PositionData
+Данные о позиции портфеля.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| account_id |  [string](#string) | Идентификатор счёта. |
+| money | Массив объектов [PositionsMoney](#positionsmoney) | Массив валютных позиций портфеля. |
+| securities | Массив объектов [PositionsSecurities](#positionssecurities) | Список ценно-бумажных позиций портфеля. |
+| futures | Массив объектов [PositionsFutures](#positionsfutures) | Список фьючерсов портфеля. |
+| options | Массив объектов [PositionsOptions](#positionsoptions) | Список опционов портфеля. |
+| date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время операции в формате UTC. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
 #### PositionsFutures
 Баланс фьючерса.
 
@@ -733,6 +773,34 @@ Server-side stream обновлений портфеля
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Figi-идентификатор фьючерса. |
+| blocked |  [int64](#int64) | Заблокировано. |
+| balance |  [int64](#int64) | Текущий незаблокированный баланс. |
+| position_uid |  [string](#string) | Уникальный идентификатор позиции. |
+| instrument_uid |  [string](#string) | Уникальный идентификатор  инструмента. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### PositionsMoney
+Валютная позиция портфеля.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| available_value |  [MoneyValue](#moneyvalue) | Доступное количество валютный позиций. |
+| blocked_value |  [MoneyValue](#moneyvalue) | Заблокированное количество валютный позиций. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### PositionsOptions
+Баланс опциона.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| position_uid |  [string](#string) | Уникальный идентификатор позиции опциона. |
+| instrument_uid |  [string](#string) | Уникальный идентификатор  инструмента. |
 | blocked |  [int64](#int64) | Заблокировано. |
 | balance |  [int64](#int64) | Текущий незаблокированный баланс. |
  <!-- end Fields -->
@@ -761,6 +829,7 @@ Server-side stream обновлений портфеля
 | securities | Массив объектов [PositionsSecurities](#positionssecurities) | Список ценно-бумажных позиций портфеля. |
 | limits_loading_in_progress |  [bool](#bool) | Признак идущей в данный момент выгрузки лимитов. |
 | futures | Массив объектов [PositionsFutures](#positionsfutures) | Список фьючерсов портфеля. |
+| options | Массив объектов [PositionsOptions](#positionsoptions) | Список опционов портфеля. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -774,8 +843,57 @@ Server-side stream обновлений портфеля
 | figi |  [string](#string) | Figi-идентификатор бумаги. |
 | blocked |  [int64](#int64) | Заблокировано. |
 | balance |  [int64](#int64) | Текущий незаблокированный баланс. |
+| position_uid |  [string](#string) | Уникальный идентификатор позиции. |
+| instrument_uid |  [string](#string) | Уникальный идентификатор  инструмента. |
 | exchange_blocked |  [bool](#bool) | Заблокировано на бирже. |
 | instrument_type |  [string](#string) | Тип инструмента. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### PositionsStreamRequest
+Запрос установки stream-соединения позиций.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| accounts | Массив объектов [string](#string) | Массив идентификаторов счётов пользователя |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### PositionsStreamResponse
+Информация по изменению позиций портфеля.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| subscriptions |  [PositionsSubscriptionResult](#positionssubscriptionresult) | Объект результата подписки. |
+| position |  [PositionData](#positiondata) | Объект стриминга позиций. |
+| ping |  [Ping](#ping) | Проверка активности стрима. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### PositionsSubscriptionResult
+Объект результата подписки.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| accounts | Массив объектов [PositionsSubscriptionStatus](#positionssubscriptionstatus) | Массив счетов клиента. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### PositionsSubscriptionStatus
+Счет клиента.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| account_id |  [string](#string) | Идентификатор счёта |
+| subscription_status |  [PositionsAccountSubscriptionStatus](#positionsaccountsubscriptionstatus) | Результат подписки. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -902,6 +1020,19 @@ Server-side stream обновлений портфеля
 | PORTFOLIO_SUBSCRIPTION_STATUS_SUCCESS | 1 | Успешно. |
 | PORTFOLIO_SUBSCRIPTION_STATUS_ACCOUNT_NOT_FOUND | 2 | Счёт не найден или недостаточно прав. |
 | PORTFOLIO_SUBSCRIPTION_STATUS_INTERNAL_ERROR | 3 | Произошла ошибка. |
+ <!-- range .Values -->
+
+
+
+#### PositionsAccountSubscriptionStatus
+Результат подписки.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| POSITIONS_SUBSCRIPTION_STATUS_UNSPECIFIED | 0 | Тип не определён. |
+| POSITIONS_SUBSCRIPTION_STATUS_SUCCESS | 1 | Успешно. |
+| POSITIONS_SUBSCRIPTION_STATUS_ACCOUNT_NOT_FOUND | 2 | Счёт не найден или недостаточно прав. |
+| POSITIONS_SUBSCRIPTION_STATUS_INTERNAL_ERROR | 3 | Произошла ошибка. |
  <!-- range .Values -->
 
  <!-- range .HasEnums -->

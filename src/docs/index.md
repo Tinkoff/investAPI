@@ -21,7 +21,8 @@ unary-запросами;
 [Подробнее о протоколе взаимодействия](/investAPI/grpc/)
 
 ##Адреса сервиса TINKOFF INVEST API
-Все вызовы сервиса выполняются по адресу **invest-public-api.tinkoff.ru:443** 
+Все вызовы сервиса выполняются по адресу **invest-public-api.tinkoff.ru:443**
+Все вызовы сервиса песочницы выполняются по адресу **sandbox-invest-public-api.tinkoff.ru:443**
 
 ##Protobuf-файлы сервиса
 

@@ -45,7 +45,7 @@ nav:
 - Сервис аккаунтов:
   - Описание: head-users.md
   - Методы: users.md
-  - "FAQ Сервиса аккаунтов": faq_users.md
+  - FAQ: faq_users.md
 - Сервис инструментов: 
   - Описание: head-instruments.md
   - Методы: instruments.md
@@ -61,8 +61,8 @@ nav:
 - Сервис котировок:
   - Описание: head-marketdata.md
   - Методы: marketdata.md
-  - Получение исторических рыночных данных: get_history.md
   - FAQ: faq_marketdata.md
+  - Получение исторических рыночных данных: get_history.md
 - Сервис стоп-заявок:
   - Описание: head-stoporders.md
   - Методы: stoporders.md
@@ -71,4 +71,5 @@ nav:
   - Описание: head-sandbox.md
   - Методы: sandbox.md
   - FAQ: faq_sandbox.md
+  - Отличия контура песочницы: url_difference.md
 - Коды ошибок: errors.md

@@ -304,6 +304,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#tinkoff-invest-api_2" class="md-nav__link">
+    Адреса сервиса TINKOFF INVEST API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tracking-id" class="md-nav__link">
     tracking-id запросов
   </a>
@@ -318,7 +325,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tinkoff-invest-api_2" class="md-nav__link">
+  <a href="#tinkoff-invest-api_3" class="md-nav__link">
     Рекомендации по тестированию методов TINKOFF INVEST API
   </a>
   
@@ -709,7 +716,7 @@
   
     <li class="md-nav__item">
       <a href="../faq_users/" class="md-nav__link">
-        FAQ Сервиса аккаунтов
+        FAQ
       </a>
     </li>
   
@@ -1012,8 +1019,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../get_history/" class="md-nav__link">
-        Получение исторических рыночных данных
+      <a href="../faq_marketdata/" class="md-nav__link">
+        FAQ
       </a>
     </li>
   
@@ -1026,8 +1033,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../faq_marketdata/" class="md-nav__link">
-        FAQ
+      <a href="../get_history/" class="md-nav__link">
+        Получение исторических рыночных данных
       </a>
     </li>
   
@@ -1186,6 +1193,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../url_difference/" class="md-nav__link">
+        Отличия контура песочницы
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1241,6 +1262,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#tinkoff-invest-api_2" class="md-nav__link">
+    Адреса сервиса TINKOFF INVEST API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tracking-id" class="md-nav__link">
     tracking-id запросов
   </a>
@@ -1255,7 +1283,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tinkoff-invest-api_2" class="md-nav__link">
+  <a href="#tinkoff-invest-api_3" class="md-nav__link">
     Рекомендации по тестированию методов TINKOFF INVEST API
   </a>
   
@@ -1317,6 +1345,10 @@ bidirectional-stream <a href="/investAPI/head-marketdata/">сервиса кот
 <p>Например:
 <code>Authorization: Bearer t.QtEo8ahkNFX4RTpbqp0u4z4GDZq27HzUp6AotJASBx7_DVqmqZMHfM2Cy7JmUjS80boI9eVg</code></p>
 <p><a name="tracking"></a></p>
+<h2 id="tinkoff-invest-api_2">Адреса сервиса TINKOFF INVEST API</h2>
+<p>Все вызовы продового сервиса выполняются по адресу <strong>invest-public-api.tinkoff.ru:443</strong>
+Все вызовы сервиса песочницы выполняются по адресу <strong>sandbox-invest-public-api.tinkoff.ru:443</strong></p>
+<p>Различия работы контуров описаны на <a href="/investAPI/sandbox#url_difference">странице</a>.</p>
 <h2 id="tracking-id">tracking-id запросов</h2>
 <p>Во все ответы unary-методов TINKOFF INVEST API добавляется заголовок <strong>x-tracking-id</strong>. 
 Это уникальный uuid-идентификатор запроса, который необходим технической поддержке для разбора различных 
@@ -1328,7 +1360,7 @@ bidirectional-stream <a href="/investAPI/head-marketdata/">сервиса кот
 <p>TINKOFF INVEST API позволяет в запросах добавлять служебный заголовок <strong>x-app-name</strong>, который 
 нужен для сбора статистики по используемым инструментам. Если вы разработчик SDK, рекомендуется
 использовать app-name формата <em>&lt;Ник в GitHub&gt;.&lt;Название репозитория&gt;</em>. Например, <strong>user.tinkoffSDK</strong>.</p>
-<h2 id="tinkoff-invest-api_2">Рекомендации по тестированию методов TINKOFF INVEST API</h2>
+<h2 id="tinkoff-invest-api_3">Рекомендации по тестированию методов TINKOFF INVEST API</h2>
 <p>Для тестирования работы TINKOFF INVEST API можно использовать любой доступный grpc-клиент.
 Ниже приведены краткие инструкции по настройке двух наиболее популярных из них. </p>
 <h3 id="kreya">Kreya</h3>

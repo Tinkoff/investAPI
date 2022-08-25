@@ -625,7 +625,7 @@
   
     <li class="md-nav__item">
       <a href="../faq_users/" class="md-nav__link">
-        FAQ Сервиса аккаунтов
+        FAQ
       </a>
     </li>
   
@@ -1471,8 +1471,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../get_history/" class="md-nav__link">
-        Получение исторических рыночных данных
+      <a href="../faq_marketdata/" class="md-nav__link">
+        FAQ
       </a>
     </li>
   
@@ -1485,8 +1485,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../faq_marketdata/" class="md-nav__link">
-        FAQ
+      <a href="../get_history/" class="md-nav__link">
+        Получение исторических рыночных данных
       </a>
     </li>
   
@@ -1639,6 +1639,20 @@
     <li class="md-nav__item">
       <a href="../faq_sandbox/" class="md-nav__link">
         FAQ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../url_difference/" class="md-nav__link">
+        Отличия контура песочницы
       </a>
     </li>
   
@@ -2975,7 +2989,7 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта клиента.</td>
+<td>Идентификатор счёта клиента. Обязательный параметр для данного метода, остальные параметры опциональны.</td>
 </tr>
 <tr>
 <td>instrument_id</td>
@@ -3000,7 +3014,7 @@
 <tr>
 <td>limit</td>
 <td><a href="#int32">int32</a></td>
-<td>Лимит количества операций.</td>
+<td>Лимит количества операций. По умолчанию устанавливается значение <strong>100</strong>, максимальное значение 1000.</td>
 </tr>
 <tr>
 <td>operation_types</td>
@@ -3020,7 +3034,7 @@
 <tr>
 <td>without_trades</td>
 <td><a href="#bool">bool</a></td>
-<td>Флаг ответ без сделок.</td>
+<td>Флаг получения ответа без массива сделок.</td>
 </tr>
 <tr>
 <td>without_overnights</td>

@@ -384,16 +384,16 @@ enum PortfolioSubscriptionStatus {
 
 //Запрос списка операций по счёту с пагинацией.
 message GetOperationsByCursorRequest {
-  string account_id = 1; //Идентификатор счёта клиента.
+  string account_id = 1; //Идентификатор счёта клиента. Обязательный параметр для данного метода, остальные параметры опциональны.
   string instrument_id	= 2; //Идентификатор инструмента (Figi инструмента или uid инструмента)
   google.protobuf.Timestamp from = 6; //Начало периода (по UTC).
   google.protobuf.Timestamp to = 7; //Окончание периода (по UTC).
   string cursor	= 11; //Идентификатор элемента, с которого начать формировать ответ.
-  int32 limit	= 12; //Лимит количества операций.
+  int32 limit	= 12; //Лимит количества операций. По умолчанию устанавливается значение **100**, максимальное значение 1000.
   repeated OperationType operation_types	= 13; //Тип операции. Принимает значение из списка OperationType.
   OperationState state  = 14;	//Статус запрашиваемых операций, возможные значения указаны в OperationState.
   bool without_commissions	= 15; //Флаг возвращать ли комиссии, по умолчанию false
-  bool without_trades	= 16; //Флаг ответ без сделок.
+  bool without_trades	= 16; //Флаг получения ответа без массива сделок.
   bool without_overnights = 17; //Флаг не показывать overnight операций.
 }
 

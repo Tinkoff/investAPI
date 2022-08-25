@@ -95,6 +95,22 @@
 - Тело ответа — [FuturesResponse](#futuresresponse)
 
 
+#### OptionBy
+Метод получения опциона по его идентификатору.
+
+- Тело запроса — [InstrumentRequest](#instrumentrequest)
+
+- Тело ответа — [OptionResponse](#optionresponse)
+
+
+#### Options
+Метод получения списка опционов.
+
+- Тело запроса — [InstrumentsRequest](#instrumentsrequest)
+
+- Тело ответа — [OptionsResponse](#optionsresponse)
+
+
 #### ShareBy
 Метод получения акции по её идентификатору.
 
@@ -1170,6 +1186,78 @@
  <!-- end HasFields -->
 
 
+#### Option
+Опцион.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| uid |  [string](#string) | Уникальный идентификатор инструмента. |
+| position_uid |  [string](#string) | Уникальный идентификатор позиции. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код. |
+| basic_asset_position_uid |  [string](#string) | Уникальный идентификатор позиции основного инструмента. |
+| trading_status |  [SecurityTradingStatus](#securitytradingstatus) | Текущий режим торгов инструмента. |
+| real_exchange |  [RealExchange](#realexchange) | Реальная площадка исполнения расчётов. Допустимые значения: [REAL_EXCHANGE_MOEX, REAL_EXCHANGE_RTS] |
+| direction |  [OptionDirection](#optiondirection) | Направление опциона. |
+| payment_type |  [OptionPaymentType](#optionpaymenttype) | Тип расчетов по опциону. |
+| style |  [OptionStyle](#optionstyle) | Стиль опциона. |
+| settlement_type |  [OptionSettlementType](#optionsettlementtype) | Способ исполнения опциона. |
+| name |  [string](#string) | Название инструмента. |
+| currency |  [string](#string) | Валюта. |
+| settlement_currency |  [string](#string) | Валюта, в которой оценивается контракт. |
+| asset_type |  [string](#string) | Тип актива. |
+| basic_asset |  [string](#string) | Основной актив. |
+| exchange |  [string](#string) | Биржа. |
+| country_of_risk |  [string](#string) | Код страны рисков. |
+| country_of_risk_name |  [string](#string) | Наименование страны рисков. |
+| sector |  [string](#string) | Сектор экономики. |
+| lot |  [int32](#int32) | Количество бумаг в лоте. |
+| basic_asset_size |  [Quotation](#quotation) | Размер основного актива. |
+| klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. |
+| kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. |
+| dlong |  [Quotation](#quotation) | Ставка риска минимальной маржи лонг. |
+| dshort |  [Quotation](#quotation) | Ставка риска минимальной маржи шорт. |
+| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи лонг. |
+| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи шорт. |
+| min_price_increment |  [Quotation](#quotation) | Минимальный шаг цены. |
+| strike_price |  [MoneyValue](#moneyvalue) | Цена страйка. |
+| expiration_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата истечения срока в формате UTC. |
+| first_trade_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата начала обращения контракта в формате UTC. |
+| last_trade_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата исполнения в формате UTC. |
+| first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи в формате UTC. |
+| first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи в формате UTC. |
+| short_enabled_flag |  [bool](#bool) | Признак доступности для операций шорт. |
+| for_iis_flag |  [bool](#bool) | Возможность покупки/продажи на ИИС. |
+| otc_flag |  [bool](#bool) | Признак внебиржевой ценной бумаги. |
+| buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
+| sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### OptionResponse
+Данные по опциону.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instrument |  [Option](#option) | Информация по опциону. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### OptionsResponse
+Данные по опционам.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instruments | Массив объектов [Option](#option) | Массив данных по опциону. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
 #### Share
 Объект передачи информации об акции.
 
@@ -1352,6 +1440,7 @@
 | INSTRUMENT_ID_TYPE_FIGI | 1 | Figi. |
 | INSTRUMENT_ID_TYPE_TICKER | 2 | Ticker. |
 | INSTRUMENT_ID_TYPE_UID | 3 | Уникальный идентификатор. |
+| INSTRUMENT_ID_TYPE_POSITION_UID | 4 | Идентификатор позиции. |
 
 
 
@@ -1364,6 +1453,54 @@
 | INSTRUMENT_STATUS_UNSPECIFIED | 0 | Значение не определено. |
 | INSTRUMENT_STATUS_BASE | 1 | Базовый список инструментов (по умолчанию). Инструменты доступные для торговли через TINKOFF INVEST API. |
 | INSTRUMENT_STATUS_ALL | 2 | Список всех инструментов. |
+
+
+
+
+#### OptionDirection
+Тип опциона по направлению сделки.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| OPTION_DIRECTION_UNSPECIFIED | 0 | none |
+| OPTION_DIRECTION_PUT | 1 | none |
+| OPTION_DIRECTION_CALL | 2 | none |
+
+
+
+
+#### OptionPaymentType
+Тип расчетов по опциону.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| OPTION_PAYMENT_TYPE_UNSPECIFIED | 0 | none |
+| OPTION_PAYMENT_TYPE_PREMIUM | 1 | none |
+| OPTION_PAYMENT_TYPE_MARGINAL | 2 | none |
+
+
+
+
+#### OptionSettlementType
+Тип опциона по способу исполнения.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| OPTION_EXECUTION_TYPE_UNSPECIFIED | 0 | none |
+| OPTION_EXECUTION_TYPE_PHYSICAL_DELIVERY | 1 | none |
+| OPTION_EXECUTION_TYPE_CASH_SETTLEMENT | 2 | none |
+
+
+
+
+#### OptionStyle
+Тип опциона по стилю.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| OPTION_STYLE_UNSPECIFIED | 0 | none |
+| OPTION_STYLE_AMERICAN | 1 | none |
+| OPTION_STYLE_EUROPEAN | 2 | none |
 
 
 

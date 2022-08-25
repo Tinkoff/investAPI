@@ -52,6 +52,14 @@
 
 - Тело ответа — [GetLastTradesResponse](#getlasttradesresponse)
 
+
+#### GetClosePrices
+Метод запроса цен закрытия торговой сессии по инструментам.
+
+- Тело запроса — [GetClosePricesRequest](#getclosepricesrequest)
+
+- Тело ответа — [GetClosePricesResponse](#getclosepricesresponse)
+
  <!-- range .Methods -->
 
 
@@ -152,6 +160,28 @@ Server-side стрим предоставления биржевой инфор�
  <!-- end HasFields -->
 
 
+#### GetClosePricesRequest
+Запрос цен закрытия торговой сессии по инструментам.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instruments | Массив объектов [InstrumentClosePriceRequest](#instrumentclosepricerequest) | Массив по инструментам. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetClosePricesResponse
+Цены закрытия торговой сессии по инструментам.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| close_prices | Массив объектов [InstrumentClosePriceResponse](#instrumentclosepriceresponse) | Массив по инструментам. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
 #### GetLastPricesRequest
 Запрос получения последних цен.
 
@@ -230,6 +260,9 @@ Server-side стрим предоставления биржевой инфор�
 | close_price |  [Quotation](#quotation) | Цена закрытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. |
 | limit_up |  [Quotation](#quotation) | Верхний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. |
 | limit_down |  [Quotation](#quotation) | Нижний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. |
+| last_price_ts |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время получения цены последней сделки. |
+| close_price_ts |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время получения цены закрытия. |
+| orderbook_ts |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время формирования стакана на бирже. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -300,15 +333,41 @@ Server-side стрим предоставления биржевой инфор�
  <!-- end HasFields -->
 
 
+#### InstrumentClosePriceRequest
+Запрос цен закрытия торговой сессии по инструменту.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instrument_id |  [string](#string) | Идентификатор инструмента, принимает значение figi или instrument_uid |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### InstrumentClosePriceResponse
+Цена закрытия торговой сессии по инструменту.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| figi |  [string](#string) | Figi инструмента. |
+| instrument_uid |  [string](#string) | Uid инструмента. |
+| price |  [Quotation](#quotation) | Цена закрытия торговой сессии. |
+| time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата совершения торгов. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
 #### LastPrice
 Информация о цене.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| figi |  [string](#string) | Идентификатор инструмента. |
+| figi |  [string](#string) | Figi инструмента. |
 | price |  [Quotation](#quotation) | Последняя цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. |
 | time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время получения последней цены в часовом поясе UTC по времени биржи. |
+| instrument_uid |  [string](#string) | Uid инструмента |
  <!-- end Fields -->
  <!-- end HasFields -->
 

@@ -23,6 +23,13 @@ bidirectional-stream [сервиса котировок](/investAPI/head-marketd
 `Authorization: Bearer t.QtEo8ahkNFX4RTpbqp0u4z4GDZq27HzUp6AotJASBx7_DVqmqZMHfM2Cy7JmUjS80boI9eVg`
 
 <a name="tracking"></a>
+
+##Адреса сервиса TINKOFF INVEST API
+Все вызовы продового сервиса выполняются по адресу **invest-public-api.tinkoff.ru:443**
+Все вызовы сервиса песочницы выполняются по адресу **sandbox-invest-public-api.tinkoff.ru:443**
+
+Различия работы контуров описаны на [странице](/investAPI/sandbox#url_difference).
+
 ##tracking-id запросов
 
 Во все ответы unary-методов TINKOFF INVEST API добавляется заголовок **x-tracking-id**. 

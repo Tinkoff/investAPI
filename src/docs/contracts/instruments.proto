@@ -47,6 +47,12 @@ service InstrumentsService {/*Сервис предназначен для по�
   //Метод получения списка фьючерсов.
   rpc Futures (InstrumentsRequest) returns (FuturesResponse);
 
+  //Метод получения опциона по его идентификатору.
+  rpc OptionBy (InstrumentRequest) returns (OptionResponse);
+
+  //Метод получения списка опционов.
+  rpc Options (InstrumentsRequest) returns (OptionsResponse);
+
   //Метод получения акции по её идентификатору.
   rpc ShareBy (InstrumentRequest) returns (ShareResponse);
 
@@ -213,6 +219,93 @@ message FutureResponse {
 //Данные по фьючерсам.
 message FuturesResponse {
   repeated Future instruments = 1; //Массив фьючерсов.
+}
+
+//Данные по опциону.
+message OptionResponse {
+  Option instrument = 1; // Информация по опциону.
+}
+
+//Данные по опционам.
+message OptionsResponse {
+  repeated Option instruments = 1; //Массив данных по опциону.
+}
+
+//Опцион.
+message Option {
+  string uid = 1; //Уникальный идентификатор инструмента.
+  string position_uid = 2; //Уникальный идентификатор позиции.
+  string ticker = 3; //Тикер инструмента.
+  string class_code = 4; //Класс-код.
+  string basic_asset_position_uid = 5; //Уникальный идентификатор позиции основного инструмента.
+
+  SecurityTradingStatus trading_status = 21; //Текущий режим торгов инструмента.
+  RealExchange real_exchange = 31; //Реальная площадка исполнения расчётов. Допустимые значения: [REAL_EXCHANGE_MOEX, REAL_EXCHANGE_RTS]
+  OptionDirection direction = 41; //Направление опциона.
+  OptionPaymentType payment_type = 42; //Тип расчетов по опциону.
+  OptionStyle style = 43; //Стиль опциона.
+  OptionSettlementType settlement_type = 44; //Способ исполнения опциона.
+
+  string name = 101; //Название инструмента.
+  string currency = 111; //Валюта.
+  string settlement_currency = 112; //Валюта, в которой оценивается контракт.
+  string asset_type = 131; //Тип актива.
+  string basic_asset = 132; //Основной актив.
+  string exchange = 141; //Биржа.
+  string country_of_risk = 151; //Код страны рисков.
+  string country_of_risk_name = 152; //Наименование страны рисков.
+  string sector = 161; //Сектор экономики.
+
+  int32 lot = 201; //Количество бумаг в лоте.
+  Quotation basic_asset_size = 211; //Размер основного актива.
+  Quotation klong = 221; //Коэффициент ставки риска длинной позиции по клиенту.
+  Quotation kshort = 222; //Коэффициент ставки риска короткой позиции по клиенту.
+  Quotation dlong = 223; //Ставка риска минимальной маржи лонг.
+  Quotation dshort = 224; //Ставка риска минимальной маржи шорт.
+  Quotation dlong_min = 225; //Ставка риска начальной маржи лонг.
+  Quotation dshort_min = 226; //Ставка риска начальной маржи шорт.
+  Quotation min_price_increment = 231; //Минимальный шаг цены.
+  MoneyValue strike_price = 241; //Цена страйка.
+
+  google.protobuf.Timestamp expiration_date = 301; //Дата истечения срока в формате UTC.
+  google.protobuf.Timestamp first_trade_date = 311; //Дата начала обращения контракта в формате UTC.
+  google.protobuf.Timestamp last_trade_date = 312; //Дата исполнения в формате UTC.
+  google.protobuf.Timestamp first_1min_candle_date = 321; //Дата первой минутной свечи в формате UTC.
+  google.protobuf.Timestamp first_1day_candle_date = 322; //Дата первой дневной свечи в формате UTC.
+
+  bool short_enabled_flag = 401; //Признак доступности для операций шорт.
+  bool for_iis_flag = 402; //Возможность покупки/продажи на ИИС.
+  bool otc_flag = 403; //Признак внебиржевой ценной бумаги.
+  bool buy_available_flag = 404; //Признак доступности для покупки.
+  bool sell_available_flag = 405; //Признак доступности для продажи.
+}
+
+//Тип опциона по направлению сделки.
+enum OptionDirection {
+  OPTION_DIRECTION_UNSPECIFIED = 0;
+  OPTION_DIRECTION_PUT = 1;
+  OPTION_DIRECTION_CALL = 2;
+}
+
+//Тип расчетов по опциону.
+enum OptionPaymentType {
+  OPTION_PAYMENT_TYPE_UNSPECIFIED = 0;
+  OPTION_PAYMENT_TYPE_PREMIUM = 1;
+  OPTION_PAYMENT_TYPE_MARGINAL = 2;
+}
+
+//Тип опциона по стилю.
+enum OptionStyle {
+  OPTION_STYLE_UNSPECIFIED = 0;
+  OPTION_STYLE_AMERICAN = 1;
+  OPTION_STYLE_EUROPEAN = 2;
+}
+
+//Тип опциона по способу исполнения.
+enum OptionSettlementType {
+  OPTION_EXECUTION_TYPE_UNSPECIFIED = 0;
+  OPTION_EXECUTION_TYPE_PHYSICAL_DELIVERY = 1;
+  OPTION_EXECUTION_TYPE_CASH_SETTLEMENT = 2;
 }
 
 //Данные по акции.
@@ -501,6 +594,7 @@ enum InstrumentIdType {
   INSTRUMENT_ID_TYPE_FIGI = 1; //Figi.
   INSTRUMENT_ID_TYPE_TICKER = 2; //Ticker.
   INSTRUMENT_ID_TYPE_UID = 3; //Уникальный идентификатор.
+  INSTRUMENT_ID_TYPE_POSITION_UID = 4; //Идентификатор позиции.
 }
 
 //Статус запрашиваемых инструментов.
@@ -860,7 +954,7 @@ enum RealExchange {
 }
 
 //Запрос справочника стран.
-message GetCountriesRequest { }
+message GetCountriesRequest {}
 
 //Справочник стран.
 message GetCountriesResponse {
@@ -888,11 +982,11 @@ message FindInstrumentResponse {
 //Краткая информация об инструменте.
 message InstrumentShort {
   string isin = 1; //Isin инструмента.
-  string figi	= 2; //Figi инструмента.
-  string ticker	= 3; //Ticker инструмента.
-  string class_code	= 4; //ClassCode инструмента.
+  string figi = 2; //Figi инструмента.
+  string ticker = 3; //Ticker инструмента.
+  string class_code = 4; //ClassCode инструмента.
   string instrument_type = 5; //Тип инструмента.
-  string name	= 6; //Название инструмента.
+  string name = 6; //Название инструмента.
   string uid = 7; //Уникальный идентификатор инструмента.
   string position_uid = 8; //Уникальный идентификатор позиции инструмента.
   bool api_trade_available_flag = 11; //Признак доступности торгов через API.
@@ -902,7 +996,7 @@ message InstrumentShort {
 }
 
 //Запрос списка брендов.
-message GetBrandsRequest { }
+message GetBrandsRequest {}
 
 //Запрос бренда.
 message GetBrandRequest {

@@ -28,6 +28,9 @@ service SandboxService { //Сервис для работы с песочниц�
   //Метод выставления торгового поручения в песочнице.
   rpc PostSandboxOrder(PostOrderRequest) returns (PostOrderResponse);
 
+  //Метод изменения выставленной заявки.
+  rpc ReplaceSandboxOrder(ReplaceOrderRequest) returns (PostOrderResponse);
+
   //Метод получения списка активных заявок по счёту в песочнице.
   rpc GetSandboxOrders(GetOrdersRequest) returns (GetOrdersResponse);
 
@@ -48,6 +51,9 @@ service SandboxService { //Сервис для работы с песочниц�
 
   //Метод пополнения счёта в песочнице.
   rpc SandboxPayIn(SandboxPayInRequest) returns (SandboxPayInResponse);
+
+  //Метод получения доступного остатка для вывода средств в песочнице.
+  rpc GetSandboxWithdrawLimits(WithdrawLimitsRequest) returns (WithdrawLimitsResponse);
 }
 
 //Запрос открытия счёта в песочнице.

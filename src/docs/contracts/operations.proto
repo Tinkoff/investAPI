@@ -40,6 +40,9 @@ service OperationsService {/*Сервис предназначен для пол
 service OperationsStreamService {
   //Server-side stream обновлений портфеля
   rpc PortfolioStream(PortfolioStreamRequest) returns (stream PortfolioStreamResponse);
+
+  //Server-side stream обновлений информации по изменению позиций портфеля
+  rpc PositionsStream(PositionsStreamRequest) returns (stream PositionsStreamResponse);
 }
 
 //Запрос получения списка операций по счёту.
@@ -110,6 +113,7 @@ message PositionsResponse {
   repeated PositionsSecurities securities = 3;  //Список ценно-бумажных позиций портфеля.
   bool limits_loading_in_progress = 4;  //Признак идущей в данный момент выгрузки лимитов.
   repeated PositionsFutures futures = 5;  //Список фьючерсов портфеля.
+  repeated PositionsOptions options = 6;  //Список опционов портфеля.
 }
 
 //Запрос доступного для вывода остатка.
@@ -144,6 +148,8 @@ message PositionsSecurities {
   string figi = 1; //Figi-идентификатор бумаги.
   int64 blocked = 2; //Заблокировано.
   int64 balance = 3;  //Текущий незаблокированный баланс.
+  string position_uid = 4; //Уникальный идентификатор позиции.
+  string instrument_uid = 5; //Уникальный идентификатор  инструмента.
   bool exchange_blocked = 11; //Заблокировано на бирже.
   string instrument_type = 16; //Тип инструмента.
 }
@@ -153,6 +159,16 @@ message PositionsFutures {
   string figi = 1; //Figi-идентификатор фьючерса.
   int64 blocked = 2; //Заблокировано.
   int64 balance = 3;  //Текущий незаблокированный баланс.
+  string position_uid = 4; //Уникальный идентификатор позиции.
+  string instrument_uid = 5; //Уникальный идентификатор  инструмента.
+}
+
+//Баланс опциона.
+message PositionsOptions {
+  string position_uid = 1; //Уникальный идентификатор позиции опциона.
+  string instrument_uid = 2; //Уникальный идентификатор  инструмента.
+  int64 blocked = 11; //Заблокировано.
+  int64 balance = 21;  //Текущий незаблокированный баланс.
 }
 
 message BrokerReportRequest {
@@ -368,16 +384,16 @@ enum PortfolioSubscriptionStatus {
 
 //Запрос списка операций по счёту с пагинацией.
 message GetOperationsByCursorRequest {
-  string account_id = 1; //Идентификатор счёта клиента.
+  string account_id = 1; //Идентификатор счёта клиента. Обязательный параметр для данного метода, остальные параметры опциональны.
   string instrument_id	= 2; //Идентификатор инструмента (Figi инструмента или uid инструмента)
   google.protobuf.Timestamp from = 6; //Начало периода (по UTC).
   google.protobuf.Timestamp to = 7; //Окончание периода (по UTC).
   string cursor	= 11; //Идентификатор элемента, с которого начать формировать ответ.
-  int32 limit	= 12; //Лимит количества операций.
+  int32 limit	= 12; //Лимит количества операций. По умолчанию устанавливается значение **100**, максимальное значение 1000.
   repeated OperationType operation_types	= 13; //Тип операции. Принимает значение из списка OperationType.
   OperationState state  = 14;	//Статус запрашиваемых операций, возможные значения указаны в OperationState.
   bool without_commissions	= 15; //Флаг возвращать ли комиссии, по умолчанию false
-  bool without_trades	= 16; //Флаг ответ без сделок.
+  bool without_trades	= 16; //Флаг получения ответа без массива сделок.
   bool without_overnights = 17; //Флаг не показывать overnight операций.
 }
 
@@ -443,4 +459,53 @@ enum InstrumentType {
   INSTRUMENT_TYPE_FUTURES = 5; //Фьючерс.
   INSTRUMENT_TYPE_SP = 6; //Структурная нота.
   INSTRUMENT_TYPE_OPTION = 7; //Опцион.
+}
+
+//Запрос установки stream-соединения позиций.
+message PositionsStreamRequest {
+  repeated string accounts = 1; //Массив идентификаторов счётов пользователя
+}
+
+//Информация по изменению позиций портфеля.
+message PositionsStreamResponse {
+  oneof payload {
+    PositionsSubscriptionResult subscriptions = 1; //Объект результата подписки.
+    PositionData position = 2; //Объект стриминга позиций.
+    Ping ping = 3; //Проверка активности стрима.
+  }
+}
+
+//Объект результата подписки.
+message PositionsSubscriptionResult {
+  repeated PositionsSubscriptionStatus accounts = 1; //Массив счетов клиента.
+}
+
+//Счет клиента.
+message PositionsSubscriptionStatus {
+  string account_id = 1; //Идентификатор счёта
+  PositionsAccountSubscriptionStatus subscription_status = 6; //Результат подписки.
+}
+
+//Результат подписки.
+enum PositionsAccountSubscriptionStatus {
+  POSITIONS_SUBSCRIPTION_STATUS_UNSPECIFIED = 0; //Тип не определён.
+  POSITIONS_SUBSCRIPTION_STATUS_SUCCESS = 1; //Успешно.
+  POSITIONS_SUBSCRIPTION_STATUS_ACCOUNT_NOT_FOUND = 2; //Счёт не найден или недостаточно прав.
+  POSITIONS_SUBSCRIPTION_STATUS_INTERNAL_ERROR = 3; //Произошла ошибка.
+}
+
+//Данные о позиции портфеля.
+message PositionData {
+  string account_id = 1; //Идентификатор счёта.
+  repeated PositionsMoney money = 2; //Массив валютных позиций портфеля.
+  repeated PositionsSecurities securities = 3; //Список ценно-бумажных позиций портфеля.
+  repeated PositionsFutures futures = 4; //Список фьючерсов портфеля.
+  repeated PositionsOptions options = 5; //Список опционов портфеля.
+  google.protobuf.Timestamp date = 6; //Дата и время операции в формате UTC.
+}
+
+//Валютная позиция портфеля.
+message PositionsMoney {
+  MoneyValue available_value = 1; //Доступное количество валютный позиций.
+  MoneyValue blocked_value = 2; //Заблокированное количество валютный позиций.
 }

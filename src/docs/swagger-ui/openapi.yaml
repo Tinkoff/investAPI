@@ -1,4 +1,4 @@
-  openapi: 3.0.1
+openapi: 3.0.1
 info:
   title: Tinkoff Invest API
   termsOfService: https://www.tinkoff.ru/invest/disclaimers/basic-information/
@@ -10,6 +10,19 @@ servers:
   description: "Работа с биржей"
 - url: https://sandbox-invest-public-api.tinkoff.ru/rest/
   description: "Работа в песочнице"
+security:
+- Bearer: []
+externalDocs:
+  description: Документация Tinkoff Invest API
+  url: https://tinkoff.github.io/investAPI/
+tags:
+- name: InstrumentsService
+- name: MarketDataService
+- name: OperationsService
+- name: OrdersService
+- name: SandboxService
+- name: StopOrdersService
+- name: UsersService
 paths:
   /tinkoff.public.invest.api.contract.v1.InstrumentsService/BondBy:
     post:

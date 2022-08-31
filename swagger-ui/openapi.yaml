@@ -800,7 +800,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
-      summary: Метод запроса обезличенных сделок за последний час.
+      summary: Метод запроса последних обезличенных сделок по инструменту на текущий
+        торговый день с максимальным интервалом в 1 час.
       tags:
       - MarketDataService
       x-codegen-request-body-name: body
@@ -1688,9 +1689,57 @@ paths:
       tags:
       - UsersService
       x-codegen-request-body-name: body
+  /history-data:
+    get:
+      operationId: MarketDataService_GetHistoryData
+      parameters:
+      - name: figi
+        in: query
+        description: Figi идентификатор инструмента
+        required: true
+        schema:
+          type: string
+        example: BBG00QPYJ5H0
+      - name: year
+        in: query
+        description: Год исторических данных
+        required: true
+        schema:
+          type: integer
+          minimum: 2017
+        example: 2022
+      responses:
+        "200":
+          description: Zip-архив, содержащий исторические данные
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          description: Ответ на запрос выгрузки
+          headers:
+            x-tracking-id:
+              description: Идентификатор отслеживания запроса
+              required: true
+              schema:
+                type: string
+            code:
+              description: Код ошибки
+              schema:
+                type: string
+            message:
+              description: Описание ошибки
+              schema:
+                type: string
+      summary: Получение исторических свечей за год
+      tags:
+        - MarketDataService
 components:
   schemas:
     protobufAny:
+      additionalProperties:
+        type: object
       example:
         typeUrl: typeUrl
         value: value
@@ -1769,16 +1818,6 @@ components:
       - ACCOUNT_STATUS_OPEN
       - ACCOUNT_STATUS_CLOSED
       type: string
-    v1AccountSubscriptionStatus:
-      description: Счет клиента.
-      example:
-        accountId: accountId
-      properties:
-        accountId:
-          type: string
-        subscriptionStatus:
-          $ref: '#/components/schemas/v1PortfolioSubscriptionStatus'
-      type: object
     v1AccountType:
       default: ACCOUNT_TYPE_UNSPECIFIED
       description: Тип счёта.
@@ -3554,56 +3593,6 @@ components:
           format: date-time
           type: string
       type: object
-    v1Candle:
-      description: Пакет свечей в рамках стрима.
-      example:
-        volume: volume
-        high:
-          nano: 6
-          units: units
-        lastTradeTs: 2000-01-23T04:56:07.000+00:00
-        low:
-          nano: 6
-          units: units
-        figi: figi
-        time: 2000-01-23T04:56:07.000+00:00
-        close:
-          nano: 6
-          units: units
-        open:
-          nano: 6
-          units: units
-      properties:
-        figi:
-          type: string
-        interval:
-          $ref: '#/components/schemas/v1SubscriptionInterval'
-        open:
-          $ref: '#/components/schemas/v1Quotation'
-        high:
-          $ref: '#/components/schemas/v1Quotation'
-        low:
-          $ref: '#/components/schemas/v1Quotation'
-        close:
-          $ref: '#/components/schemas/v1Quotation'
-        volume:
-          format: int64
-          type: string
-        time:
-          format: date-time
-          type: string
-        lastTradeTs:
-          format: date-time
-          type: string
-      type: object
-    v1CandleInstrument:
-      description: Запрос изменения статус подписки на свечи.
-      properties:
-        figi:
-          type: string
-        interval:
-          $ref: '#/components/schemas/v1SubscriptionInterval'
-      type: object
     v1CandleInterval:
       default: CANDLE_INTERVAL_UNSPECIFIED
       description: Интервал свечей.
@@ -3615,18 +3604,6 @@ components:
       - CANDLE_INTERVAL_HOUR
       - CANDLE_INTERVAL_DAY
       type: string
-    v1CandleSubscription:
-      description: Статус подписки на свечи.
-      example:
-        figi: figi
-      properties:
-        figi:
-          type: string
-        interval:
-          $ref: '#/components/schemas/v1SubscriptionInterval'
-        subscriptionStatus:
-          $ref: '#/components/schemas/v1SubscriptionStatus'
-      type: object
     v1CloseSandboxAccountRequest:
       description: Запрос закрытия счёта в песочнице.
       properties:
@@ -5531,7 +5508,8 @@ components:
           type: array
       type: object
     v1GetLastTradesRequest:
-      description: Запрос обезличенных сделок за последний час.
+      description: Запрос последних обезличенных сделок по инструменту на текущий
+        торговый день с максимальным интервалом в 1 час.
       properties:
         figi:
           type: string
@@ -5543,7 +5521,8 @@ components:
           type: string
       type: object
     v1GetLastTradesResponse:
-      description: Обезличенных сделок за последний час.
+      description: Последние обезличенные сделки по инструменту на текущий торговый
+        день с максимальным интервалом в 1 час.
       example:
         trades:
         - quantity: quantity
@@ -6460,162 +6439,6 @@ components:
         time:
           format: date-time
           type: string
-        instrumentUid:
-          type: string
-      type: object
-    v1LastPriceInstrument:
-      description: Запрос подписки на последнюю цену.
-      properties:
-        figi:
-          type: string
-      type: object
-    v1LastPriceSubscription:
-      description: Статус подписки на последнюю цену.
-      example:
-        figi: figi
-      properties:
-        figi:
-          type: string
-        subscriptionStatus:
-          $ref: '#/components/schemas/v1SubscriptionStatus'
-      type: object
-    v1MarketDataRequest:
-      description: Запрос подписки или отписки на определённые биржевые данные.
-      properties:
-        subscribeCandlesRequest:
-          $ref: '#/components/schemas/v1SubscribeCandlesRequest'
-        subscribeOrderBookRequest:
-          $ref: '#/components/schemas/v1SubscribeOrderBookRequest'
-        subscribeTradesRequest:
-          $ref: '#/components/schemas/v1SubscribeTradesRequest'
-        subscribeInfoRequest:
-          $ref: '#/components/schemas/v1SubscribeInfoRequest'
-        subscribeLastPriceRequest:
-          $ref: '#/components/schemas/v1SubscribeLastPriceRequest'
-        getMySubscriptions:
-          description: Запрос активных подписок.
-          type: object
-      type: object
-    v1MarketDataResponse:
-      description: Пакет биржевой информации по подписке.
-      example:
-        subscribeInfoResponse:
-          infoSubscriptions:
-          - figi: figi
-          - figi: figi
-          trackingId: trackingId
-        trade:
-          quantity: quantity
-          price:
-            nano: 6
-            units: units
-          figi: figi
-          time: 2000-01-23T04:56:07.000+00:00
-        subscribeOrderBookResponse:
-          orderBookSubscriptions:
-          - depth: 0
-            figi: figi
-          - depth: 0
-            figi: figi
-          trackingId: trackingId
-        ping:
-          time: 2000-01-23T04:56:07.000+00:00
-        candle:
-          volume: volume
-          high:
-            nano: 6
-            units: units
-          lastTradeTs: 2000-01-23T04:56:07.000+00:00
-          low:
-            nano: 6
-            units: units
-          figi: figi
-          time: 2000-01-23T04:56:07.000+00:00
-          close:
-            nano: 6
-            units: units
-          open:
-            nano: 6
-            units: units
-        orderbook:
-          depth: 6
-          asks:
-          - quantity: quantity
-            price:
-              nano: 6
-              units: units
-          - quantity: quantity
-            price:
-              nano: 6
-              units: units
-          bids:
-          - quantity: quantity
-            price:
-              nano: 6
-              units: units
-          - quantity: quantity
-            price:
-              nano: 6
-              units: units
-          limitUp:
-            nano: 6
-            units: units
-          figi: figi
-          time: 2000-01-23T04:56:07.000+00:00
-          limitDown:
-            nano: 6
-            units: units
-          isConsistent: true
-        subscribeTradesResponse:
-          tradeSubscriptions:
-          - figi: figi
-          - figi: figi
-          trackingId: trackingId
-        tradingStatus:
-          limitOrderAvailableFlag: true
-          marketOrderAvailableFlag: true
-          figi: figi
-          time: 2000-01-23T04:56:07.000+00:00
-        subscribeCandlesResponse:
-          candlesSubscriptions:
-          - figi: figi
-          - figi: figi
-          trackingId: trackingId
-        subscribeLastPriceResponse:
-          lastPriceSubscriptions:
-          - figi: figi
-          - figi: figi
-          trackingId: trackingId
-        lastPrice:
-          price:
-            nano: 6
-            units: units
-          instrumentUid: instrumentUid
-          figi: figi
-          time: 2000-01-23T04:56:07.000+00:00
-      properties:
-        subscribeCandlesResponse:
-          $ref: '#/components/schemas/v1SubscribeCandlesResponse'
-        subscribeOrderBookResponse:
-          $ref: '#/components/schemas/v1SubscribeOrderBookResponse'
-        subscribeTradesResponse:
-          $ref: '#/components/schemas/v1SubscribeTradesResponse'
-        subscribeInfoResponse:
-          $ref: '#/components/schemas/v1SubscribeInfoResponse'
-        candle:
-          $ref: '#/components/schemas/v1Candle'
-        trade:
-          $ref: '#/components/schemas/v1Trade'
-        orderbook:
-          $ref: '#/components/schemas/v1OrderBook'
-        tradingStatus:
-          $ref: '#/components/schemas/v1TradingStatus'
-        ping:
-          $ref: '#/components/schemas/v1Ping'
-        subscribeLastPriceResponse:
-          $ref: '#/components/schemas/v1SubscribeLastPriceResponse'
-        lastPrice:
-          $ref: '#/components/schemas/v1LastPrice'
       type: object
     v1MoneyValue:
       example:
@@ -7459,84 +7282,6 @@ components:
           format: int64
           type: string
       type: object
-    v1OrderBook:
-      description: Пакет стаканов в рамках стрима.
-      example:
-        depth: 6
-        asks:
-        - quantity: quantity
-          price:
-            nano: 6
-            units: units
-        - quantity: quantity
-          price:
-            nano: 6
-            units: units
-        bids:
-        - quantity: quantity
-          price:
-            nano: 6
-            units: units
-        - quantity: quantity
-          price:
-            nano: 6
-            units: units
-        limitUp:
-          nano: 6
-          units: units
-        figi: figi
-        time: 2000-01-23T04:56:07.000+00:00
-        limitDown:
-          nano: 6
-          units: units
-        isConsistent: true
-      properties:
-        figi:
-          type: string
-        depth:
-          format: int32
-          type: integer
-        isConsistent:
-          type: boolean
-        bids:
-          items:
-            $ref: '#/components/schemas/v1Order'
-          type: array
-        asks:
-          items:
-            $ref: '#/components/schemas/v1Order'
-          type: array
-        time:
-          format: date-time
-          type: string
-        limitUp:
-          $ref: '#/components/schemas/v1Quotation'
-        limitDown:
-          $ref: '#/components/schemas/v1Quotation'
-      type: object
-    v1OrderBookInstrument:
-      description: Запрос подписки на стаканы.
-      properties:
-        figi:
-          type: string
-        depth:
-          format: int32
-          type: integer
-      type: object
-    v1OrderBookSubscription:
-      description: Статус подписки.
-      example:
-        depth: 0
-        figi: figi
-      properties:
-        figi:
-          type: string
-        depth:
-          format: int32
-          type: integer
-        subscriptionStatus:
-          $ref: '#/components/schemas/v1SubscriptionStatus'
-      type: object
     v1OrderDirection:
       default: ORDER_DIRECTION_UNSPECIFIED
       description: Направление операции.
@@ -7544,6 +7289,7 @@ components:
       - ORDER_DIRECTION_UNSPECIFIED
       - ORDER_DIRECTION_BUY
       - ORDER_DIRECTION_SELL
+      title: Направление операции
       type: string
     v1OrderExecutionReportStatus:
       default: EXECUTION_REPORT_STATUS_UNSPECIFIED
@@ -7731,17 +7477,8 @@ components:
       - ORDER_TYPE_UNSPECIFIED
       - ORDER_TYPE_LIMIT
       - ORDER_TYPE_MARKET
+      title: Тип заявки
       type: string
-    v1Ping:
-      description: Проверка активности стрима.
-      example:
-        time: 2000-01-23T04:56:07.000+00:00
-      properties:
-        time:
-          description: Время проверки.
-          format: date-time
-          type: string
-      type: object
     v1PortfolioPosition:
       description: Позиции портфеля.
       example:
@@ -7913,116 +7650,6 @@ components:
             $ref: '#/components/schemas/v1PortfolioPosition'
           type: array
       type: object
-    v1PortfolioSubscriptionResult:
-      description: Объект результата подписки.
-      example:
-        accounts:
-        - accountId: accountId
-        - accountId: accountId
-      properties:
-        accounts:
-          items:
-            $ref: '#/components/schemas/v1AccountSubscriptionStatus'
-          type: array
-      type: object
-    v1PortfolioSubscriptionStatus:
-      default: PORTFOLIO_SUBSCRIPTION_STATUS_UNSPECIFIED
-      description: Результат подписки.
-      enum:
-      - PORTFOLIO_SUBSCRIPTION_STATUS_UNSPECIFIED
-      - PORTFOLIO_SUBSCRIPTION_STATUS_SUCCESS
-      - PORTFOLIO_SUBSCRIPTION_STATUS_ACCOUNT_NOT_FOUND
-      - PORTFOLIO_SUBSCRIPTION_STATUS_INTERNAL_ERROR
-      type: string
-    v1PositionData:
-      description: Данные о позиции портфеля.
-      example:
-        date: 2000-01-23T04:56:07.000+00:00
-        accountId: accountId
-        money:
-        - availableValue:
-            nano: 5
-            currency: currency
-            units: units
-          blockedValue:
-            nano: 5
-            currency: currency
-            units: units
-        - availableValue:
-            nano: 5
-            currency: currency
-            units: units
-          blockedValue:
-            nano: 5
-            currency: currency
-            units: units
-        options:
-        - blocked: blocked
-          balance: balance
-          instrumentUid: instrumentUid
-          positionUid: positionUid
-        - blocked: blocked
-          balance: balance
-          instrumentUid: instrumentUid
-          positionUid: positionUid
-        futures:
-        - blocked: blocked
-          balance: balance
-          instrumentUid: instrumentUid
-          positionUid: positionUid
-          figi: figi
-        - blocked: blocked
-          balance: balance
-          instrumentUid: instrumentUid
-          positionUid: positionUid
-          figi: figi
-        securities:
-        - instrumentType: instrumentType
-          blocked: blocked
-          balance: balance
-          instrumentUid: instrumentUid
-          positionUid: positionUid
-          figi: figi
-          exchangeBlocked: true
-        - instrumentType: instrumentType
-          blocked: blocked
-          balance: balance
-          instrumentUid: instrumentUid
-          positionUid: positionUid
-          figi: figi
-          exchangeBlocked: true
-      properties:
-        accountId:
-          type: string
-        money:
-          items:
-            $ref: '#/components/schemas/v1PositionsMoney'
-          type: array
-        securities:
-          items:
-            $ref: '#/components/schemas/v1PositionsSecurities'
-          type: array
-        futures:
-          items:
-            $ref: '#/components/schemas/v1PositionsFutures'
-          type: array
-        options:
-          items:
-            $ref: '#/components/schemas/v1PositionsOptions'
-          type: array
-        date:
-          format: date-time
-          type: string
-      type: object
-    v1PositionsAccountSubscriptionStatus:
-      default: POSITIONS_SUBSCRIPTION_STATUS_UNSPECIFIED
-      description: Результат подписки.
-      enum:
-      - POSITIONS_SUBSCRIPTION_STATUS_UNSPECIFIED
-      - POSITIONS_SUBSCRIPTION_STATUS_SUCCESS
-      - POSITIONS_SUBSCRIPTION_STATUS_ACCOUNT_NOT_FOUND
-      - POSITIONS_SUBSCRIPTION_STATUS_INTERNAL_ERROR
-      type: string
     v1PositionsFutures:
       description: Баланс фьючерса.
       example:
@@ -8191,28 +7818,6 @@ components:
           type: boolean
         instrumentType:
           type: string
-      type: object
-    v1PositionsSubscriptionResult:
-      description: Объект результата подписки.
-      example:
-        accounts:
-        - accountId: accountId
-        - accountId: accountId
-      properties:
-        accounts:
-          items:
-            $ref: '#/components/schemas/v1PositionsSubscriptionStatus'
-          type: array
-      type: object
-    v1PositionsSubscriptionStatus:
-      description: Счет клиента.
-      example:
-        accountId: accountId
-      properties:
-        accountId:
-          type: string
-        subscriptionStatus:
-          $ref: '#/components/schemas/v1PositionsAccountSubscriptionStatus'
       type: object
     v1PostOrderRequest:
       description: Запрос выставления торгового поручения.
@@ -8840,165 +8445,6 @@ components:
       - SP_TYPE_DELIVERABLE
       - SP_TYPE_NON_DELIVERABLE
       type: string
-    v1SubscribeCandlesRequest:
-      description: subscribeCandles | Изменения статуса подписки на свечи.
-      properties:
-        subscriptionAction:
-          $ref: '#/components/schemas/v1SubscriptionAction'
-        instruments:
-          items:
-            $ref: '#/components/schemas/v1CandleInstrument'
-          type: array
-        waitingClose:
-          type: boolean
-      type: object
-    v1SubscribeCandlesResponse:
-      description: Результат изменения статус подписки на свечи.
-      example:
-        candlesSubscriptions:
-        - figi: figi
-        - figi: figi
-        trackingId: trackingId
-      properties:
-        trackingId:
-          type: string
-        candlesSubscriptions:
-          items:
-            $ref: '#/components/schemas/v1CandleSubscription'
-          type: array
-      type: object
-    v1SubscribeInfoRequest:
-      description: Изменение статуса подписки на торговый статус инструмента.
-      properties:
-        subscriptionAction:
-          $ref: '#/components/schemas/v1SubscriptionAction'
-        instruments:
-          items:
-            $ref: '#/components/schemas/v1InfoInstrument'
-          type: array
-      type: object
-    v1SubscribeInfoResponse:
-      description: Результат изменения статуса подписки на торговый статус.
-      example:
-        infoSubscriptions:
-        - figi: figi
-        - figi: figi
-        trackingId: trackingId
-      properties:
-        trackingId:
-          type: string
-        infoSubscriptions:
-          items:
-            $ref: '#/components/schemas/v1InfoSubscription'
-          type: array
-      type: object
-    v1SubscribeLastPriceRequest:
-      description: Изменение статуса подписки на последнюю цену инструмента.
-      properties:
-        subscriptionAction:
-          $ref: '#/components/schemas/v1SubscriptionAction'
-        instruments:
-          items:
-            $ref: '#/components/schemas/v1LastPriceInstrument'
-          type: array
-      type: object
-    v1SubscribeLastPriceResponse:
-      description: Результат изменения статуса подписки на последнюю цену.
-      example:
-        lastPriceSubscriptions:
-        - figi: figi
-        - figi: figi
-        trackingId: trackingId
-      properties:
-        trackingId:
-          type: string
-        lastPriceSubscriptions:
-          items:
-            $ref: '#/components/schemas/v1LastPriceSubscription'
-          type: array
-      type: object
-    v1SubscribeOrderBookRequest:
-      description: Запрос на изменение статуса подписки на стаканы.
-      properties:
-        subscriptionAction:
-          $ref: '#/components/schemas/v1SubscriptionAction'
-        instruments:
-          items:
-            $ref: '#/components/schemas/v1OrderBookInstrument'
-          type: array
-      type: object
-    v1SubscribeOrderBookResponse:
-      description: Результат изменения статуса подписки на стаканы.
-      example:
-        orderBookSubscriptions:
-        - depth: 0
-          figi: figi
-        - depth: 0
-          figi: figi
-        trackingId: trackingId
-      properties:
-        trackingId:
-          type: string
-        orderBookSubscriptions:
-          items:
-            $ref: '#/components/schemas/v1OrderBookSubscription'
-          type: array
-      type: object
-    v1SubscribeTradesRequest:
-      description: Изменение статуса подписки на поток обезличенных сделок.
-      properties:
-        subscriptionAction:
-          $ref: '#/components/schemas/v1SubscriptionAction'
-        instruments:
-          items:
-            $ref: '#/components/schemas/v1TradeInstrument'
-          type: array
-      type: object
-    v1SubscribeTradesResponse:
-      description: Результат изменения статуса подписки на поток обезличенных сделок.
-      example:
-        tradeSubscriptions:
-        - figi: figi
-        - figi: figi
-        trackingId: trackingId
-      properties:
-        trackingId:
-          type: string
-        tradeSubscriptions:
-          items:
-            $ref: '#/components/schemas/v1TradeSubscription'
-          type: array
-      type: object
-    v1SubscriptionAction:
-      default: SUBSCRIPTION_ACTION_UNSPECIFIED
-      description: Тип операции со списком подписок.
-      enum:
-      - SUBSCRIPTION_ACTION_UNSPECIFIED
-      - SUBSCRIPTION_ACTION_SUBSCRIBE
-      - SUBSCRIPTION_ACTION_UNSUBSCRIBE
-      type: string
-    v1SubscriptionInterval:
-      default: SUBSCRIPTION_INTERVAL_UNSPECIFIED
-      description: Интервал свечи.
-      enum:
-      - SUBSCRIPTION_INTERVAL_UNSPECIFIED
-      - SUBSCRIPTION_INTERVAL_ONE_MINUTE
-      - SUBSCRIPTION_INTERVAL_FIVE_MINUTES
-      type: string
-    v1SubscriptionStatus:
-      default: SUBSCRIPTION_STATUS_UNSPECIFIED
-      description: Результат подписки.
-      enum:
-      - SUBSCRIPTION_STATUS_UNSPECIFIED
-      - SUBSCRIPTION_STATUS_SUCCESS
-      - SUBSCRIPTION_STATUS_INSTRUMENT_NOT_FOUND
-      - SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID
-      - SUBSCRIPTION_STATUS_DEPTH_IS_INVALID
-      - SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID
-      - SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED
-      - SUBSCRIPTION_STATUS_INTERNAL_ERROR
-      - SUBSCRIPTION_STATUS_TOO_MANY_REQUESTS
-      type: string
     v1Trade:
       description: Информация о сделке.
       example:
@@ -9030,22 +8476,6 @@ components:
       - TRADE_DIRECTION_BUY
       - TRADE_DIRECTION_SELL
       type: string
-    v1TradeInstrument:
-      description: Запрос подписки на поток обезличенных сделок.
-      properties:
-        figi:
-          type: string
-      type: object
-    v1TradeSubscription:
-      description: Статус подписки.
-      example:
-        figi: figi
-      properties:
-        figi:
-          type: string
-        subscriptionStatus:
-          $ref: '#/components/schemas/v1SubscriptionStatus'
-      type: object
     v1TradingDay:
       description: Информация о времени торгов.
       example:
@@ -9152,6 +8582,7 @@ components:
         to:
           format: date-time
           type: string
+      title: Запрос расписания торгов
       type: object
     v1TradingSchedulesResponse:
       description: Список торговых площадок.
@@ -9218,26 +8649,7 @@ components:
           items:
             $ref: '#/components/schemas/v1TradingSchedule'
           type: array
-      type: object
-    v1TradingStatus:
-      description: Пакет изменения торгового статуса.
-      example:
-        limitOrderAvailableFlag: true
-        marketOrderAvailableFlag: true
-        figi: figi
-        time: 2000-01-23T04:56:07.000+00:00
-      properties:
-        figi:
-          type: string
-        tradingStatus:
-          $ref: '#/components/schemas/v1SecurityTradingStatus'
-        time:
-          format: date-time
-          type: string
-        limitOrderAvailableFlag:
-          type: boolean
-        marketOrderAvailableFlag:
-          type: boolean
+      title: Список торговых площадок
       type: object
     v1UnaryLimit:
       description: Лимит unary-методов.

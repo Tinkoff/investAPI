@@ -48,10 +48,10 @@ service OperationsStreamService {
 //Запрос получения списка операций по счёту.
 message OperationsRequest {
   string account_id = 1; //Идентификатор счёта клиента.
-  google.protobuf.Timestamp from = 2; //Начало периода (по UTC).
-  google.protobuf.Timestamp to = 3; //Окончание периода (по UTC).
-  OperationState state = 4; //Статус запрашиваемых операций.
-  string figi = 5; //Figi-идентификатор инструмента для фильтрации.
+  optional google.protobuf.Timestamp from = 2; //Начало периода (по UTC).
+  optional google.protobuf.Timestamp to = 3; //Окончание периода (по UTC).
+  optional OperationState state = 4; //Статус запрашиваемых операций.
+  optional string figi = 5; //Figi-идентификатор инструмента для фильтрации.
 }
 
 //Список операций.

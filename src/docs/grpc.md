@@ -17,7 +17,7 @@ bidirectional-stream [сервиса котировок](/investAPI/head-marketd
 каждого запроса.
 
 Формат заголовка: 
-`Authorization: Bearer [токен доступ]`
+`Authorization: Bearer [токен доступа]`
 
 Например:
 `Authorization: Bearer t.QtEo8ahkNFX4RTpbqp0u4z4GDZq27HzUp6AotJASBx7_DVqmqZMHfM2Cy7JmUjS80boI9eVg`
@@ -90,7 +90,7 @@ Kreya позволяет увидеть служебные заголовки о
 Интерфейс утилиты достаточно прост, для старта работы требуется указать домен сервиса и импортировать
 все proto-файлы. 
 
-1. Импортируйте скаченные poroto-контракты сервиса.
+1. Импортируйте скаченные proto-контракты сервиса.
 ![Интерфейс BloomRPC](/investAPI/img/Bloom-1.png "Интерфейс BloomRPC")
 2. Укажите адрес сервера invest-public-api.tinkoff.ru:443 и заполните поле metadata значением (подставьте своё значение [токена доступа](/investAPI/token/)).
 

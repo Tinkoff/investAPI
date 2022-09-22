@@ -1,5 +1,7 @@
 #Торговые статусы инструментов и расписание торгов
 
+Рекомендуем смотреть актуальную информацию по режимам и статусам торгов на сайтах [Московской биржи](https://www.moex.com/) и [СПБ биржи](https://spbexchange.ru/).
+
 Получить актуальный торговый статус инструмента можно методом [GetTradingStatus](/investAPI/marketdata#gettradingstatus)
 или подпиской [Info](/investAPI/marketdata#subscribeinforequest) в рамках 
 [stream-соединения сервиса котировок](/investAPI/marketdata#marketdatastream). 

@@ -37,6 +37,7 @@ nav:
   - "Правила обработки корпоративных действий": faq_corp_action.md
   - "Как ускорить работу с биржей": speedup.md
   - "Дедлайны запросов": deadlines.md
+  - "SLA": sla.md
 - Ответы на частые вопросы: faq.md
 - Языки программирования:
   - Python: faq_python.md
@@ -50,6 +51,7 @@ nav:
   - Описание: head-instruments.md
   - Методы: instruments.md
   - FAQ: faq_instruments.md
+  - Голоссарий: glossary-instrument.md
 - Сервис торговых поручений:
   - Описание: head-orders.md
   - Методы: orders.md

@@ -42,6 +42,10 @@
 
 Так же в TINKOFF INVEST API для получения списка операций существует метод [getOperations](/investAPI/operations#getoperations), являющийся более старой версией метода [getOperationsByCursor](/investAPI/operations#getoperationsbycursor).
 Однако, метод [getOperationsByCursor](/investAPI/operations#getoperationsbycursor) является более **предпочтительным** для использования.
+Для вызова метода [getOperations](/investAPI/operations#getoperations) во входных параметрах достаточно указать только **`account_id`**.
+
+**Важно!!!** Метод [getOperations](/investAPI/operations#getoperations) возвращает только последнюю тысячу операций.
+
 
 ###Как понять какие бумаги в портфеле заблокированы по решению ЦБ?
 

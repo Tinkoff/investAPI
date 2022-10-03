@@ -10,10 +10,8 @@ servers:
   description: "Работа с биржей"
 - url: https://sandbox-invest-public-api.tinkoff.ru/rest/
   description: "Работа в песочнице"
-securitySchemes:
-    Bearer:
-      type: http
-      scheme: bearer
+security:
+- Bearer: []
 externalDocs:
   description: Документация Tinkoff Invest API
   url: https://tinkoff.github.io/investAPI/
@@ -9482,4 +9480,8 @@ components:
             $ref: '#/components/schemas/v1MoneyValue'
           type: array
       type: object
-x-original-swagger-version: "2.0"
+securitySchemes:
+    Bearer:
+      type: http
+      scheme: bearer
+

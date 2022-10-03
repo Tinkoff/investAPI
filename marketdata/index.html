@@ -2392,22 +2392,22 @@
 <tr>
 <td>open</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена открытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Цена открытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
 </tr>
 <tr>
 <td>high</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Максимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Максимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
 </tr>
 <tr>
 <td>low</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Минимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Минимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
 </tr>
 <tr>
 <td>close</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена закрытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Цена закрытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
 </tr>
 <tr>
 <td>volume</td>
@@ -2423,6 +2423,11 @@
 <td>last_trade_ts</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
 <td>Время последней сделки, вошедшей в свечу в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Uid инструмента</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2453,6 +2458,11 @@
 <td>interval</td>
 <td><a href="#subscriptioninterval">SubscriptionInterval</a></td>
 <td>Интервал свечей.</td>
+</tr>
+<tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента, принимает значение figi или instrument_uid</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2488,6 +2498,11 @@
 <td>subscription_status</td>
 <td><a href="#subscriptionstatus">SubscriptionStatus</a></td>
 <td>Статус подписки.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Uid инструмента</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2528,6 +2543,11 @@
 <td>interval</td>
 <td><a href="#candleinterval">CandleInterval</a></td>
 <td>Интервал запрошенных свечей.</td>
+</tr>
+<tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента, принимает значение figi или instrument_uid</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2630,6 +2650,11 @@
 <td>Массив figi-идентификаторов инструментов.</td>
 </tr>
 <tr>
+<td>instrument_id</td>
+<td>Массив объектов <a href="#string">string</a></td>
+<td>Идентификатор инструмента, принимает значение figi или instrument_uid</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -2688,6 +2713,11 @@
 <td>to</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
 <td>Окончание запрашиваемого периода в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента, принимает значение figi или instrument_uid</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2749,6 +2779,11 @@
 <td>Глубина стакана.</td>
 </tr>
 <tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента, принимает значение figi или instrument_uid</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -2791,22 +2826,22 @@
 <tr>
 <td>last_price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена последней сделки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Цена последней сделки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
 </tr>
 <tr>
 <td>close_price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена закрытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Цена закрытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
 </tr>
 <tr>
 <td>limit_up</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Верхний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Верхний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
 </tr>
 <tr>
 <td>limit_down</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Нижний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Нижний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
 </tr>
 <tr>
 <td>last_price_ts</td>
@@ -2822,6 +2857,11 @@
 <td>orderbook_ts</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
 <td>Время формирования стакана на бирже.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Uid инструмента</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2847,6 +2887,11 @@
 <td>figi</td>
 <td><a href="#string">string</a></td>
 <td>Идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента, принимает значение figi или instrument_uid</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2894,6 +2939,11 @@
 <td>Признак доступности торгов через API.</td>
 </tr>
 <tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Uid инструмента</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -2916,22 +2966,22 @@
 <tr>
 <td>open</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена открытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Цена открытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
 </tr>
 <tr>
 <td>high</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Максимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Максимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
 </tr>
 <tr>
 <td>low</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Минимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Минимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
 </tr>
 <tr>
 <td>close</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена закрытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Цена закрытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
 </tr>
 <tr>
 <td>volume</td>
@@ -2974,6 +3024,11 @@
 <td>Figi-идентификатор инструмента.</td>
 </tr>
 <tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента, принимает значение figi или instrument_uid</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -3002,6 +3057,11 @@
 <td>subscription_status</td>
 <td><a href="#subscriptionstatus">SubscriptionStatus</a></td>
 <td>Статус подписки.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Uid инструмента</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3096,7 +3156,7 @@
 <tr>
 <td>price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Последняя цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Последняя цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
 </tr>
 <tr>
 <td>time</td>
@@ -3134,6 +3194,11 @@
 <td>Figi-идентификатор инструмента.</td>
 </tr>
 <tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента, принимает значение figi или instrument_uid</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -3162,6 +3227,11 @@
 <td>subscription_status</td>
 <td><a href="#subscriptionstatus">SubscriptionStatus</a></td>
 <td>Статус подписки.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Uid инструмента</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3355,7 +3425,7 @@
 <tr>
 <td>price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
 </tr>
 <tr>
 <td>quantity</td>
@@ -3415,12 +3485,17 @@
 <tr>
 <td>limit_up</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Верхний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Верхний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
 </tr>
 <tr>
 <td>limit_down</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Нижний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Нижний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Uid инструмента</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3451,6 +3526,11 @@
 <td>depth</td>
 <td><a href="#int32">int32</a></td>
 <td>Глубина стакана.</td>
+</tr>
+<tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента, принимает значение figi или instrument_uid</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3486,6 +3566,11 @@
 <td>subscription_status</td>
 <td><a href="#subscriptionstatus">SubscriptionStatus</a></td>
 <td>Статус подписки.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Uid инструмента</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3825,7 +3910,7 @@
 <tr>
 <td>price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
 </tr>
 <tr>
 <td>quantity</td>
@@ -3836,6 +3921,11 @@
 <td>time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
 <td>Время сделки в часовом поясе UTC по времени биржи.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Uid инструмента</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3861,6 +3951,11 @@
 <td>figi</td>
 <td><a href="#string">string</a></td>
 <td>Figi-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента, принимает значение figi или instrument_uid</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3891,6 +3986,11 @@
 <td>subscription_status</td>
 <td><a href="#subscriptionstatus">SubscriptionStatus</a></td>
 <td>Статус подписки.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Uid инструмента</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3936,6 +4036,11 @@
 <td>market_order_available_flag</td>
 <td><a href="#bool">bool</a></td>
 <td>Признак доступности выставления рыночной заявки по инструменту.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Uid инструмента</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>

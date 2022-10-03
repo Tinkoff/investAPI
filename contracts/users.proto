@@ -102,6 +102,9 @@ message GetMarginAttributesResponse {
 
   // Объем недостающих средств. Разница между стартовой маржой и ликвидной стоимости портфеля.
   MoneyValue amount_of_missing_funds = 5;
+
+  // Скорректированная маржа.
+  MoneyValue corrected_margin = 6;
 }
 
 //Запрос текущих лимитов пользователя.

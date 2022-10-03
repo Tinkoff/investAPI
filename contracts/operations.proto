@@ -99,6 +99,7 @@ message PortfolioResponse {
   MoneyValue total_amount_futures = 5; //Общая стоимость фьючерсов в портфеле в рублях.
   Quotation expected_yield = 6; //Текущая относительная доходность портфеля, в %.
   repeated PortfolioPosition positions = 7; //Список позиций портфеля.
+  string account_id = 8; //Идентификатор счёта пользователя.
 }
 
 //Запрос позиций портфеля по счёту.
@@ -292,6 +293,8 @@ enum OperationType {
   OPERATION_TYPE_TAX_REPO_REFUND_PROGRESSIVE = 42; //Возврат налога по сделкам РЕПО по ставке 15%.
   OPERATION_TYPE_DIV_EXT = 43; //Выплата дивидендов на карту.
   OPERATION_TYPE_TAX_CORRECTION_COUPON = 44; //Корректировка налога по купонам.
+  OPERATION_TYPE_CASH_FEE = 45; //Комиссия за валютный остаток.
+  OPERATION_TYPE_OUT_FEE = 46; //Комиссия за вывод валюты с брокерского счета.
 }
 
 message GetDividendsForeignIssuerRequest {

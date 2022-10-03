@@ -103,6 +103,7 @@ enum SubscriptionInterval {
 message CandleInstrument {
   string figi = 1; //Figi-идентификатор инструмента.
   SubscriptionInterval interval = 2; //Интервал свечей.
+  string instrument_id = 3; //Идентификатор инструмента, принимает значение figi или instrument_uid
 }
 
 //Результат изменения статус подписки на свечи.
@@ -116,6 +117,7 @@ message CandleSubscription {
   string figi = 1; //Figi-идентификатор инструмента.
   SubscriptionInterval interval = 2; //Интервал свечей.
   SubscriptionStatus subscription_status = 3; //Статус подписки.
+  string instrument_uid = 4; //Uid инструмента
 }
 
 //Результат подписки.
@@ -141,6 +143,7 @@ message SubscribeOrderBookRequest {
 message OrderBookInstrument {
   string figi = 1; //Figi-идентификатор инструмента.
   int32 depth = 2; //Глубина стакана.
+  string instrument_id = 3; //Идентификатор инструмента, принимает значение figi или instrument_uid
 }
 
 //Результат изменения статуса подписки на стаканы.
@@ -154,6 +157,7 @@ message OrderBookSubscription {
   string figi = 1; //Figi-идентификатор инструмента.
   int32 depth = 2; //Глубина стакана.
   SubscriptionStatus subscription_status = 3; //Статус подписки.
+  string instrument_uid = 4; //Uid инструмента
 }
 
 //Изменение статуса подписки на поток обезличенных сделок.
@@ -165,6 +169,7 @@ message SubscribeTradesRequest {
 //Запрос подписки на поток обезличенных сделок.
 message TradeInstrument {
   string figi = 1; //Figi-идентификатор инструмента.
+  string instrument_id = 2; //Идентификатор инструмента, принимает значение figi или instrument_uid
 }
 
 //Результат изменения статуса подписки на поток обезличенных сделок.
@@ -177,6 +182,7 @@ message SubscribeTradesResponse {
 message TradeSubscription {
   string figi = 1; //Figi-идентификатор инструмента.
   SubscriptionStatus subscription_status = 2; //Статус подписки.
+  string instrument_uid = 3; //Uid инструмента
 }
 
 //Изменение статуса подписки на торговый статус инструмента.
@@ -188,6 +194,7 @@ message SubscribeInfoRequest {
 //Запрос подписки на торговый статус.
 message InfoInstrument {
   string figi = 1; //Figi-идентификатор инструмента.
+  string instrument_id = 2; //Идентификатор инструмента, принимает значение figi или instrument_uid
 }
 
 //Результат изменения статуса подписки на торговый статус.
@@ -200,6 +207,7 @@ message SubscribeInfoResponse {
 message InfoSubscription {
   string figi = 1; //Figi-идентификатор инструмента.
   SubscriptionStatus subscription_status = 2; //Статус подписки.
+  string instrument_uid = 3; //Uid инструмента
 }
 
 //Изменение статуса подписки на последнюю цену инструмента.
@@ -211,6 +219,7 @@ message SubscribeLastPriceRequest {
 //Запрос подписки на последнюю цену.
 message LastPriceInstrument {
   string figi = 1; //Figi-идентификатор инструмента.
+  string instrument_id = 2; //Идентификатор инструмента, принимает значение figi или instrument_uid
 }
 
 //Результат изменения статуса подписки на последнюю цену.
@@ -223,19 +232,21 @@ message SubscribeLastPriceResponse {
 message LastPriceSubscription {
   string figi = 1; //Figi-идентификатор инструмента.
   SubscriptionStatus subscription_status = 2; //Статус подписки.
+  string instrument_uid = 3; //Uid инструмента
 }
 
 //Пакет свечей в рамках стрима.
 message Candle {
   string figi = 1; //Figi-идентификатор инструмента.
   SubscriptionInterval interval = 2; //Интервал свечи.
-  Quotation open = 3; //Цена открытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
-  Quotation high = 4; //Максимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
-  Quotation low = 5; //Минимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
-  Quotation close = 6; //Цена закрытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
+  Quotation open = 3; //Цена открытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать [информацию со страницы](https://tinkoff.github.io/investAPI/faq_marketdata/)
+  Quotation high = 4; //Максимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать [информацию со страницы](https://tinkoff.github.io/investAPI/faq_marketdata/)
+  Quotation low = 5; //Минимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать [информацию со страницы](https://tinkoff.github.io/investAPI/faq_marketdata/)
+  Quotation close = 6; //Цена закрытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать [информацию со страницы](https://tinkoff.github.io/investAPI/faq_marketdata/)
   int64 volume = 7; //Объём сделок в лотах.
   google.protobuf.Timestamp time = 8; //Время начала интервала свечи в часовом поясе UTC.
   google.protobuf.Timestamp last_trade_ts = 9; //Время последней сделки, вошедшей в свечу в часовом поясе UTC.
+  string instrument_uid = 10; //Uid инструмента
 }
 
 //Пакет стаканов в рамках стрима.
@@ -246,13 +257,14 @@ message OrderBook {
   repeated Order bids = 4; //Массив предложений.
   repeated Order asks = 5; //Массив спроса.
   google.protobuf.Timestamp time = 6; //Время формирования стакана в часовом поясе UTC по времени биржи.
-  Quotation limit_up = 7; //Верхний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
-  Quotation limit_down = 8; //Нижний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
+  Quotation limit_up = 7; //Верхний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать [информацию со страницы](https://tinkoff.github.io/investAPI/faq_marketdata/)
+  Quotation limit_down = 8; //Нижний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать [информацию со страницы](https://tinkoff.github.io/investAPI/faq_marketdata/)
+  string instrument_uid = 9; //Uid инструмента
 }
 
 //Массив предложений/спроса.
 message Order {
-  Quotation price = 1; //Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
+  Quotation price = 1; //Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать [информацию со страницы](https://tinkoff.github.io/investAPI/faq_marketdata/)
   int64 quantity = 2; //Количество в лотах.
 }
 
@@ -260,9 +272,10 @@ message Order {
 message Trade {
   string figi = 1; //Figi-идентификатор инструмента.
   TradeDirection direction = 2; //Направление сделки.
-  Quotation price = 3; //Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
+  Quotation price = 3; //Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать [информацию со страницы](https://tinkoff.github.io/investAPI/faq_marketdata/)
   int64 quantity = 4; //Количество лотов.
   google.protobuf.Timestamp time = 5; //Время сделки в часовом поясе UTC по времени биржи.
+  string instrument_uid = 6; //Uid инструмента
 }
 
 //Направление сделки.
@@ -279,6 +292,7 @@ message TradingStatus {
   google.protobuf.Timestamp time = 3; //Время изменения торгового статуса в часовом поясе UTC.
   bool limit_order_available_flag = 4; //Признак доступности выставления лимитной заявки по инструменту.
   bool market_order_available_flag = 5; //Признак доступности выставления рыночной заявки по инструменту.
+  string instrument_uid = 6; //Uid инструмента
 }
 
 //Запрос исторических свечей.
@@ -287,6 +301,7 @@ message GetCandlesRequest {
   google.protobuf.Timestamp from = 2; //Начало запрашиваемого периода в часовом поясе UTC.
   google.protobuf.Timestamp to = 3; //Окончание запрашиваемого периода в часовом поясе UTC.
   CandleInterval interval = 4; //Интервал запрошенных свечей.
+  string instrument_id = 5; //Идентификатор инструмента, принимает значение figi или instrument_uid
 }
 
 //Интервал свечей.
@@ -306,10 +321,10 @@ message GetCandlesResponse {
 
 //Информация о свече.
 message HistoricCandle {
-  Quotation open = 1; //Цена открытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
-  Quotation high = 2; //Максимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
-  Quotation low = 3; //Минимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
-  Quotation close = 4; //Цена закрытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
+  Quotation open = 1; //Цена открытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать [информацию со страницы](https://tinkoff.github.io/investAPI/faq_marketdata/)
+  Quotation high = 2; //Максимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать [информацию со страницы](https://tinkoff.github.io/investAPI/faq_marketdata/)
+  Quotation low = 3; //Минимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать [информацию со страницы](https://tinkoff.github.io/investAPI/faq_marketdata/)
+  Quotation close = 4; //Цена закрытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать [информацию со страницы](https://tinkoff.github.io/investAPI/faq_marketdata/)
   int64 volume = 5; //Объём торгов в лотах.
   google.protobuf.Timestamp time = 6; //Время свечи в часовом поясе UTC.
   bool is_complete = 7; //Признак завершённости свечи. **false** значит, свеча за текущие интервал ещё сформирована не полностью.
@@ -318,6 +333,7 @@ message HistoricCandle {
 //Запрос получения последних цен.
 message GetLastPricesRequest {
   repeated string figi = 1; //Массив figi-идентификаторов инструментов.
+  repeated string instrument_id = 2; //Идентификатор инструмента, принимает значение figi или instrument_uid
 }
 
 //Список последних цен.
@@ -328,7 +344,7 @@ message GetLastPricesResponse {
 //Информация о цене.
 message LastPrice {
   string figi = 1; //Figi инструмента.
-  Quotation price = 2; //Последняя цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
+  Quotation price = 2; //Последняя цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать [информацию со страницы](https://tinkoff.github.io/investAPI/faq_marketdata/)
   google.protobuf.Timestamp time = 3; //Время получения последней цены в часовом поясе UTC по времени биржи.
   string instrument_uid = 11; //Uid инструмента
 }
@@ -337,6 +353,7 @@ message LastPrice {
 message GetOrderBookRequest {
   string figi = 1; //Figi-идентификатор инструмента.
   int32 depth = 2; //Глубина стакана.
+  string instrument_id = 3; //Идентификатор инструмента, принимает значение figi или instrument_uid
 }
 
 //Информация о стакане.
@@ -345,18 +362,20 @@ message GetOrderBookResponse {
   int32 depth = 2; //Глубина стакана.
   repeated Order bids = 3; //Множество пар значений на покупку.
   repeated Order asks = 4; //Множество пар значений на продажу.
-  Quotation last_price = 5; //Цена последней сделки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
-  Quotation close_price = 6; //Цена закрытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
-  Quotation limit_up = 7; //Верхний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
-  Quotation limit_down = 8; //Нижний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
+  Quotation last_price = 5; //Цена последней сделки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать [информацию со страницы](https://tinkoff.github.io/investAPI/faq_marketdata/)
+  Quotation close_price = 6; //Цена закрытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать [информацию со страницы](https://tinkoff.github.io/investAPI/faq_marketdata/)
+  Quotation limit_up = 7; //Верхний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать [информацию со страницы](https://tinkoff.github.io/investAPI/faq_marketdata/)
+  Quotation limit_down = 8; //Нижний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать [информацию со страницы](https://tinkoff.github.io/investAPI/faq_marketdata/)
   google.protobuf.Timestamp last_price_ts = 21; //Время получения цены последней сделки.
   google.protobuf.Timestamp close_price_ts = 22; //Время получения цены закрытия.
   google.protobuf.Timestamp orderbook_ts = 23; //Время формирования стакана на бирже.
+  string instrument_uid = 9; //Uid инструмента
 }
 
 //Запрос получения торгового статуса.
 message GetTradingStatusRequest {
   string figi = 1; //Идентификатор инструмента.
+  string instrument_id = 2; //Идентификатор инструмента, принимает значение figi или instrument_uid
 }
 
 //Информация о торговом статусе.
@@ -366,6 +385,7 @@ message GetTradingStatusResponse {
   bool limit_order_available_flag = 3; //Признак доступности выставления лимитной заявки по инструменту.
   bool market_order_available_flag = 4; //Признак доступности выставления рыночной заявки по инструменту.
   bool api_trade_available_flag = 5; //Признак доступности торгов через API.
+  string instrument_uid = 6; //Uid инструмента
 }
 
 //Запрос обезличенных сделок за последний час.
@@ -373,6 +393,7 @@ message GetLastTradesRequest {
   string figi = 1; //Figi-идентификатор инструмента
   google.protobuf.Timestamp from = 2; //Начало запрашиваемого периода в часовом поясе UTC.
   google.protobuf.Timestamp to = 3; //Окончание запрашиваемого периода в часовом поясе UTC.
+  string instrument_id = 4; //Идентификатор инструмента, принимает значение figi или instrument_uid
 }
 
 //Обезличенных сделок за последний час.

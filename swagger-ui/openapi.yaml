@@ -800,8 +800,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
-      summary: Метод запроса последних обезличенных сделок по инструменту на текущий
-        торговый день с максимальным интервалом в 1 час.
+      summary: Метод запроса обезличенных сделок за последний час.
       tags:
       - MarketDataService
       x-codegen-request-body-name: body
@@ -1273,6 +1272,32 @@ paths:
       tags:
       - SandboxService
       x-codegen-request-body-name: body
+  /tinkoff.public.invest.api.contract.v1.SandboxService/GetSandboxOperationsByCursor:
+    post:
+      operationId: SandboxService_GetSandboxOperationsByCursor
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1GetOperationsByCursorRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1GetOperationsByCursorResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Метод получения операций в песочнице по номеру счета с пагинацией.
+      tags:
+      - SandboxService
+      x-codegen-request-body-name: body
   /tinkoff.public.invest.api.contract.v1.SandboxService/GetSandboxOrderState:
     post:
       operationId: SandboxService_GetSandboxOrderState
@@ -1689,57 +1714,9 @@ paths:
       tags:
       - UsersService
       x-codegen-request-body-name: body
-  /history-data:
-    get:
-      operationId: MarketDataService_GetHistoryData
-      parameters:
-      - name: figi
-        in: query
-        description: Figi идентификатор инструмента
-        required: true
-        schema:
-          type: string
-        example: BBG00QPYJ5H0
-      - name: year
-        in: query
-        description: Год исторических данных
-        required: true
-        schema:
-          type: integer
-          minimum: 2017
-        example: 2022
-      responses:
-        "200":
-          description: Zip-архив, содержащий исторические данные
-          content:
-            application/octet-stream:
-              schema:
-                type: string
-                format: binary
-        default:
-          description: Ответ на запрос выгрузки
-          headers:
-            x-tracking-id:
-              description: Идентификатор отслеживания запроса
-              required: true
-              schema:
-                type: string
-            code:
-              description: Код ошибки
-              schema:
-                type: string
-            message:
-              description: Описание ошибки
-              schema:
-                type: string
-      summary: Получение исторических свечей за год
-      tags:
-        - MarketDataService
 components:
   schemas:
     protobufAny:
-      additionalProperties:
-        type: object
       example:
         typeUrl: typeUrl
         value: value
@@ -1818,6 +1795,16 @@ components:
       - ACCOUNT_STATUS_OPEN
       - ACCOUNT_STATUS_CLOSED
       type: string
+    v1AccountSubscriptionStatus:
+      description: Счет клиента.
+      example:
+        accountId: accountId
+      properties:
+        accountId:
+          type: string
+        subscriptionStatus:
+          $ref: '#/components/schemas/v1PortfolioSubscriptionStatus'
+      type: object
     v1AccountType:
       default: ACCOUNT_TYPE_UNSPECIFIED
       description: Тип счёта.
@@ -2959,6 +2946,11 @@ components:
         classCode: classCode
         ticker: ticker
         couponQuantityPerYear: 1
+        forQualInvestorFlag: true
+        initialNominal:
+          nano: 5
+          currency: currency
+          units: units
         forIisFlag: true
         positionUid: positionUid
         apiTradeAvailableFlag: true
@@ -3032,6 +3024,8 @@ components:
           type: string
         nominal:
           $ref: '#/components/schemas/v1MoneyValue'
+        initialNominal:
+          $ref: '#/components/schemas/v1MoneyValue'
         stateRegDate:
           format: date-time
           type: string
@@ -3082,6 +3076,8 @@ components:
           type: string
         forIisFlag:
           type: boolean
+        forQualInvestorFlag:
+          type: boolean
         first1minCandleDate:
           format: date-time
           type: string
@@ -3124,6 +3120,11 @@ components:
           classCode: classCode
           ticker: ticker
           couponQuantityPerYear: 1
+          forQualInvestorFlag: true
+          initialNominal:
+            nano: 5
+            currency: currency
+            units: units
           forIisFlag: true
           positionUid: positionUid
           apiTradeAvailableFlag: true
@@ -3196,6 +3197,11 @@ components:
           classCode: classCode
           ticker: ticker
           couponQuantityPerYear: 1
+          forQualInvestorFlag: true
+          initialNominal:
+            nano: 5
+            currency: currency
+            units: units
           forIisFlag: true
           positionUid: positionUid
           apiTradeAvailableFlag: true
@@ -3260,6 +3266,11 @@ components:
           classCode: classCode
           ticker: ticker
           couponQuantityPerYear: 1
+          forQualInvestorFlag: true
+          initialNominal:
+            nano: 5
+            currency: currency
+            units: units
           forIisFlag: true
           positionUid: positionUid
           apiTradeAvailableFlag: true
@@ -3593,6 +3604,61 @@ components:
           format: date-time
           type: string
       type: object
+    v1Candle:
+      description: Пакет свечей в рамках стрима.
+      example:
+        volume: volume
+        high:
+          nano: 6
+          units: units
+        lastTradeTs: 2000-01-23T04:56:07.000+00:00
+        low:
+          nano: 6
+          units: units
+        instrumentUid: instrumentUid
+        figi: figi
+        time: 2000-01-23T04:56:07.000+00:00
+        close:
+          nano: 6
+          units: units
+        open:
+          nano: 6
+          units: units
+      properties:
+        figi:
+          type: string
+        interval:
+          $ref: '#/components/schemas/v1SubscriptionInterval'
+        open:
+          $ref: '#/components/schemas/v1Quotation'
+        high:
+          $ref: '#/components/schemas/v1Quotation'
+        low:
+          $ref: '#/components/schemas/v1Quotation'
+        close:
+          $ref: '#/components/schemas/v1Quotation'
+        volume:
+          format: int64
+          type: string
+        time:
+          format: date-time
+          type: string
+        lastTradeTs:
+          format: date-time
+          type: string
+        instrumentUid:
+          type: string
+      type: object
+    v1CandleInstrument:
+      description: Запрос изменения статус подписки на свечи.
+      properties:
+        figi:
+          type: string
+        interval:
+          $ref: '#/components/schemas/v1SubscriptionInterval'
+        instrumentId:
+          type: string
+      type: object
     v1CandleInterval:
       default: CANDLE_INTERVAL_UNSPECIFIED
       description: Интервал свечей.
@@ -3604,6 +3670,21 @@ components:
       - CANDLE_INTERVAL_HOUR
       - CANDLE_INTERVAL_DAY
       type: string
+    v1CandleSubscription:
+      description: Статус подписки на свечи.
+      example:
+        instrumentUid: instrumentUid
+        figi: figi
+      properties:
+        figi:
+          type: string
+        interval:
+          $ref: '#/components/schemas/v1SubscriptionInterval'
+        subscriptionStatus:
+          $ref: '#/components/schemas/v1SubscriptionStatus'
+        instrumentUid:
+          type: string
+      type: object
     v1CloseSandboxAccountRequest:
       description: Запрос закрытия счёта в песочнице.
       properties:
@@ -3708,6 +3789,7 @@ components:
           buyAvailableFlag: true
           classCode: classCode
           ticker: ticker
+          forQualInvestorFlag: true
           forIisFlag: true
           positionUid: positionUid
           apiTradeAvailableFlag: true
@@ -3754,6 +3836,7 @@ components:
           buyAvailableFlag: true
           classCode: classCode
           ticker: ticker
+          forQualInvestorFlag: true
           forIisFlag: true
           positionUid: positionUid
           apiTradeAvailableFlag: true
@@ -3809,6 +3892,7 @@ components:
         buyAvailableFlag: true
         classCode: classCode
         ticker: ticker
+        forQualInvestorFlag: true
         forIisFlag: true
         positionUid: positionUid
         apiTradeAvailableFlag: true
@@ -3894,6 +3978,8 @@ components:
           type: string
         forIisFlag:
           type: boolean
+        forQualInvestorFlag:
+          type: boolean
         first1minCandleDate:
           format: date-time
           type: string
@@ -3926,6 +4012,7 @@ components:
           buyAvailableFlag: true
           classCode: classCode
           ticker: ticker
+          forQualInvestorFlag: true
           forIisFlag: true
           positionUid: positionUid
           apiTradeAvailableFlag: true
@@ -4130,6 +4217,7 @@ components:
         classCode: classCode
         focusType: focusType
         ticker: ticker
+        forQualInvestorFlag: true
         forIisFlag: true
         positionUid: positionUid
         apiTradeAvailableFlag: true
@@ -4228,6 +4316,8 @@ components:
           type: string
         forIisFlag:
           type: boolean
+        forQualInvestorFlag:
+          type: boolean
         first1minCandleDate:
           format: date-time
           type: string
@@ -4261,6 +4351,7 @@ components:
           classCode: classCode
           focusType: focusType
           ticker: ticker
+          forQualInvestorFlag: true
           forIisFlag: true
           positionUid: positionUid
           apiTradeAvailableFlag: true
@@ -4320,6 +4411,7 @@ components:
           classCode: classCode
           focusType: focusType
           ticker: ticker
+          forQualInvestorFlag: true
           forIisFlag: true
           positionUid: positionUid
           apiTradeAvailableFlag: true
@@ -4371,6 +4463,7 @@ components:
           classCode: classCode
           focusType: focusType
           ticker: ticker
+          forQualInvestorFlag: true
           forIisFlag: true
           positionUid: positionUid
           apiTradeAvailableFlag: true
@@ -4443,28 +4536,30 @@ components:
       example:
         instruments:
         - classCode: classCode
-          uid: uid
           ticker: ticker
           instrumentType: instrumentType
-          name: name
+          forQualInvestorFlag: true
           forIisFlag: true
           positionUid: positionUid
           figi: figi
-          first1dayCandleDate: 2000-01-23T04:56:07.000+00:00
           apiTradeAvailableFlag: true
           first1minCandleDate: 2000-01-23T04:56:07.000+00:00
+          uid: uid
+          name: name
+          first1dayCandleDate: 2000-01-23T04:56:07.000+00:00
           isin: isin
         - classCode: classCode
-          uid: uid
           ticker: ticker
           instrumentType: instrumentType
-          name: name
+          forQualInvestorFlag: true
           forIisFlag: true
           positionUid: positionUid
           figi: figi
-          first1dayCandleDate: 2000-01-23T04:56:07.000+00:00
           apiTradeAvailableFlag: true
           first1minCandleDate: 2000-01-23T04:56:07.000+00:00
+          uid: uid
+          name: name
+          first1dayCandleDate: 2000-01-23T04:56:07.000+00:00
           isin: isin
       properties:
         instruments:
@@ -4499,6 +4594,7 @@ components:
         basicAssetSize:
           nano: 6
           units: units
+        forQualInvestorFlag: true
         forIisFlag: true
         positionUid: positionUid
         apiTradeAvailableFlag: true
@@ -4601,6 +4697,8 @@ components:
           type: string
         forIisFlag:
           type: boolean
+        forQualInvestorFlag:
+          type: boolean
         first1minCandleDate:
           format: date-time
           type: string
@@ -4636,6 +4734,7 @@ components:
           basicAssetSize:
             nano: 6
             units: units
+          forQualInvestorFlag: true
           forIisFlag: true
           positionUid: positionUid
           apiTradeAvailableFlag: true
@@ -4695,6 +4794,7 @@ components:
           basicAssetSize:
             nano: 6
             units: units
+          forQualInvestorFlag: true
           forIisFlag: true
           positionUid: positionUid
           apiTradeAvailableFlag: true
@@ -4746,6 +4846,7 @@ components:
           basicAssetSize:
             nano: 6
             units: units
+          forQualInvestorFlag: true
           forIisFlag: true
           positionUid: positionUid
           apiTradeAvailableFlag: true
@@ -5102,6 +5203,8 @@ components:
           type: string
         interval:
           $ref: '#/components/schemas/v1CandleInterval'
+        instrumentId:
+          type: string
       type: object
     v1GetCandlesResponse:
       description: Список свечей.
@@ -5484,6 +5587,10 @@ components:
           items:
             type: string
           type: array
+        instrumentId:
+          items:
+            type: string
+          type: array
       type: object
     v1GetLastPricesResponse:
       description: Список последних цен.
@@ -5508,8 +5615,7 @@ components:
           type: array
       type: object
     v1GetLastTradesRequest:
-      description: Запрос последних обезличенных сделок по инструменту на текущий
-        торговый день с максимальным интервалом в 1 час.
+      description: Запрос обезличенных сделок за последний час.
       properties:
         figi:
           type: string
@@ -5519,22 +5625,25 @@ components:
         to:
           format: date-time
           type: string
+        instrumentId:
+          type: string
       type: object
     v1GetLastTradesResponse:
-      description: Последние обезличенные сделки по инструменту на текущий торговый
-        день с максимальным интервалом в 1 час.
+      description: Обезличенных сделок за последний час.
       example:
         trades:
         - quantity: quantity
           price:
             nano: 6
             units: units
+          instrumentUid: instrumentUid
           figi: figi
           time: 2000-01-23T04:56:07.000+00:00
         - quantity: quantity
           price:
             nano: 6
             units: units
+          instrumentUid: instrumentUid
           figi: figi
           time: 2000-01-23T04:56:07.000+00:00
       properties:
@@ -5554,6 +5663,10 @@ components:
       description: Маржинальные показатели по счёту.
       example:
         amountOfMissingFunds:
+          nano: 5
+          currency: currency
+          units: units
+        correctedMargin:
           nano: 5
           currency: currency
           units: units
@@ -5582,6 +5695,8 @@ components:
         fundsSufficiencyLevel:
           $ref: '#/components/schemas/v1Quotation'
         amountOfMissingFunds:
+          $ref: '#/components/schemas/v1MoneyValue'
+        correctedMargin:
           $ref: '#/components/schemas/v1MoneyValue'
       type: object
     v1GetMySubscriptions:
@@ -5780,6 +5895,8 @@ components:
         depth:
           format: int32
           type: integer
+        instrumentId:
+          type: string
       type: object
     v1GetOrderBookResponse:
       description: Информация о стакане.
@@ -5796,6 +5913,7 @@ components:
             nano: 6
             units: units
         orderbookTs: 2000-01-23T04:56:07.000+00:00
+        instrumentUid: instrumentUid
         bids:
         - quantity: quantity
           price:
@@ -5849,6 +5967,8 @@ components:
           type: string
         orderbookTs:
           format: date-time
+          type: string
+        instrumentUid:
           type: string
       type: object
     v1GetOrderStateRequest:
@@ -6028,12 +6148,15 @@ components:
       properties:
         figi:
           type: string
+        instrumentId:
+          type: string
       type: object
     v1GetTradingStatusResponse:
       description: Информация о торговом статусе.
       example:
         limitOrderAvailableFlag: true
         marketOrderAvailableFlag: true
+        instrumentUid: instrumentUid
         figi: figi
         apiTradeAvailableFlag: true
       properties:
@@ -6047,6 +6170,8 @@ components:
           type: boolean
         apiTradeAvailableFlag:
           type: boolean
+        instrumentUid:
+          type: string
       type: object
     v1GetUserTariffRequest:
       description: Запрос текущих лимитов пользователя.
@@ -6123,16 +6248,21 @@ components:
       properties:
         figi:
           type: string
+        instrumentId:
+          type: string
       type: object
     v1InfoSubscription:
       description: Статус подписки.
       example:
+        instrumentUid: instrumentUid
         figi: figi
       properties:
         figi:
           type: string
         subscriptionStatus:
           $ref: '#/components/schemas/v1SubscriptionStatus'
+        instrumentUid:
+          type: string
       type: object
     v1Instrument:
       description: Объект передачи основной информации об инструменте.
@@ -6154,6 +6284,7 @@ components:
         classCode: classCode
         ticker: ticker
         instrumentType: instrumentType
+        forQualInvestorFlag: true
         forIisFlag: true
         positionUid: positionUid
         apiTradeAvailableFlag: true
@@ -6236,6 +6367,8 @@ components:
         positionUid:
           type: string
         forIisFlag:
+          type: boolean
+        forQualInvestorFlag:
           type: boolean
         first1minCandleDate:
           format: date-time
@@ -6323,6 +6456,7 @@ components:
           classCode: classCode
           ticker: ticker
           instrumentType: instrumentType
+          forQualInvestorFlag: true
           forIisFlag: true
           positionUid: positionUid
           apiTradeAvailableFlag: true
@@ -6356,16 +6490,17 @@ components:
       description: Краткая информация об инструменте.
       example:
         classCode: classCode
-        uid: uid
         ticker: ticker
         instrumentType: instrumentType
-        name: name
+        forQualInvestorFlag: true
         forIisFlag: true
         positionUid: positionUid
         figi: figi
-        first1dayCandleDate: 2000-01-23T04:56:07.000+00:00
         apiTradeAvailableFlag: true
         first1minCandleDate: 2000-01-23T04:56:07.000+00:00
+        uid: uid
+        name: name
+        first1dayCandleDate: 2000-01-23T04:56:07.000+00:00
         isin: isin
       properties:
         isin:
@@ -6394,6 +6529,8 @@ components:
         first1dayCandleDate:
           format: date-time
           type: string
+        forQualInvestorFlag:
+          type: boolean
       type: object
     v1InstrumentStatus:
       default: INSTRUMENT_STATUS_UNSPECIFIED
@@ -6439,6 +6576,181 @@ components:
         time:
           format: date-time
           type: string
+        instrumentUid:
+          type: string
+      type: object
+    v1LastPriceInstrument:
+      description: Запрос подписки на последнюю цену.
+      properties:
+        figi:
+          type: string
+        instrumentId:
+          type: string
+      type: object
+    v1LastPriceSubscription:
+      description: Статус подписки на последнюю цену.
+      example:
+        instrumentUid: instrumentUid
+        figi: figi
+      properties:
+        figi:
+          type: string
+        subscriptionStatus:
+          $ref: '#/components/schemas/v1SubscriptionStatus'
+        instrumentUid:
+          type: string
+      type: object
+    v1MarketDataRequest:
+      description: Запрос подписки или отписки на определённые биржевые данные.
+      properties:
+        subscribeCandlesRequest:
+          $ref: '#/components/schemas/v1SubscribeCandlesRequest'
+        subscribeOrderBookRequest:
+          $ref: '#/components/schemas/v1SubscribeOrderBookRequest'
+        subscribeTradesRequest:
+          $ref: '#/components/schemas/v1SubscribeTradesRequest'
+        subscribeInfoRequest:
+          $ref: '#/components/schemas/v1SubscribeInfoRequest'
+        subscribeLastPriceRequest:
+          $ref: '#/components/schemas/v1SubscribeLastPriceRequest'
+        getMySubscriptions:
+          description: Запрос активных подписок.
+          type: object
+      type: object
+    v1MarketDataResponse:
+      description: Пакет биржевой информации по подписке.
+      example:
+        subscribeInfoResponse:
+          infoSubscriptions:
+          - instrumentUid: instrumentUid
+            figi: figi
+          - instrumentUid: instrumentUid
+            figi: figi
+          trackingId: trackingId
+        trade:
+          quantity: quantity
+          price:
+            nano: 6
+            units: units
+          instrumentUid: instrumentUid
+          figi: figi
+          time: 2000-01-23T04:56:07.000+00:00
+        subscribeOrderBookResponse:
+          orderBookSubscriptions:
+          - depth: 0
+            instrumentUid: instrumentUid
+            figi: figi
+          - depth: 0
+            instrumentUid: instrumentUid
+            figi: figi
+          trackingId: trackingId
+        ping:
+          time: 2000-01-23T04:56:07.000+00:00
+        candle:
+          volume: volume
+          high:
+            nano: 6
+            units: units
+          lastTradeTs: 2000-01-23T04:56:07.000+00:00
+          low:
+            nano: 6
+            units: units
+          instrumentUid: instrumentUid
+          figi: figi
+          time: 2000-01-23T04:56:07.000+00:00
+          close:
+            nano: 6
+            units: units
+          open:
+            nano: 6
+            units: units
+        orderbook:
+          depth: 6
+          asks:
+          - quantity: quantity
+            price:
+              nano: 6
+              units: units
+          - quantity: quantity
+            price:
+              nano: 6
+              units: units
+          instrumentUid: instrumentUid
+          bids:
+          - quantity: quantity
+            price:
+              nano: 6
+              units: units
+          - quantity: quantity
+            price:
+              nano: 6
+              units: units
+          limitUp:
+            nano: 6
+            units: units
+          figi: figi
+          time: 2000-01-23T04:56:07.000+00:00
+          limitDown:
+            nano: 6
+            units: units
+          isConsistent: true
+        subscribeTradesResponse:
+          tradeSubscriptions:
+          - instrumentUid: instrumentUid
+            figi: figi
+          - instrumentUid: instrumentUid
+            figi: figi
+          trackingId: trackingId
+        tradingStatus:
+          limitOrderAvailableFlag: true
+          marketOrderAvailableFlag: true
+          instrumentUid: instrumentUid
+          figi: figi
+          time: 2000-01-23T04:56:07.000+00:00
+        subscribeCandlesResponse:
+          candlesSubscriptions:
+          - instrumentUid: instrumentUid
+            figi: figi
+          - instrumentUid: instrumentUid
+            figi: figi
+          trackingId: trackingId
+        subscribeLastPriceResponse:
+          lastPriceSubscriptions:
+          - instrumentUid: instrumentUid
+            figi: figi
+          - instrumentUid: instrumentUid
+            figi: figi
+          trackingId: trackingId
+        lastPrice:
+          price:
+            nano: 6
+            units: units
+          instrumentUid: instrumentUid
+          figi: figi
+          time: 2000-01-23T04:56:07.000+00:00
+      properties:
+        subscribeCandlesResponse:
+          $ref: '#/components/schemas/v1SubscribeCandlesResponse'
+        subscribeOrderBookResponse:
+          $ref: '#/components/schemas/v1SubscribeOrderBookResponse'
+        subscribeTradesResponse:
+          $ref: '#/components/schemas/v1SubscribeTradesResponse'
+        subscribeInfoResponse:
+          $ref: '#/components/schemas/v1SubscribeInfoResponse'
+        candle:
+          $ref: '#/components/schemas/v1Candle'
+        trade:
+          $ref: '#/components/schemas/v1Trade'
+        orderbook:
+          $ref: '#/components/schemas/v1OrderBook'
+        tradingStatus:
+          $ref: '#/components/schemas/v1TradingStatus'
+        ping:
+          $ref: '#/components/schemas/v1Ping'
+        subscribeLastPriceResponse:
+          $ref: '#/components/schemas/v1SubscribeLastPriceResponse'
+        lastPrice:
+          $ref: '#/components/schemas/v1LastPrice'
       type: object
     v1MoneyValue:
       example:
@@ -6824,6 +7136,8 @@ components:
       - OPERATION_TYPE_TAX_REPO_REFUND_PROGRESSIVE
       - OPERATION_TYPE_DIV_EXT
       - OPERATION_TYPE_TAX_CORRECTION_COUPON
+      - OPERATION_TYPE_CASH_FEE
+      - OPERATION_TYPE_OUT_FEE
       type: string
     v1OperationsRequest:
       description: Запрос получения списка операций по счёту.
@@ -6940,6 +7254,7 @@ components:
         basicAssetSize:
           nano: 6
           units: units
+        forQualInvestorFlag: true
         forIisFlag: true
         positionUid: positionUid
         dlongMin:
@@ -7058,6 +7373,8 @@ components:
           type: boolean
         sellAvailableFlag:
           type: boolean
+        forQualInvestorFlag:
+          type: boolean
       type: object
     v1OptionDirection:
       default: OPTION_DIRECTION_UNSPECIFIED
@@ -7101,6 +7418,7 @@ components:
           basicAssetSize:
             nano: 6
             units: units
+          forQualInvestorFlag: true
           forIisFlag: true
           positionUid: positionUid
           dlongMin:
@@ -7178,6 +7496,7 @@ components:
           basicAssetSize:
             nano: 6
             units: units
+          forQualInvestorFlag: true
           forIisFlag: true
           positionUid: positionUid
           dlongMin:
@@ -7231,6 +7550,7 @@ components:
           basicAssetSize:
             nano: 6
             units: units
+          forQualInvestorFlag: true
           forIisFlag: true
           positionUid: positionUid
           dlongMin:
@@ -7282,6 +7602,92 @@ components:
           format: int64
           type: string
       type: object
+    v1OrderBook:
+      description: Пакет стаканов в рамках стрима.
+      example:
+        depth: 6
+        asks:
+        - quantity: quantity
+          price:
+            nano: 6
+            units: units
+        - quantity: quantity
+          price:
+            nano: 6
+            units: units
+        instrumentUid: instrumentUid
+        bids:
+        - quantity: quantity
+          price:
+            nano: 6
+            units: units
+        - quantity: quantity
+          price:
+            nano: 6
+            units: units
+        limitUp:
+          nano: 6
+          units: units
+        figi: figi
+        time: 2000-01-23T04:56:07.000+00:00
+        limitDown:
+          nano: 6
+          units: units
+        isConsistent: true
+      properties:
+        figi:
+          type: string
+        depth:
+          format: int32
+          type: integer
+        isConsistent:
+          type: boolean
+        bids:
+          items:
+            $ref: '#/components/schemas/v1Order'
+          type: array
+        asks:
+          items:
+            $ref: '#/components/schemas/v1Order'
+          type: array
+        time:
+          format: date-time
+          type: string
+        limitUp:
+          $ref: '#/components/schemas/v1Quotation'
+        limitDown:
+          $ref: '#/components/schemas/v1Quotation'
+        instrumentUid:
+          type: string
+      type: object
+    v1OrderBookInstrument:
+      description: Запрос подписки на стаканы.
+      properties:
+        figi:
+          type: string
+        depth:
+          format: int32
+          type: integer
+        instrumentId:
+          type: string
+      type: object
+    v1OrderBookSubscription:
+      description: Статус подписки.
+      example:
+        depth: 0
+        instrumentUid: instrumentUid
+        figi: figi
+      properties:
+        figi:
+          type: string
+        depth:
+          format: int32
+          type: integer
+        subscriptionStatus:
+          $ref: '#/components/schemas/v1SubscriptionStatus'
+        instrumentUid:
+          type: string
+      type: object
     v1OrderDirection:
       default: ORDER_DIRECTION_UNSPECIFIED
       description: Направление операции.
@@ -7289,7 +7695,6 @@ components:
       - ORDER_DIRECTION_UNSPECIFIED
       - ORDER_DIRECTION_BUY
       - ORDER_DIRECTION_SELL
-      title: Направление операции
       type: string
     v1OrderExecutionReportStatus:
       default: EXECUTION_REPORT_STATUS_UNSPECIFIED
@@ -7477,8 +7882,17 @@ components:
       - ORDER_TYPE_UNSPECIFIED
       - ORDER_TYPE_LIMIT
       - ORDER_TYPE_MARKET
-      title: Тип заявки
       type: string
+    v1Ping:
+      description: Проверка активности стрима.
+      example:
+        time: 2000-01-23T04:56:07.000+00:00
+      properties:
+        time:
+          description: Время проверки.
+          format: date-time
+          type: string
+      type: object
     v1PortfolioPosition:
       description: Позиции портфеля.
       example:
@@ -7554,6 +7968,7 @@ components:
           nano: 5
           currency: currency
           units: units
+        accountId: accountId
         totalAmountCurrencies:
           nano: 5
           currency: currency
@@ -7649,7 +8064,119 @@ components:
           items:
             $ref: '#/components/schemas/v1PortfolioPosition'
           type: array
+        accountId:
+          type: string
       type: object
+    v1PortfolioSubscriptionResult:
+      description: Объект результата подписки.
+      example:
+        accounts:
+        - accountId: accountId
+        - accountId: accountId
+      properties:
+        accounts:
+          items:
+            $ref: '#/components/schemas/v1AccountSubscriptionStatus'
+          type: array
+      type: object
+    v1PortfolioSubscriptionStatus:
+      default: PORTFOLIO_SUBSCRIPTION_STATUS_UNSPECIFIED
+      description: Результат подписки.
+      enum:
+      - PORTFOLIO_SUBSCRIPTION_STATUS_UNSPECIFIED
+      - PORTFOLIO_SUBSCRIPTION_STATUS_SUCCESS
+      - PORTFOLIO_SUBSCRIPTION_STATUS_ACCOUNT_NOT_FOUND
+      - PORTFOLIO_SUBSCRIPTION_STATUS_INTERNAL_ERROR
+      type: string
+    v1PositionData:
+      description: Данные о позиции портфеля.
+      example:
+        date: 2000-01-23T04:56:07.000+00:00
+        accountId: accountId
+        money:
+        - availableValue:
+            nano: 5
+            currency: currency
+            units: units
+          blockedValue:
+            nano: 5
+            currency: currency
+            units: units
+        - availableValue:
+            nano: 5
+            currency: currency
+            units: units
+          blockedValue:
+            nano: 5
+            currency: currency
+            units: units
+        options:
+        - blocked: blocked
+          balance: balance
+          instrumentUid: instrumentUid
+          positionUid: positionUid
+        - blocked: blocked
+          balance: balance
+          instrumentUid: instrumentUid
+          positionUid: positionUid
+        futures:
+        - blocked: blocked
+          balance: balance
+          instrumentUid: instrumentUid
+          positionUid: positionUid
+          figi: figi
+        - blocked: blocked
+          balance: balance
+          instrumentUid: instrumentUid
+          positionUid: positionUid
+          figi: figi
+        securities:
+        - instrumentType: instrumentType
+          blocked: blocked
+          balance: balance
+          instrumentUid: instrumentUid
+          positionUid: positionUid
+          figi: figi
+          exchangeBlocked: true
+        - instrumentType: instrumentType
+          blocked: blocked
+          balance: balance
+          instrumentUid: instrumentUid
+          positionUid: positionUid
+          figi: figi
+          exchangeBlocked: true
+      properties:
+        accountId:
+          type: string
+        money:
+          items:
+            $ref: '#/components/schemas/v1PositionsMoney'
+          type: array
+        securities:
+          items:
+            $ref: '#/components/schemas/v1PositionsSecurities'
+          type: array
+        futures:
+          items:
+            $ref: '#/components/schemas/v1PositionsFutures'
+          type: array
+        options:
+          items:
+            $ref: '#/components/schemas/v1PositionsOptions'
+          type: array
+        date:
+          format: date-time
+          type: string
+      type: object
+    v1PositionsAccountSubscriptionStatus:
+      default: POSITIONS_SUBSCRIPTION_STATUS_UNSPECIFIED
+      description: Результат подписки.
+      enum:
+      - POSITIONS_SUBSCRIPTION_STATUS_UNSPECIFIED
+      - POSITIONS_SUBSCRIPTION_STATUS_SUCCESS
+      - POSITIONS_SUBSCRIPTION_STATUS_ACCOUNT_NOT_FOUND
+      - POSITIONS_SUBSCRIPTION_STATUS_INTERNAL_ERROR
+      type: string
     v1PositionsFutures:
       description: Баланс фьючерса.
       example:
@@ -7818,6 +8345,28 @@ components:
           type: boolean
         instrumentType:
           type: string
+      type: object
+    v1PositionsSubscriptionResult:
+      description: Объект результата подписки.
+      example:
+        accounts:
+        - accountId: accountId
+        - accountId: accountId
+      properties:
+        accounts:
+          items:
+            $ref: '#/components/schemas/v1PositionsSubscriptionStatus'
+          type: array
+      type: object
+    v1PositionsSubscriptionStatus:
+      description: Счет клиента.
+      example:
+        accountId: accountId
+      properties:
+        accountId:
+          type: string
+        subscriptionStatus:
+          $ref: '#/components/schemas/v1PositionsAccountSubscriptionStatus'
       type: object
     v1PostOrderRequest:
       description: Запрос выставления торгового поручения.
@@ -8059,6 +8608,7 @@ components:
         buyAvailableFlag: true
         classCode: classCode
         ticker: ticker
+        forQualInvestorFlag: true
         forIisFlag: true
         positionUid: positionUid
         apiTradeAvailableFlag: true
@@ -8161,6 +8711,8 @@ components:
           type: string
         forIisFlag:
           type: boolean
+        forQualInvestorFlag:
+          type: boolean
         first1minCandleDate:
           format: date-time
           type: string
@@ -8193,6 +8745,7 @@ components:
           buyAvailableFlag: true
           classCode: classCode
           ticker: ticker
+          forQualInvestorFlag: true
           forIisFlag: true
           positionUid: positionUid
           apiTradeAvailableFlag: true
@@ -8265,6 +8818,7 @@ components:
           buyAvailableFlag: true
           classCode: classCode
           ticker: ticker
+          forQualInvestorFlag: true
           forIisFlag: true
           positionUid: positionUid
           apiTradeAvailableFlag: true
@@ -8315,6 +8869,7 @@ components:
           buyAvailableFlag: true
           classCode: classCode
           ticker: ticker
+          forQualInvestorFlag: true
           forIisFlag: true
           positionUid: positionUid
           apiTradeAvailableFlag: true
@@ -8445,6 +9000,175 @@ components:
       - SP_TYPE_DELIVERABLE
       - SP_TYPE_NON_DELIVERABLE
       type: string
+    v1SubscribeCandlesRequest:
+      description: subscribeCandles | Изменения статуса подписки на свечи.
+      properties:
+        subscriptionAction:
+          $ref: '#/components/schemas/v1SubscriptionAction'
+        instruments:
+          items:
+            $ref: '#/components/schemas/v1CandleInstrument'
+          type: array
+        waitingClose:
+          type: boolean
+      type: object
+    v1SubscribeCandlesResponse:
+      description: Результат изменения статус подписки на свечи.
+      example:
+        candlesSubscriptions:
+        - instrumentUid: instrumentUid
+          figi: figi
+        - instrumentUid: instrumentUid
+          figi: figi
+        trackingId: trackingId
+      properties:
+        trackingId:
+          type: string
+        candlesSubscriptions:
+          items:
+            $ref: '#/components/schemas/v1CandleSubscription'
+          type: array
+      type: object
+    v1SubscribeInfoRequest:
+      description: Изменение статуса подписки на торговый статус инструмента.
+      properties:
+        subscriptionAction:
+          $ref: '#/components/schemas/v1SubscriptionAction'
+        instruments:
+          items:
+            $ref: '#/components/schemas/v1InfoInstrument'
+          type: array
+      type: object
+    v1SubscribeInfoResponse:
+      description: Результат изменения статуса подписки на торговый статус.
+      example:
+        infoSubscriptions:
+        - instrumentUid: instrumentUid
+          figi: figi
+        - instrumentUid: instrumentUid
+          figi: figi
+        trackingId: trackingId
+      properties:
+        trackingId:
+          type: string
+        infoSubscriptions:
+          items:
+            $ref: '#/components/schemas/v1InfoSubscription'
+          type: array
+      type: object
+    v1SubscribeLastPriceRequest:
+      description: Изменение статуса подписки на последнюю цену инструмента.
+      properties:
+        subscriptionAction:
+          $ref: '#/components/schemas/v1SubscriptionAction'
+        instruments:
+          items:
+            $ref: '#/components/schemas/v1LastPriceInstrument'
+          type: array
+      type: object
+    v1SubscribeLastPriceResponse:
+      description: Результат изменения статуса подписки на последнюю цену.
+      example:
+        lastPriceSubscriptions:
+        - instrumentUid: instrumentUid
+          figi: figi
+        - instrumentUid: instrumentUid
+          figi: figi
+        trackingId: trackingId
+      properties:
+        trackingId:
+          type: string
+        lastPriceSubscriptions:
+          items:
+            $ref: '#/components/schemas/v1LastPriceSubscription'
+          type: array
+      type: object
+    v1SubscribeOrderBookRequest:
+      description: Запрос на изменение статуса подписки на стаканы.
+      properties:
+        subscriptionAction:
+          $ref: '#/components/schemas/v1SubscriptionAction'
+        instruments:
+          items:
+            $ref: '#/components/schemas/v1OrderBookInstrument'
+          type: array
+      type: object
+    v1SubscribeOrderBookResponse:
+      description: Результат изменения статуса подписки на стаканы.
+      example:
+        orderBookSubscriptions:
+        - depth: 0
+          instrumentUid: instrumentUid
+          figi: figi
+        - depth: 0
+          instrumentUid: instrumentUid
+          figi: figi
+        trackingId: trackingId
+      properties:
+        trackingId:
+          type: string
+        orderBookSubscriptions:
+          items:
+            $ref: '#/components/schemas/v1OrderBookSubscription'
+          type: array
+      type: object
+    v1SubscribeTradesRequest:
+      description: Изменение статуса подписки на поток обезличенных сделок.
+      properties:
+        subscriptionAction:
+          $ref: '#/components/schemas/v1SubscriptionAction'
+        instruments:
+          items:
+            $ref: '#/components/schemas/v1TradeInstrument'
+          type: array
+      type: object
+    v1SubscribeTradesResponse:
+      description: Результат изменения статуса подписки на поток обезличенных сделок.
+      example:
+        tradeSubscriptions:
+        - instrumentUid: instrumentUid
+          figi: figi
+        - instrumentUid: instrumentUid
+          figi: figi
+        trackingId: trackingId
+      properties:
+        trackingId:
+          type: string
+        tradeSubscriptions:
+          items:
+            $ref: '#/components/schemas/v1TradeSubscription'
+          type: array
+      type: object
+    v1SubscriptionAction:
+      default: SUBSCRIPTION_ACTION_UNSPECIFIED
+      description: Тип операции со списком подписок.
+      enum:
+      - SUBSCRIPTION_ACTION_UNSPECIFIED
+      - SUBSCRIPTION_ACTION_SUBSCRIBE
+      - SUBSCRIPTION_ACTION_UNSUBSCRIBE
+      type: string
+    v1SubscriptionInterval:
+      default: SUBSCRIPTION_INTERVAL_UNSPECIFIED
+      description: Интервал свечи.
+      enum:
+      - SUBSCRIPTION_INTERVAL_UNSPECIFIED
+      - SUBSCRIPTION_INTERVAL_ONE_MINUTE
+      - SUBSCRIPTION_INTERVAL_FIVE_MINUTES
+      type: string
+    v1SubscriptionStatus:
+      default: SUBSCRIPTION_STATUS_UNSPECIFIED
+      description: Результат подписки.
+      enum:
+      - SUBSCRIPTION_STATUS_UNSPECIFIED
+      - SUBSCRIPTION_STATUS_SUCCESS
+      - SUBSCRIPTION_STATUS_INSTRUMENT_NOT_FOUND
+      - SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID
+      - SUBSCRIPTION_STATUS_DEPTH_IS_INVALID
+      - SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID
+      - SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED
+      - SUBSCRIPTION_STATUS_INTERNAL_ERROR
+      - SUBSCRIPTION_STATUS_TOO_MANY_REQUESTS
+      type: string
     v1Trade:
       description: Информация о сделке.
       example:
@@ -8452,6 +9176,7 @@ components:
         price:
           nano: 6
           units: units
+        instrumentUid: instrumentUid
         figi: figi
         time: 2000-01-23T04:56:07.000+00:00
       properties:
@@ -8467,6 +9192,8 @@ components:
         time:
           format: date-time
           type: string
+        instrumentUid:
+          type: string
       type: object
     v1TradeDirection:
       default: TRADE_DIRECTION_UNSPECIFIED
@@ -8476,6 +9203,27 @@ components:
       - TRADE_DIRECTION_BUY
       - TRADE_DIRECTION_SELL
       type: string
+    v1TradeInstrument:
+      description: Запрос подписки на поток обезличенных сделок.
+      properties:
+        figi:
+          type: string
+        instrumentId:
+          type: string
+      type: object
+    v1TradeSubscription:
+      description: Статус подписки.
+      example:
+        instrumentUid: instrumentUid
+        figi: figi
+      properties:
+        figi:
+          type: string
+        subscriptionStatus:
+          $ref: '#/components/schemas/v1SubscriptionStatus'
+        instrumentUid:
+          type: string
+      type: object
     v1TradingDay:
       description: Информация о времени торгов.
       example:
@@ -8582,7 +9330,6 @@ components:
         to:
           format: date-time
           type: string
-      title: Запрос расписания торгов
       type: object
     v1TradingSchedulesResponse:
       description: Список торговых площадок.
@@ -8649,7 +9396,29 @@ components:
           items:
             $ref: '#/components/schemas/v1TradingSchedule'
           type: array
-      title: Список торговых площадок
+      type: object
+    v1TradingStatus:
+      description: Пакет изменения торгового статуса.
+      example:
+        limitOrderAvailableFlag: true
+        marketOrderAvailableFlag: true
+        instrumentUid: instrumentUid
+        figi: figi
+        time: 2000-01-23T04:56:07.000+00:00
+      properties:
+        figi:
+          type: string
+        tradingStatus:
+          $ref: '#/components/schemas/v1SecurityTradingStatus'
+        time:
+          format: date-time
+          type: string
+        limitOrderAvailableFlag:
+          type: boolean
+        marketOrderAvailableFlag:
+          type: boolean
+        instrumentUid:
+          type: string
       type: object
     v1UnaryLimit:
       description: Лимит unary-методов.
@@ -8711,7 +9480,4 @@ components:
             $ref: '#/components/schemas/v1MoneyValue'
           type: array
       type: object
-  securitySchemes:
-    Bearer:
-      type: http
-      scheme: bearer
+x-original-swagger-version: "2.0"

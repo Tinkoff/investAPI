@@ -90,6 +90,14 @@
 - Тело ответа — [OperationsResponse](#operationsresponse)
 
 
+#### GetSandboxOperationsByCursor
+Метод получения операций в песочнице по номеру счета с пагинацией.
+
+- Тело запроса — [GetOperationsByCursorRequest](#getoperationsbycursorrequest)
+
+- Тело ответа — [GetOperationsByCursorResponse](#getoperationsbycursorresponse)
+
+
 #### GetSandboxPortfolio
 Метод получения портфолио в песочнице.
 

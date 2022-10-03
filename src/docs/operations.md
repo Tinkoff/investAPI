@@ -523,6 +523,7 @@ Server-side stream обновлений информации по изменен
 | total_amount_futures |  [MoneyValue](#moneyvalue) | Общая стоимость фьючерсов в портфеле в рублях. |
 | expected_yield |  [Quotation](#quotation) | Текущая относительная доходность портфеля, в %. |
 | positions | Массив объектов [PortfolioPosition](#portfolioposition) | Список позиций портфеля. |
+| account_id |  [string](#string) | Идентификатор счёта пользователя. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -817,6 +818,8 @@ Server-side stream обновлений информации по изменен
 | OPERATION_TYPE_TAX_REPO_REFUND_PROGRESSIVE | 42 | Возврат налога по сделкам РЕПО по ставке 15%. |
 | OPERATION_TYPE_DIV_EXT | 43 | Выплата дивидендов на карту. |
 | OPERATION_TYPE_TAX_CORRECTION_COUPON | 44 | Корректировка налога по купонам. |
+| OPERATION_TYPE_CASH_FEE | 45 | Комиссия за валютный остаток. |
+| OPERATION_TYPE_OUT_FEE | 46 | Комиссия за вывод валюты с брокерского счета. |
 
 
 

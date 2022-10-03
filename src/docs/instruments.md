@@ -521,6 +521,7 @@
 | coupon_quantity_per_year |  [int32](#int32) | Количество выплат по купонам в год. |
 | maturity_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата погашения облигации в часовом поясе UTC. |
 | nominal |  [MoneyValue](#moneyvalue) | Номинал облигации. |
+| initial_nominal |  [MoneyValue](#moneyvalue) | Первоначальный номинал облигации. |
 | state_reg_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата выпуска облигации в часовом поясе UTC. |
 | placement_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата размещения в часовом поясе UTC. |
 | placement_price |  [MoneyValue](#moneyvalue) | Цена размещения. |
@@ -544,6 +545,7 @@
 | real_exchange |  [RealExchange](#realexchange) | Реальная площадка исполнения расчётов. |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
+| for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
  <!-- end Fields -->
@@ -669,6 +671,7 @@
 | real_exchange |  [RealExchange](#realexchange) | Реальная площадка исполнения расчётов. |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
+| for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
  <!-- end Fields -->
@@ -779,6 +782,7 @@
 | real_exchange |  [RealExchange](#realexchange) | Реальная площадка исполнения расчётов. |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
+| for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
  <!-- end Fields -->
@@ -887,6 +891,7 @@
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
 | basic_asset_position_uid |  [string](#string) | Уникальный идентификатор позиции основного инструмента. |
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
+| for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
  <!-- end Fields -->
@@ -1108,6 +1113,7 @@
 | real_exchange |  [RealExchange](#realexchange) | Реальная площадка исполнения расчётов. |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
+| for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
  <!-- end Fields -->
@@ -1168,6 +1174,7 @@
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
+| for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1229,6 +1236,7 @@
 | otc_flag |  [bool](#bool) | Признак внебиржевой ценной бумаги. |
 | buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
+| for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1295,6 +1303,7 @@
 | real_exchange |  [RealExchange](#realexchange) | Реальная площадка исполнения расчётов. |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
+| for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
  <!-- end Fields -->

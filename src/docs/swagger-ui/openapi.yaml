@@ -10,8 +10,10 @@ servers:
   description: "Работа с биржей"
 - url: https://sandbox-invest-public-api.tinkoff.ru/rest/
   description: "Работа в песочнице"
-security:
-- Bearer: []
+securitySchemes:
+    Bearer:
+      type: http
+      scheme: bearer
 externalDocs:
   description: Документация Tinkoff Invest API
   url: https://tinkoff.github.io/investAPI/

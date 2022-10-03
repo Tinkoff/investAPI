@@ -9480,7 +9480,7 @@ components:
             $ref: '#/components/schemas/v1MoneyValue'
           type: array
       type: object
-securitySchemes:
+  securitySchemes:
     Bearer:
       type: http
       scheme: bearer

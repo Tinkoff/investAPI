@@ -38,6 +38,7 @@ nav:
   - "Как ускорить работу с биржей": speedup.md
   - "Дедлайны запросов": deadlines.md
   - "SLA": sla.md
+  - "Таблица параметров возвращающих валюту или пункты": table_order_currency.md
 - Ответы на частые вопросы: faq.md
 - Языки программирования:
   - Python: faq_python.md
@@ -56,6 +57,7 @@ nav:
   - Описание: head-orders.md
   - Методы: orders.md
   - FAQ: faq_orders.md
+  - Таблица параметров возвращающих валюту или пункты: table_order_currency.md
 - Сервис операций:
   - Описание: head-operations.md
   - Методы: operations.md

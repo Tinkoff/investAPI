@@ -1446,6 +1446,34 @@
 </tr>
 </tbody>
 </table>
+<h1 id="_2">Формулы расчета реальной стоимости инструментов в валюте</h1>
+<ul>
+<li><strong>price</strong> — текущая котировка ценной бумаги;</li>
+<li><strong>nominal</strong> — номинал облигации;</li>
+<li><strong>min_price_increment</strong> — шаг цены;</li>
+<li><strong>min_price_increment_amount</strong> — стоимость шага цены;</li>
+<li><strong>lot</strong> - лотность инструмента.</li>
+</ul>
+<h3 id="_3">Акции</h3>
+<blockquote>
+<p><strong>price</strong> * <strong>lot</strong></p>
+</blockquote>
+<h3 id="_4">Облигации</h3>
+<p>Пункты цены для котировок облигаций представляют собой проценты номинала облигации. Для пересчёта пунктов
+в валюту можно воспользоваться формулой:</p>
+<blockquote>
+<p><strong>price</strong> / 100 * <strong>nominal</strong></p>
+</blockquote>
+<h3 id="_5">Валюта</h3>
+<blockquote>
+<p><strong>price</strong> * <strong>lot</strong> / <strong>nominal</strong></p>
+</blockquote>
+<p><strong>Важно!</strong> При торговле валютой необходимо учитывать что такие валюты как Иена, Армянский драм и Тенге имеют nominal = 100</p>
+<h3 id="_6">Фьючерсы</h3>
+<p>Стоимость фьючерсов так же предоставляется в пунктах, для пересчёта можно воспользоваться формулой:</p>
+<blockquote>
+<p><strong>price</strong> / <strong>min_price_increment</strong> * <strong>min_price_increment_amount</strong></p>
+</blockquote>
 
               
             </article>

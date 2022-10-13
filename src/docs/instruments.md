@@ -540,7 +540,7 @@
 | perpetual_flag |  [bool](#bool) | Признак бессрочной облигации. |
 | amortization_flag |  [bool](#bool) | Признак облигации с амортизацией долга. |
 | min_price_increment |  [Quotation](#quotation) | Шаг цены. |
-| api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
+| api_trade_available_flag |  [bool](#bool) | Параметр указывает на возможность торговать инструментом через API. |
 | uid |  [string](#string) | Уникальный идентификатор инструмента. |
 | real_exchange |  [RealExchange](#realexchange) | Реальная площадка исполнения расчётов. |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
@@ -666,7 +666,7 @@
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
 | iso_currency_name |  [string](#string) | Строковый ISO-код валюты. |
 | min_price_increment |  [Quotation](#quotation) | Шаг цены. |
-| api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
+| api_trade_available_flag |  [bool](#bool) | Параметр указывает на возможность торговать инструментом через API. |
 | uid |  [string](#string) | Уникальный идентификатор инструмента. |
 | real_exchange |  [RealExchange](#realexchange) | Реальная площадка исполнения расчётов. |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
@@ -777,7 +777,7 @@
 | buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
 | min_price_increment |  [Quotation](#quotation) | Шаг цены. |
-| api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
+| api_trade_available_flag |  [bool](#bool) | Параметр указывает на возможность торговать инструментом через API. |
 | uid |  [string](#string) | Уникальный идентификатор инструмента. |
 | real_exchange |  [RealExchange](#realexchange) | Реальная площадка исполнения расчётов. |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
@@ -823,7 +823,7 @@
 | isin |  [string](#string) | Isin-идентификатор инструмента. |
 | instrument_type |  [string](#string) | Тип инструмента. |
 | otc_flag |  [bool](#bool) | Признак внебиржевой ценной бумаги. |
-| api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
+| api_trade_available_flag |  [bool](#bool) | Параметр указывает на возможность торговать инструментом через API. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -885,7 +885,7 @@
 | buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
 | min_price_increment |  [Quotation](#quotation) | Шаг цены. |
-| api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
+| api_trade_available_flag |  [bool](#bool) | Параметр указывает на возможность торговать инструментом через API. |
 | uid |  [string](#string) | Уникальный идентификатор инструмента. |
 | real_exchange |  [RealExchange](#realexchange) | Реальная площадка исполнения расчётов. |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
@@ -1108,7 +1108,7 @@
 | buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
 | min_price_increment |  [Quotation](#quotation) | Шаг цены. |
-| api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
+| api_trade_available_flag |  [bool](#bool) | Параметр указывает на возможность торговать инструментом через API. |
 | uid |  [string](#string) | Уникальный идентификатор инструмента. |
 | real_exchange |  [RealExchange](#realexchange) | Реальная площадка исполнения расчётов. |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
@@ -1170,7 +1170,7 @@
 | name |  [string](#string) | Название инструмента. |
 | uid |  [string](#string) | Уникальный идентификатор инструмента. |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
-| api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
+| api_trade_available_flag |  [bool](#bool) | Параметр указывает на возможность торговать инструментом через API. |
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
@@ -1298,7 +1298,7 @@
 | div_yield_flag |  [bool](#bool) | Признак наличия дивидендной доходности. |
 | share_type |  [ShareType](#sharetype) | Тип акции. Возможные значения: [ShareType](https://tinkoff.github.io/investAPI/instruments#sharetype) |
 | min_price_increment |  [Quotation](#quotation) | Шаг цены. |
-| api_trade_available_flag |  [bool](#bool) | Признак доступности торгов через API. |
+| api_trade_available_flag |  [bool](#bool) | Параметр указывает на возможность торговать инструментом через API. |
 | uid |  [string](#string) | Уникальный идентификатор инструмента. |
 | real_exchange |  [RealExchange](#realexchange) | Реальная площадка исполнения расчётов. |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |

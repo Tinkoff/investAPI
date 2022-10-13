@@ -295,6 +295,7 @@ enum OperationType {
   OPERATION_TYPE_TAX_CORRECTION_COUPON = 44; //Корректировка налога по купонам.
   OPERATION_TYPE_CASH_FEE = 45; //Комиссия за валютный остаток.
   OPERATION_TYPE_OUT_FEE = 46; //Комиссия за вывод валюты с брокерского счета.
+  OPERATION_TYPE_OUT_STAMP_DUTY = 47; //Гербовый сбор.
 }
 
 message GetDividendsForeignIssuerRequest {

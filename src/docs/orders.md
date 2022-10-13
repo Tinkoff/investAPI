@@ -168,6 +168,7 @@ Stream сделок пользователя
 | currency |  [string](#string) | Валюта заявки. |
 | order_type |  [OrderType](#ordertype) | Тип заявки. |
 | order_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время выставления заявки в часовом поясе UTC. |
+| instrument_uid |  [string](#string) | UID идентификатор инструмента. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -197,6 +198,7 @@ Stream сделок пользователя
 | figi |  [string](#string) | Figi-идентификатор инструмента. |
 | trades | Массив объектов [OrderTrade](#ordertrade) | Массив сделок. |
 | account_id |  [string](#string) | Идентификатор счёта. |
+| instrument_uid |  [string](#string) | UID идентификатор инструмента. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -214,6 +216,7 @@ Stream сделок пользователя
 | account_id |  [string](#string) | Номер счёта. |
 | order_type |  [OrderType](#ordertype) | Тип заявки. |
 | order_id |  [string](#string) | Идентификатор запроса выставления поручения для целей идемпотентности. Максимальная длина 36 символов. |
+| instrument_id |  [string](#string) | Идентификатор инструмента, принимает значения Figi или Instrument_uid. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -240,6 +243,7 @@ Stream сделок пользователя
 | order_type |  [OrderType](#ordertype) | Тип заявки. |
 | message |  [string](#string) | Дополнительные данные об исполнении заявки. |
 | initial_order_price_pt |  [Quotation](#quotation) | Начальная цена заявки в пунктах (для фьючерсов). |
+| instrument_uid |  [string](#string) | UID идентификатор инструмента. |
  <!-- end Fields -->
  <!-- end HasFields -->
 

@@ -1261,8 +1261,14 @@
 <strong>Позиция</strong> – это совокупность актива и торговой площадки(биржи). </li>
 <li><strong>Instrument_Id</strong> - параметр в который можно передать значение <strong>instrument_uid</strong> <em>или</em> <strong>FIGI</strong>.</li>
 </ol>
-<p><strong>Основным идентификатором торгового инструмента при работе с TINKOFF INVEST API 
-является <em>FIGI</em>.</strong></p>
+<p>Использование <code>Instrument_Id</code>  является более предпочтительным, так как предполагает возможность использования
+<strong>instrument_uid</strong> или <strong>FIGI</strong>.</p>
+<p>На данный момент при передаче в значения в параметр <code>Instrument_Id</code>  сначала выполняется поиск инструмента по 
+<strong>instrument_uid</strong>, а потом уже по <strong>FIGI</strong>.</p>
+<p>В методах, где параметр <code>Instrument_Id</code> добавлен к существующему параметру <code>figi</code>, поиск инструмента выполняется в 
+первую очередь по значению переданному в <code>figi</code>, а далее уже по значению переданному в <code>Instrument_Id</code>.</p>
+<p><strong>Основным идентификатором торгового инструмента при работе с TINKOFF INVEST API на данный момент
+является <em>FIGI</em>.</strong> </p>
 
               
             </article>

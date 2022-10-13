@@ -333,7 +333,7 @@ message HistoricCandle {
 //Запрос получения последних цен.
 message GetLastPricesRequest {
   repeated string figi = 1; //Массив figi-идентификаторов инструментов.
-  repeated string instrument_id = 2; //Идентификатор инструмента, принимает значение figi или instrument_uid
+  repeated string instrument_id = 2; //Массив идентификаторов инструмента, принимает значения figi или instrument_uid
 }
 
 //Список последних цен.

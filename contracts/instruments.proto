@@ -363,7 +363,7 @@ message Bond {
   bool perpetual_flag = 36; //Признак бессрочной облигации.
   bool amortization_flag = 37; //Признак облигации с амортизацией долга.
   Quotation min_price_increment = 38; //Шаг цены.
-  bool api_trade_available_flag = 39; //Признак доступности торгов через API.
+  bool api_trade_available_flag = 39; //Параметр указывает на возможность торговать инструментом через API.
 
   string uid = 40; //Уникальный идентификатор инструмента.
   RealExchange real_exchange = 41; //Реальная площадка исполнения расчётов.
@@ -405,7 +405,7 @@ message Currency {
   bool sell_available_flag = 23; //Признак доступности для продажи.
   string iso_currency_name = 24; //Строковый ISO-код валюты.
   Quotation min_price_increment = 25; //Шаг цены.
-  bool api_trade_available_flag = 26; //Признак доступности торгов через API.
+  bool api_trade_available_flag = 26; //Параметр указывает на возможность торговать инструментом через API.
 
   string uid = 27; //Уникальный идентификатор инструмента.
   RealExchange real_exchange = 28; //Реальная площадка исполнения расчётов.
@@ -451,7 +451,7 @@ message Etf {
   bool buy_available_flag = 27; //Признак доступности для покупки.
   bool sell_available_flag = 28; //Признак доступности для продажи.
   Quotation min_price_increment = 29; //Шаг цены.
-  bool api_trade_available_flag = 30; //Признак доступности торгов через API.
+  bool api_trade_available_flag = 30; //Параметр указывает на возможность торговать инструментом через API.
 
   string uid = 31; //Уникальный идентификатор инструмента.
   RealExchange real_exchange = 32; //Реальная площадка исполнения расчётов.
@@ -498,7 +498,7 @@ message Future {
   bool buy_available_flag = 27; //Признак доступности для покупки.
   bool sell_available_flag = 28; //Признак доступности для продажи.
   Quotation min_price_increment = 29; //Шаг цены.
-  bool api_trade_available_flag = 30; //Признак доступности торгов через API.
+  bool api_trade_available_flag = 30; //Параметр указывает на возможность торговать инструментом через API.
 
   string uid = 31; //Уникальный идентификатор инструмента.
   RealExchange real_exchange = 32; //Реальная площадка исполнения расчётов.
@@ -546,7 +546,7 @@ message Share {
   bool div_yield_flag = 29; //Признак наличия дивидендной доходности.
   ShareType share_type = 30; //Тип акции. Возможные значения: [ShareType](https://tinkoff.github.io/investAPI/instruments#sharetype)
   Quotation min_price_increment = 31; //Шаг цены.
-  bool api_trade_available_flag = 32; //Признак доступности торгов через API.
+  bool api_trade_available_flag = 32; //Параметр указывает на возможность торговать инструментом через API.
 
   string uid = 33; //Уникальный идентификатор инструмента.
   RealExchange real_exchange = 34; //Реальная площадка исполнения расчётов.
@@ -641,7 +641,7 @@ message Instrument {
   bool buy_available_flag = 21; //Признак доступности для покупки.
   bool sell_available_flag = 22; //Признак доступности для продажи.
   Quotation min_price_increment = 23; //Шаг цены.
-  bool api_trade_available_flag = 24; //Признак доступности торгов через API.
+  bool api_trade_available_flag = 24; //Параметр указывает на возможность торговать инструментом через API.
 
   string uid = 25; //Уникальный идентификатор инструмента.
   RealExchange real_exchange = 26; //Реальная площадка исполнения расчётов.
@@ -924,7 +924,7 @@ message FavoriteInstrument {
   string isin = 4; //Isin-идентификатор инструмента.
   string instrument_type = 11; //Тип инструмента.
   bool otc_flag = 16; //Признак внебиржевой ценной бумаги.
-  bool api_trade_available_flag = 17; //Признак доступности торгов через API.
+  bool api_trade_available_flag = 17; //Параметр указывает на возможность торговать инструментом через API.
 }
 
 //Запрос редактирования списка избранных инструментов.
@@ -994,7 +994,7 @@ message InstrumentShort {
   string name = 6; //Название инструмента.
   string uid = 7; //Уникальный идентификатор инструмента.
   string position_uid = 8; //Уникальный идентификатор позиции инструмента.
-  bool api_trade_available_flag = 11; //Признак доступности торгов через API.
+  bool api_trade_available_flag = 11; //Параметр указывает на возможность торговать инструментом через API.
   bool for_iis_flag = 12; //Признак доступности для ИИС.
   google.protobuf.Timestamp first_1min_candle_date = 26; //Дата первой минутной свечи.
   google.protobuf.Timestamp first_1day_candle_date = 27; //Дата первой дневной свечи.

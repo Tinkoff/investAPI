@@ -57,6 +57,7 @@ message OrderTrades {
   string figi = 4; //Figi-идентификатор инструмента.
   repeated OrderTrade trades = 5; //Массив сделок.
   string account_id = 6; //Идентификатор счёта.
+  string instrument_uid = 7; //UID идентификатор инструмента.
 }
 
 //Информация о сделке.
@@ -75,6 +76,7 @@ message PostOrderRequest {
   string account_id = 5; //Номер счёта.
   OrderType order_type = 6; //Тип заявки.
   string order_id = 7; //Идентификатор запроса выставления поручения для целей идемпотентности. Максимальная длина 36 символов.
+  string instrument_id = 8; //Идентификатор инструмента, принимает значения Figi или Instrument_uid.
 }
 
 //Информация о выставлении поручения.
@@ -97,6 +99,7 @@ message PostOrderResponse {
   OrderType order_type = 14; //Тип заявки.
   string message = 15; //Дополнительные данные об исполнении заявки.
   Quotation initial_order_price_pt = 16; //Начальная цена заявки в пунктах (для фьючерсов).
+  string instrument_uid = 17; //UID идентификатор инструмента.
 }
 
 //Запрос отмены торгового поручения.
@@ -146,6 +149,7 @@ message OrderState {
   string currency = 16; //Валюта заявки.
   OrderType order_type = 17; //Тип заявки.
   google.protobuf.Timestamp order_date = 18; //Дата и время выставления заявки в часовом поясе UTC.
+  string instrument_uid = 19; //UID идентификатор инструмента.
 }
 
 //Сделки в рамках торгового поручения.

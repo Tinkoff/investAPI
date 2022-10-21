@@ -439,7 +439,6 @@ message OperationItem {
 
 //Массив с информацией о сделках.
 message OperationItemTrades {
-  int32 trades_size = 1;
   repeated OperationItemTrade trades = 6;
 }
 

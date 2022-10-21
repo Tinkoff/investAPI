@@ -432,7 +432,6 @@ Server-side stream обновлений информации по изменен
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| trades_size |  [int32](#int32) |  |
 | trades | Массив объектов [OperationItemTrade](#operationitemtrade) |  |
  <!-- end Fields -->
  <!-- end HasFields -->

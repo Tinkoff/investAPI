@@ -44,7 +44,7 @@ nav:
   - Python: faq_python.md
   - Java: faq_java.md
   - С#: faq_csharp.md
-- Сервис аккаунтов:
+- Сервис счетов:
   - Описание: head-users.md
   - Методы: users.md
   - FAQ: faq_users.md
@@ -53,7 +53,7 @@ nav:
   - Методы: instruments.md
   - FAQ: faq_instruments.md
   - Голоссарий: glossary-instrument.md
-- Сервис торговых поручений:
+- Сервис ордеров:
   - Описание: head-orders.md
   - Методы: orders.md
   - FAQ: faq_orders.md
@@ -67,7 +67,7 @@ nav:
   - Методы: marketdata.md
   - FAQ: faq_marketdata.md
   - Получение исторических рыночных данных: get_history.md
-- Сервис стоп-заявок:
+- Сервис стоп-ордеров:
   - Описание: head-stoporders.md
   - Методы: stoporders.md
   - FAQ: faq_stoporders.md

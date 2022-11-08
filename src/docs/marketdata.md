@@ -19,7 +19,7 @@
 
 
 #### GetLastPrices
-Метод запроса последних цен по инструментам.
+Метод запроса цен последних сделок по инструментам.
 
 - Тело запроса — [GetLastPricesRequest](#getlastpricesrequest)
 
@@ -184,7 +184,7 @@ Server-side стрим предоставления биржевой инфор�
 
 
 #### GetLastPricesRequest
-Запрос получения последних цен.
+Запрос получения цен последних сделок.
 
 
 | Field | Type | Description |
@@ -196,12 +196,12 @@ Server-side стрим предоставления биржевой инфор�
 
 
 #### GetLastPricesResponse
-Список последних цен.
+Список цен последних сделок.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| last_prices | Массив объектов [LastPrice](#lastprice) | Массив последних цен. |
+| last_prices | Массив объектов [LastPrice](#lastprice) | Массив цен последних сделок. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -368,13 +368,13 @@ Server-side стрим предоставления биржевой инфор�
 
 
 #### LastPrice
-Информация о цене.
+Информация о цене последней сделки.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Figi инструмента. |
-| price |  [Quotation](#quotation) | Последняя цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать [информацию со страницы](https://tinkoff.github.io/investAPI/faq_marketdata/) |
+| price |  [Quotation](#quotation) | Цена последней сделки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать [информацию со страницы](https://tinkoff.github.io/investAPI/faq_marketdata/) |
 | time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время получения последней цены в часовом поясе UTC по времени биржи. |
 | instrument_uid |  [string](#string) | Uid инструмента |
  <!-- end Fields -->
@@ -394,7 +394,7 @@ Server-side стрим предоставления биржевой инфор�
 
 
 #### LastPriceSubscription
-Статус подписки на последнюю цену.
+Статус подписки на цену последней сделки.
 
 
 | Field | Type | Description |
@@ -416,7 +416,7 @@ Server-side стрим предоставления биржевой инфор�
 | subscribe_order_book_request |  [SubscribeOrderBookRequest](#subscribeorderbookrequest) | Запрос подписки на стаканы. |
 | subscribe_trades_request |  [SubscribeTradesRequest](#subscribetradesrequest) | Запрос подписки на ленту обезличенных сделок. |
 | subscribe_info_request |  [SubscribeInfoRequest](#subscribeinforequest) | Запрос подписки на торговые статусы инструментов. |
-| subscribe_last_price_request |  [SubscribeLastPriceRequest](#subscribelastpricerequest) | Запрос подписки на последние цены. |
+| subscribe_last_price_request |  [SubscribeLastPriceRequest](#subscribelastpricerequest) | Запрос подписки на цены последних сделок. |
 | get_my_subscriptions |  [GetMySubscriptions](#getmysubscriptions) | Запрос своих подписок. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -437,8 +437,8 @@ Server-side стрим предоставления биржевой инфор�
 | orderbook |  [OrderBook](#orderbook) | Стакан. |
 | trading_status |  [TradingStatus](#tradingstatus) | Торговый статус. |
 | ping |  [Ping](#ping) | Проверка активности стрима. |
-| subscribe_last_price_response |  [SubscribeLastPriceResponse](#subscribelastpriceresponse) | Результат подписки на последние цены инструментов. |
-| last_price |  [LastPrice](#lastprice) | Последняя цена. |
+| subscribe_last_price_response |  [SubscribeLastPriceResponse](#subscribelastpriceresponse) | Результат подписки на цены последние сделок по инструментам. |
+| last_price |  [LastPrice](#lastprice) | Цена последней сделки. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -453,7 +453,7 @@ Server-side стрим предоставления биржевой инфор�
 | subscribe_order_book_request |  [SubscribeOrderBookRequest](#subscribeorderbookrequest) | Запрос подписки на стаканы. |
 | subscribe_trades_request |  [SubscribeTradesRequest](#subscribetradesrequest) | Запрос подписки на ленту обезличенных сделок. |
 | subscribe_info_request |  [SubscribeInfoRequest](#subscribeinforequest) | Запрос подписки на торговые статусы инструментов. |
-| subscribe_last_price_request |  [SubscribeLastPriceRequest](#subscribelastpricerequest) | Запрос подписки на последние цены. |
+| subscribe_last_price_request |  [SubscribeLastPriceRequest](#subscribelastpricerequest) | Запрос подписки на цены последних сделок. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -566,25 +566,25 @@ subscribeCandles | Изменения статуса подписки на св�
 
 
 #### SubscribeLastPriceRequest
-Изменение статуса подписки на последнюю цену инструмента.
+Изменение статуса подписки на цену последней сделки по инструменту.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | subscription_action |  [SubscriptionAction](#subscriptionaction) | Изменение статуса подписки. |
-| instruments | Массив объектов [LastPriceInstrument](#lastpriceinstrument) | Массив инструментов для подписки на последнюю цену. |
+| instruments | Массив объектов [LastPriceInstrument](#lastpriceinstrument) | Массив инструментов для подписки на цену последней сделки. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
 #### SubscribeLastPriceResponse
-Результат изменения статуса подписки на последнюю цену.
+Результат изменения статуса подписки на цену последней сделки.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](https://tinkoff.github.io/investAPI/grpc#tracking-id). |
-| last_price_subscriptions | Массив объектов [LastPriceSubscription](#lastpricesubscription) | Массив статусов подписки на последнюю цену. |
+| last_price_subscriptions | Массив объектов [LastPriceSubscription](#lastpricesubscription) | Массив статусов подписки на цену последней сделки. |
  <!-- end Fields -->
  <!-- end HasFields -->
 

@@ -493,6 +493,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../example/" class="md-nav__link">
+        Примеры запросов
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1560,7 +1574,9 @@
 в валюту можно воспользоваться формулой:</p>
 <blockquote>
 <p><strong>price</strong> / 100 * <strong>nominal</strong></p>
+<p><strong>price</strong> + current_nkd / 100 * <strong>nominal</strong>  Используется для подсчета с учетом НКД</p>
 </blockquote>
+<p>НКД - накопленный купонный доход. Может возвращаться в параметра <code>current_nkd</code> или <code>aci_value</code>. </p>
 <h3 id="_5">Валюта</h3>
 <blockquote>
 <p><strong>price</strong> * <strong>lot</strong> / <strong>nominal</strong></p>

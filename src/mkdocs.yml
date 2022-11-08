@@ -39,6 +39,7 @@ nav:
   - "Дедлайны запросов": deadlines.md
   - "SLA": sla.md
   - "Таблица параметров возвращающих валюту или пункты": table_order_currency.md
+  - Примеры запросов: example.md
 - Ответы на частые вопросы: faq.md
 - Языки программирования:
   - Python: faq_python.md

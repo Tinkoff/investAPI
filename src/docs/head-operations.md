@@ -41,6 +41,7 @@ stream [сервиса работы с торговыми поручениями
 
 
 Параметр *average_position_price* - Средневзвешенная цена позиции.
+
 Параметр *average_position_price_fifo* - Средняя цена позиции по методу FIFO. 
 
 Более подробно о методах расчета с примерами можно почитать на сайте [Тинькофф](https://www.tinkoff.ru/help/invest-educate/yield-analysis/about/math-method/).

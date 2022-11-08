@@ -2333,7 +2333,7 @@
 </li>
 </ul>
 <h4 id="getlastprices">GetLastPrices</h4>
-<p>Метод запроса последних цен по инструментам.</p>
+<p>Метод запроса цен последних сделок по инструментам.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getlastpricesrequest">GetLastPricesRequest</a></p>
@@ -2676,7 +2676,7 @@
 <!-- end HasFields -->
 
 <h4 id="getlastpricesrequest">GetLastPricesRequest</h4>
-<p>Запрос получения последних цен.</p>
+<p>Запрос получения цен последних сделок.</p>
 <table>
 <thead>
 <tr>
@@ -2706,7 +2706,7 @@
 <!-- end HasFields -->
 
 <h4 id="getlastpricesresponse">GetLastPricesResponse</h4>
-<p>Список последних цен.</p>
+<p>Список цен последних сделок.</p>
 <table>
 <thead>
 <tr>
@@ -2719,7 +2719,7 @@
 <tr>
 <td>last_prices</td>
 <td>Массив объектов <a href="#lastprice">LastPrice</a></td>
-<td>Массив последних цен.</td>
+<td>Массив цен последних сделок.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3180,7 +3180,7 @@
 <!-- end HasFields -->
 
 <h4 id="lastprice">LastPrice</h4>
-<p>Информация о цене.</p>
+<p>Информация о цене последней сделки.</p>
 <table>
 <thead>
 <tr>
@@ -3198,7 +3198,7 @@
 <tr>
 <td>price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Последняя цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+<td>Цена последней сделки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
 </tr>
 <tr>
 <td>time</td>
@@ -3250,7 +3250,7 @@
 <!-- end HasFields -->
 
 <h4 id="lastpricesubscription">LastPriceSubscription</h4>
-<p>Статус подписки на последнюю цену.</p>
+<p>Статус подписки на цену последней сделки.</p>
 <table>
 <thead>
 <tr>
@@ -3318,7 +3318,7 @@
 <tr>
 <td>subscribe_last_price_request</td>
 <td><a href="#subscribelastpricerequest">SubscribeLastPriceRequest</a></td>
-<td>Запрос подписки на последние цены.</td>
+<td>Запрос подписки на цены последних сделок.</td>
 </tr>
 <tr>
 <td>get_my_subscriptions</td>
@@ -3393,12 +3393,12 @@
 <tr>
 <td>subscribe_last_price_response</td>
 <td><a href="#subscribelastpriceresponse">SubscribeLastPriceResponse</a></td>
-<td>Результат подписки на последние цены инструментов.</td>
+<td>Результат подписки на цены последние сделок по инструментам.</td>
 </tr>
 <tr>
 <td>last_price</td>
 <td><a href="#lastprice">LastPrice</a></td>
-<td>Последняя цена.</td>
+<td>Цена последней сделки.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3442,7 +3442,7 @@
 <tr>
 <td>subscribe_last_price_request</td>
 <td><a href="#subscribelastpricerequest">SubscribeLastPriceRequest</a></td>
-<td>Запрос подписки на последние цены.</td>
+<td>Запрос подписки на цены последних сделок.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3749,7 +3749,7 @@
 <!-- end HasFields -->
 
 <h4 id="subscribelastpricerequest">SubscribeLastPriceRequest</h4>
-<p>Изменение статуса подписки на последнюю цену инструмента.</p>
+<p>Изменение статуса подписки на цену последней сделки по инструменту.</p>
 <table>
 <thead>
 <tr>
@@ -3767,7 +3767,7 @@
 <tr>
 <td>instruments</td>
 <td>Массив объектов <a href="#lastpriceinstrument">LastPriceInstrument</a></td>
-<td>Массив инструментов для подписки на последнюю цену.</td>
+<td>Массив инструментов для подписки на цену последней сделки.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3779,7 +3779,7 @@
 <!-- end HasFields -->
 
 <h4 id="subscribelastpriceresponse">SubscribeLastPriceResponse</h4>
-<p>Результат изменения статуса подписки на последнюю цену.</p>
+<p>Результат изменения статуса подписки на цену последней сделки.</p>
 <table>
 <thead>
 <tr>
@@ -3797,7 +3797,7 @@
 <tr>
 <td>last_price_subscriptions</td>
 <td>Массив объектов <a href="#lastpricesubscription">LastPriceSubscription</a></td>
-<td>Массив статусов подписки на последнюю цену.</td>
+<td>Массив статусов подписки на цену последней сделки.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>

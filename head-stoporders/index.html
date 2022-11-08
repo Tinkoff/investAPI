@@ -607,14 +607,14 @@
       
       
         <label class="md-nav__link" for="__nav_5">
-          Сервис аккаунтов
+          Сервис счетов
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Сервис аккаунтов" data-md-level="1">
+      <nav class="md-nav" aria-label="Сервис счетов" data-md-level="1">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
-          Сервис аккаунтов
+          Сервис счетов
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -773,14 +773,14 @@
       
       
         <label class="md-nav__link" for="__nav_7">
-          Сервис торговых поручений
+          Сервис ордеров
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Сервис торговых поручений" data-md-level="1">
+      <nav class="md-nav" aria-label="Сервис ордеров" data-md-level="1">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
-          Сервис торговых поручений
+          Сервис ордеров
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1031,14 +1031,14 @@
       
       
         <label class="md-nav__link" for="__nav_10">
-          Сервис стоп-заявок
+          Сервис стоп-ордеров
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Сервис стоп-заявок" data-md-level="1">
+      <nav class="md-nav" aria-label="Сервис стоп-ордеров" data-md-level="1">
         <label class="md-nav__title" for="__nav_10">
           <span class="md-nav__icon md-icon"></span>
-          Сервис стоп-заявок
+          Сервис стоп-ордеров
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1083,21 +1083,21 @@
       
         <li class="md-nav__item">
   <a href="#-_1" class="md-nav__link">
-    Метод выставления стоп-заявки
+    Метод выставления стоп-ордера
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#-_2" class="md-nav__link">
-    Метод получения списка активных стоп-заявок
+    Метод получения списка активных стоп-ордеров
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#-_3" class="md-nav__link">
-    Метод отмены стоп-заявки
+    Метод отмены стоп-ордера
   </a>
   
 </li>
@@ -1278,21 +1278,21 @@
       
         <li class="md-nav__item">
   <a href="#-_1" class="md-nav__link">
-    Метод выставления стоп-заявки
+    Метод выставления стоп-ордера
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#-_2" class="md-nav__link">
-    Метод получения списка активных стоп-заявок
+    Метод получения списка активных стоп-ордеров
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#-_3" class="md-nav__link">
-    Метод отмены стоп-заявки
+    Метод отмены стоп-ордера
   </a>
   
 </li>
@@ -1315,25 +1315,25 @@
 
 
 
-<h1 id="-">Сервис работы со стоп-заявками</h1>
-<p>В процессе работы торговый робот может использовать возможности стоп-заявки. </p>
-<p>Стоп-заявка или (стоп-приказ) — это особый вид торгового поручения, который трансформируется
+<h1 id="-">Сервис работы со стоп-ордерами</h1>
+<p>В процессе работы торговый робот может использовать возможности стоп-ордера. </p>
+<p>стоп-ордер или (стоп-приказ) — это особый вид торгового поручения, который трансформируется
 в биржевое торговое поручение с заданными параметрами при достижении какого-то условия.</p>
-<p>Подробнее про типы стоп-заявок можно почитать по <a href="https://www.tinkoff.ru/invest/account/help/trade-on-bs/bids/">ссылке</a>.</p>
-<p>Несмотря на то, что TINKOFF INVEST API предоставляет интерфейс работы со стоп-заявками, 
+<p>Подробнее про типы стоп-ордеров можно почитать по <a href="https://www.tinkoff.ru/invest/account/help/trade-on-bs/bids/">ссылке</a>.</p>
+<p>Несмотря на то, что TINKOFF INVEST API предоставляет интерфейс работы со стоп-ордерами, 
 наша команда <strong>рекомендует реализовывать данную функциональность на стороне торгового робота</strong>.
 Сделать это можно при помощи отслеживания цены и выставления биржевых торговых поручений.</p>
-<h2 id="-_1">Метод выставления стоп-заявки</h2>
-<p>Для выставления стоп-заявки используется метод <a href="/investAPI/stoporders#poststoporder">PostStopOrder</a>.</p>
+<h2 id="-_1">Метод выставления стоп-ордера</h2>
+<p>Для выставления стоп-ордера используется метод <a href="/investAPI/stoporders#poststoporder">PostStopOrder</a>.</p>
 <p>Обратите внимание на параметр <em>expiration_type</em>, он отвечает за время жизни (экспирации) заявки. Например,
 значение GoodTillCancel говорит, что такая заявка будет активна до отмены, а GoodTillDate — что заявка
 будет активна до определённой даты (параметр <em>expire_date</em>).</p>
-<h2 id="-_2">Метод получения списка активных стоп-заявок</h2>
-<p>Для получения полного списка стоп-заявок рекомендуется использовать метод <a href="/investAPI/stoporders#getstoporders">GetStopOrders</a>.
-Обратите внимание, что метод вернёт только стоп-заявки, которые ещё не были конвертированы в 
+<h2 id="-_2">Метод получения списка активных стоп-ордеров</h2>
+<p>Для получения полного списка стоп-ордеров рекомендуется использовать метод <a href="/investAPI/stoporders#getstoporders">GetStopOrders</a>.
+Обратите внимание, что метод вернёт только стоп-ордера, которые ещё не были конвертированы в 
 реальные торговые поручения. </p>
-<h2 id="-_3">Метод отмены стоп-заявки</h2>
-<p>Для отмены активной стоп-заявки используется метод <a href="/investAPI/stoporders#cancelstoporder">CancelStopOrder</a>.</p>
+<h2 id="-_3">Метод отмены стоп-ордера</h2>
+<p>Для отмены активной стоп-ордера используется метод <a href="/investAPI/stoporders#cancelstoporder">CancelStopOrder</a>.</p>
 
               
             </article>

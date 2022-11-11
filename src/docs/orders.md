@@ -139,7 +139,7 @@ Stream сделок пользователя
 | ----- | ---- | ----------- |
 | price |  [MoneyValue](#moneyvalue) | Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.. |
 | quantity |  [int64](#int64) | Количество лотов. |
-| trade_id |  [string](#string) | Идентификатор торговой операции. |
+| trade_id |  [string](#string) | Идентификатор сделки. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -180,7 +180,7 @@ Stream сделок пользователя
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | date_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время совершения сделки в часовом поясе UTC. |
-| price |  [Quotation](#quotation) | Цена одного инструмента, по которой совершена сделка. |
+| price |  [Quotation](#quotation) | Цена за 1 инструмент, по которой совершена сделка. |
 | quantity |  [int64](#int64) | Количество лотов в сделке. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -211,7 +211,7 @@ Stream сделок пользователя
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Figi-идентификатор инструмента. |
 | quantity |  [int64](#int64) | Количество лотов. |
-| price |  [Quotation](#quotation) | Цена одного инструмента. Для получения стоимости лота требуется умножить на лотность инструмента. Игнорируется для рыночных поручений. |
+| price |  [Quotation](#quotation) | Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Игнорируется для рыночных поручений. |
 | direction |  [OrderDirection](#orderdirection) | Направление операции. |
 | account_id |  [string](#string) | Номер счёта. |
 | order_type |  [OrderType](#ordertype) | Тип заявки. |

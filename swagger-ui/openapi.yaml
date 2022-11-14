@@ -856,7 +856,7 @@ paths:
       tags:
         - MarketDataService
       x-codegen-request-body-name: body
-    /tinkoff.public.invest.api.contract.v1.OperationsService/GetBrokerReport:
+  /tinkoff.public.invest.api.contract.v1.OperationsService/GetBrokerReport:
     post:
       operationId: OperationsService_GetBrokerReport
       requestBody:

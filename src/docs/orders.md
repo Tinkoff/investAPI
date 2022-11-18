@@ -232,7 +232,7 @@ Stream сделок пользователя
 | lots_requested |  [int64](#int64) | Запрошено лотов. |
 | lots_executed |  [int64](#int64) | Исполнено лотов. |
 | initial_order_price |  [MoneyValue](#moneyvalue) | Начальная цена заявки. Произведение количества запрошенных лотов на цену. |
-| executed_order_price |  [MoneyValue](#moneyvalue) | Исполненная цена заявки. Произведение средней цены покупки на количество лотов. |
+| executed_order_price |  [MoneyValue](#moneyvalue) | Исполненная средняя цена 1 одного инструмента в заявки. |
 | total_order_amount |  [MoneyValue](#moneyvalue) | Итоговая стоимость заявки, включающая все комиссии. |
 | initial_commission |  [MoneyValue](#moneyvalue) | Начальная комиссия. Комиссия рассчитанная при выставлении заявки. |
 | executed_commission |  [MoneyValue](#moneyvalue) | Фактическая комиссия по итогам исполнения заявки. |

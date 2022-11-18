@@ -1468,9 +1468,9 @@
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| OPTION_DIRECTION_UNSPECIFIED | 0 | none |
-| OPTION_DIRECTION_PUT | 1 | none |
-| OPTION_DIRECTION_CALL | 2 | none |
+| OPTION_DIRECTION_UNSPECIFIED | 0 | Тип не определен. |
+| OPTION_DIRECTION_PUT | 1 | Опцион на продажу. |
+| OPTION_DIRECTION_CALL | 2 | Опцион на покупку. |
 
 
 
@@ -1480,9 +1480,9 @@
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| OPTION_PAYMENT_TYPE_UNSPECIFIED | 0 | none |
-| OPTION_PAYMENT_TYPE_PREMIUM | 1 | none |
-| OPTION_PAYMENT_TYPE_MARGINAL | 2 | none |
+| OPTION_PAYMENT_TYPE_UNSPECIFIED | 0 | Тип не определен. |
+| OPTION_PAYMENT_TYPE_PREMIUM | 1 | Опционы с использованием премии в расчетах. |
+| OPTION_PAYMENT_TYPE_MARGINAL | 2 | Маржируемые опционы. |
 
 
 
@@ -1492,9 +1492,9 @@
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| OPTION_EXECUTION_TYPE_UNSPECIFIED | 0 | none |
-| OPTION_EXECUTION_TYPE_PHYSICAL_DELIVERY | 1 | none |
-| OPTION_EXECUTION_TYPE_CASH_SETTLEMENT | 2 | none |
+| OPTION_EXECUTION_TYPE_UNSPECIFIED | 0 | Тип не определен. |
+| OPTION_EXECUTION_TYPE_PHYSICAL_DELIVERY | 1 | Поставочный тип опциона. |
+| OPTION_EXECUTION_TYPE_CASH_SETTLEMENT | 2 | Расчетный тип опциона. |
 
 
 
@@ -1504,9 +1504,9 @@
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| OPTION_STYLE_UNSPECIFIED | 0 | none |
-| OPTION_STYLE_AMERICAN | 1 | none |
-| OPTION_STYLE_EUROPEAN | 2 | none |
+| OPTION_STYLE_UNSPECIFIED | 0 | Тип не определен. |
+| OPTION_STYLE_AMERICAN | 1 | Американский опцион. |
+| OPTION_STYLE_EUROPEAN | 2 | Европейский опцион. |
 
 
 

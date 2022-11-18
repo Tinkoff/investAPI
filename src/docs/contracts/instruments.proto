@@ -283,30 +283,30 @@ message Option {
 
 //Тип опциона по направлению сделки.
 enum OptionDirection {
-  OPTION_DIRECTION_UNSPECIFIED = 0;
-  OPTION_DIRECTION_PUT = 1;
-  OPTION_DIRECTION_CALL = 2;
+  OPTION_DIRECTION_UNSPECIFIED = 0; //Тип не определен.
+  OPTION_DIRECTION_PUT = 1; //Опцион на продажу.
+  OPTION_DIRECTION_CALL = 2; //Опцион на покупку.
 }
 
 //Тип расчетов по опциону.
 enum OptionPaymentType {
-  OPTION_PAYMENT_TYPE_UNSPECIFIED = 0;
-  OPTION_PAYMENT_TYPE_PREMIUM = 1;
-  OPTION_PAYMENT_TYPE_MARGINAL = 2;
+  OPTION_PAYMENT_TYPE_UNSPECIFIED = 0; //Тип не определен.
+  OPTION_PAYMENT_TYPE_PREMIUM = 1; //Опционы с использованием премии в расчетах.
+  OPTION_PAYMENT_TYPE_MARGINAL = 2; //Маржируемые опционы.
 }
 
 //Тип опциона по стилю.
 enum OptionStyle {
-  OPTION_STYLE_UNSPECIFIED = 0;
-  OPTION_STYLE_AMERICAN = 1;
-  OPTION_STYLE_EUROPEAN = 2;
+  OPTION_STYLE_UNSPECIFIED = 0; //Тип не определен.
+  OPTION_STYLE_AMERICAN = 1;  //Американский опцион.
+  OPTION_STYLE_EUROPEAN = 2; //Европейский опцион.
 }
 
 //Тип опциона по способу исполнения.
 enum OptionSettlementType {
-  OPTION_EXECUTION_TYPE_UNSPECIFIED = 0;
-  OPTION_EXECUTION_TYPE_PHYSICAL_DELIVERY = 1;
-  OPTION_EXECUTION_TYPE_CASH_SETTLEMENT = 2;
+  OPTION_EXECUTION_TYPE_UNSPECIFIED = 0; //Тип не определен.
+  OPTION_EXECUTION_TYPE_PHYSICAL_DELIVERY = 1; // Поставочный тип опциона.
+  OPTION_EXECUTION_TYPE_CASH_SETTLEMENT = 2; //Расчетный тип опциона.
 }
 
 //Данные по акции.

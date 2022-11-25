@@ -24,6 +24,9 @@ function download {
       echo 'invalid token'
       exit 1
   fi
+#В случае другой ошибки - просто напишем ее в консоль и выйдем
+  echo "unspecified error with code: ${response_code}"
+  exit 1
 }
 
 while read -r figi; do

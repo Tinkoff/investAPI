@@ -1419,6 +1419,8 @@
 <p>Метод <a href="/investAPI/operations#getoperationsbycursor">getOperationsByCursor</a> является более предпочтительным для использования, возвращает список всех операций по указанному счету.
 Данный метод возвращает информацию обо всех операциях, в том числе отмененных, поддерживает пагинацию и расширенную фильтрацию.
 Плюс данный метод обладает всеми преимуществами метода <a href="/investAPI/operations#getoperations">getOperations</a>.</p>
+<p><strong>Важно!!!</strong> Метод <a href="/investAPI/operations#getoperations">getOperations</a> не поддерживает опционы. Для получения информации по операциям с опционами
+мы рекомендуем использовать метод <a href="/investAPI/operations#getoperationsbycursor">getOperationsByCursor</a>.</p>
 <p>Для вызова данных методов во входных параметрах достаточно указать только <strong><code>account_id</code></strong>.</p>
 <p>Метод <a href="/investAPI/operations#getoperations">getOperations</a>, в том числе, возвращает отменённые операции (параметр <em>state</em>), это нужно обязательно учитывать
 в алгоритме работы. </p>

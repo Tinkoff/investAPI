@@ -10,6 +10,9 @@
 Данный метод возвращает информацию обо всех операциях, в том числе отмененных, поддерживает пагинацию и расширенную фильтрацию.
 Плюс данный метод обладает всеми преимуществами метода [getOperations](/investAPI/operations#getoperations).
 
+**Важно!!!** Метод [getOperations](/investAPI/operations#getoperations) не поддерживает опционы. Для получения информации по операциям с опционами
+мы рекомендуем использовать метод [getOperationsByCursor](/investAPI/operations#getoperationsbycursor).
+
 Для вызова данных методов во входных параметрах достаточно указать только **`account_id`**.
 
 Метод [getOperations](/investAPI/operations#getoperations), в том числе, возвращает отменённые операции (параметр *state*), это нужно обязательно учитывать

@@ -1345,6 +1345,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#virtualportfolioposition" class="md-nav__link">
+    VirtualPortfolioPosition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#withdrawlimitsrequest" class="md-nav__link">
     WithdrawLimitsRequest
   </a>
@@ -1388,6 +1395,13 @@
           <li class="md-nav__item">
   <a href="#operationtype" class="md-nav__link">
     OperationType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portfoliorequestcurrencyrequest" class="md-nav__link">
+    PortfolioRequest.CurrencyRequest
   </a>
   
 </li>
@@ -2180,6 +2194,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#virtualportfolioposition" class="md-nav__link">
+    VirtualPortfolioPosition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#withdrawlimitsrequest" class="md-nav__link">
     WithdrawLimitsRequest
   </a>
@@ -2223,6 +2244,13 @@
           <li class="md-nav__item">
   <a href="#operationtype" class="md-nav__link">
     OperationType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portfoliorequestcurrencyrequest" class="md-nav__link">
+    PortfolioRequest.CurrencyRequest
   </a>
   
 </li>
@@ -3617,7 +3645,7 @@
 <tr>
 <td>average_position_price_pt</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Средняя цена позиции в пунктах (для фьючерсов). <strong>Возможна задержка до секунды для пересчёта</strong>.</td>
+<td>Deprecated Средняя цена позиции в пунктах (для фьючерсов). <strong>Возможна задержка до секунды для пересчёта</strong>.</td>
 </tr>
 <tr>
 <td>current_price</td>
@@ -3632,12 +3660,32 @@
 <tr>
 <td>quantity_lots</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Количество лотов в портфеле.</td>
+<td>Deprecated Количество лотов в портфеле.</td>
 </tr>
 <tr>
 <td>blocked</td>
 <td><a href="#bool">bool</a></td>
 <td>Заблокировано.</td>
+</tr>
+<tr>
+<td>position_uid</td>
+<td><a href="#string">string</a></td>
+<td>position_uid-идентификатора инструмента</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>instrument_uid-идентификатора инструмента</td>
+</tr>
+<tr>
+<td>var_margin</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Вариационная маржа</td>
+</tr>
+<tr>
+<td>expected_yield_fifo</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Текущая рассчитанная доходность позиции.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3663,6 +3711,11 @@
 <td>account_id</td>
 <td><a href="#string">string</a></td>
 <td>Идентификатор счёта пользователя.</td>
+</tr>
+<tr>
+<td>currency</td>
+<td><a href="#portfoliorequestcurrencyrequest">PortfolioRequest.CurrencyRequest</a></td>
+<td>Валюта, в которой требуется рассчитать портфель</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3723,6 +3776,26 @@
 <td>account_id</td>
 <td><a href="#string">string</a></td>
 <td>Идентификатор счёта пользователя.</td>
+</tr>
+<tr>
+<td>total_amount_options</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Общая стоимость фьючерсов в портфеле в рублях.</td>
+</tr>
+<tr>
+<td>total_amount_sp</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Общая стоимость структурных нот в портфеле в рублях</td>
+</tr>
+<tr>
+<td>total_amount_portfolio</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Общая стоимость портфеля в рублях</td>
+</tr>
+<tr>
+<td>virtual_positions</td>
+<td>Массив объектов <a href="#virtualportfolioposition">VirtualPortfolioPosition</a></td>
+<td>Массив виртуальных позиций портфеля</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4228,6 +4301,80 @@
 </table>
 <!-- end HasFields -->
 
+<h4 id="virtualportfolioposition">VirtualPortfolioPosition</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>position_uid</td>
+<td><a href="#string">string</a></td>
+<td>position_uid-идентификатора инструмента</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>instrument_uid-идентификатора инструмента</td>
+</tr>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатора инструмента.</td>
+</tr>
+<tr>
+<td>instrument_type</td>
+<td><a href="#string">string</a></td>
+<td>Тип инструмента.</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Количество инструмента в портфеле в штуках.</td>
+</tr>
+<tr>
+<td>average_position_price</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Средневзвешенная цена позиции. <strong>Возможна задержка до секунды для пересчёта</strong>.</td>
+</tr>
+<tr>
+<td>expected_yield</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Текущая рассчитанная доходность позиции.</td>
+</tr>
+<tr>
+<td>expected_yield_fifo</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Текущая рассчитанная доходность позиции.</td>
+</tr>
+<tr>
+<td>expire_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата до которой нужно продать виртуальные бумаги, после этой даты виртуальная позиция "сгорит"</td>
+</tr>
+<tr>
+<td>current_price</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Текущая цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента..</td>
+</tr>
+<tr>
+<td>average_position_price_fifo</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Средняя цена позиции по методу FIFO. <strong>Возможна задержка до секунды для пересчёта</strong>.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
 <h4 id="withdrawlimitsrequest">WithdrawLimitsRequest</h4>
 <p>Запрос доступного для вывода остатка.</p>
 <table>
@@ -4626,6 +4773,33 @@
 <td>OPERATION_TYPE_OUT_STAMP_DUTY</td>
 <td>47</td>
 <td>Гербовый сбор.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="portfoliorequestcurrencyrequest">PortfolioRequest.CurrencyRequest</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RUB</td>
+<td>0</td>
+<td>Рубли</td>
+</tr>
+<tr>
+<td>USD</td>
+<td>1</td>
+<td>Доллары</td>
+</tr>
+<tr>
+<td>EUR</td>
+<td>2</td>
+<td>Евро</td>
 </tr>
 </tbody>
 </table>

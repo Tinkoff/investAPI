@@ -182,6 +182,7 @@ Stream сделок пользователя
 | date_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время совершения сделки в часовом поясе UTC. |
 | price |  [Quotation](#quotation) | Цена за 1 инструмент, по которой совершена сделка. |
 | quantity |  [int64](#int64) | Количество лотов в сделке. |
+| trade_id |  [string](#string) | Идентификатор сделки |
  <!-- end Fields -->
  <!-- end HasFields -->
 

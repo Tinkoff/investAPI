@@ -489,11 +489,15 @@ Server-side stream обновлений информации по изменен
 | average_position_price |  [MoneyValue](#moneyvalue) | Средневзвешенная цена позиции. **Возможна задержка до секунды для пересчёта**. |
 | expected_yield |  [Quotation](#quotation) | Текущая рассчитанная доходность позиции. |
 | current_nkd |  [MoneyValue](#moneyvalue) | Текущий НКД. |
-| average_position_price_pt |  [Quotation](#quotation) | Средняя цена позиции в пунктах (для фьючерсов). **Возможна задержка до секунды для пересчёта**. |
+| average_position_price_pt |  [Quotation](#quotation) | Deprecated Средняя цена позиции в пунктах (для фьючерсов). **Возможна задержка до секунды для пересчёта**. |
 | current_price |  [MoneyValue](#moneyvalue) | Текущая цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.. |
 | average_position_price_fifo |  [MoneyValue](#moneyvalue) | Средняя цена позиции по методу FIFO. **Возможна задержка до секунды для пересчёта**. |
-| quantity_lots |  [Quotation](#quotation) | Количество лотов в портфеле. |
+| quantity_lots |  [Quotation](#quotation) | Deprecated Количество лотов в портфеле. |
 | blocked |  [bool](#bool) | Заблокировано. |
+| position_uid |  [string](#string) | position_uid-идентификатора инструмента |
+| instrument_uid |  [string](#string) | instrument_uid-идентификатора инструмента |
+| var_margin |  [MoneyValue](#moneyvalue) | Вариационная маржа |
+| expected_yield_fifo |  [Quotation](#quotation) | Текущая рассчитанная доходность позиции. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -505,6 +509,7 @@ Server-side stream обновлений информации по изменен
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | account_id |  [string](#string) | Идентификатор счёта пользователя. |
+| currency |  [PortfolioRequest.CurrencyRequest](#portfoliorequestcurrencyrequest) | Валюта, в которой требуется рассчитать портфель |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -523,6 +528,10 @@ Server-side stream обновлений информации по изменен
 | expected_yield |  [Quotation](#quotation) | Текущая относительная доходность портфеля, в %. |
 | positions | Массив объектов [PortfolioPosition](#portfolioposition) | Список позиций портфеля. |
 | account_id |  [string](#string) | Идентификатор счёта пользователя. |
+| total_amount_options |  [MoneyValue](#moneyvalue) | Общая стоимость фьючерсов в портфеле в рублях. |
+| total_amount_sp |  [MoneyValue](#moneyvalue) | Общая стоимость структурных нот в портфеле в рублях |
+| total_amount_portfolio |  [MoneyValue](#moneyvalue) | Общая стоимость портфеля в рублях |
+| virtual_positions | Массив объектов [VirtualPortfolioPosition](#virtualportfolioposition) | Массив виртуальных позиций портфеля |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -710,6 +719,27 @@ Server-side stream обновлений информации по изменен
  <!-- end HasFields -->
 
 
+#### VirtualPortfolioPosition
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| position_uid |  [string](#string) | position_uid-идентификатора инструмента |
+| instrument_uid |  [string](#string) | instrument_uid-идентификатора инструмента |
+| figi |  [string](#string) | Figi-идентификатора инструмента. |
+| instrument_type |  [string](#string) | Тип инструмента. |
+| quantity |  [Quotation](#quotation) | Количество инструмента в портфеле в штуках. |
+| average_position_price |  [MoneyValue](#moneyvalue) | Средневзвешенная цена позиции. **Возможна задержка до секунды для пересчёта**. |
+| expected_yield |  [Quotation](#quotation) | Текущая рассчитанная доходность позиции. |
+| expected_yield_fifo |  [Quotation](#quotation) | Текущая рассчитанная доходность позиции. |
+| expire_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата до которой нужно продать виртуальные бумаги, после этой даты виртуальная позиция "сгорит" |
+| current_price |  [MoneyValue](#moneyvalue) | Текущая цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.. |
+| average_position_price_fifo |  [MoneyValue](#moneyvalue) | Средняя цена позиции по методу FIFO. **Возможна задержка до секунды для пересчёта**. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
 #### WithdrawLimitsRequest
 Запрос доступного для вывода остатка.
 
@@ -820,6 +850,18 @@ Server-side stream обновлений информации по изменен
 | OPERATION_TYPE_CASH_FEE | 45 | Комиссия за валютный остаток. |
 | OPERATION_TYPE_OUT_FEE | 46 | Комиссия за вывод валюты с брокерского счета. |
 | OPERATION_TYPE_OUT_STAMP_DUTY | 47 | Гербовый сбор. |
+
+
+
+
+#### PortfolioRequest.CurrencyRequest
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| RUB | 0 | Рубли |
+| USD | 1 | Доллары |
+| EUR | 2 | Евро |
 
 
 

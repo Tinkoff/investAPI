@@ -850,6 +850,20 @@ Server-side stream обновлений информации по изменен
 | OPERATION_TYPE_CASH_FEE | 45 | Комиссия за валютный остаток. |
 | OPERATION_TYPE_OUT_FEE | 46 | Комиссия за вывод валюты с брокерского счета. |
 | OPERATION_TYPE_OUT_STAMP_DUTY | 47 | Гербовый сбор. |
+| OPERATION_TYPE_OUTPUT_SWIFT | 50 | SWIFT-перевод |
+| OPERATION_TYPE_INPUT_SWIFT | 51 | SWIFT-перевод |
+| OPERATION_TYPE_OUTPUT_ACQUIRING | 53 | Перевод на карту |
+| OPERATION_TYPE_INPUT_ACQUIRING | 54 | Перевод с карты |
+| OPERATION_TYPE_OUTPUT_PENALTY | 55 | Комиссия за вывод средств |
+| OPERATION_TYPE_ADVICE_FEE | 56 | Списание оплаты за сервис Советов |
+| OPERATION_TYPE_TRANS_IIS_BS | 57 | Перевод ценных бумаг с ИИС на Брокерский счет |
+| OPERATION_TYPE_TRANS_BS_BS | 58 | Перевод ценных бумаг с одного брокерского счета на другой |
+| OPERATION_TYPE_OUT_MULTI | 59 | Вывод денежных средств со счета |
+| OPERATION_TYPE_INP_MULTI | 60 | Пополнение денежных средств со счета |
+| OPERATION_TYPE_OVER_PLACEMENT | 61 | Размещение биржевого овернайта |
+| OPERATION_TYPE_OVER_COM | 62 | Списание комиссии |
+| OPERATION_TYPE_OVER_INCOME | 63 | Доход от оверанайта |
+| OPERATION_TYPE_OPTION_EXPIRATION | 64 | Экспирация |
 
 
 

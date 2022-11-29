@@ -50,3 +50,8 @@
 ###Как понять какие бумаги в портфеле заблокированы по решению ЦБ?
 
 В методах [getPortfolio](/investAPI/operations#getportfolio) и  [getPositions](/investAPI/operations#getpositions) добавлены специальные булевы параметры, означающие что данный инструмент заблокирован депозитарием.
+
+###Что за значения приходят в positions.expectedYield в методе [getPortfolio](/investAPI/operations#getportfolio)?
+
+В методе [getPortfolio](/investAPI/operations#getportfolio) в параметрах positions.expectedYield и positions.expectedYieldFifo
+возвращается значение текущей рассчитанной доходность позиции, это значение в валюте инструмента.

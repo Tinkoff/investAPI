@@ -4,7 +4,7 @@ info:
   termsOfService: https://www.tinkoff.ru/invest/disclaimers/basic-information/
   contact:
     email: al.a.volkov@tinkoff.ru
-  version: '1.0.17'
+  version: '1.0.18'
 servers:
   - url: https://invest-public-api.tinkoff.ru/rest/
     description: "Работа с биржей"
@@ -5748,6 +5748,7 @@ components:
         items:
           - cursor: cursor
             date: 2000-01-23T04:56:07.000+00:00
+            assetUid: assetUid
             brokerAccountId: brokerAccountId
             accruedInt:
               nano: 5
@@ -5816,6 +5817,7 @@ components:
             name: name
           - cursor: cursor
             date: 2000-01-23T04:56:07.000+00:00
+            assetUid: assetUid
             brokerAccountId: brokerAccountId
             accruedInt:
               nano: 5
@@ -6793,6 +6795,7 @@ components:
       description: Данные по операции.
       example:
         date: 2000-01-23T04:56:07.000+00:00
+        assetUid: assetUid
         instrumentType: instrumentType
         quantity: quantity
         parentOperationId: parentOperationId
@@ -6858,12 +6861,15 @@ components:
           items:
             $ref: '#/components/schemas/v1OperationTrade'
           type: array
+        assetUid:
+          type: string
       type: object
     v1OperationItem:
       description: Данные об операции.
       example:
         cursor: cursor
         date: 2000-01-23T04:56:07.000+00:00
+        assetUid: assetUid
         brokerAccountId: brokerAccountId
         accruedInt:
           nano: 5
@@ -6986,6 +6992,8 @@ components:
           type: string
         tradesInfo:
           $ref: '#/components/schemas/v1OperationItemTrades'
+        assetUid:
+          type: string
       type: object
     v1OperationItemTrade:
       description: Сделка по операции.
@@ -7141,6 +7149,20 @@ components:
         - OPERATION_TYPE_CASH_FEE
         - OPERATION_TYPE_OUT_FEE
         - OPERATION_TYPE_OUT_STAMP_DUTY
+        - OPERATION_TYPE_OUTPUT_SWIFT
+        - OPERATION_TYPE_INPUT_SWIFT
+        - OPERATION_TYPE_OUTPUT_ACQUIRING
+        - OPERATION_TYPE_INPUT_ACQUIRING
+        - OPERATION_TYPE_OUTPUT_PENALTY
+        - OPERATION_TYPE_ADVICE_FEE
+        - OPERATION_TYPE_TRANS_IIS_BS
+        - OPERATION_TYPE_TRANS_BS_BS
+        - OPERATION_TYPE_OUT_MULTI
+        - OPERATION_TYPE_INP_MULTI
+        - OPERATION_TYPE_OVER_PLACEMENT
+        - OPERATION_TYPE_OVER_COM
+        - OPERATION_TYPE_OVER_INCOME
+        - OPERATION_TYPE_OPTION_EXPIRATION
       type: string
     v1OperationsRequest:
       description: Запрос получения списка операций по счёту.
@@ -7163,6 +7185,7 @@ components:
       example:
         operations:
           - date: 2000-01-23T04:56:07.000+00:00
+            assetUid: assetUid
             instrumentType: instrumentType
             quantity: quantity
             parentOperationId: parentOperationId
@@ -7195,6 +7218,7 @@ components:
             id: id
             quantityRest: quantityRest
           - date: 2000-01-23T04:56:07.000+00:00
+            assetUid: assetUid
             instrumentType: instrumentType
             quantity: quantity
             parentOperationId: parentOperationId

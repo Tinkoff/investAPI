@@ -371,6 +371,7 @@ Server-side stream обновлений информации по изменен
 | type |  [string](#string) | Текстовое описание типа операции. |
 | operation_type |  [OperationType](#operationtype) | Тип операции. |
 | trades | Массив объектов [OperationTrade](#operationtrade) | Массив сделок. |
+| asset_uid |  [string](#string) | Идентификатор актива |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -406,6 +407,7 @@ Server-side stream обновлений информации по изменен
 | cancel_date_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время снятия заявки. |
 | cancel_reason |  [string](#string) | Причина отмены операции. |
 | trades_info |  [OperationItemTrades](#operationitemtrades) | Массив сделок. |
+| asset_uid |  [string](#string) | Идентификатор актива |
  <!-- end Fields -->
  <!-- end HasFields -->
 

@@ -75,6 +75,7 @@ message Operation {
   string type = 12; //Текстовое описание типа операции.
   OperationType operation_type = 13; //Тип операции.
   repeated OperationTrade trades = 14; //Массив сделок.
+  string asset_uid = 16;	//Идентификатор актива
 }
 
 //Сделка по операции.
@@ -478,6 +479,7 @@ message OperationItem {
   google.protobuf.Timestamp cancel_date_time = 56; //Дата и время снятия заявки.
   string cancel_reason = 57; //Причина отмены операции.
   OperationItemTrades trades_info = 61; //Массив сделок.
+  string asset_uid = 64;	//Идентификатор актива
 }
 
 //Массив с информацией о сделках.

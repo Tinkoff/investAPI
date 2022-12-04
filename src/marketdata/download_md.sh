@@ -24,9 +24,14 @@ function download {
       echo 'invalid token'
       exit 1
   fi
-#В случае другой ошибки - просто напишем ее в консоль и выйдем
-  echo "unspecified error with code: ${response_code}"
-  exit 1
+
+  if [ "$response_code" = "404" ]; then
+      echo "data not found for figi=${figi}, year=${year}, skipped"
+  elif [ "$response_code" != "200" ]; then
+      #В случае другой ошибки - просто напишем ее в консоль и выйдем
+      echo "unspecified error with code: ${response_code}"
+      exit 1
+  fi
 }
 
 while read -r figi; do

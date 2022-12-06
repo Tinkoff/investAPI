@@ -6,6 +6,9 @@
 корректно рассчитывать доходности и собирать статистику своей работы. Для реализации данных потребностей
 можно использовать метод [getOperations](/investAPI/operations#getoperations), а так же более новый метод [getOperationsByCursor](/investAPI/operations#getoperationsbycursor).
 
+При работе с данными методами необходимо учитывать [особенности взаимодействия](/investAPI/operations_problems).
+
+
 Метод [getOperationsByCursor](/investAPI/operations#getoperationsbycursor) является более предпочтительным для использования, возвращает список всех операций по указанному счету.
 Данный метод возвращает информацию обо всех операциях, в том числе отмененных, поддерживает пагинацию и расширенную фильтрацию.
 Плюс данный метод обладает всеми преимуществами метода [getOperations](/investAPI/operations#getoperations).

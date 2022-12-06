@@ -63,6 +63,7 @@ nav:
   - Описание: head-operations.md
   - Методы: operations.md
   - FAQ: faq_operations.md
+  - Особенности взаимодействия: operations_problems.md
 - Сервис котировок:
   - Описание: head-marketdata.md
   - Методы: marketdata.md

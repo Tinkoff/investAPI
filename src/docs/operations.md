@@ -13,7 +13,8 @@
 
 
 #### GetOperations
-Метод получения списка операций по счёту.
+Метод получения списка операций по счёту.При работе с данным методом необходимо учитывать
+[особенности взаимодействия](/investAPI/operations_problems) с данным методом.
 
 - Тело запроса — [OperationsRequest](#operationsrequest)
 
@@ -61,7 +62,8 @@
 
 
 #### GetOperationsByCursor
-Метод получения списка операций по счёту с пагинацией.
+Метод получения списка операций по счёту с пагинацией. При работе с данным методом необходимо учитывать
+[особенности взаимодействия](/investAPI/operations_problems) с данным методом.
 
 - Тело запроса — [GetOperationsByCursorRequest](#getoperationsbycursorrequest)
 
@@ -384,8 +386,8 @@ Server-side stream обновлений информации по изменен
 | ----- | ---- | ----------- |
 | cursor |  [string](#string) | Курсор. |
 | broker_account_id |  [string](#string) | Номер счета клиента. |
-| id |  [string](#string) | Номер поручения. |
-| parent_operation_id |  [string](#string) | Номер родительского поручения. |
+| id |  [string](#string) | Идентификатор операции, может меняться с течением времени. |
+| parent_operation_id |  [string](#string) | Идентификатор родительской операции, может измениться, если изменился id родительской операции. |
 | name |  [string](#string) | Название операции. |
 | date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата поручения. |
 | type |  [OperationType](#operationtype) | Тип операции. |

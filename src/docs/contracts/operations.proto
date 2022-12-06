@@ -15,7 +15,8 @@ import "common.proto";
 service OperationsService {/*Сервис предназначен для получения:</br> **1**.  списка операций по счёту;</br> **2**.
                               портфеля по счёту;</br> **3**. позиций ценных бумаг на счёте;</br> **4**.
                               доступного остатка для вывода средств;</br> **5**. получения различных отчётов.*/
-  //Метод получения списка операций по счёту.
+  //Метод получения списка операций по счёту.При работе с данным методом необходимо учитывать
+  // [особенности взаимодействия](/investAPI/operations_problems) с данным методом.
   rpc GetOperations(OperationsRequest) returns (OperationsResponse);
 
   //Метод получения портфеля по счёту.
@@ -33,7 +34,8 @@ service OperationsService {/*Сервис предназначен для пол
   //Метод получения отчёта "Справка о доходах за пределами РФ".
   rpc GetDividendsForeignIssuer(GetDividendsForeignIssuerRequest) returns (GetDividendsForeignIssuerResponse);
 
-  //Метод получения списка операций по счёту с пагинацией.
+  //Метод получения списка операций по счёту с пагинацией. При работе с данным методом необходимо учитывать
+  // [особенности взаимодействия](/investAPI/operations_problems) с данным методом.
   rpc GetOperationsByCursor(GetOperationsByCursorRequest) returns (GetOperationsByCursorResponse);
 }
 
@@ -456,8 +458,8 @@ message GetOperationsByCursorResponse {
 message OperationItem {
   string cursor = 1; //Курсор.
   string broker_account_id = 6; //Номер счета клиента.
-  string id = 16; //Номер поручения.
-  string parent_operation_id = 17; //Номер родительского поручения.
+  string id = 16; //Идентификатор операции, может меняться с течением времени.
+  string parent_operation_id = 17; //Идентификатор родительской операции, может измениться, если изменился id родительской операции.
   string name = 18; //Название операции.
   google.protobuf.Timestamp	date = 21; //Дата поручения.
   OperationType type = 22; //Тип операции.

@@ -1851,6 +1851,11 @@
 <td>Дата и время окончания действия стоп-заявки в часовом поясе UTC. <strong>Для ExpirationType = GoodTillDate заполнение обязательно</strong>.</td>
 </tr>
 <tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента, принимает значения Figi или instrument_uid</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -1949,6 +1954,11 @@
 <td>stop_price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
 <td>Цена активации стоп-заявки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>instrument_uid идентификатор инструмента</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>

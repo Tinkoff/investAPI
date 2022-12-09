@@ -6183,7 +6183,6 @@ components:
               nano: 5
               currency: currency
               units: units
-            instrumentUid: instrumentUid
             figi: figi
             currency: currency
             stopOrderId: stopOrderId
@@ -6199,7 +6198,6 @@ components:
               nano: 5
               currency: currency
               units: units
-            instrumentUid: instrumentUid
             figi: figi
             currency: currency
             stopOrderId: stopOrderId
@@ -8723,8 +8721,6 @@ components:
           $ref: '#/components/schemas/v1StopOrderType'
         expireDate:
           format: date-time
-          type: string
-        instrumentId:
           type: string
       type: object
     v1PostStopOrderResponse:

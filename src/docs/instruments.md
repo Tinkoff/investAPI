@@ -546,6 +546,8 @@
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
 | for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
+| weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным |
+| blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
  <!-- end Fields -->
@@ -672,6 +674,8 @@
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
 | for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
+| weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным |
+| blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
  <!-- end Fields -->
@@ -783,6 +787,8 @@
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
 | for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
+| weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным |
+| blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
  <!-- end Fields -->
@@ -892,6 +898,8 @@
 | basic_asset_position_uid |  [string](#string) | Уникальный идентификатор позиции основного инструмента. |
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
 | for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
+| weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным |
+| blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
  <!-- end Fields -->
@@ -1114,6 +1122,8 @@
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
 | for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
+| weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным |
+| blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
  <!-- end Fields -->
@@ -1175,6 +1185,8 @@
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
 | for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
+| weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным |
+| blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1237,6 +1249,8 @@
 | buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
 | for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
+| weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным |
+| blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1304,6 +1318,8 @@
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
 | for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
+| weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным |
+| blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
  <!-- end Fields -->

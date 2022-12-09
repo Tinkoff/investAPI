@@ -532,7 +532,7 @@ Server-side stream обновлений информации по изменен
 | expected_yield |  [Quotation](#quotation) | Текущая относительная доходность портфеля, в %. |
 | positions | Массив объектов [PortfolioPosition](#portfolioposition) | Список позиций портфеля. |
 | account_id |  [string](#string) | Идентификатор счёта пользователя. |
-| total_amount_options |  [MoneyValue](#moneyvalue) | Общая стоимость фьючерсов в портфеле в рублях. |
+| total_amount_options |  [MoneyValue](#moneyvalue) | Общая стоимость опционов в портфеле в рублях. |
 | total_amount_sp |  [MoneyValue](#moneyvalue) | Общая стоимость структурных нот в портфеле в рублях |
 | total_amount_portfolio |  [MoneyValue](#moneyvalue) | Общая стоимость портфеля в рублях |
 | virtual_positions | Массив объектов [VirtualPortfolioPosition](#virtualportfolioposition) | Массив виртуальных позиций портфеля |

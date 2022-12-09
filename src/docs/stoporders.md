@@ -101,6 +101,7 @@
 | expiration_type |  [StopOrderExpirationType](#stoporderexpirationtype) | Тип экспирации заявки. |
 | stop_order_type |  [StopOrderType](#stopordertype) | Тип заявки. |
 | expire_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время окончания действия стоп-заявки в часовом поясе UTC. **Для ExpirationType = GoodTillDate заполнение обязательно**. |
+| instrument_id |  [string](#string) | Идентификатор инструмента, принимает значения Figi или instrument_uid |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -133,6 +134,7 @@
 | expiration_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время снятия заявки в часовом поясе UTC. |
 | price |  [MoneyValue](#moneyvalue) | Цена заявки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. |
 | stop_price |  [MoneyValue](#moneyvalue) | Цена активации стоп-заявки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. |
+| instrument_uid |  [string](#string) | instrument_uid идентификатор инструмента |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->

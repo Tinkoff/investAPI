@@ -64,7 +64,7 @@ message OrderTrades {
 message OrderTrade {
   google.protobuf.Timestamp date_time = 1;  //Дата и время совершения сделки в часовом поясе UTC.
   Quotation price = 2;  //Цена за 1 инструмент, по которой совершена сделка.
-  int64 quantity = 3;  //Количество лотов в сделке.
+  int64 quantity = 3;  //Количество штук в сделке.
   string trade_id = 4; //Идентификатор сделки
 }
 

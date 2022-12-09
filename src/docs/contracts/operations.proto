@@ -110,7 +110,7 @@ message PortfolioResponse {
   repeated PortfolioPosition positions = 7; //Список позиций портфеля.
   string account_id = 8; //Идентификатор счёта пользователя.
 
-  MoneyValue total_amount_options = 9; //Общая стоимость фьючерсов в портфеле в рублях.
+  MoneyValue total_amount_options = 9; //Общая стоимость опционов в портфеле в рублях.
   MoneyValue total_amount_sp = 10; //Общая стоимость структурных нот в портфеле в рублях
   MoneyValue total_amount_portfolio = 11; //Общая стоимость портфеля в рублях
   repeated VirtualPortfolioPosition virtual_positions = 12; //Массив виртуальных позиций портфеля

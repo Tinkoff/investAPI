@@ -497,7 +497,7 @@ Server-side stream обновлений информации по изменен
 | current_price |  [MoneyValue](#moneyvalue) | Текущая цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.. |
 | average_position_price_fifo |  [MoneyValue](#moneyvalue) | Средняя цена позиции по методу FIFO. **Возможна задержка до секунды для пересчёта**. |
 | quantity_lots |  [Quotation](#quotation) | Deprecated Количество лотов в портфеле. |
-| blocked |  [bool](#bool) | Заблокировано. |
+| blocked |  [bool](#bool) | Заблокировано на бирже. |
 | position_uid |  [string](#string) | position_uid-идентификатора инструмента |
 | instrument_uid |  [string](#string) | instrument_uid-идентификатора инструмента |
 | var_margin |  [MoneyValue](#moneyvalue) | Вариационная маржа |
@@ -598,7 +598,7 @@ Server-side stream обновлений информации по изменен
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Figi-идентификатор фьючерса. |
-| blocked |  [int64](#int64) | Заблокировано. |
+| blocked |  [int64](#int64) | Количество бумаг заблокированных выставленными заявками. |
 | balance |  [int64](#int64) | Текущий незаблокированный баланс. |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции. |
 | instrument_uid |  [string](#string) | Уникальный идентификатор  инструмента. |
@@ -626,7 +626,7 @@ Server-side stream обновлений информации по изменен
 | ----- | ---- | ----------- |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции опциона. |
 | instrument_uid |  [string](#string) | Уникальный идентификатор  инструмента. |
-| blocked |  [int64](#int64) | Заблокировано. |
+| blocked |  [int64](#int64) | Количество бумаг заблокированных выставленными заявками. |
 | balance |  [int64](#int64) | Текущий незаблокированный баланс. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -666,7 +666,7 @@ Server-side stream обновлений информации по изменен
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Figi-идентификатор бумаги. |
-| blocked |  [int64](#int64) | Заблокировано. |
+| blocked |  [int64](#int64) | Количество бумаг заблокированных выставленными заявками. |
 | balance |  [int64](#int64) | Текущий незаблокированный баланс. |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции. |
 | instrument_uid |  [string](#string) | Уникальный идентификатор  инструмента. |

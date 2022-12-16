@@ -101,7 +101,7 @@
 | expiration_type |  [StopOrderExpirationType](#stoporderexpirationtype) | Тип экспирации заявки. |
 | stop_order_type |  [StopOrderType](#stopordertype) | Тип заявки. |
 | expire_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время окончания действия стоп-заявки в часовом поясе UTC. **Для ExpirationType = GoodTillDate заполнение обязательно**. |
-| instrument_id |  [string](#string) | Идентификатор инструмента, принимает значения Figi или instrument_uid |
+| instrument_id |  [string](#string) | Идентификатор инструмента, принимает значения Figi или instrument_uid. |
  <!-- end Fields -->
  <!-- end HasFields -->
 

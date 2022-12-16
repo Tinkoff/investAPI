@@ -155,7 +155,7 @@ message PortfolioPosition {
   MoneyValue current_price = 8; //Текущая цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента..
   MoneyValue average_position_price_fifo = 9; //Средняя цена позиции по методу FIFO. **Возможна задержка до секунды для пересчёта**.
   Quotation quantity_lots = 10; //Deprecated Количество лотов в портфеле.
-  bool blocked = 21; //Заблокировано.
+  bool blocked = 21; //Заблокировано на бирже.
   string position_uid = 24; //position_uid-идентификатора инструмента
   string instrument_uid = 25; //instrument_uid-идентификатора инструмента
   MoneyValue var_margin = 26; //Вариационная маржа
@@ -179,7 +179,7 @@ message VirtualPortfolioPosition {
 //Баланс позиции ценной бумаги.
 message PositionsSecurities {
   string figi = 1; //Figi-идентификатор бумаги.
-  int64 blocked = 2; //Заблокировано.
+  int64 blocked = 2; //Количество бумаг заблокированных выставленными заявками.
   int64 balance = 3;  //Текущий незаблокированный баланс.
   string position_uid = 4; //Уникальный идентификатор позиции.
   string instrument_uid = 5; //Уникальный идентификатор  инструмента.
@@ -190,7 +190,7 @@ message PositionsSecurities {
 //Баланс фьючерса.
 message PositionsFutures {
   string figi = 1; //Figi-идентификатор фьючерса.
-  int64 blocked = 2; //Заблокировано.
+  int64 blocked = 2; //Количество бумаг заблокированных выставленными заявками.
   int64 balance = 3;  //Текущий незаблокированный баланс.
   string position_uid = 4; //Уникальный идентификатор позиции.
   string instrument_uid = 5; //Уникальный идентификатор  инструмента.
@@ -200,7 +200,7 @@ message PositionsFutures {
 message PositionsOptions {
   string position_uid = 1; //Уникальный идентификатор позиции опциона.
   string instrument_uid = 2; //Уникальный идентификатор  инструмента.
-  int64 blocked = 11; //Заблокировано.
+  int64 blocked = 11; //Количество бумаг заблокированных выставленными заявками.
   int64 balance = 21;  //Текущий незаблокированный баланс.
 }
 

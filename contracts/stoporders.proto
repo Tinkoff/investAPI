@@ -36,7 +36,7 @@ message PostStopOrderRequest {
   StopOrderExpirationType expiration_type = 7; //Тип экспирации заявки.
   StopOrderType stop_order_type = 8; //Тип заявки.
   google.protobuf.Timestamp expire_date = 9; //Дата и время окончания действия стоп-заявки в часовом поясе UTC. **Для ExpirationType = GoodTillDate заполнение обязательно**.
-  string instrument_id = 10; //Идентификатор инструмента, принимает значения Figi или instrument_uid
+  string instrument_id = 10; //Идентификатор инструмента, принимает значения Figi или instrument_uid.
 }
 
 //Результат выставления стоп-заявки.

@@ -1249,8 +1249,9 @@
 | buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
 | for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
-| weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным |
-| blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС |
+| weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным. |
+| blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС. |
+| api_trade_available_flag |  [bool](#bool) | Параметр указывает на возможность торговать инструментом через API. |
  <!-- end Fields -->
  <!-- end HasFields -->
 

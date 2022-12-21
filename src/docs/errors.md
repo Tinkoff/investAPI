@@ -17,7 +17,7 @@
 30012|INVALID_ARGUMENT|'to' can't be less than 'from'|Входной параметр *to* не может быть меньше параметра *from*. </br>Укажите корректные параметры *from* и *to*.|
 30013|INVALID_ARGUMENT|'class_code' require for 'id_type' = 'ticker'|Входной параметр *class_code* не может быть пустым при поиске по тикеру. </br>Укажите корректный параметр *class_code*. </br>Подробнее: [Идентификация инструментов](https://tinkoff.github.io/investAPI/faq_identification/).|
 30014|INVALID_ARGUMENT|the maximum request period for the given candle interval has been exceeded|Превышен максимальный период запроса для данного интервала свечи. </br>Укажите корректный интервал.|
-30015|INVALID_ARGUMENT|missing parameter: 'quantity'|Входной параметр *quantity* является обязательным. </br> Укажите корректный параметр *quantity*.|
+30015|INVALID_ARGUMENT|parameter 'quantity' is missing or equal to 0|Входной параметр *quantity* является обязательным. </br> Укажите корректный параметр *quantity*.|
 30016|INVALID_ARGUMENT|'quantity' is invalid|Входной параметр *quantity* имеет некорректное значение.</br>Укажите корректный параметр *quantity*.|
 30017|INVALID_ARGUMENT|missing parameter: 'price'|Входной параметр *price* является обязательным. </br> Укажите корректный параметр *price*.|
 30018|INVALID_ARGUMENT|price is invalid|Входной параметр *price* имеет некорректное значение.</br>Укажите корректный параметр *price*.|
@@ -86,6 +86,7 @@
 30091|INVALID_ARGUMENT|quantity of instruments can't be more than 100|Количество инструментов не может превышать 100.|
 30092|INVALID_ARGUMENT|trading unavailable on weekends|Торги недоступны по нерабочим дням.|
 30093|INVALID_ARGUMENT|missing parameter: 'figi' or 'instrument_id'|Один из параметров *figi* или *instrument_id* является обязательным.|
+30094|INVALID_ARGUMENT|options trading is not available at the moment|Выставление заявок по опционам недоступно.|
 40002|PERMISSION_DENIED|insufficient privileges|Недостаточно прав для совершения операции. </br>Токен доступа имеет уровень прав read-only.</br>Подробнее: [Виды токенов](https://tinkoff.github.io/investAPI/index#_2)|
 40003|UNAUTHENTICATED|authentication token is missing or invalid|Токен доступа не найден или не активен. </br>Вы можете выпустить новый токен по ссылке [Настройки](https://www.tinkoff.ru/invest/settings/)|
 40004|PERMISSION_DENIED|Working with orders is not available with this account|Выставление заявок недоступно с текущего аккаунта.|

@@ -4,8 +4,7 @@ info:
   termsOfService: https://www.tinkoff.ru/invest/disclaimers/basic-information/
   contact:
     email: al.a.volkov@tinkoff.ru
-  version: '1.0.19'
-servers:
+  version: '1.1.0
   - url: https://invest-public-api.tinkoff.ru/rest/
     description: "Работа с биржей"
   - url: https://sandbox-invest-public-api.tinkoff.ru/rest/
@@ -32,24 +31,24 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/v1InstrumentRequest'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/v1BondResponse'
-          description: A successful response.
-        default:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/rpcStatus'
-          description: An unexpected error response.
-      summary: Метод получения облигации по её идентификатору.
-      tags:
-        - InstrumentsService
-      x-codegen-request-body-name: body
+    required: true
+    responses:
+      "200":
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1BondResponse'
+        description: A successful response.
+      default:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/rpcStatus'
+        description: An unexpected error response.
+    summary: Метод получения облигации по её идентификатору.
+    tags:
+      - InstrumentsService
+    x-codegen-request-body-name: body
   /tinkoff.public.invest.api.contract.v1.InstrumentsService/Bonds:
     post:
       operationId: InstrumentsService_Bonds
@@ -7358,6 +7357,7 @@ components:
         forQualInvestorFlag: true
         forIisFlag: true
         positionUid: positionUid
+        apiTradeAvailableFlag: true
         dlongMin:
           nano: 6
           units: units
@@ -7480,6 +7480,8 @@ components:
           type: boolean
         blockedTcaFlag:
           type: boolean
+        apiTradeAvailableFlag:
+          type: boolean
       type: object
     v1OptionDirection:
       default: OPTION_DIRECTION_UNSPECIFIED
@@ -7528,6 +7530,7 @@ components:
           forQualInvestorFlag: true
           forIisFlag: true
           positionUid: positionUid
+          apiTradeAvailableFlag: true
           dlongMin:
             nano: 6
             units: units
@@ -7608,6 +7611,7 @@ components:
             forQualInvestorFlag: true
             forIisFlag: true
             positionUid: positionUid
+            apiTradeAvailableFlag: true
             dlongMin:
               nano: 6
               units: units
@@ -7664,6 +7668,7 @@ components:
             forQualInvestorFlag: true
             forIisFlag: true
             positionUid: positionUid
+            apiTradeAvailableFlag: true
             dlongMin:
               nano: 6
               units: units

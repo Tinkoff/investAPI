@@ -494,7 +494,7 @@ Server-side stream обновлений информации по изменен
 | expected_yield |  [Quotation](#quotation) | Текущая рассчитанная доходность позиции. |
 | current_nkd |  [MoneyValue](#moneyvalue) | Текущий НКД. |
 | average_position_price_pt |  [Quotation](#quotation) | Deprecated Средняя цена позиции в пунктах (для фьючерсов). **Возможна задержка до секунды для пересчёта**. |
-| current_price |  [MoneyValue](#moneyvalue) | Текущая цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.. |
+| current_price |  [MoneyValue](#moneyvalue) | Текущая цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. |
 | average_position_price_fifo |  [MoneyValue](#moneyvalue) | Средняя цена позиции по методу FIFO. **Возможна задержка до секунды для пересчёта**. |
 | quantity_lots |  [Quotation](#quotation) | Deprecated Количество лотов в портфеле. |
 | blocked |  [bool](#bool) | Заблокировано на бирже. |
@@ -524,18 +524,18 @@ Server-side stream обновлений информации по изменен
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| total_amount_shares |  [MoneyValue](#moneyvalue) | Общая стоимость акций в портфеле в рублях. |
-| total_amount_bonds |  [MoneyValue](#moneyvalue) | Общая стоимость облигаций в портфеле в рублях. |
-| total_amount_etf |  [MoneyValue](#moneyvalue) | Общая стоимость фондов в портфеле в рублях. |
-| total_amount_currencies |  [MoneyValue](#moneyvalue) | Общая стоимость валют в портфеле в рублях. |
-| total_amount_futures |  [MoneyValue](#moneyvalue) | Общая стоимость фьючерсов в портфеле в рублях. |
+| total_amount_shares |  [MoneyValue](#moneyvalue) | Общая стоимость акций в портфеле. |
+| total_amount_bonds |  [MoneyValue](#moneyvalue) | Общая стоимость облигаций в портфеле. |
+| total_amount_etf |  [MoneyValue](#moneyvalue) | Общая стоимость фондов в портфеле. |
+| total_amount_currencies |  [MoneyValue](#moneyvalue) | Общая стоимость валют в портфеле. |
+| total_amount_futures |  [MoneyValue](#moneyvalue) | Общая стоимость фьючерсов в портфеле. |
 | expected_yield |  [Quotation](#quotation) | Текущая относительная доходность портфеля, в %. |
 | positions | Массив объектов [PortfolioPosition](#portfolioposition) | Список позиций портфеля. |
 | account_id |  [string](#string) | Идентификатор счёта пользователя. |
-| total_amount_options |  [MoneyValue](#moneyvalue) | Общая стоимость опционов в портфеле в рублях. |
-| total_amount_sp |  [MoneyValue](#moneyvalue) | Общая стоимость структурных нот в портфеле в рублях |
-| total_amount_portfolio |  [MoneyValue](#moneyvalue) | Общая стоимость портфеля в рублях |
-| virtual_positions | Массив объектов [VirtualPortfolioPosition](#virtualportfolioposition) | Массив виртуальных позиций портфеля |
+| total_amount_options |  [MoneyValue](#moneyvalue) | Общая стоимость опционов в портфеле. |
+| total_amount_sp |  [MoneyValue](#moneyvalue) | Общая стоимость структурных нот в портфеле. |
+| total_amount_portfolio |  [MoneyValue](#moneyvalue) | Общая стоимость портфеля. |
+| virtual_positions | Массив объектов [VirtualPortfolioPosition](#virtualportfolioposition) | Массив виртуальных позиций портфеля. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -738,7 +738,7 @@ Server-side stream обновлений информации по изменен
 | expected_yield |  [Quotation](#quotation) | Текущая рассчитанная доходность позиции. |
 | expected_yield_fifo |  [Quotation](#quotation) | Текущая рассчитанная доходность позиции. |
 | expire_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата до которой нужно продать виртуальные бумаги, после этой даты виртуальная позиция "сгорит" |
-| current_price |  [MoneyValue](#moneyvalue) | Текущая цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.. |
+| current_price |  [MoneyValue](#moneyvalue) | Текущая цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. |
 | average_position_price_fifo |  [MoneyValue](#moneyvalue) | Средняя цена позиции по методу FIFO. **Возможна задержка до секунды для пересчёта**. |
  <!-- end Fields -->
  <!-- end HasFields -->

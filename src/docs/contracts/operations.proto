@@ -101,19 +101,19 @@ message PortfolioRequest {
 
 //Текущий портфель по счёту.
 message PortfolioResponse {
-  MoneyValue total_amount_shares = 1; //Общая стоимость акций в портфеле в рублях.
-  MoneyValue total_amount_bonds = 2; //Общая стоимость облигаций в портфеле в рублях.
-  MoneyValue total_amount_etf = 3; //Общая стоимость фондов в портфеле в рублях.
-  MoneyValue total_amount_currencies = 4; //Общая стоимость валют в портфеле в рублях.
-  MoneyValue total_amount_futures = 5; //Общая стоимость фьючерсов в портфеле в рублях.
+  MoneyValue total_amount_shares = 1; //Общая стоимость акций в портфеле.
+  MoneyValue total_amount_bonds = 2; //Общая стоимость облигаций в портфеле.
+  MoneyValue total_amount_etf = 3; //Общая стоимость фондов в портфеле.
+  MoneyValue total_amount_currencies = 4; //Общая стоимость валют в портфеле.
+  MoneyValue total_amount_futures = 5; //Общая стоимость фьючерсов в портфеле.
   Quotation expected_yield = 6; //Текущая относительная доходность портфеля, в %.
   repeated PortfolioPosition positions = 7; //Список позиций портфеля.
   string account_id = 8; //Идентификатор счёта пользователя.
 
-  MoneyValue total_amount_options = 9; //Общая стоимость опционов в портфеле в рублях.
-  MoneyValue total_amount_sp = 10; //Общая стоимость структурных нот в портфеле в рублях
-  MoneyValue total_amount_portfolio = 11; //Общая стоимость портфеля в рублях
-  repeated VirtualPortfolioPosition virtual_positions = 12; //Массив виртуальных позиций портфеля
+  MoneyValue total_amount_options = 9; //Общая стоимость опционов в портфеле.
+  MoneyValue total_amount_sp = 10; //Общая стоимость структурных нот в портфеле.
+  MoneyValue total_amount_portfolio = 11; //Общая стоимость портфеля.
+  repeated VirtualPortfolioPosition virtual_positions = 12; //Массив виртуальных позиций портфеля.
 }
 
 //Запрос позиций портфеля по счёту.
@@ -152,7 +152,7 @@ message PortfolioPosition {
   Quotation expected_yield = 5; //Текущая рассчитанная доходность позиции.
   MoneyValue current_nkd = 6; // Текущий НКД.
   Quotation average_position_price_pt = 7; // Deprecated Средняя цена позиции в пунктах (для фьючерсов). **Возможна задержка до секунды для пересчёта**.
-  MoneyValue current_price = 8; //Текущая цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента..
+  MoneyValue current_price = 8; //Текущая цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
   MoneyValue average_position_price_fifo = 9; //Средняя цена позиции по методу FIFO. **Возможна задержка до секунды для пересчёта**.
   Quotation quantity_lots = 10; //Deprecated Количество лотов в портфеле.
   bool blocked = 21; //Заблокировано на бирже.
@@ -172,7 +172,7 @@ message VirtualPortfolioPosition {
   Quotation expected_yield = 7; //Текущая рассчитанная доходность позиции.
   Quotation expected_yield_fifo = 8; //Текущая рассчитанная доходность позиции.
   google.protobuf.Timestamp expire_date = 9; //Дата до которой нужно продать виртуальные бумаги, после этой даты виртуальная позиция "сгорит"
-  MoneyValue current_price = 10; //Текущая цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента..
+  MoneyValue current_price = 10; //Текущая цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
   MoneyValue average_position_price_fifo = 11; //Средняя цена позиции по методу FIFO. **Возможна задержка до секунды для пересчёта**.
 }
 

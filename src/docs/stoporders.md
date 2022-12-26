@@ -134,7 +134,7 @@
 | expiration_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время снятия заявки в часовом поясе UTC. |
 | price |  [MoneyValue](#moneyvalue) | Цена заявки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. |
 | stop_price |  [MoneyValue](#moneyvalue) | Цена активации стоп-заявки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. |
-| instrument_uid |  [string](#string) | instrument_uid идентификатор инструмента |
+| instrument_uid |  [string](#string) | instrument_uid идентификатор инструмента. |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->

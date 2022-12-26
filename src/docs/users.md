@@ -142,8 +142,8 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| unary_limits | Массив объектов [UnaryLimit](#unarylimit) | Массив лимитов пользователя по unary-запросам |
-| stream_limits | Массив объектов [StreamLimit](#streamlimit) | Массив лимитов пользователей для stream-соединений |
+| unary_limits | Массив объектов [UnaryLimit](#unarylimit) | Массив лимитов пользователя по unary-запросам. |
+| stream_limits | Массив объектов [StreamLimit](#streamlimit) | Массив лимитов пользователей для stream-соединений. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -154,8 +154,8 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| limit |  [int32](#int32) | Максимальное количество stream-соединений |
-| streams | Массив объектов [string](#string) | Названия stream-методов |
+| limit |  [int32](#int32) | Максимальное количество stream-соединений. |
+| streams | Массив объектов [string](#string) | Названия stream-методов. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -166,8 +166,8 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| limit_per_minute |  [int32](#int32) | Количество unary-запросов в минуту |
-| methods | Массив объектов [string](#string) | Названия методов |
+| limit_per_minute |  [int32](#int32) | Количество unary-запросов в минуту. |
+| methods | Массив объектов [string](#string) | Названия методов. |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->

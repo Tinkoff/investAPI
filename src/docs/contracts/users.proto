@@ -113,20 +113,20 @@ message GetUserTariffRequest {
 
 //Текущие лимиты пользователя.
 message GetUserTariffResponse {
-  repeated UnaryLimit unary_limits = 1; //Массив лимитов пользователя по unary-запросам
-  repeated StreamLimit stream_limits = 2; //Массив лимитов пользователей для stream-соединений
+  repeated UnaryLimit unary_limits = 1; //Массив лимитов пользователя по unary-запросам.
+  repeated StreamLimit stream_limits = 2; //Массив лимитов пользователей для stream-соединений.
 }
 
 //Лимит unary-методов.
 message UnaryLimit {
-  int32 limit_per_minute = 1; //Количество unary-запросов в минуту
-  repeated string methods = 2; //Названия методов
+  int32 limit_per_minute = 1; //Количество unary-запросов в минуту.
+  repeated string methods = 2; //Названия методов.
 }
 
 //Лимит stream-соединений.
 message StreamLimit {
-  int32 limit = 1; //Максимальное количество stream-соединений
-  repeated string streams = 2; //Названия stream-методов
+  int32 limit = 1; //Максимальное количество stream-соединений.
+  repeated string streams = 2; //Названия stream-методов.
 }
 
 //Запрос информации о пользователе.

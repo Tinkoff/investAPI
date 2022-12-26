@@ -374,8 +374,8 @@ message Bond {
 
   bool for_iis_flag = 51; //Признак доступности для ИИС.
   bool for_qual_investor_flag = 52; //Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов.
-  bool weekend_flag = 53; //Флаг отображающий доступность торговли инструментом по выходным
-  bool blocked_tca_flag = 54; //Флаг заблокированного ТКС
+  bool weekend_flag = 53; //Флаг отображающий доступность торговли инструментом по выходным.
+  bool blocked_tca_flag = 54; //Флаг заблокированного ТКС.
   google.protobuf.Timestamp first_1min_candle_date = 61; //Дата первой минутной свечи.
   google.protobuf.Timestamp first_1day_candle_date = 62; //Дата первой дневной свечи.
 }
@@ -418,8 +418,8 @@ message Currency {
 
   bool for_iis_flag = 41; //Признак доступности для ИИС.
   bool for_qual_investor_flag = 52; //Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов.
-  bool weekend_flag = 53; //Флаг отображающий доступность торговли инструментом по выходным
-  bool blocked_tca_flag = 54; //Флаг заблокированного ТКС
+  bool weekend_flag = 53; //Флаг отображающий доступность торговли инструментом по выходным.
+  bool blocked_tca_flag = 54; //Флаг заблокированного ТКС.
   google.protobuf.Timestamp first_1min_candle_date = 56; //Дата первой минутной свечи.
   google.protobuf.Timestamp first_1day_candle_date = 57; //Дата первой дневной свечи.
 }
@@ -466,8 +466,8 @@ message Etf {
 
   bool for_iis_flag = 41; //Признак доступности для ИИС.
   bool for_qual_investor_flag = 42; //Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов.
-  bool weekend_flag = 43; //Флаг отображающий доступность торговли инструментом по выходным
-  bool blocked_tca_flag = 44; //Флаг заблокированного ТКС
+  bool weekend_flag = 43; //Флаг отображающий доступность торговли инструментом по выходным.
+  bool blocked_tca_flag = 44; //Флаг заблокированного ТКС.
   google.protobuf.Timestamp first_1min_candle_date = 56; //Дата первой минутной свечи.
   google.protobuf.Timestamp first_1day_candle_date = 57; //Дата первой дневной свечи.
 }
@@ -516,8 +516,8 @@ message Future {
 
   bool for_iis_flag = 41; //Признак доступности для ИИС.
   bool for_qual_investor_flag = 42; //Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов.
-  bool weekend_flag = 43; //Флаг отображающий доступность торговли инструментом по выходным
-  bool blocked_tca_flag = 44; //Флаг заблокированного ТКС
+  bool weekend_flag = 43; //Флаг отображающий доступность торговли инструментом по выходным.
+  bool blocked_tca_flag = 44; //Флаг заблокированного ТКС.
   google.protobuf.Timestamp first_1min_candle_date = 56; //Дата первой минутной свечи.
   google.protobuf.Timestamp first_1day_candle_date = 57; //Дата первой дневной свечи.
 }

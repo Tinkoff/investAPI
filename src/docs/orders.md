@@ -210,7 +210,7 @@ Stream сделок пользователя
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| figi |  [string](#string) | Figi-идентификатор инструмента. |
+| figi |  [string](#string) | Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id. |
 | quantity |  [int64](#int64) | Количество лотов. |
 | price |  [Quotation](#quotation) | Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Игнорируется для рыночных поручений. |
 | direction |  [OrderDirection](#orderdirection) | Направление операции. |

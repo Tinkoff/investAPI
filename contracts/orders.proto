@@ -70,7 +70,7 @@ message OrderTrade {
 
 //Запрос выставления торгового поручения.
 message PostOrderRequest {
-  string figi = 1; //Figi-идентификатор инструмента.
+  string figi = 1; //Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.
   int64 quantity = 2; //Количество лотов.
   Quotation price = 3; //Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Игнорируется для рыночных поручений.
   OrderDirection direction = 4; //Направление операции.

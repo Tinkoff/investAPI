@@ -18,8 +18,6 @@ plugins:
       min_search_length: 3
       prebuild_index: false
       separator: "[\\s\\-]+"
-  - meta:
-      meta_file: '**/.meta.yml'
 
 nav:
 - Начало работы: index.md

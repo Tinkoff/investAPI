@@ -12,3 +12,13 @@
 Да, в TINKOFF INVEST API можно работать с несколькими счетами. Все ключевые методы принимают
 на вход параметр *account_id* (идентификатор счёта).
 
+<script src="https://utteranc.es/client.js"
+        repo="https://github.com/Tinkoff/investAPI"
+        issue-term="title"
+        label="documentation"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+

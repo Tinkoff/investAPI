@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block disqus %}
+<!-- Add custom comment system integration here -->
+<div class="container">
+    <script src="https://utteranc.es/client.js"
+            repo="https://github.com/Tinkoff/investAPI"
+            issue-term="{{page.title}} comments"
+            label="documentation"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+</div>
+{% endblock %}

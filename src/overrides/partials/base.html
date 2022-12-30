@@ -2,5 +2,12 @@
 
 {% block disqus %}
 <!-- Add custom comment system integration here -->
-{% include "partials/integrations/utterances.html" %}
+<script src="https://utteranc.es/client.js"
+        repo="https://github.com/Tinkoff/investAPI"
+        issue-term="title"
+        label="documentation"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
 {% endblock %}

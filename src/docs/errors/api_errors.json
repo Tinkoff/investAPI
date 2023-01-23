@@ -75,7 +75,7 @@
     "description": "Превышен максимальный период запроса для данного интервала свечи. </br>Укажите корректный интервал."
   },
   "30015": {
-    "message": "missing parameter: 'quantity'",
+    "message": "parameter 'quantity' is missing or equal to 0",
     "type": "INVALID_ARGUMENT",
     "description": "Входной параметр *quantity* является обязательным. </br> Укажите корректный параметр *quantity*."
   },
@@ -414,10 +414,20 @@
     "type": "INVALID_ARGUMENT",
     "description": "Торги недоступны по нерабочим дням."
   },
+  "30093": {
+    "message": "missing parameter: 'figi' or 'instrument_id'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Один из параметров *figi* или *instrument_id* является обязательным."
+  },
+  "30094": {
+    "message": "options trading is not available at the moment",
+    "type": "INVALID_ARGUMENT",
+    "description": "Выставление заявок по опционам недоступно."
+  },
   "40002": {
     "message": "insufficient privileges",
     "type": "PERMISSION_DENIED",
-    "description": "Недостаточно прав для совершения операции. </br>Токен доступа имеет уровень прав read-only.</br>Подробнее: [Виды токенов](https://tinkoff.github.io/investAPI/index#_2)"
+    "description": "Недостаточно прав для совершения операции. </br>Токен доступа имеет уровень прав read-only, либо у токена нет доступа к указанному счету.</br>Подробнее: [Виды токенов](https://tinkoff.github.io/investAPI/index#_2)"
   },
   "40003": {
     "message": "authentication token is missing or invalid",

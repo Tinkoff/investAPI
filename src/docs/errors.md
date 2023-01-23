@@ -87,7 +87,7 @@
 30092|INVALID_ARGUMENT|trading unavailable on weekends|Торги недоступны по нерабочим дням.|
 30093|INVALID_ARGUMENT|missing parameter: 'figi' or 'instrument_id'|Один из параметров *figi* или *instrument_id* является обязательным.|
 30094|INVALID_ARGUMENT|options trading is not available at the moment|Выставление заявок по опционам недоступно.|
-40002|PERMISSION_DENIED|insufficient privileges|Недостаточно прав для совершения операции. </br>Токен доступа имеет уровень прав read-only.</br>Подробнее: [Виды токенов](https://tinkoff.github.io/investAPI/index#_2)|
+40002|PERMISSION_DENIED|insufficient privileges|Недостаточно прав для совершения операции. </br>Токен доступа имеет уровень прав read-only, либо у токена нет доступа к указанному счету.</br>Подробнее: [Виды токенов](https://tinkoff.github.io/investAPI/index#_2)|
 40003|UNAUTHENTICATED|authentication token is missing or invalid|Токен доступа не найден или не активен. </br>Вы можете выпустить новый токен по ссылке [Настройки](https://www.tinkoff.ru/invest/settings/)|
 40004|PERMISSION_DENIED|Working with orders is not available with this account|Выставление заявок недоступно с текущего аккаунта.|
 50001|NOT_FOUND|exchange not found|Биржа не найдена по переданному *exchange_id*.</br>Укажите корректный *exchange_id*.|

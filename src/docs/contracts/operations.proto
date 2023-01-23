@@ -156,6 +156,7 @@ message PortfolioPosition {
   MoneyValue average_position_price_fifo = 9; //Средняя цена позиции по методу FIFO. **Возможна задержка до секунды для пересчёта**.
   Quotation quantity_lots = 10; //Deprecated Количество лотов в портфеле.
   bool blocked = 21; //Заблокировано на бирже.
+  Quotation blocked_lots = 22; //Количество бумаг, заблокированных выставленными заявками.
   string position_uid = 24; //position_uid-идентификатора инструмента
   string instrument_uid = 25; //instrument_uid-идентификатора инструмента
   MoneyValue var_margin = 26; //Вариационная маржа
@@ -497,18 +498,6 @@ message OperationItemTrade {
   MoneyValue price = 16; //Цена.
   MoneyValue yield = 21; //Доходность.
   Quotation yield_relative = 22; //Относительная доходность.
-}
-
-//Тип инструмента.
-enum InstrumentType {
-  INSTRUMENT_TYPE_UNSPECIFIED = 0;
-  INSTRUMENT_TYPE_BOND = 1; //Облигация.
-  INSTRUMENT_TYPE_SHARE	= 2; //Акция.
-  INSTRUMENT_TYPE_CURRENCY = 3; //Валюта.
-  INSTRUMENT_TYPE_ETF = 4; //Exchange-traded fund. Фонд.
-  INSTRUMENT_TYPE_FUTURES = 5; //Фьючерс.
-  INSTRUMENT_TYPE_SP = 6; //Структурная нота.
-  INSTRUMENT_TYPE_OPTION = 7; //Опцион.
 }
 
 //Запрос установки stream-соединения позиций.

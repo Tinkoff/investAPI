@@ -4,6 +4,22 @@
 
 
 
+## OrdersStreamService
+
+
+###Методы сервиса
+
+
+#### TradesStream
+Stream сделок пользователя
+
+- Тело запроса — [TradesStreamRequest](#tradesstreamrequest)
+
+- Тело ответа — [TradesStreamResponse](#tradesstreamresponse)
+
+ <!-- range .Methods -->
+
+
 ## OrdersService
 Сервис предназначен для работы с торговыми поручениями:</br> **1**.
 выставление;</br> **2**. отмена;</br> **3**. получение статуса;</br> **4**.
@@ -52,26 +68,109 @@
 - Тело ответа — [PostOrderResponse](#postorderresponse)
 
  <!-- range .Methods -->
-
-
-## OrdersStreamService
-
-
-###Методы сервиса
-
-
-#### TradesStream
-Stream сделок пользователя
-
-- Тело запроса — [TradesStreamRequest](#tradesstreamrequest)
-
-- Тело ответа — [TradesStreamResponse](#tradesstreamresponse)
-
- <!-- range .Methods -->
  <!-- range .Services -->
 
 ###Сообщения методов
 
+
+
+#### TradesStreamRequest
+Запрос установки соединения.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| accounts | Массив объектов [string](#string) | Идентификаторы счетов. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### TradesStreamResponse
+Информация о торговых поручениях.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| order_trades |  [OrderTrades](#ordertrades) | Информация об исполнении торгового поручения. |
+| ping |  [Ping](#ping) | Проверка активности стрима. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### OrderTrades
+Информация об исполнении торгового поручения.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| order_id |  [string](#string) | Идентификатор торгового поручения. |
+| created_at |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время создания сообщения в часовом поясе UTC. |
+| direction |  [OrderDirection](#orderdirection) | Направление сделки. |
+| figi |  [string](#string) | Figi-идентификатор инструмента. |
+| trades | Массив объектов [OrderTrade](#ordertrade) | Массив сделок. |
+| account_id |  [string](#string) | Идентификатор счёта. |
+| instrument_uid |  [string](#string) | UID идентификатор инструмента. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### OrderTrade
+Информация о сделке.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| date_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время совершения сделки в часовом поясе UTC. |
+| price |  [Quotation](#quotation) | Цена за 1 инструмент, по которой совершена сделка. |
+| quantity |  [int64](#int64) | Количество штук в сделке. |
+| trade_id |  [string](#string) | Идентификатор сделки. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### PostOrderRequest
+Запрос выставления торгового поручения.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| figi |  [string](#string) | Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id. |
+| quantity |  [int64](#int64) | Количество лотов. |
+| price |  [Quotation](#quotation) | Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Игнорируется для рыночных поручений. |
+| direction |  [OrderDirection](#orderdirection) | Направление операции. |
+| account_id |  [string](#string) | Номер счёта. |
+| order_type |  [OrderType](#ordertype) | Тип заявки. |
+| order_id |  [string](#string) | Идентификатор запроса выставления поручения для целей идемпотентности. Максимальная длина 36 символов. |
+| instrument_id |  [string](#string) | Идентификатор инструмента, принимает значения Figi или Instrument_uid. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### PostOrderResponse
+Информация о выставлении поручения.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| order_id |  [string](#string) | Идентификатор заявки. |
+| execution_report_status |  [OrderExecutionReportStatus](#orderexecutionreportstatus) | Текущий статус заявки. |
+| lots_requested |  [int64](#int64) | Запрошено лотов. |
+| lots_executed |  [int64](#int64) | Исполнено лотов. |
+| initial_order_price |  [MoneyValue](#moneyvalue) | Начальная цена заявки. Произведение количества запрошенных лотов на цену. |
+| executed_order_price |  [MoneyValue](#moneyvalue) | Исполненная средняя цена 1 одного инструмента в заявки. |
+| total_order_amount |  [MoneyValue](#moneyvalue) | Итоговая стоимость заявки, включающая все комиссии. |
+| initial_commission |  [MoneyValue](#moneyvalue) | Начальная комиссия. Комиссия рассчитанная при выставлении заявки. |
+| executed_commission |  [MoneyValue](#moneyvalue) | Фактическая комиссия по итогам исполнения заявки. |
+| aci_value |  [MoneyValue](#moneyvalue) | Значение НКД (накопленного купонного дохода) на дату. Подробнее: [НКД при выставлении торговых поручений](https://tinkoff.github.io/investAPI/head-orders#coupon) |
+| figi |  [string](#string) | Figi-идентификатор инструмента. |
+| direction |  [OrderDirection](#orderdirection) | Направление сделки. |
+| initial_security_price |  [MoneyValue](#moneyvalue) | Начальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. |
+| order_type |  [OrderType](#ordertype) | Тип заявки. |
+| message |  [string](#string) | Дополнительные данные об исполнении заявки. |
+| initial_order_price_pt |  [Quotation](#quotation) | Начальная цена заявки в пунктах (для фьючерсов). |
+| instrument_uid |  [string](#string) | UID идентификатор инструмента. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
 
 
 #### CancelOrderRequest
@@ -131,19 +230,6 @@ Stream сделок пользователя
  <!-- end HasFields -->
 
 
-#### OrderStage
-Сделки в рамках торгового поручения.
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| price |  [MoneyValue](#moneyvalue) | Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. |
-| quantity |  [int64](#int64) | Количество лотов. |
-| trade_id |  [string](#string) | Идентификатор сделки. |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
 #### OrderState
 Информация о торговом поручении.
 
@@ -173,78 +259,15 @@ Stream сделок пользователя
  <!-- end HasFields -->
 
 
-#### OrderTrade
-Информация о сделке.
+#### OrderStage
+Сделки в рамках торгового поручения.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| date_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время совершения сделки в часовом поясе UTC. |
-| price |  [Quotation](#quotation) | Цена за 1 инструмент, по которой совершена сделка. |
-| quantity |  [int64](#int64) | Количество штук в сделке. |
-| trade_id |  [string](#string) | Идентификатор сделки. |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
-#### OrderTrades
-Информация об исполнении торгового поручения.
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| order_id |  [string](#string) | Идентификатор торгового поручения. |
-| created_at |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время создания сообщения в часовом поясе UTC. |
-| direction |  [OrderDirection](#orderdirection) | Направление сделки. |
-| figi |  [string](#string) | Figi-идентификатор инструмента. |
-| trades | Массив объектов [OrderTrade](#ordertrade) | Массив сделок. |
-| account_id |  [string](#string) | Идентификатор счёта. |
-| instrument_uid |  [string](#string) | UID идентификатор инструмента. |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
-#### PostOrderRequest
-Запрос выставления торгового поручения.
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| figi |  [string](#string) | Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id. |
+| price |  [MoneyValue](#moneyvalue) | Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. |
 | quantity |  [int64](#int64) | Количество лотов. |
-| price |  [Quotation](#quotation) | Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Игнорируется для рыночных поручений. |
-| direction |  [OrderDirection](#orderdirection) | Направление операции. |
-| account_id |  [string](#string) | Номер счёта. |
-| order_type |  [OrderType](#ordertype) | Тип заявки. |
-| order_id |  [string](#string) | Идентификатор запроса выставления поручения для целей идемпотентности. Максимальная длина 36 символов. |
-| instrument_id |  [string](#string) | Идентификатор инструмента, принимает значения Figi или Instrument_uid. |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
-#### PostOrderResponse
-Информация о выставлении поручения.
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| order_id |  [string](#string) | Идентификатор заявки. |
-| execution_report_status |  [OrderExecutionReportStatus](#orderexecutionreportstatus) | Текущий статус заявки. |
-| lots_requested |  [int64](#int64) | Запрошено лотов. |
-| lots_executed |  [int64](#int64) | Исполнено лотов. |
-| initial_order_price |  [MoneyValue](#moneyvalue) | Начальная цена заявки. Произведение количества запрошенных лотов на цену. |
-| executed_order_price |  [MoneyValue](#moneyvalue) | Исполненная средняя цена 1 одного инструмента в заявки. |
-| total_order_amount |  [MoneyValue](#moneyvalue) | Итоговая стоимость заявки, включающая все комиссии. |
-| initial_commission |  [MoneyValue](#moneyvalue) | Начальная комиссия. Комиссия рассчитанная при выставлении заявки. |
-| executed_commission |  [MoneyValue](#moneyvalue) | Фактическая комиссия по итогам исполнения заявки. |
-| aci_value |  [MoneyValue](#moneyvalue) | Значение НКД (накопленного купонного дохода) на дату. Подробнее: [НКД при выставлении торговых поручений](https://tinkoff.github.io/investAPI/head-orders#coupon) |
-| figi |  [string](#string) | Figi-идентификатор инструмента. |
-| direction |  [OrderDirection](#orderdirection) | Направление сделки. |
-| initial_security_price |  [MoneyValue](#moneyvalue) | Начальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. |
-| order_type |  [OrderType](#ordertype) | Тип заявки. |
-| message |  [string](#string) | Дополнительные данные об исполнении заявки. |
-| initial_order_price_pt |  [Quotation](#quotation) | Начальная цена заявки в пунктах (для фьючерсов). |
-| instrument_uid |  [string](#string) | UID идентификатор инструмента. |
+| trade_id |  [string](#string) | Идентификатор сделки. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -261,29 +284,6 @@ Stream сделок пользователя
 | quantity |  [int64](#int64) | Количество лотов. |
 | price |  [Quotation](#quotation) | Цена за 1 инструмент. |
 | price_type |  [PriceType](#pricetype) | Тип цены. |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
-#### TradesStreamRequest
-Запрос установки соединения.
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| accounts | Массив объектов [string](#string) | Идентификаторы счетов. |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
-#### TradesStreamResponse
-Информация о торговых поручениях.
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| order_trades |  [OrderTrades](#ordertrades) | Информация об исполнении торгового поручения. |
-| ping |  [Ping](#ping) | Проверка активности стрима. |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->
@@ -303,6 +303,18 @@ Stream сделок пользователя
 
 
 
+#### OrderType
+Тип заявки.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ORDER_TYPE_UNSPECIFIED | 0 | Значение не указано |
+| ORDER_TYPE_LIMIT | 1 | Лимитная |
+| ORDER_TYPE_MARKET | 2 | Рыночная |
+
+
+
+
 #### OrderExecutionReportStatus
 Текущий статус заявки (поручения)
 
@@ -314,18 +326,6 @@ Stream сделок пользователя
 | EXECUTION_REPORT_STATUS_CANCELLED | 3 | Отменена пользователем |
 | EXECUTION_REPORT_STATUS_NEW | 4 | Новая |
 | EXECUTION_REPORT_STATUS_PARTIALLYFILL | 5 | Частично исполнена |
-
-
-
-
-#### OrderType
-Тип заявки.
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| ORDER_TYPE_UNSPECIFIED | 0 | Значение не указано |
-| ORDER_TYPE_LIMIT | 1 | Лимитная |
-| ORDER_TYPE_MARKET | 2 | Рыночная |
 
 
 

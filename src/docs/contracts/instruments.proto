@@ -374,10 +374,12 @@ message Bond {
 
   bool for_iis_flag = 51; //Признак доступности для ИИС.
   bool for_qual_investor_flag = 52; //Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов.
-  bool weekend_flag = 53; //Флаг отображающий доступность торговли инструментом по выходным.
-  bool blocked_tca_flag = 54; //Флаг заблокированного ТКС.
+  bool weekend_flag = 53; //Флаг отображающий доступность торговли инструментом по выходным
+  bool blocked_tca_flag = 54; //Флаг заблокированного ТКС
+  bool subordinated_flag = 55; //Признак субординированной облигации.
   google.protobuf.Timestamp first_1min_candle_date = 61; //Дата первой минутной свечи.
   google.protobuf.Timestamp first_1day_candle_date = 62; //Дата первой дневной свечи.
+  RiskLevel risk_level = 63; //Уровень риска.
 }
 
 //Объект передачи информации о валюте.
@@ -663,6 +665,7 @@ message Instrument {
   bool for_qual_investor_flag = 37; //Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов.
   bool weekend_flag = 38; //Флаг отображающий доступность торговли инструментом по выходным
   bool blocked_tca_flag = 39; //Флаг заблокированного ТКС
+  InstrumentType instrument_kind	= 40; //Тип инструмента.
   google.protobuf.Timestamp first_1min_candle_date = 56; //Дата первой минутной свечи.
   google.protobuf.Timestamp first_1day_candle_date = 57; //Дата первой дневной свечи.
 }
@@ -774,6 +777,7 @@ message AssetCurrency {
 message AssetSecurity {
   string isin = 1; //ISIN-идентификатор ценной бумаги.
   string type = 2; //Тип ценной бумаги.
+  InstrumentType instrument_kind	= 10; //Тип инструмента.
   oneof ext {
     AssetShare share = 3; //Акция. Заполняется только для акций (тип актива asset.type = "ASSET_TYPE_SECURITY" и security.type = share).
     AssetBond bond = 4; //Облигация. Заполняется только для облигаций (тип актива asset.type = "ASSET_TYPE_SECURITY" и security.type = bond).
@@ -912,6 +916,7 @@ message AssetInstrument {
   string ticker = 4; //Тикер инструмента.
   string class_code = 5; //Класс-код (секция торгов).
   repeated InstrumentLink links = 6; //Массив связанных инструментов.
+  InstrumentType instrument_kind	= 10; //Тип инструмента.
 }
 
 //Связь с другим инструментом.
@@ -938,6 +943,7 @@ message FavoriteInstrument {
   string instrument_type = 11; //Тип инструмента.
   bool otc_flag = 16; //Признак внебиржевой ценной бумаги.
   bool api_trade_available_flag = 17; //Параметр указывает на возможность торговать инструментом через API.
+  InstrumentType instrument_kind	= 18; //Тип инструмента.
 }
 
 //Запрос редактирования списка избранных инструментов.
@@ -1007,6 +1013,7 @@ message InstrumentShort {
   string name = 6; //Название инструмента.
   string uid = 7; //Уникальный идентификатор инструмента.
   string position_uid = 8; //Уникальный идентификатор позиции инструмента.
+  InstrumentType instrument_kind	= 10; //Тип инструмента.
   bool api_trade_available_flag = 11; //Параметр указывает на возможность торговать инструментом через API.
   bool for_iis_flag = 12; //Признак доступности для ИИС.
   google.protobuf.Timestamp first_1min_candle_date = 26; //Дата первой минутной свечи.
@@ -1027,4 +1034,12 @@ message GetBrandRequest {
 //Список брендов.
 message GetBrandsResponse {
   repeated Brand brands = 1; //Массив брендов.
+}
+
+//Уровень риска облигации.
+enum RiskLevel {
+    RISK_LEVEL_UNSPECIFIED = 0;
+    RISK_LEVEL_LOW = 1; //Низкий уровень риска
+    RISK_LEVEL_MODERATE = 2; //Средний уровень риска
+    RISK_LEVEL_HIGH = 3; //Высокий уровень риска
 }

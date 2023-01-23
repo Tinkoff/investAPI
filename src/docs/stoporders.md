@@ -41,51 +41,6 @@
 
 
 
-#### CancelStopOrderRequest
-Запрос отмены выставленной стоп-заявки.
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| account_id |  [string](#string) | Идентификатор счёта клиента. |
-| stop_order_id |  [string](#string) | Уникальный идентификатор стоп-заявки. |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
-#### CancelStopOrderResponse
-Результат отмены выставленной стоп-заявки.
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время отмены заявки в часовом поясе UTC. |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
-#### GetStopOrdersRequest
-Запрос получения списка активных стоп-заявок.
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| account_id |  [string](#string) | Идентификатор счёта клиента. |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
-#### GetStopOrdersResponse
-Список активных стоп-заявок.
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| stop_orders | Массив объектов [StopOrder](#stoporder) | Массив стоп-заявок по счёту. |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
 #### PostStopOrderRequest
 Запрос выставления стоп-заявки.
 
@@ -113,6 +68,51 @@
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | stop_order_id |  [string](#string) | Уникальный идентификатор стоп-заявки. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetStopOrdersRequest
+Запрос получения списка активных стоп-заявок.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| account_id |  [string](#string) | Идентификатор счёта клиента. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetStopOrdersResponse
+Список активных стоп-заявок.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| stop_orders | Массив объектов [StopOrder](#stoporder) | Массив стоп-заявок по счёту. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### CancelStopOrderRequest
+Запрос отмены выставленной стоп-заявки.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| account_id |  [string](#string) | Идентификатор счёта клиента. |
+| stop_order_id |  [string](#string) | Уникальный идентификатор стоп-заявки. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### CancelStopOrderResponse
+Результат отмены выставленной стоп-заявки.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время отмены заявки в часовом поясе UTC. |
  <!-- end Fields -->
  <!-- end HasFields -->
 

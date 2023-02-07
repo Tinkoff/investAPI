@@ -17,7 +17,7 @@
 | <dl><dd> Метод [getHistory](/investAPI/get_history)</dd></dl>              | REST              | 30                            |
 | [Сервис стоп-ордеров](/investAPI/head-stoporders/)                         | gRPC<br/>REST     | 50<br/>25                     |
 | [Песочницы](/investAPI/head-sandbox/)                                      | gRPC<br/>REST     | 200        <br/>100           |
-| [Сервис оредеров](/investAPI/head-orders/)                                 | gRPC<br/>REST     | 100<br/>50                    |
+| [Сервис ордеров](/investAPI/head-orders/)                                 | gRPC<br/>REST     | 100<br/>50                    |
  | <dl><dd> Метод [getOrders](/investAPI/orders#getorders)</dd></dl>          | gRPC<br/>REST     | 200<br/>100                   |
  | <dl><dd>Метод [postOrder](/investAPI/orders#postorder)     </dd></dl>      | gRPC<br/>REST     | 300<br/>150                   |
 | <dl><dd>  Метод [cancelOrder](/investAPI/orders#cancelorder)    </dd></dl> | gRPC<br/>REST     | 100<br/>50                    |
@@ -41,7 +41,7 @@
 статусы инструментов (подписка Info) **нет**.
 
 **Важно** В методе [Запрос тарифа пользователя](https://tinkoff.github.io/investAPI/users/#getusertariff) лимиты для стрим
-соединений могут возвращаться на 1 больше, это сделано на балансировщике для того что бы вы могли переподключить стиримы,
+соединений могут возвращаться на 1 больше, это сделано на балансировщике для того что бы вы могли переподключить стримы,
 поэтому мы не рекомендуем использовать максимальное количество из лимита. 
 
 Счетчик количества стрим соединений обновляется каждые 2 минуты.

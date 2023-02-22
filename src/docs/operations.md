@@ -147,6 +147,8 @@ Server-side stream обновлений информации по изменен
 | operation_type |  [OperationType](#operationtype) | Тип операции. |
 | trades | Массив объектов [OperationTrade](#operationtrade) | Массив сделок. |
 | asset_uid |  [string](#string) | Идентификатор актива |
+| position_uid |  [string](#string) | position_uid-идентификатора инструмента. |
+| instrument_uid |  [string](#string) | Уникальный идентификатор инструмента. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -650,6 +652,7 @@ Server-side stream обновлений информации по изменен
 | figi |  [string](#string) | Figi. |
 | instrument_type |  [string](#string) | Тип инструмента. |
 | instrument_kind |  [InstrumentType](#instrumenttype) | Тип инструмента. |
+| position_uid |  [string](#string) | position_uid-идентификатора инструмента. |
 | payment |  [MoneyValue](#moneyvalue) | Сумма операции. |
 | price |  [MoneyValue](#moneyvalue) | Цена операции за 1 инструмент. |
 | commission |  [MoneyValue](#moneyvalue) | Комиссия. |

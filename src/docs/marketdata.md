@@ -792,6 +792,14 @@ subscribeCandles | Изменения статуса подписки на св�
 | CANDLE_INTERVAL_15_MIN | 3 | 15 минут. |
 | CANDLE_INTERVAL_HOUR | 4 | 1 час. |
 | CANDLE_INTERVAL_DAY | 5 | 1 день. |
+| CANDLE_INTERVAL_2_MIN | 6 | 2 минуты. |
+| CANDLE_INTERVAL_3_MIN | 7 | 3 минуты. |
+| CANDLE_INTERVAL_10_MIN | 8 | 10 минут. |
+| CANDLE_INTERVAL_30_MIN | 9 | 30 минут. |
+| CANDLE_INTERVAL_2_HOUR | 10 | 2 часа. |
+| CANDLE_INTERVAL_4_HOUR | 11 | 4 часа. |
+| CANDLE_INTERVAL_WEEK | 12 | 1 неделя. |
+| CANDLE_INTERVAL_MONTH | 13 | 1 месяц. |
 
 
  <!-- range .Enums -->

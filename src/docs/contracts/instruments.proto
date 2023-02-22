@@ -130,6 +130,8 @@ message TradingDay {
   google.protobuf.Timestamp clearing_end_time = 13; // Время окончания основного клиринга в часовом поясе UTC.
   google.protobuf.Timestamp premarket_start_time = 14; // Время начала премаркета в часовом поясе UTC.
   google.protobuf.Timestamp premarket_end_time = 15; // Время окончания премаркета в часовом поясе UTC.
+  google.protobuf.Timestamp closing_auction_start_time = 16; // Время начала аукциона закрытия в часовом поясе UTC.
+  google.protobuf.Timestamp opening_auction_end_time = 17; // Время окончания аукциона открытия в часовом поясе UTC.
 }
 
 //Запрос получения инструмента по идентификатору.

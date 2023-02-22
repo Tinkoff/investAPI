@@ -87,6 +87,13 @@
 30092|INVALID_ARGUMENT|trading unavailable on weekends|Торги недоступны по нерабочим дням.|
 30093|INVALID_ARGUMENT|missing parameter: 'figi' or 'instrument_id'|Один из параметров *figi* или *instrument_id* является обязательным.|
 30094|INVALID_ARGUMENT|options trading is not available at the moment|Выставление заявок по опционам недоступно.|
+30095|INVALID_ARGUMENT|the request was not executed by the exchange|Заявка не исполнена биржей.|
+30096|INVALID_ARGUMENT|the order was rejected, try again later|Заявка отклонена, попробуйте повторить позже.|
+30097|INVALID_ARGUMENT|inappropriate trading session|Сейчас эта сессия не идёт.|
+30098|INVALID_ARGUMENT|currently, there is no trading on this financial instrument|Торги по этому финансовому инструменту сейчас не проводятся.|
+30099|INVALID_ARGUMENT|the price is outside the limits for this instrument|Цена вне лимитов по инструменту или цена сделки вне лимита.|
+30100|INVALID_ARGUMENT|the price must be positive|Цена должна быть положительной.|
+30101|INVALID_ARGUMENT|to trade this financial instrument, pass the test|Для торговли этим инструментом пройдите тестирование.|
 40002|PERMISSION_DENIED|insufficient privileges|Недостаточно прав для совершения операции. </br>Токен доступа имеет уровень прав read-only, либо у токена нет доступа к указанному счету.</br>Подробнее: [Виды токенов](https://tinkoff.github.io/investAPI/index#_2)|
 40003|UNAUTHENTICATED|authentication token is missing or invalid|Токен доступа не найден или не активен. </br>Вы можете выпустить новый токен по ссылке [Настройки](https://www.tinkoff.ru/invest/settings/)|
 40004|PERMISSION_DENIED|Working with orders is not available with this account|Выставление заявок недоступно с текущего аккаунта.|

@@ -78,6 +78,8 @@ message Operation {
   OperationType operation_type = 13; //Тип операции.
   repeated OperationTrade trades = 14; //Массив сделок.
   string asset_uid = 16;	//Идентификатор актива
+  string position_uid	= 17; //position_uid-идентификатора инструмента.
+  string instrument_uid	= 18; //Уникальный идентификатор инструмента.
 }
 
 //Сделка по операции.
@@ -470,6 +472,7 @@ message OperationItem {
   string figi = 32; //Figi.
   string instrument_type = 33; //Тип инструмента.
   InstrumentType instrument_kind	= 34; //Тип инструмента.
+  string position_uid	= 35; //position_uid-идентификатора инструмента.
   MoneyValue payment = 41; //Сумма операции.
   MoneyValue price = 42; //Цена операции за 1 инструмент.
   MoneyValue commission = 43; //Комиссия.

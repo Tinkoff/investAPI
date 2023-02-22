@@ -281,6 +281,8 @@
 | clearing_end_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания основного клиринга в часовом поясе UTC. |
 | premarket_start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала премаркета в часовом поясе UTC. |
 | premarket_end_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания премаркета в часовом поясе UTC. |
+| closing_auction_start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала аукциона закрытия в часовом поясе UTC. |
+| opening_auction_end_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания аукциона открытия в часовом поясе UTC. |
  <!-- end Fields -->
  <!-- end HasFields -->
 

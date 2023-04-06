@@ -32,6 +32,7 @@ function download {
   # Если данные по инструменту за указанный год не найдены.
   if [ "$response_code" = "404" ]; then
       echo "data not found for figi=${figi}, year=${year}, removing empty file"
+      # Удаляем пустой архив.
       rm -rf $file_name
   elif [ "$response_code" != "200" ]; then
       # В случае другой ошибки - просто напишем ее в консоль и выйдем.

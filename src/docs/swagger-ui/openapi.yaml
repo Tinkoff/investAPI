@@ -4,7 +4,7 @@ info:
   termsOfService: https://www.tinkoff.ru/invest/disclaimers/basic-information/
   contact:
     email: al.a.volkov@tinkoff.ru
-  version: '1.1.0'
+  version: '1.3.0'
 servers:
   - url: https://invest-public-api.tinkoff.ru/rest/
     description: "Работа с биржей"
@@ -845,6 +845,32 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/v1GetTradingStatusResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Метод запроса статуса торгов по инструментам.
+      tags:
+        - MarketDataService
+      x-codegen-request-body-name: body
+  /tinkoff.public.invest.api.contract.v1.MarketDataService/GetTradingStatuses:
+    post:
+      operationId: MarketDataService_GetTradingStatuses
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1GetTradingStatusesRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1GetTradingStatusesResponse'
           description: A successful response.
         default:
           content:
@@ -2378,6 +2404,8 @@ components:
           items:
             $ref: '#/components/schemas/v1InstrumentLink'
           type: array
+        instrumentKind:
+          $ref: '#/components/schemas/v1InstrumentType'
       type: object
     v1AssetRequest:
       description: Запрос актива по идентификатору.
@@ -2729,6 +2757,8 @@ components:
           type: string
         type:
           type: string
+        instrumentKind:
+          $ref: '#/components/schemas/v1InstrumentType'
         share:
           $ref: '#/components/schemas/v1AssetShare'
         bond:
@@ -2926,14 +2956,32 @@ components:
     v1Bond:
       description: Объект передачи информации об облигации.
       example:
+        countryOfRisk: countryOfRisk
+        blockedTcaFlag: true
+        maturityDate: 2000-01-23T04:56:07.000+00:00
+        sellAvailableFlag: true
+        first1dayCandleDate: 2000-01-23T04:56:07.000+00:00
+        placementPrice:
+          nano: 5
+          currency: currency
+          units: units
+        sector: sector
+        forIisFlag: true
+        positionUid: positionUid
+        shortEnabledFlag: true
+        dshort:
+          nano: 6
+          units: units
+        name: name
+        exchange: exchange
+        subordinatedFlag: true
+        floatingCouponFlag: true
         figi: figi
         dshortMin:
           nano: 6
           units: units
-        countryOfRisk: countryOfRisk
         lot: 0
         uid: uid
-        blockedTcaFlag: true
         dlong:
           nano: 6
           units: units
@@ -2941,19 +2989,11 @@ components:
           nano: 5
           currency: currency
           units: units
-        maturityDate: 2000-01-23T04:56:07.000+00:00
-        sellAvailableFlag: true
         currency: currency
-        first1dayCandleDate: 2000-01-23T04:56:07.000+00:00
-        placementPrice:
-          nano: 5
-          currency: currency
-          units: units
         aciValue:
           nano: 5
           currency: currency
           units: units
-        sector: sector
         buyAvailableFlag: true
         weekendFlag: true
         classCode: classCode
@@ -2964,13 +3004,10 @@ components:
           nano: 5
           currency: currency
           units: units
-        forIisFlag: true
-        positionUid: positionUid
         apiTradeAvailableFlag: true
         dlongMin:
           nano: 6
           units: units
-        shortEnabledFlag: true
         kshort:
           nano: 6
           units: units
@@ -2984,17 +3021,11 @@ components:
         klong:
           nano: 6
           units: units
-        dshort:
-          nano: 6
-          units: units
         issueKind: issueKind
         placementDate: 2000-01-23T04:56:07.000+00:00
         amortizationFlag: true
         perpetualFlag: true
-        name: name
         issueSize: issueSize
-        exchange: exchange
-        floatingCouponFlag: true
         countryOfRiskName: countryOfRiskName
         isin: isin
       properties:
@@ -3095,25 +3126,47 @@ components:
           type: boolean
         blockedTcaFlag:
           type: boolean
+        subordinatedFlag:
+          type: boolean
         first1minCandleDate:
           format: date-time
           type: string
         first1dayCandleDate:
           format: date-time
           type: string
+        riskLevel:
+          $ref: '#/components/schemas/v1RiskLevel'
       type: object
     v1BondResponse:
       description: Информация об облигации.
       example:
         instrument:
+          countryOfRisk: countryOfRisk
+          blockedTcaFlag: true
+          maturityDate: 2000-01-23T04:56:07.000+00:00
+          sellAvailableFlag: true
+          first1dayCandleDate: 2000-01-23T04:56:07.000+00:00
+          placementPrice:
+            nano: 5
+            currency: currency
+            units: units
+          sector: sector
+          forIisFlag: true
+          positionUid: positionUid
+          shortEnabledFlag: true
+          dshort:
+            nano: 6
+            units: units
+          name: name
+          exchange: exchange
+          subordinatedFlag: true
+          floatingCouponFlag: true
           figi: figi
           dshortMin:
             nano: 6
             units: units
-          countryOfRisk: countryOfRisk
           lot: 0
           uid: uid
-          blockedTcaFlag: true
           dlong:
             nano: 6
             units: units
@@ -3121,19 +3174,11 @@ components:
             nano: 5
             currency: currency
             units: units
-          maturityDate: 2000-01-23T04:56:07.000+00:00
-          sellAvailableFlag: true
           currency: currency
-          first1dayCandleDate: 2000-01-23T04:56:07.000+00:00
-          placementPrice:
-            nano: 5
-            currency: currency
-            units: units
           aciValue:
             nano: 5
             currency: currency
             units: units
-          sector: sector
           buyAvailableFlag: true
           weekendFlag: true
           classCode: classCode
@@ -3144,13 +3189,10 @@ components:
             nano: 5
             currency: currency
             units: units
-          forIisFlag: true
-          positionUid: positionUid
           apiTradeAvailableFlag: true
           dlongMin:
             nano: 6
             units: units
-          shortEnabledFlag: true
           kshort:
             nano: 6
             units: units
@@ -3164,17 +3206,11 @@ components:
           klong:
             nano: 6
             units: units
-          dshort:
-            nano: 6
-            units: units
           issueKind: issueKind
           placementDate: 2000-01-23T04:56:07.000+00:00
           amortizationFlag: true
           perpetualFlag: true
-          name: name
           issueSize: issueSize
-          exchange: exchange
-          floatingCouponFlag: true
           countryOfRiskName: countryOfRiskName
           isin: isin
       properties:
@@ -3185,148 +3221,150 @@ components:
       description: Список облигаций.
       example:
         instruments:
-          - figi: figi
-            dshortMin:
-              nano: 6
-              units: units
-            countryOfRisk: countryOfRisk
-            lot: 0
-            uid: uid
-            blockedTcaFlag: true
-            dlong:
-              nano: 6
-              units: units
-            nominal:
-              nano: 5
-              currency: currency
-              units: units
-            maturityDate: 2000-01-23T04:56:07.000+00:00
-            sellAvailableFlag: true
+        - countryOfRisk: countryOfRisk
+          blockedTcaFlag: true
+          maturityDate: 2000-01-23T04:56:07.000+00:00
+          sellAvailableFlag: true
+          first1dayCandleDate: 2000-01-23T04:56:07.000+00:00
+          placementPrice:
+            nano: 5
             currency: currency
-            first1dayCandleDate: 2000-01-23T04:56:07.000+00:00
-            placementPrice:
-              nano: 5
-              currency: currency
-              units: units
-            aciValue:
-              nano: 5
-              currency: currency
-              units: units
-            sector: sector
-            buyAvailableFlag: true
-            weekendFlag: true
-            classCode: classCode
-            ticker: ticker
-            couponQuantityPerYear: 1
-            forQualInvestorFlag: true
-            initialNominal:
-              nano: 5
-              currency: currency
-              units: units
-            forIisFlag: true
-            positionUid: positionUid
-            apiTradeAvailableFlag: true
-            dlongMin:
-              nano: 6
-              units: units
-            shortEnabledFlag: true
-            kshort:
-              nano: 6
-              units: units
-            first1minCandleDate: 2000-01-23T04:56:07.000+00:00
-            stateRegDate: 2000-01-23T04:56:07.000+00:00
-            issueSizePlan: issueSizePlan
-            minPriceIncrement:
-              nano: 6
-              units: units
-            otcFlag: true
-            klong:
-              nano: 6
-              units: units
-            dshort:
-              nano: 6
-              units: units
-            issueKind: issueKind
-            placementDate: 2000-01-23T04:56:07.000+00:00
-            amortizationFlag: true
-            perpetualFlag: true
-            name: name
-            issueSize: issueSize
-            exchange: exchange
-            floatingCouponFlag: true
-            countryOfRiskName: countryOfRiskName
-            isin: isin
-          - figi: figi
-            dshortMin:
-              nano: 6
-              units: units
-            countryOfRisk: countryOfRisk
-            lot: 0
-            uid: uid
-            blockedTcaFlag: true
-            dlong:
-              nano: 6
-              units: units
-            nominal:
-              nano: 5
-              currency: currency
-              units: units
-            maturityDate: 2000-01-23T04:56:07.000+00:00
-            sellAvailableFlag: true
+            units: units
+          sector: sector
+          forIisFlag: true
+          positionUid: positionUid
+          shortEnabledFlag: true
+          dshort:
+            nano: 6
+            units: units
+          name: name
+          exchange: exchange
+          subordinatedFlag: true
+          floatingCouponFlag: true
+          figi: figi
+          dshortMin:
+            nano: 6
+            units: units
+          lot: 0
+          uid: uid
+          dlong:
+            nano: 6
+            units: units
+          nominal:
+            nano: 5
             currency: currency
-            first1dayCandleDate: 2000-01-23T04:56:07.000+00:00
-            placementPrice:
-              nano: 5
-              currency: currency
-              units: units
-            aciValue:
-              nano: 5
-              currency: currency
-              units: units
-            sector: sector
-            buyAvailableFlag: true
-            weekendFlag: true
-            classCode: classCode
-            ticker: ticker
-            couponQuantityPerYear: 1
-            forQualInvestorFlag: true
-            initialNominal:
-              nano: 5
-              currency: currency
-              units: units
-            forIisFlag: true
-            positionUid: positionUid
-            apiTradeAvailableFlag: true
-            dlongMin:
-              nano: 6
-              units: units
-            shortEnabledFlag: true
-            kshort:
-              nano: 6
-              units: units
-            first1minCandleDate: 2000-01-23T04:56:07.000+00:00
-            stateRegDate: 2000-01-23T04:56:07.000+00:00
-            issueSizePlan: issueSizePlan
-            minPriceIncrement:
-              nano: 6
-              units: units
-            otcFlag: true
-            klong:
-              nano: 6
-              units: units
-            dshort:
-              nano: 6
-              units: units
-            issueKind: issueKind
-            placementDate: 2000-01-23T04:56:07.000+00:00
-            amortizationFlag: true
-            perpetualFlag: true
-            name: name
-            issueSize: issueSize
-            exchange: exchange
-            floatingCouponFlag: true
-            countryOfRiskName: countryOfRiskName
-            isin: isin
+            units: units
+          currency: currency
+          aciValue:
+            nano: 5
+            currency: currency
+            units: units
+          buyAvailableFlag: true
+          weekendFlag: true
+          classCode: classCode
+          ticker: ticker
+          couponQuantityPerYear: 1
+          forQualInvestorFlag: true
+          initialNominal:
+            nano: 5
+            currency: currency
+            units: units
+          apiTradeAvailableFlag: true
+          dlongMin:
+            nano: 6
+            units: units
+          kshort:
+            nano: 6
+            units: units
+          first1minCandleDate: 2000-01-23T04:56:07.000+00:00
+          stateRegDate: 2000-01-23T04:56:07.000+00:00
+          issueSizePlan: issueSizePlan
+          minPriceIncrement:
+            nano: 6
+            units: units
+          otcFlag: true
+          klong:
+            nano: 6
+            units: units
+          issueKind: issueKind
+          placementDate: 2000-01-23T04:56:07.000+00:00
+          amortizationFlag: true
+          perpetualFlag: true
+          issueSize: issueSize
+          countryOfRiskName: countryOfRiskName
+          isin: isin
+        - countryOfRisk: countryOfRisk
+          blockedTcaFlag: true
+          maturityDate: 2000-01-23T04:56:07.000+00:00
+          sellAvailableFlag: true
+          first1dayCandleDate: 2000-01-23T04:56:07.000+00:00
+          placementPrice:
+            nano: 5
+            currency: currency
+            units: units
+          sector: sector
+          forIisFlag: true
+          positionUid: positionUid
+          shortEnabledFlag: true
+          dshort:
+            nano: 6
+            units: units
+          name: name
+          exchange: exchange
+          subordinatedFlag: true
+          floatingCouponFlag: true
+          figi: figi
+          dshortMin:
+            nano: 6
+            units: units
+          lot: 0
+          uid: uid
+          dlong:
+            nano: 6
+            units: units
+          nominal:
+            nano: 5
+            currency: currency
+            units: units
+          currency: currency
+          aciValue:
+            nano: 5
+            currency: currency
+            units: units
+          buyAvailableFlag: true
+          weekendFlag: true
+          classCode: classCode
+          ticker: ticker
+          couponQuantityPerYear: 1
+          forQualInvestorFlag: true
+          initialNominal:
+            nano: 5
+            currency: currency
+            units: units
+          apiTradeAvailableFlag: true
+          dlongMin:
+            nano: 6
+            units: units
+          kshort:
+            nano: 6
+            units: units
+          first1minCandleDate: 2000-01-23T04:56:07.000+00:00
+          stateRegDate: 2000-01-23T04:56:07.000+00:00
+          issueSizePlan: issueSizePlan
+          minPriceIncrement:
+            nano: 6
+            units: units
+          otcFlag: true
+          klong:
+            nano: 6
+            units: units
+          issueKind: issueKind
+          placementDate: 2000-01-23T04:56:07.000+00:00
+          amortizationFlag: true
+          perpetualFlag: true
+          issueSize: issueSize
+          countryOfRiskName: countryOfRiskName
+          isin: isin
       properties:
         instruments:
           items:
@@ -3692,6 +3730,14 @@ components:
         - CANDLE_INTERVAL_15_MIN
         - CANDLE_INTERVAL_HOUR
         - CANDLE_INTERVAL_DAY
+        - CANDLE_INTERVAL_2_MIN
+        - CANDLE_INTERVAL_3_MIN
+        - CANDLE_INTERVAL_10_MIN
+        - CANDLE_INTERVAL_30_MIN
+        - CANDLE_INTERVAL_2_HOUR
+        - CANDLE_INTERVAL_4_HOUR
+        - CANDLE_INTERVAL_WEEK
+        - CANDLE_INTERVAL_MONTH
       type: string
     v1CandleSubscription:
       description: Статус подписки на свечи.
@@ -4571,6 +4617,8 @@ components:
           type: boolean
         apiTradeAvailableFlag:
           type: boolean
+        instrumentKind:
+          $ref: '#/components/schemas/v1InstrumentType'
       type: object
     v1FindInstrumentRequest:
       description: Запрос на поиск инструментов.
@@ -6240,6 +6288,34 @@ components:
         instrumentUid:
           type: string
       type: object
+    v1GetTradingStatusesRequest:
+      description: Запрос получения торгового статуса.
+      properties:
+        instrumentId:
+          items:
+            type: string
+          type: array
+      type: object
+    v1GetTradingStatusesResponse:
+      description: Информация о торговом статусе.
+      example:
+        tradingStatuses:
+        - limitOrderAvailableFlag: true
+          marketOrderAvailableFlag: true
+          instrumentUid: instrumentUid
+          figi: figi
+          apiTradeAvailableFlag: true
+        - limitOrderAvailableFlag: true
+          marketOrderAvailableFlag: true
+          instrumentUid: instrumentUid
+          figi: figi
+          apiTradeAvailableFlag: true
+      properties:
+        tradingStatuses:
+          items:
+            $ref: '#/components/schemas/v1GetTradingStatusResponse'
+          type: array
+      type: object
     v1GetUserTariffRequest:
       description: Запрос текущих лимитов пользователя.
       type: object
@@ -6443,6 +6519,8 @@ components:
           type: boolean
         blockedTcaFlag:
           type: boolean
+        instrumentKind:
+          $ref: '#/components/schemas/v1InstrumentType'
         first1minCandleDate:
           format: date-time
           type: string
@@ -6596,6 +6674,8 @@ components:
           type: string
         positionUid:
           type: string
+        instrumentKind:
+          $ref: '#/components/schemas/v1InstrumentType'
         apiTradeAvailableFlag:
           type: boolean
         forIisFlag:
@@ -6633,6 +6713,7 @@ components:
         - INSTRUMENT_TYPE_FUTURES
         - INSTRUMENT_TYPE_SP
         - INSTRUMENT_TYPE_OPTION
+        - INSTRUMENT_TYPE_CLEARING_CERTIFICATE
       type: string
     v1InstrumentsRequest:
       description: Запрос получения инструментов.
@@ -6886,12 +6967,14 @@ components:
               currency: currency
               units: units
             tradeId: tradeId
+        positionUid: positionUid
         figi: figi
         type: type
         price:
           nano: 5
           currency: currency
           units: units
+        instrumentUid: instrumentUid
         currency: currency
         payment:
           nano: 5
@@ -6934,6 +7017,10 @@ components:
             $ref: '#/components/schemas/v1OperationTrade'
           type: array
         assetUid:
+          type: string
+        positionUid:
+          type: string
+        instrumentUid:
           type: string
       type: object
     v1OperationItem:
@@ -7002,6 +7089,7 @@ components:
         instrumentType: instrumentType
         quantity: quantity
         parentOperationId: parentOperationId
+        positionUid: positionUid
         quantityDone: quantityDone
         yieldRelative:
           nano: 6
@@ -7036,6 +7124,8 @@ components:
           type: string
         instrumentKind:
           $ref: '#/components/schemas/v1InstrumentType'
+        positionUid:
+          type: string
         payment:
           $ref: '#/components/schemas/v1MoneyValue'
         price:
@@ -7276,12 +7366,14 @@ components:
                   currency: currency
                   units: units
                 tradeId: tradeId
+            positionUid: positionUid
             figi: figi
             type: type
             price:
               nano: 5
               currency: currency
               units: units
+            instrumentUid: instrumentUid
             currency: currency
             payment:
               nano: 5
@@ -7309,12 +7401,14 @@ components:
                   currency: currency
                   units: units
                 tradeId: tradeId
+            positionUid: positionUid
             figi: figi
             type: type
             price:
               nano: 5
               currency: currency
               units: units
+            instrumentUid: instrumentUid
             currency: currency
             payment:
               nano: 5
@@ -8051,6 +8145,9 @@ components:
         quantityLots:
           nano: 6
           units: units
+        blockedLots:
+          nano: 6
+          units: units
         averagePositionPrice:
           nano: 5
           currency: currency
@@ -8087,6 +8184,8 @@ components:
           $ref: '#/components/schemas/v1Quotation'
         blocked:
           type: boolean
+        blockedLots:
+          $ref: '#/components/schemas/v1Quotation'
         positionUid:
           type: string
         instrumentUid:
@@ -8155,6 +8254,9 @@ components:
             quantityLots:
               nano: 6
               units: units
+            blockedLots:
+              nano: 6
+              units: units
             averagePositionPrice:
               nano: 5
               currency: currency
@@ -8193,6 +8295,9 @@ components:
             positionUid: positionUid
             figi: figi
             quantityLots:
+              nano: 6
+              units: units
+            blockedLots:
               nano: 6
               units: units
             averagePositionPrice:
@@ -8790,6 +8895,15 @@ components:
         priceType:
           $ref: '#/components/schemas/v1PriceType'
       type: object
+    v1RiskLevel:
+      default: RISK_LEVEL_UNSPECIFIED
+      description: Уровень риска облигации.
+      enum:
+      - RISK_LEVEL_UNSPECIFIED
+      - RISK_LEVEL_LOW
+      - RISK_LEVEL_MODERATE
+      - RISK_LEVEL_HIGH
+      type: string
     v1SandboxPayInRequest:
       description: Запрос пополнения счёта в песочнице.
       properties:
@@ -9498,7 +9612,9 @@ components:
         eveningOpeningAuctionStartTime: 2000-01-23T04:56:07.000+00:00
         isTradingDay: true
         eveningStartTime: 2000-01-23T04:56:07.000+00:00
+        openingAuctionEndTime: 2000-01-23T04:56:07.000+00:00
         premarketEndTime: 2000-01-23T04:56:07.000+00:00
+        closingAuctionStartTime: 2000-01-23T04:56:07.000+00:00
         clearingStartTime: 2000-01-23T04:56:07.000+00:00
         startTime: 2000-01-23T04:56:07.000+00:00
         endTime: 2000-01-23T04:56:07.000+00:00
@@ -9541,37 +9657,47 @@ components:
         premarketEndTime:
           format: date-time
           type: string
+        closingAuctionStartTime:
+          format: date-time
+          type: string
+        openingAuctionEndTime:
+          format: date-time
+          type: string
       type: object
     v1TradingSchedule:
       description: Данные по торговой площадке.
       example:
         days:
-          - date: 2000-01-23T04:56:07.000+00:00
-            clearingEndTime: 2000-01-23T04:56:07.000+00:00
-            openingAuctionStartTime: 2000-01-23T04:56:07.000+00:00
-            closingAuctionEndTime: 2000-01-23T04:56:07.000+00:00
-            eveningEndTime: 2000-01-23T04:56:07.000+00:00
-            premarketStartTime: 2000-01-23T04:56:07.000+00:00
-            eveningOpeningAuctionStartTime: 2000-01-23T04:56:07.000+00:00
-            isTradingDay: true
-            eveningStartTime: 2000-01-23T04:56:07.000+00:00
-            premarketEndTime: 2000-01-23T04:56:07.000+00:00
-            clearingStartTime: 2000-01-23T04:56:07.000+00:00
-            startTime: 2000-01-23T04:56:07.000+00:00
-            endTime: 2000-01-23T04:56:07.000+00:00
-          - date: 2000-01-23T04:56:07.000+00:00
-            clearingEndTime: 2000-01-23T04:56:07.000+00:00
-            openingAuctionStartTime: 2000-01-23T04:56:07.000+00:00
-            closingAuctionEndTime: 2000-01-23T04:56:07.000+00:00
-            eveningEndTime: 2000-01-23T04:56:07.000+00:00
-            premarketStartTime: 2000-01-23T04:56:07.000+00:00
-            eveningOpeningAuctionStartTime: 2000-01-23T04:56:07.000+00:00
-            isTradingDay: true
-            eveningStartTime: 2000-01-23T04:56:07.000+00:00
-            premarketEndTime: 2000-01-23T04:56:07.000+00:00
-            clearingStartTime: 2000-01-23T04:56:07.000+00:00
-            startTime: 2000-01-23T04:56:07.000+00:00
-            endTime: 2000-01-23T04:56:07.000+00:00
+        - date: 2000-01-23T04:56:07.000+00:00
+          clearingEndTime: 2000-01-23T04:56:07.000+00:00
+          openingAuctionStartTime: 2000-01-23T04:56:07.000+00:00
+          closingAuctionEndTime: 2000-01-23T04:56:07.000+00:00
+          eveningEndTime: 2000-01-23T04:56:07.000+00:00
+          premarketStartTime: 2000-01-23T04:56:07.000+00:00
+          eveningOpeningAuctionStartTime: 2000-01-23T04:56:07.000+00:00
+          isTradingDay: true
+          eveningStartTime: 2000-01-23T04:56:07.000+00:00
+          openingAuctionEndTime: 2000-01-23T04:56:07.000+00:00
+          premarketEndTime: 2000-01-23T04:56:07.000+00:00
+          closingAuctionStartTime: 2000-01-23T04:56:07.000+00:00
+          clearingStartTime: 2000-01-23T04:56:07.000+00:00
+          startTime: 2000-01-23T04:56:07.000+00:00
+          endTime: 2000-01-23T04:56:07.000+00:00
+        - date: 2000-01-23T04:56:07.000+00:00
+          clearingEndTime: 2000-01-23T04:56:07.000+00:00
+          openingAuctionStartTime: 2000-01-23T04:56:07.000+00:00
+          closingAuctionEndTime: 2000-01-23T04:56:07.000+00:00
+          eveningEndTime: 2000-01-23T04:56:07.000+00:00
+          premarketStartTime: 2000-01-23T04:56:07.000+00:00
+          eveningOpeningAuctionStartTime: 2000-01-23T04:56:07.000+00:00
+          isTradingDay: true
+          eveningStartTime: 2000-01-23T04:56:07.000+00:00
+          openingAuctionEndTime: 2000-01-23T04:56:07.000+00:00
+          premarketEndTime: 2000-01-23T04:56:07.000+00:00
+          closingAuctionStartTime: 2000-01-23T04:56:07.000+00:00
+          clearingStartTime: 2000-01-23T04:56:07.000+00:00
+          startTime: 2000-01-23T04:56:07.000+00:00
+          endTime: 2000-01-23T04:56:07.000+00:00
         exchange: exchange
       properties:
         exchange:
@@ -9597,62 +9723,70 @@ components:
       description: Список торговых площадок.
       example:
         exchanges:
-          - days:
-              - date: 2000-01-23T04:56:07.000+00:00
-                clearingEndTime: 2000-01-23T04:56:07.000+00:00
-                openingAuctionStartTime: 2000-01-23T04:56:07.000+00:00
-                closingAuctionEndTime: 2000-01-23T04:56:07.000+00:00
-                eveningEndTime: 2000-01-23T04:56:07.000+00:00
-                premarketStartTime: 2000-01-23T04:56:07.000+00:00
-                eveningOpeningAuctionStartTime: 2000-01-23T04:56:07.000+00:00
-                isTradingDay: true
-                eveningStartTime: 2000-01-23T04:56:07.000+00:00
-                premarketEndTime: 2000-01-23T04:56:07.000+00:00
-                clearingStartTime: 2000-01-23T04:56:07.000+00:00
-                startTime: 2000-01-23T04:56:07.000+00:00
-                endTime: 2000-01-23T04:56:07.000+00:00
-              - date: 2000-01-23T04:56:07.000+00:00
-                clearingEndTime: 2000-01-23T04:56:07.000+00:00
-                openingAuctionStartTime: 2000-01-23T04:56:07.000+00:00
-                closingAuctionEndTime: 2000-01-23T04:56:07.000+00:00
-                eveningEndTime: 2000-01-23T04:56:07.000+00:00
-                premarketStartTime: 2000-01-23T04:56:07.000+00:00
-                eveningOpeningAuctionStartTime: 2000-01-23T04:56:07.000+00:00
-                isTradingDay: true
-                eveningStartTime: 2000-01-23T04:56:07.000+00:00
-                premarketEndTime: 2000-01-23T04:56:07.000+00:00
-                clearingStartTime: 2000-01-23T04:56:07.000+00:00
-                startTime: 2000-01-23T04:56:07.000+00:00
-                endTime: 2000-01-23T04:56:07.000+00:00
-            exchange: exchange
-          - days:
-              - date: 2000-01-23T04:56:07.000+00:00
-                clearingEndTime: 2000-01-23T04:56:07.000+00:00
-                openingAuctionStartTime: 2000-01-23T04:56:07.000+00:00
-                closingAuctionEndTime: 2000-01-23T04:56:07.000+00:00
-                eveningEndTime: 2000-01-23T04:56:07.000+00:00
-                premarketStartTime: 2000-01-23T04:56:07.000+00:00
-                eveningOpeningAuctionStartTime: 2000-01-23T04:56:07.000+00:00
-                isTradingDay: true
-                eveningStartTime: 2000-01-23T04:56:07.000+00:00
-                premarketEndTime: 2000-01-23T04:56:07.000+00:00
-                clearingStartTime: 2000-01-23T04:56:07.000+00:00
-                startTime: 2000-01-23T04:56:07.000+00:00
-                endTime: 2000-01-23T04:56:07.000+00:00
-              - date: 2000-01-23T04:56:07.000+00:00
-                clearingEndTime: 2000-01-23T04:56:07.000+00:00
-                openingAuctionStartTime: 2000-01-23T04:56:07.000+00:00
-                closingAuctionEndTime: 2000-01-23T04:56:07.000+00:00
-                eveningEndTime: 2000-01-23T04:56:07.000+00:00
-                premarketStartTime: 2000-01-23T04:56:07.000+00:00
-                eveningOpeningAuctionStartTime: 2000-01-23T04:56:07.000+00:00
-                isTradingDay: true
-                eveningStartTime: 2000-01-23T04:56:07.000+00:00
-                premarketEndTime: 2000-01-23T04:56:07.000+00:00
-                clearingStartTime: 2000-01-23T04:56:07.000+00:00
-                startTime: 2000-01-23T04:56:07.000+00:00
-                endTime: 2000-01-23T04:56:07.000+00:00
-            exchange: exchange
+        - days:
+          - date: 2000-01-23T04:56:07.000+00:00
+            clearingEndTime: 2000-01-23T04:56:07.000+00:00
+            openingAuctionStartTime: 2000-01-23T04:56:07.000+00:00
+            closingAuctionEndTime: 2000-01-23T04:56:07.000+00:00
+            eveningEndTime: 2000-01-23T04:56:07.000+00:00
+            premarketStartTime: 2000-01-23T04:56:07.000+00:00
+            eveningOpeningAuctionStartTime: 2000-01-23T04:56:07.000+00:00
+            isTradingDay: true
+            eveningStartTime: 2000-01-23T04:56:07.000+00:00
+            openingAuctionEndTime: 2000-01-23T04:56:07.000+00:00
+            premarketEndTime: 2000-01-23T04:56:07.000+00:00
+            closingAuctionStartTime: 2000-01-23T04:56:07.000+00:00
+            clearingStartTime: 2000-01-23T04:56:07.000+00:00
+            startTime: 2000-01-23T04:56:07.000+00:00
+            endTime: 2000-01-23T04:56:07.000+00:00
+          - date: 2000-01-23T04:56:07.000+00:00
+            clearingEndTime: 2000-01-23T04:56:07.000+00:00
+            openingAuctionStartTime: 2000-01-23T04:56:07.000+00:00
+            closingAuctionEndTime: 2000-01-23T04:56:07.000+00:00
+            eveningEndTime: 2000-01-23T04:56:07.000+00:00
+            premarketStartTime: 2000-01-23T04:56:07.000+00:00
+            eveningOpeningAuctionStartTime: 2000-01-23T04:56:07.000+00:00
+            isTradingDay: true
+            eveningStartTime: 2000-01-23T04:56:07.000+00:00
+            openingAuctionEndTime: 2000-01-23T04:56:07.000+00:00
+            premarketEndTime: 2000-01-23T04:56:07.000+00:00
+            closingAuctionStartTime: 2000-01-23T04:56:07.000+00:00
+            clearingStartTime: 2000-01-23T04:56:07.000+00:00
+            startTime: 2000-01-23T04:56:07.000+00:00
+            endTime: 2000-01-23T04:56:07.000+00:00
+          exchange: exchange
+        - days:
+          - date: 2000-01-23T04:56:07.000+00:00
+            clearingEndTime: 2000-01-23T04:56:07.000+00:00
+            openingAuctionStartTime: 2000-01-23T04:56:07.000+00:00
+            closingAuctionEndTime: 2000-01-23T04:56:07.000+00:00
+            eveningEndTime: 2000-01-23T04:56:07.000+00:00
+            premarketStartTime: 2000-01-23T04:56:07.000+00:00
+            eveningOpeningAuctionStartTime: 2000-01-23T04:56:07.000+00:00
+            isTradingDay: true
+            eveningStartTime: 2000-01-23T04:56:07.000+00:00
+            openingAuctionEndTime: 2000-01-23T04:56:07.000+00:00
+            premarketEndTime: 2000-01-23T04:56:07.000+00:00
+            closingAuctionStartTime: 2000-01-23T04:56:07.000+00:00
+            clearingStartTime: 2000-01-23T04:56:07.000+00:00
+            startTime: 2000-01-23T04:56:07.000+00:00
+            endTime: 2000-01-23T04:56:07.000+00:00
+          - date: 2000-01-23T04:56:07.000+00:00
+            clearingEndTime: 2000-01-23T04:56:07.000+00:00
+            openingAuctionStartTime: 2000-01-23T04:56:07.000+00:00
+            closingAuctionEndTime: 2000-01-23T04:56:07.000+00:00
+            eveningEndTime: 2000-01-23T04:56:07.000+00:00
+            premarketStartTime: 2000-01-23T04:56:07.000+00:00
+            eveningOpeningAuctionStartTime: 2000-01-23T04:56:07.000+00:00
+            isTradingDay: true
+            eveningStartTime: 2000-01-23T04:56:07.000+00:00
+            openingAuctionEndTime: 2000-01-23T04:56:07.000+00:00
+            premarketEndTime: 2000-01-23T04:56:07.000+00:00
+            closingAuctionStartTime: 2000-01-23T04:56:07.000+00:00
+            clearingStartTime: 2000-01-23T04:56:07.000+00:00
+            startTime: 2000-01-23T04:56:07.000+00:00
+            endTime: 2000-01-23T04:56:07.000+00:00
+          exchange: exchange
       properties:
         exchanges:
           items:

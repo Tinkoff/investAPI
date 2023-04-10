@@ -69,6 +69,8 @@
 #### GetSandboxOrderState
 Метод получения статуса заявки в песочнице.
 
+Заявки хранятся в таблице 7 дней.
+
 - Тело запроса — [GetOrderStateRequest](#getorderstaterequest)
 
 - Тело ответа — [OrderState](#orderstate)
@@ -123,6 +125,59 @@
 
  <!-- range .Methods -->
  <!-- range .Services -->
+
+#### GetMarginAttributes
+Расчёт маржинальных показателей по счёту.
+
+- Тело запроса — [GetMarginAttributesRequest](#getmarginattributesrequest)
+
+- Тело ответа — [GetMarginAttributesResponse](#getmarginattributesresponse)
+
+#### GetDividendsForeignIssuer
+Метод получения отчёта "Справка о доходах за пределами РФ".
+
+- Тело запроса — [GetDividendsForeignIssuerRequest](#getdividendsforeignissuerrequest)
+
+- Тело ответа — [GetDividendsForeignIssuerResponse](#getdividendsforeignissuerresponse)
+
+#### GetBrokerReport
+Метод получения брокерского отчёта.
+
+- Тело запроса — [BrokerReportRequest](#brokerreportrequest)
+
+- Тело ответа — [BrokerReportResponse](#brokerreportresponse)
+
+
+#### TradesStream
+Stream сделок пользователя
+
+- Тело запроса — [TradesStreamRequest](#tradesstreamrequest)
+
+- Тело ответа — [TradesStreamResponse](#tradesstreamresponse)
+
+#### PortfolioStream
+Server-side stream обновлений портфеля
+
+- Тело запроса — [PortfolioStreamRequest](#portfoliostreamrequest)
+
+- Тело ответа — [PortfolioStreamResponse](#portfoliostreamresponse)
+
+
+#### PositionsStream
+Server-side stream обновлений информации по изменению позиций портфеля
+
+- Тело запроса — [PositionsStreamRequest](#positionsstreamrequest)
+
+- Тело ответа — [PositionsStreamResponse](#positionsstreamresponse)
+
+#### GetPortfolio
+Метод получения портфеля по счёту.
+
+- Тело запроса — [PortfolioRequest](#portfoliorequest)
+
+- Тело ответа — [PortfolioResponse](#portfolioresponse)
+
+
 
 ###Сообщения методов
 

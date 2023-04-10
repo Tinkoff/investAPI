@@ -12,18 +12,18 @@
 |:--------------------------------------------------------------------------------------|:---------------:|:---------:|
 | [Сервис инструментов](/investAPI/head-instruments/)                                   |       Да        |    Да     |
 | [Сервис аккаунтов](/investAPI/head-users/)                                            |       Да        |    Да     |
-| <li>[getMarginAttributes](/investAPI/users#getmarginattributes)</li>                  |       Да        |  **Нет**  |
+| <li>[getMarginAttributes](/investAPI/users#getmarginattributes)</li>                  |       Да        |  Да  |
 | [Сервис операций](/investAPI/head-operations/)                                        |       Да        |    Да     |
-| <li>[getBrokerReport](/investAPI/operations/#getbrokerreport)</li>                    |       Да        |  **Нет**  |
-| <li>[PortfolioStream](/investAPI/operations/#portfoliostream)</li>                    |       Да        |  **Нет**  |
-| <li>[PositionsStream](/investAPI/operations/#positionsstream)</li>                    |       Да        |  **Нет**  |
-| <li>[getDividendsForeignIssuer](/investAPI/operations#getdividendsforeignissuer)</li> |       Да        |  **Нет**  |
-| <li>[getWithdrawLimits](/investAPI/operations#getwithdrawlimits)</li>                 |       Да        |  **Нет**  |
+| <li>[getBrokerReport](/investAPI/operations/#getbrokerreport)</li>                    |       Да        |  Да  |
+| <li>[PortfolioStream](/investAPI/operations/#portfoliostream)</li>                    |       Да        |  Да  |
+| <li>[PositionsStream](/investAPI/operations/#positionsstream)</li>                    |       Да        |  Да  |
+| <li>[getDividendsForeignIssuer](/investAPI/operations#getdividendsforeignissuer)</li> |       Да        |  Да  |
+| <li>[getWithdrawLimits](/investAPI/operations#getwithdrawlimits)</li>                 |       Да        |  Да  |
 | [Сервис котировок](/investAPI/head-marketdata/)                                       |       Да        |    Да     |
 | [Сервис стоп-заявок](/investAPI/head-stoporders/)                                     |       Да        |  **Нет**  |
 | [Песочницы](/investAPI/head-sandbox/)                                                 |       Да        |    Да     |
 | [Сервис торговых поручений](/investAPI/head-orders/)                                  |       Да        |    Да     |
-| <li>[TradeStream](/investAPI/orders/#tradesstream)</li>                               |       Да        | **Нет**   |
+| <li>[TradeStream](/investAPI/orders/#tradesstream)</li>                               |       Да        | Да   |
 
 
 **Важно!** В песочнице так же не рассчитывается комиссия, ликвидность портфеля, а так же отсутствуют маржинальные показатели.

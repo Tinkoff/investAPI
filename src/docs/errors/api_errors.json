@@ -75,7 +75,7 @@
     "description": "Превышен максимальный период запроса для данного интервала свечи. </br>Укажите корректный интервал."
   },
   "30015": {
-    "message": "missing parameter: 'quantity'",
+    "message": "parameter 'quantity' is missing or equal to 0",
     "type": "INVALID_ARGUMENT",
     "description": "Входной параметр *quantity* является обязательным. </br> Укажите корректный параметр *quantity*."
   },
@@ -414,10 +414,55 @@
     "type": "INVALID_ARGUMENT",
     "description": "Торги недоступны по нерабочим дням."
   },
+  "30093": {
+    "message": "missing parameter: 'figi' or 'instrument_id'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Один из параметров *figi* или *instrument_id* является обязательным."
+  },
+  "30094": {
+    "message": "options trading is not available at the moment",
+    "type": "INVALID_ARGUMENT",
+    "description": "Выставление заявок по опционам недоступно."
+  },
+  "30095": {
+    "message": "the request was not executed by the exchange",
+    "type": "INVALID_ARGUMENT",
+    "description": "Заявка не исполнена биржей."
+  },
+  "30096": {
+    "message": "the order was rejected, try again later",
+    "type": "INVALID_ARGUMENT",
+    "description": "Заявка отклонена, попробуйте повторить позже."
+  },
+  "30097": {
+    "message": "inappropriate trading session",
+    "type": "INVALID_ARGUMENT",
+    "description": "Сейчас эта сессия не идёт."
+  },
+  "30098": {
+    "message": "currently, there is no trading on this financial instrument",
+    "type": "INVALID_ARGUMENT",
+    "description": "Торги по этому финансовому инструменту сейчас не проводятся."
+  },
+  "30099": {
+    "message": "the price is outside the limits for this instrument",
+    "type": "INVALID_ARGUMENT",
+    "description": "Цена вне лимитов по инструменту или цена сделки вне лимита."
+  },
+  "30100": {
+    "message": "the price must be positive",
+    "type": "INVALID_ARGUMENT",
+    "description": "Цена должна быть положительной."
+  },
+  "30101": {
+    "message": "to trade this financial instrument, pass the test",
+    "type": "INVALID_ARGUMENT",
+    "description": "Для торговли этим инструментом пройдите тестирование."
+  },
   "40002": {
     "message": "insufficient privileges",
     "type": "PERMISSION_DENIED",
-    "description": "Недостаточно прав для совершения операции. </br>Токен доступа имеет уровень прав read-only.</br>Подробнее: [Виды токенов](https://tinkoff.github.io/investAPI/index#_2)"
+    "description": "Недостаточно прав для совершения операции. </br>Токен доступа имеет уровень прав read-only, либо у токена нет доступа к указанному счету.</br>Подробнее: [Виды токенов](https://tinkoff.github.io/investAPI/index#_2)"
   },
   "40003": {
     "message": "authentication token is missing or invalid",

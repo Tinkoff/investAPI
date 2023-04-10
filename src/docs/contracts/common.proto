@@ -11,6 +11,19 @@ option php_namespace = "Tinkoff\\Invest\\V1";
 
 import "google/protobuf/timestamp.proto";
 
+//Тип инструмента.
+enum InstrumentType {
+  INSTRUMENT_TYPE_UNSPECIFIED = 0;
+  INSTRUMENT_TYPE_BOND = 1; //Облигация.
+  INSTRUMENT_TYPE_SHARE	= 2; //Акция.
+  INSTRUMENT_TYPE_CURRENCY = 3; //Валюта.
+  INSTRUMENT_TYPE_ETF = 4; //Exchange-traded fund. Фонд.
+  INSTRUMENT_TYPE_FUTURES = 5; //Фьючерс.
+  INSTRUMENT_TYPE_SP = 6; //Структурная нота.
+  INSTRUMENT_TYPE_OPTION = 7; //Опцион.
+  INSTRUMENT_TYPE_CLEARING_CERTIFICATE = 8; //Clearing certificate.
+}
+
 //Денежная сумма в определенной валюте
 message MoneyValue {
 

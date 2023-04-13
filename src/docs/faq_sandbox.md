@@ -36,6 +36,6 @@ TINKOFF INVEST API не гарантирует долговременного х
 [getSandboxWithdrawLimits](/investAPI/sandbox/#getsandboxwithdrawlimits) - Метод получения доступного остатка для вывода средств в песочнице
 отображает **только** список валютных позиций портфеля.
 
-##Повторное выставление ордеров в песочнице
+##Повторное выставление заявки в песочнице
 
 [ReplaceSandboxOrder](/investAPI/sandbox/#replacesandboxorder) - метод отмены и повторного выставления уже выставленной заявки. 

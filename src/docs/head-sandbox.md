@@ -22,8 +22,7 @@
 * [CloseSandboxAccount](/investAPI/sandbox#closesandboxaccount) — метод закрытия счёта в песочнице.
 
 
-Обратите внимание, что пополнение счёта песочницы возможно только в рублях. Для
-выполнения операций с другой валютой расчётов, следует эту валюту сперва купить.
+Обратите внимание, что пополнение счёта песочницы возможно только в рублях. Для выполнения операций с другой валютой расчётов, следует эту валюту сперва купить c помощью метода [PostOrder](/investAPI/orders#postorder).
 
 Для получения списка своих счетов в песочнице используется метод [getAccount](/investAPI/sandbox#getaccounts).
 
@@ -31,7 +30,7 @@
 момент времени. Если созданный ранее счёт не найден, создайте, пожалуйста, новый. 
 Счета хранятся 3 месяца с даты последнего использования.
 
-**Важно!** В песочнице отсутствуют стоп-ордера, маржинальные показатели, а также не производится расчёт дополнительных показателей счёта,
+**Важно!** В песочнице отсутствуют стоп-заявки, маржинальные показатели, а также не производится расчёт дополнительных показателей счёта,
 ставок риска и размер гарантийного обеспечения, ликвидности портфеля.
 
 ##Методы получения состояния портфеля в песочнице
@@ -54,6 +53,20 @@
 * [getSandboxOrderState](/investAPI/sandbox#getsandboxorderstate) — получение статуса торгового поручения;
 * [cancelSandboxOrder](/investAPI/sandbox#cancelsandboxorder) — отмена выставленного торгового поручения;
 * [getSandboxOrders](/investAPI/sandbox#getsandboxorders) — получение списка торговых поручений по счёту;
+
+
+##Методы сервиса операций в песочнице
+* [GetDividendsForeignIssuer](/investAPI/sandbox#getdividendsforeignissuer) - получение отчёта "Справка о доходах за пределами РФ";
+* [GetBrokerReport](/investAPI/sandbox#getbrokerreport) - получение брокерского отчёта;
+* [PortfolioStream](/investAPI/sandbox#portfoliostream) - server-side stream обновлений портфеля;
+* [PositionsStream](/investAPI/sandbox#positionsstream) - server-side stream обновлений информации по изменению позиций портфеля;
+* [GetPortfolio](/investAPI/sandbox#getportfolio) - получение портфеля по счёту.
+
+##Методы сервиса ордеров в песочнице
+* [TradesStream](/investAPI/sandbox#tradesstream) - получение портфеля по счёту.
+
+##Методы сервиса cчетов в песочнице
+* [GetMarginAttributes](/investAPI/sandbox#getmarginattributes) - получение портфеля по счёту.
 
 <a name="orderexecute"></a>
 ###Алгоритм исполнения торговых поручений в песочнице

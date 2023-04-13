@@ -1,0 +1,5035 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.3">
+    
+    
+      
+        <title>Методы - TINKOFF INVEST API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#operationsservice" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="TINKOFF INVEST API" class="md-header__button md-logo" aria-label="TINKOFF INVEST API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TINKOFF INVEST API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Методы
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/Tinkoff/investAPI/" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="TINKOFF INVEST API" class="md-nav__button md-logo" aria-label="TINKOFF INVEST API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    TINKOFF INVEST API
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/Tinkoff/investAPI/" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Начало работы
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Полезная информация
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Полезная информация" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Полезная информация
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        Глоссарий
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grpc/" class="md-nav__link">
+        Протокол взаимодействия
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../limits/" class="md-nav__link">
+        Лимитная политика
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../token/" class="md-nav__link">
+        Токен доступа
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_identification/" class="md-nav__link">
+        Идентификация торговых инструментов
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_custom_types/" class="md-nav__link">
+        Нестандартные типы данных
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algorithmic_trading/" class="md-nav__link">
+        Алгоритмический трейдинг
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tech_indicators/" class="md-nav__link">
+        Индикаторы технического анализа
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../markets/" class="md-nav__link">
+        Торговые площадки и режимы торгов
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_trading_status/" class="md-nav__link">
+        Торговые статусы инструментов и расписание торгов
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../load_history/" class="md-nav__link">
+        Порядок работы с историческими данными
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orders_details/" class="md-nav__link">
+        Работа с торговыми поручениями
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../accredited_investor/" class="md-nav__link">
+        Квалифицированный инвестор
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_corp_action/" class="md-nav__link">
+        Правила обработки корпоративных действий
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../speedup/" class="md-nav__link">
+        Как ускорить работу с биржей
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deadlines/" class="md-nav__link">
+        Дедлайны запросов
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sla/" class="md-nav__link">
+        SLA
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../table_order_currency/" class="md-nav__link">
+        Таблица параметров возвращающих валюту или пункты
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../example/" class="md-nav__link">
+        Примеры запросов
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eol_v1/" class="md-nav__link">
+        EOL v1
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        Ответы на частые вопросы
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Языки программирования
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Языки программирования" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Языки программирования
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_python/" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_java/" class="md-nav__link">
+        Java
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_csharp/" class="md-nav__link">
+        С#
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Сервис счетов
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Сервис счетов" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Сервис счетов
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../head-users/" class="md-nav__link">
+        Описание
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../users/" class="md-nav__link">
+        Методы
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_users/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Сервис инструментов
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Сервис инструментов" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Сервис инструментов
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../head-instruments/" class="md-nav__link">
+        Описание
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instruments/" class="md-nav__link">
+        Методы
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_instruments/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary-instrument/" class="md-nav__link">
+        Голоссарий
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Сервис ордеров
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Сервис ордеров" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Сервис ордеров
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../head-orders/" class="md-nav__link">
+        Описание
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orders/" class="md-nav__link">
+        Методы
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_orders/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../table_order_currency/" class="md-nav__link">
+        Таблица параметров возвращающих валюту или пункты
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+      
+      <label class="md-nav__link" for="__nav_8">
+        Сервис операций
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Сервис операций" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Сервис операций
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../head-operations/" class="md-nav__link">
+        Описание
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Методы
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Методы
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#operationsservice" class="md-nav__link">
+    OperationsService
+  </a>
+  
+    <nav class="md-nav" aria-label="OperationsService">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Методы сервиса
+  </a>
+  
+    <nav class="md-nav" aria-label="Методы сервиса">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getoperations" class="md-nav__link">
+    GetOperations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getportfolio" class="md-nav__link">
+    GetPortfolio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpositions" class="md-nav__link">
+    GetPositions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwithdrawlimits" class="md-nav__link">
+    GetWithdrawLimits
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbrokerreport" class="md-nav__link">
+    GetBrokerReport
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdividendsforeignissuer" class="md-nav__link">
+    GetDividendsForeignIssuer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getoperationsbycursor" class="md-nav__link">
+    GetOperationsByCursor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operationsstreamservice" class="md-nav__link">
+    OperationsStreamService
+  </a>
+  
+    <nav class="md-nav" aria-label="OperationsStreamService">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Методы сервиса
+  </a>
+  
+    <nav class="md-nav" aria-label="Методы сервиса">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#portfoliostream" class="md-nav__link">
+    PortfolioStream
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionsstream" class="md-nav__link">
+    PositionsStream
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Сообщения методов
+  </a>
+  
+    <nav class="md-nav" aria-label="Сообщения методов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operationsrequest" class="md-nav__link">
+    OperationsRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operationsresponse" class="md-nav__link">
+    OperationsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operation" class="md-nav__link">
+    Operation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operationtrade" class="md-nav__link">
+    OperationTrade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portfoliorequest" class="md-nav__link">
+    PortfolioRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portfolioresponse" class="md-nav__link">
+    PortfolioResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionsrequest" class="md-nav__link">
+    PositionsRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionsresponse" class="md-nav__link">
+    PositionsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#withdrawlimitsrequest" class="md-nav__link">
+    WithdrawLimitsRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#withdrawlimitsresponse" class="md-nav__link">
+    WithdrawLimitsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portfolioposition" class="md-nav__link">
+    PortfolioPosition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtualportfolioposition" class="md-nav__link">
+    VirtualPortfolioPosition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionssecurities" class="md-nav__link">
+    PositionsSecurities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionsfutures" class="md-nav__link">
+    PositionsFutures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionsoptions" class="md-nav__link">
+    PositionsOptions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brokerreportrequest" class="md-nav__link">
+    BrokerReportRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brokerreportresponse" class="md-nav__link">
+    BrokerReportResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generatebrokerreportrequest" class="md-nav__link">
+    GenerateBrokerReportRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generatebrokerreportresponse" class="md-nav__link">
+    GenerateBrokerReportResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbrokerreportrequest" class="md-nav__link">
+    GetBrokerReportRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbrokerreportresponse" class="md-nav__link">
+    GetBrokerReportResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brokerreport" class="md-nav__link">
+    BrokerReport
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdividendsforeignissuerrequest" class="md-nav__link">
+    GetDividendsForeignIssuerRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdividendsforeignissuerresponse" class="md-nav__link">
+    GetDividendsForeignIssuerResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generatedividendsforeignissuerreportrequest" class="md-nav__link">
+    GenerateDividendsForeignIssuerReportRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdividendsforeignissuerreportrequest" class="md-nav__link">
+    GetDividendsForeignIssuerReportRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generatedividendsforeignissuerreportresponse" class="md-nav__link">
+    GenerateDividendsForeignIssuerReportResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdividendsforeignissuerreportresponse" class="md-nav__link">
+    GetDividendsForeignIssuerReportResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dividendsforeignissuerreport" class="md-nav__link">
+    DividendsForeignIssuerReport
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portfoliostreamrequest" class="md-nav__link">
+    PortfolioStreamRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portfoliostreamresponse" class="md-nav__link">
+    PortfolioStreamResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portfoliosubscriptionresult" class="md-nav__link">
+    PortfolioSubscriptionResult
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accountsubscriptionstatus" class="md-nav__link">
+    AccountSubscriptionStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getoperationsbycursorrequest" class="md-nav__link">
+    GetOperationsByCursorRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getoperationsbycursorresponse" class="md-nav__link">
+    GetOperationsByCursorResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operationitem" class="md-nav__link">
+    OperationItem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operationitemtrades" class="md-nav__link">
+    OperationItemTrades
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operationitemtrade" class="md-nav__link">
+    OperationItemTrade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionsstreamrequest" class="md-nav__link">
+    PositionsStreamRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionsstreamresponse" class="md-nav__link">
+    PositionsStreamResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionssubscriptionresult" class="md-nav__link">
+    PositionsSubscriptionResult
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionssubscriptionstatus" class="md-nav__link">
+    PositionsSubscriptionStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positiondata" class="md-nav__link">
+    PositionData
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionsmoney" class="md-nav__link">
+    PositionsMoney
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enums" class="md-nav__link">
+    Enums
+  </a>
+  
+    <nav class="md-nav" aria-label="Enums">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operationstate" class="md-nav__link">
+    OperationState
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operationtype" class="md-nav__link">
+    OperationType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portfoliosubscriptionstatus" class="md-nav__link">
+    PortfolioSubscriptionStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionsaccountsubscriptionstatus" class="md-nav__link">
+    PositionsAccountSubscriptionStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portfoliorequestcurrencyrequest" class="md-nav__link">
+    PortfolioRequest.CurrencyRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#securitytradingstatus" class="md-nav__link">
+    SecurityTradingStatus
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Нестандартные типы данных
+  </a>
+  
+    <nav class="md-nav" aria-label="Нестандартные типы данных">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#moneyvalue" class="md-nav__link">
+    MoneyValue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quotation" class="md-nav__link">
+    Quotation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_operations/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations_problems/" class="md-nav__link">
+        Особенности взаимодействия
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        Сервис котировок
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Сервис котировок" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Сервис котировок
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../head-marketdata/" class="md-nav__link">
+        Описание
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marketdata/" class="md-nav__link">
+        Методы
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_marketdata/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../get_history/" class="md-nav__link">
+        Получение исторических рыночных данных
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Сервис стоп-ордеров
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Сервис стоп-ордеров" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Сервис стоп-ордеров
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../head-stoporders/" class="md-nav__link">
+        Описание
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stoporders/" class="md-nav__link">
+        Методы
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_stoporders/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      <label class="md-nav__link" for="__nav_11">
+        Песочница
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Песочница" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Песочница
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../head-sandbox/" class="md-nav__link">
+        Описание
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sandbox/" class="md-nav__link">
+        Методы
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_sandbox/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../url_difference/" class="md-nav__link">
+        Отличия контура песочницы
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../errors/" class="md-nav__link">
+        Коды ошибок
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#operationsservice" class="md-nav__link">
+    OperationsService
+  </a>
+  
+    <nav class="md-nav" aria-label="OperationsService">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Методы сервиса
+  </a>
+  
+    <nav class="md-nav" aria-label="Методы сервиса">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getoperations" class="md-nav__link">
+    GetOperations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getportfolio" class="md-nav__link">
+    GetPortfolio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpositions" class="md-nav__link">
+    GetPositions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwithdrawlimits" class="md-nav__link">
+    GetWithdrawLimits
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbrokerreport" class="md-nav__link">
+    GetBrokerReport
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdividendsforeignissuer" class="md-nav__link">
+    GetDividendsForeignIssuer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getoperationsbycursor" class="md-nav__link">
+    GetOperationsByCursor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operationsstreamservice" class="md-nav__link">
+    OperationsStreamService
+  </a>
+  
+    <nav class="md-nav" aria-label="OperationsStreamService">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Методы сервиса
+  </a>
+  
+    <nav class="md-nav" aria-label="Методы сервиса">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#portfoliostream" class="md-nav__link">
+    PortfolioStream
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionsstream" class="md-nav__link">
+    PositionsStream
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Сообщения методов
+  </a>
+  
+    <nav class="md-nav" aria-label="Сообщения методов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operationsrequest" class="md-nav__link">
+    OperationsRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operationsresponse" class="md-nav__link">
+    OperationsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operation" class="md-nav__link">
+    Operation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operationtrade" class="md-nav__link">
+    OperationTrade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portfoliorequest" class="md-nav__link">
+    PortfolioRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portfolioresponse" class="md-nav__link">
+    PortfolioResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionsrequest" class="md-nav__link">
+    PositionsRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionsresponse" class="md-nav__link">
+    PositionsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#withdrawlimitsrequest" class="md-nav__link">
+    WithdrawLimitsRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#withdrawlimitsresponse" class="md-nav__link">
+    WithdrawLimitsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portfolioposition" class="md-nav__link">
+    PortfolioPosition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtualportfolioposition" class="md-nav__link">
+    VirtualPortfolioPosition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionssecurities" class="md-nav__link">
+    PositionsSecurities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionsfutures" class="md-nav__link">
+    PositionsFutures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionsoptions" class="md-nav__link">
+    PositionsOptions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brokerreportrequest" class="md-nav__link">
+    BrokerReportRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brokerreportresponse" class="md-nav__link">
+    BrokerReportResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generatebrokerreportrequest" class="md-nav__link">
+    GenerateBrokerReportRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generatebrokerreportresponse" class="md-nav__link">
+    GenerateBrokerReportResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbrokerreportrequest" class="md-nav__link">
+    GetBrokerReportRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbrokerreportresponse" class="md-nav__link">
+    GetBrokerReportResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brokerreport" class="md-nav__link">
+    BrokerReport
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdividendsforeignissuerrequest" class="md-nav__link">
+    GetDividendsForeignIssuerRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdividendsforeignissuerresponse" class="md-nav__link">
+    GetDividendsForeignIssuerResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generatedividendsforeignissuerreportrequest" class="md-nav__link">
+    GenerateDividendsForeignIssuerReportRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdividendsforeignissuerreportrequest" class="md-nav__link">
+    GetDividendsForeignIssuerReportRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generatedividendsforeignissuerreportresponse" class="md-nav__link">
+    GenerateDividendsForeignIssuerReportResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdividendsforeignissuerreportresponse" class="md-nav__link">
+    GetDividendsForeignIssuerReportResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dividendsforeignissuerreport" class="md-nav__link">
+    DividendsForeignIssuerReport
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portfoliostreamrequest" class="md-nav__link">
+    PortfolioStreamRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portfoliostreamresponse" class="md-nav__link">
+    PortfolioStreamResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portfoliosubscriptionresult" class="md-nav__link">
+    PortfolioSubscriptionResult
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accountsubscriptionstatus" class="md-nav__link">
+    AccountSubscriptionStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getoperationsbycursorrequest" class="md-nav__link">
+    GetOperationsByCursorRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getoperationsbycursorresponse" class="md-nav__link">
+    GetOperationsByCursorResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operationitem" class="md-nav__link">
+    OperationItem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operationitemtrades" class="md-nav__link">
+    OperationItemTrades
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operationitemtrade" class="md-nav__link">
+    OperationItemTrade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionsstreamrequest" class="md-nav__link">
+    PositionsStreamRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionsstreamresponse" class="md-nav__link">
+    PositionsStreamResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionssubscriptionresult" class="md-nav__link">
+    PositionsSubscriptionResult
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionssubscriptionstatus" class="md-nav__link">
+    PositionsSubscriptionStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positiondata" class="md-nav__link">
+    PositionData
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionsmoney" class="md-nav__link">
+    PositionsMoney
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enums" class="md-nav__link">
+    Enums
+  </a>
+  
+    <nav class="md-nav" aria-label="Enums">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operationstate" class="md-nav__link">
+    OperationState
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operationtype" class="md-nav__link">
+    OperationType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portfoliosubscriptionstatus" class="md-nav__link">
+    PortfolioSubscriptionStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionsaccountsubscriptionstatus" class="md-nav__link">
+    PositionsAccountSubscriptionStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portfoliorequestcurrencyrequest" class="md-nav__link">
+    PortfolioRequest.CurrencyRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#securitytradingstatus" class="md-nav__link">
+    SecurityTradingStatus
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Нестандартные типы данных
+  </a>
+  
+    <nav class="md-nav" aria-label="Нестандартные типы данных">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#moneyvalue" class="md-nav__link">
+    MoneyValue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quotation" class="md-nav__link">
+    Quotation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Tinkoff/investAPI/edit/master/docs/operations.md" title="Редактировать страницу" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Методы</h1>
+                
+                <h2 id="operationsservice">OperationsService</h2>
+<p>Сервис предназначен для получения:</br> <strong>1</strong>.  списка операций по счёту;</br> <strong>2</strong>.
+портфеля по счёту;</br> <strong>3</strong>. позиций ценных бумаг на счёте;</br> <strong>4</strong>.
+доступного остатка для вывода средств;</br> <strong>5</strong>. получения различных отчётов.</p>
+<h3 id="_1">Методы сервиса</h3>
+<h4 id="getoperations">GetOperations</h4>
+<p>Метод получения списка операций по счёту.При работе с данным методом необходимо учитывать
+<a href="/investAPI/operations_problems">особенности взаимодействия</a> с данным методом.</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#operationsrequest">OperationsRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#operationsresponse">OperationsResponse</a></p>
+</li>
+</ul>
+<h4 id="getportfolio">GetPortfolio</h4>
+<p>Метод получения портфеля по счёту.</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#portfoliorequest">PortfolioRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#portfolioresponse">PortfolioResponse</a></p>
+</li>
+</ul>
+<h4 id="getpositions">GetPositions</h4>
+<p>Метод получения списка позиций по счёту.</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#positionsrequest">PositionsRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#positionsresponse">PositionsResponse</a></p>
+</li>
+</ul>
+<h4 id="getwithdrawlimits">GetWithdrawLimits</h4>
+<p>Метод получения доступного остатка для вывода средств.</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#withdrawlimitsrequest">WithdrawLimitsRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#withdrawlimitsresponse">WithdrawLimitsResponse</a></p>
+</li>
+</ul>
+<h4 id="getbrokerreport">GetBrokerReport</h4>
+<p>Метод получения брокерского отчёта.</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#brokerreportrequest">BrokerReportRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#brokerreportresponse">BrokerReportResponse</a></p>
+</li>
+</ul>
+<h4 id="getdividendsforeignissuer">GetDividendsForeignIssuer</h4>
+<p>Метод получения отчёта "Справка о доходах за пределами РФ".</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#getdividendsforeignissuerrequest">GetDividendsForeignIssuerRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#getdividendsforeignissuerresponse">GetDividendsForeignIssuerResponse</a></p>
+</li>
+</ul>
+<h4 id="getoperationsbycursor">GetOperationsByCursor</h4>
+<p>Метод получения списка операций по счёту с пагинацией. При работе с данным методом необходимо учитывать
+<a href="/investAPI/operations_problems">особенности взаимодействия</a> с данным методом.</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#getoperationsbycursorrequest">GetOperationsByCursorRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#getoperationsbycursorresponse">GetOperationsByCursorResponse</a></p>
+</li>
+</ul>
+<!-- range .Methods -->
+
+<h2 id="operationsstreamservice">OperationsStreamService</h2>
+<h3 id="_2">Методы сервиса</h3>
+<h4 id="portfoliostream">PortfolioStream</h4>
+<p>Server-side stream обновлений портфеля</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#portfoliostreamrequest">PortfolioStreamRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#portfoliostreamresponse">PortfolioStreamResponse</a></p>
+</li>
+</ul>
+<h4 id="positionsstream">PositionsStream</h4>
+<p>Server-side stream обновлений информации по изменению позиций портфеля</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#positionsstreamrequest">PositionsStreamRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#positionsstreamresponse">PositionsStreamResponse</a></p>
+</li>
+</ul>
+<!-- range .Methods -->
+<!-- range .Services -->
+
+<h3 id="_3">Сообщения методов</h3>
+<h4 id="operationsrequest">OperationsRequest</h4>
+<p>Запрос получения списка операций по счёту.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор счёта клиента.</td>
+</tr>
+<tr>
+<td>from</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Начало периода (по UTC).</td>
+</tr>
+<tr>
+<td>to</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Окончание периода (по UTC).</td>
+</tr>
+<tr>
+<td>state</td>
+<td><a href="#operationstate">OperationState</a></td>
+<td>Статус запрашиваемых операций.</td>
+</tr>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента для фильтрации.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="operationsresponse">OperationsResponse</h4>
+<p>Список операций.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operations</td>
+<td>Массив объектов <a href="#operation">Operation</a></td>
+<td>Массив операций.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="operation">Operation</h4>
+<p>Данные по операции.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор операции.</td>
+</tr>
+<tr>
+<td>parent_operation_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор родительской операции.</td>
+</tr>
+<tr>
+<td>currency</td>
+<td><a href="#string">string</a></td>
+<td>Валюта операции.</td>
+</tr>
+<tr>
+<td>payment</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Сумма операции.</td>
+</tr>
+<tr>
+<td>price</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Цена операции за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+</tr>
+<tr>
+<td>state</td>
+<td><a href="#operationstate">OperationState</a></td>
+<td>Статус операции.</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td><a href="#int64">int64</a></td>
+<td>Количество единиц инструмента.</td>
+</tr>
+<tr>
+<td>quantity_rest</td>
+<td><a href="#int64">int64</a></td>
+<td>Неисполненный остаток по сделке.</td>
+</tr>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента, связанного с операцией.</td>
+</tr>
+<tr>
+<td>instrument_type</td>
+<td><a href="#string">string</a></td>
+<td>Тип инструмента. Возможные значения: </br><strong>bond</strong> — облигация; </br><strong>share</strong> — акция; </br><strong>currency</strong> — валюта; </br><strong>etf</strong> — фонд; </br><strong>futures</strong> — фьючерс.</td>
+</tr>
+<tr>
+<td>date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата и время операции в формате часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>type</td>
+<td><a href="#string">string</a></td>
+<td>Текстовое описание типа операции.</td>
+</tr>
+<tr>
+<td>operation_type</td>
+<td><a href="#operationtype">OperationType</a></td>
+<td>Тип операции.</td>
+</tr>
+<tr>
+<td>trades</td>
+<td>Массив объектов <a href="#operationtrade">OperationTrade</a></td>
+<td>Массив сделок.</td>
+</tr>
+<tr>
+<td>asset_uid</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор актива</td>
+</tr>
+<tr>
+<td>position_uid</td>
+<td><a href="#string">string</a></td>
+<td>position_uid-идентификатора инструмента.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Уникальный идентификатор инструмента.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="operationtrade">OperationTrade</h4>
+<p>Сделка по операции.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trade_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор сделки.</td>
+</tr>
+<tr>
+<td>date_time</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата и время сделки в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td><a href="#int64">int64</a></td>
+<td>Количество инструментов.</td>
+</tr>
+<tr>
+<td>price</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="portfoliorequest">PortfolioRequest</h4>
+<p>Запрос получения текущего портфеля по счёту.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор счёта пользователя.</td>
+</tr>
+<tr>
+<td>currency</td>
+<td><a href="#portfoliorequestcurrencyrequest">PortfolioRequest.CurrencyRequest</a></td>
+<td>Валюта, в которой требуется рассчитать портфель</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="portfolioresponse">PortfolioResponse</h4>
+<p>Текущий портфель по счёту.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>total_amount_shares</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Общая стоимость акций в портфеле.</td>
+</tr>
+<tr>
+<td>total_amount_bonds</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Общая стоимость облигаций в портфеле.</td>
+</tr>
+<tr>
+<td>total_amount_etf</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Общая стоимость фондов в портфеле.</td>
+</tr>
+<tr>
+<td>total_amount_currencies</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Общая стоимость валют в портфеле.</td>
+</tr>
+<tr>
+<td>total_amount_futures</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Общая стоимость фьючерсов в портфеле.</td>
+</tr>
+<tr>
+<td>expected_yield</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Текущая относительная доходность портфеля, в %.</td>
+</tr>
+<tr>
+<td>positions</td>
+<td>Массив объектов <a href="#portfolioposition">PortfolioPosition</a></td>
+<td>Список позиций портфеля.</td>
+</tr>
+<tr>
+<td>account_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор счёта пользователя.</td>
+</tr>
+<tr>
+<td>total_amount_options</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Общая стоимость опционов в портфеле.</td>
+</tr>
+<tr>
+<td>total_amount_sp</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Общая стоимость структурных нот в портфеле.</td>
+</tr>
+<tr>
+<td>total_amount_portfolio</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Общая стоимость портфеля.</td>
+</tr>
+<tr>
+<td>virtual_positions</td>
+<td>Массив объектов <a href="#virtualportfolioposition">VirtualPortfolioPosition</a></td>
+<td>Массив виртуальных позиций портфеля.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="positionsrequest">PositionsRequest</h4>
+<p>Запрос позиций портфеля по счёту.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор счёта пользователя.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="positionsresponse">PositionsResponse</h4>
+<p>Список позиций по счёту.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>money</td>
+<td>Массив объектов <a href="#moneyvalue">MoneyValue</a></td>
+<td>Массив валютных позиций портфеля.</td>
+</tr>
+<tr>
+<td>blocked</td>
+<td>Массив объектов <a href="#moneyvalue">MoneyValue</a></td>
+<td>Массив заблокированных валютных позиций портфеля.</td>
+</tr>
+<tr>
+<td>securities</td>
+<td>Массив объектов <a href="#positionssecurities">PositionsSecurities</a></td>
+<td>Список ценно-бумажных позиций портфеля.</td>
+</tr>
+<tr>
+<td>limits_loading_in_progress</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак идущей в данный момент выгрузки лимитов.</td>
+</tr>
+<tr>
+<td>futures</td>
+<td>Массив объектов <a href="#positionsfutures">PositionsFutures</a></td>
+<td>Список фьючерсов портфеля.</td>
+</tr>
+<tr>
+<td>options</td>
+<td>Массив объектов <a href="#positionsoptions">PositionsOptions</a></td>
+<td>Список опционов портфеля.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="withdrawlimitsrequest">WithdrawLimitsRequest</h4>
+<p>Запрос доступного для вывода остатка.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор счёта пользователя.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="withdrawlimitsresponse">WithdrawLimitsResponse</h4>
+<p>Доступный для вывода остаток.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>money</td>
+<td>Массив объектов <a href="#moneyvalue">MoneyValue</a></td>
+<td>Массив валютных позиций портфеля.</td>
+</tr>
+<tr>
+<td>blocked</td>
+<td>Массив объектов <a href="#moneyvalue">MoneyValue</a></td>
+<td>Массив заблокированных валютных позиций портфеля.</td>
+</tr>
+<tr>
+<td>blocked_guarantee</td>
+<td>Массив объектов <a href="#moneyvalue">MoneyValue</a></td>
+<td>Заблокировано под гарантийное обеспечение фьючерсов.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="portfolioposition">PortfolioPosition</h4>
+<p>Позиции портфеля.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатора инструмента.</td>
+</tr>
+<tr>
+<td>instrument_type</td>
+<td><a href="#string">string</a></td>
+<td>Тип инструмента.</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Количество инструмента в портфеле в штуках.</td>
+</tr>
+<tr>
+<td>average_position_price</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Средневзвешенная цена позиции. <strong>Возможна задержка до секунды для пересчёта</strong>.</td>
+</tr>
+<tr>
+<td>expected_yield</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Текущая рассчитанная доходность позиции.</td>
+</tr>
+<tr>
+<td>current_nkd</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Текущий НКД.</td>
+</tr>
+<tr>
+<td>average_position_price_pt</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Deprecated Средняя цена позиции в пунктах (для фьючерсов). <strong>Возможна задержка до секунды для пересчёта</strong>.</td>
+</tr>
+<tr>
+<td>current_price</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Текущая цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+</tr>
+<tr>
+<td>average_position_price_fifo</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Средняя цена позиции по методу FIFO. <strong>Возможна задержка до секунды для пересчёта</strong>.</td>
+</tr>
+<tr>
+<td>quantity_lots</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Deprecated Количество лотов в портфеле.</td>
+</tr>
+<tr>
+<td>blocked</td>
+<td><a href="#bool">bool</a></td>
+<td>Заблокировано на бирже.</td>
+</tr>
+<tr>
+<td>blocked_lots</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Количество бумаг, заблокированных выставленными заявками.</td>
+</tr>
+<tr>
+<td>position_uid</td>
+<td><a href="#string">string</a></td>
+<td>position_uid-идентификатора инструмента</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>instrument_uid-идентификатора инструмента</td>
+</tr>
+<tr>
+<td>var_margin</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Вариационная маржа</td>
+</tr>
+<tr>
+<td>expected_yield_fifo</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Текущая рассчитанная доходность позиции.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="virtualportfolioposition">VirtualPortfolioPosition</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>position_uid</td>
+<td><a href="#string">string</a></td>
+<td>position_uid-идентификатора инструмента</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>instrument_uid-идентификатора инструмента</td>
+</tr>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатора инструмента.</td>
+</tr>
+<tr>
+<td>instrument_type</td>
+<td><a href="#string">string</a></td>
+<td>Тип инструмента.</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Количество инструмента в портфеле в штуках.</td>
+</tr>
+<tr>
+<td>average_position_price</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Средневзвешенная цена позиции. <strong>Возможна задержка до секунды для пересчёта</strong>.</td>
+</tr>
+<tr>
+<td>expected_yield</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Текущая рассчитанная доходность позиции.</td>
+</tr>
+<tr>
+<td>expected_yield_fifo</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Текущая рассчитанная доходность позиции.</td>
+</tr>
+<tr>
+<td>expire_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата до которой нужно продать виртуальные бумаги, после этой даты виртуальная позиция "сгорит"</td>
+</tr>
+<tr>
+<td>current_price</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Текущая цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+</tr>
+<tr>
+<td>average_position_price_fifo</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Средняя цена позиции по методу FIFO. <strong>Возможна задержка до секунды для пересчёта</strong>.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="positionssecurities">PositionsSecurities</h4>
+<p>Баланс позиции ценной бумаги.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор бумаги.</td>
+</tr>
+<tr>
+<td>blocked</td>
+<td><a href="#int64">int64</a></td>
+<td>Количество бумаг заблокированных выставленными заявками.</td>
+</tr>
+<tr>
+<td>balance</td>
+<td><a href="#int64">int64</a></td>
+<td>Текущий незаблокированный баланс.</td>
+</tr>
+<tr>
+<td>position_uid</td>
+<td><a href="#string">string</a></td>
+<td>Уникальный идентификатор позиции.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Уникальный идентификатор  инструмента.</td>
+</tr>
+<tr>
+<td>exchange_blocked</td>
+<td><a href="#bool">bool</a></td>
+<td>Заблокировано на бирже.</td>
+</tr>
+<tr>
+<td>instrument_type</td>
+<td><a href="#string">string</a></td>
+<td>Тип инструмента.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="positionsfutures">PositionsFutures</h4>
+<p>Баланс фьючерса.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор фьючерса.</td>
+</tr>
+<tr>
+<td>blocked</td>
+<td><a href="#int64">int64</a></td>
+<td>Количество бумаг заблокированных выставленными заявками.</td>
+</tr>
+<tr>
+<td>balance</td>
+<td><a href="#int64">int64</a></td>
+<td>Текущий незаблокированный баланс.</td>
+</tr>
+<tr>
+<td>position_uid</td>
+<td><a href="#string">string</a></td>
+<td>Уникальный идентификатор позиции.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Уникальный идентификатор  инструмента.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="positionsoptions">PositionsOptions</h4>
+<p>Баланс опциона.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>position_uid</td>
+<td><a href="#string">string</a></td>
+<td>Уникальный идентификатор позиции опциона.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Уникальный идентификатор  инструмента.</td>
+</tr>
+<tr>
+<td>blocked</td>
+<td><a href="#int64">int64</a></td>
+<td>Количество бумаг заблокированных выставленными заявками.</td>
+</tr>
+<tr>
+<td>balance</td>
+<td><a href="#int64">int64</a></td>
+<td>Текущий незаблокированный баланс.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="brokerreportrequest">BrokerReportRequest</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>generate_broker_report_request</td>
+<td><a href="#generatebrokerreportrequest">GenerateBrokerReportRequest</a></td>
+<td></td>
+</tr>
+<tr>
+<td>get_broker_report_request</td>
+<td><a href="#getbrokerreportrequest">GetBrokerReportRequest</a></td>
+<td></td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="brokerreportresponse">BrokerReportResponse</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>generate_broker_report_response</td>
+<td><a href="#generatebrokerreportresponse">GenerateBrokerReportResponse</a></td>
+<td></td>
+</tr>
+<tr>
+<td>get_broker_report_response</td>
+<td><a href="#getbrokerreportresponse">GetBrokerReportResponse</a></td>
+<td></td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="generatebrokerreportrequest">GenerateBrokerReportRequest</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор счёта клиента.</td>
+</tr>
+<tr>
+<td>from</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Начало периода в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>to</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Окончание периода в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="generatebrokerreportresponse">GenerateBrokerReportResponse</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>task_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор задачи формирования брокерского отчёта.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getbrokerreportrequest">GetBrokerReportRequest</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>task_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор задачи формирования брокерского отчёта.</td>
+</tr>
+<tr>
+<td>page</td>
+<td><a href="#int32">int32</a></td>
+<td>Номер страницы отчета (начинается с 1), значение по умолчанию: 0.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getbrokerreportresponse">GetBrokerReportResponse</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>broker_report</td>
+<td>Массив объектов <a href="#brokerreport">BrokerReport</a></td>
+<td></td>
+</tr>
+<tr>
+<td>itemsCount</td>
+<td><a href="#int32">int32</a></td>
+<td>Количество записей в отчете.</td>
+</tr>
+<tr>
+<td>pagesCount</td>
+<td><a href="#int32">int32</a></td>
+<td>Количество страниц с данными отчета (начинается с 0).</td>
+</tr>
+<tr>
+<td>page</td>
+<td><a href="#int32">int32</a></td>
+<td>Текущая страница (начинается с 0).</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="brokerreport">BrokerReport</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trade_id</td>
+<td><a href="#string">string</a></td>
+<td>Номер сделки.</td>
+</tr>
+<tr>
+<td>order_id</td>
+<td><a href="#string">string</a></td>
+<td>Номер поручения.</td>
+</tr>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>execute_sign</td>
+<td><a href="#string">string</a></td>
+<td>Признак исполнения.</td>
+</tr>
+<tr>
+<td>trade_datetime</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата и время заключения в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td><a href="#string">string</a></td>
+<td>Торговая площадка.</td>
+</tr>
+<tr>
+<td>class_code</td>
+<td><a href="#string">string</a></td>
+<td>Режим торгов.</td>
+</tr>
+<tr>
+<td>direction</td>
+<td><a href="#string">string</a></td>
+<td>Вид сделки.</td>
+</tr>
+<tr>
+<td>name</td>
+<td><a href="#string">string</a></td>
+<td>Сокращённое наименование актива.</td>
+</tr>
+<tr>
+<td>ticker</td>
+<td><a href="#string">string</a></td>
+<td>Код актива.</td>
+</tr>
+<tr>
+<td>price</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Цена за единицу.</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td><a href="#int64">int64</a></td>
+<td>Количество.</td>
+</tr>
+<tr>
+<td>order_amount</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Сумма (без НКД).</td>
+</tr>
+<tr>
+<td>aci_value</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>НКД.</td>
+</tr>
+<tr>
+<td>total_order_amount</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Сумма сделки.</td>
+</tr>
+<tr>
+<td>broker_commission</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Комиссия брокера.</td>
+</tr>
+<tr>
+<td>exchange_commission</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Комиссия биржи.</td>
+</tr>
+<tr>
+<td>exchange_clearing_commission</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Комиссия клир. центра.</td>
+</tr>
+<tr>
+<td>repo_rate</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Ставка РЕПО (%).</td>
+</tr>
+<tr>
+<td>party</td>
+<td><a href="#string">string</a></td>
+<td>Контрагент/Брокер.</td>
+</tr>
+<tr>
+<td>clear_value_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата расчётов в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>sec_value_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата поставки в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>broker_status</td>
+<td><a href="#string">string</a></td>
+<td>Статус брокера.</td>
+</tr>
+<tr>
+<td>separate_agreement_type</td>
+<td><a href="#string">string</a></td>
+<td>Тип дог.</td>
+</tr>
+<tr>
+<td>separate_agreement_number</td>
+<td><a href="#string">string</a></td>
+<td>Номер дог.</td>
+</tr>
+<tr>
+<td>separate_agreement_date</td>
+<td><a href="#string">string</a></td>
+<td>Дата дог.</td>
+</tr>
+<tr>
+<td>delivery_type</td>
+<td><a href="#string">string</a></td>
+<td>Тип расчёта по сделке.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getdividendsforeignissuerrequest">GetDividendsForeignIssuerRequest</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>generate_div_foreign_issuer_report</td>
+<td><a href="#generatedividendsforeignissuerreportrequest">GenerateDividendsForeignIssuerReportRequest</a></td>
+<td>Объект запроса формирования отчёта.</td>
+</tr>
+<tr>
+<td>get_div_foreign_issuer_report</td>
+<td><a href="#getdividendsforeignissuerreportrequest">GetDividendsForeignIssuerReportRequest</a></td>
+<td>Объект запроса сформированного отчёта.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getdividendsforeignissuerresponse">GetDividendsForeignIssuerResponse</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>generate_div_foreign_issuer_report_response</td>
+<td><a href="#generatedividendsforeignissuerreportresponse">GenerateDividendsForeignIssuerReportResponse</a></td>
+<td>Объект результата задачи запуска формирования отчёта.</td>
+</tr>
+<tr>
+<td>div_foreign_issuer_report</td>
+<td><a href="#getdividendsforeignissuerreportresponse">GetDividendsForeignIssuerReportResponse</a></td>
+<td>Отчёт "Справка о доходах за пределами РФ".</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="generatedividendsforeignissuerreportrequest">GenerateDividendsForeignIssuerReportRequest</h4>
+<p>Объект запроса формирования отчёта "Справка о доходах за пределами РФ".</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор счёта клиента.</td>
+</tr>
+<tr>
+<td>from</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Начало периода (по UTC).</td>
+</tr>
+<tr>
+<td>to</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Окончание периода (по UTC).</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getdividendsforeignissuerreportrequest">GetDividendsForeignIssuerReportRequest</h4>
+<p>Объект запроса сформированного отчёта "Справка о доходах за пределами РФ".</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>task_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор задачи формирования отчёта.</td>
+</tr>
+<tr>
+<td>page</td>
+<td><a href="#int32">int32</a></td>
+<td>Номер страницы отчета (начинается с 0), значение по умолчанию: 0.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="generatedividendsforeignissuerreportresponse">GenerateDividendsForeignIssuerReportResponse</h4>
+<p>Объект результата задачи запуска формирования отчёта "Справка о доходах за пределами РФ".</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>task_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор задачи формирования отчёта.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getdividendsforeignissuerreportresponse">GetDividendsForeignIssuerReportResponse</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dividends_foreign_issuer_report</td>
+<td>Массив объектов <a href="#dividendsforeignissuerreport">DividendsForeignIssuerReport</a></td>
+<td></td>
+</tr>
+<tr>
+<td>itemsCount</td>
+<td><a href="#int32">int32</a></td>
+<td>Количество записей в отчете.</td>
+</tr>
+<tr>
+<td>pagesCount</td>
+<td><a href="#int32">int32</a></td>
+<td>Количество страниц с данными отчета (начинается с 0).</td>
+</tr>
+<tr>
+<td>page</td>
+<td><a href="#int32">int32</a></td>
+<td>Текущая страница (начинается с 0).</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="dividendsforeignissuerreport">DividendsForeignIssuerReport</h4>
+<p>Отчёт "Справка о доходах за пределами РФ".</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>record_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата фиксации реестра.</td>
+</tr>
+<tr>
+<td>payment_date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата выплаты.</td>
+</tr>
+<tr>
+<td>security_name</td>
+<td><a href="#string">string</a></td>
+<td>Наименование ценной бумаги.</td>
+</tr>
+<tr>
+<td>isin</td>
+<td><a href="#string">string</a></td>
+<td>ISIN-идентификатор ценной бумаги.</td>
+</tr>
+<tr>
+<td>issuer_country</td>
+<td><a href="#string">string</a></td>
+<td>Страна эмитента. Для депозитарных расписок указывается страна эмитента базового актива.</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td><a href="#int64">int64</a></td>
+<td>Количество ценных бумаг.</td>
+</tr>
+<tr>
+<td>dividend</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Выплаты на одну бумагу</td>
+</tr>
+<tr>
+<td>external_commission</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Комиссия внешних платёжных агентов.</td>
+</tr>
+<tr>
+<td>dividend_gross</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Сумма до удержания налога.</td>
+</tr>
+<tr>
+<td>tax</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Сумма налога, удержанного агентом.</td>
+</tr>
+<tr>
+<td>dividend_amount</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Итоговая сумма выплаты.</td>
+</tr>
+<tr>
+<td>currency</td>
+<td><a href="#string">string</a></td>
+<td>Валюта.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="portfoliostreamrequest">PortfolioStreamRequest</h4>
+<p>Запрос установки stream-соединения.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>accounts</td>
+<td>Массив объектов <a href="#string">string</a></td>
+<td>Массив идентификаторов счётов пользователя</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="portfoliostreamresponse">PortfolioStreamResponse</h4>
+<p>Информация по позициям и доходностям портфелей.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>subscriptions</td>
+<td><a href="#portfoliosubscriptionresult">PortfolioSubscriptionResult</a></td>
+<td>Объект результата подписки.</td>
+</tr>
+<tr>
+<td>portfolio</td>
+<td><a href="#portfolioresponse">PortfolioResponse</a></td>
+<td>Объект стриминга портфеля.</td>
+</tr>
+<tr>
+<td>ping</td>
+<td><a href="#ping">Ping</a></td>
+<td>Проверка активности стрима.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="portfoliosubscriptionresult">PortfolioSubscriptionResult</h4>
+<p>Объект результата подписки.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>accounts</td>
+<td>Массив объектов <a href="#accountsubscriptionstatus">AccountSubscriptionStatus</a></td>
+<td>Массив счетов клиента.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="accountsubscriptionstatus">AccountSubscriptionStatus</h4>
+<p>Счет клиента.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор счёта</td>
+</tr>
+<tr>
+<td>subscription_status</td>
+<td><a href="#portfoliosubscriptionstatus">PortfolioSubscriptionStatus</a></td>
+<td>Результат подписки.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getoperationsbycursorrequest">GetOperationsByCursorRequest</h4>
+<p>Запрос списка операций по счёту с пагинацией.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор счёта клиента. Обязательный параметр для данного метода, остальные параметры опциональны.</td>
+</tr>
+<tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента (Figi инструмента или uid инструмента)</td>
+</tr>
+<tr>
+<td>from</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Начало периода (по UTC).</td>
+</tr>
+<tr>
+<td>to</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Окончание периода (по UTC).</td>
+</tr>
+<tr>
+<td>cursor</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор элемента, с которого начать формировать ответ.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td><a href="#int32">int32</a></td>
+<td>Лимит количества операций. По умолчанию устанавливается значение <strong>100</strong>, максимальное значение 1000.</td>
+</tr>
+<tr>
+<td>operation_types</td>
+<td>Массив объектов <a href="#operationtype">OperationType</a></td>
+<td>Тип операции. Принимает значение из списка OperationType.</td>
+</tr>
+<tr>
+<td>state</td>
+<td><a href="#operationstate">OperationState</a></td>
+<td>Статус запрашиваемых операций, возможные значения указаны в OperationState.</td>
+</tr>
+<tr>
+<td>without_commissions</td>
+<td><a href="#bool">bool</a></td>
+<td>Флаг возвращать ли комиссии, по умолчанию false</td>
+</tr>
+<tr>
+<td>without_trades</td>
+<td><a href="#bool">bool</a></td>
+<td>Флаг получения ответа без массива сделок.</td>
+</tr>
+<tr>
+<td>without_overnights</td>
+<td><a href="#bool">bool</a></td>
+<td>Флаг не показывать overnight операций.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getoperationsbycursorresponse">GetOperationsByCursorResponse</h4>
+<p>Список операций по счёту с пагинацией.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>has_next</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак, есть ли следующий элемент.</td>
+</tr>
+<tr>
+<td>next_cursor</td>
+<td><a href="#string">string</a></td>
+<td>Следующий курсор.</td>
+</tr>
+<tr>
+<td>items</td>
+<td>Массив объектов <a href="#operationitem">OperationItem</a></td>
+<td>Список операций.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="operationitem">OperationItem</h4>
+<p>Данные об операции.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cursor</td>
+<td><a href="#string">string</a></td>
+<td>Курсор.</td>
+</tr>
+<tr>
+<td>broker_account_id</td>
+<td><a href="#string">string</a></td>
+<td>Номер счета клиента.</td>
+</tr>
+<tr>
+<td>id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор операции, может меняться с течением времени.</td>
+</tr>
+<tr>
+<td>parent_operation_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор родительской операции, может измениться, если изменился id родительской операции.</td>
+</tr>
+<tr>
+<td>name</td>
+<td><a href="#string">string</a></td>
+<td>Название операции.</td>
+</tr>
+<tr>
+<td>date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата поручения.</td>
+</tr>
+<tr>
+<td>type</td>
+<td><a href="#operationtype">OperationType</a></td>
+<td>Тип операции.</td>
+</tr>
+<tr>
+<td>description</td>
+<td><a href="#string">string</a></td>
+<td>Описание операции.</td>
+</tr>
+<tr>
+<td>state</td>
+<td><a href="#operationstate">OperationState</a></td>
+<td>Статус поручения.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Уникальный идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi.</td>
+</tr>
+<tr>
+<td>instrument_type</td>
+<td><a href="#string">string</a></td>
+<td>Тип инструмента.</td>
+</tr>
+<tr>
+<td>instrument_kind</td>
+<td><a href="#instrumenttype">InstrumentType</a></td>
+<td>Тип инструмента.</td>
+</tr>
+<tr>
+<td>position_uid</td>
+<td><a href="#string">string</a></td>
+<td>position_uid-идентификатора инструмента.</td>
+</tr>
+<tr>
+<td>payment</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Сумма операции.</td>
+</tr>
+<tr>
+<td>price</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Цена операции за 1 инструмент.</td>
+</tr>
+<tr>
+<td>commission</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Комиссия.</td>
+</tr>
+<tr>
+<td>yield</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Доходность.</td>
+</tr>
+<tr>
+<td>yield_relative</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Относительная доходность.</td>
+</tr>
+<tr>
+<td>accrued_int</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Накопленный купонный доход.</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td><a href="#int64">int64</a></td>
+<td>Количество единиц инструмента.</td>
+</tr>
+<tr>
+<td>quantity_rest</td>
+<td><a href="#int64">int64</a></td>
+<td>Неисполненный остаток по сделке.</td>
+</tr>
+<tr>
+<td>quantity_done</td>
+<td><a href="#int64">int64</a></td>
+<td>Исполненный остаток.</td>
+</tr>
+<tr>
+<td>cancel_date_time</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата и время снятия заявки.</td>
+</tr>
+<tr>
+<td>cancel_reason</td>
+<td><a href="#string">string</a></td>
+<td>Причина отмены операции.</td>
+</tr>
+<tr>
+<td>trades_info</td>
+<td><a href="#operationitemtrades">OperationItemTrades</a></td>
+<td>Массив сделок.</td>
+</tr>
+<tr>
+<td>asset_uid</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор актива</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="operationitemtrades">OperationItemTrades</h4>
+<p>Массив с информацией о сделках.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trades</td>
+<td>Массив объектов <a href="#operationitemtrade">OperationItemTrade</a></td>
+<td></td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="operationitemtrade">OperationItemTrade</h4>
+<p>Сделка по операции.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>num</td>
+<td><a href="#string">string</a></td>
+<td>Номер сделки</td>
+</tr>
+<tr>
+<td>date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата сделки</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td><a href="#int64">int64</a></td>
+<td>Количество в единицах.</td>
+</tr>
+<tr>
+<td>price</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Цена.</td>
+</tr>
+<tr>
+<td>yield</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Доходность.</td>
+</tr>
+<tr>
+<td>yield_relative</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Относительная доходность.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="positionsstreamrequest">PositionsStreamRequest</h4>
+<p>Запрос установки stream-соединения позиций.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>accounts</td>
+<td>Массив объектов <a href="#string">string</a></td>
+<td>Массив идентификаторов счётов пользователя</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="positionsstreamresponse">PositionsStreamResponse</h4>
+<p>Информация по изменению позиций портфеля.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>subscriptions</td>
+<td><a href="#positionssubscriptionresult">PositionsSubscriptionResult</a></td>
+<td>Объект результата подписки.</td>
+</tr>
+<tr>
+<td>position</td>
+<td><a href="#positiondata">PositionData</a></td>
+<td>Объект стриминга позиций.</td>
+</tr>
+<tr>
+<td>ping</td>
+<td><a href="#ping">Ping</a></td>
+<td>Проверка активности стрима.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="positionssubscriptionresult">PositionsSubscriptionResult</h4>
+<p>Объект результата подписки.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>accounts</td>
+<td>Массив объектов <a href="#positionssubscriptionstatus">PositionsSubscriptionStatus</a></td>
+<td>Массив счетов клиента.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="positionssubscriptionstatus">PositionsSubscriptionStatus</h4>
+<p>Счет клиента.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор счёта</td>
+</tr>
+<tr>
+<td>subscription_status</td>
+<td><a href="#positionsaccountsubscriptionstatus">PositionsAccountSubscriptionStatus</a></td>
+<td>Результат подписки.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="positiondata">PositionData</h4>
+<p>Данные о позиции портфеля.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор счёта.</td>
+</tr>
+<tr>
+<td>money</td>
+<td>Массив объектов <a href="#positionsmoney">PositionsMoney</a></td>
+<td>Массив валютных позиций портфеля.</td>
+</tr>
+<tr>
+<td>securities</td>
+<td>Массив объектов <a href="#positionssecurities">PositionsSecurities</a></td>
+<td>Список ценно-бумажных позиций портфеля.</td>
+</tr>
+<tr>
+<td>futures</td>
+<td>Массив объектов <a href="#positionsfutures">PositionsFutures</a></td>
+<td>Список фьючерсов портфеля.</td>
+</tr>
+<tr>
+<td>options</td>
+<td>Массив объектов <a href="#positionsoptions">PositionsOptions</a></td>
+<td>Список опционов портфеля.</td>
+</tr>
+<tr>
+<td>date</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата и время операции в формате UTC.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="positionsmoney">PositionsMoney</h4>
+<p>Валютная позиция портфеля.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>available_value</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Доступное количество валютный позиций.</td>
+</tr>
+<tr>
+<td>blocked_value</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Заблокированное количество валютный позиций.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+<!-- end messages -->
+
+<h3 id="enums">Enums</h3>
+<h4 id="operationstate">OperationState</h4>
+<p>Статус запрашиваемых операций.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OPERATION_STATE_UNSPECIFIED</td>
+<td>0</td>
+<td>Статус операции не определён</td>
+</tr>
+<tr>
+<td>OPERATION_STATE_EXECUTED</td>
+<td>1</td>
+<td>Исполнена.</td>
+</tr>
+<tr>
+<td>OPERATION_STATE_CANCELED</td>
+<td>2</td>
+<td>Отменена.</td>
+</tr>
+<tr>
+<td>OPERATION_STATE_PROGRESS</td>
+<td>3</td>
+<td>Исполняется.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="operationtype">OperationType</h4>
+<p>Тип операции.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OPERATION_TYPE_UNSPECIFIED</td>
+<td>0</td>
+<td>Тип операции не определён.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_INPUT</td>
+<td>1</td>
+<td>Пополнение брокерского счёта.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BOND_TAX</td>
+<td>2</td>
+<td>Удержание НДФЛ по купонам.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_OUTPUT_SECURITIES</td>
+<td>3</td>
+<td>Вывод ЦБ.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_OVERNIGHT</td>
+<td>4</td>
+<td>Доход по сделке РЕПО овернайт.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX</td>
+<td>5</td>
+<td>Удержание налога.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BOND_REPAYMENT_FULL</td>
+<td>6</td>
+<td>Полное погашение облигаций.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_SELL_CARD</td>
+<td>7</td>
+<td>Продажа ЦБ с карты.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_DIVIDEND_TAX</td>
+<td>8</td>
+<td>Удержание налога по дивидендам.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_OUTPUT</td>
+<td>9</td>
+<td>Вывод денежных средств.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BOND_REPAYMENT</td>
+<td>10</td>
+<td>Частичное погашение облигаций.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_CORRECTION</td>
+<td>11</td>
+<td>Корректировка налога.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_SERVICE_FEE</td>
+<td>12</td>
+<td>Удержание комиссии за обслуживание брокерского счёта.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BENEFIT_TAX</td>
+<td>13</td>
+<td>Удержание налога за материальную выгоду.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_MARGIN_FEE</td>
+<td>14</td>
+<td>Удержание комиссии за непокрытую позицию.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BUY</td>
+<td>15</td>
+<td>Покупка ЦБ.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BUY_CARD</td>
+<td>16</td>
+<td>Покупка ЦБ с карты.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_INPUT_SECURITIES</td>
+<td>17</td>
+<td>Перевод ценных бумаг из другого депозитария.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_SELL_MARGIN</td>
+<td>18</td>
+<td>Продажа в результате Margin-call.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BROKER_FEE</td>
+<td>19</td>
+<td>Удержание комиссии за операцию.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BUY_MARGIN</td>
+<td>20</td>
+<td>Покупка в результате Margin-call.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_DIVIDEND</td>
+<td>21</td>
+<td>Выплата дивидендов.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_SELL</td>
+<td>22</td>
+<td>Продажа ЦБ.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_COUPON</td>
+<td>23</td>
+<td>Выплата купонов.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_SUCCESS_FEE</td>
+<td>24</td>
+<td>Удержание комиссии SuccessFee.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_DIVIDEND_TRANSFER</td>
+<td>25</td>
+<td>Передача дивидендного дохода.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_ACCRUING_VARMARGIN</td>
+<td>26</td>
+<td>Зачисление вариационной маржи.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_WRITING_OFF_VARMARGIN</td>
+<td>27</td>
+<td>Списание вариационной маржи.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_DELIVERY_BUY</td>
+<td>28</td>
+<td>Покупка в рамках экспирации фьючерсного контракта.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_DELIVERY_SELL</td>
+<td>29</td>
+<td>Продажа в рамках экспирации фьючерсного контракта.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TRACK_MFEE</td>
+<td>30</td>
+<td>Комиссия за управление по счёту автоследования.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TRACK_PFEE</td>
+<td>31</td>
+<td>Комиссия за результат по счёту автоследования.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_PROGRESSIVE</td>
+<td>32</td>
+<td>Удержание налога по ставке 15%.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BOND_TAX_PROGRESSIVE</td>
+<td>33</td>
+<td>Удержание налога по купонам по ставке 15%.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_DIVIDEND_TAX_PROGRESSIVE</td>
+<td>34</td>
+<td>Удержание налога по дивидендам по ставке 15%.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_BENEFIT_TAX_PROGRESSIVE</td>
+<td>35</td>
+<td>Удержание налога за материальную выгоду по ставке 15%.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_CORRECTION_PROGRESSIVE</td>
+<td>36</td>
+<td>Корректировка налога по ставке 15%.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_REPO_PROGRESSIVE</td>
+<td>37</td>
+<td>Удержание налога за возмещение по сделкам РЕПО по ставке 15%.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_REPO</td>
+<td>38</td>
+<td>Удержание налога за возмещение по сделкам РЕПО.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_REPO_HOLD</td>
+<td>39</td>
+<td>Удержание налога по сделкам РЕПО.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_REPO_REFUND</td>
+<td>40</td>
+<td>Возврат налога по сделкам РЕПО.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_REPO_HOLD_PROGRESSIVE</td>
+<td>41</td>
+<td>Удержание налога по сделкам РЕПО по ставке 15%.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_REPO_REFUND_PROGRESSIVE</td>
+<td>42</td>
+<td>Возврат налога по сделкам РЕПО по ставке 15%.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_DIV_EXT</td>
+<td>43</td>
+<td>Выплата дивидендов на карту.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TAX_CORRECTION_COUPON</td>
+<td>44</td>
+<td>Корректировка налога по купонам.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_CASH_FEE</td>
+<td>45</td>
+<td>Комиссия за валютный остаток.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_OUT_FEE</td>
+<td>46</td>
+<td>Комиссия за вывод валюты с брокерского счета.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_OUT_STAMP_DUTY</td>
+<td>47</td>
+<td>Гербовый сбор.</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_OUTPUT_SWIFT</td>
+<td>50</td>
+<td>SWIFT-перевод</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_INPUT_SWIFT</td>
+<td>51</td>
+<td>SWIFT-перевод</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_OUTPUT_ACQUIRING</td>
+<td>53</td>
+<td>Перевод на карту</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_INPUT_ACQUIRING</td>
+<td>54</td>
+<td>Перевод с карты</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_OUTPUT_PENALTY</td>
+<td>55</td>
+<td>Комиссия за вывод средств</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_ADVICE_FEE</td>
+<td>56</td>
+<td>Списание оплаты за сервис Советов</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TRANS_IIS_BS</td>
+<td>57</td>
+<td>Перевод ценных бумаг с ИИС на Брокерский счет</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_TRANS_BS_BS</td>
+<td>58</td>
+<td>Перевод ценных бумаг с одного брокерского счета на другой</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_OUT_MULTI</td>
+<td>59</td>
+<td>Вывод денежных средств со счета</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_INP_MULTI</td>
+<td>60</td>
+<td>Пополнение денежных средств со счета</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_OVER_PLACEMENT</td>
+<td>61</td>
+<td>Размещение биржевого овернайта</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_OVER_COM</td>
+<td>62</td>
+<td>Списание комиссии</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_OVER_INCOME</td>
+<td>63</td>
+<td>Доход от оверанайта</td>
+</tr>
+<tr>
+<td>OPERATION_TYPE_OPTION_EXPIRATION</td>
+<td>64</td>
+<td>Экспирация</td>
+</tr>
+</tbody>
+</table>
+<h4 id="portfoliosubscriptionstatus">PortfolioSubscriptionStatus</h4>
+<p>Результат подписки.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PORTFOLIO_SUBSCRIPTION_STATUS_UNSPECIFIED</td>
+<td>0</td>
+<td>Тип не определён.</td>
+</tr>
+<tr>
+<td>PORTFOLIO_SUBSCRIPTION_STATUS_SUCCESS</td>
+<td>1</td>
+<td>Успешно.</td>
+</tr>
+<tr>
+<td>PORTFOLIO_SUBSCRIPTION_STATUS_ACCOUNT_NOT_FOUND</td>
+<td>2</td>
+<td>Счёт не найден или недостаточно прав.</td>
+</tr>
+<tr>
+<td>PORTFOLIO_SUBSCRIPTION_STATUS_INTERNAL_ERROR</td>
+<td>3</td>
+<td>Произошла ошибка.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="positionsaccountsubscriptionstatus">PositionsAccountSubscriptionStatus</h4>
+<p>Результат подписки.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POSITIONS_SUBSCRIPTION_STATUS_UNSPECIFIED</td>
+<td>0</td>
+<td>Тип не определён.</td>
+</tr>
+<tr>
+<td>POSITIONS_SUBSCRIPTION_STATUS_SUCCESS</td>
+<td>1</td>
+<td>Успешно.</td>
+</tr>
+<tr>
+<td>POSITIONS_SUBSCRIPTION_STATUS_ACCOUNT_NOT_FOUND</td>
+<td>2</td>
+<td>Счёт не найден или недостаточно прав.</td>
+</tr>
+<tr>
+<td>POSITIONS_SUBSCRIPTION_STATUS_INTERNAL_ERROR</td>
+<td>3</td>
+<td>Произошла ошибка.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="portfoliorequestcurrencyrequest">PortfolioRequest.CurrencyRequest</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RUB</td>
+<td>0</td>
+<td>Рубли</td>
+</tr>
+<tr>
+<td>USD</td>
+<td>1</td>
+<td>Доллары</td>
+</tr>
+<tr>
+<td>EUR</td>
+<td>2</td>
+<td>Евро</td>
+</tr>
+</tbody>
+</table>
+<!-- range .Enums -->
+<!-- range HasServices -->
+<!-- range .Files -->
+
+<h4 id="securitytradingstatus">SecurityTradingStatus</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SECURITY_TRADING_STATUS_UNSPECIFIED</td>
+<td>0</td>
+<td>Торговый статус не определён</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_NOT_AVAILABLE_FOR_TRADING</td>
+<td>1</td>
+<td>Недоступен для торгов</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_OPENING_PERIOD</td>
+<td>2</td>
+<td>Период открытия торгов</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_CLOSING_PERIOD</td>
+<td>3</td>
+<td>Период закрытия торгов</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_BREAK_IN_TRADING</td>
+<td>4</td>
+<td>Перерыв в торговле</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_NORMAL_TRADING</td>
+<td>5</td>
+<td>Нормальная торговля</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_CLOSING_AUCTION</td>
+<td>6</td>
+<td>Аукцион закрытия</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_DARK_POOL_AUCTION</td>
+<td>7</td>
+<td>Аукцион крупных пакетов</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_DISCRETE_AUCTION</td>
+<td>8</td>
+<td>Дискретный аукцион</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_OPENING_AUCTION_PERIOD</td>
+<td>9</td>
+<td>Аукцион открытия</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_TRADING_AT_CLOSING_AUCTION_PRICE</td>
+<td>10</td>
+<td>Период торгов по цене аукциона закрытия</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_SESSION_ASSIGNED</td>
+<td>11</td>
+<td>Сессия назначена</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_SESSION_CLOSE</td>
+<td>12</td>
+<td>Сессия закрыта</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_SESSION_OPEN</td>
+<td>13</td>
+<td>Сессия открыта</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_DEALER_NORMAL_TRADING</td>
+<td>14</td>
+<td>Доступна торговля в режиме внутренней ликвидности брокера</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_DEALER_BREAK_IN_TRADING</td>
+<td>15</td>
+<td>Перерыв торговли в режиме внутренней ликвидности брокера</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_DEALER_NOT_AVAILABLE_FOR_TRADING</td>
+<td>16</td>
+<td>Недоступна торговля в режиме внутренней ликвидности брокера</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">Нестандартные типы данных</h3>
+<h4 id="moneyvalue">MoneyValue</h4>
+<p>Денежная сумма в определенной валюте</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>currency</td>
+<td><a href="#string">string</a></td>
+<td>Строковый ISO-код валюты</td>
+</tr>
+<tr>
+<td>units</td>
+<td><a href="#int64">int64</a></td>
+<td>Целая часть суммы, может быть отрицательным числом</td>
+</tr>
+<tr>
+<td>nano</td>
+<td><a href="#int32">int32</a></td>
+<td>Дробная часть суммы, может быть отрицательным числом</td>
+</tr>
+</tbody>
+</table>
+<h4 id="quotation">Quotation</h4>
+<p>Котировка - денежная сумма без указания валюты</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>units</td>
+<td><a href="#int64">int64</a></td>
+<td>Целая часть суммы, может быть отрицательным числом</td>
+</tr>
+<tr>
+<td>nano</td>
+<td><a href="#int32">int32</a></td>
+<td>Дробная часть суммы, может быть отрицательным числом</td>
+</tr>
+</tbody>
+</table>
+                
+              
+              
+<!-- Add custom comment system integration here -->
+<div class="container">
+    <script src="https://utteranc.es/client.js"
+            repo="https://github.com/Tinkoff/investAPI"
+            issue-term="Методы comments"
+            label="documentation"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+</div>
+
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../head-operations/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Описание" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Описание
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../faq_operations/" class="md-footer__link md-footer__link--next" aria-label="Вперед: FAQ" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              FAQ
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e # \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.29db7785.min.js"></script>
+      
+    
+  </body>
+</html>

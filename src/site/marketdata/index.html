@@ -1,0 +1,4553 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.3">
+    
+    
+      
+        <title>Методы - TINKOFF INVEST API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#marketdataservice" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="TINKOFF INVEST API" class="md-header__button md-logo" aria-label="TINKOFF INVEST API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TINKOFF INVEST API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Методы
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/Tinkoff/investAPI/" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="TINKOFF INVEST API" class="md-nav__button md-logo" aria-label="TINKOFF INVEST API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    TINKOFF INVEST API
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/Tinkoff/investAPI/" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Начало работы
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Полезная информация
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Полезная информация" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Полезная информация
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        Глоссарий
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grpc/" class="md-nav__link">
+        Протокол взаимодействия
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../limits/" class="md-nav__link">
+        Лимитная политика
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../token/" class="md-nav__link">
+        Токен доступа
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_identification/" class="md-nav__link">
+        Идентификация торговых инструментов
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_custom_types/" class="md-nav__link">
+        Нестандартные типы данных
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algorithmic_trading/" class="md-nav__link">
+        Алгоритмический трейдинг
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tech_indicators/" class="md-nav__link">
+        Индикаторы технического анализа
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../markets/" class="md-nav__link">
+        Торговые площадки и режимы торгов
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_trading_status/" class="md-nav__link">
+        Торговые статусы инструментов и расписание торгов
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../load_history/" class="md-nav__link">
+        Порядок работы с историческими данными
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orders_details/" class="md-nav__link">
+        Работа с торговыми поручениями
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../accredited_investor/" class="md-nav__link">
+        Квалифицированный инвестор
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_corp_action/" class="md-nav__link">
+        Правила обработки корпоративных действий
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../speedup/" class="md-nav__link">
+        Как ускорить работу с биржей
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deadlines/" class="md-nav__link">
+        Дедлайны запросов
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sla/" class="md-nav__link">
+        SLA
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../table_order_currency/" class="md-nav__link">
+        Таблица параметров возвращающих валюту или пункты
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../example/" class="md-nav__link">
+        Примеры запросов
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eol_v1/" class="md-nav__link">
+        EOL v1
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        Ответы на частые вопросы
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Языки программирования
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Языки программирования" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Языки программирования
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_python/" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_java/" class="md-nav__link">
+        Java
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_csharp/" class="md-nav__link">
+        С#
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Сервис счетов
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Сервис счетов" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Сервис счетов
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../head-users/" class="md-nav__link">
+        Описание
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../users/" class="md-nav__link">
+        Методы
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_users/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Сервис инструментов
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Сервис инструментов" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Сервис инструментов
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../head-instruments/" class="md-nav__link">
+        Описание
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instruments/" class="md-nav__link">
+        Методы
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_instruments/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary-instrument/" class="md-nav__link">
+        Голоссарий
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Сервис ордеров
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Сервис ордеров" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Сервис ордеров
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../head-orders/" class="md-nav__link">
+        Описание
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orders/" class="md-nav__link">
+        Методы
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_orders/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../table_order_currency/" class="md-nav__link">
+        Таблица параметров возвращающих валюту или пункты
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Сервис операций
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Сервис операций" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Сервис операций
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../head-operations/" class="md-nav__link">
+        Описание
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/" class="md-nav__link">
+        Методы
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_operations/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations_problems/" class="md-nav__link">
+        Особенности взаимодействия
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+      
+      <label class="md-nav__link" for="__nav_9">
+        Сервис котировок
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Сервис котировок" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Сервис котировок
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../head-marketdata/" class="md-nav__link">
+        Описание
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Методы
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Методы
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#marketdataservice" class="md-nav__link">
+    MarketDataService
+  </a>
+  
+    <nav class="md-nav" aria-label="MarketDataService">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Методы сервиса
+  </a>
+  
+    <nav class="md-nav" aria-label="Методы сервиса">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getcandles" class="md-nav__link">
+    GetCandles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlastprices" class="md-nav__link">
+    GetLastPrices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getorderbook" class="md-nav__link">
+    GetOrderBook
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettradingstatus" class="md-nav__link">
+    GetTradingStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettradingstatuses" class="md-nav__link">
+    GetTradingStatuses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlasttrades" class="md-nav__link">
+    GetLastTrades
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcloseprices" class="md-nav__link">
+    GetClosePrices
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#marketdatastreamservice" class="md-nav__link">
+    MarketDataStreamService
+  </a>
+  
+    <nav class="md-nav" aria-label="MarketDataStreamService">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Методы сервиса
+  </a>
+  
+    <nav class="md-nav" aria-label="Методы сервиса">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#marketdatastream" class="md-nav__link">
+    MarketDataStream
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marketdataserversidestream" class="md-nav__link">
+    MarketDataServerSideStream
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Сообщения методов
+  </a>
+  
+    <nav class="md-nav" aria-label="Сообщения методов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#marketdatarequest" class="md-nav__link">
+    MarketDataRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marketdataserversidestreamrequest" class="md-nav__link">
+    MarketDataServerSideStreamRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marketdataresponse" class="md-nav__link">
+    MarketDataResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscribecandlesrequest" class="md-nav__link">
+    SubscribeCandlesRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#candleinstrument" class="md-nav__link">
+    CandleInstrument
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscribecandlesresponse" class="md-nav__link">
+    SubscribeCandlesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#candlesubscription" class="md-nav__link">
+    CandleSubscription
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscribeorderbookrequest" class="md-nav__link">
+    SubscribeOrderBookRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderbookinstrument" class="md-nav__link">
+    OrderBookInstrument
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscribeorderbookresponse" class="md-nav__link">
+    SubscribeOrderBookResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderbooksubscription" class="md-nav__link">
+    OrderBookSubscription
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscribetradesrequest" class="md-nav__link">
+    SubscribeTradesRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tradeinstrument" class="md-nav__link">
+    TradeInstrument
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscribetradesresponse" class="md-nav__link">
+    SubscribeTradesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tradesubscription" class="md-nav__link">
+    TradeSubscription
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscribeinforequest" class="md-nav__link">
+    SubscribeInfoRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infoinstrument" class="md-nav__link">
+    InfoInstrument
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscribeinforesponse" class="md-nav__link">
+    SubscribeInfoResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infosubscription" class="md-nav__link">
+    InfoSubscription
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscribelastpricerequest" class="md-nav__link">
+    SubscribeLastPriceRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lastpriceinstrument" class="md-nav__link">
+    LastPriceInstrument
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscribelastpriceresponse" class="md-nav__link">
+    SubscribeLastPriceResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lastpricesubscription" class="md-nav__link">
+    LastPriceSubscription
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#candle" class="md-nav__link">
+    Candle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderbook" class="md-nav__link">
+    OrderBook
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order" class="md-nav__link">
+    Order
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trade" class="md-nav__link">
+    Trade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tradingstatus" class="md-nav__link">
+    TradingStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcandlesrequest" class="md-nav__link">
+    GetCandlesRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcandlesresponse" class="md-nav__link">
+    GetCandlesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#historiccandle" class="md-nav__link">
+    HistoricCandle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlastpricesrequest" class="md-nav__link">
+    GetLastPricesRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlastpricesresponse" class="md-nav__link">
+    GetLastPricesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lastprice" class="md-nav__link">
+    LastPrice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getorderbookrequest" class="md-nav__link">
+    GetOrderBookRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getorderbookresponse" class="md-nav__link">
+    GetOrderBookResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettradingstatusrequest" class="md-nav__link">
+    GetTradingStatusRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettradingstatusesrequest" class="md-nav__link">
+    GetTradingStatusesRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettradingstatusesresponse" class="md-nav__link">
+    GetTradingStatusesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettradingstatusresponse" class="md-nav__link">
+    GetTradingStatusResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlasttradesrequest" class="md-nav__link">
+    GetLastTradesRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlasttradesresponse" class="md-nav__link">
+    GetLastTradesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmysubscriptions" class="md-nav__link">
+    GetMySubscriptions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getclosepricesrequest" class="md-nav__link">
+    GetClosePricesRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instrumentclosepricerequest" class="md-nav__link">
+    InstrumentClosePriceRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getclosepricesresponse" class="md-nav__link">
+    GetClosePricesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instrumentclosepriceresponse" class="md-nav__link">
+    InstrumentClosePriceResponse
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enums" class="md-nav__link">
+    Enums
+  </a>
+  
+    <nav class="md-nav" aria-label="Enums">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subscriptionaction" class="md-nav__link">
+    SubscriptionAction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscriptioninterval" class="md-nav__link">
+    SubscriptionInterval
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscriptionstatus" class="md-nav__link">
+    SubscriptionStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tradedirection" class="md-nav__link">
+    TradeDirection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#candleinterval" class="md-nav__link">
+    CandleInterval
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#securitytradingstatus" class="md-nav__link">
+    SecurityTradingStatus
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Нестандартные типы данных
+  </a>
+  
+    <nav class="md-nav" aria-label="Нестандартные типы данных">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#moneyvalue" class="md-nav__link">
+    MoneyValue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quotation" class="md-nav__link">
+    Quotation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_marketdata/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../get_history/" class="md-nav__link">
+        Получение исторических рыночных данных
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Сервис стоп-ордеров
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Сервис стоп-ордеров" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Сервис стоп-ордеров
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../head-stoporders/" class="md-nav__link">
+        Описание
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stoporders/" class="md-nav__link">
+        Методы
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_stoporders/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      <label class="md-nav__link" for="__nav_11">
+        Песочница
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Песочница" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Песочница
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../head-sandbox/" class="md-nav__link">
+        Описание
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sandbox/" class="md-nav__link">
+        Методы
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_sandbox/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../url_difference/" class="md-nav__link">
+        Отличия контура песочницы
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../errors/" class="md-nav__link">
+        Коды ошибок
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#marketdataservice" class="md-nav__link">
+    MarketDataService
+  </a>
+  
+    <nav class="md-nav" aria-label="MarketDataService">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Методы сервиса
+  </a>
+  
+    <nav class="md-nav" aria-label="Методы сервиса">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getcandles" class="md-nav__link">
+    GetCandles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlastprices" class="md-nav__link">
+    GetLastPrices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getorderbook" class="md-nav__link">
+    GetOrderBook
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettradingstatus" class="md-nav__link">
+    GetTradingStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettradingstatuses" class="md-nav__link">
+    GetTradingStatuses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlasttrades" class="md-nav__link">
+    GetLastTrades
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcloseprices" class="md-nav__link">
+    GetClosePrices
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#marketdatastreamservice" class="md-nav__link">
+    MarketDataStreamService
+  </a>
+  
+    <nav class="md-nav" aria-label="MarketDataStreamService">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Методы сервиса
+  </a>
+  
+    <nav class="md-nav" aria-label="Методы сервиса">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#marketdatastream" class="md-nav__link">
+    MarketDataStream
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marketdataserversidestream" class="md-nav__link">
+    MarketDataServerSideStream
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Сообщения методов
+  </a>
+  
+    <nav class="md-nav" aria-label="Сообщения методов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#marketdatarequest" class="md-nav__link">
+    MarketDataRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marketdataserversidestreamrequest" class="md-nav__link">
+    MarketDataServerSideStreamRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marketdataresponse" class="md-nav__link">
+    MarketDataResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscribecandlesrequest" class="md-nav__link">
+    SubscribeCandlesRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#candleinstrument" class="md-nav__link">
+    CandleInstrument
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscribecandlesresponse" class="md-nav__link">
+    SubscribeCandlesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#candlesubscription" class="md-nav__link">
+    CandleSubscription
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscribeorderbookrequest" class="md-nav__link">
+    SubscribeOrderBookRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderbookinstrument" class="md-nav__link">
+    OrderBookInstrument
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscribeorderbookresponse" class="md-nav__link">
+    SubscribeOrderBookResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderbooksubscription" class="md-nav__link">
+    OrderBookSubscription
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscribetradesrequest" class="md-nav__link">
+    SubscribeTradesRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tradeinstrument" class="md-nav__link">
+    TradeInstrument
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscribetradesresponse" class="md-nav__link">
+    SubscribeTradesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tradesubscription" class="md-nav__link">
+    TradeSubscription
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscribeinforequest" class="md-nav__link">
+    SubscribeInfoRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infoinstrument" class="md-nav__link">
+    InfoInstrument
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscribeinforesponse" class="md-nav__link">
+    SubscribeInfoResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infosubscription" class="md-nav__link">
+    InfoSubscription
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscribelastpricerequest" class="md-nav__link">
+    SubscribeLastPriceRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lastpriceinstrument" class="md-nav__link">
+    LastPriceInstrument
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscribelastpriceresponse" class="md-nav__link">
+    SubscribeLastPriceResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lastpricesubscription" class="md-nav__link">
+    LastPriceSubscription
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#candle" class="md-nav__link">
+    Candle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderbook" class="md-nav__link">
+    OrderBook
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order" class="md-nav__link">
+    Order
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trade" class="md-nav__link">
+    Trade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tradingstatus" class="md-nav__link">
+    TradingStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcandlesrequest" class="md-nav__link">
+    GetCandlesRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcandlesresponse" class="md-nav__link">
+    GetCandlesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#historiccandle" class="md-nav__link">
+    HistoricCandle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlastpricesrequest" class="md-nav__link">
+    GetLastPricesRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlastpricesresponse" class="md-nav__link">
+    GetLastPricesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lastprice" class="md-nav__link">
+    LastPrice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getorderbookrequest" class="md-nav__link">
+    GetOrderBookRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getorderbookresponse" class="md-nav__link">
+    GetOrderBookResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettradingstatusrequest" class="md-nav__link">
+    GetTradingStatusRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettradingstatusesrequest" class="md-nav__link">
+    GetTradingStatusesRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettradingstatusesresponse" class="md-nav__link">
+    GetTradingStatusesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettradingstatusresponse" class="md-nav__link">
+    GetTradingStatusResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlasttradesrequest" class="md-nav__link">
+    GetLastTradesRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlasttradesresponse" class="md-nav__link">
+    GetLastTradesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmysubscriptions" class="md-nav__link">
+    GetMySubscriptions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getclosepricesrequest" class="md-nav__link">
+    GetClosePricesRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instrumentclosepricerequest" class="md-nav__link">
+    InstrumentClosePriceRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getclosepricesresponse" class="md-nav__link">
+    GetClosePricesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instrumentclosepriceresponse" class="md-nav__link">
+    InstrumentClosePriceResponse
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enums" class="md-nav__link">
+    Enums
+  </a>
+  
+    <nav class="md-nav" aria-label="Enums">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subscriptionaction" class="md-nav__link">
+    SubscriptionAction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscriptioninterval" class="md-nav__link">
+    SubscriptionInterval
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscriptionstatus" class="md-nav__link">
+    SubscriptionStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tradedirection" class="md-nav__link">
+    TradeDirection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#candleinterval" class="md-nav__link">
+    CandleInterval
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#securitytradingstatus" class="md-nav__link">
+    SecurityTradingStatus
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Нестандартные типы данных
+  </a>
+  
+    <nav class="md-nav" aria-label="Нестандартные типы данных">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#moneyvalue" class="md-nav__link">
+    MoneyValue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quotation" class="md-nav__link">
+    Quotation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Tinkoff/investAPI/edit/master/docs/marketdata.md" title="Редактировать страницу" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Методы</h1>
+                
+                <h2 id="marketdataservice">MarketDataService</h2>
+<p>Сервис получения биржевой информации:</br> <strong>1</strong>. свечи;</br> <strong>2</strong>. стаканы;</br> <strong>3</strong>. торговые статусы;</br> <strong>4</strong>. лента сделок.</p>
+<h3 id="_1">Методы сервиса</h3>
+<h4 id="getcandles">GetCandles</h4>
+<p>Метод запроса исторических свечей по инструменту.</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#getcandlesrequest">GetCandlesRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#getcandlesresponse">GetCandlesResponse</a></p>
+</li>
+</ul>
+<h4 id="getlastprices">GetLastPrices</h4>
+<p>Метод запроса цен последних сделок по инструментам.</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#getlastpricesrequest">GetLastPricesRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#getlastpricesresponse">GetLastPricesResponse</a></p>
+</li>
+</ul>
+<h4 id="getorderbook">GetOrderBook</h4>
+<p>Метод получения стакана по инструменту.</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#getorderbookrequest">GetOrderBookRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#getorderbookresponse">GetOrderBookResponse</a></p>
+</li>
+</ul>
+<h4 id="gettradingstatus">GetTradingStatus</h4>
+<p>Метод запроса статуса торгов по инструментам.</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#gettradingstatusrequest">GetTradingStatusRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#gettradingstatusresponse">GetTradingStatusResponse</a></p>
+</li>
+</ul>
+<h4 id="gettradingstatuses">GetTradingStatuses</h4>
+<p>Метод запроса статуса торгов по инструментам.</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#gettradingstatusesrequest">GetTradingStatusesRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#gettradingstatusesresponse">GetTradingStatusesResponse</a></p>
+</li>
+</ul>
+<h4 id="getlasttrades">GetLastTrades</h4>
+<p>Метод запроса обезличенных сделок за последний час.</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#getlasttradesrequest">GetLastTradesRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#getlasttradesresponse">GetLastTradesResponse</a></p>
+</li>
+</ul>
+<h4 id="getcloseprices">GetClosePrices</h4>
+<p>Метод запроса цен закрытия торговой сессии по инструментам.</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#getclosepricesrequest">GetClosePricesRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#getclosepricesresponse">GetClosePricesResponse</a></p>
+</li>
+</ul>
+<!-- range .Methods -->
+
+<h2 id="marketdatastreamservice">MarketDataStreamService</h2>
+<h3 id="_2">Методы сервиса</h3>
+<h4 id="marketdatastream">MarketDataStream</h4>
+<p>Bi-directional стрим предоставления биржевой информации.</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#marketdatarequest">MarketDataRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#marketdataresponse">MarketDataResponse</a></p>
+</li>
+</ul>
+<h4 id="marketdataserversidestream">MarketDataServerSideStream</h4>
+<p>Server-side стрим предоставления биржевой информации.</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#marketdataserversidestreamrequest">MarketDataServerSideStreamRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#marketdataresponse">MarketDataResponse</a></p>
+</li>
+</ul>
+<!-- range .Methods -->
+<!-- range .Services -->
+
+<h3 id="_3">Сообщения методов</h3>
+<h4 id="marketdatarequest">MarketDataRequest</h4>
+<p>Запрос подписки или отписки на определённые биржевые данные.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>subscribe_candles_request</td>
+<td><a href="#subscribecandlesrequest">SubscribeCandlesRequest</a></td>
+<td>Запрос подписки на свечи.</td>
+</tr>
+<tr>
+<td>subscribe_order_book_request</td>
+<td><a href="#subscribeorderbookrequest">SubscribeOrderBookRequest</a></td>
+<td>Запрос подписки на стаканы.</td>
+</tr>
+<tr>
+<td>subscribe_trades_request</td>
+<td><a href="#subscribetradesrequest">SubscribeTradesRequest</a></td>
+<td>Запрос подписки на ленту обезличенных сделок.</td>
+</tr>
+<tr>
+<td>subscribe_info_request</td>
+<td><a href="#subscribeinforequest">SubscribeInfoRequest</a></td>
+<td>Запрос подписки на торговые статусы инструментов.</td>
+</tr>
+<tr>
+<td>subscribe_last_price_request</td>
+<td><a href="#subscribelastpricerequest">SubscribeLastPriceRequest</a></td>
+<td>Запрос подписки на цены последних сделок.</td>
+</tr>
+<tr>
+<td>get_my_subscriptions</td>
+<td><a href="#getmysubscriptions">GetMySubscriptions</a></td>
+<td>Запрос своих подписок.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="marketdataserversidestreamrequest">MarketDataServerSideStreamRequest</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>subscribe_candles_request</td>
+<td><a href="#subscribecandlesrequest">SubscribeCandlesRequest</a></td>
+<td>Запрос подписки на свечи.</td>
+</tr>
+<tr>
+<td>subscribe_order_book_request</td>
+<td><a href="#subscribeorderbookrequest">SubscribeOrderBookRequest</a></td>
+<td>Запрос подписки на стаканы.</td>
+</tr>
+<tr>
+<td>subscribe_trades_request</td>
+<td><a href="#subscribetradesrequest">SubscribeTradesRequest</a></td>
+<td>Запрос подписки на ленту обезличенных сделок.</td>
+</tr>
+<tr>
+<td>subscribe_info_request</td>
+<td><a href="#subscribeinforequest">SubscribeInfoRequest</a></td>
+<td>Запрос подписки на торговые статусы инструментов.</td>
+</tr>
+<tr>
+<td>subscribe_last_price_request</td>
+<td><a href="#subscribelastpricerequest">SubscribeLastPriceRequest</a></td>
+<td>Запрос подписки на цены последних сделок.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="marketdataresponse">MarketDataResponse</h4>
+<p>Пакет биржевой информации по подписке.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>subscribe_candles_response</td>
+<td><a href="#subscribecandlesresponse">SubscribeCandlesResponse</a></td>
+<td>Результат подписки на свечи.</td>
+</tr>
+<tr>
+<td>subscribe_order_book_response</td>
+<td><a href="#subscribeorderbookresponse">SubscribeOrderBookResponse</a></td>
+<td>Результат подписки на стаканы.</td>
+</tr>
+<tr>
+<td>subscribe_trades_response</td>
+<td><a href="#subscribetradesresponse">SubscribeTradesResponse</a></td>
+<td>Результат подписки на поток обезличенных сделок.</td>
+</tr>
+<tr>
+<td>subscribe_info_response</td>
+<td><a href="#subscribeinforesponse">SubscribeInfoResponse</a></td>
+<td>Результат подписки на торговые статусы инструментов.</td>
+</tr>
+<tr>
+<td>candle</td>
+<td><a href="#candle">Candle</a></td>
+<td>Свеча.</td>
+</tr>
+<tr>
+<td>trade</td>
+<td><a href="#trade">Trade</a></td>
+<td>Сделки.</td>
+</tr>
+<tr>
+<td>orderbook</td>
+<td><a href="#orderbook">OrderBook</a></td>
+<td>Стакан.</td>
+</tr>
+<tr>
+<td>trading_status</td>
+<td><a href="#tradingstatus">TradingStatus</a></td>
+<td>Торговый статус.</td>
+</tr>
+<tr>
+<td>ping</td>
+<td><a href="#ping">Ping</a></td>
+<td>Проверка активности стрима.</td>
+</tr>
+<tr>
+<td>subscribe_last_price_response</td>
+<td><a href="#subscribelastpriceresponse">SubscribeLastPriceResponse</a></td>
+<td>Результат подписки на цены последние сделок по инструментам.</td>
+</tr>
+<tr>
+<td>last_price</td>
+<td><a href="#lastprice">LastPrice</a></td>
+<td>Цена последней сделки.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="subscribecandlesrequest">SubscribeCandlesRequest</h4>
+<p>subscribeCandles | Изменения статуса подписки на свечи.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>subscription_action</td>
+<td><a href="#subscriptionaction">SubscriptionAction</a></td>
+<td>Изменение статуса подписки.</td>
+</tr>
+<tr>
+<td>instruments</td>
+<td>Массив объектов <a href="#candleinstrument">CandleInstrument</a></td>
+<td>Массив инструментов для подписки на свечи.</td>
+</tr>
+<tr>
+<td>waiting_close</td>
+<td><a href="#bool">bool</a></td>
+<td>Флаг ожидания закрытия временного интервала для отправки свечи, применяется только для минутных свечей.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="candleinstrument">CandleInstrument</h4>
+<p>Запрос изменения статус подписки на свечи.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.</td>
+</tr>
+<tr>
+<td>interval</td>
+<td><a href="#subscriptioninterval">SubscriptionInterval</a></td>
+<td>Интервал свечей.</td>
+</tr>
+<tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента, принимает значение figi или instrument_uid</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="subscribecandlesresponse">SubscribeCandlesResponse</h4>
+<p>Результат изменения статус подписки на свечи.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tracking_id</td>
+<td><a href="#string">string</a></td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="https://tinkoff.github.io/investAPI/grpc#tracking-id">tracking_id</a>.</td>
+</tr>
+<tr>
+<td>candles_subscriptions</td>
+<td>Массив объектов <a href="#candlesubscription">CandleSubscription</a></td>
+<td>Массив статусов подписки на свечи.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="candlesubscription">CandleSubscription</h4>
+<p>Статус подписки на свечи.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>interval</td>
+<td><a href="#subscriptioninterval">SubscriptionInterval</a></td>
+<td>Интервал свечей.</td>
+</tr>
+<tr>
+<td>subscription_status</td>
+<td><a href="#subscriptionstatus">SubscriptionStatus</a></td>
+<td>Статус подписки.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Uid инструмента</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="subscribeorderbookrequest">SubscribeOrderBookRequest</h4>
+<p>Запрос на изменение статуса подписки на стаканы.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>subscription_action</td>
+<td><a href="#subscriptionaction">SubscriptionAction</a></td>
+<td>Изменение статуса подписки.</td>
+</tr>
+<tr>
+<td>instruments</td>
+<td>Массив объектов <a href="#orderbookinstrument">OrderBookInstrument</a></td>
+<td>Массив инструментов для подписки на стаканы.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="orderbookinstrument">OrderBookInstrument</h4>
+<p>Запрос подписки на стаканы.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.</td>
+</tr>
+<tr>
+<td>depth</td>
+<td><a href="#int32">int32</a></td>
+<td>Глубина стакана.</td>
+</tr>
+<tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента, принимает значение figi или instrument_uid</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="subscribeorderbookresponse">SubscribeOrderBookResponse</h4>
+<p>Результат изменения статуса подписки на стаканы.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tracking_id</td>
+<td><a href="#string">string</a></td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="https://tinkoff.github.io/investAPI/grpc#tracking-id">tracking_id</a>.</td>
+</tr>
+<tr>
+<td>order_book_subscriptions</td>
+<td>Массив объектов <a href="#orderbooksubscription">OrderBookSubscription</a></td>
+<td>Массив статусов подписки на стаканы.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="orderbooksubscription">OrderBookSubscription</h4>
+<p>Статус подписки.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>depth</td>
+<td><a href="#int32">int32</a></td>
+<td>Глубина стакана.</td>
+</tr>
+<tr>
+<td>subscription_status</td>
+<td><a href="#subscriptionstatus">SubscriptionStatus</a></td>
+<td>Статус подписки.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Uid инструмента</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="subscribetradesrequest">SubscribeTradesRequest</h4>
+<p>Изменение статуса подписки на поток обезличенных сделок.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>subscription_action</td>
+<td><a href="#subscriptionaction">SubscriptionAction</a></td>
+<td>Изменение статуса подписки.</td>
+</tr>
+<tr>
+<td>instruments</td>
+<td>Массив объектов <a href="#tradeinstrument">TradeInstrument</a></td>
+<td>Массив инструментов для подписки на поток обезличенных сделок.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="tradeinstrument">TradeInstrument</h4>
+<p>Запрос подписки на поток обезличенных сделок.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.</td>
+</tr>
+<tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента, принимает значение figi или instrument_uid</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="subscribetradesresponse">SubscribeTradesResponse</h4>
+<p>Результат изменения статуса подписки на поток обезличенных сделок.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tracking_id</td>
+<td><a href="#string">string</a></td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="https://tinkoff.github.io/investAPI/grpc#tracking-id">tracking_id</a>.</td>
+</tr>
+<tr>
+<td>trade_subscriptions</td>
+<td>Массив объектов <a href="#tradesubscription">TradeSubscription</a></td>
+<td>Массив статусов подписки на поток сделок.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="tradesubscription">TradeSubscription</h4>
+<p>Статус подписки.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>subscription_status</td>
+<td><a href="#subscriptionstatus">SubscriptionStatus</a></td>
+<td>Статус подписки.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Uid инструмента</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="subscribeinforequest">SubscribeInfoRequest</h4>
+<p>Изменение статуса подписки на торговый статус инструмента.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>subscription_action</td>
+<td><a href="#subscriptionaction">SubscriptionAction</a></td>
+<td>Изменение статуса подписки.</td>
+</tr>
+<tr>
+<td>instruments</td>
+<td>Массив объектов <a href="#infoinstrument">InfoInstrument</a></td>
+<td>Массив инструментов для подписки на торговый статус.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="infoinstrument">InfoInstrument</h4>
+<p>Запрос подписки на торговый статус.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.</td>
+</tr>
+<tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента, принимает значение figi или instrument_uid</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="subscribeinforesponse">SubscribeInfoResponse</h4>
+<p>Результат изменения статуса подписки на торговый статус.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tracking_id</td>
+<td><a href="#string">string</a></td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="https://tinkoff.github.io/investAPI/grpc#tracking-id">tracking_id</a>.</td>
+</tr>
+<tr>
+<td>info_subscriptions</td>
+<td>Массив объектов <a href="#infosubscription">InfoSubscription</a></td>
+<td>Массив статусов подписки на торговый статус.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="infosubscription">InfoSubscription</h4>
+<p>Статус подписки.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>subscription_status</td>
+<td><a href="#subscriptionstatus">SubscriptionStatus</a></td>
+<td>Статус подписки.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Uid инструмента</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="subscribelastpricerequest">SubscribeLastPriceRequest</h4>
+<p>Изменение статуса подписки на цену последней сделки по инструменту.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>subscription_action</td>
+<td><a href="#subscriptionaction">SubscriptionAction</a></td>
+<td>Изменение статуса подписки.</td>
+</tr>
+<tr>
+<td>instruments</td>
+<td>Массив объектов <a href="#lastpriceinstrument">LastPriceInstrument</a></td>
+<td>Массив инструментов для подписки на цену последней сделки.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="lastpriceinstrument">LastPriceInstrument</h4>
+<p>Запрос подписки на последнюю цену.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.</td>
+</tr>
+<tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента, принимает значение figi или instrument_uid</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="subscribelastpriceresponse">SubscribeLastPriceResponse</h4>
+<p>Результат изменения статуса подписки на цену последней сделки.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tracking_id</td>
+<td><a href="#string">string</a></td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="https://tinkoff.github.io/investAPI/grpc#tracking-id">tracking_id</a>.</td>
+</tr>
+<tr>
+<td>last_price_subscriptions</td>
+<td>Массив объектов <a href="#lastpricesubscription">LastPriceSubscription</a></td>
+<td>Массив статусов подписки на цену последней сделки.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="lastpricesubscription">LastPriceSubscription</h4>
+<p>Статус подписки на цену последней сделки.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>subscription_status</td>
+<td><a href="#subscriptionstatus">SubscriptionStatus</a></td>
+<td>Статус подписки.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Uid инструмента</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="candle">Candle</h4>
+<p>Пакет свечей в рамках стрима.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>interval</td>
+<td><a href="#subscriptioninterval">SubscriptionInterval</a></td>
+<td>Интервал свечи.</td>
+</tr>
+<tr>
+<td>open</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Цена открытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+</tr>
+<tr>
+<td>high</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Максимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+</tr>
+<tr>
+<td>low</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Минимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+</tr>
+<tr>
+<td>close</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Цена закрытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+</tr>
+<tr>
+<td>volume</td>
+<td><a href="#int64">int64</a></td>
+<td>Объём сделок в лотах.</td>
+</tr>
+<tr>
+<td>time</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время начала интервала свечи в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>last_trade_ts</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время последней сделки, вошедшей в свечу в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Uid инструмента</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="orderbook">OrderBook</h4>
+<p>Пакет стаканов в рамках стрима.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>depth</td>
+<td><a href="#int32">int32</a></td>
+<td>Глубина стакана.</td>
+</tr>
+<tr>
+<td>is_consistent</td>
+<td><a href="#bool">bool</a></td>
+<td>Флаг консистентности стакана. <strong>false</strong> значит не все заявки попали в стакан по причинам сетевых задержек или нарушения порядка доставки.</td>
+</tr>
+<tr>
+<td>bids</td>
+<td>Массив объектов <a href="#order">Order</a></td>
+<td>Массив предложений.</td>
+</tr>
+<tr>
+<td>asks</td>
+<td>Массив объектов <a href="#order">Order</a></td>
+<td>Массив спроса.</td>
+</tr>
+<tr>
+<td>time</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время формирования стакана в часовом поясе UTC по времени биржи.</td>
+</tr>
+<tr>
+<td>limit_up</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Верхний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+</tr>
+<tr>
+<td>limit_down</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Нижний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Uid инструмента</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="order">Order</h4>
+<p>Массив предложений/спроса.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>price</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+</tr>
+<tr>
+<td>quantity</td>
+<td><a href="#int64">int64</a></td>
+<td>Количество в лотах.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="trade">Trade</h4>
+<p>Информация о сделке.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>direction</td>
+<td><a href="#tradedirection">TradeDirection</a></td>
+<td>Направление сделки.</td>
+</tr>
+<tr>
+<td>price</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+</tr>
+<tr>
+<td>quantity</td>
+<td><a href="#int64">int64</a></td>
+<td>Количество лотов.</td>
+</tr>
+<tr>
+<td>time</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время сделки в часовом поясе UTC по времени биржи.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Uid инструмента</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="tradingstatus">TradingStatus</h4>
+<p>Пакет изменения торгового статуса.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>trading_status</td>
+<td><a href="#securitytradingstatus">SecurityTradingStatus</a></td>
+<td>Статус торговли инструментом.</td>
+</tr>
+<tr>
+<td>time</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время изменения торгового статуса в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>limit_order_available_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности выставления лимитной заявки по инструменту.</td>
+</tr>
+<tr>
+<td>market_order_available_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности выставления рыночной заявки по инструменту.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Uid инструмента</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getcandlesrequest">GetCandlesRequest</h4>
+<p>Запрос исторических свечей.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.</td>
+</tr>
+<tr>
+<td>from</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Начало запрашиваемого периода в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>to</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Окончание запрашиваемого периода в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>interval</td>
+<td><a href="#candleinterval">CandleInterval</a></td>
+<td>Интервал запрошенных свечей.</td>
+</tr>
+<tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента, принимает значение figi или instrument_uid.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getcandlesresponse">GetCandlesResponse</h4>
+<p>Список свечей.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>candles</td>
+<td>Массив объектов <a href="#historiccandle">HistoricCandle</a></td>
+<td>Массив свечей.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="historiccandle">HistoricCandle</h4>
+<p>Информация о свече.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>open</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Цена открытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+</tr>
+<tr>
+<td>high</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Максимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+</tr>
+<tr>
+<td>low</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Минимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+</tr>
+<tr>
+<td>close</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Цена закрытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+</tr>
+<tr>
+<td>volume</td>
+<td><a href="#int64">int64</a></td>
+<td>Объём торгов в лотах.</td>
+</tr>
+<tr>
+<td>time</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время свечи в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>is_complete</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак завершённости свечи. <strong>false</strong> значит, свеча за текущие интервал ещё сформирована не полностью.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getlastpricesrequest">GetLastPricesRequest</h4>
+<p>Запрос получения цен последних сделок.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td>Массив объектов <a href="#string">string</a></td>
+<td>Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.</td>
+</tr>
+<tr>
+<td>instrument_id</td>
+<td>Массив объектов <a href="#string">string</a></td>
+<td>Массив идентификаторов инструмента, принимает значения figi или instrument_uid.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getlastpricesresponse">GetLastPricesResponse</h4>
+<p>Список цен последних сделок.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>last_prices</td>
+<td>Массив объектов <a href="#lastprice">LastPrice</a></td>
+<td>Массив цен последних сделок.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="lastprice">LastPrice</h4>
+<p>Информация о цене последней сделки.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi инструмента.</td>
+</tr>
+<tr>
+<td>price</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Цена последней сделки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+</tr>
+<tr>
+<td>time</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время получения последней цены в часовом поясе UTC по времени биржи.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Uid инструмента</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getorderbookrequest">GetOrderBookRequest</h4>
+<p>Запрос стакана.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.</td>
+</tr>
+<tr>
+<td>depth</td>
+<td><a href="#int32">int32</a></td>
+<td>Глубина стакана.</td>
+</tr>
+<tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента, принимает значение figi или instrument_uid.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getorderbookresponse">GetOrderBookResponse</h4>
+<p>Информация о стакане.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>depth</td>
+<td><a href="#int32">int32</a></td>
+<td>Глубина стакана.</td>
+</tr>
+<tr>
+<td>bids</td>
+<td>Массив объектов <a href="#order">Order</a></td>
+<td>Множество пар значений на покупку.</td>
+</tr>
+<tr>
+<td>asks</td>
+<td>Массив объектов <a href="#order">Order</a></td>
+<td>Множество пар значений на продажу.</td>
+</tr>
+<tr>
+<td>last_price</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Цена последней сделки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+</tr>
+<tr>
+<td>close_price</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Цена закрытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+</tr>
+<tr>
+<td>limit_up</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Верхний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+</tr>
+<tr>
+<td>limit_down</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Нижний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://tinkoff.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+</tr>
+<tr>
+<td>last_price_ts</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время получения цены последней сделки.</td>
+</tr>
+<tr>
+<td>close_price_ts</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время получения цены закрытия.</td>
+</tr>
+<tr>
+<td>orderbook_ts</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время формирования стакана на бирже.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Uid инструмента.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="gettradingstatusrequest">GetTradingStatusRequest</h4>
+<p>Запрос получения торгового статуса.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.</td>
+</tr>
+<tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента, принимает значение figi или instrument_uid.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="gettradingstatusesrequest">GetTradingStatusesRequest</h4>
+<p>Запрос получения торгового статуса.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instrument_id</td>
+<td>Массив объектов <a href="#string">string</a></td>
+<td>Идентификатор инструмента, принимает значение figi или instrument_uid</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="gettradingstatusesresponse">GetTradingStatusesResponse</h4>
+<p>Информация о торговом статусе.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trading_statuses</td>
+<td>Массив объектов <a href="#gettradingstatusresponse">GetTradingStatusResponse</a></td>
+<td>Массив информации о торговых статусах</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="gettradingstatusresponse">GetTradingStatusResponse</h4>
+<p>Информация о торговом статусе.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi-идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>trading_status</td>
+<td><a href="#securitytradingstatus">SecurityTradingStatus</a></td>
+<td>Статус торговли инструментом.</td>
+</tr>
+<tr>
+<td>limit_order_available_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности выставления лимитной заявки по инструменту.</td>
+</tr>
+<tr>
+<td>market_order_available_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности выставления рыночной заявки по инструменту.</td>
+</tr>
+<tr>
+<td>api_trade_available_flag</td>
+<td><a href="#bool">bool</a></td>
+<td>Признак доступности торгов через API.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Uid инструмента.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getlasttradesrequest">GetLastTradesRequest</h4>
+<p>Запрос обезличенных сделок за последний час.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.</td>
+</tr>
+<tr>
+<td>from</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Начало запрашиваемого периода в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>to</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Окончание запрашиваемого периода в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента, принимает значение figi или instrument_uid.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getlasttradesresponse">GetLastTradesResponse</h4>
+<p>Обезличенных сделок за последний час.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trades</td>
+<td>Массив объектов <a href="#trade">Trade</a></td>
+<td>Массив сделок.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getmysubscriptions">GetMySubscriptions</h4>
+<p>Запрос активных подписок.</p>
+<!-- end HasFields -->
+
+<h4 id="getclosepricesrequest">GetClosePricesRequest</h4>
+<p>Запрос цен закрытия торговой сессии по инструментам.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instruments</td>
+<td>Массив объектов <a href="#instrumentclosepricerequest">InstrumentClosePriceRequest</a></td>
+<td>Массив по инструментам.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="instrumentclosepricerequest">InstrumentClosePriceRequest</h4>
+<p>Запрос цен закрытия торговой сессии по инструменту.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента, принимает значение figi или instrument_uid.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getclosepricesresponse">GetClosePricesResponse</h4>
+<p>Цены закрытия торговой сессии по инструментам.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>close_prices</td>
+<td>Массив объектов <a href="#instrumentclosepriceresponse">InstrumentClosePriceResponse</a></td>
+<td>Массив по инструментам.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="instrumentclosepriceresponse">InstrumentClosePriceResponse</h4>
+<p>Цена закрытия торговой сессии по инструменту.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>figi</td>
+<td><a href="#string">string</a></td>
+<td>Figi инструмента.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Uid инструмента.</td>
+</tr>
+<tr>
+<td>price</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Цена закрытия торговой сессии.</td>
+</tr>
+<tr>
+<td>time</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата совершения торгов.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+<!-- end messages -->
+
+<h3 id="enums">Enums</h3>
+<h4 id="subscriptionaction">SubscriptionAction</h4>
+<p>Тип операции со списком подписок.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SUBSCRIPTION_ACTION_UNSPECIFIED</td>
+<td>0</td>
+<td>Статус подписки не определён.</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_ACTION_SUBSCRIBE</td>
+<td>1</td>
+<td>Подписаться.</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_ACTION_UNSUBSCRIBE</td>
+<td>2</td>
+<td>Отписаться.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="subscriptioninterval">SubscriptionInterval</h4>
+<p>Интервал свечи.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SUBSCRIPTION_INTERVAL_UNSPECIFIED</td>
+<td>0</td>
+<td>Интервал свечи не определён.</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_INTERVAL_ONE_MINUTE</td>
+<td>1</td>
+<td>Минутные свечи.</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_INTERVAL_FIVE_MINUTES</td>
+<td>2</td>
+<td>Пятиминутные свечи.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="subscriptionstatus">SubscriptionStatus</h4>
+<p>Результат подписки.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SUBSCRIPTION_STATUS_UNSPECIFIED</td>
+<td>0</td>
+<td>Статус подписки не определён.</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_STATUS_SUCCESS</td>
+<td>1</td>
+<td>Успешно.</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_STATUS_INSTRUMENT_NOT_FOUND</td>
+<td>2</td>
+<td>Инструмент не найден.</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID</td>
+<td>3</td>
+<td>Некорректный статус подписки, список возможных значений: <a href="https://tinkoff.github.io/investAPI/marketdata#subscriptionaction">SubscriptionAction</a>.</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_STATUS_DEPTH_IS_INVALID</td>
+<td>4</td>
+<td>Некорректная глубина стакана, доступные значения: 1, 10, 20, 30, 40, 50.</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID</td>
+<td>5</td>
+<td>Некорректный интервал свечей, список возможных значений: <a href="https://tinkoff.github.io/investAPI/marketdata#subscriptioninterval">SubscriptionInterval</a>.</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED</td>
+<td>6</td>
+<td>Превышен лимит на общее количество подписок в рамках стрима, подробнее: <a href="https://tinkoff.github.io/investAPI/limits/">Лимитная политика</a>.</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_STATUS_INTERNAL_ERROR</td>
+<td>7</td>
+<td>Внутренняя ошибка сервиса.</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_STATUS_TOO_MANY_REQUESTS</td>
+<td>8</td>
+<td>Превышен лимит на количество запросов на подписки в течение установленного отрезка времени</td>
+</tr>
+</tbody>
+</table>
+<h4 id="tradedirection">TradeDirection</h4>
+<p>Направление сделки.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TRADE_DIRECTION_UNSPECIFIED</td>
+<td>0</td>
+<td>Направление сделки не определено.</td>
+</tr>
+<tr>
+<td>TRADE_DIRECTION_BUY</td>
+<td>1</td>
+<td>Покупка.</td>
+</tr>
+<tr>
+<td>TRADE_DIRECTION_SELL</td>
+<td>2</td>
+<td>Продажа.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="candleinterval">CandleInterval</h4>
+<p>Интервал свечей.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CANDLE_INTERVAL_UNSPECIFIED</td>
+<td>0</td>
+<td>Интервал не определён.</td>
+</tr>
+<tr>
+<td>CANDLE_INTERVAL_1_MIN</td>
+<td>1</td>
+<td>от 1 минуты до 1 дня.</td>
+</tr>
+<tr>
+<td>CANDLE_INTERVAL_5_MIN</td>
+<td>2</td>
+<td>от 5 минут до 1 дня.</td>
+</tr>
+<tr>
+<td>CANDLE_INTERVAL_15_MIN</td>
+<td>3</td>
+<td>от 15 минут до 1 дня.</td>
+</tr>
+<tr>
+<td>CANDLE_INTERVAL_HOUR</td>
+<td>4</td>
+<td>от 1 часа до 1 недели.</td>
+</tr>
+<tr>
+<td>CANDLE_INTERVAL_DAY</td>
+<td>5</td>
+<td>от 1 дня до 1 года.</td>
+</tr>
+<tr>
+<td>CANDLE_INTERVAL_2_MIN</td>
+<td>6</td>
+<td>от 2 минут до 1 дня.</td>
+</tr>
+<tr>
+<td>CANDLE_INTERVAL_3_MIN</td>
+<td>7</td>
+<td>от 3 минут до 1 дня.</td>
+</tr>
+<tr>
+<td>CANDLE_INTERVAL_10_MIN</td>
+<td>8</td>
+<td>от 10 минут до 1 дня.</td>
+</tr>
+<tr>
+<td>CANDLE_INTERVAL_30_MIN</td>
+<td>9</td>
+<td>от 30 минут до 2 дней.</td>
+</tr>
+<tr>
+<td>CANDLE_INTERVAL_2_HOUR</td>
+<td>10</td>
+<td>от 2 часов до 1 месяца.</td>
+</tr>
+<tr>
+<td>CANDLE_INTERVAL_4_HOUR</td>
+<td>11</td>
+<td>от 4 часов до 1 месяца.</td>
+</tr>
+<tr>
+<td>CANDLE_INTERVAL_WEEK</td>
+<td>12</td>
+<td>от 1 недели до 2 лет.</td>
+</tr>
+<tr>
+<td>CANDLE_INTERVAL_MONTH</td>
+<td>13</td>
+<td>от 1 месяца до 10 лет.</td>
+</tr>
+</tbody>
+</table>
+<!-- range .Enums -->
+<!-- range HasServices -->
+<!-- range .Files -->
+
+<h4 id="securitytradingstatus">SecurityTradingStatus</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SECURITY_TRADING_STATUS_UNSPECIFIED</td>
+<td>0</td>
+<td>Торговый статус не определён</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_NOT_AVAILABLE_FOR_TRADING</td>
+<td>1</td>
+<td>Недоступен для торгов</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_OPENING_PERIOD</td>
+<td>2</td>
+<td>Период открытия торгов</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_CLOSING_PERIOD</td>
+<td>3</td>
+<td>Период закрытия торгов</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_BREAK_IN_TRADING</td>
+<td>4</td>
+<td>Перерыв в торговле</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_NORMAL_TRADING</td>
+<td>5</td>
+<td>Нормальная торговля</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_CLOSING_AUCTION</td>
+<td>6</td>
+<td>Аукцион закрытия</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_DARK_POOL_AUCTION</td>
+<td>7</td>
+<td>Аукцион крупных пакетов</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_DISCRETE_AUCTION</td>
+<td>8</td>
+<td>Дискретный аукцион</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_OPENING_AUCTION_PERIOD</td>
+<td>9</td>
+<td>Аукцион открытия</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_TRADING_AT_CLOSING_AUCTION_PRICE</td>
+<td>10</td>
+<td>Период торгов по цене аукциона закрытия</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_SESSION_ASSIGNED</td>
+<td>11</td>
+<td>Сессия назначена</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_SESSION_CLOSE</td>
+<td>12</td>
+<td>Сессия закрыта</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_SESSION_OPEN</td>
+<td>13</td>
+<td>Сессия открыта</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_DEALER_NORMAL_TRADING</td>
+<td>14</td>
+<td>Доступна торговля в режиме внутренней ликвидности брокера</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_DEALER_BREAK_IN_TRADING</td>
+<td>15</td>
+<td>Перерыв торговли в режиме внутренней ликвидности брокера</td>
+</tr>
+<tr>
+<td>SECURITY_TRADING_STATUS_DEALER_NOT_AVAILABLE_FOR_TRADING</td>
+<td>16</td>
+<td>Недоступна торговля в режиме внутренней ликвидности брокера</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">Нестандартные типы данных</h3>
+<h4 id="moneyvalue">MoneyValue</h4>
+<p>Денежная сумма в определенной валюте</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>currency</td>
+<td><a href="#string">string</a></td>
+<td>Строковый ISO-код валюты</td>
+</tr>
+<tr>
+<td>units</td>
+<td><a href="#int64">int64</a></td>
+<td>Целая часть суммы, может быть отрицательным числом</td>
+</tr>
+<tr>
+<td>nano</td>
+<td><a href="#int32">int32</a></td>
+<td>Дробная часть суммы, может быть отрицательным числом</td>
+</tr>
+</tbody>
+</table>
+<h4 id="quotation">Quotation</h4>
+<p>Котировка - денежная сумма без указания валюты</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>units</td>
+<td><a href="#int64">int64</a></td>
+<td>Целая часть суммы, может быть отрицательным числом</td>
+</tr>
+<tr>
+<td>nano</td>
+<td><a href="#int32">int32</a></td>
+<td>Дробная часть суммы, может быть отрицательным числом</td>
+</tr>
+</tbody>
+</table>
+                
+              
+              
+<!-- Add custom comment system integration here -->
+<div class="container">
+    <script src="https://utteranc.es/client.js"
+            repo="https://github.com/Tinkoff/investAPI"
+            issue-term="Методы comments"
+            label="documentation"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+</div>
+
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../head-marketdata/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Описание" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Описание
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../faq_marketdata/" class="md-footer__link md-footer__link--next" aria-label="Вперед: FAQ" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              FAQ
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e # \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.29db7785.min.js"></script>
+      
+    
+  </body>
+</html>

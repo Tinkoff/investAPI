@@ -14,7 +14,7 @@
     
     
       
-        <title>SLA - TINKOFF INVEST API</title>
+        <title>EOL v1 - TINKOFF INVEST API</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#openapi" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SLA
+              EOL v1
             
           </span>
         </div>
@@ -433,47 +433,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          SLA
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../sla/" class="md-nav__link">
         SLA
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    Время жизни ключа идемпотентности на стороне брокера
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -505,11 +469,65 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../eol_v1/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          EOL v1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         EOL v1
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-" class="md-nav__link">
+    Торговать на новой версией API - выгодно
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    ссылки
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    вопросы?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1154,6 +1172,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1162,8 +1182,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#api-" class="md-nav__link">
+    Торговать на новой версией API - выгодно
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    Время жизни ключа идемпотентности на стороне брокера
+    ссылки
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    вопросы?
   </a>
   
 </li>
@@ -1180,17 +1214,35 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Tinkoff/investAPI/edit/master/docs/sla.md" title="Редактировать страницу" class="md-content__button md-icon">
+                  <a href="https://github.com/Tinkoff/investAPI/edit/master/docs/eol_v1.md" title="Редактировать страницу" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>SLA</h1>
-                
-                <h2 id="_1">Время жизни ключа идемпотентности на стороне брокера</h2>
-<p><strong>Ключ идемпотентности</strong> передаваемый как параметр <code>order_id</code> в методе <a href="/investAPI/orders#postorder">postOrder</a>, а так же
-передаваемый как <code>idempotency_key</code> в методе <a href="/investAPI/orders#replaceorder">replaceOrder</a> хранится на стороне брокера и имеет срок жизни <strong>один год</strong>.</p>
-<p>Счетчик стрим соединений обновляется каждые 2 минуты.</p>
+                <h1 id="openapi">Прекращение поддержки старой версии openAPI</h1>
+<p>Друзья, с мая 2023 поддержка старой версии openapi прекращается.
+Клиенты, использующие <a href="https://github.com/Tinkoff/invest-openapi/">старую версию</a> и используюзие сервера api-invest.tinkoff.ru/openapi - должны перейти на новую версию Tinkoff invest API.</p>
+<p>В новой версии поддерживаются все изменения брокера:
+* мультисчета;
+* поддержка фьючерсов и опционов;
+* стриминги сделок, портфеля и позиций;
+* большое количество новых методов и данных;</p>
+<h2 id="api-">Торговать на новой версией API - выгодно</h2>
+<p>Действует программа кэшбека в размере 10% с комиссии сделок, совершенных через API.</p>
+<h2 id="_1">ссылки</h2>
+<p>Репозитарий новой версии - https://tinkoff.github.io/investAPI/ 
+Документация новой версии - https://tinkoff.github.io/investAPI/ </p>
+<p>Поддерживаются протоколы:</p>
+<ul>
+<li>gRPC - https://tinkoff.github.io/investAPI/grpc/</li>
+<li>REST - https://tinkoff.github.io/investAPI/swagger-ui/</li>
+</ul>
+<h2 id="_2">вопросы?</h2>
+<p>Если у вас есть вопросы, рекомендуем обращаться:</p>
+<ul>
+<li>в неофициальный <a href="https://t.me/joinchat/VaW05CDzcSdsPULM">телеграм-чат</a></li>
+<li>по почте <a href="mailto:invest-public-api@tinkoff.ru">invest-public-api@tinkoff.ru</a></li>
+</ul>
                 
               
               
@@ -1198,7 +1250,7 @@
 <div class="container">
     <script src="https://utteranc.es/client.js"
             repo="https://github.com/Tinkoff/investAPI"
-            issue-term="SLA comments"
+            issue-term="EOL v1 comments"
             label="documentation"
             theme="github-light"
             crossorigin="anonymous"
@@ -1218,7 +1270,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../deadlines/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Дедлайны запросов" rel="prev">
+        <a href="../example/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Примеры запросов" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1227,20 +1279,20 @@
               <span class="md-footer__direction">
                 Назад
               </span>
-              Дедлайны запросов
+              Примеры запросов
             </div>
           </div>
         </a>
       
       
         
-        <a href="../table_order_currency/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Таблица параметров возвращающих валюту или пункты" rel="next">
+        <a href="../faq/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Ответы на частые вопросы" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Вперед
               </span>
-              Таблица параметров возвращающих валюту или пункты
+              Ответы на частые вопросы
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -57,24 +57,27 @@ message OrderTrades {
   string figi = 4; //Figi-идентификатор инструмента.
   repeated OrderTrade trades = 5; //Массив сделок.
   string account_id = 6; //Идентификатор счёта.
+  string instrument_uid = 7; //UID идентификатор инструмента.
 }
 
 //Информация о сделке.
 message OrderTrade {
   google.protobuf.Timestamp date_time = 1;  //Дата и время совершения сделки в часовом поясе UTC.
-  Quotation price = 2;  //Цена одного инструмента, по которой совершена сделка.
-  int64 quantity = 3;  //Количество лотов в сделке.
+  Quotation price = 2;  //Цена за 1 инструмент, по которой совершена сделка.
+  int64 quantity = 3;  //Количество штук в сделке.
+  string trade_id = 4; //Идентификатор сделки.
 }
 
 //Запрос выставления торгового поручения.
 message PostOrderRequest {
-  string figi = 1; //Figi-идентификатор инструмента.
+  string figi = 1; //Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.
   int64 quantity = 2; //Количество лотов.
-  Quotation price = 3; //Цена одного инструмента. Для получения стоимости лота требуется умножить на лотность инструмента. Игнорируется для рыночных поручений.
+  Quotation price = 3; //Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Игнорируется для рыночных поручений.
   OrderDirection direction = 4; //Направление операции.
   string account_id = 5; //Номер счёта.
   OrderType order_type = 6; //Тип заявки.
   string order_id = 7; //Идентификатор запроса выставления поручения для целей идемпотентности. Максимальная длина 36 символов.
+  string instrument_id = 8; //Идентификатор инструмента, принимает значения Figi или Instrument_uid.
 }
 
 //Информация о выставлении поручения.
@@ -85,7 +88,7 @@ message PostOrderResponse {
   int64 lots_executed = 4; //Исполнено лотов.
 
   MoneyValue initial_order_price = 5; //Начальная цена заявки. Произведение количества запрошенных лотов на цену.
-  MoneyValue executed_order_price = 6; //Исполненная цена заявки. Произведение средней цены покупки на количество лотов.
+  MoneyValue executed_order_price = 6; //Исполненная средняя цена 1 одного инструмента в заявки.
   MoneyValue total_order_amount = 7; //Итоговая стоимость заявки, включающая все комиссии.
   MoneyValue initial_commission = 8; //Начальная комиссия. Комиссия рассчитанная при выставлении заявки.
   MoneyValue executed_commission = 9; //Фактическая комиссия по итогам исполнения заявки.
@@ -97,6 +100,7 @@ message PostOrderResponse {
   OrderType order_type = 14; //Тип заявки.
   string message = 15; //Дополнительные данные об исполнении заявки.
   Quotation initial_order_price_pt = 16; //Начальная цена заявки в пунктах (для фьючерсов).
+  string instrument_uid = 17; //UID идентификатор инструмента.
 }
 
 //Запрос отмены торгового поручения.
@@ -146,13 +150,14 @@ message OrderState {
   string currency = 16; //Валюта заявки.
   OrderType order_type = 17; //Тип заявки.
   google.protobuf.Timestamp order_date = 18; //Дата и время выставления заявки в часовом поясе UTC.
+  string instrument_uid = 19; //UID идентификатор инструмента.
 }
 
 //Сделки в рамках торгового поручения.
 message OrderStage {
-  MoneyValue price = 1; //Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента..
+  MoneyValue price = 1; //Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
   int64 quantity = 2; //Количество лотов.
-  string trade_id = 3; //Идентификатор торговой операции.
+  string trade_id = 3; //Идентификатор сделки.
 }
 
 //Запрос изменения выставленной заявки.

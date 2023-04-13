@@ -46,6 +46,9 @@ service SandboxService { //Сервис для работы с песочниц�
   //Метод получения операций в песочнице по номеру счёта.
   rpc GetSandboxOperations(OperationsRequest) returns (OperationsResponse);
 
+  //Метод получения операций в песочнице по номеру счета с пагинацией.
+  rpc GetSandboxOperationsByCursor(GetOperationsByCursorRequest) returns (GetOperationsByCursorResponse);
+
   //Метод получения портфолио в песочнице.
   rpc GetSandboxPortfolio(PortfolioRequest) returns (PortfolioResponse);
 

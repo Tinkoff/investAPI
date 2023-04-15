@@ -56,8 +56,28 @@
 
 
 ##Методы сервиса операций в песочнице
-* [GetDividendsForeignIssuer](/investAPI/sandbox#getdividendsforeignissuer) - получение отчёта "Справка о доходах за пределами РФ";
-* [GetBrokerReport](/investAPI/sandbox#getbrokerreport) - получение брокерского отчёта;
+* [GetDividendsForeignIssuer](/investAPI/sandbox#getdividendsforeignissuer) - получение отчёта "Справка о доходах за пределами РФ";  
+Обращаем ваше внимание, что в данном методе песочницы будет возвращать:
+```
+"div_foreign_issuer_report": {     
+        "dividends_foreign_issuer_report": [],
+        "itemsCount": 0,     
+        "pagesCount": 0,     
+        "page": 0   
+},
+"payload": "div_foreign_issuer_report"
+```
+* [GetBrokerReport](/investAPI/sandbox#getbrokerreport) - получение брокерского отчёта;  
+Обращаем ваше внимание, что в данном методе песочницы будет возвращать:
+```
+"get_broker_report_response": {
+    "broker_report": [],
+    "itemsCount": 0,     
+    "pagesCount": 0,     
+    "page": 0
+},
+"payload": "get_broker_report_response"
+```
 * [PortfolioStream](/investAPI/sandbox#portfoliostream) - server-side stream обновлений портфеля;
 * [PositionsStream](/investAPI/sandbox#positionsstream) - server-side stream обновлений информации по изменению позиций портфеля;
 * [GetPortfolio](/investAPI/sandbox#getportfolio) - получение портфеля по счёту.
@@ -66,7 +86,10 @@
 * [TradesStream](/investAPI/sandbox#tradesstream) - получение портфеля по счёту.
 
 ##Методы сервиса cчетов в песочнице
-* [GetMarginAttributes](/investAPI/sandbox#getmarginattributes) - получение портфеля по счёту.
+* [GetMarginAttributes](/investAPI/sandbox#getmarginattributes) - получение портфеля по счёту. Обращаем ваше внимание, что в данном методе песочницы будут возвращены: 
+  * значение пармаетра liquid_portfolio (ликвидной стоимости портефля) = стоимости портфеля. 
+  * starting_margin  = corrected_margin = minimal_margin = amount_of_missing_funds = 0
+  * funds_sufficiency_level = 2
 
 <a name="orderexecute"></a>
 ###Алгоритм исполнения торговых поручений в песочнице

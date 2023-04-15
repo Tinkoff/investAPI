@@ -1,7 +1,7 @@
 #Прекращение поддержки старой версии openAPI
 
 Друзья, с мая 2023 поддержка старой версии openapi прекращается.
-Клиенты, использующие [старую версию](https://github.com/Tinkoff/invest-openapi/) и используюзие сервера api-invest.tinkoff.ru/openapi - должны перейти на новую версию Tinkoff invest API.
+Клиенты, использующие [старую версию](https://github.com/Tinkoff/invest-openapi/) и использующие сервера api-invest.tinkoff.ru/openapi, должны перейти на новую версию Tinkoff invest API.
 
 В новой версии поддерживаются все изменения брокера:
 

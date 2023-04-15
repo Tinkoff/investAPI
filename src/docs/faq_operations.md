@@ -29,8 +29,7 @@
 
 ###Как получить информацию о позициях и доходности портфеля?
 
-Для получения информации о позиция и доходности портфеля необходимо подписаться gRPC server-side stream 
-получения сделок с биржи [PortfolioStream](/investAPI/operations/#portfoliostream) или выполнить запросы в [метод получения портфеля](/investAPI/operations/#getportfolio) и [метод получения позиций по счету](/investAPI/operations/#getpositions).
+Для получения информации о позиция и доходности портфеля необходимо подписаться на на метод [PortfolioStream](/investAPI/operations/#portfoliostream) или выполнить запросы в [метод получения портфеля](/investAPI/operations/#getportfolio) и [метод получения позиций по счету](/investAPI/operations/#getpositions).
 В [PortfolioStream](/investAPI/operations/#portfoliostream) не отображаются заблокированные биржей бумаги. 
 Получить заблокированные бумаги можно в методе [GetPortfolio](/investAPI/operations/#getportfolio) и [GetPossitions](/investAPI/operations/#getpositions).
 
@@ -49,9 +48,9 @@
 
 ###Как понять какие бумаги в портфеле заблокированы по решению ЦБ?
 
-В методах [getPortfolio](/investAPI/operations#getportfolio) и  [getPositions](/investAPI/operations#getpositions) добавлены специальные булевы параметры, означающие что данный инструмент заблокирован депозитарием.
+В методах [getPortfolio](/investAPI/operations#getportfolio) и  [getPositions](/investAPI/operations#getpositions) добавлены специальные булевы параметры, означающие, что данный инструмент заблокирован депозитарием.
 
 ###Что за значения приходят в positions.expectedYield в методе [getPortfolio](/investAPI/operations#getportfolio)?
 
 В методе [getPortfolio](/investAPI/operations#getportfolio) в параметрах positions.expectedYield и positions.expectedYieldFifo
-возвращается значение текущей рассчитанной доходность позиции, это значение в валюте инструмента.
+возвращается значение текущей рассчитанной доходность позиции - это значение в валюте инструмента.

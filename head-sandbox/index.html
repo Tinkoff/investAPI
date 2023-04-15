@@ -1499,8 +1499,30 @@
 </ul>
 <h2 id="_4">Методы сервиса операций в песочнице</h2>
 <ul>
-<li><a href="/investAPI/sandbox#getdividendsforeignissuer">GetDividendsForeignIssuer</a> - получение отчёта "Справка о доходах за пределами РФ";</li>
-<li><a href="/investAPI/sandbox#getbrokerreport">GetBrokerReport</a> - получение брокерского отчёта;</li>
+<li><a href="/investAPI/sandbox#getdividendsforeignissuer">GetDividendsForeignIssuer</a> - получение отчёта "Справка о доходах за пределами РФ";<br />
+Обращаем ваше внимание, что в данном методе песочницы будет возвращать:</li>
+</ul>
+<pre><code>&quot;div_foreign_issuer_report&quot;: {     
+        &quot;dividends_foreign_issuer_report&quot;: [],
+        &quot;itemsCount&quot;: 0,     
+        &quot;pagesCount&quot;: 0,     
+        &quot;page&quot;: 0   
+},
+&quot;payload&quot;: &quot;div_foreign_issuer_report&quot;
+</code></pre>
+<ul>
+<li><a href="/investAPI/sandbox#getbrokerreport">GetBrokerReport</a> - получение брокерского отчёта;<br />
+Обращаем ваше внимание, что в данном методе песочницы будет возвращать:</li>
+</ul>
+<pre><code>&quot;get_broker_report_response&quot;: {
+    &quot;broker_report&quot;: [],
+    &quot;itemsCount&quot;: 0,     
+    &quot;pagesCount&quot;: 0,     
+    &quot;page&quot;: 0
+},
+&quot;payload&quot;: &quot;get_broker_report_response&quot;
+</code></pre>
+<ul>
 <li><a href="/investAPI/sandbox#portfoliostream">PortfolioStream</a> - server-side stream обновлений портфеля;</li>
 <li><a href="/investAPI/sandbox#positionsstream">PositionsStream</a> - server-side stream обновлений информации по изменению позиций портфеля;</li>
 <li><a href="/investAPI/sandbox#getportfolio">GetPortfolio</a> - получение портфеля по счёту.</li>
@@ -1511,7 +1533,10 @@
 </ul>
 <h2 id="c">Методы сервиса cчетов в песочнице</h2>
 <ul>
-<li><a href="/investAPI/sandbox#getmarginattributes">GetMarginAttributes</a> - получение портфеля по счёту.</li>
+<li><a href="/investAPI/sandbox#getmarginattributes">GetMarginAttributes</a> - получение портфеля по счёту. Обращаем ваше внимание, что в данном методе песочницы будут возвращены: </li>
+<li>значение пармаетра liquid_portfolio (ликвидной стоимости портефля) = стоимости портфеля. </li>
+<li>starting_margin  = corrected_margin = minimal_margin = amount_of_missing_funds = 0</li>
+<li>funds_sufficiency_level = 2</li>
 </ul>
 <p><a name="orderexecute"></a></p>
 <h3 id="_6">Алгоритм исполнения торговых поручений в песочнице</h3>

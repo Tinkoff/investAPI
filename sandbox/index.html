@@ -282,7 +282,7 @@
   
     <li class="md-nav__item">
       <a href="../api_protocols/" class="md-nav__link">
-        Доступные протколы взаимодействия
+        Доступные протoколы взаимодействия
       </a>
     </li>
   
@@ -1400,55 +1400,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#getmarginattributes" class="md-nav__link">
-    GetMarginAttributes
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getdividendsforeignissuer" class="md-nav__link">
-    GetDividendsForeignIssuer
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getbrokerreport" class="md-nav__link">
-    GetBrokerReport
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tradesstream" class="md-nav__link">
-    TradesStream
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#portfoliostream" class="md-nav__link">
-    PortfolioStream
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#positionsstream" class="md-nav__link">
-    PositionsStream
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getportfolio" class="md-nav__link">
-    GetPortfolio
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1737,55 +1688,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#getmarginattributes" class="md-nav__link">
-    GetMarginAttributes
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getdividendsforeignissuer" class="md-nav__link">
-    GetDividendsForeignIssuer
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getbrokerreport" class="md-nav__link">
-    GetBrokerReport
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tradesstream" class="md-nav__link">
-    TradesStream
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#portfoliostream" class="md-nav__link">
-    PortfolioStream
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#positionsstream" class="md-nav__link">
-    PositionsStream
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getportfolio" class="md-nav__link">
-    GetPortfolio
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1973,7 +1875,6 @@
 </ul>
 <h4 id="getsandboxorderstate">GetSandboxOrderState</h4>
 <p>Метод получения статуса заявки в песочнице.</p>
-<p>Заявки хранятся в таблице 7 дней.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getorderstaterequest">GetOrderStateRequest</a></p>
@@ -2045,76 +1946,6 @@
 <!-- range .Methods -->
 <!-- range .Services -->
 
-<h4 id="getmarginattributes">GetMarginAttributes</h4>
-<p>Расчёт маржинальных показателей по счёту.</p>
-<ul>
-<li>
-<p>Тело запроса — <a href="#getmarginattributesrequest">GetMarginAttributesRequest</a></p>
-</li>
-<li>
-<p>Тело ответа — <a href="#getmarginattributesresponse">GetMarginAttributesResponse</a></p>
-</li>
-</ul>
-<h4 id="getdividendsforeignissuer">GetDividendsForeignIssuer</h4>
-<p>Метод получения отчёта "Справка о доходах за пределами РФ".</p>
-<ul>
-<li>
-<p>Тело запроса — <a href="#getdividendsforeignissuerrequest">GetDividendsForeignIssuerRequest</a></p>
-</li>
-<li>
-<p>Тело ответа — <a href="#getdividendsforeignissuerresponse">GetDividendsForeignIssuerResponse</a></p>
-</li>
-</ul>
-<h4 id="getbrokerreport">GetBrokerReport</h4>
-<p>Метод получения брокерского отчёта.</p>
-<ul>
-<li>
-<p>Тело запроса — <a href="#brokerreportrequest">BrokerReportRequest</a></p>
-</li>
-<li>
-<p>Тело ответа — <a href="#brokerreportresponse">BrokerReportResponse</a></p>
-</li>
-</ul>
-<h4 id="tradesstream">TradesStream</h4>
-<p>Stream сделок пользователя</p>
-<ul>
-<li>
-<p>Тело запроса — <a href="#tradesstreamrequest">TradesStreamRequest</a></p>
-</li>
-<li>
-<p>Тело ответа — <a href="#tradesstreamresponse">TradesStreamResponse</a></p>
-</li>
-</ul>
-<h4 id="portfoliostream">PortfolioStream</h4>
-<p>Server-side stream обновлений портфеля</p>
-<ul>
-<li>
-<p>Тело запроса — <a href="#portfoliostreamrequest">PortfolioStreamRequest</a></p>
-</li>
-<li>
-<p>Тело ответа — <a href="#portfoliostreamresponse">PortfolioStreamResponse</a></p>
-</li>
-</ul>
-<h4 id="positionsstream">PositionsStream</h4>
-<p>Server-side stream обновлений информации по изменению позиций портфеля</p>
-<ul>
-<li>
-<p>Тело запроса — <a href="#positionsstreamrequest">PositionsStreamRequest</a></p>
-</li>
-<li>
-<p>Тело ответа — <a href="#positionsstreamresponse">PositionsStreamResponse</a></p>
-</li>
-</ul>
-<h4 id="getportfolio">GetPortfolio</h4>
-<p>Метод получения портфеля по счёту.</p>
-<ul>
-<li>
-<p>Тело запроса — <a href="#portfoliorequest">PortfolioRequest</a></p>
-</li>
-<li>
-<p>Тело ответа — <a href="#portfolioresponse">PortfolioResponse</a></p>
-</li>
-</ul>
 <h3 id="_2">Сообщения методов</h3>
 <h4 id="opensandboxaccountrequest">OpenSandboxAccountRequest</h4>
 <p>Запрос открытия счёта в песочнице.</p>

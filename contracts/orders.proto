@@ -70,7 +70,7 @@ message OrderTrade {
 
 //Запрос выставления торгового поручения.
 message PostOrderRequest {
-  string figi = 1; //Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.
+  string figi = 1 [ deprecated = true ]; //Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.
   int64 quantity = 2; //Количество лотов.
   Quotation price = 3; //Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Игнорируется для рыночных поручений.
   OrderDirection direction = 4; //Направление операции.
@@ -80,9 +80,11 @@ message PostOrderRequest {
   string instrument_id = 8; //Идентификатор инструмента, принимает значения Figi или Instrument_uid.
 }
 
+//Прочитайте  про ключ идемпотентности [здесь](https://tinkoff.github.io/investAPI/head-orders/)
+
 //Информация о выставлении поручения.
 message PostOrderResponse {
-  string order_id = 1; //Идентификатор заявки.
+  string order_id = 1; //Биржевой идентификатор заявки.
   OrderExecutionReportStatus execution_report_status = 2; //Текущий статус заявки.
   int64 lots_requested = 3; //Запрошено лотов.
   int64 lots_executed = 4; //Исполнено лотов.
@@ -132,7 +134,7 @@ message GetOrdersResponse {
 
 //Информация о торговом поручении.
 message OrderState {
-  string order_id = 1; //Идентификатор заявки.
+  string order_id = 1; //Биржевой идентификатор заявки.
   OrderExecutionReportStatus execution_report_status = 2; //Текущий статус заявки.
   int64 lots_requested = 3; //Запрошено лотов.
   int64 lots_executed = 4; //Исполнено лотов.
@@ -151,6 +153,7 @@ message OrderState {
   OrderType order_type = 17; //Тип заявки.
   google.protobuf.Timestamp order_date = 18; //Дата и время выставления заявки в часовом поясе UTC.
   string instrument_uid = 19; //UID идентификатор инструмента.
+  string order_request_id = 20; //Идентификатор ключа идемпотентности, переданный клиентом.
 }
 
 //Сделки в рамках торгового поручения.
@@ -182,6 +185,7 @@ enum OrderType {
   ORDER_TYPE_UNSPECIFIED = 0; //Значение не указано
   ORDER_TYPE_LIMIT = 1; //Лимитная
   ORDER_TYPE_MARKET = 2; //Рыночная
+  ORDER_TYPE_BESTPRICE = 3; //Лучшая цена
 }
 
 //Текущий статус заявки (поручения)

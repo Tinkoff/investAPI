@@ -127,6 +127,7 @@ message UnaryLimit {
 message StreamLimit {
   int32 limit = 1; //Максимальное количество stream-соединений.
   repeated string streams = 2; //Названия stream-методов.
+  int32 open = 3; //Текущее количество открытых stream-соединений.
 }
 
 //Запрос информации о пользователе.

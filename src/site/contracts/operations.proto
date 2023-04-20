@@ -153,10 +153,10 @@ message PortfolioPosition {
   MoneyValue average_position_price = 4; //Средневзвешенная цена позиции. **Возможна задержка до секунды для пересчёта**.
   Quotation expected_yield = 5; //Текущая рассчитанная доходность позиции.
   MoneyValue current_nkd = 6; // Текущий НКД.
-  Quotation average_position_price_pt = 7; // Deprecated Средняя цена позиции в пунктах (для фьючерсов). **Возможна задержка до секунды для пересчёта**.
+  Quotation average_position_price_pt = 7 [ deprecated = true ]; // Deprecated Средняя цена позиции в пунктах (для фьючерсов). **Возможна задержка до секунды для пересчёта**.
   MoneyValue current_price = 8; //Текущая цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
   MoneyValue average_position_price_fifo = 9; //Средняя цена позиции по методу FIFO. **Возможна задержка до секунды для пересчёта**.
-  Quotation quantity_lots = 10; //Deprecated Количество лотов в портфеле.
+  Quotation quantity_lots = 10 [ deprecated = true ]; //Deprecated Количество лотов в портфеле.
   bool blocked = 21; //Заблокировано на бирже.
   Quotation blocked_lots = 22; //Количество бумаг, заблокированных выставленными заявками.
   string position_uid = 24; //position_uid-идентификатора инструмента

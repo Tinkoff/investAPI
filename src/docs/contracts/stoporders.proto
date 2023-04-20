@@ -27,7 +27,7 @@ service StopOrdersService { /* Сервис предназначен для ра
 
 //Запрос выставления стоп-заявки.
 message PostStopOrderRequest {
-  string figi = 1; //Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.
+  string figi = 1 [ deprecated = true ]; //Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.
   int64 quantity = 2; //Количество лотов.
   Quotation price = 3; //Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.
   Quotation stop_price = 4; //Стоп-цена заявки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.

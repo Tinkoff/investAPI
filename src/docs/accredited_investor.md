@@ -22,4 +22,3 @@
 Подробнее можно почитать по ссылке: [требования к квалифицированному инвестору](https://help.tinkoff.ru/invest-premium/invest-premium-qualification/invest-premium-requirement/).
 
 О порядке получения статуса: [как получить статус квалифицированного инвестора?](https://help.tinkoff.ru/invest-premium/invest-premium-qualification/how-to-get-qualification/)
-

@@ -87,7 +87,7 @@
 
 ##Методы сервиса cчетов в песочнице
 * [GetMarginAttributes](/investAPI/sandbox#getmarginattributes) - получение портфеля по счёту. Обращаем ваше внимание, что в данном методе песочницы будут возвращены: 
-  * значение пармаетра liquid_portfolio (ликвидной стоимости портефля) = стоимости портфеля. 
+  * значение параметра liquid_portfolio (ликвидной стоимости портфеля) = стоимости портфеля. 
   * starting_margin  = corrected_margin = minimal_margin = amount_of_missing_funds = 0
   * funds_sufficiency_level = 2
 

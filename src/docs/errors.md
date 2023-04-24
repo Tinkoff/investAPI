@@ -3,7 +3,6 @@
 |Код ошибки|Тип ошибки|Текст ошибки|Причины возникновения и </br> рекомендации по устранению|
 |---|---|---|---|
 12001|UNIMPLEMENTED|Method is unimplemented|Метод не реализован.|
-12002|UNAVAILABLE|Deprecated method is unavailable|Метод устарел и недоступен.|
 30001|INVALID_ARGUMENT|missing parameter: 'from'|Входной параметр *from* является обязательным. </br> Укажите корректный параметр *from*.|
 30002|INVALID_ARGUMENT|the required period should not exceed 7 days|Запрошенный период не может превышать 7 дней. </br> Укажите корректный период.|
 30003|INVALID_ARGUMENT|'from' can't be less than the current date|Входной параметр *from* не может быть меньше текущей даты. </br> Укажите корректный параметр *from*.|
@@ -95,7 +94,6 @@
 30099|INVALID_ARGUMENT|the price is outside the limits for this instrument|Цена вне лимитов по инструменту или цена сделки вне лимита.|
 30100|INVALID_ARGUMENT|the price must be positive|Цена должна быть положительной.|
 30101|INVALID_ARGUMENT|to trade this financial instrument, pass the test|Для торговли этим инструментом пройдите тестирование.|
-30102|INVALID_ARGUMENT|Required parameters missing|Не правильно указаны обязателеные параметры.|
 40002|PERMISSION_DENIED|insufficient privileges|Недостаточно прав для совершения операции. </br>Токен доступа имеет уровень прав read-only, либо у токена нет доступа к указанному счету.</br>Подробнее: [Виды токенов](https://tinkoff.github.io/investAPI/index#_2)|
 40003|UNAUTHENTICATED|authentication token is missing or invalid|Токен доступа не найден или не активен. </br>Вы можете выпустить новый токен по ссылке [Настройки](https://www.tinkoff.ru/invest/settings/)|
 40004|PERMISSION_DENIED|Working with orders is not available with this account|Выставление заявок недоступно с текущего аккаунта.|

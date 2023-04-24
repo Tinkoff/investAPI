@@ -801,7 +801,6 @@ subscribeCandles | Изменения статуса подписки на св�
 | CANDLE_INTERVAL_WEEK | 12 | 1 неделя. |
 | CANDLE_INTERVAL_MONTH | 13 | 1 месяц. |
 
-
  <!-- range .Enums -->
  <!-- range HasServices -->
  <!-- range .Files -->

@@ -4,6 +4,11 @@
     "type": "UNIMPLEMENTED",
     "description": "Метод не реализован."
   },
+  "12002": {
+    "message": "Deprecated method is unavailable",
+    "type": "UNAVAILABLE",
+    "description": "Метод устарел и недоступен."
+  },
   "30001": {
     "message": "missing parameter: 'from'",
     "type": "INVALID_ARGUMENT",
@@ -458,6 +463,11 @@
     "message": "to trade this financial instrument, pass the test",
     "type": "INVALID_ARGUMENT",
     "description": "Для торговли этим инструментом пройдите тестирование."
+  },
+  "30102": {
+    "message": "Required parameters missing",
+    "type": "INVALID_ARGUMENT",
+    "description": "Не правильно указаны обязателеные параметры."
   },
   "40002": {
     "message": "insufficient privileges",

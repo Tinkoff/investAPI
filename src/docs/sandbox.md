@@ -69,8 +69,6 @@
 #### GetSandboxOrderState
 Метод получения статуса заявки в песочнице.
 
-Заявки хранятся в таблице 7 дней.
-
 - Тело запроса — [GetOrderStateRequest](#getorderstaterequest)
 
 - Тело ответа — [OrderState](#orderstate)
@@ -125,7 +123,6 @@
 
  <!-- range .Methods -->
  <!-- range .Services -->
-
 
 ###Сообщения методов
 

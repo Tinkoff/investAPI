@@ -4,7 +4,7 @@ info:
   termsOfService: https://www.tinkoff.ru/invest/disclaimers/basic-information/
   contact:
     email: al.a.volkov@tinkoff.ru
-  version: 1.4.0-RELEASE
+  version: '1.4'
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0
@@ -11103,3 +11103,7 @@ components:
           $ref: '#/components/schemas/rpcStatus'
       title: Stream result of v1TradesStreamResponse
       type: object
+securitySchemes:
+  Bearer:
+    type: http
+    scheme: bearer

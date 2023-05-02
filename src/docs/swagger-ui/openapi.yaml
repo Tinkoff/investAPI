@@ -11103,7 +11103,7 @@ components:
           $ref: '#/components/schemas/rpcStatus'
       title: Stream result of v1TradesStreamResponse
       type: object
-securitySchemes:
-  Bearer:
-    type: http
-    scheme: bearer
+  securitySchemes:
+    Bearer:
+      type: http
+      scheme: bearer

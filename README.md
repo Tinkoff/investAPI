@@ -60,6 +60,7 @@ API реализован на быстром, удобном и функцион
 Вы можете как самостоятельно создать обертку по [proto-контрактам](https://github.com/Tinkoff/investAPI/tree/main/src/docs/contracts) так воспользоваться одним из SDK:
 
 ## Официальные
+* [go](https://github.com/Tinkoff/invest-api-go-sdk)
 * [python](https://github.com/Tinkoff/invest-python)
 * [java](https://github.com/Tinkoff/invest-api-java-sdk)
 * [csharp](https://github.com/Tinkoff/invest-api-csharp-sdk)

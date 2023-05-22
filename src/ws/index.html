@@ -1,0 +1,472 @@
+<html><head>
+<meta charset="utf-8" />
+<style>body {
+   color: black;
+}
+</style></head><body><h1 id="websocket-proxy-for-grpc-streaming">Websocket proxy for grpc streaming</h1>
+<p>Сервис для получения сообщений grpc streaming Тинькофф Инвестиции через json websocket</p>
+<p>Адрес для подключения <strong>wss://invest-public-api.tinkoff.ru/ws/</strong></p>
+<ul>
+<li><strong>*token</strong> - токен доступа к счету Тинькофф Инвестиции можно передать в заголовке <code>Authorization: Bearer *token</code>
+, либо  в заголовке <code>Web-Socket-Protocol: json, *token</code></li>
+<li>запрос на подключение требует указание протокола json в заголовоке <code>Web-Socket-Protocol: json</code></li>
+</ul>
+<h2 id="-">Сервис поручений</h2>
+<h3 id="-">Лента сделок.</h3>
+<p>endpoint: wss://invest-public-api.tinkoff.ru/ws/tinkoff.public.invest.api.contract.v1.OrdersStreamService/TradesStream</p>
+<p><a href="/ws/websock-docs/output/index.html#schema-v1TradesStreamRequest">TradesStreamRequest</a>
+<a href="/ws/websock-docs/output/index.html#schema-v1TradesStreamResponse">TradesStreamResponse</a></p>
+<p>Пример запроса</p>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"accounts"</span>: [
+    <span class="hljs-string">"*accountId"</span>
+  ]
+}
+</code></pre>
+<p>Пример ответа</p>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"orderTrades"</span>: {
+    <span class="hljs-attr">"orderId"</span>: <span class="hljs-string">"36042910361"</span>,
+    <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2023-05-16T13:27:14.682140664Z"</span>,
+    <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"ORDER_DIRECTION_SELL"</span>,
+    <span class="hljs-attr">"figi"</span>: <span class="hljs-string">"BBG00RPRPX12"</span>,
+    <span class="hljs-attr">"trades"</span>: [
+      {
+        <span class="hljs-attr">"dateTime"</span>: <span class="hljs-string">"2023-05-16T13:27:13.423246Z"</span>,
+        <span class="hljs-attr">"price"</span>: {
+          <span class="hljs-attr">"units"</span>: <span class="hljs-string">"1"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">235000000</span>
+        },
+        <span class="hljs-attr">"quantity"</span>: <span class="hljs-string">"1"</span>,
+        <span class="hljs-attr">"tradeId"</span>: <span class="hljs-string">"7653265991"</span>
+      }
+    ],
+    <span class="hljs-attr">"accountId"</span>: <span class="hljs-string">"*accountId"</span>,
+    <span class="hljs-attr">"instrumentUid"</span>: <span class="hljs-string">"ade12bc5-07d9-44fe-b27a-1543e05bacfd"</span>
+  }
+}
+</code></pre>
+<p><a href="/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.OrdersStreamService/TradesStream">Проверить</a></p>
+<h2 id="-">Сервис операций</h2>
+<h3 id="-">Лента событий по позициям.</h3>
+<p>endpoint: wss://invest-public-api.tinkoff.ru/ws/tinkoff.public.invest.api.contract.v1.OperationsStreamService/PositionsStream</p>
+<p><a href="/ws/websock-docs/output/index.html#schema-v1PositionsStreamRequest">PositionsStreamRequest</a>
+<a href="/ws/websock-docs/output/index.html#schema-v1PositionsStreamResponse">PositionsStreamResponse</a></p>
+<p>Пример запроса</p>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"accounts"</span>: [
+    <span class="hljs-string">"*accountId"</span>
+  ]
+}
+</code></pre>
+<p>Пример ответа - подписка успешна</p>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"subscriptions"</span>: {
+    <span class="hljs-attr">"accounts"</span>: [
+      {
+        <span class="hljs-attr">"accountId"</span>: <span class="hljs-string">"*accountId"</span>,
+        <span class="hljs-attr">"subscriptionStatus"</span>: <span class="hljs-string">"POSITIONS_SUBSCRIPTION_STATUS_SUCCESS"</span>
+      }
+    ]
+  }
+}
+</code></pre>
+<p>Пример события - изменение позици в портфеле</p>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"position"</span>: {
+    <span class="hljs-attr">"accountId"</span>: <span class="hljs-string">"*accountId"</span>,
+    <span class="hljs-attr">"money"</span>: [
+      {
+        <span class="hljs-attr">"availableValue"</span>: {
+          <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"rub"</span>,
+          <span class="hljs-attr">"units"</span>: <span class="hljs-string">"3148"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">130000000</span>
+        },
+        <span class="hljs-attr">"blockedValue"</span>: {
+          <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"rub"</span>,
+          <span class="hljs-attr">"units"</span>: <span class="hljs-string">"0"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">20000000</span>
+        }
+      }
+    ],
+    <span class="hljs-attr">"securities"</span>: [
+      {
+        <span class="hljs-attr">"figi"</span>: <span class="hljs-string">"BBG00RPRPX12"</span>,
+        <span class="hljs-attr">"blocked"</span>: <span class="hljs-string">"0"</span>,
+        <span class="hljs-attr">"balance"</span>: <span class="hljs-string">"9"</span>,
+        <span class="hljs-attr">"positionUid"</span>: <span class="hljs-string">"eee36ccf-5f28-4419-9c29-c6465f39581a"</span>,
+        <span class="hljs-attr">"instrumentUid"</span>: <span class="hljs-string">"ade12bc5-07d9-44fe-b27a-1543e05bacfd"</span>,
+        <span class="hljs-attr">"exchangeBlocked"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">"instrumentType"</span>: <span class="hljs-string">"etf"</span>
+      }
+    ],
+    <span class="hljs-attr">"futures"</span>: [],
+    <span class="hljs-attr">"options"</span>: [],
+    <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-05-16T13:29:13.411710Z"</span>
+  }
+}
+</code></pre>
+<p><a href="/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.OperationsStreamService/PositionsStream">Проверить</a></p>
+<h3 id="-">Лента событий по портфелям.</h3>
+<p>endpoint: wss://invest-public-api.tinkoff.ru/ws/tinkoff.public.invest.api.contract.v1.OperationsStreamService/PortfolioStream</p>
+
+<p><a href="/ws/websock-docs/output/index.html#schema-v1PortfolioStreamRequest">PortfolioStreamRequest</a>
+<a href="/ws/websock-docs/output/index.html#schema-v1PortfolioStreamResponse">PortfolioStreamResponse</a></p>
+<p>Пример запроса</p>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"accounts"</span>: [
+    <span class="hljs-string">"*accountId"</span>
+  ]
+}
+</code></pre>
+<p>Пример ответа подписка успешна</p>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"subscriptions"</span>: {
+    <span class="hljs-attr">"accounts"</span>: [
+      {
+        <span class="hljs-attr">"accountId"</span>: <span class="hljs-string">"*accountId"</span>,
+        <span class="hljs-attr">"subscriptionStatus"</span>: <span class="hljs-string">"PORTFOLIO_SUBSCRIPTION_STATUS_SUCCESS"</span>
+      }
+    ]
+  }
+}
+</code></pre>
+<p>Пример события изменения по портфелю</p>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"portfolio"</span>: {
+    <span class="hljs-attr">"totalAmountShares"</span>: {
+      <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"rub"</span>,
+      <span class="hljs-attr">"units"</span>: <span class="hljs-string">"2787"</span>,
+      <span class="hljs-attr">"nano"</span>: <span class="hljs-number">700000000</span>
+    },
+    <span class="hljs-attr">"totalAmountBonds"</span>: {
+      <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"rub"</span>,
+      <span class="hljs-attr">"units"</span>: <span class="hljs-string">"0"</span>,
+      <span class="hljs-attr">"nano"</span>: <span class="hljs-number">0</span>
+    },
+    <span class="hljs-attr">"totalAmountEtf"</span>: {
+      <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"rub"</span>,
+      <span class="hljs-attr">"units"</span>: <span class="hljs-string">"11"</span>,
+      <span class="hljs-attr">"nano"</span>: <span class="hljs-number">115000000</span>
+    },
+    <span class="hljs-attr">"totalAmountCurrencies"</span>: {
+      <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"rub"</span>,
+      <span class="hljs-attr">"units"</span>: <span class="hljs-string">"3194"</span>,
+      <span class="hljs-attr">"nano"</span>: <span class="hljs-number">843600000</span>
+    },
+    <span class="hljs-attr">"expectedYield"</span>: {
+      <span class="hljs-attr">"units"</span>: <span class="hljs-string">"9158"</span>,
+      <span class="hljs-attr">"nano"</span>: <span class="hljs-number">160000000</span>
+    },
+    <span class="hljs-attr">"positions"</span>: [
+      {
+        <span class="hljs-attr">"figi"</span>: <span class="hljs-string">"BBG004S68473"</span>,
+        <span class="hljs-attr">"instrumentType"</span>: <span class="hljs-string">"share"</span>,
+        <span class="hljs-attr">"quantity"</span>: {
+          <span class="hljs-attr">"units"</span>: <span class="hljs-string">"400"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">0</span>
+        },
+        <span class="hljs-attr">"averagePositionPrice"</span>: {
+          <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"rub"</span>,
+          <span class="hljs-attr">"units"</span>: <span class="hljs-string">"3"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">942567000</span>
+        },
+        <span class="hljs-attr">"expectedYield"</span>: {
+          <span class="hljs-attr">"units"</span>: <span class="hljs-string">"6"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">352000000</span>
+        },
+        <span class="hljs-attr">"averagePositionPricePt"</span>: {
+          <span class="hljs-attr">"units"</span>: <span class="hljs-string">"3"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">942567000</span>
+        },
+        <span class="hljs-attr">"currentPrice"</span>: {
+          <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"rub"</span>,
+          <span class="hljs-attr">"units"</span>: <span class="hljs-string">"4"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">193000000</span>
+        },
+        <span class="hljs-attr">"averagePositionPriceFifo"</span>: {
+          <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"rub"</span>,
+          <span class="hljs-attr">"units"</span>: <span class="hljs-string">"3"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">956275000</span>
+        },
+        <span class="hljs-attr">"quantityLots"</span>: {
+          <span class="hljs-attr">"units"</span>: <span class="hljs-string">"4"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">0</span>
+        },
+        <span class="hljs-attr">"blocked"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">"positionUid"</span>: <span class="hljs-string">"427f9bcc-2cab-4561-bf94-942d4261fbb7"</span>,
+        <span class="hljs-attr">"instrumentUid"</span>: <span class="hljs-string">"2dfbc1fd-b92a-436e-b011-928c79e805f2"</span>
+      }
+    ],
+    <span class="hljs-attr">"accountId"</span>: <span class="hljs-string">"*accountId"</span>,
+    <span class="hljs-attr">"virtualPositions"</span>: []
+  }
+}
+</code></pre>
+<p><a href="/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.OperationsStreamService/PortfolioStream">Проверить</a></p>
+<h2 id="-">Сервис рыночных данных</h2>
+<p>endpoint: wss://invest-public-api.tinkoff.ru/ws/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream</p>
+<p><a href="/ws/websock-docs/output/index.html#message-v1MarketDataRequest">MarketDataRequest</a>
+<a href="/ws/websock-docs/output/index.html#message-v1MarketDataResponse">MarketDataResponse</a></p>
+<h3 id="-">Лента торговых статусов инструментов</h3>
+<p>Пример запроса</p>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"subscribeInfoRequest"</span>: {
+    <span class="hljs-attr">"subscriptionAction"</span>: <span class="hljs-string">"SUBSCRIPTION_ACTION_SUBSCRIBE"</span>,
+    <span class="hljs-attr">"instruments"</span>: [
+      {
+        <span class="hljs-attr">"instrumentId"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
+      }
+    ]
+  }
+}
+</code></pre>
+<p>Пример ответа - подписка успешна</p>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"subscribeInfoResponse"</span>: {
+    <span class="hljs-attr">"trackingId"</span>: <span class="hljs-string">"644a898058ce5265b24f9adc21011f67"</span>,
+    <span class="hljs-attr">"infoSubscriptions"</span>: [
+      {
+        <span class="hljs-attr">"figi"</span>: <span class="hljs-string">"BBG004730RP0"</span>,
+        <span class="hljs-attr">"subscriptionStatus"</span>: <span class="hljs-string">"SUBSCRIPTION_STATUS_SUCCESS"</span>,
+        <span class="hljs-attr">"instrumentUid"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
+      }
+    ]
+  }
+}
+</code></pre>
+<p>Пример сообщения торговый статус по инструменту</p>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"tradingStatus"</span>: {
+    <span class="hljs-attr">"figi"</span>: <span class="hljs-string">"BBG004730RP0"</span>,
+    <span class="hljs-attr">"tradingStatus"</span>: <span class="hljs-string">"SECURITY_TRADING_STATUS_NORMAL_TRADING"</span>,
+    <span class="hljs-attr">"time"</span>: <span class="hljs-string">"2023-05-16T07:00:00.750460Z"</span>,
+    <span class="hljs-attr">"limitOrderAvailableFlag"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"marketOrderAvailableFlag"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"instrumentUid"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
+  }
+}
+</code></pre>
+<p><a href="/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream">Проверить</a></p>
+<h3 id="-">Лента цен последних сделок</h3>
+<p>Пример запроса</p>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"subscribeLastPriceRequest"</span>: {
+    <span class="hljs-attr">"subscriptionAction"</span>: <span class="hljs-string">"SUBSCRIPTION_ACTION_SUBSCRIBE"</span>,
+    <span class="hljs-attr">"instruments"</span>: [
+      {
+        <span class="hljs-attr">"instrumentId"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
+      }
+    ]
+  }
+}
+</code></pre>
+<p>Пример ответа - подписка успешна</p>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"subscribeLastPriceResponse"</span>: {
+    <span class="hljs-attr">"trackingId"</span>: <span class="hljs-string">"644a875239934cfcda96460984a55ced"</span>,
+    <span class="hljs-attr">"lastPriceSubscriptions"</span>: [
+      {
+        <span class="hljs-attr">"figi"</span>: <span class="hljs-string">"BBG004730RP0"</span>,
+        <span class="hljs-attr">"subscriptionStatus"</span>: <span class="hljs-string">"SUBSCRIPTION_STATUS_SUCCESS"</span>,
+        <span class="hljs-attr">"instrumentUid"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
+      }
+    ]
+  }
+}
+</code></pre>
+<p>Пример сообщения последние цены по инструменту</p>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"lastPrice"</span>: {
+    <span class="hljs-attr">"figi"</span>: <span class="hljs-string">"BBG004730RP0"</span>,
+    <span class="hljs-attr">"price"</span>: {
+      <span class="hljs-attr">"units"</span>: <span class="hljs-string">"178"</span>,
+      <span class="hljs-attr">"nano"</span>: <span class="hljs-number">790000000</span>
+    },
+    <span class="hljs-attr">"time"</span>: <span class="hljs-string">"2023-05-16T08:49:31.085056Z"</span>,
+    <span class="hljs-attr">"instrumentUid"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
+  }
+}
+</code></pre>
+<p><a href="/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream">Проверить</a></p>
+<h3 id="-">Лента обезличенных сделок</h3>
+<p>Пример запроса</p>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"subscribeTradesRequest"</span>: {
+    <span class="hljs-attr">"subscriptionAction"</span>: <span class="hljs-string">"SUBSCRIPTION_ACTION_SUBSCRIBE"</span>,
+    <span class="hljs-attr">"instruments"</span>: [
+      {
+        <span class="hljs-attr">"instrumentId"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
+      }
+    ]
+  }
+}
+</code></pre>
+<p>Пример ответа - подписка успешна</p>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"subscribeTradesResponse"</span>: {
+    <span class="hljs-attr">"trackingId"</span>: <span class="hljs-string">"6440d32adb48515bc217b426880a99a7"</span>,
+    <span class="hljs-attr">"tradeSubscriptions"</span>: [
+      {
+        <span class="hljs-attr">"figi"</span>: <span class="hljs-string">"BBG004730RP0"</span>,
+        <span class="hljs-attr">"subscriptionStatus"</span>: <span class="hljs-string">"SUBSCRIPTION_STATUS_SUCCESS"</span>,
+        <span class="hljs-attr">"instrumentUid"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
+      }
+    ]
+  }
+}
+</code></pre>
+<p>Пример сообщения обезличиные сделки по инстурменту</p>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"trade"</span>: {
+    <span class="hljs-attr">"figi"</span>: <span class="hljs-string">"BBG004730RP0"</span>,
+    <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"TRADE_DIRECTION_SELL"</span>,
+    <span class="hljs-attr">"price"</span>: {
+      <span class="hljs-attr">"units"</span>: <span class="hljs-string">"178"</span>,
+      <span class="hljs-attr">"nano"</span>: <span class="hljs-number">860000000</span>
+    },
+    <span class="hljs-attr">"quantity"</span>: <span class="hljs-string">"200"</span>,
+    <span class="hljs-attr">"time"</span>: <span class="hljs-string">"2023-05-16T08:50:22.807741Z"</span>,
+    <span class="hljs-attr">"instrumentUid"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
+  }
+}
+</code></pre>
+<p><a href="/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream">Проверить</a></p>
+<h3 id="-">Лента событий по стаканам</h3>
+<p>Пример запроса</p>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"subscribeOrderBookRequest"</span>: {
+    <span class="hljs-attr">"subscriptionAction"</span>: <span class="hljs-string">"SUBSCRIPTION_ACTION_SUBSCRIBE"</span>,
+    <span class="hljs-attr">"instruments"</span>: [
+      {
+        <span class="hljs-attr">"depth"</span>:  <span class="hljs-number">10</span>,
+        <span class="hljs-attr">"instrumentId"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
+      }
+    ],
+    <span class="hljs-attr">"waitingClose"</span>: <span class="hljs-literal">false</span>
+  }
+}
+</code></pre>
+<p>Пример ответа - подписка успешна</p>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"subscribeOrderBookResponse"</span>: {
+    <span class="hljs-attr">"trackingId"</span>: <span class="hljs-string">"6440cfbaa85be1a52839fc81e5f0f14f"</span>,
+    <span class="hljs-attr">"orderBookSubscriptions"</span>: [
+      {
+        <span class="hljs-attr">"figi"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"depth"</span>: <span class="hljs-number">10</span>,
+        <span class="hljs-attr">"subscriptionStatus"</span>: <span class="hljs-string">"SUBSCRIPTION_STATUS_SUCCESS"</span>,
+        <span class="hljs-attr">"instrumentUid"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
+      }
+    ]
+  }
+}
+</code></pre>
+<p>Пример сообщения стака по инструменту</p>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"orderbook"</span>: {
+    <span class="hljs-attr">"figi"</span>: <span class="hljs-string">"BBG004730RP0"</span>,
+    <span class="hljs-attr">"depth"</span>: <span class="hljs-number">10</span>,
+    <span class="hljs-attr">"isConsistent"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"bids"</span>: [
+      {
+        <span class="hljs-attr">"price"</span>: {
+          <span class="hljs-attr">"units"</span>: <span class="hljs-string">"178"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">970000000</span>
+        },
+        <span class="hljs-attr">"quantity"</span>: <span class="hljs-string">"20"</span>
+      }...
+      # ...other <span class="hljs-number">9</span> items collapsed
+    ],
+    <span class="hljs-attr">"asks"</span>: [
+      {
+        <span class="hljs-attr">"price"</span>: {
+          <span class="hljs-attr">"units"</span>: <span class="hljs-string">"178"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">980000000</span>
+        },
+        <span class="hljs-attr">"quantity"</span>: <span class="hljs-string">"3"</span>
+      }...
+      # ...other <span class="hljs-number">9</span> items collapsed
+    ],
+    <span class="hljs-attr">"time"</span>: <span class="hljs-string">"2023-05-16T08:54:00.549662Z"</span>,
+    <span class="hljs-attr">"limitUp"</span>: {
+      <span class="hljs-attr">"units"</span>: <span class="hljs-string">"191"</span>,
+      <span class="hljs-attr">"nano"</span>: <span class="hljs-number">440000000</span>
+    },
+    <span class="hljs-attr">"limitDown"</span>: {
+      <span class="hljs-attr">"units"</span>: <span class="hljs-string">"156"</span>,
+      <span class="hljs-attr">"nano"</span>: <span class="hljs-number">240000000</span>
+    },
+    <span class="hljs-attr">"instrumentUid"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
+  }
+}
+</code></pre>
+<p><a href="/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream">Проверить</a></p>
+<h3 id="-">Лента события по свечам</h3>
+<p>Пример запроса</p>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"subscribeCandlesRequest"</span>: {
+    <span class="hljs-attr">"subscriptionAction"</span>: <span class="hljs-string">"SUBSCRIPTION_ACTION_SUBSCRIBE"</span>,
+    <span class="hljs-attr">"instruments"</span>: [
+      {
+        <span class="hljs-attr">"interval"</span>: <span class="hljs-string">"SUBSCRIPTION_INTERVAL_ONE_MINUTE"</span>,
+        <span class="hljs-attr">"instrumentId"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
+      }
+    ],
+    <span class="hljs-attr">"waitingClose"</span>: <span class="hljs-literal">false</span>
+  }
+}
+</code></pre>
+<p>Пример ответа - подписка успешна</p>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"subscribeCandlesResponse"</span>: {
+    <span class="hljs-attr">"trackingId"</span>: <span class="hljs-string">"644a8c236378693c5265a3f679698708"</span>,
+    <span class="hljs-attr">"candlesSubscriptions"</span>: [
+      {
+        <span class="hljs-attr">"figi"</span>: <span class="hljs-string">"BBG004730RP0"</span>,
+        <span class="hljs-attr">"interval"</span>: <span class="hljs-string">"SUBSCRIPTION_INTERVAL_ONE_MINUTE"</span>,
+        <span class="hljs-attr">"subscriptionStatus"</span>: <span class="hljs-string">"SUBSCRIPTION_STATUS_SUCCESS"</span>,
+        <span class="hljs-attr">"instrumentUid"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
+      }
+    ]
+  }
+}
+</code></pre>
+<p>Пример события свеча по инструменту</p>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"candle"</span>: {
+    <span class="hljs-attr">"figi"</span>: <span class="hljs-string">"BBG004730RP0"</span>,
+    <span class="hljs-attr">"interval"</span>: <span class="hljs-string">"SUBSCRIPTION_INTERVAL_ONE_MINUTE"</span>,
+    <span class="hljs-attr">"open"</span>: {
+      <span class="hljs-attr">"units"</span>: <span class="hljs-string">"179"</span>,
+      <span class="hljs-attr">"nano"</span>: <span class="hljs-number">50000000</span>
+    },
+    <span class="hljs-attr">"high"</span>: {
+      <span class="hljs-attr">"units"</span>: <span class="hljs-string">"179"</span>,
+      <span class="hljs-attr">"nano"</span>: <span class="hljs-number">70000000</span>
+    },
+    <span class="hljs-attr">"low"</span>: {
+      <span class="hljs-attr">"units"</span>: <span class="hljs-string">"178"</span>,
+      <span class="hljs-attr">"nano"</span>: <span class="hljs-number">950000000</span>
+    },
+    <span class="hljs-attr">"close"</span>: {
+      <span class="hljs-attr">"units"</span>: <span class="hljs-string">"178"</span>,
+      <span class="hljs-attr">"nano"</span>: <span class="hljs-number">950000000</span>
+    },
+    <span class="hljs-attr">"volume"</span>: <span class="hljs-string">"4279"</span>,
+    <span class="hljs-attr">"time"</span>: <span class="hljs-string">"2023-05-16T08:44:00Z"</span>,
+    <span class="hljs-attr">"lastTradeTs"</span>: <span class="hljs-string">"2023-05-16T08:44:27.432487Z"</span>,
+    <span class="hljs-attr">"instrumentUid"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
+  }
+}
+</code></pre>
+<p><a href="/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream">Проверить</a></p>
+<h2 id="-">Пинг сообщения</h2>
+<p>Пример </p>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"ping"</span>: {
+    <span class="hljs-attr">"time"</span>: <span class="hljs-string">"2023-05-16T08:32:00.472145624Z"</span>
+  }
+}
+</code></pre>
+</body></html>

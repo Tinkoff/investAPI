@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="https://acdn.tinkoff.ru/params/common_front/resourses/icons/favicon-32x32.png" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/quasar@2.11.5/dist/quasar.prod.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+            name="description"
+            content="A WebSocket client for  testing WebSocket connections."
+    />
+    <title>WebSocketclient: A testing tool for WebSockets</title>
+<!--    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>-->
+<!--    <script src="https://unpkg.com/vuex@4"></script>-->
+</head>
+<body>
+<noscript>You need to enable JavaScript to run this app. 😞</noscript>
+<div id="root"></div>
+<script src="https://unpkg.com/browse/@asyncapi/react-component@1.0.0-next.47/browser/standalone/index.js" defer></script>
+<div id="rest">
+    <AsyncApiStandalone
+            schemaUrl="draft-asyncapi.yaml"
+            schemaFetchOptions='{"method":"GET","mode":"cors"}'
+            cssImportPath="https://unpkg.com/@asyncapi/react-component@0.24.23/lib/styles/fiori.css">
+    </AsyncApiStandalone>
+</div>
+
+</body>
+
+<script type="importmap">
+  { "imports": {
+      "vue":        "https://unpkg.com/vue@3/dist/vue.esm-browser.js",
+      "vuex": "https://unpkg.com/vuex@4.1.0/dist/vuex.esm-browser.js",
+      "vue-router": "https://unpkg.com/vue-router@4.0.15/dist/vue-router.esm-browser.js",
+      "vue-json-viewer": "https://unpkg.com/vue-json-viewer@3.0.4/vue-json-viewer.js",
+      "Quasar": "https://unpkg.com/quasar@2.11.5/dist/quasar.esm.prod.js",
+      "@vue/devtools-api": "https://unpkg.com/@vue/devtools-api@6.4.5/lib/esm/index.js"
+  } }
+</script>
+<script type="module">
+  import { createApp } from 'vue'
+  import { createStore } from 'vuex'
+  import WSockView from './wsockview.js'
+  import WStore from './store.js'
+  import { useQuasar, Quasar, Dialog, Notify } from 'Quasar'
+  import { createRouter, createWebHashHistory } from 'vue-router'
+
+    const routes = [
+      { path: '/',
+        component: WSockView,
+        alias:'/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream',
+        meta: {
+            methodName: '/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream',
+            request: {
+            json: JSON.stringify({
+                           "subscribeCandlesRequest": {
+                             "subscriptionAction": "SUBSCRIPTION_ACTION_SUBSCRIBE",
+                             "instruments": [
+                               {
+                                 "figi": "BBG001J4BCN4",
+                                 "interval": "SUBSCRIPTION_INTERVAL_ONE_MINUTE"
+                               },
+                               {
+                                 "figi": "BBG0013HG026",
+                                 "interval": "SUBSCRIPTION_INTERVAL_ONE_MINUTE"
+                               },
+                               {
+                                 "figi": "BBG004730RP0",
+                                 "interval": "SUBSCRIPTION_INTERVAL_ONE_MINUTE",
+                                 "instrumentId": "c7c26356-7352-4c37-8316-b1d93b18e16e"
+                               }
+                             ],
+                             "waitingClose": false
+                           }
+                         },
+                         null,
+                         2)
+                         }
+            }
+      },
+      { path: '/tinkoff.public.invest.api.contract.v1.OperationsStreamService/PortfolioStream',
+        component: WSockView,
+        meta: {
+            methodName: '/tinkoff.public.invest.api.contract.v1.OperationsStreamService/PortfolioStream',
+            request: {
+            json: JSON.stringify({
+                                  "accounts": [
+                                    "2012806069"
+                                  ]
+                                },
+                         null,
+                         2)
+                         }
+            }
+
+      },
+      { path: '/tinkoff.public.invest.api.contract.v1.OperationsStreamService/PositionsStream',
+        component: WSockView,
+        meta: {
+            methodName: '/tinkoff.public.invest.api.contract.v1.OperationsStreamService/PositionsStream',
+            request: {
+            json: JSON.stringify({
+                                  "accounts": [
+                                    "2012806069"
+                                  ]
+                                },
+                         null,
+                         2)
+                         }
+            }
+
+      },
+      { path: '/tinkoff.public.invest.api.contract.v1.OrdersStreamService/TradesStream',
+        component: WSockView,
+        meta: {
+            methodName: '/tinkoff.public.invest.api.contract.v1.OrdersStreamService/TradesStream',
+            request: {
+            json: JSON.stringify({
+                                  "accounts": [
+                                    "2012806069"
+                                  ]
+                                },
+                         null,
+                         2)
+                         }
+            }
+
+      },
+    ]
+
+    // 3. Create the router instance and pass the `routes` option
+    // You can pass in additional options here, but let's
+    // keep it simple for now.
+    const router = createRouter({
+      // 4. Provide the history implementation to use. We are using the hash history for simplicity here.
+      history: createWebHashHistory(),
+      routes, // short for `routes: routes`
+    })
+
+
+  const store = createStore(WStore);
+
+  router.beforeEach((to, from, next) => {
+        store.commit('onRouteChange', to.meta)
+        next();
+    })
+
+  const app = createApp(WSockView)
+  app.use(store)
+  app.use(Quasar, {
+
+      plugins: {
+        Dialog,
+        Notify
+      }
+    })
+  app.use(router)
+  app.mount('#root')
+</script>
+</html>

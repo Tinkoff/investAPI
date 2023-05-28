@@ -52,7 +52,7 @@
 ```
 
 
-[Проверить](/ws/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.OrdersStreamService/TradesStream)
+[Проверить](/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.OrdersStreamService/TradesStream)
 
 ## Сервис операций
 

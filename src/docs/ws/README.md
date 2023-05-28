@@ -14,8 +14,8 @@
 
 ### Лента сделок.
 
-[TradesStreamRequest](/websock-docs/output/index.html#schema-v1TradesStreamRequest)
-[TradesStreamResponse](/websock-docs/output/index.html#schema-v1TradesStreamResponse)
+[TradesStreamRequest](/investAPI/ws/websock-docs/output/index.html#schema-v1TradesStreamRequest)
+[TradesStreamResponse](/investAPI/ws/websock-docs/output/index.html#schema-v1TradesStreamResponse)
 
 Пример запроса
 
@@ -52,14 +52,14 @@
 ```
 
 
-[Проверить](/websock/index.html#/tinkoff.public.invest.api.contract.v1.OrdersStreamService/TradesStream)
+[Проверить](/ws/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.OrdersStreamService/TradesStream)
 
 ## Сервис операций
 
 ### Лента событий по позициям.
 
-[PositionsStreamRequest](/websock-docs/output/index.html#schema-v1PositionsStreamRequest)
-[PositionsStreamResponse](/websock-docs/output/index.html#schema-v1PositionsStreamResponse)
+[PositionsStreamRequest](/investAPI/ws/websock-docs/output/index.html#schema-v1PositionsStreamRequest)
+[PositionsStreamResponse](/investAPI/ws/websock-docs/output/index.html#schema-v1PositionsStreamResponse)
 
 Пример запроса
 
@@ -124,12 +124,12 @@
 }
 ```
 
-[Проверить](/websock/index.html#/tinkoff.public.invest.api.contract.v1.OperationsStreamService/PositionsStream)
+[Проверить](/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.OperationsStreamService/PositionsStream)
 
 ### Лента событий по портфелям.
 
-[PortfolioStreamRequest](/websock-docs/output/index.html#schema-v1PortfolioStreamRequest)
-[PortfolioStreamResponse](/websock-docs/output/index.html#schema-v1PortfolioStreamResponse)
+[PortfolioStreamRequest](/investAPI/ws/websock-docs/output/index.html#schema-v1PortfolioStreamRequest)
+[PortfolioStreamResponse](/investAPI/ws/websock-docs/output/index.html#schema-v1PortfolioStreamResponse)
 
 Пример запроса
 
@@ -231,12 +231,12 @@
 }
 ```
 
-[Проверить](/websock/index.html#/tinkoff.public.invest.api.contract.v1.OperationsStreamService/PortfolioStream)
+[Проверить](/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.OperationsStreamService/PortfolioStream)
 
 ## Сервис рыночных данных
 
-[MarketDataRequest](/websock-docs/output/index.html#message-v1MarketDataRequest)
-[MarketDataResponse](/websock-docs/output/index.html#message-v1MarketDataResponse)
+[MarketDataRequest](/investAPI/ws/websock-docs/output/index.html#message-v1MarketDataRequest)
+[MarketDataResponse](/investAPI/ws/websock-docs/output/index.html#message-v1MarketDataResponse)
 
 ### Лента торговых статусов инструментов
 
@@ -286,7 +286,7 @@
 }
 ```
 
-[Проверить](/websock/index.html#/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream)
+[Проверить](/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream)
 
 
 
@@ -338,7 +338,7 @@
 }
 ```
 
-[Проверить](/websock/index.html#/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream)
+[Проверить](/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream)
 
 
 ### Лента обезличенных сделок
@@ -391,7 +391,7 @@
 }
 ```
 
-[Проверить](/websock/index.html#/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream)
+[Проверить](/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream)
 
 
 ### Лента событий по стаканам
@@ -470,7 +470,7 @@
 }
 ```
 
-[Проверить](/websock/index.html#/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream)
+[Проверить](/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream)
 
 
 ### Лента события по свечам
@@ -539,7 +539,7 @@
 }
 ```
 
-[Проверить](/websock/index.html#/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream)
+[Проверить](/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream)
 
 ## Пинг сообщения
 

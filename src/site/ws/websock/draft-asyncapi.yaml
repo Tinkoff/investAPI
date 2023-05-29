@@ -1,0 +1,1888 @@
+asyncapi: 2.6.0
+info:
+  title: Tinkoff Invest API
+  version: 1.3.8-RELEASE
+  description: Websocket API for streaming data
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+defaultContentType: application/json
+tags:
+  - name: MarketDataStreamService
+  - name: OperationsStreamService
+  - name: OrdersStreamService
+servers:
+  production-wstream:
+    url: invest-public-api.tinkoff.ru/ws/
+    description: Websocket service for streaming data
+    protocol: wss
+channels:
+  /tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataServerSideStream:
+    publish:
+      operationId: MarketDataStreamService_MarketDataServerSideStream
+      summary: Server-side стрим предоставления биржевой информации.
+      tags:
+        - name: MarketDataStreamService
+      bindings:
+        ws:
+          method: GET
+          bindingVersion: 0.1.0
+      message:
+        $ref: '#/components/messages/v1MarketDataServerSideStreamRequest'
+    subscribe:
+      operationId: onMarketDataStreamService_MarketDataServerSideStream
+      summary: Server-side стрим предоставления биржевой информации.
+      tags:
+        - name: MarketDataStreamService
+      bindings:
+        ws:
+          method: GET
+          bindingVersion: 0.1.0
+      message:
+        $ref: '#/components/messages/Stream_result_of_v1MarketDataResponse'
+    servers:
+      - production-wstream
+  /tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream:
+    publish:
+      operationId: MarketDataStreamService_MarketDataStream
+      summary: Bi-directional стрим предоставления биржевой информации.
+      tags:
+        - name: MarketDataStreamService
+      bindings:
+        ws:
+          method: GET
+          bindingVersion: 0.1.0
+      message:
+        $ref: '#/components/messages/v1MarketDataRequest'
+    subscribe:
+      operationId: onMarketDataStreamService_MarketDataStream
+      summary: Bi-directional стрим предоставления биржевой информации.
+      tags:
+        - name: MarketDataStreamService
+      bindings:
+        ws:
+          method: GET
+          bindingVersion: 0.1.0
+      message:
+        $ref: '#/components/messages/Stream_result_of_v1MarketDataResponse'
+    servers:
+      - production-wstream
+  /tinkoff.public.invest.api.contract.v1.OperationsStreamService/PortfolioStream:
+    publish:
+      operationId: OperationsStreamService_PortfolioStream
+      summary: Server-side stream обновлений портфеля
+      tags:
+        - name: OperationsStreamService
+      bindings:
+        ws:
+          method: GET
+          bindingVersion: 0.1.0
+      message:
+        $ref: '#/components/messages/v1PortfolioStreamRequest'
+    subscribe:
+      operationId: onOperationsStreamService_PortfolioStream
+      summary: Server-side stream обновлений портфеля
+      tags:
+        - name: OperationsStreamService
+      bindings:
+        ws:
+          method: GET
+          bindingVersion: 0.1.0
+      message:
+        $ref: '#/components/messages/Stream_result_of_v1PortfolioStreamResponse'
+    servers:
+      - production-wstream
+  /tinkoff.public.invest.api.contract.v1.OperationsStreamService/PositionsStream:
+    publish:
+      operationId: OperationsStreamService_PositionsStream
+      summary: Server-side stream обновлений информации по изменению позиций портфеля
+      tags:
+        - name: OperationsStreamService
+      bindings:
+        ws:
+          method: GET
+          bindingVersion: 0.1.0
+      message:
+        $ref: '#/components/messages/v1PositionsStreamRequest'
+    subscribe:
+      operationId: onOperationsStreamService_PositionsStream
+      summary: Server-side stream обновлений информации по изменению позиций портфеля
+      tags:
+        - name: OperationsStreamService
+      bindings:
+        ws:
+          method: GET
+          bindingVersion: 0.1.0
+      message:
+        $ref: '#/components/messages/Stream_result_of_v1PositionsStreamResponse'
+    servers:
+      - production-wstream
+  /tinkoff.public.invest.api.contract.v1.OrdersStreamService/TradesStream:
+    publish:
+      operationId: OrdersStreamService_TradesStream
+      summary: Stream сделок пользователя
+      tags:
+        - name: OrdersStreamService
+      bindings:
+        ws:
+          method: GET
+          bindingVersion: 0.1.0
+      message:
+        $ref: '#/components/messages/v1TradesStreamRequest'
+    subscribe:
+      operationId: onOrdersStreamService_TradesStream
+      summary: Stream сделок пользователя
+      tags:
+        - name: OrdersStreamService
+      bindings:
+        ws:
+          method: GET
+          bindingVersion: 0.1.0
+      message:
+        $ref: '#/components/messages/Stream_result_of_v1TradesStreamResponse'
+    servers:
+      - production-wstream
+components:
+  schemas:
+    v1MarketDataResponse:
+      description: Пакет биржевой информации по подписке.
+      example:
+        subscribeInfoResponse:
+          infoSubscriptions:
+            - instrumentUid: instrumentUid
+              figi: figi
+            - instrumentUid: instrumentUid
+              figi: figi
+          trackingId: trackingId
+        trade:
+          quantity: quantity
+          price:
+            nano: 6
+            units: units
+          instrumentUid: instrumentUid
+          figi: figi
+          time: '2000-01-23T04:56:07.000+00:00'
+        subscribeOrderBookResponse:
+          orderBookSubscriptions:
+            - depth: 0
+              instrumentUid: instrumentUid
+              figi: figi
+            - depth: 0
+              instrumentUid: instrumentUid
+              figi: figi
+          trackingId: trackingId
+        ping:
+          time: '2000-01-23T04:56:07.000+00:00'
+        candle:
+          volume: volume
+          high:
+            nano: 6
+            units: units
+          lastTradeTs: '2000-01-23T04:56:07.000+00:00'
+          low:
+            nano: 6
+            units: units
+          instrumentUid: instrumentUid
+          figi: figi
+          time: '2000-01-23T04:56:07.000+00:00'
+          close:
+            nano: 6
+            units: units
+          open:
+            nano: 6
+            units: units
+        orderbook:
+          depth: 6
+          asks:
+            - quantity: quantity
+              price:
+                nano: 6
+                units: units
+            - quantity: quantity
+              price:
+                nano: 6
+                units: units
+          instrumentUid: instrumentUid
+          bids:
+            - quantity: quantity
+              price:
+                nano: 6
+                units: units
+            - quantity: quantity
+              price:
+                nano: 6
+                units: units
+          limitUp:
+            nano: 6
+            units: units
+          figi: figi
+          time: '2000-01-23T04:56:07.000+00:00'
+          limitDown:
+            nano: 6
+            units: units
+          isConsistent: true
+        subscribeTradesResponse:
+          tradeSubscriptions:
+            - instrumentUid: instrumentUid
+              figi: figi
+            - instrumentUid: instrumentUid
+              figi: figi
+          trackingId: trackingId
+        tradingStatus:
+          limitOrderAvailableFlag: true
+          marketOrderAvailableFlag: true
+          instrumentUid: instrumentUid
+          figi: figi
+          time: '2000-01-23T04:56:07.000+00:00'
+        subscribeCandlesResponse:
+          candlesSubscriptions:
+            - instrumentUid: instrumentUid
+              figi: figi
+            - instrumentUid: instrumentUid
+              figi: figi
+          trackingId: trackingId
+        subscribeLastPriceResponse:
+          lastPriceSubscriptions:
+            - instrumentUid: instrumentUid
+              figi: figi
+            - instrumentUid: instrumentUid
+              figi: figi
+          trackingId: trackingId
+        lastPrice:
+          price:
+            nano: 6
+            units: units
+          instrumentUid: instrumentUid
+          figi: figi
+          time: '2000-01-23T04:56:07.000+00:00'
+      properties:
+        subscribeCandlesResponse:
+          $ref: '#/components/schemas/v1SubscribeCandlesResponse'
+        subscribeOrderBookResponse:
+          $ref: '#/components/schemas/v1SubscribeOrderBookResponse'
+        subscribeTradesResponse:
+          $ref: '#/components/schemas/v1SubscribeTradesResponse'
+        subscribeInfoResponse:
+          $ref: '#/components/schemas/v1SubscribeInfoResponse'
+        candle:
+          $ref: '#/components/schemas/v1Candle'
+        trade:
+          $ref: '#/components/schemas/v1Trade'
+        orderbook:
+          $ref: '#/components/schemas/v1OrderBook'
+        tradingStatus:
+          $ref: '#/components/schemas/v1TradingStatus'
+        ping:
+          $ref: '#/components/schemas/v1Ping'
+        subscribeLastPriceResponse:
+          $ref: '#/components/schemas/v1SubscribeLastPriceResponse'
+        lastPrice:
+          $ref: '#/components/schemas/v1LastPrice'
+      type: object
+    v1SubscribeCandlesResponse:
+      description: Результат изменения статус подписки на свечи.
+      example:
+        candlesSubscriptions:
+          - instrumentUid: instrumentUid
+            figi: figi
+          - instrumentUid: instrumentUid
+            figi: figi
+        trackingId: trackingId
+      properties:
+        trackingId:
+          type: string
+        candlesSubscriptions:
+          items:
+            $ref: '#/components/schemas/v1CandleSubscription'
+          type: array
+      type: object
+    v1CandleSubscription:
+      description: Статус подписки на свечи.
+      example:
+        instrumentUid: instrumentUid
+        figi: figi
+      properties:
+        figi:
+          type: string
+        interval:
+          $ref: '#/components/schemas/v1SubscriptionInterval'
+        subscriptionStatus:
+          $ref: '#/components/schemas/v1SubscriptionStatus'
+        instrumentUid:
+          type: string
+      type: object
+    v1SubscriptionInterval:
+      default: SUBSCRIPTION_INTERVAL_UNSPECIFIED
+      description: Интервал свечи.
+      enum:
+        - SUBSCRIPTION_INTERVAL_UNSPECIFIED
+        - SUBSCRIPTION_INTERVAL_ONE_MINUTE
+        - SUBSCRIPTION_INTERVAL_FIVE_MINUTES
+      type: string
+    v1SubscriptionStatus:
+      default: SUBSCRIPTION_STATUS_UNSPECIFIED
+      description: Результат подписки.
+      enum:
+        - SUBSCRIPTION_STATUS_UNSPECIFIED
+        - SUBSCRIPTION_STATUS_SUCCESS
+        - SUBSCRIPTION_STATUS_INSTRUMENT_NOT_FOUND
+        - SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID
+        - SUBSCRIPTION_STATUS_DEPTH_IS_INVALID
+        - SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID
+        - SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED
+        - SUBSCRIPTION_STATUS_INTERNAL_ERROR
+        - SUBSCRIPTION_STATUS_TOO_MANY_REQUESTS
+      type: string
+    v1SubscribeOrderBookResponse:
+      description: Результат изменения статуса подписки на стаканы.
+      example:
+        orderBookSubscriptions:
+          - depth: 0
+            instrumentUid: instrumentUid
+            figi: figi
+          - depth: 0
+            instrumentUid: instrumentUid
+            figi: figi
+        trackingId: trackingId
+      properties:
+        trackingId:
+          type: string
+        orderBookSubscriptions:
+          items:
+            $ref: '#/components/schemas/v1OrderBookSubscription'
+          type: array
+      type: object
+    v1OrderBookSubscription:
+      description: Статус подписки.
+      example:
+        depth: 0
+        instrumentUid: instrumentUid
+        figi: figi
+      properties:
+        figi:
+          type: string
+        depth:
+          format: int32
+          type: integer
+        subscriptionStatus:
+          $ref: '#/components/schemas/v1SubscriptionStatus'
+        instrumentUid:
+          type: string
+      type: object
+    v1SubscribeTradesResponse:
+      description: Результат изменения статуса подписки на поток обезличенных сделок.
+      example:
+        tradeSubscriptions:
+          - instrumentUid: instrumentUid
+            figi: figi
+          - instrumentUid: instrumentUid
+            figi: figi
+        trackingId: trackingId
+      properties:
+        trackingId:
+          type: string
+        tradeSubscriptions:
+          items:
+            $ref: '#/components/schemas/v1TradeSubscription'
+          type: array
+      type: object
+    v1TradeSubscription:
+      description: Статус подписки.
+      example:
+        instrumentUid: instrumentUid
+        figi: figi
+      properties:
+        figi:
+          type: string
+        subscriptionStatus:
+          $ref: '#/components/schemas/v1SubscriptionStatus'
+        instrumentUid:
+          type: string
+      type: object
+    v1SubscribeInfoResponse:
+      description: Результат изменения статуса подписки на торговый статус.
+      example:
+        infoSubscriptions:
+          - instrumentUid: instrumentUid
+            figi: figi
+          - instrumentUid: instrumentUid
+            figi: figi
+        trackingId: trackingId
+      properties:
+        trackingId:
+          type: string
+        infoSubscriptions:
+          items:
+            $ref: '#/components/schemas/v1InfoSubscription'
+          type: array
+      type: object
+    v1InfoSubscription:
+      description: Статус подписки.
+      example:
+        instrumentUid: instrumentUid
+        figi: figi
+      properties:
+        figi:
+          type: string
+        subscriptionStatus:
+          $ref: '#/components/schemas/v1SubscriptionStatus'
+        instrumentUid:
+          type: string
+      type: object
+    v1Candle:
+      description: Пакет свечей в рамках стрима.
+      example:
+        volume: volume
+        high:
+          nano: 6
+          units: units
+        lastTradeTs: '2000-01-23T04:56:07.000+00:00'
+        low:
+          nano: 6
+          units: units
+        instrumentUid: instrumentUid
+        figi: figi
+        time: '2000-01-23T04:56:07.000+00:00'
+        close:
+          nano: 6
+          units: units
+        open:
+          nano: 6
+          units: units
+      properties:
+        figi:
+          type: string
+        interval:
+          $ref: '#/components/schemas/v1SubscriptionInterval'
+        open:
+          $ref: '#/components/schemas/v1Quotation'
+        high:
+          $ref: '#/components/schemas/v1Quotation'
+        low:
+          $ref: '#/components/schemas/v1Quotation'
+        close:
+          $ref: '#/components/schemas/v1Quotation'
+        volume:
+          format: int64
+          type: string
+        time:
+          format: date-time
+          type: string
+        lastTradeTs:
+          format: date-time
+          type: string
+        instrumentUid:
+          type: string
+      type: object
+    v1Quotation:
+      example:
+        nano: 6
+        units: units
+      properties:
+        units:
+          format: int64
+          title: целая часть суммы, может быть отрицательным числом
+          type: string
+        nano:
+          format: int32
+          title: дробная часть суммы, может быть отрицательным числом
+          type: integer
+      title: Котировка - денежная сумма без указания валюты
+      type: object
+    v1Trade:
+      description: Информация о сделке.
+      example:
+        quantity: quantity
+        price:
+          nano: 6
+          units: units
+        instrumentUid: instrumentUid
+        figi: figi
+        time: '2000-01-23T04:56:07.000+00:00'
+      properties:
+        figi:
+          type: string
+        direction:
+          $ref: '#/components/schemas/v1TradeDirection'
+        price:
+          $ref: '#/components/schemas/v1Quotation'
+        quantity:
+          format: int64
+          type: string
+        time:
+          format: date-time
+          type: string
+        instrumentUid:
+          type: string
+      type: object
+    v1TradeDirection:
+      default: TRADE_DIRECTION_UNSPECIFIED
+      description: Направление сделки.
+      enum:
+        - TRADE_DIRECTION_UNSPECIFIED
+        - TRADE_DIRECTION_BUY
+        - TRADE_DIRECTION_SELL
+      type: string
+    v1OrderBook:
+      description: Пакет стаканов в рамках стрима.
+      example:
+        depth: 6
+        asks:
+          - quantity: quantity
+            price:
+              nano: 6
+              units: units
+          - quantity: quantity
+            price:
+              nano: 6
+              units: units
+        instrumentUid: instrumentUid
+        bids:
+          - quantity: quantity
+            price:
+              nano: 6
+              units: units
+          - quantity: quantity
+            price:
+              nano: 6
+              units: units
+        limitUp:
+          nano: 6
+          units: units
+        figi: figi
+        time: '2000-01-23T04:56:07.000+00:00'
+        limitDown:
+          nano: 6
+          units: units
+        isConsistent: true
+      properties:
+        figi:
+          type: string
+        depth:
+          format: int32
+          type: integer
+        isConsistent:
+          type: boolean
+        bids:
+          items:
+            $ref: '#/components/schemas/v1Order'
+          type: array
+        asks:
+          items:
+            $ref: '#/components/schemas/v1Order'
+          type: array
+        time:
+          format: date-time
+          type: string
+        limitUp:
+          $ref: '#/components/schemas/v1Quotation'
+        limitDown:
+          $ref: '#/components/schemas/v1Quotation'
+        instrumentUid:
+          type: string
+      type: object
+    v1Order:
+      description: Массив предложений/спроса.
+      example:
+        quantity: quantity
+        price:
+          nano: 6
+          units: units
+      properties:
+        price:
+          $ref: '#/components/schemas/v1Quotation'
+        quantity:
+          format: int64
+          type: string
+      type: object
+    v1TradingStatus:
+      description: Пакет изменения торгового статуса.
+      example:
+        limitOrderAvailableFlag: true
+        marketOrderAvailableFlag: true
+        instrumentUid: instrumentUid
+        figi: figi
+        time: '2000-01-23T04:56:07.000+00:00'
+      properties:
+        figi:
+          type: string
+        tradingStatus:
+          $ref: '#/components/schemas/v1SecurityTradingStatus'
+        time:
+          format: date-time
+          type: string
+        limitOrderAvailableFlag:
+          type: boolean
+        marketOrderAvailableFlag:
+          type: boolean
+        instrumentUid:
+          type: string
+      type: object
+    v1SecurityTradingStatus:
+      default: SECURITY_TRADING_STATUS_UNSPECIFIED
+      enum:
+        - SECURITY_TRADING_STATUS_UNSPECIFIED
+        - SECURITY_TRADING_STATUS_NOT_AVAILABLE_FOR_TRADING
+        - SECURITY_TRADING_STATUS_OPENING_PERIOD
+        - SECURITY_TRADING_STATUS_CLOSING_PERIOD
+        - SECURITY_TRADING_STATUS_BREAK_IN_TRADING
+        - SECURITY_TRADING_STATUS_NORMAL_TRADING
+        - SECURITY_TRADING_STATUS_CLOSING_AUCTION
+        - SECURITY_TRADING_STATUS_DARK_POOL_AUCTION
+        - SECURITY_TRADING_STATUS_DISCRETE_AUCTION
+        - SECURITY_TRADING_STATUS_OPENING_AUCTION_PERIOD
+        - SECURITY_TRADING_STATUS_TRADING_AT_CLOSING_AUCTION_PRICE
+        - SECURITY_TRADING_STATUS_SESSION_ASSIGNED
+        - SECURITY_TRADING_STATUS_SESSION_CLOSE
+        - SECURITY_TRADING_STATUS_SESSION_OPEN
+        - SECURITY_TRADING_STATUS_DEALER_NORMAL_TRADING
+        - SECURITY_TRADING_STATUS_DEALER_BREAK_IN_TRADING
+        - SECURITY_TRADING_STATUS_DEALER_NOT_AVAILABLE_FOR_TRADING
+      title: Режим торгов инструмента
+      type: string
+    v1Ping:
+      description: Проверка активности стрима.
+      example:
+        time: '2000-01-23T04:56:07.000+00:00'
+      properties:
+        time:
+          description: Время проверки.
+          format: date-time
+          type: string
+      type: object
+    v1SubscribeLastPriceResponse:
+      description: Результат изменения статуса подписки на цену последней сделки.
+      example:
+        lastPriceSubscriptions:
+          - instrumentUid: instrumentUid
+            figi: figi
+          - instrumentUid: instrumentUid
+            figi: figi
+        trackingId: trackingId
+      properties:
+        trackingId:
+          type: string
+        lastPriceSubscriptions:
+          items:
+            $ref: '#/components/schemas/v1LastPriceSubscription'
+          type: array
+      type: object
+    v1LastPriceSubscription:
+      description: Статус подписки на цену последней сделки.
+      example:
+        instrumentUid: instrumentUid
+        figi: figi
+      properties:
+        figi:
+          type: string
+        subscriptionStatus:
+          $ref: '#/components/schemas/v1SubscriptionStatus'
+        instrumentUid:
+          type: string
+      type: object
+    v1LastPrice:
+      description: Информация о цене последней сделки.
+      example:
+        price:
+          nano: 6
+          units: units
+        instrumentUid: instrumentUid
+        figi: figi
+        time: '2000-01-23T04:56:07.000+00:00'
+      properties:
+        figi:
+          type: string
+        price:
+          $ref: '#/components/schemas/v1Quotation'
+        time:
+          format: date-time
+          type: string
+        instrumentUid:
+          type: string
+      type: object
+    rpcStatus:
+      example:
+        code: 1
+        details:
+          - typeUrl: typeUrl
+            value: value
+          - typeUrl: typeUrl
+            value: value
+        message: message
+      properties:
+        code:
+          format: int32
+          type: integer
+        message:
+          type: string
+        details:
+          items:
+            $ref: '#/components/schemas/protobufAny'
+          type: array
+      type: object
+    protobufAny:
+      example:
+        typeUrl: typeUrl
+        value: value
+      properties:
+        typeUrl:
+          type: string
+        value:
+          format: byte
+          pattern: ^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$
+          type: string
+      type: object
+    v1MarketDataServerSideStreamRequest:
+      properties:
+        subscribeCandlesRequest:
+          $ref: '#/components/schemas/v1SubscribeCandlesRequest'
+        subscribeOrderBookRequest:
+          $ref: '#/components/schemas/v1SubscribeOrderBookRequest'
+        subscribeTradesRequest:
+          $ref: '#/components/schemas/v1SubscribeTradesRequest'
+        subscribeInfoRequest:
+          $ref: '#/components/schemas/v1SubscribeInfoRequest'
+        subscribeLastPriceRequest:
+          $ref: '#/components/schemas/v1SubscribeLastPriceRequest'
+      type: object
+    v1SubscribeCandlesRequest:
+      description: subscribeCandles | Изменения статуса подписки на свечи.
+      properties:
+        subscriptionAction:
+          $ref: '#/components/schemas/v1SubscriptionAction'
+        instruments:
+          items:
+            $ref: '#/components/schemas/v1CandleInstrument'
+          type: array
+        waitingClose:
+          type: boolean
+      type: object
+    v1SubscriptionAction:
+      default: SUBSCRIPTION_ACTION_UNSPECIFIED
+      description: Тип операции со списком подписок.
+      enum:
+        - SUBSCRIPTION_ACTION_UNSPECIFIED
+        - SUBSCRIPTION_ACTION_SUBSCRIBE
+        - SUBSCRIPTION_ACTION_UNSUBSCRIBE
+      type: string
+    v1CandleInstrument:
+      description: Запрос изменения статус подписки на свечи.
+      properties:
+        figi:
+          type: string
+        interval:
+          $ref: '#/components/schemas/v1SubscriptionInterval'
+        instrumentId:
+          type: string
+      type: object
+    v1SubscribeOrderBookRequest:
+      description: Запрос на изменение статуса подписки на стаканы.
+      properties:
+        subscriptionAction:
+          $ref: '#/components/schemas/v1SubscriptionAction'
+        instruments:
+          items:
+            $ref: '#/components/schemas/v1OrderBookInstrument'
+          type: array
+      type: object
+    v1OrderBookInstrument:
+      description: Запрос подписки на стаканы.
+      properties:
+        figi:
+          type: string
+        depth:
+          format: int32
+          type: integer
+        instrumentId:
+          type: string
+      type: object
+    v1SubscribeTradesRequest:
+      description: Изменение статуса подписки на поток обезличенных сделок.
+      properties:
+        subscriptionAction:
+          $ref: '#/components/schemas/v1SubscriptionAction'
+        instruments:
+          items:
+            $ref: '#/components/schemas/v1TradeInstrument'
+          type: array
+      type: object
+    v1TradeInstrument:
+      description: Запрос подписки на поток обезличенных сделок.
+      properties:
+        figi:
+          type: string
+        instrumentId:
+          type: string
+      type: object
+    v1SubscribeInfoRequest:
+      description: Изменение статуса подписки на торговый статус инструмента.
+      properties:
+        subscriptionAction:
+          $ref: '#/components/schemas/v1SubscriptionAction'
+        instruments:
+          items:
+            $ref: '#/components/schemas/v1InfoInstrument'
+          type: array
+      type: object
+    v1InfoInstrument:
+      description: Запрос подписки на торговый статус.
+      properties:
+        figi:
+          type: string
+        instrumentId:
+          type: string
+      type: object
+    v1SubscribeLastPriceRequest:
+      description: Изменение статуса подписки на цену последней сделки по инструменту.
+      properties:
+        subscriptionAction:
+          $ref: '#/components/schemas/v1SubscriptionAction'
+        instruments:
+          items:
+            $ref: '#/components/schemas/v1LastPriceInstrument'
+          type: array
+      type: object
+    v1LastPriceInstrument:
+      description: Запрос подписки на последнюю цену.
+      properties:
+        figi:
+          type: string
+        instrumentId:
+          type: string
+      type: object
+    v1MarketDataRequest:
+      description: Запрос подписки или отписки на определённые биржевые данные.
+      properties:
+        subscribeCandlesRequest:
+          $ref: '#/components/schemas/v1SubscribeCandlesRequest'
+        subscribeOrderBookRequest:
+          $ref: '#/components/schemas/v1SubscribeOrderBookRequest'
+        subscribeTradesRequest:
+          $ref: '#/components/schemas/v1SubscribeTradesRequest'
+        subscribeInfoRequest:
+          $ref: '#/components/schemas/v1SubscribeInfoRequest'
+        subscribeLastPriceRequest:
+          $ref: '#/components/schemas/v1SubscribeLastPriceRequest'
+        getMySubscriptions:
+          $ref: '#/components/schemas/EmptyObj'
+      type: object
+    v1PortfolioStreamResponse:
+      description: Информация по позициям и доходностям портфелей.
+      example:
+        subscriptions:
+          accounts:
+            - accountId: accountId
+            - accountId: accountId
+        portfolio:
+          totalAmountBonds:
+            nano: 5
+            currency: currency
+            units: units
+          totalAmountFutures:
+            nano: 5
+            currency: currency
+            units: units
+          accountId: accountId
+          totalAmountCurrencies:
+            nano: 5
+            currency: currency
+            units: units
+          totalAmountSp:
+            nano: 5
+            currency: currency
+            units: units
+          expectedYield:
+            nano: 6
+            units: units
+          positions:
+            - varMargin:
+                nano: 5
+                currency: currency
+                units: units
+              instrumentType: instrumentType
+              quantity:
+                nano: 6
+                units: units
+              averagePositionPricePt:
+                nano: 6
+                units: units
+              expectedYieldFifo:
+                nano: 6
+                units: units
+              averagePositionPriceFifo:
+                nano: 5
+                currency: currency
+                units: units
+              currentPrice:
+                nano: 5
+                currency: currency
+                units: units
+              positionUid: positionUid
+              figi: figi
+              quantityLots:
+                nano: 6
+                units: units
+              blockedLots:
+                nano: 6
+                units: units
+              averagePositionPrice:
+                nano: 5
+                currency: currency
+                units: units
+              blocked: true
+              instrumentUid: instrumentUid
+              currentNkd:
+                nano: 5
+                currency: currency
+                units: units
+              expectedYield:
+                nano: 6
+                units: units
+            - varMargin:
+                nano: 5
+                currency: currency
+                units: units
+              instrumentType: instrumentType
+              quantity:
+                nano: 6
+                units: units
+              averagePositionPricePt:
+                nano: 6
+                units: units
+              expectedYieldFifo:
+                nano: 6
+                units: units
+              averagePositionPriceFifo:
+                nano: 5
+                currency: currency
+                units: units
+              currentPrice:
+                nano: 5
+                currency: currency
+                units: units
+              positionUid: positionUid
+              figi: figi
+              quantityLots:
+                nano: 6
+                units: units
+              blockedLots:
+                nano: 6
+                units: units
+              averagePositionPrice:
+                nano: 5
+                currency: currency
+                units: units
+              blocked: true
+              instrumentUid: instrumentUid
+              currentNkd:
+                nano: 5
+                currency: currency
+                units: units
+              expectedYield:
+                nano: 6
+                units: units
+          totalAmountShares:
+            nano: 5
+            currency: currency
+            units: units
+          totalAmountEtf:
+            nano: 5
+            currency: currency
+            units: units
+          totalAmountPortfolio:
+            nano: 5
+            currency: currency
+            units: units
+          virtualPositions:
+            - averagePositionPrice:
+                nano: 5
+                currency: currency
+                units: units
+              instrumentType: instrumentType
+              quantity:
+                nano: 6
+                units: units
+              expectedYieldFifo:
+                nano: 6
+                units: units
+              averagePositionPriceFifo:
+                nano: 5
+                currency: currency
+                units: units
+              instrumentUid: instrumentUid
+              positionUid: positionUid
+              currentPrice:
+                nano: 5
+                currency: currency
+                units: units
+              figi: figi
+              expectedYield:
+                nano: 6
+                units: units
+              expireDate: '2000-01-23T04:56:07.000+00:00'
+            - averagePositionPrice:
+                nano: 5
+                currency: currency
+                units: units
+              instrumentType: instrumentType
+              quantity:
+                nano: 6
+                units: units
+              expectedYieldFifo:
+                nano: 6
+                units: units
+              averagePositionPriceFifo:
+                nano: 5
+                currency: currency
+                units: units
+              instrumentUid: instrumentUid
+              positionUid: positionUid
+              currentPrice:
+                nano: 5
+                currency: currency
+                units: units
+              figi: figi
+              expectedYield:
+                nano: 6
+                units: units
+              expireDate: '2000-01-23T04:56:07.000+00:00'
+          totalAmountOptions:
+            nano: 5
+            currency: currency
+            units: units
+        ping:
+          time: '2000-01-23T04:56:07.000+00:00'
+      properties:
+        subscriptions:
+          $ref: '#/components/schemas/v1PortfolioSubscriptionResult'
+        portfolio:
+          $ref: '#/components/schemas/v1PortfolioResponse'
+        ping:
+          $ref: '#/components/schemas/v1Ping'
+      type: object
+    v1PortfolioSubscriptionResult:
+      description: Объект результата подписки.
+      example:
+        accounts:
+          - accountId: accountId
+          - accountId: accountId
+      properties:
+        accounts:
+          items:
+            $ref: '#/components/schemas/v1AccountSubscriptionStatus'
+          type: array
+      type: object
+    v1AccountSubscriptionStatus:
+      description: Счет клиента.
+      example:
+        accountId: accountId
+      properties:
+        accountId:
+          type: string
+        subscriptionStatus:
+          $ref: '#/components/schemas/v1PortfolioSubscriptionStatus'
+      type: object
+    v1PortfolioSubscriptionStatus:
+      default: PORTFOLIO_SUBSCRIPTION_STATUS_UNSPECIFIED
+      description: Результат подписки.
+      enum:
+        - PORTFOLIO_SUBSCRIPTION_STATUS_UNSPECIFIED
+        - PORTFOLIO_SUBSCRIPTION_STATUS_SUCCESS
+        - PORTFOLIO_SUBSCRIPTION_STATUS_ACCOUNT_NOT_FOUND
+        - PORTFOLIO_SUBSCRIPTION_STATUS_INTERNAL_ERROR
+      type: string
+    v1PortfolioResponse:
+      description: Текущий портфель по счёту.
+      example:
+        totalAmountBonds:
+          nano: 5
+          currency: currency
+          units: units
+        totalAmountFutures:
+          nano: 5
+          currency: currency
+          units: units
+        accountId: accountId
+        totalAmountCurrencies:
+          nano: 5
+          currency: currency
+          units: units
+        totalAmountSp:
+          nano: 5
+          currency: currency
+          units: units
+        expectedYield:
+          nano: 6
+          units: units
+        positions:
+          - varMargin:
+              nano: 5
+              currency: currency
+              units: units
+            instrumentType: instrumentType
+            quantity:
+              nano: 6
+              units: units
+            averagePositionPricePt:
+              nano: 6
+              units: units
+            expectedYieldFifo:
+              nano: 6
+              units: units
+            averagePositionPriceFifo:
+              nano: 5
+              currency: currency
+              units: units
+            currentPrice:
+              nano: 5
+              currency: currency
+              units: units
+            positionUid: positionUid
+            figi: figi
+            quantityLots:
+              nano: 6
+              units: units
+            blockedLots:
+              nano: 6
+              units: units
+            averagePositionPrice:
+              nano: 5
+              currency: currency
+              units: units
+            blocked: true
+            instrumentUid: instrumentUid
+            currentNkd:
+              nano: 5
+              currency: currency
+              units: units
+            expectedYield:
+              nano: 6
+              units: units
+          - varMargin:
+              nano: 5
+              currency: currency
+              units: units
+            instrumentType: instrumentType
+            quantity:
+              nano: 6
+              units: units
+            averagePositionPricePt:
+              nano: 6
+              units: units
+            expectedYieldFifo:
+              nano: 6
+              units: units
+            averagePositionPriceFifo:
+              nano: 5
+              currency: currency
+              units: units
+            currentPrice:
+              nano: 5
+              currency: currency
+              units: units
+            positionUid: positionUid
+            figi: figi
+            quantityLots:
+              nano: 6
+              units: units
+            blockedLots:
+              nano: 6
+              units: units
+            averagePositionPrice:
+              nano: 5
+              currency: currency
+              units: units
+            blocked: true
+            instrumentUid: instrumentUid
+            currentNkd:
+              nano: 5
+              currency: currency
+              units: units
+            expectedYield:
+              nano: 6
+              units: units
+        totalAmountShares:
+          nano: 5
+          currency: currency
+          units: units
+        totalAmountEtf:
+          nano: 5
+          currency: currency
+          units: units
+        totalAmountPortfolio:
+          nano: 5
+          currency: currency
+          units: units
+        virtualPositions:
+          - averagePositionPrice:
+              nano: 5
+              currency: currency
+              units: units
+            instrumentType: instrumentType
+            quantity:
+              nano: 6
+              units: units
+            expectedYieldFifo:
+              nano: 6
+              units: units
+            averagePositionPriceFifo:
+              nano: 5
+              currency: currency
+              units: units
+            instrumentUid: instrumentUid
+            positionUid: positionUid
+            currentPrice:
+              nano: 5
+              currency: currency
+              units: units
+            figi: figi
+            expectedYield:
+              nano: 6
+              units: units
+            expireDate: '2000-01-23T04:56:07.000+00:00'
+          - averagePositionPrice:
+              nano: 5
+              currency: currency
+              units: units
+            instrumentType: instrumentType
+            quantity:
+              nano: 6
+              units: units
+            expectedYieldFifo:
+              nano: 6
+              units: units
+            averagePositionPriceFifo:
+              nano: 5
+              currency: currency
+              units: units
+            instrumentUid: instrumentUid
+            positionUid: positionUid
+            currentPrice:
+              nano: 5
+              currency: currency
+              units: units
+            figi: figi
+            expectedYield:
+              nano: 6
+              units: units
+            expireDate: '2000-01-23T04:56:07.000+00:00'
+        totalAmountOptions:
+          nano: 5
+          currency: currency
+          units: units
+      properties:
+        totalAmountShares:
+          $ref: '#/components/schemas/v1MoneyValue'
+        totalAmountBonds:
+          $ref: '#/components/schemas/v1MoneyValue'
+        totalAmountEtf:
+          $ref: '#/components/schemas/v1MoneyValue'
+        totalAmountCurrencies:
+          $ref: '#/components/schemas/v1MoneyValue'
+        totalAmountFutures:
+          $ref: '#/components/schemas/v1MoneyValue'
+        expectedYield:
+          $ref: '#/components/schemas/v1Quotation'
+        positions:
+          items:
+            $ref: '#/components/schemas/v1PortfolioPosition'
+          type: array
+        accountId:
+          type: string
+        totalAmountOptions:
+          $ref: '#/components/schemas/v1MoneyValue'
+        totalAmountSp:
+          $ref: '#/components/schemas/v1MoneyValue'
+        totalAmountPortfolio:
+          $ref: '#/components/schemas/v1MoneyValue'
+        virtualPositions:
+          items:
+            $ref: '#/components/schemas/v1VirtualPortfolioPosition'
+          type: array
+      type: object
+    v1MoneyValue:
+      example:
+        nano: 5
+        currency: currency
+        units: units
+      properties:
+        currency:
+          title: строковый ISO-код валюты
+          type: string
+        units:
+          format: int64
+          title: целая часть суммы, может быть отрицательным числом
+          type: string
+        nano:
+          format: int32
+          title: дробная часть суммы, может быть отрицательным числом
+          type: integer
+      title: Денежная сумма в определенной валюте
+      type: object
+    v1PortfolioPosition:
+      description: Позиции портфеля.
+      example:
+        varMargin:
+          nano: 5
+          currency: currency
+          units: units
+        instrumentType: instrumentType
+        quantity:
+          nano: 6
+          units: units
+        averagePositionPricePt:
+          nano: 6
+          units: units
+        expectedYieldFifo:
+          nano: 6
+          units: units
+        averagePositionPriceFifo:
+          nano: 5
+          currency: currency
+          units: units
+        currentPrice:
+          nano: 5
+          currency: currency
+          units: units
+        positionUid: positionUid
+        figi: figi
+        quantityLots:
+          nano: 6
+          units: units
+        blockedLots:
+          nano: 6
+          units: units
+        averagePositionPrice:
+          nano: 5
+          currency: currency
+          units: units
+        blocked: true
+        instrumentUid: instrumentUid
+        currentNkd:
+          nano: 5
+          currency: currency
+          units: units
+        expectedYield:
+          nano: 6
+          units: units
+      properties:
+        figi:
+          type: string
+        instrumentType:
+          type: string
+        quantity:
+          $ref: '#/components/schemas/v1Quotation'
+        averagePositionPrice:
+          $ref: '#/components/schemas/v1MoneyValue'
+        expectedYield:
+          $ref: '#/components/schemas/v1Quotation'
+        currentNkd:
+          $ref: '#/components/schemas/v1MoneyValue'
+        averagePositionPricePt:
+          $ref: '#/components/schemas/v1Quotation'
+        currentPrice:
+          $ref: '#/components/schemas/v1MoneyValue'
+        averagePositionPriceFifo:
+          $ref: '#/components/schemas/v1MoneyValue'
+        quantityLots:
+          $ref: '#/components/schemas/v1Quotation'
+        blocked:
+          type: boolean
+        blockedLots:
+          $ref: '#/components/schemas/v1Quotation'
+        positionUid:
+          type: string
+        instrumentUid:
+          type: string
+        varMargin:
+          $ref: '#/components/schemas/v1MoneyValue'
+        expectedYieldFifo:
+          $ref: '#/components/schemas/v1Quotation'
+      type: object
+    v1VirtualPortfolioPosition:
+      example:
+        averagePositionPrice:
+          nano: 5
+          currency: currency
+          units: units
+        instrumentType: instrumentType
+        quantity:
+          nano: 6
+          units: units
+        expectedYieldFifo:
+          nano: 6
+          units: units
+        averagePositionPriceFifo:
+          nano: 5
+          currency: currency
+          units: units
+        instrumentUid: instrumentUid
+        positionUid: positionUid
+        currentPrice:
+          nano: 5
+          currency: currency
+          units: units
+        figi: figi
+        expectedYield:
+          nano: 6
+          units: units
+        expireDate: '2000-01-23T04:56:07.000+00:00'
+      properties:
+        positionUid:
+          type: string
+        instrumentUid:
+          type: string
+        figi:
+          type: string
+        instrumentType:
+          type: string
+        quantity:
+          $ref: '#/components/schemas/v1Quotation'
+        averagePositionPrice:
+          $ref: '#/components/schemas/v1MoneyValue'
+        expectedYield:
+          $ref: '#/components/schemas/v1Quotation'
+        expectedYieldFifo:
+          $ref: '#/components/schemas/v1Quotation'
+        expireDate:
+          format: date-time
+          type: string
+        currentPrice:
+          $ref: '#/components/schemas/v1MoneyValue'
+        averagePositionPriceFifo:
+          $ref: '#/components/schemas/v1MoneyValue'
+      type: object
+    v1PortfolioStreamRequest:
+      description: Запрос установки stream-соединения.
+      properties:
+        accounts:
+          items:
+            type: string
+          type: array
+      type: object
+    v1PositionsStreamResponse:
+      description: Информация по изменению позиций портфеля.
+      example:
+        subscriptions:
+          accounts:
+            - accountId: accountId
+            - accountId: accountId
+        ping:
+          time: '2000-01-23T04:56:07.000+00:00'
+        position:
+          date: '2000-01-23T04:56:07.000+00:00'
+          accountId: accountId
+          money:
+            - availableValue:
+                nano: 5
+                currency: currency
+                units: units
+              blockedValue:
+                nano: 5
+                currency: currency
+                units: units
+            - availableValue:
+                nano: 5
+                currency: currency
+                units: units
+              blockedValue:
+                nano: 5
+                currency: currency
+                units: units
+          options:
+            - blocked: blocked
+              balance: balance
+              instrumentUid: instrumentUid
+              positionUid: positionUid
+            - blocked: blocked
+              balance: balance
+              instrumentUid: instrumentUid
+              positionUid: positionUid
+          futures:
+            - blocked: blocked
+              balance: balance
+              instrumentUid: instrumentUid
+              positionUid: positionUid
+              figi: figi
+            - blocked: blocked
+              balance: balance
+              instrumentUid: instrumentUid
+              positionUid: positionUid
+              figi: figi
+          securities:
+            - instrumentType: instrumentType
+              blocked: blocked
+              balance: balance
+              instrumentUid: instrumentUid
+              positionUid: positionUid
+              figi: figi
+              exchangeBlocked: true
+            - instrumentType: instrumentType
+              blocked: blocked
+              balance: balance
+              instrumentUid: instrumentUid
+              positionUid: positionUid
+              figi: figi
+              exchangeBlocked: true
+      properties:
+        subscriptions:
+          $ref: '#/components/schemas/v1PositionsSubscriptionResult'
+        position:
+          $ref: '#/components/schemas/v1PositionData'
+        ping:
+          $ref: '#/components/schemas/v1Ping'
+      type: object
+    v1PositionsSubscriptionResult:
+      description: Объект результата подписки.
+      example:
+        accounts:
+          - accountId: accountId
+          - accountId: accountId
+      properties:
+        accounts:
+          items:
+            $ref: '#/components/schemas/v1PositionsSubscriptionStatus'
+          type: array
+      type: object
+    v1PositionsSubscriptionStatus:
+      description: Счет клиента.
+      example:
+        accountId: accountId
+      properties:
+        accountId:
+          type: string
+        subscriptionStatus:
+          $ref: '#/components/schemas/v1PositionsAccountSubscriptionStatus'
+      type: object
+    v1PositionsAccountSubscriptionStatus:
+      default: POSITIONS_SUBSCRIPTION_STATUS_UNSPECIFIED
+      description: Результат подписки.
+      enum:
+        - POSITIONS_SUBSCRIPTION_STATUS_UNSPECIFIED
+        - POSITIONS_SUBSCRIPTION_STATUS_SUCCESS
+        - POSITIONS_SUBSCRIPTION_STATUS_ACCOUNT_NOT_FOUND
+        - POSITIONS_SUBSCRIPTION_STATUS_INTERNAL_ERROR
+      type: string
+    v1PositionData:
+      description: Данные о позиции портфеля.
+      example:
+        date: '2000-01-23T04:56:07.000+00:00'
+        accountId: accountId
+        money:
+          - availableValue:
+              nano: 5
+              currency: currency
+              units: units
+            blockedValue:
+              nano: 5
+              currency: currency
+              units: units
+          - availableValue:
+              nano: 5
+              currency: currency
+              units: units
+            blockedValue:
+              nano: 5
+              currency: currency
+              units: units
+        options:
+          - blocked: blocked
+            balance: balance
+            instrumentUid: instrumentUid
+            positionUid: positionUid
+          - blocked: blocked
+            balance: balance
+            instrumentUid: instrumentUid
+            positionUid: positionUid
+        futures:
+          - blocked: blocked
+            balance: balance
+            instrumentUid: instrumentUid
+            positionUid: positionUid
+            figi: figi
+          - blocked: blocked
+            balance: balance
+            instrumentUid: instrumentUid
+            positionUid: positionUid
+            figi: figi
+        securities:
+          - instrumentType: instrumentType
+            blocked: blocked
+            balance: balance
+            instrumentUid: instrumentUid
+            positionUid: positionUid
+            figi: figi
+            exchangeBlocked: true
+          - instrumentType: instrumentType
+            blocked: blocked
+            balance: balance
+            instrumentUid: instrumentUid
+            positionUid: positionUid
+            figi: figi
+            exchangeBlocked: true
+      properties:
+        accountId:
+          type: string
+        money:
+          items:
+            $ref: '#/components/schemas/v1PositionsMoney'
+          type: array
+        securities:
+          items:
+            $ref: '#/components/schemas/v1PositionsSecurities'
+          type: array
+        futures:
+          items:
+            $ref: '#/components/schemas/v1PositionsFutures'
+          type: array
+        options:
+          items:
+            $ref: '#/components/schemas/v1PositionsOptions'
+          type: array
+        date:
+          format: date-time
+          type: string
+      type: object
+    v1PositionsMoney:
+      description: Валютная позиция портфеля.
+      example:
+        availableValue:
+          nano: 5
+          currency: currency
+          units: units
+        blockedValue:
+          nano: 5
+          currency: currency
+          units: units
+      properties:
+        availableValue:
+          $ref: '#/components/schemas/v1MoneyValue'
+        blockedValue:
+          $ref: '#/components/schemas/v1MoneyValue'
+      type: object
+    v1PositionsSecurities:
+      description: Баланс позиции ценной бумаги.
+      example:
+        instrumentType: instrumentType
+        blocked: blocked
+        balance: balance
+        instrumentUid: instrumentUid
+        positionUid: positionUid
+        figi: figi
+        exchangeBlocked: true
+      properties:
+        figi:
+          type: string
+        blocked:
+          format: int64
+          type: string
+        balance:
+          format: int64
+          type: string
+        positionUid:
+          type: string
+        instrumentUid:
+          type: string
+        exchangeBlocked:
+          type: boolean
+        instrumentType:
+          type: string
+      type: object
+    v1PositionsFutures:
+      description: Баланс фьючерса.
+      example:
+        blocked: blocked
+        balance: balance
+        instrumentUid: instrumentUid
+        positionUid: positionUid
+        figi: figi
+      properties:
+        figi:
+          type: string
+        blocked:
+          format: int64
+          type: string
+        balance:
+          format: int64
+          type: string
+        positionUid:
+          type: string
+        instrumentUid:
+          type: string
+      type: object
+    v1PositionsOptions:
+      description: Баланс опциона.
+      example:
+        blocked: blocked
+        balance: balance
+        instrumentUid: instrumentUid
+        positionUid: positionUid
+      properties:
+        positionUid:
+          type: string
+        instrumentUid:
+          type: string
+        blocked:
+          format: int64
+          type: string
+        balance:
+          format: int64
+          type: string
+      type: object
+    v1PositionsStreamRequest:
+      description: Запрос установки stream-соединения позиций.
+      properties:
+        accounts:
+          items:
+            type: string
+          type: array
+      type: object
+    v1TradesStreamResponse:
+      description: Информация о торговых поручениях.
+      example:
+        ping:
+          time: '2000-01-23T04:56:07.000+00:00'
+        orderTrades:
+          createdAt: '2000-01-23T04:56:07.000+00:00'
+          accountId: accountId
+          orderId: orderId
+          instrumentUid: instrumentUid
+          trades:
+            - dateTime: '2000-01-23T04:56:07.000+00:00'
+              quantity: quantity
+              price:
+                nano: 6
+                units: units
+              tradeId: tradeId
+            - dateTime: '2000-01-23T04:56:07.000+00:00'
+              quantity: quantity
+              price:
+                nano: 6
+                units: units
+              tradeId: tradeId
+          figi: figi
+      properties:
+        orderTrades:
+          $ref: '#/components/schemas/v1OrderTrades'
+        ping:
+          $ref: '#/components/schemas/v1Ping'
+      type: object
+    v1OrderTrades:
+      description: Информация об исполнении торгового поручения.
+      example:
+        createdAt: '2000-01-23T04:56:07.000+00:00'
+        accountId: accountId
+        orderId: orderId
+        instrumentUid: instrumentUid
+        trades:
+          - dateTime: '2000-01-23T04:56:07.000+00:00'
+            quantity: quantity
+            price:
+              nano: 6
+              units: units
+            tradeId: tradeId
+          - dateTime: '2000-01-23T04:56:07.000+00:00'
+            quantity: quantity
+            price:
+              nano: 6
+              units: units
+            tradeId: tradeId
+        figi: figi
+      properties:
+        orderId:
+          type: string
+        createdAt:
+          format: date-time
+          type: string
+        direction:
+          $ref: '#/components/schemas/v1OrderDirection'
+        figi:
+          type: string
+        trades:
+          items:
+            $ref: '#/components/schemas/v1OrderTrade'
+          type: array
+        accountId:
+          type: string
+        instrumentUid:
+          type: string
+      type: object
+    v1OrderDirection:
+      default: ORDER_DIRECTION_UNSPECIFIED
+      description: Направление операции.
+      enum:
+        - ORDER_DIRECTION_UNSPECIFIED
+        - ORDER_DIRECTION_BUY
+        - ORDER_DIRECTION_SELL
+      type: string
+    v1OrderTrade:
+      description: Информация о сделке.
+      example:
+        dateTime: '2000-01-23T04:56:07.000+00:00'
+        quantity: quantity
+        price:
+          nano: 6
+          units: units
+        tradeId: tradeId
+      properties:
+        dateTime:
+          format: date-time
+          type: string
+        price:
+          $ref: '#/components/schemas/v1Quotation'
+        quantity:
+          format: int64
+          type: string
+        tradeId:
+          type: string
+      type: object
+    v1TradesStreamRequest:
+      description: Запрос установки соединения.
+      properties:
+        accounts:
+          items:
+            type: string
+          type: array
+      type: object
+    EmptyObj:
+      type: object
+  messages:
+    v1MarketDataServerSideStreamRequest:
+      payload:
+        $ref: '#/components/schemas/v1MarketDataServerSideStreamRequest'
+    Stream_result_of_v1MarketDataResponse:
+      payload:
+        oneOf:
+          - $ref: '#/components/schemas/v1MarketDataResponse'
+          - $ref: '#/components/schemas/rpcStatus'
+    v1MarketDataRequest:
+      description: Запрос подписки или отписки на определённые биржевые данные.
+      payload:
+        $ref: '#/components/schemas/v1MarketDataRequest'
+    v1PortfolioStreamRequest:
+      description: Запрос установки stream-соединения.
+      payload:
+        $ref: '#/components/schemas/v1PortfolioStreamRequest'
+    Stream_result_of_v1PortfolioStreamResponse:
+      payload:
+        oneOf:
+          - $ref: '#/components/schemas/v1PortfolioStreamResponse'
+          - $ref: '#/components/schemas/rpcStatus'
+    v1PositionsStreamRequest:
+      description: Запрос установки stream-соединения позиций.
+      payload:
+        $ref: '#/components/schemas/v1PositionsStreamRequest'
+    Stream_result_of_v1PositionsStreamResponse:
+      payload:
+        oneOf:
+          - $ref: '#/components/schemas/v1PositionsStreamResponse'
+          - $ref: '#/components/schemas/rpcStatus'
+    v1TradesStreamRequest:
+      description: Запрос установки соединения.
+      payload:
+        $ref: '#/components/schemas/v1TradesStreamRequest'
+    Stream_result_of_v1TradesStreamResponse:
+      payload:
+        oneOf:
+          - $ref: '#/components/schemas/v1TradesStreamResponse'
+          - $ref: '#/components/schemas/rpcStatus'

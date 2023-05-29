@@ -101,17 +101,9 @@
 
 
 #### Options
-Deprecated Метод получения списка опционов.
-
-- Тело запроса — [InstrumentsRequest](#instrumentsrequest)
-
-- Тело ответа — [OptionsResponse](#optionsresponse)
-
-
-#### OptionsBy
 Метод получения списка опционов.
 
-- Тело запроса — [FilterOptionsRequest](#filteroptionsrequest)
+- Тело запроса — [InstrumentsRequest](#instrumentsrequest)
 
 - Тело ответа — [OptionsResponse](#optionsresponse)
 
@@ -173,7 +165,7 @@ Deprecated Метод получения списка опционов.
 
 
 #### GetAssets
-Метод получения списка активов. Метод работает для всех инструментов, за исключением срочных - опционов и фьючерсов.
+Метод получения списка активов.
 
 - Тело запроса — [AssetsRequest](#assetsrequest)
 
@@ -315,18 +307,6 @@ Deprecated Метод получения списка опционов.
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | instrument_status |  [InstrumentStatus](#instrumentstatus) | Статус запрашиваемых инструментов. Возможные значения: [InstrumentStatus](#instrumentstatus) |
- <!-- end Fields -->
- <!-- end HasFields -->
-
-
-#### FilterOptionsRequest
-Параметры фильтрации опционов
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| basic_asset_uid |  [string](#string) | Идентификатор базового актива опциона.  Обязательный параметр. |
-| basic_asset_position_uid |  [string](#string) | Идентификатор позиции базового актива опциона |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -612,7 +592,6 @@ Deprecated Метод получения списка опционов.
 | weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным |
 | blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС |
 | subordinated_flag |  [bool](#bool) | Признак субординированной облигации. |
-| liquidity_flag |  [bool](#bool) | Флаг достаточной ликвидности |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
 | risk_level |  [RiskLevel](#risklevel) | Уровень риска. |
@@ -706,7 +685,6 @@ Deprecated Метод получения списка опционов.
 | for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
 | weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным. |
 | blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС. |
-| liquidity_flag |  [bool](#bool) | Флаг достаточной ликвидности |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
  <!-- end Fields -->
@@ -806,7 +784,6 @@ Deprecated Метод получения списка опционов.
 | for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
 | weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным |
 | blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС |
-| liquidity_flag |  [bool](#bool) | Флаг достаточной ликвидности |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
  <!-- end Fields -->
@@ -1000,11 +977,6 @@ Deprecated Метод получения списка опционов.
 #### AssetsRequest
 Запрос списка активов.
 
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| instrument_type |  [InstrumentType](#instrumenttype) |  |
- <!-- end Fields -->
  <!-- end HasFields -->
 
 
@@ -1253,7 +1225,6 @@ Deprecated Метод получения списка опционов.
 | class_code |  [string](#string) | Класс-код (секция торгов). |
 | links | Массив объектов [InstrumentLink](#instrumentlink) | Массив связанных инструментов. |
 | instrument_kind |  [InstrumentType](#instrumenttype) | Тип инструмента. |
-| position_uid |  [string](#string) | id позиции. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1377,8 +1348,6 @@ Deprecated Метод получения списка опционов.
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | query |  [string](#string) | Строка поиска. |
-| instrument_kind |  [InstrumentType](#instrumenttype) | Фильтр по типу инструмента. |
-| api_trade_available_flag |  [bool](#bool) | Фильтр для отображения только торговых инструментов. |
  <!-- end Fields -->
  <!-- end HasFields -->
 

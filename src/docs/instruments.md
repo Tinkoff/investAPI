@@ -101,9 +101,17 @@
 
 
 #### Options
-Метод получения списка опционов.
+Deprecated Метод получения списка опционов.
 
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
+
+- Тело ответа — [OptionsResponse](#optionsresponse)
+
+
+#### OptionsBy
+Метод получения списка опционов.
+
+- Тело запроса — [FilterOptionsRequest](#filteroptionsrequest)
 
 - Тело ответа — [OptionsResponse](#optionsresponse)
 
@@ -311,6 +319,18 @@
  <!-- end HasFields -->
 
 
+#### FilterOptionsRequest
+Параметры фильтрации опционов
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| basic_asset_uid |  [string](#string) | Идентификатор базового актива опциона.  Обязательный параметр. |
+| basic_asset_position_uid |  [string](#string) | Идентификатор позиции базового актива опциона |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
 #### BondResponse
 Информация об облигации.
 
@@ -492,12 +512,12 @@
 | sector |  [string](#string) | Сектор экономики. |
 | lot |  [int32](#int32) | Количество бумаг в лоте. |
 | basic_asset_size |  [Quotation](#quotation) | Размер основного актива. |
-| klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. |
-| kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. |
-| dlong |  [Quotation](#quotation) | Ставка риска минимальной маржи лонг. |
-| dshort |  [Quotation](#quotation) | Ставка риска минимальной маржи шорт. |
-| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи лонг. |
-| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи шорт. |
+| klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР) |
+| kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР) |
+| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг. |
+| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. |
+| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. |
+| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. |
 | min_price_increment |  [Quotation](#quotation) | Минимальный шаг цены. |
 | strike_price |  [MoneyValue](#moneyvalue) | Цена страйка. |
 | expiration_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата истечения срока в формате UTC. |
@@ -592,6 +612,7 @@
 | weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным |
 | blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС |
 | subordinated_flag |  [bool](#bool) | Признак субординированной облигации. |
+| liquidity_flag |  [bool](#bool) | Флаг достаточной ликвидности |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
 | risk_level |  [RiskLevel](#risklevel) | Уровень риска. |
@@ -685,6 +706,7 @@
 | for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
 | weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным. |
 | blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС. |
+| liquidity_flag |  [bool](#bool) | Флаг достаточной ликвидности |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
  <!-- end Fields -->
@@ -784,6 +806,7 @@
 | for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
 | weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным |
 | blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС |
+| liquidity_flag |  [bool](#bool) | Флаг достаточной ликвидности |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
  <!-- end Fields -->
@@ -977,6 +1000,11 @@
 #### AssetsRequest
 Запрос списка активов.
 
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instrument_type |  [InstrumentType](#instrumenttype) |  |
+ <!-- end Fields -->
  <!-- end HasFields -->
 
 
@@ -1225,6 +1253,7 @@
 | class_code |  [string](#string) | Класс-код (секция торгов). |
 | links | Массив объектов [InstrumentLink](#instrumentlink) | Массив связанных инструментов. |
 | instrument_kind |  [InstrumentType](#instrumenttype) | Тип инструмента. |
+| position_uid |  [string](#string) | id позиции. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1348,6 +1377,8 @@
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | query |  [string](#string) | Строка поиска. |
+| instrument_kind |  [InstrumentType](#instrumenttype) | Фильтр по типу инструмента. |
+| api_trade_available_flag |  [bool](#bool) | Фильтр для отображения только торговых инструментов. |
  <!-- end Fields -->
  <!-- end HasFields -->
 

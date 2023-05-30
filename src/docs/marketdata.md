@@ -786,6 +786,7 @@ subscribeCandles | Изменения статуса подписки на св�
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
+| CANDLE_INTERVAL_UNSPECIFIED | 0 | Интервал не определён. |
 | CANDLE_INTERVAL_1_MIN | 1 | от 1 минуты до 1 дня. |
 | CANDLE_INTERVAL_5_MIN | 2 | от 5 минут до 1 дня. |
 | CANDLE_INTERVAL_15_MIN | 3 | от 15 минут до 1 дня. |

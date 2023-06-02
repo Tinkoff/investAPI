@@ -1730,56 +1730,6 @@ paths:
       tags:
         - SandboxService
       x-codegen-request-body-name: body
-  /tinkoff.public.invest.api.contract.v1.SignalService/GetSignals:
-    post:
-      operationId: SignalService_GetSignals
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/v1GetSignalsRequest'
-        required: true
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/v1GetSignalsResponse'
-          description: A successful response.
-        default:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/rpcStatus'
-          description: An unexpected error response.
-      tags:
-        - SignalService
-      x-codegen-request-body-name: body
-  /tinkoff.public.invest.api.contract.v1.SignalService/GetStrategies:
-    post:
-      operationId: SignalService_GetStrategies
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/v1GetStrategiesRequest'
-        required: true
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/v1GetStrategiesResponse'
-          description: A successful response.
-        default:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/rpcStatus'
-          description: An unexpected error response.
-      tags:
-        - SignalService
-      x-codegen-request-body-name: body
   /tinkoff.public.invest.api.contract.v1.StopOrdersService/CancelStopOrder:
     post:
       operationId: StopOrdersService_CancelStopOrder
@@ -6471,48 +6421,6 @@ components:
         orders:
           items:
             $ref: '#/components/schemas/v1OrderState'
-          type: array
-      type: object
-    v1GetSignalsRequest:
-      properties:
-        strategyId:
-          type: string
-        from:
-          format: date-time
-          type: string
-        instrumentUid:
-          type: string
-        to:
-          format: date-time
-          type: string
-        archive:
-          type: boolean
-      type: object
-    v1GetSignalsResponse:
-      example:
-        signals:
-          - price: 0.8008282
-            signalId: signalId
-            instrumentUid: instrumentUid
-            lifetime: lifetime
-            strategyId: strategyId
-            createDt: 2000-01-23T04:56:07.000Z
-            profit: 6.0274563
-            direction: direction
-            info: info
-          - price: 0.8008282
-            signalId: signalId
-            instrumentUid: instrumentUid
-            lifetime: lifetime
-            strategyId: strategyId
-            createDt: 2000-01-23T04:56:07.000Z
-            profit: 6.0274563
-            direction: direction
-            info: info
-      properties:
-        signals:
-          items:
-            $ref: '#/components/schemas/v1Signal'
           type: array
       type: object
     v1GetStopOrdersRequest:

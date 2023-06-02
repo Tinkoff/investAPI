@@ -30,7 +30,7 @@
 30025|INVALID_ARGUMENT|missing parameter: 'order_type'|Входной параметр *order_type* является обязательным. </br> Укажите корректный параметр *order_type*.|
 30026|INVALID_ARGUMENT|invalid parameter: 'order_type'|Входной параметр *order_type* имеет некорректное значение. </br> Укажите корректный параметр *order_type*.|
 30027|INVALID_ARGUMENT|missing parameter: 'order_id'|Входной параметр *order_id* является обязательным. </br> Укажите корректный параметр *order_id*.|
-30028|INVALID_ARGUMENT|'order id' is invalid|Входной параметр *order_id* имеет некорректное значение.</br>Укажите корректный параметр *order_id*.|
+30028|INVALID_ARGUMENT|'order id' is invalid UUID format.|Входной параметр *order_id* имеет некорректное значение.</br>Укажите корректный параметр *order_id* формата UUID|
 30029|INVALID_ARGUMENT|missing parameter: 'idempotency_key'|Входной параметр *idempotency_key* является обязательным. </br> Укажите корректный параметр *idempotency_key*.|
 30030|INVALID_ARGUMENT|'idempotency_key' is invalid|Входной параметр *idempotency_key* имеет некорректное значение.</br>Укажите корректный параметр *idempotency_key*.|
 30031|INVALID_ARGUMENT|missing parameter: 'depth'|Входной параметр *depth* является обязательным. </br>Укажите корректный параметр *depth*.|
@@ -96,6 +96,7 @@
 30100|INVALID_ARGUMENT|the price must be positive|Цена должна быть положительной.|
 30101|INVALID_ARGUMENT|to trade this financial instrument, pass the test|Для торговли этим инструментом пройдите тестирование.|
 30102|INVALID_ARGUMENT|Required parameters missing|Не правильно указаны обязателеные параметры.|
+30103|INVALID_ARGUMENT|Only best price is allowed|Для инструмента доступно выставление заявки только типа лучшая цена|
 40002|PERMISSION_DENIED|insufficient privileges|Недостаточно прав для совершения операции. </br>Токен доступа имеет уровень прав read-only, либо у токена нет доступа к указанному счету.</br>Подробнее: [Виды токенов](https://tinkoff.github.io/investAPI/index#_2)|
 40003|UNAUTHENTICATED|authentication token is missing or invalid|Токен доступа не найден или не активен. </br>Вы можете выпустить новый токен по ссылке [Настройки](https://www.tinkoff.ru/invest/settings/)|
 40004|PERMISSION_DENIED|Working with orders is not available with this account|Выставление заявок недоступно с текущего аккаунта.|

@@ -25,7 +25,8 @@ nav:
   - Глоссарий: glossary.md
   - "Лимитная политика": limits.md
   - "Доступные протoколы взаимодействия": api_protocols.md
-  - "Протокол взаимодействия": grpc.md 
+  - "grps": grpc.md 
+  - "WebSoket": ws\README.md
   - "Токен доступа": token.md
   - "Идентификация торговых инструментов": faq_identification.md
   - "Нестандартные типы данных": faq_custom_types.md
@@ -43,6 +44,7 @@ nav:
   - "Квалифицированный инвестор": accredited_investor.md
   - "Правила обработки корпоративных действий": faq_corp_action.md
   - "Как ускорить работу с биржей": speedup.md
+  - "Как пользоваться Swagger?": swagger.md
   - "SLA": sla.md
   - Примеры запросов: example.md
   - "EOL v1": eol_v1.md
@@ -51,6 +53,7 @@ nav:
   - Python: faq_python.md
   - Java: faq_java.md
   - С#: faq_csharp.md
+  - Golang: faq_golang.md
 - Сервис счетов:
   - Описание: head-users.md
   - Методы: users.md

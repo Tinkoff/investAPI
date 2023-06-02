@@ -512,12 +512,12 @@ Deprecated Метод получения списка опционов.
 | sector |  [string](#string) | Сектор экономики. |
 | lot |  [int32](#int32) | Количество бумаг в лоте. |
 | basic_asset_size |  [Quotation](#quotation) | Размер основного актива. |
-| klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. |
-| kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. |
-| dlong |  [Quotation](#quotation) | Ставка риска минимальной маржи лонг. |
-| dshort |  [Quotation](#quotation) | Ставка риска минимальной маржи шорт. |
-| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи лонг. |
-| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи шорт. |
+| klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР) |
+| kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР) |
+| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг. |
+| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. |
+| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. |
+| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. |
 | min_price_increment |  [Quotation](#quotation) | Минимальный шаг цены. |
 | strike_price |  [MoneyValue](#moneyvalue) | Цена страйка. |
 | expiration_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата истечения срока в формате UTC. |

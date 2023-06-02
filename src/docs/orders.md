@@ -256,7 +256,6 @@ Stream сделок пользователя
 | order_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время выставления заявки в часовом поясе UTC. |
 | instrument_uid |  [string](#string) | UID идентификатор инструмента. |
 | order_request_id |  [string](#string) | Идентификатор ключа идемпотентности, переданный клиентом, в формате UID. Максимальная длина 36 символов. |
-
  <!-- end Fields -->
  <!-- end HasFields -->
 

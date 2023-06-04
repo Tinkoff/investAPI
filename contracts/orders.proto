@@ -76,7 +76,7 @@ message PostOrderRequest {
   OrderDirection direction = 4; //Направление операции.
   string account_id = 5; //Номер счёта.
   OrderType order_type = 6; //Тип заявки.
-  string order_id = 7; //Идентификатор запроса выставления поручения для целей идемпотентности. Максимальная длина 36 символов.
+  string order_id = 7; //Идентификатор запроса выставления поручения для целей идемпотентности в формате UID. Максимальная длина 36 символов.
   string instrument_id = 8; //Идентификатор инструмента, принимает значения Figi или Instrument_uid.
 }
 
@@ -153,7 +153,7 @@ message OrderState {
   OrderType order_type = 17; //Тип заявки.
   google.protobuf.Timestamp order_date = 18; //Дата и время выставления заявки в часовом поясе UTC.
   string instrument_uid = 19; //UID идентификатор инструмента.
-  string order_request_id = 20; //Идентификатор ключа идемпотентности, переданный клиентом.
+  string order_request_id = 20; //Идентификатор ключа идемпотентности, переданный клиентом, в формате UID. Максимальная длина 36 символов.
 }
 
 //Сделки в рамках торгового поручения.

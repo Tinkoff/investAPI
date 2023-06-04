@@ -287,7 +287,19 @@
   
     <li class="md-nav__item">
       <a href="../grpc/" class="md-nav__link">
-        Протокол взаимодействия
+        grps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ws/" class="md-nav__link">
+        WebSoket
       </a>
     </li>
   
@@ -508,6 +520,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../swagger/" class="md-nav__link">
+        Как пользоваться Swagger?
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../sla/" class="md-nav__link">
         SLA
       </a>
@@ -615,6 +639,18 @@
     <li class="md-nav__item">
       <a href="../faq_csharp/" class="md-nav__link">
         С#
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_golang/" class="md-nav__link">
+        Golang
       </a>
     </li>
   
@@ -1205,20 +1241,29 @@
 <tr>
 <th>Протокол</th>
 <th>Подробнее</th>
+<th>Endpoint</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>gRPC</td>
 <td>API реализован на быстром, удобном и функциональном протоколе <a href="https://grpc.io/docs/">gRPC</a>.</td>
+<td>https://invest-public-api.tinkoff.ru:443 - продовый сервис, https://sandbox-invest-public-api.tinkoff.ru:443 - сервис песочницы</td>
 </tr>
 <tr>
 <td>gRPC-web</td>
 <td>Для поддержки web-клиентов, например браузерных JS скриптов, внедрена поддержка <a href="https://grpc.io/docs/platforms/web/basics/">gRPC-web</a>.</td>
+<td>https://invest-public-api.tinkoff.ru:443 - продовый сервис, https://sandbox-invest-public-api.tinkoff.ru:443 - сервис песочницы</td>
 </tr>
 <tr>
 <td>REST API</td>
-<td>Для клиентов, привыкших работать с REST API, реализован прокси <a href="https://tinkoff.github.io/investAPI/swagger-ui/">Swagger</a></td>
+<td>Для клиентов, привыкших работать с REST API, реализован прокси <a href="https://tinkoff.github.io/investAPI/swagger-ui/">Swagger</a>. Инструкцию по использованию Swagger вы можете прочитать <a href="/investAPI/swagger/">здесь</a>.</td>
+<td>https://invest-public-api.tinkoff.ru/rest/- продовый сервис, https://sandbox-invest-public-api.tinkoff.ru/rest/ -- сервис песочницы</td>
+</tr>
+<tr>
+<td>WebSoket</td>
+<td>Внедрена поддержка Websoket протокола.</td>
+<td>wss://invest-public-api.tinkoff.ru/ws/</td>
 </tr>
 </tbody>
 </table>
@@ -1265,13 +1310,13 @@
       
       
         
-        <a href="../grpc/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Протокол взаимодействия" rel="next">
+        <a href="../grpc/" class="md-footer__link md-footer__link--next" aria-label="Вперед: grps" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Вперед
               </span>
-              Протокол взаимодействия
+              grps
             </div>
           </div>
           <div class="md-footer__button md-icon">

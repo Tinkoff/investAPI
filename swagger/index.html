@@ -14,7 +14,7 @@
     
     
       
-        <title>SLA - TINKOFF INVEST API</title>
+        <title>Как пользоваться Swagger? - TINKOFF INVEST API</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#swagger" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SLA
+              Как пользоваться Swagger?
             
           </span>
         </div>
@@ -508,18 +508,6 @@
             
   
   
-  
-    <li class="md-nav__item">
-      <a href="../swagger/" class="md-nav__link">
-        Как пользоваться Swagger?
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
     
   
   
@@ -530,12 +518,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          SLA
+          Как пользоваться Swagger?
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        SLA
+        Как пользоваться Swagger?
       </a>
       
         
@@ -551,9 +539,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    Время жизни ключа идемпотентности на стороне брокера
+  <a href="#swagger" class="md-nav__link">
+    Что такое Swagger?
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swagger-ui" class="md-nav__link">
+    Что такое Swagger UI?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Инструкция по использованию
+  </a>
+  
+    <nav class="md-nav" aria-label="Инструкция по использованию">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Авторизация
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Создание запроса
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -561,6 +583,18 @@
   
 </nav>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sla/" class="md-nav__link">
+        SLA
+      </a>
     </li>
   
 
@@ -1249,9 +1283,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    Время жизни ключа идемпотентности на стороне брокера
+  <a href="#swagger" class="md-nav__link">
+    Что такое Swagger?
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swagger-ui" class="md-nav__link">
+    Что такое Swagger UI?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Инструкция по использованию
+  </a>
+  
+    <nav class="md-nav" aria-label="Инструкция по использованию">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Авторизация
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Создание запроса
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1267,17 +1335,50 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Tinkoff/investAPI/edit/master/docs/sla.md" title="Редактировать страницу" class="md-content__button md-icon">
+                  <a href="https://github.com/Tinkoff/investAPI/edit/master/docs/swagger.md" title="Редактировать страницу" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>SLA</h1>
+                  <h1>Как пользоваться Swagger?</h1>
                 
-                <h2 id="_1">Время жизни ключа идемпотентности на стороне брокера</h2>
-<p><strong>Ключ идемпотентности</strong>, передаваемый как параметр <code>order_id</code> в методе <a href="/investAPI/orders#postorder">postOrder</a>, а так же
-передаваемый как <code>idempotency_key</code> в методе <a href="/investAPI/orders#replaceorder">replaceOrder</a> хранится на стороне брокера и имеет срок жизни <strong>один год</strong>.</p>
-<p>Счетчик стрим соединений обновляется каждые 2 минуты.</p>
+                <h2 id="swagger">Что такое Swagger?</h2>
+<p><strong>Swagger</strong> - это фреймворк для спецификации RESTful API. Один из его инструментов, Swagger UI, позволяет не только интерактивно просматривать спецификацию, но и отправлять запросы.</p>
+<h2 id="swagger-ui">Что такое Swagger UI?</h2>
+<p><strong><a href="https://swagger.io/tools/swagger-ui/">Swagger UI</a></strong> - один из самых популярных инструментов для создания интерактивной документации. Swagger UI создает интерактивную консоль API для экспериментов с запросами в реальном времени. </p>
+<h2 id="_1">Инструкция по использованию</h2>
+<h3 id="_2">Авторизация</h3>
+<p>Прежде чем делать какие-либо запросы, нужна авторизация. Нажимаем кнопку Authorize и заполняем информацию, требуемую в окне «Авторизация», изображенном ниже:</p>
+<p><img alt="Swagger авторизация" src="/investAPI/img/Auth_swagger1.png" title="Swagger авторизация" /></p>
+<p><img alt="Swagger авторизация - интерфейс" src="/investAPI/img/Auth_swagger.png" title="Swagger авторизация - интерфейс" /></p>
+<p>В нашем случае необходимо ввести токен токен доступа. Подробнее о том, как получить токен можно узнать по ссылке: <a href="/investAPI/token/">Токен доступа</a></p>
+<p>Например:
+<code>t.QtEo8ahkNFX4RTpbqp0u4z4GDZq27HzUp6AotJASBx7_DVqmqZMHfM2Cy7JmUjS80boI9eVg</code></p>
+<h3 id="_3">Создание запроса</h3>
+<p>Теперь создадим запрос:</p>
+<ul>
+<li>Разворачиваем конечную точку </li>
+<li>Нажимаем кнопку Try it out</li>
+</ul>
+<p><img alt="Swagger Try" src="/investAPI/img/Swagger_try.png" title="Swagger Try" /></p>
+<ul>
+<li>
+<p>После того, как мы нажмем кнопку Try it out, значение примера в поле «Тело запроса» станет редактируемым.</p>
+</li>
+<li>
+<p>В редактируемом поле изменяем значения параметров.</p>
+</li>
+<li>
+<p>Нажимаем Execute.</p>
+</li>
+</ul>
+<p><img alt="Swagger Try 2" src="/investAPI/img/Swagger_try2.png" title="Swagger Try 2" /></p>
+<p>Пользовательский интерфейс Swagger отправляет запрос и показывает отправленный curl. Раздел Ответы показывает тело ответа и заголовки ответа.</p>
+<p>Самый ожидаемый ответ, в случае правильной обработки запроса сервером, имеет код 200 и показывает то, как должна выглядеть структура ответа.</p>
+<p><img alt="Swagger Response" src="/investAPI/img/response_swagger.png" title="Swagger Respons" /></p>
+<p><img alt="Swagger Response" src="/investAPI/img/response_swagger2.png" title="Swagger Respons" /></p>
+<p>C помощью Swagger вы можете тестировать методы <a href="https://tinkoff.github.io/investAPI/swagger-ui/">Tinkoff Invest API</a>.</p>
+<p>Официальную документацию вы можете найти на сайте <a href="https://swagger.io/">Swagger</a>.</p>
                 
               
               
@@ -1285,7 +1386,7 @@
 <div class="container">
     <script src="https://utteranc.es/client.js"
             repo="https://github.com/Tinkoff/investAPI"
-            issue-term="SLA comments"
+            issue-term="Как пользоваться Swagger? comments"
             label="documentation"
             theme="github-light"
             crossorigin="anonymous"
@@ -1305,7 +1406,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../swagger/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Как пользоваться Swagger?" rel="prev">
+        <a href="../speedup/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Как ускорить работу с биржей" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1314,20 +1415,20 @@
               <span class="md-footer__direction">
                 Назад
               </span>
-              Как пользоваться Swagger?
+              Как ускорить работу с биржей
             </div>
           </div>
         </a>
       
       
         
-        <a href="../example/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Примеры запросов" rel="next">
+        <a href="../sla/" class="md-footer__link md-footer__link--next" aria-label="Вперед: SLA" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Вперед
               </span>
-              Примеры запросов
+              SLA
             </div>
           </div>
           <div class="md-footer__button md-icon">

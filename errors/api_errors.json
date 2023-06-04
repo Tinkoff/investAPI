@@ -140,9 +140,9 @@
     "description": "Входной параметр *order_id* является обязательным. </br> Укажите корректный параметр *order_id*."
   },
   "30028": {
-    "message": "'order id' is invalid",
+    "message": "'order id' is invalid UUID format.",
     "type": "INVALID_ARGUMENT",
-    "description": "Входной параметр *order_id* имеет некорректное значение.</br>Укажите корректный параметр *order_id*."
+    "description": "Входной параметр *order_id* имеет некорректное значение.</br>Укажите корректный параметр *order_id* формата UUID"
   },
   "30029": {
     "message": "missing parameter: 'idempotency_key'",
@@ -468,6 +468,11 @@
     "message": "Required parameters missing",
     "type": "INVALID_ARGUMENT",
     "description": "Не правильно указаны обязателеные параметры."
+  },
+  "30103": {
+    "message": "Only best price is allowed",
+    "type": "INVALID_ARGUMENT",
+    "description": "Для инструмента доступно выставление заявки только типа лучшая цена"
   },
   "40002": {
     "message": "insufficient privileges",

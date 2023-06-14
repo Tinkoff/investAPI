@@ -918,8 +918,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../glossary-instrument/" class="md-nav__link">
-        Голоссарий
+      <a href="../more-instrument/" class="md-nav__link">
+        Больше информации о сервисе инструментов
       </a>
     </li>
   
@@ -1476,6 +1476,13 @@
   , либо  в заголовке <code>Web-Socket-Protocol: json, *token</code></li>
 <li>запрос на подключение требует указание протокола json в заголовоке <code>Web-Socket-Protocol: json</code></li>
 </ul>
+<p>Чтобы получать сообщения c наименованиями полей идентичными наименованиям полей из proto-контрактов, необходимо использовать протокол в заголовке WebSocket-Protocol</p>
+<pre><code>json-proto
+</code></pre>
+<p>вместо</p>
+<pre><code>json
+</code></pre>
+<p>Отправка json-сообщений поддерживается в обоих вариантах,  как в camelCase, так и snake_case.</p>
 <h2 id="_1">Сервис поручений</h2>
 <h3 id="_2">Лента сделок.</h3>
 <p><a href="/investAPI/ws/websock-docs/output/index.html#schema-v1TradesStreamRequest">TradesStreamRequest</a>

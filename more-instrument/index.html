@@ -14,7 +14,7 @@
     
     
       
-        <title>Голоссарий - TINKOFF INVEST API</title>
+        <title>Больше информации о сервисе инструментов - TINKOFF INVEST API</title>
       
     
     
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Голоссарий
+              Больше информации о сервисе инструментов
             
           </span>
         </div>
@@ -793,12 +793,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Голоссарий
+          Больше информации о сервисе инструментов
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Голоссарий
+        Больше информации о сервисе инструментов
       </a>
       
         
@@ -825,6 +825,13 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     Общие определения для параметров
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Опционы
   </a>
   
 </li>
@@ -1275,6 +1282,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Опционы
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1287,7 +1301,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Tinkoff/investAPI/edit/master/docs/glossary-instrument.md" title="Редактировать страницу" class="md-content__button md-icon">
+                  <a href="https://github.com/Tinkoff/investAPI/edit/master/docs/more-instrument.md" title="Редактировать страницу" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -1296,6 +1310,26 @@
 <h3 id="_2">Наименование сущностей</h3>
 <p><strong>Актив</strong> (asset) - ценная бумага. Сущность верхнего уровня может иметь несколько вложенных позиций (positions),
 а позиции содержат в свою очередь инструменты (instruments).</p>
+<p>В TINKOFF INVEST API существуют следующие виды активов:</p>
+<p>ASSET_TYPE_UNSPECIFIED – тип не определён;<br />
+ASSET_TYPE_CURRENCY – валюта;<br />
+ASSET_TYPE_COMMODITY – товар;<br />
+ASSET_TYPE_INDEX – индекс;<br />
+ASSET_TYPE_SECURITY – ценная бумага.  </p>
+<p>Для получения информации об активах вы можете использовать:
+- метод <a href="/investAPI/instruments/#getassets">getAssets</a>, с помощью которого можно получить список всех активов. Активы, имеющие связанные с ними инструменты, придут с массивом идентификаторов этих инструментов. Метод работает для всех инструментов, за исключением срочных - опционов и фьючерсов.</p>
+<pre><code>Данный метод возвращает краткую информацию об активе:
+
+* Идентификатор
+* Тип актива
+* Название актива
+* Массив инструментов актива
+</code></pre>
+<ul>
+<li>метод <a href="/investAPI/instruments/#getassetby">getAssetBy</a>, с помощью которого можно найти актив по его идентификатору.
+Этот метод возвращает более подробную информацию о запрошенном активе.<br />
+ Расширенное описание актива включает в себя детализированную информацию в зависимости от типа актива, информацию о бренде, владеющим данным активом, и связанные с активом инструменты.</li>
+</ul>
 <p><strong>Позиция</strong> (position) - это совокупность актива и торговой площадки. Сущность второго уровня вложенности, содержит информацию о позициях.</p>
 <p><strong>Инструмент</strong> (instrument) - сущность третьего уровня, содержит информацию об инструментах. Инструменты изменяют позиции.</p>
 <p>Каждая из сущностей имеет <strong>свой уникальный идентификатор uid</strong>. </p>
@@ -1304,6 +1338,17 @@
 для получения информации о расписании торгов на данной секции. </p>
 <p><strong>Real_exchange</strong> - реальная торговая площадка (биржа). Данный параметр возвращает значение биржи, на которой торгуется инструмент.
 Или же значение REAL_EXCHANGE_OTC, указывающее на то, что инструмент является внебиржевым.</p>
+<h3 id="_4">Опционы</h3>
+<p><a href="https://www.tinkoff.ru/invest/help/educate/high-risk/about/derivatives/?card=q1#:~:text=%D0%B1%D1%83%D0%B4%D0%B5%D1%82%20%D0%B7%D0%B0%D0%BA%D1%80%D1%8B%D1%82%D0%B0%20%D0%BF%D1%80%D0%B8%D0%BD%D1%83%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE.-,%D0%BE%D0%BF%D1%86%D0%B8%D0%BE%D0%BD%D1%8B,-%D0%AD%D1%82%D0%BE%20%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%B0%D0%BA%D1%82%D1%8B%2C%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5">Опционы</a> - это контракты, которые предусматривают право владельца опциона купить или продать базовый актив в указанный период и по определенной цене.</p>
+<p>Актив, в отношении которого заключается опцион, называется базовым активом. Например, им может выступать акция X. Опционы выступают финансовыми инструментами, связанными с конкретными активами. </p>
+<p>В TINKOFF INVEST API добавлены методы:</p>
+<ul>
+<li><a href="/investAPI/instruments/#optionby">GetOptionBy</a> - Метод получения опциона по его идентификатору.</li>
+<li><a href="/investAPI/instruments/#options">GetOptions</a> - Метод получения опционов.</li>
+</ul>
+<p>С помощью данных методов можно получить информацию об опционах, страйках (strike_price) и датах экспирации. 
+Так же можно получить информацию о базовом активе опциона, найти его по идентификатору позиции базового инструмента (basicAssetPositionUid).</p>
+<p>Чтобы найти опционы через их базовый актив, вы можете взять uid необходимого актива из выходных параметров метода <a href="/investAPI/instruments/#getassets">getAssets</a> и передать это значение входным параметром метода <a href="/investAPI/instruments/#getassetby">getAssetBy</a>. Если для данного актива есть торгуемые опционы - вы получите их в выходных параметрах.</p>
                 
               
               
@@ -1311,7 +1356,7 @@
 <div class="container">
     <script src="https://utteranc.es/client.js"
             repo="https://github.com/Tinkoff/investAPI"
-            issue-term="Голоссарий comments"
+            issue-term="Больше информации о сервисе инструментов comments"
             label="documentation"
             theme="github-light"
             crossorigin="anonymous"

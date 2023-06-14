@@ -62,7 +62,7 @@ nav:
   - Описание: head-instruments.md
   - Методы: instruments.md
   - FAQ: faq_instruments.md
-  - Голоссарий: glossary-instrument.md
+  - Больше информации о сервисе инструментов: more-instrument.md
 - Сервис ордеров:
   - Описание: head-orders.md
   - Методы: orders.md

@@ -50,6 +50,10 @@
 
 В методах [getPortfolio](/investAPI/operations#getportfolio) и  [getPositions](/investAPI/operations#getpositions) добавлены специальные булевы параметры, означающие, что данный инструмент заблокирован депозитарием.
 
+###В чем различие между параметрами positions.blocked и positions.blocked_lots в методе [getPortfolio](/investAPI/operations#getportfolio)?
+
+При выставлении лимитных заявок блокируется выставленное количество бумаг на счет, это количество и является значением параметра positions.blocked_lots. Параметр positions.blocked, булевый параметр, значение которого отображает заблокирован ли инструмент депозитарием.
+
 ###Что за значения приходят в positions.expectedYield в методе [getPortfolio](/investAPI/operations#getportfolio)?
 
 В методе [getPortfolio](/investAPI/operations#getportfolio) в параметрах positions.expectedYield и positions.expectedYieldFifo

@@ -24,9 +24,6 @@ nav:
   - "Начало работы": index.md
   - Глоссарий: glossary.md
   - "Лимитная политика": limits.md
-  - "Доступные протoколы взаимодействия": api_protocols.md
-  - "grps": grpc.md 
-  - "WebSoket": ws\README.md
   - "Токен доступа": token.md
   - "Идентификация торговых инструментов": faq_identification.md
   - "Нестандартные типы данных": faq_custom_types.md
@@ -37,6 +34,12 @@ nav:
   - "Таблица конкурсных работ": robot_contest.md
   - "Таблица параметров, возвращающих валюту или пункты": table_order_currency.md
 
+- Протоколы:
+  - "Доступные протoколы": api_protocols.md
+  - "grpc": grpc.md 
+  - "WebSoket": ws\README.md
+  - "Как пользоваться Swagger?": swagger.md
+ 
 - Полезная информация:
   - "Алгоритмический трейдинг": algorithmic_trading.md
   - "Индикаторы технического анализа": tech_indicators.md
@@ -44,7 +47,6 @@ nav:
   - "Квалифицированный инвестор": accredited_investor.md
   - "Правила обработки корпоративных действий": faq_corp_action.md
   - "Как ускорить работу с биржей": speedup.md
-  - "Как пользоваться Swagger?": swagger.md
   - "SLA": sla.md
   - Примеры запросов: example.md
   - "EOL v1": eol_v1.md

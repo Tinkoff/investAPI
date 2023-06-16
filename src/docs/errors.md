@@ -117,3 +117,4 @@
 80003|RESOURCE_EXHAUSTED|The limit on SMS sending has been exceeded, try again in a minute|Превышен лимит на отправку СМС, попробуйте через минуту.|
 90001|FAILED_PRECONDITION|need confirmation: %s|Требуется подтверждение операции. </br>Подробнее в тексте ошибки.|
 90002|FAILED_PRECONDITION|only for qualified investors|Торговля этим инструментом доступна только квалифицированным инвесторам.|
+90003|FAILED_PRECONDITION|Price must be less than 6 millions|Цена должна быть меньше 6 миллионов рублей или его эквиваленту.|

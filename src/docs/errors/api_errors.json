@@ -77,7 +77,7 @@
   "30014": {
     "message": "the maximum request period for the given candle interval has been exceeded",
     "type": "INVALID_ARGUMENT",
-    "description": "Превышен максимальный период запроса для данного интервала свечи. </br>Укажите корректный интервал."
+    "description": "Превышен максимальный период запроса для данного интервала свечи. </br>Укажите корректный интервал. </br> Подробнее: [Интервалы свечей и доступные периоды](https://tinkoff.github.io/investAPI/load_history/)."
   },
   "30015": {
     "message": "parameter 'quantity' is missing or equal to 0",
@@ -92,7 +92,7 @@
   "30017": {
     "message": "missing parameter: 'price'",
     "type": "INVALID_ARGUMENT",
-    "description": "Входной параметр *price* является обязательным. </br> Укажите корректный параметр *price*."
+    "description": "Входной параметр *price* является обязательным. </br> Укажите корректный параметр *price*. </br> Значение параметра *price* должно быть положительным. </br> units и nanos не могут иметь разные знак и модуль nanos должен быть < 999 999 999"
   },
   "30018": {
     "message": "price is invalid",
@@ -127,7 +127,7 @@
   "30025": {
     "message": "missing parameter: 'order_type'",
     "type": "INVALID_ARGUMENT",
-    "description": "Входной параметр *order_type* является обязательным. </br> Укажите корректный параметр *order_type*."
+    "description": "Входной параметр *order_type* является обязательным. </br> Укажите корректный параметр *order_type*. Список доступных значений: [*order_type*](https://tinkoff.github.io/investAPI/orders/#ordertype)."
   },
   "30026": {
     "message": "invalid parameter: 'order_type'",
@@ -142,7 +142,7 @@
   "30028": {
     "message": "'order id' is invalid UUID format.",
     "type": "INVALID_ARGUMENT",
-    "description": "Входной параметр *order_id* имеет некорректное значение.</br>Укажите корректный параметр *order_id* формата UUID"
+    "description": "Входной параметр *order_id* имеет некорректное значение.</br>Укажите корректный параметр *order_id* формата UUID. Максимальная длина 36 символов."
   },
   "30029": {
     "message": "missing parameter: 'idempotency_key'",
@@ -152,7 +152,7 @@
   "30030": {
     "message": "'idempotency_key' is invalid",
     "type": "INVALID_ARGUMENT",
-    "description": "Входной параметр *idempotency_key* имеет некорректное значение.</br>Укажите корректный параметр *idempotency_key*."
+    "description": "Входной параметр *idempotency_key* имеет некорректное значение.</br>Укажите корректный параметр *idempotency_key*. Максимальная длина 36 символов."
   },
   "30031": {
     "message": "missing parameter: 'depth'",
@@ -172,7 +172,7 @@
   "30034": {
     "message": "not enough balance",
     "type": "INVALID_ARGUMENT",
-    "description": "Недостаточно средств для совершения сделки (ошибка песочницы). </br>Пополните баланс нужной валюты."
+    "description": "Недостаточно средств для совершения сделки (ошибка песочницы). </br>Пополните баланс нужной валюты c помощью метода [*SandboxPayIn*](https://tinkoff.github.io/investAPI/sandbox#sandboxpayin)."
   },
   "30036": {
     "message": "missing parameter: 'stop_price'",
@@ -202,7 +202,7 @@
   "30042": {
     "message": "not enough assets for a margin trade",
     "type": "INVALID_ARGUMENT",
-    "description": "Недостаточно активов для маржинальной сделки. </br>Проверьте маржинальные показатели счёта."
+    "description": "Недостаточно активов для маржинальной сделки. </br>Проверьте маржинальные показатели счёта. Вы можете сделать это с помощью метода [*GetMarginAttributes*](https://tinkoff.github.io/investAPI/users#getmarginattributes)."
   },
   "30043": {
     "message": "missing parameter: 'expiration_type'",
@@ -222,7 +222,7 @@
   "30047": {
     "message": "price currency does not match the settlement currency",
     "type": "INVALID_ARGUMENT",
-    "description": "Валюта цены не совпадает с валютой расчётов по инструменту. </br>Укажите корректную валюту цены."
+    "description": "Валюта цены не совпадает с валютой расчётов по инструменту. </br>Укажите корректную валюту цены. Узнать валюту расчета конкретного инструмента вы можете с помощью метода [*GetInstrumentBy*](https://tinkoff.github.io/investAPI/instruments#getinstrumentby). "
   },
   "30048": {
     "message": "instrument type is not bond",
@@ -242,12 +242,12 @@
   "30051": {
     "message": "account margin status is disabled",
     "type": "INVALID_ARGUMENT",
-    "description": "Для данного договора недоступна маржинальная торговля."
+    "description": "Для данного договора недоступна маржинальная торговля. </br>Для выставления поручений на срочном рынке, необходимо включить маржинальную торговлю в приложении и терминале."
   },
   "30052": {
     "message": "instrument forbidden for trading by API",
     "type": "INVALID_ARGUMENT",
-    "description": "Для данного инструмента недоступна торговля через API."
+    "description": "Для данного инструмента недоступна торговля через API. </br> Вы можете проверить значение параметра api_trade_available_flag (признака доступности торговли через API) данного инструмента c помощью метода [*GetTradingStatus*](https://tinkoff.github.io/investAPI/marketdata#gettradingstatus)."
   },
   "30053": {
     "message": "post stop_order error: %s",
@@ -272,7 +272,7 @@
   "30057": {
     "message": "the order is a duplicate, but the order report was not found",
     "type": "INVALID_ARGUMENT",
-    "description": "Заявка является дублем, но отчет по заявке не найден"
+    "description": "Заявка является дублем, но отчет по заявке не найден. </br> Проверьте параметр order_id (идентификатор запроса выставления поручения для целей идемпотентности.) - он должен быть уникальным."
   },
   "30058": {
     "message": "task not completed yet, please try again later",
@@ -327,7 +327,7 @@
   "30068": {
     "message": "Only limit order is allowed",
     "type": "INVALID_ARGUMENT",
-    "description": "В настоящий момент возможно выставление только лимитного торгового поручения."
+    "description": "В настоящий момент возможно выставление только лимитного торгового поручения.  Подробнее про [выставление торговых поручений](https://tinkoff.github.io/investAPI/orders_details)."
   },
   "30069": {
     "message": "Invalid parameter: 'limit'",
@@ -337,22 +337,22 @@
   "30070": {
     "message": "'from' can't be more than the current date",
     "type": "INVALID_ARGUMENT",
-    "description": "Входной параметр *from* имеет некорректное значение.</br>Укажите корректный параметр."
+    "description": "Входной параметр *from* имеет некорректное значение.</br> Укажите значение не превышающее текущую дату и время."
   },
   "30077": {
     "message": "not available for OTC instruments",
     "type": "INVALID_ARGUMENT",
-    "description": "Метод недоступен для внебиржевых инструментов."
+    "description": "Метод недоступен для внебиржевых инструментов.  </br> У таких инструментов параметр api_trade_available_flag (признак доступности торговли через API) метода [*GetTradingStatus*](https://tinkoff.github.io/investAPI/marketdata#gettradingstatus) будет иметь значение false."
   },
   "30078": {
     "message": "Incorrect minimum price increment",
     "type": "INVALID_ARGUMENT",
-    "description": "Некорректный шаг изменения цены."
+    "description": "Некорректный шаг изменения цены. </br> Остаток от деления price на min_price_increment должен быть равен 0."
   },
   "30079": {
     "message": "instrument is not available for trading",
     "type": "INVALID_ARGUMENT",
-    "description": "Инструмент недоступен для торгов."
+    "description": "Инструмент недоступен для торгов. Подробнее о [торговых статусах](https://tinkoff.github.io/investAPI/faq_trading_status)."
   },
   "30080": {
     "message": "quantity must be positive",
@@ -417,7 +417,7 @@
   "30092": {
     "message": "trading unavailable on weekends",
     "type": "INVALID_ARGUMENT",
-    "description": "Торги недоступны по нерабочим дням."
+    "description": "Торги недоступны по нерабочим дням. Больше о [торговых сессиях](https://tinkoff.github.io/investAPI/markets)."
   },
   "30093": {
     "message": "missing parameter: 'figi' or 'instrument_id'",
@@ -432,7 +432,7 @@
   "30095": {
     "message": "the request was not executed by the exchange",
     "type": "INVALID_ARGUMENT",
-    "description": "Заявка не исполнена биржей."
+    "description": "Заявка не исполнена биржей. </br> Лимитная заявка может не исполняться по причине недостижения установленной цены на бирже.</br> Рыночная же может не исполняться по причине отсутствия сделок с данными инструментов (низкая ликвидность)."
   },
   "30096": {
     "message": "the order was rejected, try again later",
@@ -442,17 +442,17 @@
   "30097": {
     "message": "inappropriate trading session",
     "type": "INVALID_ARGUMENT",
-    "description": "Сейчас эта сессия не идёт."
+    "description": "Сейчас эта сессия не идёт. Больше о [торговых сессиях](https://tinkoff.github.io/investAPI/markets)."
   },
   "30098": {
     "message": "currently, there is no trading on this financial instrument",
     "type": "INVALID_ARGUMENT",
-    "description": "Торги по этому финансовому инструменту сейчас не проводятся."
+    "description": "Торги по этому финансовому инструменту сейчас не проводятся. </br> Вы можете проверить актуальный торговый статус инструмента с помощью метода [*GetTradingStatus*](https://tinkoff.github.io/investAPI/marketdata#gettradingstatus)."
   },
   "30099": {
     "message": "the price is outside the limits for this instrument",
     "type": "INVALID_ARGUMENT",
-    "description": "Цена вне лимитов по инструменту или цена сделки вне лимита."
+    "description": "Цена вне лимитов по инструменту или цена сделки вне лимита. Подробнее про [выставление торговых поручений](https://tinkoff.github.io/investAPI/orders_details)."
   },
   "30100": {
     "message": "the price must be positive",
@@ -462,17 +462,22 @@
   "30101": {
     "message": "to trade this financial instrument, pass the test",
     "type": "INVALID_ARGUMENT",
-    "description": "Для торговли этим инструментом пройдите тестирование."
+    "description": "Для торговли этим инструментом пройдите тестирование. О том, как сдать тестирование и кому оно нужно читайте [тут](https://www.tinkoff.ru/blog/articles/test-invest/)."
   },
   "30102": {
     "message": "Required parameters missing",
     "type": "INVALID_ARGUMENT",
-    "description": "Не правильно указаны обязателеные параметры."
+    "description": "Не правильно указаны обязательные параметры."
   },
   "30103": {
     "message": "Only best price is allowed",
     "type": "INVALID_ARGUMENT",
     "description": "Для инструмента доступно выставление заявки только типа лучшая цена"
+  },
+  "30104": {
+    "message": "price_type is invalid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Некорректное значение *price_type*. Значением *price_type* может быть только **PRICE_TYPE_POINT** ИЛИ **PRICE_TYPE_CURRENCY**."
   },
   "40002": {
     "message": "insufficient privileges",
@@ -487,7 +492,7 @@
   "40004": {
     "message": "Working with orders is not available with this account",
     "type": "PERMISSION_DENIED",
-    "description": "Выставление заявок недоступно с текущего аккаунта."
+    "description": "Выставление заявок недоступно с текущего аккаунта. </br> Брокерский счет не найден, не принадлежит пользователю или закрыт, либо на пользователе ограничения (от Tinkoff Invest API или от биржи). В этом случае нужно обратиться в техподдержку. "
   },
 
   "50001": {
@@ -563,7 +568,7 @@
   "80003": {
     "message": "The limit on SMS sending has been exceeded, try again in a minute",
     "type": "RESOURCE_EXHAUSTED",
-    "description": "Превышен лимит на отправку СМС, попробуйте через минуту."
+    "description": "Превышен лимит на отправку СМС, попробуйте через минуту. </br> Если в ЛК не отключена отправка СМС, то при выставлении ордера будут отправляться СМС пользователю. Ошибка появляется при превышении порога количества СМС в минуту. Решение - отключить отправку СМС в ЛК. "
   },
   "90001": {
     "message": "need confirmation: %s",
@@ -574,5 +579,10 @@
     "message": "only for qualified investors",
     "type": "FAILED_PRECONDITION",
     "description": "Торговля этим инструментом доступна только квалифицированным инвесторам."
+  },
+  "90003": {
+    "message": "Price must be less than 6 millions",
+    "type": "FAILED_PRECONDITION",
+    "description": "Цена должна быть меньше 6 миллионов рублей или его эквивалента."
   }
 }

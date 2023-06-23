@@ -1,3 +1,5 @@
+**C помощью Swagger вы можете тестировать методы Tinkoff Invest API. [Cсылка на Swagger Tinkoff Invest API](https://tinkoff.github.io/investAPI/swagger-ui/).**
+
 ## Что такое Swagger?
 
 **Swagger** - это фреймворк для спецификации RESTful API. Один из его инструментов, Swagger UI, позволяет не только интерактивно просматривать спецификацию, но и отправлять запросы.

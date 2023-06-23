@@ -55,3 +55,7 @@ unary-запросами;
 * [Python](/investAPI/faq_python/)
 * [Java](/investAPI/faq_java/)
 * [C#](/investAPI/faq_csharp/)
+
+
+
+*Все данные предоставляемые Tinkoff Invest API являются бесплатными*

@@ -1,6 +1,8 @@
 #Ошибки TINKOFF INVEST API
 
 Некоторые ошибки 
+
+[!div class="mx-tdCol4BreakAll"]
 |Код ошибки|Тип ошибки|Текст ошибки|Причины возникновения и </br> рекомендации по устранению|
 |---|---|---|---|
 12001|UNIMPLEMENTED|Method is unimplemented|Метод не реализован.|

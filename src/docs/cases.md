@@ -17,5 +17,3 @@
 7. Выставляете заявку методом [PostOrder](/investAPI/orders#postorder) и сохраняете полученный *order_id*
 8. Получаете список активных заявок методом [GetOrders](/investAPI/orders#getorders) и проверяете есть ли заявка в списке активных по *order_id*
 9. Информацию об исполненной заявке по *order_id* вы можете получить методом [GetOrderState](/investAPI/orders#getorderstate)
-
-Как получить информацию об обеспеченности портфеля?

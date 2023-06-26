@@ -272,10 +272,10 @@ message Option {
   Quotation basic_asset_size = 211; //Размер основного актива.
   Quotation klong = 221; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР)
   Quotation kshort = 222; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР)
-  Quotation dlong = 223; //Ставка риска начальной маржи для КСУР лонг.
-  Quotation dshort = 224; //Ставка риска начальной маржи для КСУР шорт.
-  Quotation dlong_min = 225; //Ставка риска начальной маржи для КПУР лонг.
-  Quotation dshort_min = 226; //Ставка риска начальной маржи для КПУР шорт.
+  Quotation dlong = 223; //Ставка риска начальной маржи для КСУР лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
+  Quotation dshort = 224; //Ставка риска начальной маржи для КСУР шорт.  Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
+  Quotation dlong_min = 225; //Ставка риска начальной маржи для КПУР лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
+  Quotation dshort_min = 226; //Ставка риска начальной маржи для КПУР шорт.  Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
   Quotation min_price_increment = 231; //Минимальный шаг цены.
   MoneyValue strike_price = 241; //Цена страйка.
 
@@ -343,12 +343,12 @@ message Bond {
   int32 lot = 5; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot)
   string currency = 6; //Валюта расчётов.
 
-  Quotation klong = 7; //Коэффициент ставки риска длинной позиции по инструменту.
-  Quotation kshort = 8; //Коэффициент ставки риска короткой позиции по инструменту.
-  Quotation dlong = 9; //Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
-  Quotation dshort = 10; //Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
-  Quotation dlong_min = 11; //Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
-  Quotation dshort_min = 12; //Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
+  Quotation klong = 7; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР)
+  Quotation kshort = 8; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР)
+  Quotation dlong = 9; //Ставка риска начальной маржи для КСУР лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
+  Quotation dshort = 10; //Ставка риска начальной маржи для КСУР шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
+  Quotation dlong_min = 11; // Ставка риска начальной маржи для КПУР лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
+  Quotation dshort_min = 12; //Ставка риска начальной маржи для КПУР шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
   bool short_enabled_flag = 13; //Признак доступности для операций в шорт.
   string name = 15; //Название инструмента.
   string exchange = 16; //Tорговая площадка (секция биржи).
@@ -404,12 +404,12 @@ message Currency {
   int32 lot = 5; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot)
   string currency = 6; //Валюта расчётов.
 
-  Quotation klong = 7; //Коэффициент ставки риска длинной позиции по инструменту.
-  Quotation kshort = 8; //Коэффициент ставки риска короткой позиции по инструменту.
-  Quotation dlong = 9; //Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
-  Quotation dshort = 10; //Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
-  Quotation dlong_min = 11; //Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
-  Quotation dshort_min = 12; //Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
+  Quotation klong = 7; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР)
+  Quotation kshort = 8; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР)
+  Quotation dlong = 9; //Ставка риска начальной маржи для КСУР лонг.Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
+  Quotation dshort = 10; //Ставка риска начальной маржи для КСУР шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
+  Quotation dlong_min = 11; //Ставка риска начальной маржи для КПУР лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
+  Quotation dshort_min = 12; //Ставка риска начальной маржи для КПУР шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
   bool short_enabled_flag = 13; //Признак доступности для операций в шорт.
   string name = 15; //Название инструмента.
   string exchange = 16; //Tорговая площадка (секция биржи)
@@ -448,12 +448,12 @@ message Etf {
   int32 lot = 5; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot)
   string currency = 6; //Валюта расчётов.
 
-  Quotation klong = 7; //Коэффициент ставки риска длинной позиции по инструменту.
-  Quotation kshort = 8; //Коэффициент ставки риска короткой позиции по инструменту.
-  Quotation dlong = 9; //Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
-  Quotation dshort = 10; //Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
-  Quotation dlong_min = 11; //Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
-  Quotation dshort_min = 12; //Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
+  Quotation klong = 7; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР)
+  Quotation kshort = 8; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР)
+  Quotation dlong = 9; //Ставка риска начальной маржи для КСУР лонг.Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
+  Quotation dshort = 10; //Ставка риска начальной маржи для КСУР шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
+  Quotation dlong_min = 11; //Ставка риска начальной маржи для КПУР лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
+  Quotation dshort_min = 12; //Ставка риска начальной маржи для КПУР шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
   bool short_enabled_flag = 13; //Признак доступности для операций в шорт.
   string name = 15; //Название инструмента.
   string exchange = 16; //Tорговая площадка (секция биржи).
@@ -496,12 +496,12 @@ message Future {
   int32 lot = 4; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot)
   string currency = 5; //Валюта расчётов.
 
-  Quotation klong = 6; //Коэффициент ставки риска длинной позиции по клиенту.
-  Quotation kshort = 7; //Коэффициент ставки риска короткой позиции по клиенту.
-  Quotation dlong = 8; //Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
-  Quotation dshort = 9; //Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
-  Quotation dlong_min = 10; //Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
-  Quotation dshort_min = 11; //Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
+  Quotation klong = 6; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР)
+  Quotation kshort = 7; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР)
+  Quotation dlong = 8; //Ставка риска начальной маржи для КСУР лонг.Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
+  Quotation dshort = 9; //Ставка риска начальной маржи для КСУР шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
+  Quotation dlong_min = 10; //Ставка риска начальной маржи для КПУР лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
+  Quotation dshort_min = 11; //Ставка риска начальной маржи для КПУР шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
   bool short_enabled_flag = 12; //Признак доступности для операций шорт.
   string name = 13; //Название инструмента.
   string exchange = 14; //Tорговая площадка (секция биржи).
@@ -547,12 +547,12 @@ message Share {
   int32 lot = 5; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot)
   string currency = 6; //Валюта расчётов.
 
-  Quotation klong = 7; //Коэффициент ставки риска длинной позиции по инструменту.
-  Quotation kshort = 8; //Коэффициент ставки риска короткой позиции по инструменту.
-  Quotation dlong = 9; //Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
-  Quotation dshort = 10; //Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
-  Quotation dlong_min = 11; //Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
-  Quotation dshort_min = 12; //Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
+  Quotation klong = 7; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР)
+  Quotation kshort = 8; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР)
+  Quotation dlong = 9; //Ставка риска начальной маржи для КСУР лонг.Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
+  Quotation dshort = 10; //Ставка риска начальной маржи для КСУР шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
+  Quotation dlong_min = 11; //Ставка риска начальной маржи для КПУР лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
+  Quotation dshort_min = 12; //Ставка риска начальной маржи для КПУР шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
   bool short_enabled_flag = 13; //Признак доступности для операций в шорт.
   string name = 15; //Название инструмента.
   string exchange = 16; //Tорговая площадка (секция биржи).
@@ -651,12 +651,12 @@ message Instrument {
   int32 lot = 5; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://tinkoff.github.io/investAPI/glossary#lot)
   string currency = 6; //Валюта расчётов.
 
-  Quotation klong = 7; //Коэффициент ставки риска длинной позиции по инструменту.
-  Quotation kshort = 8; //Коэффициент ставки риска короткой позиции по инструменту.
-  Quotation dlong = 9; //Ставка риска минимальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
-  Quotation dshort = 10; //Ставка риска минимальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
-  Quotation dlong_min = 11; //Ставка риска начальной маржи в лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
-  Quotation dshort_min = 12; //Ставка риска начальной маржи в шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
+  Quotation klong = 7; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР)
+  Quotation kshort = 8; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР)
+  Quotation dlong = 9; //ССтавка риска начальной маржи для КСУР лонг.Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
+  Quotation dshort = 10; //Ставка риска начальной маржи для КСУР шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
+  Quotation dlong_min = 11; //Ставка риска начальной маржи для КПУР лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/)
+  Quotation dshort_min = 12; //Ставка риска начальной маржи для КПУР шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/)
   bool short_enabled_flag = 13; //Признак доступности для операций в шорт.
   string name = 14; //Название инструмента.
   string exchange = 15; //Tорговая площадка (секция биржи).

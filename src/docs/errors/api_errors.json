@@ -247,7 +247,7 @@
   "30052": {
     "message": "instrument forbidden for trading by API",
     "type": "INVALID_ARGUMENT",
-    "description": "Для данного инструмента недоступна торговля через API.</br>Вы можете проверить значение параметра api_trade_available_flag (признака доступности торговли через API) данного инструмента c помощью метода [*GetTradingStatus*](https://tinkoff.github.io/investAPI/marketdata#gettradingstatus)."
+    "description": "Для данного инструмента недоступна торговля через API.</br>Вы можете проверить значение параметра api_trade_available_flag данного инструмента c помощью метода [*GetTradingStatus*](https://tinkoff.github.io/investAPI/marketdata#gettradingstatus)."
   },
   "30053": {
     "message": "post stop_order error: %s",
@@ -342,7 +342,7 @@
   "30077": {
     "message": "not available for OTC instruments",
     "type": "INVALID_ARGUMENT",
-    "description": "Метод недоступен для внебиржевых инструментов.</br>У таких инструментов параметр api_trade_available_flag (признак доступности торговли через API) метода [*GetTradingStatus*](https://tinkoff.github.io/investAPI/marketdata#gettradingstatus) будет иметь значение false."
+    "description": "Метод недоступен для внебиржевых инструментов.</br>У таких инструментов параметр api_trade_available_flag метода [*GetTradingStatus*](https://tinkoff.github.io/investAPI/marketdata#gettradingstatus) будет иметь значение false."
   },
   "30078": {
     "message": "Incorrect minimum price increment",
@@ -568,7 +568,7 @@
   "80003": {
     "message": "The limit on SMS sending has been exceeded, try again in a minute",
     "type": "RESOURCE_EXHAUSTED",
-    "description": "Превышен лимит на отправку СМС, попробуйте через минуту."
+    "description": "Превышен лимит на отправку СМС, попробуйте через минуту. Если вы не хотите получать СМС при выставлении заявки, отключите отправку СМС в ЛК."
   },
   "90001": {
     "message": "need confirmation: %s",

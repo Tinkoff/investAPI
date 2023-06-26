@@ -117,7 +117,7 @@
 70003|INTERNAL|internal error, please try again later|Внутренняя ошибка сервиса, попробуйте выполнить запрос позднее.</br>Если ошибка повторяется, обратитесь в службу технической поддержки.|
 80001|RESOURCE_EXHAUSTED|limit of open streams exceeded|Превышен лимит одновременных открытых stream-соединений. Подробнее: [Лимитная политика](https://tinkoff.github.io/investAPI/limits/)|
 80002|RESOURCE_EXHAUSTED|request limit exceeded|Превышен лимит запросов в минуту. Подробнее: [Лимитная политика](https://tinkoff.github.io/investAPI/limits/)|
-80003|RESOURCE_EXHAUSTED|The limit on SMS sending has been exceeded, try again in a minute|Превышен лимит на отправку СМС, попробуйте через минуту.|
+80003|RESOURCE_EXHAUSTED|The limit on SMS sending has been exceeded, try again in a minute|Превышен лимит на отправку СМС, попробуйте через минуту. Если вы не хотите получать СМС при выставлении заявки, отключите отправку СМС в ЛК.|
 90001|FAILED_PRECONDITION|need confirmation: %s|Требуется подтверждение операции.</br>Подробнее в тексте ошибки.|
 90002|FAILED_PRECONDITION|only for qualified investors|Торговля этим инструментом доступна только квалифицированным инвесторам.|
 90003|FAILED_PRECONDITION|Price must be less than 6 millions rubles or its equivalent|Цена должна быть меньше 6 миллионов рублей или его эквивалента.|

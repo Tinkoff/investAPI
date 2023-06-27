@@ -120,5 +120,4 @@
 80003|RESOURCE_EXHAUSTED|The limit on SMS sending has been exceeded, try again in a minute|Превышен лимит на отправку СМС, попробуйте через минуту. Если вы не хотите получать СМС при выставлении заявки, отключите отправку СМС в ЛК.|
 90001|FAILED_PRECONDITION|need confirmation: %s|Требуется подтверждение операции.</br>Подробнее в тексте ошибки.|
 90002|FAILED_PRECONDITION|only for qualified investors|Торговля этим инструментом доступна только квалифицированным инвесторам.|
-90003|FAILED_PRECONDITION|Price must be less than 6 millions rubles or its equivalent|Цена должна быть меньше 6 миллионов рублей или его эквивалента.|
-
+90003|FAILED_PRECONDITION|The price is too high|Цена заявки слишком высокая. Разбейте заявку на заявки меньшего размера. Подробнее: [Ограничения на стоимость заявки](https://tinkoff.github.io/investAPI/faq_orders/).|

@@ -17,3 +17,17 @@
 7. Выставляете заявку методом [PostOrder](/investAPI/orders#postorder) и сохраняете полученный *order_id*
 8. Получаете список активных заявок методом [GetOrders](/investAPI/orders#getorders) и проверяете есть ли заявка в списке активных по *order_id*
 9. Информацию об исполненной заявке по *order_id* вы можете получить методом [GetOrderState](/investAPI/orders#getorderstate)
+
+
+###Начало работы и получение информации об  аккаунте
+
+1. Вызываете метод [getAccounts](/investAPI/users#getaccounts) для получения списка счетов, их статусов и типов.
+2. Вызываете метод [getInfo](/investAPI/users#getinfo), который позволяет узнать имеет ли пользователь статус квалифицированного инвестора, является ли 
+премиальным клиентом, а также получить список типов инструментов, к которым имеет доступ по итогам тестирования. Эта информация помогает определить ограничения в торговли.
+3. Доступными лимиты получаете с помощью метода [getInfo](/investAPI/users#getaccounts).
+4. По *accountId* периодически обновляете информацию о маржинальных показателях счета методом [getMarginAttributes](/investAPI/users#getmarginattributes) для торговли на срочном рынке.
+
+###Как найти базовый актив фьючерса?
+
+1. Вызываете методы [GetFutureBy](/investAPI/instruments/#futureby) или [GetFutures](/investAPI/instruments/#futures). Сохраняете значение параметра *basic_asset_position_uid* (уникальный идентификатор позиции основного инструмента.).
+2. Вы можете найти базовый актива фьючерса используя метод [FindInstrument](/investAPI/instruments/#findinstrument). Для этого достаточно передать в query значение параметра basic_asset_position_uid возвращаемое методами GetFutureBy и GetFutures.

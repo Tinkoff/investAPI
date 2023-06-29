@@ -581,8 +581,8 @@
     "description": "Торговля этим инструментом доступна только квалифицированным инвесторам."
   },
   "90003": {
-    "message": "Price must be less than 6 millions ubles or its equivalent",
+    "message": "The price is too high",
     "type": "FAILED_PRECONDITION",
-    "description": "Цена должна быть меньше 6 миллионов рублей или его эквивалента."
+    "description": "Цена заявки слишком высокая. Разбейте заявку на заявки меньшего размера. Подробнее: [Ограничения на стоимость заявки](https://tinkoff.github.io/investAPI/faq_orders/)."
   }
 }

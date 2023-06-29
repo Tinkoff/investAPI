@@ -124,7 +124,7 @@ TINKOFF INVEST API торговых площадок. Обратите вним�
 * name
 
 Так же используя метод [FindInstrument](/investAPI/instruments/#findinstrument) можно найти базовый актив фьючерса. 
-Для этого достаточно передать в query значение параметра `basic_asset_position_uid` возвращаемое методами [GetFutureBy](/investAPI/instruments/#futureby) и [GetFutures](/investAPI/instruments/#futures).
+Для этого достаточно передать в query значение параметра `basic_asset_position_uid`, возвращаемое методами [GetFutureBy](/investAPI/instruments/#futureby) и [GetFutures](/investAPI/instruments/#futures).
 
 
 ###Доступность торговли инструмента через API

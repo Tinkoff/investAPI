@@ -37,8 +37,8 @@ nav:
 
 - Протоколы:
   - "Доступные протoколы": api_protocols.md
-  - "grpc": grpc.md 
-  - "WebSoket": ws\README.md
+  - "GRPC": grpc.md 
+  - "WebSocket": ws\README.md
   - "Как пользоваться Swagger?": swagger.md
  
 - Полезная информация:

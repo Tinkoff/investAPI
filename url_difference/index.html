@@ -365,6 +365,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cases/" class="md-nav__link">
+        Описание наиболее популярных кейсов
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1269,87 +1281,23 @@
 <p>Используя адрес песочницы Вы можете выполнять практически те же запросы, что и по адресу продового контура.
 Исключения в работе сервисов или методов описаны в таблице ниже. 
 Это сделано для поддержания единообразия кода и легкости перехода из песочницы на продовый контур.</p>
-<table>
-<thead>
-<tr>
-<th align="left">Сервисы</th>
-<th align="center">Продовый контур</th>
-<th align="center">Песочница</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><a href="/investAPI/head-instruments/">Сервис инструментов</a></td>
-<td align="center">Да</td>
-<td align="center">Да</td>
-</tr>
-<tr>
-<td align="left"><a href="/investAPI/head-users/">Сервис аккаунтов</a></td>
-<td align="center">Да</td>
-<td align="center">Да</td>
-</tr>
-<tr>
-<td align="left"><li><a href="/investAPI/users#getmarginattributes">getMarginAttributes</a></li></td>
-<td align="center">Да</td>
-<td align="center">Да</td>
-</tr>
-<tr>
-<td align="left"><a href="/investAPI/head-operations/">Сервис операций</a></td>
-<td align="center">Да</td>
-<td align="center">Да</td>
-</tr>
-<tr>
-<td align="left"><li><a href="/investAPI/operations/#getbrokerreport">getBrokerReport</a></li></td>
-<td align="center">Да</td>
-<td align="center">Да</td>
-</tr>
-<tr>
-<td align="left"><li><a href="/investAPI/operations/#portfoliostream">PortfolioStream</a></li></td>
-<td align="center">Да</td>
-<td align="center">Да</td>
-</tr>
-<tr>
-<td align="left"><li><a href="/investAPI/operations/#positionsstream">PositionsStream</a></li></td>
-<td align="center">Да</td>
-<td align="center">Да</td>
-</tr>
-<tr>
-<td align="left"><li><a href="/investAPI/operations#getdividendsforeignissuer">getDividendsForeignIssuer</a></li></td>
-<td align="center">Да</td>
-<td align="center">Да</td>
-</tr>
-<tr>
-<td align="left"><li><a href="/investAPI/operations#getwithdrawlimits">getWithdrawLimits</a></li></td>
-<td align="center">Да</td>
-<td align="center">Да</td>
-</tr>
-<tr>
-<td align="left"><a href="/investAPI/head-marketdata/">Сервис котировок</a></td>
-<td align="center">Да</td>
-<td align="center">Да</td>
-</tr>
-<tr>
-<td align="left"><a href="/investAPI/head-stoporders/">Сервис стоп-заявок</a></td>
-<td align="center">Да</td>
-<td align="center"><strong>Нет</strong></td>
-</tr>
-<tr>
-<td align="left"><a href="/investAPI/head-sandbox/">Песочницы</a></td>
-<td align="center">Да</td>
-<td align="center">Да</td>
-</tr>
-<tr>
-<td align="left"><a href="/investAPI/head-orders/">Сервис торговых поручений</a></td>
-<td align="center">Да</td>
-<td align="center">Да</td>
-</tr>
-<tr>
-<td align="left"><li><a href="/investAPI/orders/#tradesstream">TradeStream</a></li></td>
-<td align="center">Да</td>
-<td align="center">Да</td>
-</tr>
-</tbody>
-</table>
+<p>Более детальные различия работы контуров описаны на <a href="/investAPI/head_sandbox/">странице</a>.
+| Сервисы                                                                               | Продовый контур | Песочница |
+|:--------------------------------------------------------------------------------------|:---------------:|:---------:|
+| <a href="/investAPI/head-instruments/">Сервис инструментов</a>                                   |       Да        |    Да     |
+| <a href="/investAPI/head-users/">Сервис аккаунтов</a>                                            |       Да        |    Да     |
+| <li><a href="/investAPI/users#getmarginattributes">getMarginAttributes</a></li>                  |       Да        |  Да  |
+| <a href="/investAPI/head-operations/">Сервис операций</a>                                        |       Да        |    Да     |
+| <li><a href="/investAPI/operations/#getbrokerreport">getBrokerReport</a></li>                    |       Да        |  Да  |
+| <li><a href="/investAPI/operations/#portfoliostream">PortfolioStream</a></li>                    |       Да        |  Да  |
+| <li><a href="/investAPI/operations/#positionsstream">PositionsStream</a></li>                    |       Да        |  Да  |
+| <li><a href="/investAPI/operations#getdividendsforeignissuer">getDividendsForeignIssuer</a></li> |       Да        |  Да  |
+| <li><a href="/investAPI/operations#getwithdrawlimits">getWithdrawLimits</a></li>                 |       Да        |  Да  |
+| <a href="/investAPI/head-marketdata/">Сервис котировок</a>                                       |       Да        |    Да     |
+| <a href="/investAPI/head-stoporders/">Сервис стоп-заявок</a>                                     |       Да        |  <strong>Нет</strong>  |
+| <a href="/investAPI/head-sandbox/">Песочницы</a>                                                 |       Да        |    Да     |
+| <a href="/investAPI/head-orders/">Сервис торговых поручений</a>                                  |       Да        |    Да     |
+| <li><a href="/investAPI/orders/#tradesstream">TradeStream</a></li>                               |       Да        | Да   |</p>
 <p><strong>Важно!</strong> В песочнице также не рассчитывается комиссия, ликвидность портфеля, а также отсутствуют маржинальные показатели.</p>
                 
               

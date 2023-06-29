@@ -365,6 +365,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cases/" class="md-nav__link">
+        Описание наиболее популярных кейсов
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -3961,7 +3973,7 @@
 <tr>
 <td>real_exchange</td>
 <td><a href="#realexchange">RealExchange</a></td>
-<td>Реальная площадка исполнения расчётов. Допустимые значения: [REAL_EXCHANGE_MOEX, REAL_EXCHANGE_RTS]</td>
+<td>Реальная площадка исполнения расчётов (биржа). Допустимые значения: [REAL_EXCHANGE_MOEX, REAL_EXCHANGE_RTS]</td>
 </tr>
 <tr>
 <td>direction</td>
@@ -4011,7 +4023,7 @@
 <tr>
 <td>exchange</td>
 <td><a href="#string">string</a></td>
-<td>Биржа.</td>
+<td>Tорговая площадка (секция биржи).</td>
 </tr>
 <tr>
 <td>country_of_risk</td>
@@ -4051,22 +4063,22 @@
 <tr>
 <td>dlong</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КСУР лонг.</td>
+<td>Ставка риска начальной маржи для КСУР лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
 </tr>
 <tr>
 <td>dshort</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КСУР шорт.</td>
+<td>Ставка риска начальной маржи для КСУР шорт.  Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
 </tr>
 <tr>
 <td>dlong_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КПУР лонг.</td>
+<td>Ставка риска начальной маржи для КПУР лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
 </tr>
 <tr>
 <td>dshort_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КПУР шорт.</td>
+<td>Ставка риска начальной маржи для КПУР шорт.  Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
 </tr>
 <tr>
 <td>min_price_increment</td>
@@ -4251,32 +4263,32 @@
 <tr>
 <td>klong</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Коэффициент ставки риска длинной позиции по инструменту.</td>
+<td>Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР)</td>
 </tr>
 <tr>
 <td>kshort</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Коэффициент ставки риска короткой позиции по инструменту.</td>
+<td>Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР)</td>
 </tr>
 <tr>
 <td>dlong</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска минимальной маржи в лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
+<td>Ставка риска начальной маржи для КСУР лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
 </tr>
 <tr>
 <td>dshort</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска минимальной маржи в шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
+<td>Ставка риска начальной маржи для КСУР шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
 </tr>
 <tr>
 <td>dlong_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи в лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
+<td>Ставка риска начальной маржи для КПУР лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
 </tr>
 <tr>
 <td>dshort_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи в шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
+<td>Ставка риска начальной маржи для КПУР шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
 </tr>
 <tr>
 <td>short_enabled_flag</td>
@@ -4291,7 +4303,7 @@
 <tr>
 <td>exchange</td>
 <td><a href="#string">string</a></td>
-<td>Торговая площадка.</td>
+<td>Tорговая площадка (секция биржи).</td>
 </tr>
 <tr>
 <td>coupon_quantity_per_year</td>
@@ -4416,7 +4428,7 @@
 <tr>
 <td>real_exchange</td>
 <td><a href="#realexchange">RealExchange</a></td>
-<td>Реальная площадка исполнения расчётов.</td>
+<td>Реальная площадка исполнения расчётов. (биржа)</td>
 </tr>
 <tr>
 <td>position_uid</td>
@@ -4521,32 +4533,32 @@
 <tr>
 <td>klong</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Коэффициент ставки риска длинной позиции по инструменту.</td>
+<td>Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР)</td>
 </tr>
 <tr>
 <td>kshort</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Коэффициент ставки риска короткой позиции по инструменту.</td>
+<td>Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР)</td>
 </tr>
 <tr>
 <td>dlong</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска минимальной маржи в лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
+<td>Ставка риска начальной маржи для КСУР лонг.Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
 </tr>
 <tr>
 <td>dshort</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска минимальной маржи в шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
+<td>Ставка риска начальной маржи для КСУР шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
 </tr>
 <tr>
 <td>dlong_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи в лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
+<td>Ставка риска начальной маржи для КПУР лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
 </tr>
 <tr>
 <td>dshort_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи в шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
+<td>Ставка риска начальной маржи для КПУР шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
 </tr>
 <tr>
 <td>short_enabled_flag</td>
@@ -4561,7 +4573,7 @@
 <tr>
 <td>exchange</td>
 <td><a href="#string">string</a></td>
-<td>Торговая площадка.</td>
+<td>Tорговая площадка (секция биржи)</td>
 </tr>
 <tr>
 <td>nominal</td>
@@ -4621,7 +4633,7 @@
 <tr>
 <td>real_exchange</td>
 <td><a href="#realexchange">RealExchange</a></td>
-<td>Реальная площадка исполнения расчётов.</td>
+<td>Реальная площадка исполнения расчётов (биржа).</td>
 </tr>
 <tr>
 <td>position_uid</td>
@@ -4711,32 +4723,32 @@
 <tr>
 <td>klong</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Коэффициент ставки риска длинной позиции по инструменту.</td>
+<td>Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР)</td>
 </tr>
 <tr>
 <td>kshort</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Коэффициент ставки риска короткой позиции по инструменту.</td>
+<td>Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР)</td>
 </tr>
 <tr>
 <td>dlong</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска минимальной маржи в лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
+<td>Ставка риска начальной маржи для КСУР лонг.Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
 </tr>
 <tr>
 <td>dshort</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска минимальной маржи в шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
+<td>Ставка риска начальной маржи для КСУР шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
 </tr>
 <tr>
 <td>dlong_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи в лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
+<td>Ставка риска начальной маржи для КПУР лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
 </tr>
 <tr>
 <td>dshort_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи в шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
+<td>Ставка риска начальной маржи для КПУР шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
 </tr>
 <tr>
 <td>short_enabled_flag</td>
@@ -4751,7 +4763,7 @@
 <tr>
 <td>exchange</td>
 <td><a href="#string">string</a></td>
-<td>Торговая площадка.</td>
+<td>Tорговая площадка (секция биржи).</td>
 </tr>
 <tr>
 <td>fixed_commission</td>
@@ -4831,7 +4843,7 @@
 <tr>
 <td>real_exchange</td>
 <td><a href="#realexchange">RealExchange</a></td>
-<td>Реальная площадка исполнения расчётов.</td>
+<td>Реальная площадка исполнения расчётов (биржа).</td>
 </tr>
 <tr>
 <td>position_uid</td>
@@ -4921,32 +4933,32 @@
 <tr>
 <td>klong</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Коэффициент ставки риска длинной позиции по клиенту.</td>
+<td>Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР)</td>
 </tr>
 <tr>
 <td>kshort</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Коэффициент ставки риска короткой позиции по клиенту.</td>
+<td>Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР)</td>
 </tr>
 <tr>
 <td>dlong</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска минимальной маржи в лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
+<td>Ставка риска начальной маржи для КСУР лонг.Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
 </tr>
 <tr>
 <td>dshort</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска минимальной маржи в шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
+<td>Ставка риска начальной маржи для КСУР шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
 </tr>
 <tr>
 <td>dlong_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи в лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
+<td>Ставка риска начальной маржи для КПУР лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
 </tr>
 <tr>
 <td>dshort_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи в шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
+<td>Ставка риска начальной маржи для КПУР шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
 </tr>
 <tr>
 <td>short_enabled_flag</td>
@@ -4961,7 +4973,7 @@
 <tr>
 <td>exchange</td>
 <td><a href="#string">string</a></td>
-<td>Торговая площадка.</td>
+<td>Tорговая площадка (секция биржи).</td>
 </tr>
 <tr>
 <td>first_trade_date</td>
@@ -5051,7 +5063,7 @@
 <tr>
 <td>real_exchange</td>
 <td><a href="#realexchange">RealExchange</a></td>
-<td>Реальная площадка исполнения расчётов.</td>
+<td>Реальная площадка исполнения расчётов (биржа).</td>
 </tr>
 <tr>
 <td>position_uid</td>
@@ -5146,32 +5158,32 @@
 <tr>
 <td>klong</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Коэффициент ставки риска длинной позиции по инструменту.</td>
+<td>Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР)</td>
 </tr>
 <tr>
 <td>kshort</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Коэффициент ставки риска короткой позиции по инструменту.</td>
+<td>Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР)</td>
 </tr>
 <tr>
 <td>dlong</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска минимальной маржи в лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
+<td>Ставка риска начальной маржи для КСУР лонг.Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
 </tr>
 <tr>
 <td>dshort</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска минимальной маржи в шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
+<td>Ставка риска начальной маржи для КСУР шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
 </tr>
 <tr>
 <td>dlong_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи в лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
+<td>Ставка риска начальной маржи для КПУР лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
 </tr>
 <tr>
 <td>dshort_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи в шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
+<td>Ставка риска начальной маржи для КПУР шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
 </tr>
 <tr>
 <td>short_enabled_flag</td>
@@ -5186,7 +5198,7 @@
 <tr>
 <td>exchange</td>
 <td><a href="#string">string</a></td>
-<td>Торговая площадка.</td>
+<td>Tорговая площадка (секция биржи).</td>
 </tr>
 <tr>
 <td>ipo_date</td>
@@ -5271,7 +5283,7 @@
 <tr>
 <td>real_exchange</td>
 <td><a href="#realexchange">RealExchange</a></td>
-<td>Реальная площадка исполнения расчётов.</td>
+<td>Реальная площадка исполнения расчётов (биржа).</td>
 </tr>
 <tr>
 <td>position_uid</td>
@@ -5556,32 +5568,32 @@
 <tr>
 <td>klong</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Коэффициент ставки риска длинной позиции по инструменту.</td>
+<td>Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР)</td>
 </tr>
 <tr>
 <td>kshort</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Коэффициент ставки риска короткой позиции по инструменту.</td>
+<td>Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР)</td>
 </tr>
 <tr>
 <td>dlong</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска минимальной маржи в лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
+<td>ССтавка риска начальной маржи для КСУР лонг.Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
 </tr>
 <tr>
 <td>dshort</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска минимальной маржи в шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
+<td>Ставка риска начальной маржи для КСУР шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
 </tr>
 <tr>
 <td>dlong_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи в лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
+<td>Ставка риска начальной маржи для КПУР лонг. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/long/risk-rate/">ставка риска в лонг</a></td>
 </tr>
 <tr>
 <td>dshort_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи в шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
+<td>Ставка риска начальной маржи для КПУР шорт. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/risk-rate/">ставка риска в шорт</a></td>
 </tr>
 <tr>
 <td>short_enabled_flag</td>
@@ -5596,7 +5608,7 @@
 <tr>
 <td>exchange</td>
 <td><a href="#string">string</a></td>
-<td>Торговая площадка.</td>
+<td>Tорговая площадка (секция биржи).</td>
 </tr>
 <tr>
 <td>country_of_risk</td>
@@ -5651,7 +5663,7 @@
 <tr>
 <td>real_exchange</td>
 <td><a href="#realexchange">RealExchange</a></td>
-<td>Реальная площадка исполнения расчётов.</td>
+<td>Реальная площадка исполнения расчётов (биржа).</td>
 </tr>
 <tr>
 <td>position_uid</td>

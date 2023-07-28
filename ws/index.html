@@ -1,2017 +1,472 @@
-
-<!doctype html>
-<html lang="ru" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-      
-      
-      <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.3">
-    
-    
-      
-        <title>WebSoket - TINKOFF INVEST API</title>
-      
-    
-    
-      <link rel="stylesheet" href="../assets/stylesheets/main.f7f47774.min.css">
-      
-        
-        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#000000">
-        
-      
-    
-    
-    
-      
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
-      
-    
-    
-    
-    
-      
-
-
-    
-    
-  </head>
-  
-  
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="yellow">
-  
-    
-    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#websocket-proxy-for-grpc-streaming" class="md-skip">
-          Перейти к содержанию
-        </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="TINKOFF INVEST API" class="md-header__button md-logo" aria-label="TINKOFF INVEST API" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
-            TINKOFF INVEST API
-          </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
-            
-              WebSoket
-            
-          </span>
-        </div>
-      </div>
-    </div>
-    
-    
-    
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-      </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    
-    
-      <div class="md-header__source">
-        
-<a href="https://github.com/Tinkoff/investAPI/" title="Перейти к репозиторию" class="md-source" data-md-component="source">
-  <div class="md-source__icon md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
-  </div>
-  <div class="md-source__repository">
-    GitHub
-  </div>
-</a>
-      </div>
-    
-  </nav>
-</header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href=".." title="TINKOFF INVEST API" class="md-nav__button md-logo" aria-label="TINKOFF INVEST API" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
-
-    </a>
-    TINKOFF INVEST API
-  </label>
-  
-    <div class="md-nav__source">
-      
-<a href="https://github.com/Tinkoff/investAPI/" title="Перейти к репозиторию" class="md-source" data-md-component="source">
-  <div class="md-source__icon md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
-  </div>
-  <div class="md-source__repository">
-    GitHub
-  </div>
-</a>
-    </div>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
-
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
-      
-      <label class="md-nav__link" for="__nav_1">
-        Начало работы
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Начало работы" data-md-level="1">
-        <label class="md-nav__title" for="__nav_1">
-          <span class="md-nav__icon md-icon"></span>
-          Начало работы
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
-        Начало работы
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../glossary/" class="md-nav__link">
-        Глоссарий
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../limits/" class="md-nav__link">
-        Лимитная политика
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api_protocols/" class="md-nav__link">
-        Доступные протoколы взаимодействия
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../grpc/" class="md-nav__link">
-        grps
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          WebSoket
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        WebSoket
-      </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    Сервис поручений
-  </a>
-  
-    <nav class="md-nav" aria-label="Сервис поручений">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Лента сделок.
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    Сервис операций
-  </a>
-  
-    <nav class="md-nav" aria-label="Сервис операций">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    Лента событий по позициям.
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    Лента событий по портфелям.
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    Сервис рыночных данных
-  </a>
-  
-    <nav class="md-nav" aria-label="Сервис рыночных данных">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    Лента торговых статусов инструментов
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    Лента цен последних сделок
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    Лента обезличенных сделок
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    Лента событий по стаканам
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    Лента события по свечам
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    Пинг сообщения
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../token/" class="md-nav__link">
-        Токен доступа
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../faq_identification/" class="md-nav__link">
-        Идентификация торговых инструментов
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../faq_custom_types/" class="md-nav__link">
-        Нестандартные типы данных
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../faq_trading_status/" class="md-nav__link">
-        Торговые статусы инструментов и расписание торгов
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../load_history/" class="md-nav__link">
-        Порядок работы с историческими данными
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../orders_details/" class="md-nav__link">
-        Работа с торговыми поручениями
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../deadlines/" class="md-nav__link">
-        Дедлайны запросов
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../robot_contest/" class="md-nav__link">
-        Таблица конкурсных работ
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../table_order_currency/" class="md-nav__link">
-        Таблица параметров, возвращающих валюту или пункты
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
-      
-      <label class="md-nav__link" for="__nav_2">
-        Полезная информация
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Полезная информация" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
-          <span class="md-nav__icon md-icon"></span>
-          Полезная информация
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../algorithmic_trading/" class="md-nav__link">
-        Алгоритмический трейдинг
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tech_indicators/" class="md-nav__link">
-        Индикаторы технического анализа
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../markets/" class="md-nav__link">
-        Торговые площадки и режимы торгов
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../accredited_investor/" class="md-nav__link">
-        Квалифицированный инвестор
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../faq_corp_action/" class="md-nav__link">
-        Правила обработки корпоративных действий
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../speedup/" class="md-nav__link">
-        Как ускорить работу с биржей
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../swagger/" class="md-nav__link">
-        Как пользоваться Swagger?
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sla/" class="md-nav__link">
-        SLA
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../example/" class="md-nav__link">
-        Примеры запросов
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../eol_v1/" class="md-nav__link">
-        EOL v1
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../faq/" class="md-nav__link">
-        Ответы на частые вопросы
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
-      
-      <label class="md-nav__link" for="__nav_4">
-        Языки программирования
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Языки программирования" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
-          <span class="md-nav__icon md-icon"></span>
-          Языки программирования
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../faq_python/" class="md-nav__link">
-        Python
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../faq_java/" class="md-nav__link">
-        Java
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../faq_csharp/" class="md-nav__link">
-        С#
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../faq_golang/" class="md-nav__link">
-        Golang
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
-      
-      <label class="md-nav__link" for="__nav_5">
-        Сервис счетов
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Сервис счетов" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
-          <span class="md-nav__icon md-icon"></span>
-          Сервис счетов
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../head-users/" class="md-nav__link">
-        Описание
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../users/" class="md-nav__link">
-        Методы
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../faq_users/" class="md-nav__link">
-        FAQ
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
-      
-      <label class="md-nav__link" for="__nav_6">
-        Сервис инструментов
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Сервис инструментов" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
-          <span class="md-nav__icon md-icon"></span>
-          Сервис инструментов
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../head-instruments/" class="md-nav__link">
-        Описание
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../instruments/" class="md-nav__link">
-        Методы
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../faq_instruments/" class="md-nav__link">
-        FAQ
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../glossary-instrument/" class="md-nav__link">
-        Голоссарий
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
-      
-      <label class="md-nav__link" for="__nav_7">
-        Сервис ордеров
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Сервис ордеров" data-md-level="1">
-        <label class="md-nav__title" for="__nav_7">
-          <span class="md-nav__icon md-icon"></span>
-          Сервис ордеров
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../head-orders/" class="md-nav__link">
-        Описание
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../orders/" class="md-nav__link">
-        Методы
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../faq_orders/" class="md-nav__link">
-        FAQ
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../table_order_currency/" class="md-nav__link">
-        Таблица параметров возвращающих валюту или пункты
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
-      
-      <label class="md-nav__link" for="__nav_8">
-        Сервис операций
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Сервис операций" data-md-level="1">
-        <label class="md-nav__title" for="__nav_8">
-          <span class="md-nav__icon md-icon"></span>
-          Сервис операций
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../head-operations/" class="md-nav__link">
-        Описание
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../operations/" class="md-nav__link">
-        Методы
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../faq_operations/" class="md-nav__link">
-        FAQ
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../operations_problems/" class="md-nav__link">
-        Особенности взаимодействия
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
-      
-      <label class="md-nav__link" for="__nav_9">
-        Сервис котировок
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Сервис котировок" data-md-level="1">
-        <label class="md-nav__title" for="__nav_9">
-          <span class="md-nav__icon md-icon"></span>
-          Сервис котировок
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../head-marketdata/" class="md-nav__link">
-        Описание
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../marketdata/" class="md-nav__link">
-        Методы
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../faq_marketdata/" class="md-nav__link">
-        FAQ
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../get_history/" class="md-nav__link">
-        Получение исторических рыночных данных
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
-      
-      <label class="md-nav__link" for="__nav_10">
-        Сервис стоп-ордеров
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Сервис стоп-ордеров" data-md-level="1">
-        <label class="md-nav__title" for="__nav_10">
-          <span class="md-nav__icon md-icon"></span>
-          Сервис стоп-ордеров
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../head-stoporders/" class="md-nav__link">
-        Описание
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../stoporders/" class="md-nav__link">
-        Методы
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../faq_stoporders/" class="md-nav__link">
-        FAQ
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
-      
-      <label class="md-nav__link" for="__nav_11">
-        Песочница
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Песочница" data-md-level="1">
-        <label class="md-nav__title" for="__nav_11">
-          <span class="md-nav__icon md-icon"></span>
-          Песочница
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../head-sandbox/" class="md-nav__link">
-        Описание
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sandbox/" class="md-nav__link">
-        Методы
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../faq_sandbox/" class="md-nav__link">
-        FAQ
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../url_difference/" class="md-nav__link">
-        Отличия контура песочницы
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../errors/" class="md-nav__link">
-        Коды ошибок
-      </a>
-    </li>
-  
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    Сервис поручений
-  </a>
-  
-    <nav class="md-nav" aria-label="Сервис поручений">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Лента сделок.
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    Сервис операций
-  </a>
-  
-    <nav class="md-nav" aria-label="Сервис операций">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    Лента событий по позициям.
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    Лента событий по портфелям.
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    Сервис рыночных данных
-  </a>
-  
-    <nav class="md-nav" aria-label="Сервис рыночных данных">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    Лента торговых статусов инструментов
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    Лента цен последних сделок
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    Лента обезличенных сделок
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    Лента событий по стаканам
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    Лента события по свечам
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    Пинг сообщения
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
-                
-                  <a href="https://github.com/Tinkoff/investAPI/edit/master/docs/ws/README.md" title="Редактировать страницу" class="md-content__button md-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
-                  </a>
-                
-                
-                <h1 id="websocket-proxy-for-grpc-streaming">Websocket proxy for grpc streaming</h1>
+<html><head>
+<meta charset="utf-8" />
+<style>body {
+   color: black;
+}
+</style></head><body><h1 id="websocket-proxy-for-grpc-streaming">Websocket proxy for grpc streaming</h1>
 <p>Сервис для получения сообщений grpc streaming Тинькофф Инвестиции через json websocket</p>
 <p>Адрес для подключения <strong>wss://invest-public-api.tinkoff.ru/ws/</strong></p>
 <ul>
 <li><strong>*token</strong> - токен доступа к счету Тинькофф Инвестиции можно передать в заголовке <code>Authorization: Bearer *token</code>
-  , либо  в заголовке <code>Web-Socket-Protocol: json, *token</code></li>
+, либо  в заголовке <code>Web-Socket-Protocol: json, *token</code></li>
 <li>запрос на подключение требует указание протокола json в заголовоке <code>Web-Socket-Protocol: json</code></li>
 </ul>
-<h2 id="_1">Сервис поручений</h2>
-<h3 id="_2">Лента сделок.</h3>
+<h2 id="-">Сервис поручений</h2>
+<h3 id="-">Лента сделок.</h3>
+<p>endpoint: wss://invest-public-api.tinkoff.ru/ws/tinkoff.public.invest.api.contract.v1.OrdersStreamService/TradesStream</p>
 <p><a href="/investAPI/ws/websock-docs/output/index.html#schema-v1TradesStreamRequest">TradesStreamRequest</a>
 <a href="/investAPI/ws/websock-docs/output/index.html#schema-v1TradesStreamResponse">TradesStreamResponse</a></p>
 <p>Пример запроса</p>
-<pre><code class="language-json">{
-  &quot;accounts&quot;: [
-    &quot;*accountId&quot;
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"accounts"</span>: [
+    <span class="hljs-string">"*accountId"</span>
   ]
 }
 </code></pre>
 <p>Пример ответа</p>
-<pre><code class="language-json">{
-  &quot;orderTrades&quot;: {
-    &quot;orderId&quot;: &quot;36042910361&quot;,
-    &quot;createdAt&quot;: &quot;2023-05-16T13:27:14.682140664Z&quot;,
-    &quot;direction&quot;: &quot;ORDER_DIRECTION_SELL&quot;,
-    &quot;figi&quot;: &quot;BBG00RPRPX12&quot;,
-    &quot;trades&quot;: [
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"orderTrades"</span>: {
+    <span class="hljs-attr">"orderId"</span>: <span class="hljs-string">"36042910361"</span>,
+    <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2023-05-16T13:27:14.682140664Z"</span>,
+    <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"ORDER_DIRECTION_SELL"</span>,
+    <span class="hljs-attr">"figi"</span>: <span class="hljs-string">"BBG00RPRPX12"</span>,
+    <span class="hljs-attr">"trades"</span>: [
       {
-        &quot;dateTime&quot;: &quot;2023-05-16T13:27:13.423246Z&quot;,
-        &quot;price&quot;: {
-          &quot;units&quot;: &quot;1&quot;,
-          &quot;nano&quot;: 235000000
+        <span class="hljs-attr">"dateTime"</span>: <span class="hljs-string">"2023-05-16T13:27:13.423246Z"</span>,
+        <span class="hljs-attr">"price"</span>: {
+          <span class="hljs-attr">"units"</span>: <span class="hljs-string">"1"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">235000000</span>
         },
-        &quot;quantity&quot;: &quot;1&quot;,
-        &quot;tradeId&quot;: &quot;7653265991&quot;
+        <span class="hljs-attr">"quantity"</span>: <span class="hljs-string">"1"</span>,
+        <span class="hljs-attr">"tradeId"</span>: <span class="hljs-string">"7653265991"</span>
       }
     ],
-    &quot;accountId&quot;: &quot;*accountId&quot;,
-    &quot;instrumentUid&quot;: &quot;ade12bc5-07d9-44fe-b27a-1543e05bacfd&quot;
+    <span class="hljs-attr">"accountId"</span>: <span class="hljs-string">"*accountId"</span>,
+    <span class="hljs-attr">"instrumentUid"</span>: <span class="hljs-string">"ade12bc5-07d9-44fe-b27a-1543e05bacfd"</span>
   }
 }
 </code></pre>
 <p><a href="/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.OrdersStreamService/TradesStream">Проверить</a></p>
-<h2 id="_3">Сервис операций</h2>
-<h3 id="_4">Лента событий по позициям.</h3>
+<h2 id="-">Сервис операций</h2>
+<h3 id="-">Лента событий по позициям.</h3>
+<p>endpoint: wss://invest-public-api.tinkoff.ru/ws/tinkoff.public.invest.api.contract.v1.OperationsStreamService/PositionsStream</p>
 <p><a href="/investAPI/ws/websock-docs/output/index.html#schema-v1PositionsStreamRequest">PositionsStreamRequest</a>
 <a href="/investAPI/ws/websock-docs/output/index.html#schema-v1PositionsStreamResponse">PositionsStreamResponse</a></p>
 <p>Пример запроса</p>
-<pre><code class="language-json">{
-  &quot;accounts&quot;: [
-    &quot;*accountId&quot;
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"accounts"</span>: [
+    <span class="hljs-string">"*accountId"</span>
   ]
 }
 </code></pre>
 <p>Пример ответа - подписка успешна</p>
-<pre><code class="language-json">{
-  &quot;subscriptions&quot;: {
-    &quot;accounts&quot;: [
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"subscriptions"</span>: {
+    <span class="hljs-attr">"accounts"</span>: [
       {
-        &quot;accountId&quot;: &quot;*accountId&quot;,
-        &quot;subscriptionStatus&quot;: &quot;POSITIONS_SUBSCRIPTION_STATUS_SUCCESS&quot;
+        <span class="hljs-attr">"accountId"</span>: <span class="hljs-string">"*accountId"</span>,
+        <span class="hljs-attr">"subscriptionStatus"</span>: <span class="hljs-string">"POSITIONS_SUBSCRIPTION_STATUS_SUCCESS"</span>
       }
     ]
   }
 }
 </code></pre>
 <p>Пример события - изменение позици в портфеле</p>
-<pre><code class="language-json">{
-  &quot;position&quot;: {
-    &quot;accountId&quot;: &quot;*accountId&quot;,
-    &quot;money&quot;: [
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"position"</span>: {
+    <span class="hljs-attr">"accountId"</span>: <span class="hljs-string">"*accountId"</span>,
+    <span class="hljs-attr">"money"</span>: [
       {
-        &quot;availableValue&quot;: {
-          &quot;currency&quot;: &quot;rub&quot;,
-          &quot;units&quot;: &quot;3148&quot;,
-          &quot;nano&quot;: 130000000
+        <span class="hljs-attr">"availableValue"</span>: {
+          <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"rub"</span>,
+          <span class="hljs-attr">"units"</span>: <span class="hljs-string">"3148"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">130000000</span>
         },
-        &quot;blockedValue&quot;: {
-          &quot;currency&quot;: &quot;rub&quot;,
-          &quot;units&quot;: &quot;0&quot;,
-          &quot;nano&quot;: 20000000
+        <span class="hljs-attr">"blockedValue"</span>: {
+          <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"rub"</span>,
+          <span class="hljs-attr">"units"</span>: <span class="hljs-string">"0"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">20000000</span>
         }
       }
     ],
-    &quot;securities&quot;: [
+    <span class="hljs-attr">"securities"</span>: [
       {
-        &quot;figi&quot;: &quot;BBG00RPRPX12&quot;,
-        &quot;blocked&quot;: &quot;0&quot;,
-        &quot;balance&quot;: &quot;9&quot;,
-        &quot;positionUid&quot;: &quot;eee36ccf-5f28-4419-9c29-c6465f39581a&quot;,
-        &quot;instrumentUid&quot;: &quot;ade12bc5-07d9-44fe-b27a-1543e05bacfd&quot;,
-        &quot;exchangeBlocked&quot;: false,
-        &quot;instrumentType&quot;: &quot;etf&quot;
+        <span class="hljs-attr">"figi"</span>: <span class="hljs-string">"BBG00RPRPX12"</span>,
+        <span class="hljs-attr">"blocked"</span>: <span class="hljs-string">"0"</span>,
+        <span class="hljs-attr">"balance"</span>: <span class="hljs-string">"9"</span>,
+        <span class="hljs-attr">"positionUid"</span>: <span class="hljs-string">"eee36ccf-5f28-4419-9c29-c6465f39581a"</span>,
+        <span class="hljs-attr">"instrumentUid"</span>: <span class="hljs-string">"ade12bc5-07d9-44fe-b27a-1543e05bacfd"</span>,
+        <span class="hljs-attr">"exchangeBlocked"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">"instrumentType"</span>: <span class="hljs-string">"etf"</span>
       }
     ],
-    &quot;futures&quot;: [],
-    &quot;options&quot;: [],
-    &quot;date&quot;: &quot;2023-05-16T13:29:13.411710Z&quot;
+    <span class="hljs-attr">"futures"</span>: [],
+    <span class="hljs-attr">"options"</span>: [],
+    <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-05-16T13:29:13.411710Z"</span>
   }
 }
 </code></pre>
 <p><a href="/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.OperationsStreamService/PositionsStream">Проверить</a></p>
-<h3 id="_5">Лента событий по портфелям.</h3>
+<h3 id="-">Лента событий по портфелям.</h3>
+<p>endpoint: wss://invest-public-api.tinkoff.ru/ws/tinkoff.public.invest.api.contract.v1.OperationsStreamService/PortfolioStream</p>
+
 <p><a href="/investAPI/ws/websock-docs/output/index.html#schema-v1PortfolioStreamRequest">PortfolioStreamRequest</a>
 <a href="/investAPI/ws/websock-docs/output/index.html#schema-v1PortfolioStreamResponse">PortfolioStreamResponse</a></p>
 <p>Пример запроса</p>
-<pre><code class="language-json">{
-  &quot;accounts&quot;: [
-    &quot;*accountId&quot;
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"accounts"</span>: [
+    <span class="hljs-string">"*accountId"</span>
   ]
 }
 </code></pre>
 <p>Пример ответа подписка успешна</p>
-<pre><code class="language-json">{
-  &quot;subscriptions&quot;: {
-    &quot;accounts&quot;: [
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"subscriptions"</span>: {
+    <span class="hljs-attr">"accounts"</span>: [
       {
-        &quot;accountId&quot;: &quot;*accountId&quot;,
-        &quot;subscriptionStatus&quot;: &quot;PORTFOLIO_SUBSCRIPTION_STATUS_SUCCESS&quot;
+        <span class="hljs-attr">"accountId"</span>: <span class="hljs-string">"*accountId"</span>,
+        <span class="hljs-attr">"subscriptionStatus"</span>: <span class="hljs-string">"PORTFOLIO_SUBSCRIPTION_STATUS_SUCCESS"</span>
       }
     ]
   }
 }
 </code></pre>
 <p>Пример события изменения по портфелю</p>
-<pre><code class="language-json">{
-  &quot;portfolio&quot;: {
-    &quot;totalAmountShares&quot;: {
-      &quot;currency&quot;: &quot;rub&quot;,
-      &quot;units&quot;: &quot;2787&quot;,
-      &quot;nano&quot;: 700000000
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"portfolio"</span>: {
+    <span class="hljs-attr">"totalAmountShares"</span>: {
+      <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"rub"</span>,
+      <span class="hljs-attr">"units"</span>: <span class="hljs-string">"2787"</span>,
+      <span class="hljs-attr">"nano"</span>: <span class="hljs-number">700000000</span>
     },
-    &quot;totalAmountBonds&quot;: {
-      &quot;currency&quot;: &quot;rub&quot;,
-      &quot;units&quot;: &quot;0&quot;,
-      &quot;nano&quot;: 0
+    <span class="hljs-attr">"totalAmountBonds"</span>: {
+      <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"rub"</span>,
+      <span class="hljs-attr">"units"</span>: <span class="hljs-string">"0"</span>,
+      <span class="hljs-attr">"nano"</span>: <span class="hljs-number">0</span>
     },
-    &quot;totalAmountEtf&quot;: {
-      &quot;currency&quot;: &quot;rub&quot;,
-      &quot;units&quot;: &quot;11&quot;,
-      &quot;nano&quot;: 115000000
+    <span class="hljs-attr">"totalAmountEtf"</span>: {
+      <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"rub"</span>,
+      <span class="hljs-attr">"units"</span>: <span class="hljs-string">"11"</span>,
+      <span class="hljs-attr">"nano"</span>: <span class="hljs-number">115000000</span>
     },
-    &quot;totalAmountCurrencies&quot;: {
-      &quot;currency&quot;: &quot;rub&quot;,
-      &quot;units&quot;: &quot;3194&quot;,
-      &quot;nano&quot;: 843600000
+    <span class="hljs-attr">"totalAmountCurrencies"</span>: {
+      <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"rub"</span>,
+      <span class="hljs-attr">"units"</span>: <span class="hljs-string">"3194"</span>,
+      <span class="hljs-attr">"nano"</span>: <span class="hljs-number">843600000</span>
     },
-    &quot;expectedYield&quot;: {
-      &quot;units&quot;: &quot;9158&quot;,
-      &quot;nano&quot;: 160000000
+    <span class="hljs-attr">"expectedYield"</span>: {
+      <span class="hljs-attr">"units"</span>: <span class="hljs-string">"9158"</span>,
+      <span class="hljs-attr">"nano"</span>: <span class="hljs-number">160000000</span>
     },
-    &quot;positions&quot;: [
+    <span class="hljs-attr">"positions"</span>: [
       {
-        &quot;figi&quot;: &quot;BBG004S68473&quot;,
-        &quot;instrumentType&quot;: &quot;share&quot;,
-        &quot;quantity&quot;: {
-          &quot;units&quot;: &quot;400&quot;,
-          &quot;nano&quot;: 0
+        <span class="hljs-attr">"figi"</span>: <span class="hljs-string">"BBG004S68473"</span>,
+        <span class="hljs-attr">"instrumentType"</span>: <span class="hljs-string">"share"</span>,
+        <span class="hljs-attr">"quantity"</span>: {
+          <span class="hljs-attr">"units"</span>: <span class="hljs-string">"400"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">0</span>
         },
-        &quot;averagePositionPrice&quot;: {
-          &quot;currency&quot;: &quot;rub&quot;,
-          &quot;units&quot;: &quot;3&quot;,
-          &quot;nano&quot;: 942567000
+        <span class="hljs-attr">"averagePositionPrice"</span>: {
+          <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"rub"</span>,
+          <span class="hljs-attr">"units"</span>: <span class="hljs-string">"3"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">942567000</span>
         },
-        &quot;expectedYield&quot;: {
-          &quot;units&quot;: &quot;6&quot;,
-          &quot;nano&quot;: 352000000
+        <span class="hljs-attr">"expectedYield"</span>: {
+          <span class="hljs-attr">"units"</span>: <span class="hljs-string">"6"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">352000000</span>
         },
-        &quot;averagePositionPricePt&quot;: {
-          &quot;units&quot;: &quot;3&quot;,
-          &quot;nano&quot;: 942567000
+        <span class="hljs-attr">"averagePositionPricePt"</span>: {
+          <span class="hljs-attr">"units"</span>: <span class="hljs-string">"3"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">942567000</span>
         },
-        &quot;currentPrice&quot;: {
-          &quot;currency&quot;: &quot;rub&quot;,
-          &quot;units&quot;: &quot;4&quot;,
-          &quot;nano&quot;: 193000000
+        <span class="hljs-attr">"currentPrice"</span>: {
+          <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"rub"</span>,
+          <span class="hljs-attr">"units"</span>: <span class="hljs-string">"4"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">193000000</span>
         },
-        &quot;averagePositionPriceFifo&quot;: {
-          &quot;currency&quot;: &quot;rub&quot;,
-          &quot;units&quot;: &quot;3&quot;,
-          &quot;nano&quot;: 956275000
+        <span class="hljs-attr">"averagePositionPriceFifo"</span>: {
+          <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"rub"</span>,
+          <span class="hljs-attr">"units"</span>: <span class="hljs-string">"3"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">956275000</span>
         },
-        &quot;quantityLots&quot;: {
-          &quot;units&quot;: &quot;4&quot;,
-          &quot;nano&quot;: 0
+        <span class="hljs-attr">"quantityLots"</span>: {
+          <span class="hljs-attr">"units"</span>: <span class="hljs-string">"4"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">0</span>
         },
-        &quot;blocked&quot;: false,
-        &quot;positionUid&quot;: &quot;427f9bcc-2cab-4561-bf94-942d4261fbb7&quot;,
-        &quot;instrumentUid&quot;: &quot;2dfbc1fd-b92a-436e-b011-928c79e805f2&quot;
+        <span class="hljs-attr">"blocked"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">"positionUid"</span>: <span class="hljs-string">"427f9bcc-2cab-4561-bf94-942d4261fbb7"</span>,
+        <span class="hljs-attr">"instrumentUid"</span>: <span class="hljs-string">"2dfbc1fd-b92a-436e-b011-928c79e805f2"</span>
       }
     ],
-    &quot;accountId&quot;: &quot;*accountId&quot;,
-    &quot;virtualPositions&quot;: []
+    <span class="hljs-attr">"accountId"</span>: <span class="hljs-string">"*accountId"</span>,
+    <span class="hljs-attr">"virtualPositions"</span>: []
   }
 }
 </code></pre>
 <p><a href="/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.OperationsStreamService/PortfolioStream">Проверить</a></p>
-<h2 id="_6">Сервис рыночных данных</h2>
+<h2 id="-">Сервис рыночных данных</h2>
+<p>endpoint: wss://invest-public-api.tinkoff.ru/ws/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream</p>
 <p><a href="/investAPI/ws/websock-docs/output/index.html#message-v1MarketDataRequest">MarketDataRequest</a>
 <a href="/investAPI/ws/websock-docs/output/index.html#message-v1MarketDataResponse">MarketDataResponse</a></p>
-<h3 id="_7">Лента торговых статусов инструментов</h3>
+<h3 id="-">Лента торговых статусов инструментов</h3>
 <p>Пример запроса</p>
-<pre><code class="language-json">{
-  &quot;subscribeInfoRequest&quot;: {
-    &quot;subscriptionAction&quot;: &quot;SUBSCRIPTION_ACTION_SUBSCRIBE&quot;,
-    &quot;instruments&quot;: [
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"subscribeInfoRequest"</span>: {
+    <span class="hljs-attr">"subscriptionAction"</span>: <span class="hljs-string">"SUBSCRIPTION_ACTION_SUBSCRIBE"</span>,
+    <span class="hljs-attr">"instruments"</span>: [
       {
-        &quot;instrumentId&quot;: &quot;962e2a95-02a9-4171-abd7-aa198dbe643a&quot;
+        <span class="hljs-attr">"instrumentId"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
       }
     ]
   }
 }
 </code></pre>
 <p>Пример ответа - подписка успешна</p>
-<pre><code class="language-json">{
-  &quot;subscribeInfoResponse&quot;: {
-    &quot;trackingId&quot;: &quot;644a898058ce5265b24f9adc21011f67&quot;,
-    &quot;infoSubscriptions&quot;: [
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"subscribeInfoResponse"</span>: {
+    <span class="hljs-attr">"trackingId"</span>: <span class="hljs-string">"644a898058ce5265b24f9adc21011f67"</span>,
+    <span class="hljs-attr">"infoSubscriptions"</span>: [
       {
-        &quot;figi&quot;: &quot;BBG004730RP0&quot;,
-        &quot;subscriptionStatus&quot;: &quot;SUBSCRIPTION_STATUS_SUCCESS&quot;,
-        &quot;instrumentUid&quot;: &quot;962e2a95-02a9-4171-abd7-aa198dbe643a&quot;
+        <span class="hljs-attr">"figi"</span>: <span class="hljs-string">"BBG004730RP0"</span>,
+        <span class="hljs-attr">"subscriptionStatus"</span>: <span class="hljs-string">"SUBSCRIPTION_STATUS_SUCCESS"</span>,
+        <span class="hljs-attr">"instrumentUid"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
       }
     ]
   }
 }
 </code></pre>
 <p>Пример сообщения торговый статус по инструменту</p>
-<pre><code class="language-json">{
-  &quot;tradingStatus&quot;: {
-    &quot;figi&quot;: &quot;BBG004730RP0&quot;,
-    &quot;tradingStatus&quot;: &quot;SECURITY_TRADING_STATUS_NORMAL_TRADING&quot;,
-    &quot;time&quot;: &quot;2023-05-16T07:00:00.750460Z&quot;,
-    &quot;limitOrderAvailableFlag&quot;: true,
-    &quot;marketOrderAvailableFlag&quot;: true,
-    &quot;instrumentUid&quot;: &quot;962e2a95-02a9-4171-abd7-aa198dbe643a&quot;
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"tradingStatus"</span>: {
+    <span class="hljs-attr">"figi"</span>: <span class="hljs-string">"BBG004730RP0"</span>,
+    <span class="hljs-attr">"tradingStatus"</span>: <span class="hljs-string">"SECURITY_TRADING_STATUS_NORMAL_TRADING"</span>,
+    <span class="hljs-attr">"time"</span>: <span class="hljs-string">"2023-05-16T07:00:00.750460Z"</span>,
+    <span class="hljs-attr">"limitOrderAvailableFlag"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"marketOrderAvailableFlag"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"instrumentUid"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
   }
 }
 </code></pre>
 <p><a href="/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream">Проверить</a></p>
-<h3 id="_8">Лента цен последних сделок</h3>
+<h3 id="-">Лента цен последних сделок</h3>
 <p>Пример запроса</p>
-<pre><code class="language-json">{
-  &quot;subscribeLastPriceRequest&quot;: {
-    &quot;subscriptionAction&quot;: &quot;SUBSCRIPTION_ACTION_SUBSCRIBE&quot;,
-    &quot;instruments&quot;: [
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"subscribeLastPriceRequest"</span>: {
+    <span class="hljs-attr">"subscriptionAction"</span>: <span class="hljs-string">"SUBSCRIPTION_ACTION_SUBSCRIBE"</span>,
+    <span class="hljs-attr">"instruments"</span>: [
       {
-        &quot;instrumentId&quot;: &quot;962e2a95-02a9-4171-abd7-aa198dbe643a&quot;
+        <span class="hljs-attr">"instrumentId"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
       }
     ]
   }
 }
 </code></pre>
 <p>Пример ответа - подписка успешна</p>
-<pre><code class="language-json">{
-  &quot;subscribeLastPriceResponse&quot;: {
-    &quot;trackingId&quot;: &quot;644a875239934cfcda96460984a55ced&quot;,
-    &quot;lastPriceSubscriptions&quot;: [
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"subscribeLastPriceResponse"</span>: {
+    <span class="hljs-attr">"trackingId"</span>: <span class="hljs-string">"644a875239934cfcda96460984a55ced"</span>,
+    <span class="hljs-attr">"lastPriceSubscriptions"</span>: [
       {
-        &quot;figi&quot;: &quot;BBG004730RP0&quot;,
-        &quot;subscriptionStatus&quot;: &quot;SUBSCRIPTION_STATUS_SUCCESS&quot;,
-        &quot;instrumentUid&quot;: &quot;962e2a95-02a9-4171-abd7-aa198dbe643a&quot;
+        <span class="hljs-attr">"figi"</span>: <span class="hljs-string">"BBG004730RP0"</span>,
+        <span class="hljs-attr">"subscriptionStatus"</span>: <span class="hljs-string">"SUBSCRIPTION_STATUS_SUCCESS"</span>,
+        <span class="hljs-attr">"instrumentUid"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
       }
     ]
   }
 }
 </code></pre>
 <p>Пример сообщения последние цены по инструменту</p>
-<pre><code class="language-json">{
-  &quot;lastPrice&quot;: {
-    &quot;figi&quot;: &quot;BBG004730RP0&quot;,
-    &quot;price&quot;: {
-      &quot;units&quot;: &quot;178&quot;,
-      &quot;nano&quot;: 790000000
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"lastPrice"</span>: {
+    <span class="hljs-attr">"figi"</span>: <span class="hljs-string">"BBG004730RP0"</span>,
+    <span class="hljs-attr">"price"</span>: {
+      <span class="hljs-attr">"units"</span>: <span class="hljs-string">"178"</span>,
+      <span class="hljs-attr">"nano"</span>: <span class="hljs-number">790000000</span>
     },
-    &quot;time&quot;: &quot;2023-05-16T08:49:31.085056Z&quot;,
-    &quot;instrumentUid&quot;: &quot;962e2a95-02a9-4171-abd7-aa198dbe643a&quot;
+    <span class="hljs-attr">"time"</span>: <span class="hljs-string">"2023-05-16T08:49:31.085056Z"</span>,
+    <span class="hljs-attr">"instrumentUid"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
   }
 }
 </code></pre>
 <p><a href="/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream">Проверить</a></p>
-<h3 id="_9">Лента обезличенных сделок</h3>
+<h3 id="-">Лента обезличенных сделок</h3>
 <p>Пример запроса</p>
-<pre><code class="language-json">{
-  &quot;subscribeTradesRequest&quot;: {
-    &quot;subscriptionAction&quot;: &quot;SUBSCRIPTION_ACTION_SUBSCRIBE&quot;,
-    &quot;instruments&quot;: [
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"subscribeTradesRequest"</span>: {
+    <span class="hljs-attr">"subscriptionAction"</span>: <span class="hljs-string">"SUBSCRIPTION_ACTION_SUBSCRIBE"</span>,
+    <span class="hljs-attr">"instruments"</span>: [
       {
-        &quot;instrumentId&quot;: &quot;962e2a95-02a9-4171-abd7-aa198dbe643a&quot;
+        <span class="hljs-attr">"instrumentId"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
       }
     ]
   }
 }
 </code></pre>
 <p>Пример ответа - подписка успешна</p>
-<pre><code class="language-json">{
-  &quot;subscribeTradesResponse&quot;: {
-    &quot;trackingId&quot;: &quot;6440d32adb48515bc217b426880a99a7&quot;,
-    &quot;tradeSubscriptions&quot;: [
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"subscribeTradesResponse"</span>: {
+    <span class="hljs-attr">"trackingId"</span>: <span class="hljs-string">"6440d32adb48515bc217b426880a99a7"</span>,
+    <span class="hljs-attr">"tradeSubscriptions"</span>: [
       {
-        &quot;figi&quot;: &quot;BBG004730RP0&quot;,
-        &quot;subscriptionStatus&quot;: &quot;SUBSCRIPTION_STATUS_SUCCESS&quot;,
-        &quot;instrumentUid&quot;: &quot;962e2a95-02a9-4171-abd7-aa198dbe643a&quot;
+        <span class="hljs-attr">"figi"</span>: <span class="hljs-string">"BBG004730RP0"</span>,
+        <span class="hljs-attr">"subscriptionStatus"</span>: <span class="hljs-string">"SUBSCRIPTION_STATUS_SUCCESS"</span>,
+        <span class="hljs-attr">"instrumentUid"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
       }
     ]
   }
 }
 </code></pre>
 <p>Пример сообщения обезличиные сделки по инстурменту</p>
-<pre><code class="language-json">{
-  &quot;trade&quot;: {
-    &quot;figi&quot;: &quot;BBG004730RP0&quot;,
-    &quot;direction&quot;: &quot;TRADE_DIRECTION_SELL&quot;,
-    &quot;price&quot;: {
-      &quot;units&quot;: &quot;178&quot;,
-      &quot;nano&quot;: 860000000
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"trade"</span>: {
+    <span class="hljs-attr">"figi"</span>: <span class="hljs-string">"BBG004730RP0"</span>,
+    <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"TRADE_DIRECTION_SELL"</span>,
+    <span class="hljs-attr">"price"</span>: {
+      <span class="hljs-attr">"units"</span>: <span class="hljs-string">"178"</span>,
+      <span class="hljs-attr">"nano"</span>: <span class="hljs-number">860000000</span>
     },
-    &quot;quantity&quot;: &quot;200&quot;,
-    &quot;time&quot;: &quot;2023-05-16T08:50:22.807741Z&quot;,
-    &quot;instrumentUid&quot;: &quot;962e2a95-02a9-4171-abd7-aa198dbe643a&quot;
+    <span class="hljs-attr">"quantity"</span>: <span class="hljs-string">"200"</span>,
+    <span class="hljs-attr">"time"</span>: <span class="hljs-string">"2023-05-16T08:50:22.807741Z"</span>,
+    <span class="hljs-attr">"instrumentUid"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
   }
 }
 </code></pre>
 <p><a href="/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream">Проверить</a></p>
-<h3 id="_10">Лента событий по стаканам</h3>
+<h3 id="-">Лента событий по стаканам</h3>
 <p>Пример запроса</p>
-<pre><code class="language-json">{
-  &quot;subscribeOrderBookRequest&quot;: {
-    &quot;subscriptionAction&quot;: &quot;SUBSCRIPTION_ACTION_SUBSCRIBE&quot;,
-    &quot;instruments&quot;: [
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"subscribeOrderBookRequest"</span>: {
+    <span class="hljs-attr">"subscriptionAction"</span>: <span class="hljs-string">"SUBSCRIPTION_ACTION_SUBSCRIBE"</span>,
+    <span class="hljs-attr">"instruments"</span>: [
       {
-        &quot;depth&quot;:  10,
-        &quot;instrumentId&quot;: &quot;962e2a95-02a9-4171-abd7-aa198dbe643a&quot;
+        <span class="hljs-attr">"depth"</span>:  <span class="hljs-number">10</span>,
+        <span class="hljs-attr">"instrumentId"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
       }
     ],
-    &quot;waitingClose&quot;: false
+    <span class="hljs-attr">"waitingClose"</span>: <span class="hljs-literal">false</span>
   }
 }
 </code></pre>
 <p>Пример ответа - подписка успешна</p>
-<pre><code class="language-json">{
-  &quot;subscribeOrderBookResponse&quot;: {
-    &quot;trackingId&quot;: &quot;6440cfbaa85be1a52839fc81e5f0f14f&quot;,
-    &quot;orderBookSubscriptions&quot;: [
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"subscribeOrderBookResponse"</span>: {
+    <span class="hljs-attr">"trackingId"</span>: <span class="hljs-string">"6440cfbaa85be1a52839fc81e5f0f14f"</span>,
+    <span class="hljs-attr">"orderBookSubscriptions"</span>: [
       {
-        &quot;figi&quot;: &quot;&quot;,
-        &quot;depth&quot;: 10,
-        &quot;subscriptionStatus&quot;: &quot;SUBSCRIPTION_STATUS_SUCCESS&quot;,
-        &quot;instrumentUid&quot;: &quot;962e2a95-02a9-4171-abd7-aa198dbe643a&quot;
+        <span class="hljs-attr">"figi"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"depth"</span>: <span class="hljs-number">10</span>,
+        <span class="hljs-attr">"subscriptionStatus"</span>: <span class="hljs-string">"SUBSCRIPTION_STATUS_SUCCESS"</span>,
+        <span class="hljs-attr">"instrumentUid"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
       }
     ]
   }
 }
 </code></pre>
 <p>Пример сообщения стака по инструменту</p>
-<pre><code class="language-json">{
-  &quot;orderbook&quot;: {
-    &quot;figi&quot;: &quot;BBG004730RP0&quot;,
-    &quot;depth&quot;: 10,
-    &quot;isConsistent&quot;: true,
-    &quot;bids&quot;: [
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"orderbook"</span>: {
+    <span class="hljs-attr">"figi"</span>: <span class="hljs-string">"BBG004730RP0"</span>,
+    <span class="hljs-attr">"depth"</span>: <span class="hljs-number">10</span>,
+    <span class="hljs-attr">"isConsistent"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"bids"</span>: [
       {
-        &quot;price&quot;: {
-          &quot;units&quot;: &quot;178&quot;,
-          &quot;nano&quot;: 970000000
+        <span class="hljs-attr">"price"</span>: {
+          <span class="hljs-attr">"units"</span>: <span class="hljs-string">"178"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">970000000</span>
         },
-        &quot;quantity&quot;: &quot;20&quot;
+        <span class="hljs-attr">"quantity"</span>: <span class="hljs-string">"20"</span>
       }...
-      # ...other 9 items collapsed
+      # ...other <span class="hljs-number">9</span> items collapsed
     ],
-    &quot;asks&quot;: [
+    <span class="hljs-attr">"asks"</span>: [
       {
-        &quot;price&quot;: {
-          &quot;units&quot;: &quot;178&quot;,
-          &quot;nano&quot;: 980000000
+        <span class="hljs-attr">"price"</span>: {
+          <span class="hljs-attr">"units"</span>: <span class="hljs-string">"178"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">980000000</span>
         },
-        &quot;quantity&quot;: &quot;3&quot;
+        <span class="hljs-attr">"quantity"</span>: <span class="hljs-string">"3"</span>
       }...
-      # ...other 9 items collapsed
+      # ...other <span class="hljs-number">9</span> items collapsed
     ],
-    &quot;time&quot;: &quot;2023-05-16T08:54:00.549662Z&quot;,
-    &quot;limitUp&quot;: {
-      &quot;units&quot;: &quot;191&quot;,
-      &quot;nano&quot;: 440000000
+    <span class="hljs-attr">"time"</span>: <span class="hljs-string">"2023-05-16T08:54:00.549662Z"</span>,
+    <span class="hljs-attr">"limitUp"</span>: {
+      <span class="hljs-attr">"units"</span>: <span class="hljs-string">"191"</span>,
+      <span class="hljs-attr">"nano"</span>: <span class="hljs-number">440000000</span>
     },
-    &quot;limitDown&quot;: {
-      &quot;units&quot;: &quot;156&quot;,
-      &quot;nano&quot;: 240000000
+    <span class="hljs-attr">"limitDown"</span>: {
+      <span class="hljs-attr">"units"</span>: <span class="hljs-string">"156"</span>,
+      <span class="hljs-attr">"nano"</span>: <span class="hljs-number">240000000</span>
     },
-    &quot;instrumentUid&quot;: &quot;962e2a95-02a9-4171-abd7-aa198dbe643a&quot;
+    <span class="hljs-attr">"instrumentUid"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
   }
 }
 </code></pre>
 <p><a href="/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream">Проверить</a></p>
-<h3 id="_11">Лента события по свечам</h3>
+<h3 id="-">Лента события по свечам</h3>
 <p>Пример запроса</p>
-<pre><code class="language-json">{
-  &quot;subscribeCandlesRequest&quot;: {
-    &quot;subscriptionAction&quot;: &quot;SUBSCRIPTION_ACTION_SUBSCRIBE&quot;,
-    &quot;instruments&quot;: [
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"subscribeCandlesRequest"</span>: {
+    <span class="hljs-attr">"subscriptionAction"</span>: <span class="hljs-string">"SUBSCRIPTION_ACTION_SUBSCRIBE"</span>,
+    <span class="hljs-attr">"instruments"</span>: [
       {
-        &quot;interval&quot;: &quot;SUBSCRIPTION_INTERVAL_ONE_MINUTE&quot;,
-        &quot;instrumentId&quot;: &quot;962e2a95-02a9-4171-abd7-aa198dbe643a&quot;
+        <span class="hljs-attr">"interval"</span>: <span class="hljs-string">"SUBSCRIPTION_INTERVAL_ONE_MINUTE"</span>,
+        <span class="hljs-attr">"instrumentId"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
       }
     ],
-    &quot;waitingClose&quot;: false
+    <span class="hljs-attr">"waitingClose"</span>: <span class="hljs-literal">false</span>
   }
 }
 </code></pre>
 <p>Пример ответа - подписка успешна</p>
-<pre><code class="language-json">{
-  &quot;subscribeCandlesResponse&quot;: {
-    &quot;trackingId&quot;: &quot;644a8c236378693c5265a3f679698708&quot;,
-    &quot;candlesSubscriptions&quot;: [
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"subscribeCandlesResponse"</span>: {
+    <span class="hljs-attr">"trackingId"</span>: <span class="hljs-string">"644a8c236378693c5265a3f679698708"</span>,
+    <span class="hljs-attr">"candlesSubscriptions"</span>: [
       {
-        &quot;figi&quot;: &quot;BBG004730RP0&quot;,
-        &quot;interval&quot;: &quot;SUBSCRIPTION_INTERVAL_ONE_MINUTE&quot;,
-        &quot;subscriptionStatus&quot;: &quot;SUBSCRIPTION_STATUS_SUCCESS&quot;,
-        &quot;instrumentUid&quot;: &quot;962e2a95-02a9-4171-abd7-aa198dbe643a&quot;
+        <span class="hljs-attr">"figi"</span>: <span class="hljs-string">"BBG004730RP0"</span>,
+        <span class="hljs-attr">"interval"</span>: <span class="hljs-string">"SUBSCRIPTION_INTERVAL_ONE_MINUTE"</span>,
+        <span class="hljs-attr">"subscriptionStatus"</span>: <span class="hljs-string">"SUBSCRIPTION_STATUS_SUCCESS"</span>,
+        <span class="hljs-attr">"instrumentUid"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
       }
     ]
   }
 }
 </code></pre>
 <p>Пример события свеча по инструменту</p>
-<pre><code class="language-json">{
-  &quot;candle&quot;: {
-    &quot;figi&quot;: &quot;BBG004730RP0&quot;,
-    &quot;interval&quot;: &quot;SUBSCRIPTION_INTERVAL_ONE_MINUTE&quot;,
-    &quot;open&quot;: {
-      &quot;units&quot;: &quot;179&quot;,
-      &quot;nano&quot;: 50000000
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"candle"</span>: {
+    <span class="hljs-attr">"figi"</span>: <span class="hljs-string">"BBG004730RP0"</span>,
+    <span class="hljs-attr">"interval"</span>: <span class="hljs-string">"SUBSCRIPTION_INTERVAL_ONE_MINUTE"</span>,
+    <span class="hljs-attr">"open"</span>: {
+      <span class="hljs-attr">"units"</span>: <span class="hljs-string">"179"</span>,
+      <span class="hljs-attr">"nano"</span>: <span class="hljs-number">50000000</span>
     },
-    &quot;high&quot;: {
-      &quot;units&quot;: &quot;179&quot;,
-      &quot;nano&quot;: 70000000
+    <span class="hljs-attr">"high"</span>: {
+      <span class="hljs-attr">"units"</span>: <span class="hljs-string">"179"</span>,
+      <span class="hljs-attr">"nano"</span>: <span class="hljs-number">70000000</span>
     },
-    &quot;low&quot;: {
-      &quot;units&quot;: &quot;178&quot;,
-      &quot;nano&quot;: 950000000
+    <span class="hljs-attr">"low"</span>: {
+      <span class="hljs-attr">"units"</span>: <span class="hljs-string">"178"</span>,
+      <span class="hljs-attr">"nano"</span>: <span class="hljs-number">950000000</span>
     },
-    &quot;close&quot;: {
-      &quot;units&quot;: &quot;178&quot;,
-      &quot;nano&quot;: 950000000
+    <span class="hljs-attr">"close"</span>: {
+      <span class="hljs-attr">"units"</span>: <span class="hljs-string">"178"</span>,
+      <span class="hljs-attr">"nano"</span>: <span class="hljs-number">950000000</span>
     },
-    &quot;volume&quot;: &quot;4279&quot;,
-    &quot;time&quot;: &quot;2023-05-16T08:44:00Z&quot;,
-    &quot;lastTradeTs&quot;: &quot;2023-05-16T08:44:27.432487Z&quot;,
-    &quot;instrumentUid&quot;: &quot;962e2a95-02a9-4171-abd7-aa198dbe643a&quot;
+    <span class="hljs-attr">"volume"</span>: <span class="hljs-string">"4279"</span>,
+    <span class="hljs-attr">"time"</span>: <span class="hljs-string">"2023-05-16T08:44:00Z"</span>,
+    <span class="hljs-attr">"lastTradeTs"</span>: <span class="hljs-string">"2023-05-16T08:44:27.432487Z"</span>,
+    <span class="hljs-attr">"instrumentUid"</span>: <span class="hljs-string">"962e2a95-02a9-4171-abd7-aa198dbe643a"</span>
   }
 }
 </code></pre>
 <p><a href="/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream">Проверить</a></p>
-<h2 id="_12">Пинг сообщения</h2>
+<h2 id="-">Пинг сообщения</h2>
 <p>Пример </p>
-<pre><code class="language-json">{
-  &quot;ping&quot;: {
-    &quot;time&quot;: &quot;2023-05-16T08:32:00.472145624Z&quot;
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"ping"</span>: {
+    <span class="hljs-attr">"time"</span>: <span class="hljs-string">"2023-05-16T08:32:00.472145624Z"</span>
   }
 }
 </code></pre>
-                
-              
-              
-<!-- Add custom comment system integration here -->
-<div class="container">
-    <script src="https://utteranc.es/client.js"
-            repo="https://github.com/Tinkoff/investAPI"
-            issue-term="WebSoket comments"
-            label="documentation"
-            theme="github-light"
-            crossorigin="anonymous"
-            async>
-    </script>
-</div>
-
-            </article>
-          </div>
-        </div>
-        
-      </main>
-      
-        
-<footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../grpc/" class="md-footer__link md-footer__link--prev" aria-label="Назад: grps" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Назад
-              </span>
-              grps
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../token/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Токен доступа" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Вперед
-              </span>
-              Токен доступа
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-        
-      </div>
-      
-    </div>
-  </div>
-</footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e # \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
-    
-    
-      <script src="../assets/javascripts/bundle.29db7785.min.js"></script>
-      
-    
-  </body>
-</html>
+</body></html>

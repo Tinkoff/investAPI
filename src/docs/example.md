@@ -2,7 +2,7 @@
 
 На данной странице представлены примеры запросов по некоторым методам в формате JSON.
 
-## [PostOrder](/src/docs/orders.md/#postorder) – Метод выставления заявок
+## [PostOrder](/investAPI/orders/#postorder) – Метод выставления заявок
 
 Задача: выставить лимитную заявку на покупку инструмента.
 ```
@@ -19,7 +19,7 @@
 "orderId": "string" \\ ключ идемпотентности.
 }
 ```
-## [ReplaceOrder](/src/docs/orders.md/#replaceorder) – Метод изменения выставленной заявки
+## [ReplaceOrder](/investAPI/orders/#replaceorder) – Метод изменения выставленной заявки
 
 Задача: изменить выставленную ранее заявку.
 ```
@@ -34,7 +34,7 @@
 }
 }
 ```
-## [PostStopOrder](/src/docs/stoporders.md/#poststoporder) – Метод выставления стоп-заявок
+## [PostStopOrder](/investAPI/stoporders/#poststoporder) – Метод выставления стоп-заявок
 
 Задача: выставить лимитную заявку на покупку инструмента.
 
@@ -59,7 +59,7 @@
 
 
 
-## [GetOperationsByCursor](/src/docs/operations.md/#getoperationsbycursor) – Метод получения операций по счету с курсором
+## [GetOperationsByCursor](/investAPI/operations/#getoperationsbycursor) – Метод получения операций по счету с курсором
 
 Задача: получить список операций по счету, за год с постраничным выводом.
 ```
@@ -75,7 +75,7 @@
 "state": "OPERATION_STATE_EXECUTED" \\ Статус операций, в данном случае исполненные
 }
 ```
-## [GetOperations](/src/docs/operations.md/#getoperations) – Метод получения операций по счету
+## [GetOperations](/investAPI/operations/#getoperations) – Метод получения операций по счету
 
 Задача: получить список операций по счету, за год.
 ```
@@ -87,7 +87,7 @@
 "state": "OPERATION_STATE_EXECUTED" \\ Статус операций, в данном случае исполненные
 }
 ```
-## [GetCandles](/src/docs/marketdata.md/#getcandles) – Метод получения свечей
+## [GetCandles](/investAPI/marketdata/#getcandles) – Метод получения свечей
 
 Задача: получить минутные свечи за день.
 ```

@@ -479,6 +479,26 @@
     "type": "INVALID_ARGUMENT",
     "description": "Некорректное значение *price_type*. Значением *price_type* может быть только **PRICE_TYPE_POINT** ИЛИ **PRICE_TYPE_CURRENCY**."
   },
+  "30105": {
+    "message": "exchange_order_type is invalid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Некорректное значение *exchange_order_type*. Значением *exchange_order_type* может быть только **LIMIT** ИЛИ **MARKET**."
+  },
+  "30106": {
+    "message": "status is invalid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Некорректное значение *status*. Значением *status* может быть только **ACTIVE**, **EXCECUTED**, **CANCELED** И **EXPIRED**."
+  },
+  "30107": {
+    "message": "negative values are not allowed",
+    "type": "INVALID_ARGUMENT",
+    "description": "Некорректное значение *limit* и/или *page*. Параметры *limit* и *page* не могут принимать отицательные значения."
+  },
+  "30108": {
+    "message": "specify a lower limit or page value because there are fewer brands",
+    "type": "INVALID_ARGUMENT",
+    "description": "Количество брендов меньше запрашиваемых параметров."
+  },
   "40002": {
     "message": "insufficient privileges",
     "type": "PERMISSION_DENIED",

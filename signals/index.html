@@ -15,7 +15,7 @@
     
     
       
-        <title>Common - TINKOFF INVEST API</title>
+        <title>Signals - TINKOFF INVEST API</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#securitytradingstatus" class="md-skip">
+        <a href="#signalservice" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Common
+              Signals
             
           </span>
         </div>
@@ -1426,14 +1426,117 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#signalservice" class="md-nav__link">
+    SignalService
+  </a>
+  
+    <nav class="md-nav" aria-label="SignalService">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Методы сервиса
+  </a>
+  
+    <nav class="md-nav" aria-label="Методы сервиса">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getstrategies" class="md-nav__link">
+    GetStrategies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getsignals" class="md-nav__link">
+    GetSignals
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Сообщения методов
+  </a>
+  
+    <nav class="md-nav" aria-label="Сообщения методов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getstrategiesrequest" class="md-nav__link">
+    GetStrategiesRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getstrategiesresponse" class="md-nav__link">
+    GetStrategiesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategy" class="md-nav__link">
+    Strategy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getsignalsrequest" class="md-nav__link">
+    GetSignalsRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getsignalsresponse" class="md-nav__link">
+    GetSignalsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signal" class="md-nav__link">
+    Signal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enums" class="md-nav__link">
+    Enums
+  </a>
+  
+    <nav class="md-nav" aria-label="Enums">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#securitytradingstatus" class="md-nav__link">
     SecurityTradingStatus
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     Нестандартные типы данных
   </a>
   
@@ -1451,6 +1554,11 @@
   <a href="#quotation" class="md-nav__link">
     Quotation
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1477,8 +1585,254 @@
   
 
 
-  <h1>Common</h1>
+  <h1>Signals</h1>
 
+<h2 id="signalservice">SignalService</h2>
+<h3 id="_1">Методы сервиса</h3>
+<h4 id="getstrategies">GetStrategies</h4>
+<ul>
+<li>
+<p>Тело запроса — <a href="#getstrategiesrequest">GetStrategiesRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#getstrategiesresponse">GetStrategiesResponse</a></p>
+</li>
+</ul>
+<h4 id="getsignals">GetSignals</h4>
+<ul>
+<li>
+<p>Тело запроса — <a href="#getsignalsrequest">GetSignalsRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#getsignalsresponse">GetSignalsResponse</a></p>
+</li>
+</ul>
+<!-- range .Methods -->
+<!-- range .Services -->
+
+<h3 id="_2">Сообщения методов</h3>
+<h4 id="getstrategiesrequest">GetStrategiesRequest</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>strategy_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор стратегии</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getstrategiesresponse">GetStrategiesResponse</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>strategies</td>
+<td>Массив объектов <a href="#strategy">Strategy</a></td>
+<td></td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="strategy">Strategy</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>strategy_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор стратегии</td>
+</tr>
+<tr>
+<td>strategy_name</td>
+<td><a href="#string">string</a></td>
+<td>Название стратегии</td>
+</tr>
+<tr>
+<td>strategy_description</td>
+<td><a href="#string">string</a></td>
+<td>Описание стратегии</td>
+</tr>
+<tr>
+<td>strategy_url</td>
+<td><a href="#string">string</a></td>
+<td>Ссылка на страницу с описанием стратегии</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getsignalsrequest">GetSignalsRequest</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>strategy_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор стратегии</td>
+</tr>
+<tr>
+<td>from</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата начала запрашиваемого интервала в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор  бумаги</td>
+</tr>
+<tr>
+<td>to</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата конца запрашиваемого интервала  в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>archive</td>
+<td><a href="#bool">bool</a></td>
+<td>Только архивные сигналы, по умолчанию false</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getsignalsresponse">GetSignalsResponse</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>signals</td>
+<td>Массив объектов <a href="#signal">Signal</a></td>
+<td></td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="signal">Signal</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>signal_id</td>
+<td><a href="#string">string</a></td>
+<td>идентификатор сигнала</td>
+</tr>
+<tr>
+<td>strategy_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор стратегии</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор  бумаги</td>
+</tr>
+<tr>
+<td>create_dt</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Датавремя создания сигнала  в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>lifetime</td>
+<td><a href="#int64">int64</a></td>
+<td>Срок действия сигнала, секунд</td>
+</tr>
+<tr>
+<td>direction</td>
+<td><a href="#string">string</a></td>
+<td>"buy" / "sell"</td>
+</tr>
+<tr>
+<td>price</td>
+<td><a href="#float">float</a></td>
+<td>Цена бумаги на момент формирования сигнала</td>
+</tr>
+<tr>
+<td>profit</td>
+<td><a href="#float">float</a></td>
+<td>Расчетная прибыль сигнала</td>
+</tr>
+<tr>
+<td>info</td>
+<td><a href="#string">string</a></td>
+<td>Произвольная информация о сигнале</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+<!-- end messages -->
+
+<h3 id="enums">Enums</h3>
+<!-- range .Enums -->
 <!-- range HasServices -->
 <!-- range .Files -->
 
@@ -1579,7 +1933,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_1">Нестандартные типы данных</h3>
+<h3 id="_3">Нестандартные типы данных</h3>
 <h4 id="moneyvalue">MoneyValue</h4>
 <p>Денежная сумма в определенной валюте</p>
 <table>

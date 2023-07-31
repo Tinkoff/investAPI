@@ -2961,6 +2961,11 @@
 <td>Uid инструмента</td>
 </tr>
 <tr>
+<td>waiting_close</td>
+<td><a href="#bool">bool</a></td>
+<td>Флаг ожидания закрытия временного интервала для отправки свечи</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -4380,6 +4385,11 @@
 <td>Цена закрытия торговой сессии.</td>
 </tr>
 <tr>
+<td>evening_session_price</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Цена последней сделки с вечерней сессии</td>
+</tr>
+<tr>
 <td>time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
 <td>Дата совершения торгов.</td>
@@ -4506,6 +4516,11 @@
 <td>SUBSCRIPTION_STATUS_TOO_MANY_REQUESTS</td>
 <td>8</td>
 <td>Превышен лимит на количество запросов на подписки в течение установленного отрезка времени</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_STATUS_SUBSCRIPTION_NOT_FOUND</td>
+<td>9</td>
+<td>Активная подписка не найдена. Ошибка может возникнуть только при отписке от не существующей отписки</td>
 </tr>
 </tbody>
 </table>

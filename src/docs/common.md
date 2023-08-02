@@ -21,9 +21,9 @@
 | SECURITY_TRADING_STATUS_SESSION_ASSIGNED | 11 | Сессия назначена |
 | SECURITY_TRADING_STATUS_SESSION_CLOSE | 12 | Сессия закрыта |
 | SECURITY_TRADING_STATUS_SESSION_OPEN | 13 | Сессия открыта |
-| SECURITY_TRADING_STATUS_DEALER_NORMAL_TRADING | 14 | Доступна торговля в режиме внутренней ликвидности брокера |
-| SECURITY_TRADING_STATUS_DEALER_BREAK_IN_TRADING | 15 | Перерыв торговли в режиме внутренней ликвидности брокера |
-| SECURITY_TRADING_STATUS_DEALER_NOT_AVAILABLE_FOR_TRADING | 16 | Недоступна торговля в режиме внутренней ликвидности брокера |
+| SECURITY_TRADING_STATUS_DEALER_NORMAL_TRADING | 14 |Доступна торговля в режиме внутренней ликвидности брокера |
+| SECURITY_TRADING_STATUS_DEALER_BREAK_IN_TRADING | 15 |Перерыв торговли в режиме внутренней ликвидности брокера |
+| SECURITY_TRADING_STATUS_DEALER_NOT_AVAILABLE_FOR_TRADING | 16 |Недоступна торговля в режиме внутренней ликвидности брокера |
 
 ### Нестандартные типы данных
 
@@ -38,7 +38,7 @@
 
 
 #### Quotation
-Котировка — денежная сумма без указания валюты.
+Котировка - денежная сумма без указания валюты
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |

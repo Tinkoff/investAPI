@@ -1034,13 +1034,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#getassetfundamentals" class="md-nav__link">
-    GetAssetFundamentals
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1533,27 +1526,6 @@
           <li class="md-nav__item">
   <a href="#getbrandsresponse" class="md-nav__link">
     GetBrandsResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getassetfundamentalsrequest" class="md-nav__link">
-    GetAssetFundamentalsRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getassetfundamentalsresponse" class="md-nav__link">
-    GetAssetFundamentalsResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getassetfundamentalsresponsestatisticresponse" class="md-nav__link">
-    GetAssetFundamentalsResponse.StatisticResponse
   </a>
   
 </li>
@@ -2365,13 +2337,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#getassetfundamentals" class="md-nav__link">
-    GetAssetFundamentals
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2868,27 +2833,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#getassetfundamentalsrequest" class="md-nav__link">
-    GetAssetFundamentalsRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getassetfundamentalsresponse" class="md-nav__link">
-    GetAssetFundamentalsResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getassetfundamentalsresponsestatisticresponse" class="md-nav__link">
-    GetAssetFundamentalsResponse.StatisticResponse
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -3329,16 +3273,6 @@
 </li>
 <li>
 <p>Тело ответа — <a href="#brand">Brand</a></p>
-</li>
-</ul>
-<h4 id="getassetfundamentals">GetAssetFundamentals</h4>
-<p>Метод получения фундаментальных показателей по активу</p>
-<ul>
-<li>
-<p>Тело запроса — <a href="#getassetfundamentalsrequest">GetAssetFundamentalsRequest</a></p>
-</li>
-<li>
-<p>Тело ответа — <a href="#getassetfundamentalsresponse">GetAssetFundamentalsResponse</a></p>
 </li>
 </ul>
 <!-- range .Methods -->
@@ -7355,353 +7289,6 @@
 </tbody>
 </table>
 <!-- end HasFields -->
-
-<h4 id="getassetfundamentalsrequest">GetAssetFundamentalsRequest</h4>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>assets</td>
-<td>Массив объектов <a href="#string">string</a></td>
-<td>Массив идентификаторов активов.</td>
-</tr>
-<tr>
-<td><!-- end Fields --></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<!-- end HasFields -->
-
-<h4 id="getassetfundamentalsresponse">GetAssetFundamentalsResponse</h4>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>fundamentals</td>
-<td>Массив объектов <a href="#getassetfundamentalsresponsestatisticresponse">GetAssetFundamentalsResponse.StatisticResponse</a></td>
-<td></td>
-</tr>
-<tr>
-<td><!-- end Fields --></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<!-- end HasFields -->
-
-<h4 id="getassetfundamentalsresponsestatisticresponse">GetAssetFundamentalsResponse.StatisticResponse</h4>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>asset_uid</td>
-<td><a href="#string">string</a></td>
-<td></td>
-</tr>
-<tr>
-<td>currency</td>
-<td><a href="#string">string</a></td>
-<td>Валюта</td>
-</tr>
-<tr>
-<td>market_capitalization</td>
-<td><a href="#double">double</a></td>
-<td>Рыночная капитализация</td>
-</tr>
-<tr>
-<td>high_price_last_52_weeks</td>
-<td><a href="#double">double</a></td>
-<td>Максимум за год</td>
-</tr>
-<tr>
-<td>low_price_last_52_weeks</td>
-<td><a href="#double">double</a></td>
-<td>Минимум за год</td>
-</tr>
-<tr>
-<td>average_daily_volume_last_10_days</td>
-<td><a href="#double">double</a></td>
-<td>Средний объем торгов за 10 дней</td>
-</tr>
-<tr>
-<td>average_daily_volume_last_4_weeks</td>
-<td><a href="#double">double</a></td>
-<td>Средний объем торгов за месяц</td>
-</tr>
-<tr>
-<td>beta</td>
-<td><a href="#double">double</a></td>
-<td></td>
-</tr>
-<tr>
-<td>free_float</td>
-<td><a href="#double">double</a></td>
-<td>Доля акций в свободном обращении</td>
-</tr>
-<tr>
-<td>forward_annual_dividend_yield</td>
-<td><a href="#double">double</a></td>
-<td>Процент форвардной дивидендной доходности по отношению к цене акций.</td>
-</tr>
-<tr>
-<td>shares_outstanding</td>
-<td><a href="#double">double</a></td>
-<td>Количество акций в обращении</td>
-</tr>
-<tr>
-<td>revenue_ttm</td>
-<td><a href="#double">double</a></td>
-<td>Выручка</td>
-</tr>
-<tr>
-<td>ebitda_ttm</td>
-<td><a href="#double">double</a></td>
-<td>EBITDA Прибыль до вычета процентов, налогов, износа и амортизации</td>
-</tr>
-<tr>
-<td>net_income_ttm</td>
-<td><a href="#double">double</a></td>
-<td>Чистая прибыль</td>
-</tr>
-<tr>
-<td>eps_ttm</td>
-<td><a href="#double">double</a></td>
-<td>EPS Величина чистой прибыли компании, приходящуюся на каждую обыкновенную акцию</td>
-</tr>
-<tr>
-<td>diluted_eps_ttm</td>
-<td><a href="#double">double</a></td>
-<td>EPS компании с допущением, что все конвертируемые ценные бумаги компании были сконвертированы в обыкновенные акции</td>
-</tr>
-<tr>
-<td>free_cash_flow_ttm</td>
-<td><a href="#double">double</a></td>
-<td>Свободный денежный поток</td>
-</tr>
-<tr>
-<td>five_year_annual_revenue_growth_rate</td>
-<td><a href="#double">double</a></td>
-<td>Среднегодовой  рocт выручки (за 5 лет)</td>
-</tr>
-<tr>
-<td>three_year_annual_revenue_growth_rate</td>
-<td><a href="#double">double</a></td>
-<td>Среднегодовой  рocт выручки (за 3 года)</td>
-</tr>
-<tr>
-<td>pe_ratio_ttm</td>
-<td><a href="#double">double</a></td>
-<td>Показывает соотношение рыночной капитализации компании к ее чистой прибыли</td>
-</tr>
-<tr>
-<td>price_to_sales_ttm</td>
-<td><a href="#double">double</a></td>
-<td>Показывает соотношение рыночной капитализации компании к ее выручке</td>
-</tr>
-<tr>
-<td>price_to_book_ttm</td>
-<td><a href="#double">double</a></td>
-<td>Показывает соотношение рыночной капитализации компании к ее балансовой стоимости</td>
-</tr>
-<tr>
-<td>price_to_free_cash_flow_ttm</td>
-<td><a href="#double">double</a></td>
-<td>Показывает соотношение рыночной капитализации компании к ее свободному денежному потоку</td>
-</tr>
-<tr>
-<td>total_enterprise_value_mrq</td>
-<td><a href="#double">double</a></td>
-<td>Рыночная стоимость компании</td>
-</tr>
-<tr>
-<td>ev_to_ebitda_mrq</td>
-<td><a href="#double">double</a></td>
-<td>Соотношение EV и EBITDA</td>
-</tr>
-<tr>
-<td>net_margin_mrq</td>
-<td><a href="#double">double</a></td>
-<td>Маржа чистой прибыли</td>
-</tr>
-<tr>
-<td>net_interest_margin_mrq</td>
-<td><a href="#double">double</a></td>
-<td>Рентабельность чистой прибыли</td>
-</tr>
-<tr>
-<td>roe</td>
-<td><a href="#double">double</a></td>
-<td>Рентабельность собственного капитала</td>
-</tr>
-<tr>
-<td>roa</td>
-<td><a href="#double">double</a></td>
-<td>Рентабельность активов</td>
-</tr>
-<tr>
-<td>roic</td>
-<td><a href="#double">double</a></td>
-<td>Рентабельность активов</td>
-</tr>
-<tr>
-<td>total_debt_mrq</td>
-<td><a href="#double">double</a></td>
-<td>Сумма краткосрочных и долгосрочных обязательств компании</td>
-</tr>
-<tr>
-<td>total_debt_to_equity_mrq</td>
-<td><a href="#double">double</a></td>
-<td>Соотношение долга к собственному капиталу</td>
-</tr>
-<tr>
-<td>total_debt_to_ebitda_mrq</td>
-<td><a href="#double">double</a></td>
-<td>Total Debt/EBITDA</td>
-</tr>
-<tr>
-<td>free_cash_flow_to_price</td>
-<td><a href="#double">double</a></td>
-<td>Отношение свободглго кэша к стоимости</td>
-</tr>
-<tr>
-<td>net_debt_to_ebitda</td>
-<td><a href="#double">double</a></td>
-<td>Отношение чистого долга к ebitda</td>
-</tr>
-<tr>
-<td>current_ratio_mrq</td>
-<td><a href="#double">double</a></td>
-<td>Коэффициент текущей ликвидности</td>
-</tr>
-<tr>
-<td>fixed_charge_coverage_ratio_fy</td>
-<td><a href="#double">double</a></td>
-<td>Коэффициент покрытия фиксированных платежей (FCCR)</td>
-</tr>
-<tr>
-<td>dividend_yield_daily_ttm</td>
-<td><a href="#double">double</a></td>
-<td>Дивидендная доходность за 12 мес</td>
-</tr>
-<tr>
-<td>dividend_rate_ttm</td>
-<td><a href="#double">double</a></td>
-<td>Выплаченные дивиденды за 12 мес.</td>
-</tr>
-<tr>
-<td>dividends_per_share</td>
-<td><a href="#double">double</a></td>
-<td>Значение дивидендов на акцию</td>
-</tr>
-<tr>
-<td>five_years_average_dividend_yield</td>
-<td><a href="#double">double</a></td>
-<td>Средняя дивидендная доходность за 5 лет</td>
-</tr>
-<tr>
-<td>five_year_annual_dividend_growth_rate</td>
-<td><a href="#double">double</a></td>
-<td>Среднегодовой рост дивидендов за 5 лет</td>
-</tr>
-<tr>
-<td>dividend_payout_ratio_fy</td>
-<td><a href="#double">double</a></td>
-<td>Процент чистой прибыли, уходящий на выплату дивидендов</td>
-</tr>
-<tr>
-<td>buy_back_ttm</td>
-<td><a href="#double">double</a></td>
-<td>Деньги, потраченные на обратный выкуп акций</td>
-</tr>
-<tr>
-<td>one_year_annual_revenue_growth_rate</td>
-<td><a href="#double">double</a></td>
-<td>Рост выручки за 1 год</td>
-</tr>
-<tr>
-<td>domicile_indicator_code</td>
-<td><a href="#string">string</a></td>
-<td>Код страны</td>
-</tr>
-<tr>
-<td>adr_to_common_share_ratio</td>
-<td><a href="#double">double</a></td>
-<td>Соотношение депозитарной расписки к акциям</td>
-</tr>
-<tr>
-<td>number_of_employees</td>
-<td><a href="#double">double</a></td>
-<td>Количество сотрудников</td>
-</tr>
-<tr>
-<td>ex_dividend_date</td>
-<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td></td>
-</tr>
-<tr>
-<td>fiscal_period_start_date</td>
-<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Начало фискального периода</td>
-</tr>
-<tr>
-<td>fiscal_period_end_date</td>
-<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Конец фискального периода</td>
-</tr>
-<tr>
-<td>revenue_change_five_years</td>
-<td><a href="#double">double</a></td>
-<td>Изменение общего дохода за 5 лет</td>
-</tr>
-<tr>
-<td>eps_change_five_years</td>
-<td><a href="#double">double</a></td>
-<td>Изменение eps за 5 лет</td>
-</tr>
-<tr>
-<td>ebitda_change_five_years</td>
-<td><a href="#double">double</a></td>
-<td>Изменение ebitda за 5 лет</td>
-</tr>
-<tr>
-<td>total_debt_change_five_years</td>
-<td><a href="#double">double</a></td>
-<td>Изменение общей задолжности за 5 лет</td>
-</tr>
-<tr>
-<td>ev_to_sales</td>
-<td><a href="#double">double</a></td>
-<td>Отношение EV к выручке</td>
-</tr>
-<tr>
-<td><!-- end Fields --></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<!-- end HasFields -->
 <!-- end messages -->
 
 <h3 id="enums">Enums</h3>
@@ -8133,19 +7720,24 @@
 </thead>
 <tbody>
 <tr>
-<td>RISK_LEVEL_HIGH</td>
+<td>RISK_LEVEL_UNSPECIFIED</td>
 <td>0</td>
-<td>Высокий уровень риска</td>
-</tr>
-<tr>
-<td>RISK_LEVEL_MODERATE</td>
-<td>1</td>
-<td>Средний уровень риска</td>
+<td>none</td>
 </tr>
 <tr>
 <td>RISK_LEVEL_LOW</td>
-<td>2</td>
+<td>1</td>
 <td>Низкий уровень риска</td>
+</tr>
+<tr>
+<td>RISK_LEVEL_MODERATE</td>
+<td>2</td>
+<td>Средний уровень риска</td>
+</tr>
+<tr>
+<td>RISK_LEVEL_HIGH</td>
+<td>3</td>
+<td>Высокий уровень риска</td>
 </tr>
 </tbody>
 </table>

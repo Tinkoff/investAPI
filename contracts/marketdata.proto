@@ -121,7 +121,6 @@ message CandleSubscription {
   SubscriptionInterval interval = 2; //Интервал свечей.
   SubscriptionStatus subscription_status = 3; //Статус подписки.
   string instrument_uid = 4; //Uid инструмента
-  bool waiting_close = 5; //Флаг ожидания закрытия временного интервала для отправки свечи
 }
 
 //Результат подписки.
@@ -135,7 +134,6 @@ enum SubscriptionStatus {
   SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED = 6; //Превышен лимит на общее количество подписок в рамках стрима, подробнее: [Лимитная политика](https://tinkoff.github.io/investAPI/limits/).
   SUBSCRIPTION_STATUS_INTERNAL_ERROR = 7; //Внутренняя ошибка сервиса.
   SUBSCRIPTION_STATUS_TOO_MANY_REQUESTS = 8; //Превышен лимит на количество запросов на подписки в течение установленного отрезка времени
-  SUBSCRIPTION_STATUS_SUBSCRIPTION_NOT_FOUND = 9; // Активная подписка не найдена. Ошибка может возникнуть только при отписке от не существующей отписки
 }
 
 //Запрос на изменение статуса подписки на стаканы.
@@ -447,6 +445,5 @@ message InstrumentClosePriceResponse {
   string figi = 1; //Figi инструмента.
   string instrument_uid = 2; //Uid инструмента.
   Quotation price = 11; //Цена закрытия торговой сессии.
-  Quotation evening_session_price = 12; //Цена последней сделки с вечерней сессии
   google.protobuf.Timestamp time = 21; //Дата совершения торгов.
 }

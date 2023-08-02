@@ -1616,9 +1616,9 @@ Deprecated Метод получения списка опционов.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| RISK_LEVEL_LOW | 1 | Низкий уровень риска |
-| RISK_LEVEL_MODERATE | 2 | Средний уровень риска |
-| RISK_LEVEL_HIGH | 3 | Высокий уровень риска |
+| RISK_LEVEL_HIGH | 0 | Высокий уровень риска |
+| RISK_LEVEL_MODERATE | 1 | Средний уровень риска |
+| RISK_LEVEL_LOW | 2 | Низкий уровень риска |
 
 
  <!-- range .Enums -->

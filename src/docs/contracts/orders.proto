@@ -90,7 +90,6 @@ message PostOrderResponse {
   int64 lots_executed = 4; //Исполнено лотов.
 
   MoneyValue initial_order_price = 5; //Начальная цена заявки. Произведение количества запрошенных лотов на цену.
-  MoneyValue executed_order_price = 6; //Исполненная средняя цена 1 одного инструмента в заявке.
   MoneyValue executed_order_price = 6; //Исполненная средняя цена одного инструмента в заявке.
   MoneyValue total_order_amount = 7; //Итоговая стоимость заявки, включающая все комиссии.
   MoneyValue initial_commission = 8; //Начальная комиссия. Комиссия рассчитанная при выставлении заявки.

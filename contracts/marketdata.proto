@@ -134,6 +134,7 @@ enum SubscriptionStatus {
   SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED = 6; //Превышен лимит на общее количество подписок в рамках стрима, подробнее: [Лимитная политика](https://tinkoff.github.io/investAPI/limits/).
   SUBSCRIPTION_STATUS_INTERNAL_ERROR = 7; //Внутренняя ошибка сервиса.
   SUBSCRIPTION_STATUS_TOO_MANY_REQUESTS = 8; //Превышен лимит на количество запросов на подписки в течение установленного отрезка времени
+  SUBSCRIPTION_STATUS_SUBSCRIPTION_NOT_FOUND = 9; // Активная подписка не найдена. Ошибка может возникнуть только при отписке от не существующей отписки
 }
 
 //Запрос на изменение статуса подписки на стаканы.

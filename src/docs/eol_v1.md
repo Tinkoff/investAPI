@@ -23,13 +23,13 @@
 
 Поддерживаются протоколы:
 
-* gRPC – [https://tinkoff.github.io/investAPI/grpc/](https://tinkoff.github.io/investAPI/grpc/);
-* REST – [https://tinkoff.github.io/investAPI/swagger-ui/](https://tinkoff.github.io/investAPI/swagger-ui/).
+* gRPC – [https://tinkoff.github.io/investAPI/grpc/](https://tinkoff.github.io/investAPI/grpc/)
+* REST – [https://tinkoff.github.io/investAPI/swagger-ui/](https://tinkoff.github.io/investAPI/swagger-ui/)
 
 ## Вопросы
 
-Если у Вас остались вопросы, рекомендуем обращаться:
+Если остались вопросы, пишите:
 
-* в неофициальный [телеграм-чат](https://t.me/joinchat/VaW05CDzcSdsPULM);
-* по почте [invest-public-api@tinkoff.ru](mailto:invest-public-api@tinkoff.ru).
+* в [неофициальный телеграм-чат](https://t.me/joinchat/VaW05CDzcSdsPULM)
+* по почте [invest-public-api@tinkoff.ru](mailto:invest-public-api@tinkoff.ru)
 
